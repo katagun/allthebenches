@@ -14,6 +14,7 @@ uv run benches validate
 uv run benches build --offline
 cd web
 pnpm install --frozen-lockfile
+pnpm run install:browsers
 pnpm run dev
 ```
 

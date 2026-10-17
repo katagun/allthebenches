@@ -7,7 +7,8 @@ export const BENCHMARK_LABEL_WIDTH = 260;
 // A defensive DOM budget for extreme zoom-out / unusually large displays.
 export const MAX_BENCHMARK_COLUMNS = 24;
 export function columnCapacity(width: number, marketColumns = 0, transposed = false): number {
-  // Small screens swipe through bounded groups instead of paging one model at a time.
+  // Match the dense phone CSS while retaining bounded groups on tablets.
+  if (width <= 600 && transposed) return Math.max(1, Math.floor((width - 98) / 60));
   if (width <= 768) return Math.max(1, 3 - marketColumns);
   return Math.max(1, Math.min(MAX_BENCHMARK_COLUMNS,
     Math.floor((width - 2 - (transposed ? BENCHMARK_LABEL_WIDTH : MODEL_COLUMN_WIDTH)) / (transposed ? COMPACT_MODEL_WIDTH : DATA_COLUMN_WIDTH)) - marketColumns));

@@ -47,3 +47,19 @@ The hook checks lockfile consistency, staged whitespace/conflict markers, and re
 ## Pull requests and issues
 
 Use a focused branch and explain the problem, resulting behavior, and checks actually run. Use the issue templates for bugs and data corrections. Include screenshots for layout changes and measurements for performance changes. Keep generated outputs in the same pull request as their input changes. Follow the [community conduct rules](CODE_OF_CONDUCT.md) and use the [security policy](SECURITY.md) for vulnerabilities. See [architecture](docs/ARCHITECTURE.md) before changing pipeline or worker boundaries.
+
+### Browser layout regressions
+
+After installing JS dependencies, run `pnpm --dir web install:browsers` once (and
+again when Playwright updates). Pre-commit requires the matching Chromium binary;
+it does not silently skip browser checks or download browsers during a commit.
+CI installs Chromium and its Linux dependencies explicitly.
+
+`pnpm --dir web build && pnpm --dir web test:layout` checks production output at
+320, 375, 390, 430, 768, 1024 and 1422 CSS pixels. It checks both orientations,
+document overflow, the default control/table height budgets, sticky headers and
+labels after scrolling, mobile column counts, expanded Options, and filter-sheet
+actions. Tests use an isolated preview server on port 4187; stop any unrelated
+process using that port. For a subpath build, set `LAYOUT_BASE_PATH` to the same
+base used for the build. Failure screenshots/traces are in `web/test-results/`
+and uploaded by CI. Real-device touch and Safari testing remain manual checks.

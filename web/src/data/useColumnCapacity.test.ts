@@ -15,8 +15,9 @@ describe('responsive column budget', () => {
   });
   it('keeps narrow screens navigable and extreme screens bounded', () => {
     expect(columnCapacity(320, 2)).toBe(1);
-    expect(columnCapacity(366, 0, true)).toBe(3);
+    expect(columnCapacity(366, 0, true)).toBe(4);
     expect(columnCapacity(744)).toBe(3);
+    expect(columnCapacity(410, 0, true)).toBe(5);
     expect(columnCapacity(10000)).toBe(24);
   });
 });

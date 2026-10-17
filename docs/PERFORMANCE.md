@@ -33,3 +33,19 @@ The DOM node count dropped by about 94.5%. The test wall-time improvement includ
 3. Select a model on a later row page, navigate away and back, and confirm selection remains. Apply a search/filter and confirm row pagination resets or clamps to the filtered set.
 4. Export CSV and confirm it includes every selected visible benchmark and all filtered rows, including records beyond the currently rendered pages.
 5. Use keyboard navigation and a screen reader to verify the pager names, range announcements, `aria-rowcount`, `aria-colcount`, and indexed visible cells remain understandable.
+
+## Responsive release check
+
+At 320, 390, 768, and 1024 CSS pixels, verify the compact Options disclosure,
+scrollable category strip, model/benchmark pagination, and both table orientations.
+The document must not overflow horizontally; the table may scroll internally.
+Phone tables render bounded groups of three data columns so users can swipe between
+models without mounting the complete matrix. Verify sticky headers during vertical
+scroll and sticky row labels during horizontal scroll. Open a numeric score and
+check source links and the Close control in its evidence sheet. At desktop widths
+(above 1100px), verify the existing toolbar and layout are unchanged.
+
+Browser viewport tests must record the actual `innerWidth`, since browser zoom can
+make requested device dimensions differ from CSS pixel dimensions. Component tests
+and column-budget tests run in pre-commit; these visual and scrolling checks require
+a real browser and are not claimed as automated layout coverage.

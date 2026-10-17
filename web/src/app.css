@@ -90,3 +90,18 @@
 .model-header-details{position:fixed;z-index:80;width:280px;max-width:calc(100vw - 16px);padding:10px 12px;border:1px solid var(--border);border-radius:7px;background:var(--popover);color:var(--popover-foreground);box-shadow:0 4px 16px #0002;font-size:11px;line-height:1.5;white-space:pre-line;overflow-wrap:anywhere;pointer-events:none}
 
 .repository-link{display:flex;align-items:center;justify-content:center;width:32px;height:32px;flex:none;margin-left:auto;color:var(--muted-foreground);border-radius:6px}.repository-link:hover{background:var(--accent);color:var(--foreground)}.repository-link:focus-visible{outline:2px solid var(--ring);outline-offset:2px}@media(max-width:1100px){.repository-link{order:0}.primary-controls .toolbar{order:1}}
+
+/* Keep the desktop toolbar on one line; secondary actions retain accessible names. */
+@media(min-width:1101px){
+  .primary-controls{flex-wrap:nowrap;gap:12px}
+  .primary-controls .toolbar{flex-wrap:nowrap;gap:6px}
+  .primary-controls .search-box{min-width:140px}
+}
+@media(min-width:1101px) and (max-width:1700px){
+  .primary-controls .toolbar>button{padding-inline:9px}
+  .primary-controls .header-utility{width:32px;min-width:32px;padding-inline:0}
+  .primary-controls .header-utility>span{display:none}
+  .primary-controls .preset-select{width:112px}
+  .primary-controls .orientation-select{width:150px;padding-inline:9px;font-size:12px}
+  .primary-controls .view-tabs button{padding-inline:9px}
+}

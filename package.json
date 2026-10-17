@@ -1,0 +1,14 @@
+{
+  "name": "allthebenches",
+  "private": true,
+  "packageManager": "pnpm@12.14.0",
+  "scripts": {
+    "dev": "pnpm --dir web dev",
+    "test": "pnpm --dir web test",
+    "build": "pnpm --dir web build",
+    "check": "sh scripts/check-precommit.sh"
+  },
+  "engines": {
+    "node": ">=24.15.0 <25"
+  }
+}

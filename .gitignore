@@ -1,0 +1,23 @@
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+*.egg-info/
+node_modules/
+web/dist/
+web/coverage/
+.env
+.env.*
+!.env.example
+.DS_Store
+data/staging/
+data/cache/
+artifacts/
+
+*.tsbuildinfo
+
+# Local evidence cache; publish source URLs and hashes, not upstream reports.
+data/curated/source_snapshots/
+
+.pnpm-store/

@@ -1,0 +1,41 @@
+{
+  "configurations": [
+    {
+      "id": "muse_spark13_xhigh",
+      "model_id": "muse_spark13",
+      "reasoning_label": "xhigh",
+      "mode": "enabled"
+    }
+  ],
+  "series": [
+    {
+      "id": "series_spark13_gdp_pdf_surge_xhigh",
+      "benchmark_id": "gdp_pdf_surge",
+      "protocol": "Surge GDP.pdf leaderboard; xHigh reasoning",
+      "evaluator": "Surge AI",
+      "comparability_status": "unknown",
+      "comparability": "Exact evaluator listing; task/run version and complete harness settings not disclosed by leaderboard."
+    }
+  ],
+  "observations": [
+    {
+      "id": "o_spark13_gdp_pdf_surge_xhigh",
+      "configuration_id": "muse_spark13_xhigh",
+      "benchmark_id": "gdp_pdf_surge",
+      "series_id": "series_spark13_gdp_pdf_surge_xhigh",
+      "value": 27.6,
+      "unit": "%",
+      "source_id": "gpt61_surge_gdp",
+      "locator": "GDP.pdf Leaderboard, Muse / Spark 1.3 (xHigh reasoning), 27.6% (retrieved HTML lines 140\u2013150)",
+      "evaluator": "Surge AI",
+      "reporting_relationship": "evaluator_measurement",
+      "setup": {
+        "reasoning_effort": "xHigh",
+        "source_model_label": "Muse Spark 1.3 (xHigh reasoning)",
+        "limitations": "Leaderboard does not expose an exact evaluation date or complete run settings. This is separate from Meta max-effort configuration."
+      },
+      "review_state": "reviewed",
+      "supersedes": []
+    }
+  ]
+}

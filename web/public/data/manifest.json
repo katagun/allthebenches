@@ -1,0 +1,63 @@
+{
+  "coverage": {
+    "benchmarked_models": 37,
+    "benchmarks": 309,
+    "display_cells": 663,
+    "models": 37,
+    "observations": 663
+  },
+  "data_version": "0.3.0-dev",
+  "feeds": [
+    {
+      "as_of": "2026-10-17T14:35:34.269287+00:00",
+      "error": null,
+      "source_id": "models.dev",
+      "status": "ok"
+    },
+    {
+      "as_of": null,
+      "error": null,
+      "source_id": "openrouter-endpoints",
+      "status": "ok"
+    },
+    {
+      "as_of": "2026-10-17T14:35:36.561048+00:00",
+      "error": null,
+      "source_id": "openrouter",
+      "status": "ok"
+    },
+    {
+      "as_of": "2026-10-17T14:35:33.613772+00:00",
+      "error": null,
+      "source_id": "peacefulcoexistance",
+      "status": "ok"
+    },
+    {
+      "as_of": null,
+      "error": null,
+      "source_id": "reconciliation-proposal",
+      "status": "unknown"
+    }
+  ],
+  "files": {
+    "catalog.json": {
+      "bytes": 676162,
+      "sha256": "c679bf33aa6af6a04d880efe21a97fc102d5f3b5b7b3ae958f29cf4eb09bc892"
+    },
+    "details.json": {
+      "bytes": 953429,
+      "sha256": "57715e5d1b4f299a944da7bbc2a502ba7be169b144b8f214a08d68e11bcf532d"
+    },
+    "market.json": {
+      "bytes": 57829,
+      "sha256": "988c0af02987b9141a2b7bc90ab8800c7c9f3edc57995f9fe503753a16353dce"
+    },
+    "results.json": {
+      "bytes": 916010,
+      "sha256": "93f51f9db34d8ebe51429fbeeb5c31765cb9cdc01bdbac64357e06e023970a98"
+    }
+  },
+  "generated_at": "2026-10-17T15:22:54.102772+00:00",
+  "schema_version": "1.0.0",
+  "snapshot_id": "e51330e2794b98f2"
+}

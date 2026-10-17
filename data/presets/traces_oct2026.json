@@ -1,0 +1,19 @@
+{
+  "id": "traces_oct2026",
+  "version": "1.0.0",
+  "name": "TRACES — October 2026",
+  "model_configuration_ids": [
+    "gpt56_sol_traces_default",
+    "deepseek_r1_distill_qwen_32b_traces_default",
+    "llama31_8b_instruct_traces_default"
+  ],
+  "benchmark_ids": [
+    "traces_ifr_a",
+    "traces_ifr_i",
+    "traces_disclaimer_tax",
+    "traces_edi_mean"
+  ],
+  "reason": "Intellicat TRACES full-panel-10x snapshot. Exact model identities and published metrics are retained; reasoning settings are unreported.",
+  "reviewed_at": "2026-10-17",
+  "saturation_policy_version": null
+}

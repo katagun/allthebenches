@@ -1,0 +1,28 @@
+{
+  "id": "arena_oct2026",
+  "version": "1.0.0",
+  "name": "Arena leaderboards — October 2026",
+  "model_configuration_ids": [
+    "claude_opus55_max",
+    "gpt6_astra_max",
+    "claude_fable51_max",
+    "gpt61_sol_max",
+    "muse_wonder_max",
+    "muse_spark13_max",
+    "grok47_xhigh"
+  ],
+  "benchmark_ids": [
+    "arena_text_overall_bt_20261015",
+    "arena_agent_net_improvement_20261016",
+    "arena_agent_confirmed_success_20261016",
+    "arena_agent_praise_complaint_20261016",
+    "arena_agent_steerability_20261016",
+    "arena_agent_bash_reliability_20261016",
+    "arena_agent_tool_hallucination_20261016",
+    "arena_webdev_overall_bt_20261016",
+    "arena_search_overall_bt_20261013",
+    "arena_vision_overall_bt_20261009"
+  ],
+  "reason": "Dated Arena preference and Agent Arena signal snapshots. Arena rating points are relative preference ratings and are not accuracy; compare only within the same dated leaderboard. Agent signals are separate measures.",
+  "reviewed_at": "2026-10-17"
+}

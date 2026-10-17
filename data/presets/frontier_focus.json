@@ -1,0 +1,26 @@
+{
+  "id": "frontier_focus",
+  "version": "1.0.0",
+  "name": "Frontier gap review",
+  "model_configuration_ids": [
+    "gpt61_sol_max",
+    "muse_spark13_max",
+    "muse_wonder_max",
+    "muse_wonder_full_max",
+    "mistral_large4_unknown"
+  ],
+  "benchmark_ids": [
+    "deepswe_v11",
+    "terminal_bench_4",
+    "gdp_pdf_surge",
+    "sudo_l7_surge",
+    "vals_finance_agent_v2",
+    "automationbench_aa_reported",
+    "jobbench_meta_reported",
+    "meta_osworld_v21_partial",
+    "spark_osworld_v20_partial",
+    "meta_healthbench_pro"
+  ],
+  "reason": "Focused view of the frontier releases expanded in this research pass. Expand configurations to inspect other effort settings; blank cells remain unknown.",
+  "reviewed_at": "2026-10-17"
+}

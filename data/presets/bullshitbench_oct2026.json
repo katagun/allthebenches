@@ -1,0 +1,31 @@
+{
+  "id": "bullshitbench_oct2026",
+  "version": "1.0.0",
+  "name": "BullshitBench — October 2026",
+  "model_configuration_ids": [
+    "bb_gpt6_astra_low",
+    "bb_gpt56_sol_low",
+    "bb_claude_fable51_low",
+    "bb_mistral_large4_none",
+    "bb_mistral_large4_high",
+    "bb_claude_opus5_xhigh",
+    "bb_claude_opus5_low",
+    "bb_claude_opus55_low",
+    "bb_gemini4_argon_low",
+    "bb_gemini4_argon_high",
+    "bb_grok46_minimal",
+    "bb_grok46_max",
+    "bb_muse_wonder_minimal"
+  ],
+  "benchmark_ids": [
+    "bullshitbench_v1_avg_grade",
+    "bullshitbench_v1_clear_rate_all_attempts",
+    "bullshitbench_v1_accepted_rate_all_attempts",
+    "bullshitbench_v2_avg_grade",
+    "bullshitbench_v2_clear_rate_all_attempts",
+    "bullshitbench_v2_accepted_rate_all_attempts"
+  ],
+  "reason": "BullshitBench V1 and V2 published leaderboards. V1 and V2 remain separate; rates use the CSV all-attempt denominator.",
+  "reviewed_at": "2026-10-17",
+  "saturation_policy_version": null
+}

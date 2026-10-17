@@ -1,0 +1,29 @@
+{
+  "id": "qwen3_base",
+  "version": "1.0.0",
+  "name": "Qwen3 base checkpoints",
+  "model_configuration_ids": [
+    "qwen3_30b_a3b_base_default",
+    "qwen3_14b_base_default",
+    "qwen3_8b_base_default"
+  ],
+  "benchmark_ids": [
+    "qwen3_base_mmlu",
+    "qwen3_base_mmlu_redux",
+    "qwen3_base_mmlu_pro",
+    "qwen3_base_supergpqa",
+    "qwen3_base_bbh",
+    "qwen3_base_gpqa",
+    "qwen3_base_gsm8k",
+    "qwen3_base_math",
+    "qwen3_base_evalplus",
+    "qwen3_base_multiple",
+    "qwen3_base_mbpp",
+    "qwen3_base_crux_o",
+    "qwen3_base_mgsm",
+    "qwen3_base_mmmlu",
+    "qwen3_base_include"
+  ],
+  "reason": "Within-report Qwen3 base-checkpoint comparison, distinct from post-trained thinking models.",
+  "reviewed_at": "2026-10-17"
+}

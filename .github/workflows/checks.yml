@@ -1,0 +1,48 @@
+name: Check
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: pnpm/action-setup@v4
+        with:
+          package_json_file: web/package.json
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: pnpm
+          cache-dependency-path: web/pnpm-lock.yaml
+      - name: Install Python tooling
+        run: python -m pip install uv
+      - run: uv sync --frozen
+      - run: uv run pytest
+      - run: uv run benches validate
+      - run: uv run python -m scripts.check-generated
+      - run: uv run ruff check pipeline tests scripts
+      - run: pnpm install --frozen-lockfile
+        working-directory: web
+      - run: pnpm audit --audit-level low
+        working-directory: web
+      - run: uv run python scripts/audit-python-dependencies.py
+      - run: pnpm run lint
+        working-directory: web
+      - run: pnpm run typecheck
+        working-directory: web
+      - run: pnpm test
+        working-directory: web
+      - run: pnpm run build
+        working-directory: web
+      - run: uv run python scripts/check-bundle.py

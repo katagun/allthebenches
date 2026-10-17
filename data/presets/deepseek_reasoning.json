@@ -1,0 +1,20 @@
+{
+  "id": "deepseek_reasoning",
+  "version": "1.0.0",
+  "name": "DeepSeek reasoning",
+  "model_configuration_ids": [
+    "deepseek_r1_reasoning",
+    "deepseek_r1_distill_qwen_7b_reasoning",
+    "deepseek_r1_distill_qwen_32b_reasoning"
+  ],
+  "benchmark_ids": [
+    "dsr1_aime2024",
+    "dsr1_math500",
+    "dsr1_gpqa_diamond",
+    "dsr1_livecodebench",
+    "dsr1_aime2024_cons64",
+    "dsr1_codeforces_rating"
+  ],
+  "reason": "DeepSeek-R1 report and distilled checkpoints. Consensus and pass@1 columns remain separate; not every model has every metric.",
+  "reviewed_at": "2026-10-17"
+}

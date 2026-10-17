@@ -1,0 +1,1581 @@
+{
+  "prices": [
+    {
+      "available": true,
+      "cache_read_price": "0.5",
+      "cache_write_price": "6.25",
+      "context_tier": "default",
+      "currency": "USD",
+      "id": "price_openrouter_anthropic_claude_opus_5_amazon_bedrock_amazon_bedrock_default",
+      "input_price": "5",
+      "observed_at": "2026-10-17T14:38:29.103623Z",
+      "output_price": "25",
+      "price_unit": "USD per 1M tokens",
+      "quote_scope": "OpenRouter provider endpoint listed price",
+      "restrictions": [
+        "Baseline OpenRouter provider-endpoint quote; raw catalog unit is USD per token, converted by ×1,000,000 to the stored unit."
+      ],
+      "route_id": "openrouter:anthropic/claude-opus-5:Amazon Bedrock:amazon-bedrock:default",
+      "source_id": "openrouter_endpoints_anthropic_claude_opus_5"
+    },
+    {
+      "available": true,
+      "cache_read_price": "0.55",
+      "cache_write_price": "6.875",
+      "context_tier": "default",
+      "currency": "USD",
+      "id": "price_openrouter_anthropic_claude_opus_5_amazon_bedrock_amazon_bedrock_eu_west_1_default",
+      "input_price": "5.5",
+      "observed_at": "2026-10-17T14:38:29.103623Z",
+      "output_price": "27.5",
+      "price_unit": "USD per 1M tokens",
+      "quote_scope": "OpenRouter provider endpoint listed price",
+      "restrictions": [
+        "Baseline OpenRouter provider-endpoint quote; raw catalog unit is USD per token, converted by ×1,000,000 to the stored unit."
+      ],
+      "route_id": "openrouter:anthropic/claude-opus-5:Amazon Bedrock:amazon-bedrock/eu-west-1:default",
+      "source_id": "openrouter_endpoints_anthropic_claude_opus_5"
+    },
+    {
+      "available": true,
+      "cache_read_price": "0.55",
+      "cache_write_price": "6.875",
+      "context_tier": "default",
+      "currency": "USD",
+      "id": "price_openrouter_anthropic_claude_opus_5_amazon_bedrock_amazon_bedrock_us_east_1_default",
+      "input_price": "5.5",
+      "observed_at": "2026-10-17T14:38:29.103623Z",
+      "output_price": "27.5",
+      "price_unit": "USD per 1M tokens",
+      "quote_scope": "OpenRouter provider endpoint listed price",
+      "restrictions": [
+        "Baseline OpenRouter provider-endpoint quote; raw catalog unit is USD per token, converted by ×1,000,000 to the stored unit."
+      ],
+      "route_id": "openrouter:anthropic/claude-opus-5:Amazon Bedrock:amazon-bedrock/us-east-1:default",
+      "source_id": "openrouter_endpoints_anthropic_claude_opus_5"
+    },
+    {
+      "available": true,
+      "cache_read_price": "0.5",
+      "cache_write_price": "6.25",
+      "context_tier": "default",
+      "currency": "USD",
+      "id": "price_openrouter_anthropic_claude_opus_5_anthropic_anthropic_default",
+      "input_price": "5",
+      "observed_at": "2026-10-17T14:38:29.103623Z",
+      "output_price": "25",
+      "price_unit": "USD per 1M tokens",
+      "quote_scope": "OpenRouter provider endpoint listed price",
+      "restrictions": [
+        "Baseline OpenRouter provider-endpoint quote; raw catalog unit is USD per token, converted by ×1,000,000 to the stored unit."
+      ],
+      "route_id": "openrouter:anthropic/claude-opus-5:Anthropic:anthropic:default",
+      "source_id": "openrouter_endpoints_anthropic_claude_opus_5"
+    },
+    {
+      "available": true,
+      "cache_read_price": "1",
+      "cache_write_price": "12.5",
+      "context_tier": "priority",
+      "currency": "USD",
+      "id": "price_openrouter_anthropic_claude_opus_5_anthropic_anthropic_fast_priority",
+      "input_price": "10",
+      "observed_at": "2026-10-17T14:38:29.103623Z",
+      "output_price": "50",
+      "price_unit": "USD per 1M tokens",
+      "quote_scope": "OpenRouter provider endpoint listed price",
+      "restrictions": [
+        "Baseline OpenRouter provider-endpoint quote; raw catalog unit is USD per token, converted by ×1,000,000 to the stored unit."
+      ],
+      "route_id": "openrouter:anthropic/claude-opus-5:Anthropic:anthropic/fast:priority",
+      "source_id": "openrouter_endpoints_anthropic_claude_opus_5"
+    },
+    {
+      "available": true,
+      "cache_read_price": "0.5",
+      "cache_write_price": "6.25",
+      "context_tier": "default",
+      "currency": "USD",
+      "id": "price_openrouter_anthropic_claude_opus_5_azure_azure_global_default",
+      "input_price": "5",
+      "observed_at": "2026-10-17T14:38:29.103623Z",
+      "output_price": "25",
+      "price_unit": "USD per 1M tokens",
+      "quote_scope": "OpenRouter provider endpoint listed price",
+      "restrictions": [
+        "Baseline OpenRouter provider-endpoint quote; raw catalog unit is USD per token, converted by ×1,000,000 to the stored unit."
+      ],
+      "route_id": "openrouter:anthropic/claude-opus-5:Azure:azure/global:default",
+      "source_id": "openrouter_endpoints_anthropic_claude_opus_5"
+    },
+    {
+      "available": true,
+      "cache_read_price": "0.55",
+      "cache_write_price": "6.875",
+      "context_tier": "default",
+      "currency": "USD",
+      "id": "price_openrouter_anthropic_claude_opus_5_azure_azure_us_default",
+      "input_price": "5.5",
+      "observed_at": "2026-10-17T14:38:29.103623Z",
+      "output_price": "27.5",
+      "price_unit": "USD per 1M tokens",
+      "quote_scope": "OpenRouter provider endpoint listed price",
+      "restrictions": [
+        "Baseline OpenRouter provider-endpoint quote; raw catalog unit is USD per token, converted by ×1,000,000 to the stored unit."
+      ],
+      "route_id": "openrouter:anthropic/claude-opus-5:Azure:azure/us:default",
+      "source_id": "openrouter_endpoints_anthropic_claude_opus_5"
+    },
+    {
+      "available": true,
+      "cache_read_price": "0.5",
+      "cache_write_price": "6.25",
+      "context_tier": "default",
+      "currency": "USD",
+      "id": "price_openrouter_anthropic_claude_opus_5_claude_platform_on_aws_claude_on_aws_default",
+      "input_price": "5",
+      "observed_at": "2026-10-17T14:38:29.103623Z",
+      "output_price": "25",
+      "price_unit": "USD per 1M tokens",
+      "quote_scope": "OpenRouter provider endpoint listed price",
+      "restrictions": [
+        "Baseline OpenRouter provider-endpoint quote; raw catalog unit is USD per token, converted by ×1,000,000 to the stored unit."
+      ],
+      "route_id": "openrouter:anthropic/claude-opus-5:Claude Platform on AWS:claude-on-aws:default",
+      "source_id": "openrouter_endpoints_anthropic_claude_opus_5"
+    },
+    {
+      "available": true,
+      "cache_read_price": "0.55",
+      "cache_write_price": "6.875",
+      "context_tier": "default",
+      "currency": "USD",
+      "id": "price_openrouter_anthropic_claude_opus_5_google_google_vertex_europe_default",
+      "input_price": "5.5",
+      "observed_at": "2026-10-17T14:38:29.103623Z",
+      "output_price": "27.5",
+      "price_unit": "USD per 1M tokens",
+      "quote_scope": "OpenRouter provider endpoint listed price",
+      "restrictions": [
+        "Baseline OpenRouter provider-endpoint quote; raw catalog unit is USD per token, converted by ×1,000,000 to the stored unit."
+      ],
+      "route_id": "openrouter:anthropic/claude-opus-5:Google:google-vertex/europe:default",
+      "source_id": "openrouter_endpoints_anthropic_claude_opus_5"
+    },
+    {
+      "available": true,
+      "cache_read_price": "0.5",
+      "cache_write_price": "6.25",
+      "context_tier": "default",
+      "currency": "USD",
+      "id": "price_openrouter_anthropic_claude_opus_5_google_google_vertex_global_default",
+      "input_price": "5",
+      "observed_at": "2026-10-17T14:38:29.103623Z",
+      "output_price": "25",
+      "price_unit": "USD per 1M tokens",
+      "quote_scope": "OpenRouter provider endpoint listed price",
+      "restrictions": [
+        "Baseline OpenRouter provider-endpoint quote; raw catalog unit is USD per token, converted by ×1,000,000 to the stored unit."
+      ],
+      "route_id": "openrouter:anthropic/claude-opus-5:Google:google-vertex/global:default",
+      "source_id": "openrouter_endpoints_anthropic_claude_opus_5"
+    },
+    {
+      "available": true,
+      "cache_read_price": "0.55",
+      "cache_write_price": "6.875",
+      "context_tier": "default",
+      "currency": "USD",
+      "id": "price_openrouter_anthropic_claude_opus_5_google_google_vertex_us_default",
+      "input_price": "5.5",
+      "observed_at": "2026-10-17T14:38:29.103623Z",
+      "output_price": "27.5",
+      "price_unit": "USD per 1M tokens",
+      "quote_scope": "OpenRouter provider endpoint listed price",
+      "restrictions": [
+        "Baseline OpenRouter provider-endpoint quote; raw catalog unit is USD per token, converted by ×1,000,000 to the stored unit."
+      ],
+      "route_id": "openrouter:anthropic/claude-opus-5:Google:google-vertex/us:default",
+      "source_id": "openrouter_endpoints_anthropic_claude_opus_5"
+    },
+    {
+      "available": true,
+      "cache_read_price": "0.15",
+      "cache_write_price": null,
+      "context_tier": "default",
+      "currency": "USD",
+      "id": "price_openrouter_meta_muse_spark_1_3_meta_meta_default",
+      "input_price": "1.25",
+      "observed_at": "2026-10-17T14:38:29.151093Z",
+      "output_price": "4.25",
+      "price_unit": "USD per 1M tokens",
+      "quote_scope": "OpenRouter provider endpoint listed price",
+      "restrictions": [
+        "Baseline OpenRouter provider-endpoint quote; raw catalog unit is USD per token, converted by ×1,000,000 to the stored unit."
+      ],
+      "route_id": "openrouter:meta/muse-spark-1.3:Meta:meta:default",
+      "source_id": "openrouter_endpoints_meta_muse_spark_1_3"
+    },
+    {
+      "available": true,
+      "cache_read_price": null,
+      "cache_write_price": null,
+      "context_tier": "default",
+      "currency": "USD",
+      "id": "price_openrouter_openai_gpt_4_azure_azure_default",
+      "input_price": "30",
+      "observed_at": "2026-10-17T14:38:29.183068Z",
+      "output_price": "60",
+      "price_unit": "USD per 1M tokens",
+      "quote_scope": "OpenRouter provider endpoint listed price",
+      "restrictions": [
+        "Baseline OpenRouter provider-endpoint quote; raw catalog unit is USD per token, converted by ×1,000,000 to the stored unit."
+      ],
+      "route_id": "openrouter:openai/gpt-4:Azure:azure:default",
+      "source_id": "openrouter_endpoints_openai_gpt_4"
+    },
+    {
+      "available": true,
+      "cache_read_price": null,
+      "cache_write_price": null,
+      "context_tier": "default",
+      "currency": "USD",
+      "id": "price_openrouter_openai_gpt_4_openai_openai_default",
+      "input_price": "30",
+      "observed_at": "2026-10-17T14:38:29.183068Z",
+      "output_price": "60",
+      "price_unit": "USD per 1M tokens",
+      "quote_scope": "OpenRouter provider endpoint listed price",
+      "restrictions": [
+        "Baseline OpenRouter provider-endpoint quote; raw catalog unit is USD per token, converted by ×1,000,000 to the stored unit."
+      ],
+      "route_id": "openrouter:openai/gpt-4:OpenAI:openai:default",
+      "source_id": "openrouter_endpoints_openai_gpt_4"
+    },
+    {
+      "available": true,
+      "cache_read_price": "0.44",
+      "cache_write_price": "5.5",
+      "context_tier": "default",
+      "currency": "USD",
+      "id": "price_openrouter_openai_gpt_5_6_sol_amazon_bedrock_amazon_bedrock_us_east_1_default",
+      "input_price": "4.4",
+      "observed_at": "2026-10-17T14:38:29.354524Z",
+      "output_price": "22",
+      "price_unit": "USD per 1M tokens",
+      "quote_scope": "OpenRouter provider endpoint listed price",
+      "restrictions": [
+        "Baseline OpenRouter provider-endpoint quote; raw catalog unit is USD per token, converted by ×1,000,000 to the stored unit.",
+        "Additional price override(s) apply by request size or route tier: [{\"completion\":\"0.000033\",\"input_cache_read\":\"0.00000088\",\"input_cache_write\":\"0.000011\",\"min_prompt_tokens\":272000,\"prompt\":\"0.0000088\"}]"
+      ],
+      "route_id": "openrouter:openai/gpt-5.6-sol:Amazon Bedrock:amazon-bedrock/us-east-1:default",
+      "source_id": "openrouter_endpoints_openai_gpt_5_6_sol"
+    },
+    {
+      "available": true,
+      "cache_read_price": "0.4",
+      "cache_write_price": "5",
+      "context_tier": "default",
+      "currency": "USD",
+      "id": "price_openrouter_openai_gpt_5_6_sol_azure_azure_default",
+      "input_price": "4",
+      "observed_at": "2026-10-17T14:38:29.354524Z",
+      "output_price": "20",
+      "price_unit": "USD per 1M tokens",
+      "quote_scope": "OpenRouter provider endpoint listed price",
+      "restrictions": [
+        "Baseline OpenRouter provider-endpoint quote; raw catalog unit is USD per token, converted by ×1,000,000 to the stored unit.",
+        "Additional price override(s) apply by request size or route tier: [{\"completion\":\"0.00003\",\"input_cache_read\":\"0.0000008\",\"input_cache_write\":\"0.00001\",\"min_prompt_tokens\":272000,\"prompt\":\"0.000008\"}]"
+      ],
+      "route_id": "openrouter:openai/gpt-5.6-sol:Azure:azure:default",
+      "source_id": "openrouter_endpoints_openai_gpt_5_6_sol"
+    },
+    {
+      "available": true,
+      "cache_read_price": "0.44",
+      "cache_write_price": "5.5",
+      "context_tier": "default",
+      "currency": "USD",
+      "id": "price_openrouter_openai_gpt_5_6_sol_azure_azure_eu_default",
+      "input_price": "4.4",
+      "observed_at": "2026-10-17T14:38:29.354524Z",
+      "output_price": "22",
+      "price_unit": "USD per 1M tokens",
+      "quote_scope": "OpenRouter provider endpoint listed price",
+      "restrictions": [
+        "Baseline OpenRouter provider-endpoint quote; raw catalog unit is USD per token, converted by ×1,000,000 to the stored unit.",
+        "Additional price override(s) apply by request size or route tier: [{\"completion\":\"0.000033\",\"input_cache_read\":\"0.00000088\",\"input_cache_write\":\"0.000011\",\"min_prompt_tokens\":272000,\"prompt\":\"0.0000088\"}]"
+      ],
+      "route_id": "openrouter:openai/gpt-5.6-sol:Azure:azure/eu:default",
+      "source_id": "openrouter_endpoints_openai_gpt_5_6_sol"
+    },
+    {
+      "available": true,
+      "cache_read_price": "0.44",
+      "cache_write_price": "5.5",
+      "context_tier": "default",
+      "currency": "USD",
+      "id": "price_openrouter_openai_gpt_5_6_sol_azure_azure_us_default",
+      "input_price": "4.4",
+      "observed_at": "2026-10-17T14:38:29.354524Z",
+      "output_price": "22",
+      "price_unit": "USD per 1M tokens",
+      "quote_scope": "OpenRouter provider endpoint listed price",
+      "restrictions": [
+        "Baseline OpenRouter provider-endpoint quote; raw catalog unit is USD per token, converted by ×1,000,000 to the stored unit.",
+        "Additional price override(s) apply by request size or route tier: [{\"completion\":\"0.000033\",\"input_cache_read\":\"0.00000088\",\"input_cache_write\":\"0.000011\",\"min_prompt_tokens\":272000,\"prompt\":\"0.0000088\"}]"
+      ],
+      "route_id": "openrouter:openai/gpt-5.6-sol:Azure:azure/us:default",
+      "source_id": "openrouter_endpoints_openai_gpt_5_6_sol"
+    },
+    {
+      "available": true,
+      "cache_read_price": "0.4",
+      "cache_write_price": "5",
+      "context_tier": "default",
+      "currency": "USD",
+      "id": "price_openrouter_openai_gpt_5_6_sol_openai_openai_default",
+      "input_price": "4",
+      "observed_at": "2026-10-17T14:38:29.354524Z",
+      "output_price": "20",
+      "price_unit": "USD per 1M tokens",
+      "quote_scope": "OpenRouter provider endpoint listed price",
+      "restrictions": [
+        "Baseline OpenRouter provider-endpoint quote; raw catalog unit is USD per token, converted by ×1,000,000 to the stored unit.",
+        "Additional price override(s) apply by request size or route tier: [{\"completion\":\"0.00003\",\"input_cache_read\":\"0.0000008\",\"input_cache_write\":\"0.00001\",\"min_prompt_tokens\":272000,\"prompt\":\"0.000008\"}]"
+      ],
+      "route_id": "openrouter:openai/gpt-5.6-sol:OpenAI:openai:default",
+      "source_id": "openrouter_endpoints_openai_gpt_5_6_sol"
+    },
+    {
+      "available": true,
+      "cache_read_price": "0.8",
+      "cache_write_price": "10",
+      "context_tier": "priority",
+      "currency": "USD",
+      "id": "price_openrouter_openai_gpt_5_6_sol_openai_openai_fast_priority",
+      "input_price": "8",
+      "observed_at": "2026-10-17T14:38:29.354524Z",
+      "output_price": "40",
+      "price_unit": "USD per 1M tokens",
+      "quote_scope": "OpenRouter provider endpoint listed price",
+      "restrictions": [
+        "Baseline OpenRouter provider-endpoint quote; raw catalog unit is USD per token, converted by ×1,000,000 to the stored unit.",
+        "Additional price override(s) apply by request size or route tier: [{\"completion\":\"0.00006\",\"input_cache_read\":\"0.0000016\",\"input_cache_write\":\"0.00002\",\"min_prompt_tokens\":272000,\"prompt\":\"0.000016\"}]"
+      ],
+      "route_id": "openrouter:openai/gpt-5.6-sol:OpenAI:openai/fast:priority",
+      "source_id": "openrouter_endpoints_openai_gpt_5_6_sol"
+    },
+    {
+      "available": true,
+      "cache_read_price": "0.2",
+      "cache_write_price": "2.5",
+      "context_tier": "flex",
+      "currency": "USD",
+      "id": "price_openrouter_openai_gpt_5_6_sol_openai_openai_flex_flex",
+      "input_price": "2",
+      "observed_at": "2026-10-17T14:38:29.354524Z",
+      "output_price": "10",
+      "price_unit": "USD per 1M tokens",
+      "quote_scope": "OpenRouter provider endpoint listed price",
+      "restrictions": [
+        "Baseline OpenRouter provider-endpoint quote; raw catalog unit is USD per token, converted by ×1,000,000 to the stored unit.",
+        "Additional price override(s) apply by request size or route tier: [{\"completion\":\"0.000015\",\"input_cache_read\":\"0.0000004\",\"input_cache_write\":\"0.000005\",\"min_prompt_tokens\":272000,\"prompt\":\"0.000004\"}]"
+      ],
+      "route_id": "openrouter:openai/gpt-5.6-sol:OpenAI:openai/flex:flex",
+      "source_id": "openrouter_endpoints_openai_gpt_5_6_sol"
+    },
+    {
+      "available": true,
+      "cache_read_price": "0.11",
+      "cache_write_price": "2.75",
+      "context_tier": "default",
+      "currency": "USD",
+      "id": "price_openrouter_openai_gpt_6_1_sol_amazon_bedrock_amazon_bedrock_us_east_1_default",
+      "input_price": "2.2",
+      "observed_at": "2026-10-17T14:38:29.442770Z",
+      "output_price": "11",
+      "price_unit": "USD per 1M tokens",
+      "quote_scope": "OpenRouter provider endpoint listed price",
+      "restrictions": [
+        "Baseline OpenRouter provider-endpoint quote; raw catalog unit is USD per token, converted by ×1,000,000 to the stored unit.",
+        "Additional price override(s) apply by request size or route tier: [{\"completion\":\"0.0000165\",\"input_cache_read\":\"0.00000022\",\"input_cache_write\":\"0.0000055\",\"min_prompt_tokens\":272000,\"prompt\":\"0.0000044\"}]"
+      ],
+      "route_id": "openrouter:openai/gpt-6.1-sol:Amazon Bedrock:amazon-bedrock/us-east-1:default",
+      "source_id": "openrouter_endpoints_openai_gpt_6_1_sol"
+    },
+    {
+      "available": true,
+      "cache_read_price": "0.1",
+      "cache_write_price": "2.5",
+      "context_tier": "default",
+      "currency": "USD",
+      "id": "price_openrouter_openai_gpt_6_1_sol_azure_azure_default",
+      "input_price": "2",
+      "observed_at": "2026-10-17T14:38:29.442770Z",
+      "output_price": "10",
+      "price_unit": "USD per 1M tokens",
+      "quote_scope": "OpenRouter provider endpoint listed price",
+      "restrictions": [
+        "Baseline OpenRouter provider-endpoint quote; raw catalog unit is USD per token, converted by ×1,000,000 to the stored unit.",
+        "Additional price override(s) apply by request size or route tier: [{\"completion\":\"0.000015\",\"input_cache_read\":\"0.0000002\",\"input_cache_write\":\"0.000005\",\"min_prompt_tokens\":272000,\"prompt\":\"0.000004\"}]"
+      ],
+      "route_id": "openrouter:openai/gpt-6.1-sol:Azure:azure:default",
+      "source_id": "openrouter_endpoints_openai_gpt_6_1_sol"
+    },
+    {
+      "available": true,
+      "cache_read_price": "0.11",
+      "cache_write_price": "2.75",
+      "context_tier": "default",
+      "currency": "USD",
+      "id": "price_openrouter_openai_gpt_6_1_sol_azure_azure_eu_default",
+      "input_price": "2.2",
+      "observed_at": "2026-10-17T14:38:29.442770Z",
+      "output_price": "11",
+      "price_unit": "USD per 1M tokens",
+      "quote_scope": "OpenRouter provider endpoint listed price",
+      "restrictions": [
+        "Baseline OpenRouter provider-endpoint quote; raw catalog unit is USD per token, converted by ×1,000,000 to the stored unit.",
+        "Additional price override(s) apply by request size or route tier: [{\"completion\":\"0.0000165\",\"input_cache_read\":\"0.00000022\",\"input_cache_write\":\"0.0000055\",\"min_prompt_tokens\":272000,\"prompt\":\"0.0000044\"}]"
+      ],
+      "route_id": "openrouter:openai/gpt-6.1-sol:Azure:azure/eu:default",
+      "source_id": "openrouter_endpoints_openai_gpt_6_1_sol"
+    },
+    {
+      "available": true,
+      "cache_read_price": "0.11",
+      "cache_write_price": "2.75",
+      "context_tier": "default",
+      "currency": "USD",
+      "id": "price_openrouter_openai_gpt_6_1_sol_azure_azure_us_default",
+      "input_price": "2.2",
+      "observed_at": "2026-10-17T14:38:29.442770Z",
+      "output_price": "11",
+      "price_unit": "USD per 1M tokens",
+      "quote_scope": "OpenRouter provider endpoint listed price",
+      "restrictions": [
+        "Baseline OpenRouter provider-endpoint quote; raw catalog unit is USD per token, converted by ×1,000,000 to the stored unit.",
+        "Additional price override(s) apply by request size or route tier: [{\"completion\":\"0.0000165\",\"input_cache_read\":\"0.00000022\",\"input_cache_write\":\"0.0000055\",\"min_prompt_tokens\":272000,\"prompt\":\"0.0000044\"}]"
+      ],
+      "route_id": "openrouter:openai/gpt-6.1-sol:Azure:azure/us:default",
+      "source_id": "openrouter_endpoints_openai_gpt_6_1_sol"
+    },
+    {
+      "available": true,
+      "cache_read_price": "0.1",
+      "cache_write_price": "2.5",
+      "context_tier": "default",
+      "currency": "USD",
+      "id": "price_openrouter_openai_gpt_6_1_sol_openai_openai_default",
+      "input_price": "2",
+      "observed_at": "2026-10-17T14:38:29.442770Z",
+      "output_price": "10",
+      "price_unit": "USD per 1M tokens",
+      "quote_scope": "OpenRouter provider endpoint listed price",
+      "restrictions": [
+        "Baseline OpenRouter provider-endpoint quote; raw catalog unit is USD per token, converted by ×1,000,000 to the stored unit.",
+        "Additional price override(s) apply by request size or route tier: [{\"completion\":\"0.000015\",\"input_cache_read\":\"0.0000002\",\"input_cache_write\":\"0.000005\",\"min_prompt_tokens\":272000,\"prompt\":\"0.000004\"}]"
+      ],
+      "route_id": "openrouter:openai/gpt-6.1-sol:OpenAI:openai:default",
+      "source_id": "openrouter_endpoints_openai_gpt_6_1_sol"
+    },
+    {
+      "available": true,
+      "cache_read_price": "0.2",
+      "cache_write_price": "5",
+      "context_tier": "priority",
+      "currency": "USD",
+      "id": "price_openrouter_openai_gpt_6_1_sol_openai_openai_fast_priority",
+      "input_price": "4",
+      "observed_at": "2026-10-17T14:38:29.442770Z",
+      "output_price": "20",
+      "price_unit": "USD per 1M tokens",
+      "quote_scope": "OpenRouter provider endpoint listed price",
+      "restrictions": [
+        "Baseline OpenRouter provider-endpoint quote; raw catalog unit is USD per token, converted by ×1,000,000 to the stored unit.",
+        "Additional price override(s) apply by request size or route tier: [{\"completion\":\"0.00003\",\"input_cache_read\":\"0.0000004\",\"input_cache_write\":\"0.00001\",\"min_prompt_tokens\":272000,\"prompt\":\"0.000008\"}]"
+      ],
+      "route_id": "openrouter:openai/gpt-6.1-sol:OpenAI:openai/fast:priority",
+      "source_id": "openrouter_endpoints_openai_gpt_6_1_sol"
+    },
+    {
+      "available": true,
+      "cache_read_price": "0.05",
+      "cache_write_price": "1.25",
+      "context_tier": "flex",
+      "currency": "USD",
+      "id": "price_openrouter_openai_gpt_6_1_sol_openai_openai_flex_flex",
+      "input_price": "1",
+      "observed_at": "2026-10-17T14:38:29.442770Z",
+      "output_price": "5",
+      "price_unit": "USD per 1M tokens",
+      "quote_scope": "OpenRouter provider endpoint listed price",
+      "restrictions": [
+        "Baseline OpenRouter provider-endpoint quote; raw catalog unit is USD per token, converted by ×1,000,000 to the stored unit.",
+        "Additional price override(s) apply by request size or route tier: [{\"completion\":\"0.0000075\",\"input_cache_read\":\"0.0000001\",\"input_cache_write\":\"0.0000025\",\"min_prompt_tokens\":272000,\"prompt\":\"0.000002\"}]"
+      ],
+      "route_id": "openrouter:openai/gpt-6.1-sol:OpenAI:openai/flex:flex",
+      "source_id": "openrouter_endpoints_openai_gpt_6_1_sol"
+    },
+    {
+      "available": true,
+      "cache_read_price": "0.6",
+      "cache_write_price": "15",
+      "context_tier": "ultrafast",
+      "currency": "USD",
+      "id": "price_openrouter_openai_gpt_6_1_sol_openai_openai_ultrafast_ultrafast",
+      "input_price": "12",
+      "observed_at": "2026-10-17T14:38:29.442770Z",
+      "output_price": "60",
+      "price_unit": "USD per 1M tokens",
+      "quote_scope": "OpenRouter provider endpoint listed price",
+      "restrictions": [
+        "Baseline OpenRouter provider-endpoint quote; raw catalog unit is USD per token, converted by ×1,000,000 to the stored unit.",
+        "Additional price override(s) apply by request size or route tier: [{\"completion\":\"0.00009\",\"input_cache_read\":\"0.0000012\",\"input_cache_write\":\"0.00003\",\"min_prompt_tokens\":272000,\"prompt\":\"0.000024\"}]"
+      ],
+      "route_id": "openrouter:openai/gpt-6.1-sol:OpenAI:openai/ultrafast:ultrafast",
+      "source_id": "openrouter_endpoints_openai_gpt_6_1_sol"
+    },
+    {
+      "available": true,
+      "cache_read_price": "1.1",
+      "cache_write_price": "13.75",
+      "context_tier": "default",
+      "currency": "USD",
+      "id": "price_openrouter_openai_gpt_6_astra_amazon_bedrock_amazon_bedrock_us_west_2_default",
+      "input_price": "11",
+      "observed_at": "2026-10-17T14:38:29.400366Z",
+      "output_price": "55",
+      "price_unit": "USD per 1M tokens",
+      "quote_scope": "OpenRouter provider endpoint listed price",
+      "restrictions": [
+        "Baseline OpenRouter provider-endpoint quote; raw catalog unit is USD per token, converted by ×1,000,000 to the stored unit.",
+        "Additional price override(s) apply by request size or route tier: [{\"completion\":\"0.0000825\",\"input_cache_read\":\"0.0000022\",\"input_cache_write\":\"0.0000275\",\"min_prompt_tokens\":272000,\"prompt\":\"0.000022\"}]"
+      ],
+      "route_id": "openrouter:openai/gpt-6-astra:Amazon Bedrock:amazon-bedrock/us-west-2:default",
+      "source_id": "openrouter_endpoints_openai_gpt_6_astra"
+    },
+    {
+      "available": true,
+      "cache_read_price": "1",
+      "cache_write_price": "12.5",
+      "context_tier": "default",
+      "currency": "USD",
+      "id": "price_openrouter_openai_gpt_6_astra_azure_azure_default",
+      "input_price": "10",
+      "observed_at": "2026-10-17T14:38:29.400366Z",
+      "output_price": "50",
+      "price_unit": "USD per 1M tokens",
+      "quote_scope": "OpenRouter provider endpoint listed price",
+      "restrictions": [
+        "Baseline OpenRouter provider-endpoint quote; raw catalog unit is USD per token, converted by ×1,000,000 to the stored unit.",
+        "Additional price override(s) apply by request size or route tier: [{\"completion\":\"0.000075\",\"input_cache_read\":\"0.000002\",\"input_cache_write\":\"0.000025\",\"min_prompt_tokens\":272000,\"prompt\":\"0.00002\"}]"
+      ],
+      "route_id": "openrouter:openai/gpt-6-astra:Azure:azure:default",
+      "source_id": "openrouter_endpoints_openai_gpt_6_astra"
+    },
+    {
+      "available": true,
+      "cache_read_price": "1.1",
+      "cache_write_price": "13.75",
+      "context_tier": "default",
+      "currency": "USD",
+      "id": "price_openrouter_openai_gpt_6_astra_azure_azure_us_default",
+      "input_price": "11",
+      "observed_at": "2026-10-17T14:38:29.400366Z",
+      "output_price": "55",
+      "price_unit": "USD per 1M tokens",
+      "quote_scope": "OpenRouter provider endpoint listed price",
+      "restrictions": [
+        "Baseline OpenRouter provider-endpoint quote; raw catalog unit is USD per token, converted by ×1,000,000 to the stored unit.",
+        "Additional price override(s) apply by request size or route tier: [{\"completion\":\"0.0000825\",\"input_cache_read\":\"0.0000022\",\"input_cache_write\":\"0.0000275\",\"min_prompt_tokens\":272000,\"prompt\":\"0.000022\"}]"
+      ],
+      "route_id": "openrouter:openai/gpt-6-astra:Azure:azure/us:default",
+      "source_id": "openrouter_endpoints_openai_gpt_6_astra"
+    },
+    {
+      "available": true,
+      "cache_read_price": "1",
+      "cache_write_price": "12.5",
+      "context_tier": "default",
+      "currency": "USD",
+      "id": "price_openrouter_openai_gpt_6_astra_openai_openai_default",
+      "input_price": "10",
+      "observed_at": "2026-10-17T14:38:29.400366Z",
+      "output_price": "50",
+      "price_unit": "USD per 1M tokens",
+      "quote_scope": "OpenRouter provider endpoint listed price",
+      "restrictions": [
+        "Baseline OpenRouter provider-endpoint quote; raw catalog unit is USD per token, converted by ×1,000,000 to the stored unit.",
+        "Additional price override(s) apply by request size or route tier: [{\"completion\":\"0.000075\",\"input_cache_read\":\"0.000002\",\"input_cache_write\":\"0.000025\",\"min_prompt_tokens\":272000,\"prompt\":\"0.00002\"}]"
+      ],
+      "route_id": "openrouter:openai/gpt-6-astra:OpenAI:openai:default",
+      "source_id": "openrouter_endpoints_openai_gpt_6_astra"
+    },
+    {
+      "available": true,
+      "cache_read_price": "2",
+      "cache_write_price": "25",
+      "context_tier": "priority",
+      "currency": "USD",
+      "id": "price_openrouter_openai_gpt_6_astra_openai_openai_fast_priority",
+      "input_price": "20",
+      "observed_at": "2026-10-17T14:38:29.400366Z",
+      "output_price": "100",
+      "price_unit": "USD per 1M tokens",
+      "quote_scope": "OpenRouter provider endpoint listed price",
+      "restrictions": [
+        "Baseline OpenRouter provider-endpoint quote; raw catalog unit is USD per token, converted by ×1,000,000 to the stored unit.",
+        "Additional price override(s) apply by request size or route tier: [{\"completion\":\"0.00015\",\"input_cache_read\":\"0.000004\",\"input_cache_write\":\"0.00005\",\"min_prompt_tokens\":272000,\"prompt\":\"0.00004\"}]"
+      ],
+      "route_id": "openrouter:openai/gpt-6-astra:OpenAI:openai/fast:priority",
+      "source_id": "openrouter_endpoints_openai_gpt_6_astra"
+    },
+    {
+      "available": true,
+      "cache_read_price": "0.5",
+      "cache_write_price": "6.25",
+      "context_tier": "flex",
+      "currency": "USD",
+      "id": "price_openrouter_openai_gpt_6_astra_openai_openai_flex_flex",
+      "input_price": "5",
+      "observed_at": "2026-10-17T14:38:29.400366Z",
+      "output_price": "25",
+      "price_unit": "USD per 1M tokens",
+      "quote_scope": "OpenRouter provider endpoint listed price",
+      "restrictions": [
+        "Baseline OpenRouter provider-endpoint quote; raw catalog unit is USD per token, converted by ×1,000,000 to the stored unit.",
+        "Additional price override(s) apply by request size or route tier: [{\"completion\":\"0.0000375\",\"input_cache_read\":\"0.000001\",\"input_cache_write\":\"0.0000125\",\"min_prompt_tokens\":272000,\"prompt\":\"0.00001\"}]"
+      ],
+      "route_id": "openrouter:openai/gpt-6-astra:OpenAI:openai/flex:flex",
+      "source_id": "openrouter_endpoints_openai_gpt_6_astra"
+    },
+    {
+      "available": true,
+      "cache_read_price": "6",
+      "cache_write_price": "75",
+      "context_tier": "ultrafast",
+      "currency": "USD",
+      "id": "price_openrouter_openai_gpt_6_astra_openai_openai_ultrafast_ultrafast",
+      "input_price": "60",
+      "observed_at": "2026-10-17T14:38:29.400366Z",
+      "output_price": "300",
+      "price_unit": "USD per 1M tokens",
+      "quote_scope": "OpenRouter provider endpoint listed price",
+      "restrictions": [
+        "Baseline OpenRouter provider-endpoint quote; raw catalog unit is USD per token, converted by ×1,000,000 to the stored unit.",
+        "Additional price override(s) apply by request size or route tier: [{\"completion\":\"0.00045\",\"input_cache_read\":\"0.000012\",\"input_cache_write\":\"0.00015\",\"min_prompt_tokens\":272000,\"prompt\":\"0.00012\"}]"
+      ],
+      "route_id": "openrouter:openai/gpt-6-astra:OpenAI:openai/ultrafast:ultrafast",
+      "source_id": "openrouter_endpoints_openai_gpt_6_astra"
+    }
+  ],
+  "routes": [
+    {
+      "availability": "listed",
+      "capabilities": [
+        "reasoning",
+        "include_reasoning",
+        "max_tokens",
+        "stop",
+        "tool_choice",
+        "tools",
+        "response_format",
+        "verbosity",
+        "reasoning_effort"
+      ],
+      "context_tokens": 1000000,
+      "id": "openrouter:anthropic/claude-opus-5:Amazon Bedrock:amazon-bedrock/eu-west-1:default",
+      "model_id": "claude_opus5",
+      "provider": "Amazon Bedrock",
+      "quantization": "unknown",
+      "routing_variant": "amazon-bedrock/eu-west-1",
+      "source_ids": [
+        "openrouter_endpoints_anthropic_claude_opus_5"
+      ],
+      "upstream_model_id": "anthropic/claude-opus-5"
+    },
+    {
+      "availability": "listed",
+      "capabilities": [
+        "reasoning",
+        "include_reasoning",
+        "max_tokens",
+        "stop",
+        "tool_choice",
+        "tools",
+        "response_format",
+        "verbosity",
+        "reasoning_effort"
+      ],
+      "context_tokens": 1000000,
+      "id": "openrouter:anthropic/claude-opus-5:Amazon Bedrock:amazon-bedrock/us-east-1:default",
+      "model_id": "claude_opus5",
+      "provider": "Amazon Bedrock",
+      "quantization": "unknown",
+      "routing_variant": "amazon-bedrock/us-east-1",
+      "source_ids": [
+        "openrouter_endpoints_anthropic_claude_opus_5"
+      ],
+      "upstream_model_id": "anthropic/claude-opus-5"
+    },
+    {
+      "availability": "listed",
+      "capabilities": [
+        "reasoning",
+        "include_reasoning",
+        "max_tokens",
+        "stop",
+        "tool_choice",
+        "tools",
+        "response_format",
+        "verbosity",
+        "reasoning_effort"
+      ],
+      "context_tokens": 1000000,
+      "id": "openrouter:anthropic/claude-opus-5:Amazon Bedrock:amazon-bedrock:default",
+      "model_id": "claude_opus5",
+      "provider": "Amazon Bedrock",
+      "quantization": "unknown",
+      "routing_variant": "amazon-bedrock",
+      "source_ids": [
+        "openrouter_endpoints_anthropic_claude_opus_5"
+      ],
+      "upstream_model_id": "anthropic/claude-opus-5"
+    },
+    {
+      "availability": "listed",
+      "capabilities": [
+        "reasoning",
+        "include_reasoning",
+        "max_tokens",
+        "stop",
+        "tool_choice",
+        "tools",
+        "structured_outputs",
+        "response_format",
+        "verbosity",
+        "reasoning_effort"
+      ],
+      "context_tokens": 1000000,
+      "id": "openrouter:anthropic/claude-opus-5:Anthropic:anthropic/fast:priority",
+      "model_id": "claude_opus5",
+      "provider": "Anthropic",
+      "quantization": "unknown",
+      "routing_variant": "anthropic/fast",
+      "source_ids": [
+        "openrouter_endpoints_anthropic_claude_opus_5"
+      ],
+      "upstream_model_id": "anthropic/claude-opus-5"
+    },
+    {
+      "availability": "listed",
+      "capabilities": [
+        "reasoning",
+        "include_reasoning",
+        "max_tokens",
+        "stop",
+        "tool_choice",
+        "tools",
+        "structured_outputs",
+        "response_format",
+        "verbosity",
+        "reasoning_effort"
+      ],
+      "context_tokens": 1000000,
+      "id": "openrouter:anthropic/claude-opus-5:Anthropic:anthropic:default",
+      "model_id": "claude_opus5",
+      "provider": "Anthropic",
+      "quantization": "unknown",
+      "routing_variant": "anthropic",
+      "source_ids": [
+        "openrouter_endpoints_anthropic_claude_opus_5"
+      ],
+      "upstream_model_id": "anthropic/claude-opus-5"
+    },
+    {
+      "availability": "listed",
+      "capabilities": [
+        "reasoning",
+        "include_reasoning",
+        "structured_outputs",
+        "max_tokens",
+        "max_completion_tokens",
+        "tools",
+        "tool_choice",
+        "response_format",
+        "verbosity",
+        "stop",
+        "reasoning_effort"
+      ],
+      "context_tokens": 1000000,
+      "id": "openrouter:anthropic/claude-opus-5:Azure:azure/global:default",
+      "model_id": "claude_opus5",
+      "provider": "Azure",
+      "quantization": "unknown",
+      "routing_variant": "azure/global",
+      "source_ids": [
+        "openrouter_endpoints_anthropic_claude_opus_5"
+      ],
+      "upstream_model_id": "anthropic/claude-opus-5"
+    },
+    {
+      "availability": "listed",
+      "capabilities": [
+        "reasoning",
+        "include_reasoning",
+        "structured_outputs",
+        "max_tokens",
+        "max_completion_tokens",
+        "tools",
+        "tool_choice",
+        "response_format",
+        "verbosity",
+        "stop",
+        "reasoning_effort"
+      ],
+      "context_tokens": 1000000,
+      "id": "openrouter:anthropic/claude-opus-5:Azure:azure/us:default",
+      "model_id": "claude_opus5",
+      "provider": "Azure",
+      "quantization": "unknown",
+      "routing_variant": "azure/us",
+      "source_ids": [
+        "openrouter_endpoints_anthropic_claude_opus_5"
+      ],
+      "upstream_model_id": "anthropic/claude-opus-5"
+    },
+    {
+      "availability": "listed",
+      "capabilities": [
+        "reasoning",
+        "include_reasoning",
+        "max_tokens",
+        "stop",
+        "tool_choice",
+        "tools",
+        "structured_outputs",
+        "response_format",
+        "verbosity",
+        "reasoning_effort"
+      ],
+      "context_tokens": 1000000,
+      "id": "openrouter:anthropic/claude-opus-5:Claude Platform on AWS:claude-on-aws:default",
+      "model_id": "claude_opus5",
+      "provider": "Claude Platform on AWS",
+      "quantization": "unknown",
+      "routing_variant": "claude-on-aws",
+      "source_ids": [
+        "openrouter_endpoints_anthropic_claude_opus_5"
+      ],
+      "upstream_model_id": "anthropic/claude-opus-5"
+    },
+    {
+      "availability": "listed",
+      "capabilities": [
+        "reasoning",
+        "include_reasoning",
+        "max_tokens",
+        "response_format",
+        "tool_choice",
+        "tools",
+        "verbosity",
+        "structured_outputs",
+        "stop",
+        "reasoning_effort"
+      ],
+      "context_tokens": 1000000,
+      "id": "openrouter:anthropic/claude-opus-5:Google:google-vertex/europe:default",
+      "model_id": "claude_opus5",
+      "provider": "Google",
+      "quantization": "unknown",
+      "routing_variant": "google-vertex/europe",
+      "source_ids": [
+        "openrouter_endpoints_anthropic_claude_opus_5"
+      ],
+      "upstream_model_id": "anthropic/claude-opus-5"
+    },
+    {
+      "availability": "listed",
+      "capabilities": [
+        "reasoning",
+        "include_reasoning",
+        "max_tokens",
+        "response_format",
+        "tool_choice",
+        "tools",
+        "verbosity",
+        "structured_outputs",
+        "stop",
+        "reasoning_effort"
+      ],
+      "context_tokens": 1000000,
+      "id": "openrouter:anthropic/claude-opus-5:Google:google-vertex/global:default",
+      "model_id": "claude_opus5",
+      "provider": "Google",
+      "quantization": "unknown",
+      "routing_variant": "google-vertex/global",
+      "source_ids": [
+        "openrouter_endpoints_anthropic_claude_opus_5"
+      ],
+      "upstream_model_id": "anthropic/claude-opus-5"
+    },
+    {
+      "availability": "listed",
+      "capabilities": [
+        "reasoning",
+        "include_reasoning",
+        "max_tokens",
+        "response_format",
+        "tool_choice",
+        "tools",
+        "verbosity",
+        "structured_outputs",
+        "stop",
+        "reasoning_effort"
+      ],
+      "context_tokens": 1000000,
+      "id": "openrouter:anthropic/claude-opus-5:Google:google-vertex/us:default",
+      "model_id": "claude_opus5",
+      "provider": "Google",
+      "quantization": "unknown",
+      "routing_variant": "google-vertex/us",
+      "source_ids": [
+        "openrouter_endpoints_anthropic_claude_opus_5"
+      ],
+      "upstream_model_id": "anthropic/claude-opus-5"
+    },
+    {
+      "availability": "listed",
+      "capabilities": [
+        "reasoning",
+        "include_reasoning",
+        "max_tokens",
+        "repetition_penalty",
+        "top_k",
+        "temperature",
+        "top_p",
+        "tools",
+        "tool_choice",
+        "structured_outputs",
+        "response_format",
+        "reasoning_effort"
+      ],
+      "context_tokens": 1048576,
+      "id": "openrouter:meta/muse-spark-1.3:Meta:meta:default",
+      "model_id": "muse_spark13",
+      "provider": "Meta",
+      "quantization": "unknown",
+      "routing_variant": "meta",
+      "source_ids": [
+        "openrouter_endpoints_meta_muse_spark_1_3"
+      ],
+      "upstream_model_id": "meta/muse-spark-1.3"
+    },
+    {
+      "availability": "listed",
+      "capabilities": [
+        "temperature",
+        "top_p",
+        "max_completion_tokens",
+        "tools",
+        "tool_choice",
+        "stop",
+        "frequency_penalty",
+        "presence_penalty",
+        "seed",
+        "logit_bias",
+        "logprobs",
+        "top_logprobs",
+        "response_format"
+      ],
+      "context_tokens": 8191,
+      "id": "openrouter:openai/gpt-4:Azure:azure:default",
+      "model_id": "gpt4",
+      "provider": "Azure",
+      "quantization": "unknown",
+      "routing_variant": "azure",
+      "source_ids": [
+        "openrouter_endpoints_openai_gpt_4"
+      ],
+      "upstream_model_id": "openai/gpt-4"
+    },
+    {
+      "availability": "listed",
+      "capabilities": [
+        "seed",
+        "max_tokens",
+        "response_format",
+        "structured_outputs",
+        "tools",
+        "tool_choice",
+        "frequency_penalty",
+        "logit_bias",
+        "logprobs",
+        "presence_penalty",
+        "stop",
+        "temperature",
+        "top_logprobs",
+        "top_p"
+      ],
+      "context_tokens": 8191,
+      "id": "openrouter:openai/gpt-4:OpenAI:openai:default",
+      "model_id": "gpt4",
+      "provider": "OpenAI",
+      "quantization": "unknown",
+      "routing_variant": "openai",
+      "source_ids": [
+        "openrouter_endpoints_openai_gpt_4"
+      ],
+      "upstream_model_id": "openai/gpt-4"
+    },
+    {
+      "availability": "listed",
+      "capabilities": [
+        "reasoning",
+        "include_reasoning",
+        "max_tokens",
+        "tools",
+        "tool_choice",
+        "response_format",
+        "structured_outputs",
+        "verbosity",
+        "reasoning_effort"
+      ],
+      "context_tokens": 1050000,
+      "id": "openrouter:openai/gpt-5.6-sol:Amazon Bedrock:amazon-bedrock/us-east-1:default",
+      "model_id": "gpt56_sol",
+      "provider": "Amazon Bedrock",
+      "quantization": "unknown",
+      "routing_variant": "amazon-bedrock/us-east-1",
+      "source_ids": [
+        "openrouter_endpoints_openai_gpt_5_6_sol"
+      ],
+      "upstream_model_id": "openai/gpt-5.6-sol"
+    },
+    {
+      "availability": "listed",
+      "capabilities": [
+        "reasoning",
+        "include_reasoning",
+        "max_completion_tokens",
+        "tools",
+        "tool_choice",
+        "seed",
+        "response_format",
+        "structured_outputs",
+        "verbosity",
+        "reasoning_effort"
+      ],
+      "context_tokens": 1050000,
+      "id": "openrouter:openai/gpt-5.6-sol:Azure:azure/eu:default",
+      "model_id": "gpt56_sol",
+      "provider": "Azure",
+      "quantization": "unknown",
+      "routing_variant": "azure/eu",
+      "source_ids": [
+        "openrouter_endpoints_openai_gpt_5_6_sol"
+      ],
+      "upstream_model_id": "openai/gpt-5.6-sol"
+    },
+    {
+      "availability": "listed",
+      "capabilities": [
+        "reasoning",
+        "include_reasoning",
+        "max_completion_tokens",
+        "tools",
+        "tool_choice",
+        "seed",
+        "response_format",
+        "structured_outputs",
+        "verbosity",
+        "reasoning_effort"
+      ],
+      "context_tokens": 1050000,
+      "id": "openrouter:openai/gpt-5.6-sol:Azure:azure/us:default",
+      "model_id": "gpt56_sol",
+      "provider": "Azure",
+      "quantization": "unknown",
+      "routing_variant": "azure/us",
+      "source_ids": [
+        "openrouter_endpoints_openai_gpt_5_6_sol"
+      ],
+      "upstream_model_id": "openai/gpt-5.6-sol"
+    },
+    {
+      "availability": "listed",
+      "capabilities": [
+        "reasoning",
+        "include_reasoning",
+        "max_completion_tokens",
+        "tools",
+        "tool_choice",
+        "seed",
+        "response_format",
+        "structured_outputs",
+        "verbosity",
+        "reasoning_effort"
+      ],
+      "context_tokens": 1050000,
+      "id": "openrouter:openai/gpt-5.6-sol:Azure:azure:default",
+      "model_id": "gpt56_sol",
+      "provider": "Azure",
+      "quantization": "unknown",
+      "routing_variant": "azure",
+      "source_ids": [
+        "openrouter_endpoints_openai_gpt_5_6_sol"
+      ],
+      "upstream_model_id": "openai/gpt-5.6-sol"
+    },
+    {
+      "availability": "listed",
+      "capabilities": [
+        "reasoning",
+        "include_reasoning",
+        "seed",
+        "max_tokens",
+        "response_format",
+        "structured_outputs",
+        "tools",
+        "tool_choice",
+        "verbosity",
+        "reasoning_effort"
+      ],
+      "context_tokens": 1050000,
+      "id": "openrouter:openai/gpt-5.6-sol:OpenAI:openai/fast:priority",
+      "model_id": "gpt56_sol",
+      "provider": "OpenAI",
+      "quantization": "unknown",
+      "routing_variant": "openai/fast",
+      "source_ids": [
+        "openrouter_endpoints_openai_gpt_5_6_sol"
+      ],
+      "upstream_model_id": "openai/gpt-5.6-sol"
+    },
+    {
+      "availability": "listed",
+      "capabilities": [
+        "reasoning",
+        "include_reasoning",
+        "seed",
+        "max_tokens",
+        "response_format",
+        "structured_outputs",
+        "tools",
+        "tool_choice",
+        "verbosity",
+        "reasoning_effort"
+      ],
+      "context_tokens": 1050000,
+      "id": "openrouter:openai/gpt-5.6-sol:OpenAI:openai/flex:flex",
+      "model_id": "gpt56_sol",
+      "provider": "OpenAI",
+      "quantization": "unknown",
+      "routing_variant": "openai/flex",
+      "source_ids": [
+        "openrouter_endpoints_openai_gpt_5_6_sol"
+      ],
+      "upstream_model_id": "openai/gpt-5.6-sol"
+    },
+    {
+      "availability": "listed",
+      "capabilities": [
+        "reasoning",
+        "include_reasoning",
+        "seed",
+        "max_tokens",
+        "response_format",
+        "structured_outputs",
+        "tools",
+        "tool_choice",
+        "verbosity",
+        "reasoning_effort"
+      ],
+      "context_tokens": 1050000,
+      "id": "openrouter:openai/gpt-5.6-sol:OpenAI:openai:default",
+      "model_id": "gpt56_sol",
+      "provider": "OpenAI",
+      "quantization": "unknown",
+      "routing_variant": "openai",
+      "source_ids": [
+        "openrouter_endpoints_openai_gpt_5_6_sol"
+      ],
+      "upstream_model_id": "openai/gpt-5.6-sol"
+    },
+    {
+      "availability": "listed",
+      "capabilities": [
+        "reasoning",
+        "include_reasoning",
+        "max_tokens",
+        "tools",
+        "tool_choice",
+        "response_format",
+        "structured_outputs",
+        "verbosity",
+        "reasoning_effort"
+      ],
+      "context_tokens": 1050000,
+      "id": "openrouter:openai/gpt-6-astra:Amazon Bedrock:amazon-bedrock/us-west-2:default",
+      "model_id": "gpt6_astra",
+      "provider": "Amazon Bedrock",
+      "quantization": "unknown",
+      "routing_variant": "amazon-bedrock/us-west-2",
+      "source_ids": [
+        "openrouter_endpoints_openai_gpt_6_astra"
+      ],
+      "upstream_model_id": "openai/gpt-6-astra"
+    },
+    {
+      "availability": "listed",
+      "capabilities": [
+        "reasoning",
+        "include_reasoning",
+        "max_completion_tokens",
+        "tools",
+        "tool_choice",
+        "seed",
+        "response_format",
+        "structured_outputs",
+        "verbosity",
+        "reasoning_effort"
+      ],
+      "context_tokens": 1050000,
+      "id": "openrouter:openai/gpt-6-astra:Azure:azure/us:default",
+      "model_id": "gpt6_astra",
+      "provider": "Azure",
+      "quantization": "unknown",
+      "routing_variant": "azure/us",
+      "source_ids": [
+        "openrouter_endpoints_openai_gpt_6_astra"
+      ],
+      "upstream_model_id": "openai/gpt-6-astra"
+    },
+    {
+      "availability": "listed",
+      "capabilities": [
+        "reasoning",
+        "include_reasoning",
+        "max_completion_tokens",
+        "tools",
+        "tool_choice",
+        "seed",
+        "response_format",
+        "structured_outputs",
+        "verbosity",
+        "reasoning_effort"
+      ],
+      "context_tokens": 1050000,
+      "id": "openrouter:openai/gpt-6-astra:Azure:azure:default",
+      "model_id": "gpt6_astra",
+      "provider": "Azure",
+      "quantization": "unknown",
+      "routing_variant": "azure",
+      "source_ids": [
+        "openrouter_endpoints_openai_gpt_6_astra"
+      ],
+      "upstream_model_id": "openai/gpt-6-astra"
+    },
+    {
+      "availability": "listed",
+      "capabilities": [
+        "reasoning",
+        "include_reasoning",
+        "seed",
+        "max_tokens",
+        "response_format",
+        "structured_outputs",
+        "tools",
+        "tool_choice",
+        "verbosity",
+        "reasoning_effort"
+      ],
+      "context_tokens": 1050000,
+      "id": "openrouter:openai/gpt-6-astra:OpenAI:openai/fast:priority",
+      "model_id": "gpt6_astra",
+      "provider": "OpenAI",
+      "quantization": "unknown",
+      "routing_variant": "openai/fast",
+      "source_ids": [
+        "openrouter_endpoints_openai_gpt_6_astra"
+      ],
+      "upstream_model_id": "openai/gpt-6-astra"
+    },
+    {
+      "availability": "listed",
+      "capabilities": [
+        "reasoning",
+        "include_reasoning",
+        "seed",
+        "max_tokens",
+        "response_format",
+        "structured_outputs",
+        "tools",
+        "tool_choice",
+        "verbosity",
+        "reasoning_effort"
+      ],
+      "context_tokens": 1050000,
+      "id": "openrouter:openai/gpt-6-astra:OpenAI:openai/flex:flex",
+      "model_id": "gpt6_astra",
+      "provider": "OpenAI",
+      "quantization": "unknown",
+      "routing_variant": "openai/flex",
+      "source_ids": [
+        "openrouter_endpoints_openai_gpt_6_astra"
+      ],
+      "upstream_model_id": "openai/gpt-6-astra"
+    },
+    {
+      "availability": "listed",
+      "capabilities": [
+        "reasoning",
+        "include_reasoning",
+        "seed",
+        "max_tokens",
+        "response_format",
+        "structured_outputs",
+        "tools",
+        "tool_choice",
+        "verbosity",
+        "reasoning_effort"
+      ],
+      "context_tokens": 1050000,
+      "id": "openrouter:openai/gpt-6-astra:OpenAI:openai/ultrafast:ultrafast",
+      "model_id": "gpt6_astra",
+      "provider": "OpenAI",
+      "quantization": "unknown",
+      "routing_variant": "openai/ultrafast",
+      "source_ids": [
+        "openrouter_endpoints_openai_gpt_6_astra"
+      ],
+      "upstream_model_id": "openai/gpt-6-astra"
+    },
+    {
+      "availability": "listed",
+      "capabilities": [
+        "reasoning",
+        "include_reasoning",
+        "seed",
+        "max_tokens",
+        "response_format",
+        "structured_outputs",
+        "tools",
+        "tool_choice",
+        "verbosity",
+        "reasoning_effort"
+      ],
+      "context_tokens": 1050000,
+      "id": "openrouter:openai/gpt-6-astra:OpenAI:openai:default",
+      "model_id": "gpt6_astra",
+      "provider": "OpenAI",
+      "quantization": "unknown",
+      "routing_variant": "openai",
+      "source_ids": [
+        "openrouter_endpoints_openai_gpt_6_astra"
+      ],
+      "upstream_model_id": "openai/gpt-6-astra"
+    },
+    {
+      "availability": "listed",
+      "capabilities": [
+        "reasoning",
+        "include_reasoning",
+        "max_tokens",
+        "tools",
+        "tool_choice",
+        "verbosity",
+        "reasoning_effort"
+      ],
+      "context_tokens": 1050000,
+      "id": "openrouter:openai/gpt-6.1-sol:Amazon Bedrock:amazon-bedrock/us-east-1:default",
+      "model_id": "gpt61_sol",
+      "provider": "Amazon Bedrock",
+      "quantization": "unknown",
+      "routing_variant": "amazon-bedrock/us-east-1",
+      "source_ids": [
+        "openrouter_endpoints_openai_gpt_6_1_sol"
+      ],
+      "upstream_model_id": "openai/gpt-6.1-sol"
+    },
+    {
+      "availability": "listed",
+      "capabilities": [
+        "reasoning",
+        "include_reasoning",
+        "max_completion_tokens",
+        "tools",
+        "tool_choice",
+        "verbosity",
+        "response_format",
+        "seed",
+        "structured_outputs",
+        "reasoning_effort"
+      ],
+      "context_tokens": 1050000,
+      "id": "openrouter:openai/gpt-6.1-sol:Azure:azure/eu:default",
+      "model_id": "gpt61_sol",
+      "provider": "Azure",
+      "quantization": "unknown",
+      "routing_variant": "azure/eu",
+      "source_ids": [
+        "openrouter_endpoints_openai_gpt_6_1_sol"
+      ],
+      "upstream_model_id": "openai/gpt-6.1-sol"
+    },
+    {
+      "availability": "listed",
+      "capabilities": [
+        "reasoning",
+        "include_reasoning",
+        "max_completion_tokens",
+        "tools",
+        "tool_choice",
+        "verbosity",
+        "response_format",
+        "seed",
+        "structured_outputs",
+        "reasoning_effort"
+      ],
+      "context_tokens": 1050000,
+      "id": "openrouter:openai/gpt-6.1-sol:Azure:azure/us:default",
+      "model_id": "gpt61_sol",
+      "provider": "Azure",
+      "quantization": "unknown",
+      "routing_variant": "azure/us",
+      "source_ids": [
+        "openrouter_endpoints_openai_gpt_6_1_sol"
+      ],
+      "upstream_model_id": "openai/gpt-6.1-sol"
+    },
+    {
+      "availability": "listed",
+      "capabilities": [
+        "reasoning",
+        "include_reasoning",
+        "max_completion_tokens",
+        "tools",
+        "tool_choice",
+        "verbosity",
+        "response_format",
+        "seed",
+        "structured_outputs",
+        "reasoning_effort"
+      ],
+      "context_tokens": 1050000,
+      "id": "openrouter:openai/gpt-6.1-sol:Azure:azure:default",
+      "model_id": "gpt61_sol",
+      "provider": "Azure",
+      "quantization": "unknown",
+      "routing_variant": "azure",
+      "source_ids": [
+        "openrouter_endpoints_openai_gpt_6_1_sol"
+      ],
+      "upstream_model_id": "openai/gpt-6.1-sol"
+    },
+    {
+      "availability": "listed",
+      "capabilities": [
+        "reasoning",
+        "include_reasoning",
+        "seed",
+        "max_tokens",
+        "response_format",
+        "structured_outputs",
+        "tools",
+        "tool_choice",
+        "verbosity",
+        "reasoning_effort"
+      ],
+      "context_tokens": 1050000,
+      "id": "openrouter:openai/gpt-6.1-sol:OpenAI:openai/fast:priority",
+      "model_id": "gpt61_sol",
+      "provider": "OpenAI",
+      "quantization": "unknown",
+      "routing_variant": "openai/fast",
+      "source_ids": [
+        "openrouter_endpoints_openai_gpt_6_1_sol"
+      ],
+      "upstream_model_id": "openai/gpt-6.1-sol"
+    },
+    {
+      "availability": "listed",
+      "capabilities": [
+        "reasoning",
+        "include_reasoning",
+        "seed",
+        "max_tokens",
+        "response_format",
+        "structured_outputs",
+        "tools",
+        "tool_choice",
+        "verbosity",
+        "reasoning_effort"
+      ],
+      "context_tokens": 1050000,
+      "id": "openrouter:openai/gpt-6.1-sol:OpenAI:openai/flex:flex",
+      "model_id": "gpt61_sol",
+      "provider": "OpenAI",
+      "quantization": "unknown",
+      "routing_variant": "openai/flex",
+      "source_ids": [
+        "openrouter_endpoints_openai_gpt_6_1_sol"
+      ],
+      "upstream_model_id": "openai/gpt-6.1-sol"
+    },
+    {
+      "availability": "listed",
+      "capabilities": [
+        "reasoning",
+        "include_reasoning",
+        "seed",
+        "max_tokens",
+        "response_format",
+        "structured_outputs",
+        "tools",
+        "tool_choice",
+        "verbosity",
+        "reasoning_effort"
+      ],
+      "context_tokens": 1050000,
+      "id": "openrouter:openai/gpt-6.1-sol:OpenAI:openai/ultrafast:ultrafast",
+      "model_id": "gpt61_sol",
+      "provider": "OpenAI",
+      "quantization": "unknown",
+      "routing_variant": "openai/ultrafast",
+      "source_ids": [
+        "openrouter_endpoints_openai_gpt_6_1_sol"
+      ],
+      "upstream_model_id": "openai/gpt-6.1-sol"
+    },
+    {
+      "availability": "listed",
+      "capabilities": [
+        "reasoning",
+        "include_reasoning",
+        "seed",
+        "max_tokens",
+        "response_format",
+        "structured_outputs",
+        "tools",
+        "tool_choice",
+        "verbosity",
+        "reasoning_effort"
+      ],
+      "context_tokens": 1050000,
+      "id": "openrouter:openai/gpt-6.1-sol:OpenAI:openai:default",
+      "model_id": "gpt61_sol",
+      "provider": "OpenAI",
+      "quantization": "unknown",
+      "routing_variant": "openai",
+      "source_ids": [
+        "openrouter_endpoints_openai_gpt_6_1_sol"
+      ],
+      "upstream_model_id": "openai/gpt-6.1-sol"
+    }
+  ],
+  "schema_version": "1.0.0",
+  "usage": []
+}

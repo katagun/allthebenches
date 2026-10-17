@@ -1,0 +1,41 @@
+{
+  "id": "historical",
+  "version": "1.0.0",
+  "name": "Historical releases",
+  "model_configuration_ids": [
+    "claude3_opus_default",
+    "claude3_sonnet_default",
+    "claude3_haiku_default",
+    "claude35_sonnet_june_default",
+    "gemini10_ultra_default",
+    "gemini10_pro_default",
+    "gemini15_pro_may_default",
+    "gemini15_flash_may_default",
+    "llama31_8b_instruct_default",
+    "llama31_70b_instruct_default",
+    "llama31_405b_instruct_default",
+    "mistral_7b_default",
+    "mixtral_8x7b_default",
+    "mixtral_8x7b_instruct_default",
+    "gemini10_ultra_api_posttrained",
+    "gemini10_pro_api_posttrained",
+    "gemini15_pro_may_pretrained",
+    "gpt4_report"
+  ],
+  "benchmark_ids": [
+    "hist_anthropic_claude3_mmlu_5_shot",
+    "hist_llama31_mmlu_5_shot",
+    "hist_gemini10_mmlu_self_consistency_chain_of_thought_ultra_cot_3",
+    "hist_gemini10_humaneval_0_shot_post_trained_api_model",
+    "hist_gemini15_gpqa_0_shot",
+    "mmlu_2023_en",
+    "hist_anthropic_claude35_gpqa_diamond_0_shot_chain_of_thought",
+    "hist_gemini15_math_pretrained_majority_64",
+    "hist_mistral7b_mmlu_5_shot",
+    "hist_mixtral_mmlu_5_shot",
+    "hist_mixtral_mt_bench_instruct",
+    "hist_anthropic_claude3_math_4_shot"
+  ],
+  "reason": "Selected early releases and their source-specific evaluation protocols. Separate columns do not imply interchangeable benchmark scores.",
+  "reviewed_at": "2026-10-17"
+}

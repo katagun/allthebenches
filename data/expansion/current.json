@@ -1,0 +1,622 @@
+{
+  "configurations": [
+    {
+      "id": "gpt6_astra_google_reported",
+      "model_id": "gpt6_astra",
+      "reasoning_label": "Highest reported (Google)",
+      "mode": "unknown"
+    },
+    {
+      "id": "claude_fable51_google_reported",
+      "model_id": "claude_fable51",
+      "reasoning_label": "Highest reported (Google)",
+      "mode": "unknown"
+    },
+    {
+      "id": "claude_opus55_google_reported",
+      "model_id": "claude_opus55",
+      "reasoning_label": "Highest reported (Google)",
+      "mode": "unknown"
+    }
+  ],
+  "benchmarks": [
+    {
+      "id": "vals_finance_agent_v2",
+      "family_id": "vals_finance_agent",
+      "name": "Vals Finance Agent",
+      "version": "v2",
+      "category": "agent",
+      "modality": "text",
+      "metric_name": "reported score",
+      "unit": "%",
+      "lower_bound": 0,
+      "upper_bound": 100,
+      "direction": "higher",
+      "documentation_url": "https://deepmind.google/models/evals-methodology/gemini-4-argon"
+    },
+    {
+      "id": "harvey_legal_agent_reported",
+      "family_id": "harvey_legal_agent",
+      "name": "Harvey Legal Agent Benchmark",
+      "version": "unversioned-as-reported",
+      "category": "agent",
+      "modality": "text",
+      "metric_name": "reported score",
+      "unit": "%",
+      "lower_bound": 0,
+      "upper_bound": 100,
+      "direction": "higher",
+      "documentation_url": "https://deepmind.google/models/evals-methodology/gemini-4-argon"
+    },
+    {
+      "id": "frontierswe_v2",
+      "family_id": "frontierswe",
+      "name": "FrontierSWE",
+      "version": "v2",
+      "category": "coding",
+      "modality": "text",
+      "metric_name": "reported score",
+      "unit": "%",
+      "lower_bound": 0,
+      "upper_bound": 100,
+      "direction": "higher",
+      "documentation_url": "https://deepmind.google/models/evals-methodology/gemini-4-argon"
+    },
+    {
+      "id": "vibe_code_bench_reported",
+      "family_id": "vibe_code_bench",
+      "name": "Vibe Code Bench",
+      "version": "unversioned-as-reported",
+      "category": "coding",
+      "modality": "text",
+      "metric_name": "reported score",
+      "unit": "%",
+      "lower_bound": 0,
+      "upper_bound": 100,
+      "direction": "higher",
+      "documentation_url": "https://deepmind.google/models/evals-methodology/gemini-4-argon"
+    },
+    {
+      "id": "posttrainbench_v11",
+      "family_id": "posttrainbench",
+      "name": "PostTrainBench",
+      "version": "v1.1",
+      "category": "agent",
+      "modality": "text",
+      "metric_name": "reported score",
+      "unit": "%",
+      "lower_bound": 0,
+      "upper_bound": 100,
+      "direction": "higher",
+      "documentation_url": "https://deepmind.google/models/evals-methodology/gemini-4-argon"
+    },
+    {
+      "id": "labbench_2",
+      "family_id": "labbench_2",
+      "name": "LABBench",
+      "version": "2",
+      "category": "reasoning",
+      "modality": "text",
+      "metric_name": "reported score",
+      "unit": "%",
+      "lower_bound": 0,
+      "upper_bound": 100,
+      "direction": "higher",
+      "documentation_url": "https://deepmind.google/models/evals-methodology/gemini-4-argon"
+    }
+  ],
+  "series": [
+    {
+      "id": "series_vals_finance_agent_v2_google_card",
+      "benchmark_id": "vals_finance_agent_v2",
+      "protocol": "Leaderboard result quoted in Google model card.",
+      "evaluator": "Vals AI",
+      "comparability_status": "unknown",
+      "comparability": "Specific per-model effort settings are not fully identified; no matched-protocol ranking is asserted.",
+      "sampling": "Google describes single-attempt evaluation unless noted otherwise; external leaderboards retain their own protocols."
+    },
+    {
+      "id": "series_harvey_legal_agent_reported_google_card",
+      "benchmark_id": "harvey_legal_agent_reported",
+      "protocol": "Leaderboard result quoted in Google model card.",
+      "evaluator": "Vals AI",
+      "comparability_status": "unknown",
+      "comparability": "Specific per-model effort settings are not fully identified; no matched-protocol ranking is asserted.",
+      "sampling": "Google describes single-attempt evaluation unless noted otherwise; external leaderboards retain their own protocols."
+    },
+    {
+      "id": "series_frontierswe_v2_google_card",
+      "benchmark_id": "frontierswe_v2",
+      "protocol": "Official leaderboard result quoted in Google model card.",
+      "evaluator": "Proximal",
+      "comparability_status": "unknown",
+      "comparability": "Specific per-model effort settings are not fully identified; no matched-protocol ranking is asserted.",
+      "sampling": "Google describes single-attempt evaluation unless noted otherwise; external leaderboards retain their own protocols."
+    },
+    {
+      "id": "series_vibe_code_bench_reported_google_card",
+      "benchmark_id": "vibe_code_bench_reported",
+      "protocol": "Official leaderboard result quoted in Google model card.",
+      "evaluator": "Vals AI",
+      "comparability_status": "unknown",
+      "comparability": "Specific per-model effort settings are not fully identified; no matched-protocol ranking is asserted.",
+      "sampling": "Google describes single-attempt evaluation unless noted otherwise; external leaderboards retain their own protocols."
+    },
+    {
+      "id": "series_posttrainbench_v11_google_card",
+      "benchmark_id": "posttrainbench_v11",
+      "protocol": "OpenCode harness; 10 hours on one NVIDIA H100; weighted aggregate over four base models and seven benchmarks.",
+      "evaluator": "Google DeepMind",
+      "comparability_status": "unknown",
+      "comparability": "Specific per-model effort settings are not fully identified; no matched-protocol ranking is asserted.",
+      "sampling": "Google describes single-attempt evaluation unless noted otherwise; external leaderboards retain their own protocols."
+    },
+    {
+      "id": "series_labbench_2_google_card",
+      "benchmark_id": "labbench_2",
+      "protocol": "Linux terminal, bioinformatics tools, Python, R and internet access.",
+      "evaluator": "Google DeepMind",
+      "comparability_status": "unknown",
+      "comparability": "Specific per-model effort settings are not fully identified; no matched-protocol ranking is asserted.",
+      "sampling": "Google describes single-attempt evaluation unless noted otherwise; external leaderboards retain their own protocols."
+    }
+  ],
+  "observations": [
+    {
+      "id": "o_gemini4_argon_max_vals_finance_agent_v2_google_expansion",
+      "configuration_id": "gemini4_argon_max",
+      "benchmark_id": "vals_finance_agent_v2",
+      "series_id": "series_vals_finance_agent_v2_google_card",
+      "value": 65.4,
+      "unit": "%",
+      "source_id": "google_card",
+      "locator": "Results table: Vals Finance Agent v2, gemini4_argon column; evaluation methodology pp. 2\u20133.",
+      "evaluator": "Vals AI",
+      "reporting_relationship": "quoted_result",
+      "reported_at": "2026-10-13T00:00:00Z",
+      "review_state": "reviewed",
+      "setup": {
+        "methodology_source": "google_method",
+        "protocol": "Leaderboard result quoted in Google model card.",
+        "reasoning": "Gemini highest API thinking; peer models maximum where available, otherwise best reported setting. Exact peer effort labels unresolved."
+      }
+    },
+    {
+      "id": "o_gpt6_astra_google_reported_vals_finance_agent_v2_google_expansion",
+      "configuration_id": "gpt6_astra_google_reported",
+      "benchmark_id": "vals_finance_agent_v2",
+      "series_id": "series_vals_finance_agent_v2_google_card",
+      "value": 53.5,
+      "unit": "%",
+      "source_id": "google_card",
+      "locator": "Results table: Vals Finance Agent v2, gpt6_astra column; evaluation methodology pp. 2\u20133.",
+      "evaluator": "Vals AI",
+      "reporting_relationship": "quoted_result",
+      "reported_at": "2026-10-13T00:00:00Z",
+      "review_state": "reviewed",
+      "setup": {
+        "methodology_source": "google_method",
+        "protocol": "Leaderboard result quoted in Google model card.",
+        "reasoning": "Gemini highest API thinking; peer models maximum where available, otherwise best reported setting. Exact peer effort labels unresolved."
+      }
+    },
+    {
+      "id": "o_claude_fable51_google_reported_vals_finance_agent_v2_google_expansion",
+      "configuration_id": "claude_fable51_google_reported",
+      "benchmark_id": "vals_finance_agent_v2",
+      "series_id": "series_vals_finance_agent_v2_google_card",
+      "value": 58.9,
+      "unit": "%",
+      "source_id": "google_card",
+      "locator": "Results table: Vals Finance Agent v2, claude_fable51 column; evaluation methodology pp. 2\u20133.",
+      "evaluator": "Vals AI",
+      "reporting_relationship": "quoted_result",
+      "reported_at": "2026-10-13T00:00:00Z",
+      "review_state": "reviewed",
+      "setup": {
+        "methodology_source": "google_method",
+        "protocol": "Leaderboard result quoted in Google model card.",
+        "reasoning": "Gemini highest API thinking; peer models maximum where available, otherwise best reported setting. Exact peer effort labels unresolved."
+      }
+    },
+    {
+      "id": "o_claude_opus55_google_reported_vals_finance_agent_v2_google_expansion",
+      "configuration_id": "claude_opus55_google_reported",
+      "benchmark_id": "vals_finance_agent_v2",
+      "series_id": "series_vals_finance_agent_v2_google_card",
+      "value": 58.6,
+      "unit": "%",
+      "source_id": "google_card",
+      "locator": "Results table: Vals Finance Agent v2, claude_opus55 column; evaluation methodology pp. 2\u20133.",
+      "evaluator": "Vals AI",
+      "reporting_relationship": "quoted_result",
+      "reported_at": "2026-10-13T00:00:00Z",
+      "review_state": "reviewed",
+      "setup": {
+        "methodology_source": "google_method",
+        "protocol": "Leaderboard result quoted in Google model card.",
+        "reasoning": "Gemini highest API thinking; peer models maximum where available, otherwise best reported setting. Exact peer effort labels unresolved."
+      }
+    },
+    {
+      "id": "o_gemini4_argon_max_harvey_legal_agent_reported_google_expansion",
+      "configuration_id": "gemini4_argon_max",
+      "benchmark_id": "harvey_legal_agent_reported",
+      "series_id": "series_harvey_legal_agent_reported_google_card",
+      "value": 19.6,
+      "unit": "%",
+      "source_id": "google_card",
+      "locator": "Results table: Harvey Legal Agent Benchmark unversioned-as-reported, gemini4_argon column; evaluation methodology pp. 2\u20133.",
+      "evaluator": "Vals AI",
+      "reporting_relationship": "quoted_result",
+      "reported_at": "2026-10-13T00:00:00Z",
+      "review_state": "reviewed",
+      "setup": {
+        "methodology_source": "google_method",
+        "protocol": "Leaderboard result quoted in Google model card.",
+        "reasoning": "Gemini highest API thinking; peer models maximum where available, otherwise best reported setting. Exact peer effort labels unresolved."
+      }
+    },
+    {
+      "id": "o_gpt6_astra_google_reported_harvey_legal_agent_reported_google_expansion",
+      "configuration_id": "gpt6_astra_google_reported",
+      "benchmark_id": "harvey_legal_agent_reported",
+      "series_id": "series_harvey_legal_agent_reported_google_card",
+      "value": 5.4,
+      "unit": "%",
+      "source_id": "google_card",
+      "locator": "Results table: Harvey Legal Agent Benchmark unversioned-as-reported, gpt6_astra column; evaluation methodology pp. 2\u20133.",
+      "evaluator": "Vals AI",
+      "reporting_relationship": "quoted_result",
+      "reported_at": "2026-10-13T00:00:00Z",
+      "review_state": "reviewed",
+      "setup": {
+        "methodology_source": "google_method",
+        "protocol": "Leaderboard result quoted in Google model card.",
+        "reasoning": "Gemini highest API thinking; peer models maximum where available, otherwise best reported setting. Exact peer effort labels unresolved."
+      }
+    },
+    {
+      "id": "o_claude_fable51_google_reported_harvey_legal_agent_reported_google_expansion",
+      "configuration_id": "claude_fable51_google_reported",
+      "benchmark_id": "harvey_legal_agent_reported",
+      "series_id": "series_harvey_legal_agent_reported_google_card",
+      "value": 6.7,
+      "unit": "%",
+      "source_id": "google_card",
+      "locator": "Results table: Harvey Legal Agent Benchmark unversioned-as-reported, claude_fable51 column; evaluation methodology pp. 2\u20133.",
+      "evaluator": "Vals AI",
+      "reporting_relationship": "quoted_result",
+      "reported_at": "2026-10-13T00:00:00Z",
+      "review_state": "reviewed",
+      "setup": {
+        "methodology_source": "google_method",
+        "protocol": "Leaderboard result quoted in Google model card.",
+        "reasoning": "Gemini highest API thinking; peer models maximum where available, otherwise best reported setting. Exact peer effort labels unresolved."
+      }
+    },
+    {
+      "id": "o_claude_opus55_google_reported_harvey_legal_agent_reported_google_expansion",
+      "configuration_id": "claude_opus55_google_reported",
+      "benchmark_id": "harvey_legal_agent_reported",
+      "series_id": "series_harvey_legal_agent_reported_google_card",
+      "value": 3.8,
+      "unit": "%",
+      "source_id": "google_card",
+      "locator": "Results table: Harvey Legal Agent Benchmark unversioned-as-reported, claude_opus55 column; evaluation methodology pp. 2\u20133.",
+      "evaluator": "Vals AI",
+      "reporting_relationship": "quoted_result",
+      "reported_at": "2026-10-13T00:00:00Z",
+      "review_state": "reviewed",
+      "setup": {
+        "methodology_source": "google_method",
+        "protocol": "Leaderboard result quoted in Google model card.",
+        "reasoning": "Gemini highest API thinking; peer models maximum where available, otherwise best reported setting. Exact peer effort labels unresolved."
+      }
+    },
+    {
+      "id": "o_gemini4_argon_max_frontierswe_v2_google_expansion",
+      "configuration_id": "gemini4_argon_max",
+      "benchmark_id": "frontierswe_v2",
+      "series_id": "series_frontierswe_v2_google_card",
+      "value": 55.0,
+      "unit": "%",
+      "source_id": "google_card",
+      "locator": "Results table: FrontierSWE v2, gemini4_argon column; evaluation methodology pp. 2\u20133.",
+      "evaluator": "Proximal",
+      "reporting_relationship": "quoted_result",
+      "reported_at": "2026-10-13T00:00:00Z",
+      "review_state": "reviewed",
+      "setup": {
+        "methodology_source": "google_method",
+        "protocol": "Official leaderboard result quoted in Google model card.",
+        "reasoning": "Gemini highest API thinking; peer models maximum where available, otherwise best reported setting. Exact peer effort labels unresolved."
+      }
+    },
+    {
+      "id": "o_gpt6_astra_google_reported_frontierswe_v2_google_expansion",
+      "configuration_id": "gpt6_astra_google_reported",
+      "benchmark_id": "frontierswe_v2",
+      "series_id": "series_frontierswe_v2_google_card",
+      "value": 65.5,
+      "unit": "%",
+      "source_id": "google_card",
+      "locator": "Results table: FrontierSWE v2, gpt6_astra column; evaluation methodology pp. 2\u20133.",
+      "evaluator": "Proximal",
+      "reporting_relationship": "quoted_result",
+      "reported_at": "2026-10-13T00:00:00Z",
+      "review_state": "reviewed",
+      "setup": {
+        "methodology_source": "google_method",
+        "protocol": "Official leaderboard result quoted in Google model card.",
+        "reasoning": "Gemini highest API thinking; peer models maximum where available, otherwise best reported setting. Exact peer effort labels unresolved."
+      }
+    },
+    {
+      "id": "o_claude_fable51_google_reported_frontierswe_v2_google_expansion",
+      "configuration_id": "claude_fable51_google_reported",
+      "benchmark_id": "frontierswe_v2",
+      "series_id": "series_frontierswe_v2_google_card",
+      "value": 56.3,
+      "unit": "%",
+      "source_id": "google_card",
+      "locator": "Results table: FrontierSWE v2, claude_fable51 column; evaluation methodology pp. 2\u20133.",
+      "evaluator": "Proximal",
+      "reporting_relationship": "quoted_result",
+      "reported_at": "2026-10-13T00:00:00Z",
+      "review_state": "reviewed",
+      "setup": {
+        "methodology_source": "google_method",
+        "protocol": "Official leaderboard result quoted in Google model card.",
+        "reasoning": "Gemini highest API thinking; peer models maximum where available, otherwise best reported setting. Exact peer effort labels unresolved."
+      }
+    },
+    {
+      "id": "o_claude_opus55_google_reported_frontierswe_v2_google_expansion",
+      "configuration_id": "claude_opus55_google_reported",
+      "benchmark_id": "frontierswe_v2",
+      "series_id": "series_frontierswe_v2_google_card",
+      "value": 62.3,
+      "unit": "%",
+      "source_id": "google_card",
+      "locator": "Results table: FrontierSWE v2, claude_opus55 column; evaluation methodology pp. 2\u20133.",
+      "evaluator": "Proximal",
+      "reporting_relationship": "quoted_result",
+      "reported_at": "2026-10-13T00:00:00Z",
+      "review_state": "reviewed",
+      "setup": {
+        "methodology_source": "google_method",
+        "protocol": "Official leaderboard result quoted in Google model card.",
+        "reasoning": "Gemini highest API thinking; peer models maximum where available, otherwise best reported setting. Exact peer effort labels unresolved."
+      }
+    },
+    {
+      "id": "o_gemini4_argon_max_vibe_code_bench_reported_google_expansion",
+      "configuration_id": "gemini4_argon_max",
+      "benchmark_id": "vibe_code_bench_reported",
+      "series_id": "series_vibe_code_bench_reported_google_card",
+      "value": 91.9,
+      "unit": "%",
+      "source_id": "google_card",
+      "locator": "Results table: Vibe Code Bench unversioned-as-reported, gemini4_argon column; evaluation methodology pp. 2\u20133.",
+      "evaluator": "Vals AI",
+      "reporting_relationship": "quoted_result",
+      "reported_at": "2026-10-13T00:00:00Z",
+      "review_state": "reviewed",
+      "setup": {
+        "methodology_source": "google_method",
+        "protocol": "Official leaderboard result quoted in Google model card.",
+        "reasoning": "Gemini highest API thinking; peer models maximum where available, otherwise best reported setting. Exact peer effort labels unresolved."
+      }
+    },
+    {
+      "id": "o_gpt6_astra_google_reported_vibe_code_bench_reported_google_expansion",
+      "configuration_id": "gpt6_astra_google_reported",
+      "benchmark_id": "vibe_code_bench_reported",
+      "series_id": "series_vibe_code_bench_reported_google_card",
+      "value": 89.6,
+      "unit": "%",
+      "source_id": "google_card",
+      "locator": "Results table: Vibe Code Bench unversioned-as-reported, gpt6_astra column; evaluation methodology pp. 2\u20133.",
+      "evaluator": "Vals AI",
+      "reporting_relationship": "quoted_result",
+      "reported_at": "2026-10-13T00:00:00Z",
+      "review_state": "reviewed",
+      "setup": {
+        "methodology_source": "google_method",
+        "protocol": "Official leaderboard result quoted in Google model card.",
+        "reasoning": "Gemini highest API thinking; peer models maximum where available, otherwise best reported setting. Exact peer effort labels unresolved."
+      }
+    },
+    {
+      "id": "o_claude_fable51_google_reported_vibe_code_bench_reported_google_expansion",
+      "configuration_id": "claude_fable51_google_reported",
+      "benchmark_id": "vibe_code_bench_reported",
+      "series_id": "series_vibe_code_bench_reported_google_card",
+      "value": 90.3,
+      "unit": "%",
+      "source_id": "google_card",
+      "locator": "Results table: Vibe Code Bench unversioned-as-reported, claude_fable51 column; evaluation methodology pp. 2\u20133.",
+      "evaluator": "Vals AI",
+      "reporting_relationship": "quoted_result",
+      "reported_at": "2026-10-13T00:00:00Z",
+      "review_state": "reviewed",
+      "setup": {
+        "methodology_source": "google_method",
+        "protocol": "Official leaderboard result quoted in Google model card.",
+        "reasoning": "Gemini highest API thinking; peer models maximum where available, otherwise best reported setting. Exact peer effort labels unresolved."
+      }
+    },
+    {
+      "id": "o_claude_opus55_google_reported_vibe_code_bench_reported_google_expansion",
+      "configuration_id": "claude_opus55_google_reported",
+      "benchmark_id": "vibe_code_bench_reported",
+      "series_id": "series_vibe_code_bench_reported_google_card",
+      "value": 90.3,
+      "unit": "%",
+      "source_id": "google_card",
+      "locator": "Results table: Vibe Code Bench unversioned-as-reported, claude_opus55 column; evaluation methodology pp. 2\u20133.",
+      "evaluator": "Vals AI",
+      "reporting_relationship": "quoted_result",
+      "reported_at": "2026-10-13T00:00:00Z",
+      "review_state": "reviewed",
+      "setup": {
+        "methodology_source": "google_method",
+        "protocol": "Official leaderboard result quoted in Google model card.",
+        "reasoning": "Gemini highest API thinking; peer models maximum where available, otherwise best reported setting. Exact peer effort labels unresolved."
+      }
+    },
+    {
+      "id": "o_gemini4_argon_max_posttrainbench_v11_google_expansion",
+      "configuration_id": "gemini4_argon_max",
+      "benchmark_id": "posttrainbench_v11",
+      "series_id": "series_posttrainbench_v11_google_card",
+      "value": 45.3,
+      "unit": "%",
+      "source_id": "google_card",
+      "locator": "Results table: PostTrainBench v1.1, gemini4_argon column; evaluation methodology pp. 2\u20133.",
+      "evaluator": "Google DeepMind",
+      "reporting_relationship": "self_report",
+      "reported_at": "2026-10-13T00:00:00Z",
+      "review_state": "reviewed",
+      "setup": {
+        "methodology_source": "google_method",
+        "protocol": "OpenCode harness; 10 hours on one NVIDIA H100; weighted aggregate over four base models and seven benchmarks.",
+        "reasoning": "Gemini highest API thinking; peer models maximum where available, otherwise best reported setting. Exact peer effort labels unresolved."
+      }
+    },
+    {
+      "id": "o_gpt6_astra_google_reported_posttrainbench_v11_google_expansion",
+      "configuration_id": "gpt6_astra_google_reported",
+      "benchmark_id": "posttrainbench_v11",
+      "series_id": "series_posttrainbench_v11_google_card",
+      "value": 44.3,
+      "unit": "%",
+      "source_id": "google_card",
+      "locator": "Results table: PostTrainBench v1.1, gpt6_astra column; evaluation methodology pp. 2\u20133.",
+      "evaluator": "Google DeepMind",
+      "reporting_relationship": "evaluator_measurement",
+      "reported_at": "2026-10-13T00:00:00Z",
+      "review_state": "reviewed",
+      "setup": {
+        "methodology_source": "google_method",
+        "protocol": "OpenCode harness; 10 hours on one NVIDIA H100; weighted aggregate over four base models and seven benchmarks.",
+        "reasoning": "Gemini highest API thinking; peer models maximum where available, otherwise best reported setting. Exact peer effort labels unresolved."
+      }
+    },
+    {
+      "id": "o_claude_fable51_google_reported_posttrainbench_v11_google_expansion",
+      "configuration_id": "claude_fable51_google_reported",
+      "benchmark_id": "posttrainbench_v11",
+      "series_id": "series_posttrainbench_v11_google_card",
+      "value": 40.2,
+      "unit": "%",
+      "source_id": "google_card",
+      "locator": "Results table: PostTrainBench v1.1, claude_fable51 column; evaluation methodology pp. 2\u20133.",
+      "evaluator": "Google DeepMind",
+      "reporting_relationship": "evaluator_measurement",
+      "reported_at": "2026-10-13T00:00:00Z",
+      "review_state": "reviewed",
+      "setup": {
+        "methodology_source": "google_method",
+        "protocol": "OpenCode harness; 10 hours on one NVIDIA H100; weighted aggregate over four base models and seven benchmarks.",
+        "reasoning": "Gemini highest API thinking; peer models maximum where available, otherwise best reported setting. Exact peer effort labels unresolved."
+      }
+    },
+    {
+      "id": "o_claude_opus55_google_reported_posttrainbench_v11_google_expansion",
+      "configuration_id": "claude_opus55_google_reported",
+      "benchmark_id": "posttrainbench_v11",
+      "series_id": "series_posttrainbench_v11_google_card",
+      "value": 49.3,
+      "unit": "%",
+      "source_id": "google_card",
+      "locator": "Results table: PostTrainBench v1.1, claude_opus55 column; evaluation methodology pp. 2\u20133.",
+      "evaluator": "Google DeepMind",
+      "reporting_relationship": "evaluator_measurement",
+      "reported_at": "2026-10-13T00:00:00Z",
+      "review_state": "reviewed",
+      "setup": {
+        "methodology_source": "google_method",
+        "protocol": "OpenCode harness; 10 hours on one NVIDIA H100; weighted aggregate over four base models and seven benchmarks.",
+        "reasoning": "Gemini highest API thinking; peer models maximum where available, otherwise best reported setting. Exact peer effort labels unresolved."
+      }
+    },
+    {
+      "id": "o_gemini4_argon_max_labbench_2_google_expansion",
+      "configuration_id": "gemini4_argon_max",
+      "benchmark_id": "labbench_2",
+      "series_id": "series_labbench_2_google_card",
+      "value": 88.8,
+      "unit": "%",
+      "source_id": "google_card",
+      "locator": "Results table: LABBench 2, gemini4_argon column; evaluation methodology pp. 2\u20133.",
+      "evaluator": "Google DeepMind",
+      "reporting_relationship": "self_report",
+      "reported_at": "2026-10-13T00:00:00Z",
+      "review_state": "reviewed",
+      "setup": {
+        "methodology_source": "google_method",
+        "protocol": "Linux terminal, bioinformatics tools, Python, R and internet access.",
+        "reasoning": "Gemini highest API thinking; peer models maximum where available, otherwise best reported setting. Exact peer effort labels unresolved."
+      }
+    },
+    {
+      "id": "o_gpt6_astra_google_reported_labbench_2_google_expansion",
+      "configuration_id": "gpt6_astra_google_reported",
+      "benchmark_id": "labbench_2",
+      "series_id": "series_labbench_2_google_card",
+      "value": 85.4,
+      "unit": "%",
+      "source_id": "google_card",
+      "locator": "Results table: LABBench 2, gpt6_astra column; evaluation methodology pp. 2\u20133.",
+      "evaluator": "Google DeepMind",
+      "reporting_relationship": "evaluator_measurement",
+      "reported_at": "2026-10-13T00:00:00Z",
+      "review_state": "reviewed",
+      "setup": {
+        "methodology_source": "google_method",
+        "protocol": "Linux terminal, bioinformatics tools, Python, R and internet access.",
+        "reasoning": "Gemini highest API thinking; peer models maximum where available, otherwise best reported setting. Exact peer effort labels unresolved."
+      }
+    },
+    {
+      "id": "o_claude_fable51_google_reported_labbench_2_google_expansion",
+      "configuration_id": "claude_fable51_google_reported",
+      "benchmark_id": "labbench_2",
+      "series_id": "series_labbench_2_google_card",
+      "value": 68.6,
+      "unit": "%",
+      "source_id": "google_card",
+      "locator": "Results table: LABBench 2, claude_fable51 column; evaluation methodology pp. 2\u20133.",
+      "evaluator": "Google DeepMind",
+      "reporting_relationship": "evaluator_measurement",
+      "reported_at": "2026-10-13T00:00:00Z",
+      "review_state": "reviewed",
+      "setup": {
+        "methodology_source": "google_method",
+        "protocol": "Linux terminal, bioinformatics tools, Python, R and internet access.",
+        "reasoning": "Gemini highest API thinking; peer models maximum where available, otherwise best reported setting. Exact peer effort labels unresolved."
+      }
+    },
+    {
+      "id": "o_claude_opus55_google_reported_labbench_2_google_expansion",
+      "configuration_id": "claude_opus55_google_reported",
+      "benchmark_id": "labbench_2",
+      "series_id": "series_labbench_2_google_card",
+      "value": 73.1,
+      "unit": "%",
+      "source_id": "google_card",
+      "locator": "Results table: LABBench 2, claude_opus55 column; evaluation methodology pp. 2\u20133.",
+      "evaluator": "Google DeepMind",
+      "reporting_relationship": "evaluator_measurement",
+      "reported_at": "2026-10-13T00:00:00Z",
+      "review_state": "reviewed",
+      "setup": {
+        "methodology_source": "google_method",
+        "protocol": "Linux terminal, bioinformatics tools, Python, R and internet access.",
+        "reasoning": "Gemini highest API thinking; peer models maximum where available, otherwise best reported setting. Exact peer effort labels unresolved."
+      }
+    }
+  ]
+}

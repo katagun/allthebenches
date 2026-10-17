@@ -1,0 +1,116 @@
+{
+  "mappings_version": "1.0.0",
+  "source_policy": "Only explicit official release identifiers are mapped; display-name-only candidates are excluded.",
+  "mappings": [
+    {
+      "id": "map_gpt6_astra",
+      "source_id": "openai_astra",
+      "external_id": "gpt-6-astra",
+      "internal_model_id": "gpt6_astra",
+      "route_id": null,
+      "status": "reviewed",
+      "evidence": "Official provider release/model-card identifies this exact release string.",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "id": "map_gpt61_sol",
+      "source_id": "openai_gpt61",
+      "external_id": "gpt-6.1-sol",
+      "internal_model_id": "gpt61_sol",
+      "route_id": null,
+      "status": "reviewed",
+      "evidence": "Official provider release/model-card identifies this exact release string.",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "id": "map_claude_opus55",
+      "source_id": "anthropic_opus55",
+      "external_id": "claude-opus-5-5",
+      "internal_model_id": "claude_opus55",
+      "route_id": null,
+      "status": "reviewed",
+      "evidence": "Official provider release/model-card identifies this exact release string.",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "id": "map_gemini4_argon",
+      "source_id": "google_card",
+      "external_id": "gemini-4-argon",
+      "internal_model_id": "gemini4_argon",
+      "route_id": null,
+      "status": "reviewed",
+      "evidence": "Official provider release/model-card identifies this exact release string.",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "id": "map_muse_wonder",
+      "source_id": "meta_wonder_card",
+      "external_id": "Muse Wonder",
+      "internal_model_id": "muse_wonder",
+      "route_id": null,
+      "status": "reviewed",
+      "evidence": "Official provider release/model-card identifies this exact release string.",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "id": "map_muse_wonder_full",
+      "source_id": "meta_wonder_card",
+      "external_id": "Muse Wonder Full",
+      "internal_model_id": "muse_wonder_full",
+      "route_id": null,
+      "status": "reviewed",
+      "evidence": "Official provider release/model-card identifies this exact release string.",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "id": "map_muse_spark13",
+      "source_id": "meta_spark13",
+      "external_id": "Muse Spark 1.3",
+      "internal_model_id": "muse_spark13",
+      "route_id": null,
+      "status": "reviewed",
+      "evidence": "Official provider release/model-card identifies this exact release string.",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "id": "map_mistral_large4",
+      "source_id": "mistral_large4",
+      "external_id": "Mistral Large 4",
+      "internal_model_id": "mistral_large4",
+      "route_id": null,
+      "status": "reviewed",
+      "evidence": "Official provider release/model-card identifies this exact release string.",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "id": "map_grok47",
+      "source_id": "xai_grok47",
+      "external_id": "Grok 4.7",
+      "internal_model_id": "grok47",
+      "route_id": null,
+      "status": "reviewed",
+      "evidence": "Official provider release/model-card identifies this exact release string.",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "id": "map_qwen_agentworld_35b_a3b",
+      "source_id": "qwen_agentworld",
+      "external_id": "Qwen/Qwen-AgentWorld-35B-A3B",
+      "internal_model_id": "qwen_agentworld_35b_a3b",
+      "route_id": null,
+      "status": "reviewed",
+      "evidence": "Official repo README identifies the downloadable model ID and release.",
+      "valid_from": "2026-06-24",
+      "valid_to": null
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "id": "open_models",
+  "version": "1.0.0",
+  "name": "Open-weight releases",
+  "model_configuration_ids": [
+    "qwen3_30b_a3b_base_default",
+    "qwen3_14b_base_default",
+    "qwen3_8b_base_default",
+    "qwen25_72b_instruct_default",
+    "deepseek_v3_base_default",
+    "deepseek_r1_reasoning",
+    "deepseek_r1_distill_qwen_7b_reasoning",
+    "deepseek_r1_distill_qwen_32b_reasoning"
+  ],
+  "benchmark_ids": [
+    "qwen3_base_mmlu",
+    "qwen3_base_gsm8k",
+    "qwen25_instruct_mmlu_pro",
+    "qwen25_instruct_gsm8k",
+    "dsv3base_mmlu",
+    "dsv3base_gsm8k",
+    "dsr1_gpqa_diamond",
+    "dsr1_math500"
+  ],
+  "reason": "Representative report-specific columns. Identically named benchmarks from different reports remain distinct until their protocols are reconciled.",
+  "reviewed_at": "2026-10-17"
+}

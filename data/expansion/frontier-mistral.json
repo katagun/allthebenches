@@ -1,0 +1,410 @@
+{
+  "sources": [
+    {
+      "id": "mistral_large4_docs",
+      "url": "https://docs.mistral.ai/models/mistral-large-4-0",
+      "title": "Mistral Large 4 — Mistral Docs",
+      "publisher": "Mistral AI",
+      "original_evaluator": "Mistral AI",
+      "retrieved_at": "2026-10-17T00:00:00Z",
+      "published_at": "2026-10-06T00:00:00Z",
+      "version": "Public Preview Open v26.10",
+      "method": "Manual review of official model-card text for release identifier and parameter counts.",
+      "locator": "Model card title and release badge; model identifier mistral-large-4; description states 52B active parameters, 1.05T total parameters, and a 1.6B vision encoder."
+    }
+  ],
+  "labs": [],
+  "models": [],
+  "configurations": [],
+  "benchmarks": [
+    {
+      "id": "mistral_swe_atlas_qna",
+      "family_id": "mistral_swe_atlas_qna",
+      "name": "SWE-Atlas-QnA",
+      "version": "unversioned-as-reported",
+      "category": "coding",
+      "modality": "text",
+      "metric_name": "accuracy",
+      "unit": "%",
+      "direction": "higher",
+      "owner": "SWE-Atlas-QnA",
+      "documentation_url": "https://mistral.ai/news/mistral-large-4/"
+    },
+    {
+      "id": "mistral_coding_agent_index",
+      "family_id": "mistral_coding_agent_index",
+      "name": "Coding Agent Index",
+      "version": "unversioned-as-reported",
+      "category": "coding",
+      "modality": "text",
+      "metric_name": "composite score",
+      "unit": "%",
+      "direction": "higher",
+      "owner": "Coding Agent Index",
+      "documentation_url": "https://mistral.ai/news/mistral-large-4/"
+    },
+    {
+      "id": "mistral_aa_briefcase",
+      "family_id": "mistral_aa_briefcase",
+      "name": "AA-Briefcase",
+      "version": "unversioned-as-reported",
+      "category": "agent",
+      "modality": "text",
+      "metric_name": "Elo rating",
+      "unit": "Elo",
+      "direction": "higher",
+      "owner": "AA-Briefcase",
+      "documentation_url": "https://mistral.ai/news/mistral-large-4/"
+    },
+    {
+      "id": "mistral_cybench",
+      "family_id": "mistral_cybench",
+      "name": "Cybench",
+      "version": "unversioned-as-reported",
+      "category": "safety",
+      "modality": "text",
+      "metric_name": "challenge completion rate",
+      "unit": "%",
+      "direction": "higher",
+      "owner": "Cybench",
+      "documentation_url": "https://mistral.ai/news/mistral-large-4/"
+    },
+    {
+      "id": "mistral_automationbench_aa_657",
+      "family_id": "aa_automationbench",
+      "name": "AA-AutomationBench",
+      "version": "unversioned-as-reported",
+      "subset": "657 business workflows",
+      "category": "agent",
+      "modality": "text",
+      "metric_name": "workflow success rate",
+      "unit": "%",
+      "direction": "higher",
+      "owner": "Artificial Analysis",
+      "documentation_url": "https://mistral.ai/news/mistral-large-4/"
+    },
+    {
+      "id": "mistral_cybergym_e2e",
+      "family_id": "mistral_cybergym_e2e",
+      "name": "CyberGym-E2E (Artificial Analysis Cyber Index)",
+      "version": "unversioned-as-reported",
+      "category": "safety",
+      "modality": "text",
+      "metric_name": "vulnerability reproduction and patch success",
+      "unit": "%",
+      "direction": "higher",
+      "owner": "Artificial Analysis Cyber Index",
+      "documentation_url": "https://mistral.ai/news/mistral-large-4/"
+    },
+    {
+      "id": "mistral_surge_coding_quality",
+      "family_id": "mistral_surge_coding_quality",
+      "name": "Surge AI coding quality evaluation",
+      "version": "unversioned-as-reported",
+      "category": "coding",
+      "modality": "text",
+      "metric_name": "mean human rating",
+      "unit": "points / 5",
+      "direction": "higher",
+      "owner": "Surge AI",
+      "documentation_url": "https://mistral.ai/news/mistral-large-4/"
+    }
+  ],
+  "series": [
+    {
+      "id": "series_mistral_deepswe_v11_preview",
+      "benchmark_id": "deepswe_v11",
+      "protocol": "coding agent benchmark",
+      "evaluator": "Mistral AI",
+      "comparability_status": "unknown",
+      "comparability": "Mistral public-preview reported result; exact run configuration and benchmark-specific harness details are not stated in the cited text."
+    },
+    {
+      "id": "series_mistral_swe_atlas_qna_preview",
+      "benchmark_id": "mistral_swe_atlas_qna",
+      "protocol": "coding agent benchmark",
+      "evaluator": "Mistral AI",
+      "comparability_status": "unknown",
+      "comparability": "Mistral public-preview reported result; exact run configuration and benchmark-specific harness details are not stated in the cited text."
+    },
+    {
+      "id": "series_mistral_terminal_bench_4_preview",
+      "benchmark_id": "terminal_bench_4",
+      "protocol": "terminal workflow benchmark",
+      "evaluator": "Mistral AI",
+      "comparability_status": "unknown",
+      "comparability": "Mistral public-preview reported result; exact run configuration and benchmark-specific harness details are not stated in the cited text."
+    },
+    {
+      "id": "series_mistral_coding_agent_index_preview",
+      "benchmark_id": "mistral_coding_agent_index",
+      "protocol": "combined Coding Agent Index score; formula and constituent weighting not stated in source text",
+      "evaluator": "Mistral AI",
+      "comparability_status": "unknown",
+      "comparability": "Mistral public-preview reported result; exact run configuration and benchmark-specific harness details are not stated in the cited text."
+    },
+    {
+      "id": "series_mistral_cybergym_e2e_preview",
+      "benchmark_id": "mistral_cybergym_e2e",
+      "protocol": "one Cyber Index test: reproduce a real vulnerability in open-source software and patch it",
+      "evaluator": "Artificial Analysis (reported by Mistral AI)",
+      "comparability_status": "unknown",
+      "comparability": "Mistral public-preview reported result; exact run configuration and benchmark-specific harness details are not stated in the cited text."
+    },
+    {
+      "id": "series_mistral_cybench_preview",
+      "benchmark_id": "mistral_cybench",
+      "protocol": "Cybench challenges (source describes a set of 40 exercises)",
+      "evaluator": "Mistral AI",
+      "comparability_status": "unknown",
+      "comparability": "Mistral public-preview reported result; exact run configuration and benchmark-specific harness details are not stated in the cited text."
+    },
+    {
+      "id": "series_mistral_automationbench_preview",
+      "benchmark_id": "mistral_automationbench_aa_657",
+      "protocol": "AA-AutomationBench; 657 business workflows across apps including Gmail, Google Sheets, Slack, and Salesforce; version not specified",
+      "evaluator": "Mistral AI",
+      "comparability_status": "unknown",
+      "comparability": "Mistral public-preview reported result; version, exact run configuration, and benchmark-specific harness details are not stated in the cited text. Kept separate from the existing Google/Zapier AutomationBench lineage."
+    },
+    {
+      "id": "series_mistral_aa_briefcase_preview",
+      "benchmark_id": "mistral_aa_briefcase",
+      "protocol": "long-horizon knowledge work evaluation",
+      "evaluator": "Mistral AI",
+      "comparability_status": "unknown",
+      "comparability": "Mistral public-preview reported result; exact run configuration and benchmark-specific harness details are not stated in the cited text."
+    },
+    {
+      "id": "series_mistral_surge_coding_quality_preview",
+      "benchmark_id": "mistral_surge_coding_quality",
+      "protocol": "blind human evaluation; professional annotators rated outputs on a 1–5 scale; model identity hidden; ranked second of five models",
+      "evaluator": "Surge AI (reported by Mistral AI)",
+      "comparability_status": "unknown",
+      "comparability": "Mistral public-preview reported result; exact run configuration and benchmark-specific harness details are not stated in the cited text."
+    }
+  ],
+  "observations": [
+    {
+      "id": "o_mistral_large4_deepswe_v11",
+      "configuration_id": "mistral_large4_unknown",
+      "benchmark_id": "deepswe_v11",
+      "series_id": "series_mistral_deepswe_v11_preview",
+      "value": 61.7,
+      "unit": "%",
+      "source_id": "mistral_large4",
+      "locator": "DeepSWE v1.1, 61.7%",
+      "evaluator": "Mistral AI",
+      "reporting_relationship": "self_report",
+      "reported_at": "2026-10-06T00:00:00Z",
+      "setup": {
+        "reasoning_effort": "not reported",
+        "preview": "Mistral Large 4 public preview"
+      },
+      "review_state": "reviewed",
+      "supersedes": []
+    },
+    {
+      "id": "o_mistral_large4_mistral_swe_atlas_qna",
+      "configuration_id": "mistral_large4_unknown",
+      "benchmark_id": "mistral_swe_atlas_qna",
+      "series_id": "series_mistral_swe_atlas_qna_preview",
+      "value": 59.4,
+      "unit": "%",
+      "source_id": "mistral_large4",
+      "locator": "SWE-Atlas-QnA, 59.4%",
+      "evaluator": "Mistral AI",
+      "reporting_relationship": "self_report",
+      "reported_at": "2026-10-06T00:00:00Z",
+      "setup": {
+        "reasoning_effort": "not reported",
+        "preview": "Mistral Large 4 public preview"
+      },
+      "review_state": "reviewed",
+      "supersedes": []
+    },
+    {
+      "id": "o_mistral_large4_terminal_bench_4",
+      "configuration_id": "mistral_large4_unknown",
+      "benchmark_id": "terminal_bench_4",
+      "series_id": "series_mistral_terminal_bench_4_preview",
+      "value": 28.3,
+      "unit": "%",
+      "source_id": "mistral_large4",
+      "locator": "Terminal-Bench 4, 28.3%",
+      "evaluator": "Mistral AI",
+      "reporting_relationship": "self_report",
+      "reported_at": "2026-10-06T00:00:00Z",
+      "setup": {
+        "reasoning_effort": "not reported",
+        "preview": "Mistral Large 4 public preview"
+      },
+      "review_state": "reviewed",
+      "supersedes": []
+    },
+    {
+      "id": "o_mistral_large4_mistral_coding_agent_index",
+      "configuration_id": "mistral_large4_unknown",
+      "benchmark_id": "mistral_coding_agent_index",
+      "series_id": "series_mistral_coding_agent_index_preview",
+      "value": 49.8,
+      "unit": "%",
+      "source_id": "mistral_large4",
+      "locator": "Coding Agent Index, 49.8%",
+      "evaluator": "Mistral AI",
+      "reporting_relationship": "self_report",
+      "reported_at": "2026-10-06T00:00:00Z",
+      "setup": {
+        "reasoning_effort": "not reported",
+        "preview": "Mistral Large 4 public preview",
+        "index_formula": "not disclosed in source text"
+      },
+      "review_state": "reviewed",
+      "supersedes": []
+    },
+    {
+      "id": "o_mistral_large4_mistral_cybergym_e2e",
+      "configuration_id": "mistral_large4_unknown",
+      "benchmark_id": "mistral_cybergym_e2e",
+      "series_id": "series_mistral_cybergym_e2e_preview",
+      "value": 82.0,
+      "unit": "%",
+      "source_id": "mistral_large4",
+      "locator": "Artificial Analysis Cyber Index: CyberGym-E2E / one test; 82%",
+      "evaluator": "Artificial Analysis (reported by Mistral AI)",
+      "reporting_relationship": "quoted_result",
+      "reported_at": "2026-10-06T00:00:00Z",
+      "setup": {
+        "reasoning_effort": "not reported",
+        "preview": "Mistral Large 4 public preview",
+        "scope": "one test within the Artificial Analysis Cyber Index; not the overall index score"
+      },
+      "review_state": "reviewed",
+      "supersedes": []
+    },
+    {
+      "id": "o_mistral_large4_mistral_cybench",
+      "configuration_id": "mistral_large4_unknown",
+      "benchmark_id": "mistral_cybench",
+      "series_id": "series_mistral_cybench_preview",
+      "value": 93.0,
+      "unit": "%",
+      "source_id": "mistral_large4",
+      "locator": "Cybench, 93%",
+      "evaluator": "Mistral AI",
+      "reporting_relationship": "self_report",
+      "reported_at": "2026-10-06T00:00:00Z",
+      "setup": {
+        "reasoning_effort": "not reported",
+        "preview": "Mistral Large 4 public preview",
+        "reported_challenge_set_size": 40
+      },
+      "review_state": "reviewed",
+      "supersedes": []
+    },
+    {
+      "id": "o_mistral_large4_automationbench_aa_657",
+      "configuration_id": "mistral_large4_unknown",
+      "benchmark_id": "mistral_automationbench_aa_657",
+      "series_id": "series_mistral_automationbench_preview",
+      "value": 59.9,
+      "unit": "%",
+      "source_id": "mistral_large4",
+      "locator": "AA-AutomationBench, 59.9%; source describes 657 business workflows (version not specified)",
+      "evaluator": "Mistral AI",
+      "reporting_relationship": "self_report",
+      "reported_at": "2026-10-06T00:00:00Z",
+      "setup": {
+        "reasoning_effort": "not reported",
+        "preview": "Mistral Large 4 public preview",
+        "workflow_count": 657
+      },
+      "review_state": "reviewed",
+      "supersedes": []
+    },
+    {
+      "id": "o_mistral_large4_mistral_aa_briefcase",
+      "configuration_id": "mistral_large4_unknown",
+      "benchmark_id": "mistral_aa_briefcase",
+      "series_id": "series_mistral_aa_briefcase_preview",
+      "value": 1393.0,
+      "unit": "Elo",
+      "source_id": "mistral_large4",
+      "locator": "AA-Briefcase, 1,393 Elo",
+      "evaluator": "Mistral AI",
+      "reporting_relationship": "self_report",
+      "reported_at": "2026-10-06T00:00:00Z",
+      "setup": {
+        "reasoning_effort": "not reported",
+        "preview": "Mistral Large 4 public preview"
+      },
+      "review_state": "reviewed",
+      "supersedes": []
+    },
+    {
+      "id": "o_mistral_large4_mistral_surge_coding_quality",
+      "configuration_id": "mistral_large4_unknown",
+      "benchmark_id": "mistral_surge_coding_quality",
+      "series_id": "series_mistral_surge_coding_quality_preview",
+      "value": 3.74,
+      "unit": "points / 5",
+      "source_id": "mistral_large4",
+      "locator": "Surge AI blind human coding-quality evaluation, 3.74 / 5",
+      "evaluator": "Surge AI (reported by Mistral AI)",
+      "reporting_relationship": "quoted_result",
+      "reported_at": "2026-10-06T00:00:00Z",
+      "setup": {
+        "reasoning_effort": "not reported",
+        "preview": "Mistral Large 4 public preview",
+        "blind": true,
+        "scale_min": 1,
+        "scale_max": 5,
+        "rank": 2,
+        "models_evaluated": 5
+      },
+      "review_state": "reviewed",
+      "supersedes": []
+    }
+  ],
+  "routes": [],
+  "prices": [],
+  "usage": [],
+  "presets": [],
+  "coverage_gaps": [],
+  "metadata_claims": [
+    {
+      "id": "claim_mistral_large4_total_parameters",
+      "entity_type": "model",
+      "entity_id": "mistral_large4",
+      "field": "total_parameters",
+      "value": 1050,
+      "unit": "B parameters",
+      "basis": "disclosed",
+      "confidence_rationale": "Official Mistral model card states 1.05T total parameters; converted to 1,050 billion parameters for a consistent unit.",
+      "source_ids": [
+        "mistral_large4_docs"
+      ],
+      "method": "Direct disclosure; unit conversion from 1.05T to 1,050B.",
+      "claimed_at": "2026-10-06T00:00:00Z",
+      "selected": true
+    },
+    {
+      "id": "claim_mistral_large4_active_parameters",
+      "entity_type": "model",
+      "entity_id": "mistral_large4",
+      "field": "active_parameters",
+      "value": 52,
+      "unit": "B parameters",
+      "basis": "disclosed",
+      "confidence_rationale": "Official Mistral model card states 52B active parameters.",
+      "source_ids": [
+        "mistral_large4_docs"
+      ],
+      "method": "Direct disclosure.",
+      "claimed_at": "2026-10-06T00:00:00Z",
+      "selected": true
+    }
+  ],
+  "external_mappings": [],
+  "missing_cells": []
+}

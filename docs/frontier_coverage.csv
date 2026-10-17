@@ -1,0 +1,191 @@
+model_id,model_name,benchmark_id,benchmark_name,coverage_any_configuration,observation_count,configurations_with_observations,source_level_missing_cell,interpretation
+gpt6_astra,GPT-6 Astra,vals_index_reported,Vals Index,true,1,gpt6_astra_google_reported,false,observed_in_at_least_one_configuration
+gpt6_astra,GPT-6 Astra,automationbench_reported,AutomationBench,true,1,gpt6_astra_google_reported,false,observed_in_at_least_one_configuration
+gpt6_astra,GPT-6 Astra,vals_finance_agent_v2,Vals Finance Agent,true,1,gpt6_astra_google_reported,false,observed_in_at_least_one_configuration
+gpt6_astra,GPT-6 Astra,harvey_legal_agent_reported,Harvey Legal Agent Benchmark,true,1,gpt6_astra_google_reported,false,observed_in_at_least_one_configuration
+gpt6_astra,GPT-6 Astra,deepswe_v11,DeepSWE v1.1,true,1,gpt6_astra_google_reported,false,observed_in_at_least_one_configuration
+gpt6_astra,GPT-6 Astra,frontierswe_v2,FrontierSWE,true,1,gpt6_astra_google_reported,false,observed_in_at_least_one_configuration
+gpt6_astra,GPT-6 Astra,vibe_code_bench_reported,Vibe Code Bench,true,1,gpt6_astra_google_reported,false,observed_in_at_least_one_configuration
+gpt6_astra,GPT-6 Astra,terminal_bench_4,Terminal-Bench 4.0,true,2,gpt6_astra_google_reported;gpt6_astra_high,false,observed_in_at_least_one_configuration
+gpt6_astra,GPT-6 Astra,posttrainbench_v11,PostTrainBench,true,1,gpt6_astra_google_reported,false,observed_in_at_least_one_configuration
+gpt6_astra,GPT-6 Astra,terminal_science_01,Terminal-Bench Science 0.1,true,2,gpt6_astra_google_reported;gpt6_astra_high,false,observed_in_at_least_one_configuration
+gpt6_astra,GPT-6 Astra,labbench_2,LABBench,true,1,gpt6_astra_google_reported,false,observed_in_at_least_one_configuration
+gpt6_astra,GPT-6 Astra,riemannbench_reported,RiemannBench,true,1,gpt6_astra_google_reported,false,observed_in_at_least_one_configuration
+gpt6_astra,GPT-6 Astra,graphwalks_up_to_128k_bfs_f1,GraphWalks,true,1,gpt6_astra_google_reported,false,observed_in_at_least_one_configuration
+gpt6_astra,GPT-6 Astra,graphwalks_256k_to_1m_bfs_f1,GraphWalks,true,1,gpt6_astra_google_reported,false,observed_in_at_least_one_configuration
+gpt6_astra,GPT-6 Astra,agents_last_exam_binary,Agent's Last Exam,true,1,gpt6_astra_google_reported,false,observed_in_at_least_one_configuration
+gpt6_astra,GPT-6 Astra,osworld_20_offline_partial,OSWorld 2.0,true,1,gpt6_astra_google_reported,false,observed_in_at_least_one_configuration
+gpt6_astra,GPT-6 Astra,chartography_reported,Chartography,true,1,gpt6_astra_google_reported,false,observed_in_at_least_one_configuration
+gpt6_astra,GPT-6 Astra,lvbench_reported,LVBench,true,1,gpt6_astra_google_reported,false,observed_in_at_least_one_configuration
+gpt6_astra,GPT-6 Astra,cwe_bench_v1,CWE-bench,true,1,gpt6_astra_google_reported,false,observed_in_at_least_one_configuration
+claude_opus55,Claude Opus 5.5,vals_index_reported,Vals Index,true,1,claude_opus55_google_reported,false,observed_in_at_least_one_configuration
+claude_opus55,Claude Opus 5.5,automationbench_reported,AutomationBench,true,1,claude_opus55_google_reported,false,observed_in_at_least_one_configuration
+claude_opus55,Claude Opus 5.5,vals_finance_agent_v2,Vals Finance Agent,true,1,claude_opus55_google_reported,false,observed_in_at_least_one_configuration
+claude_opus55,Claude Opus 5.5,harvey_legal_agent_reported,Harvey Legal Agent Benchmark,true,1,claude_opus55_google_reported,false,observed_in_at_least_one_configuration
+claude_opus55,Claude Opus 5.5,deepswe_v11,DeepSWE v1.1,true,1,claude_opus55_google_reported,false,observed_in_at_least_one_configuration
+claude_opus55,Claude Opus 5.5,frontierswe_v2,FrontierSWE,true,1,claude_opus55_google_reported,false,observed_in_at_least_one_configuration
+claude_opus55,Claude Opus 5.5,vibe_code_bench_reported,Vibe Code Bench,true,1,claude_opus55_google_reported,false,observed_in_at_least_one_configuration
+claude_opus55,Claude Opus 5.5,terminal_bench_4,Terminal-Bench 4.0,true,2,claude_opus55_google_reported;claude_opus55_xhigh,false,observed_in_at_least_one_configuration
+claude_opus55,Claude Opus 5.5,posttrainbench_v11,PostTrainBench,true,1,claude_opus55_google_reported,false,observed_in_at_least_one_configuration
+claude_opus55,Claude Opus 5.5,terminal_science_01,Terminal-Bench Science 0.1,true,2,claude_opus55_google_reported;claude_opus55_max,false,observed_in_at_least_one_configuration
+claude_opus55,Claude Opus 5.5,labbench_2,LABBench,true,1,claude_opus55_google_reported,false,observed_in_at_least_one_configuration
+claude_opus55,Claude Opus 5.5,riemannbench_reported,RiemannBench,true,1,claude_opus55_google_reported,false,observed_in_at_least_one_configuration
+claude_opus55,Claude Opus 5.5,graphwalks_up_to_128k_bfs_f1,GraphWalks,true,1,claude_opus55_google_reported,false,observed_in_at_least_one_configuration
+claude_opus55,Claude Opus 5.5,graphwalks_256k_to_1m_bfs_f1,GraphWalks,true,1,claude_opus55_google_reported,false,observed_in_at_least_one_configuration
+claude_opus55,Claude Opus 5.5,agents_last_exam_binary,Agent's Last Exam,true,1,claude_opus55_google_reported,false,observed_in_at_least_one_configuration
+claude_opus55,Claude Opus 5.5,osworld_20_offline_partial,OSWorld 2.0,false,0,,true,publisher_explicitly_not_reported
+claude_opus55,Claude Opus 5.5,chartography_reported,Chartography,true,1,claude_opus55_google_reported,false,observed_in_at_least_one_configuration
+claude_opus55,Claude Opus 5.5,lvbench_reported,LVBench,true,1,claude_opus55_google_reported,false,observed_in_at_least_one_configuration
+claude_opus55,Claude Opus 5.5,cwe_bench_v1,CWE-bench,true,1,claude_opus55_google_reported,false,observed_in_at_least_one_configuration
+claude_fable51,Claude Fable 5.1,vals_index_reported,Vals Index,true,1,claude_fable51_google_reported,false,observed_in_at_least_one_configuration
+claude_fable51,Claude Fable 5.1,automationbench_reported,AutomationBench,true,1,claude_fable51_google_reported,false,observed_in_at_least_one_configuration
+claude_fable51,Claude Fable 5.1,vals_finance_agent_v2,Vals Finance Agent,true,1,claude_fable51_google_reported,false,observed_in_at_least_one_configuration
+claude_fable51,Claude Fable 5.1,harvey_legal_agent_reported,Harvey Legal Agent Benchmark,true,1,claude_fable51_google_reported,false,observed_in_at_least_one_configuration
+claude_fable51,Claude Fable 5.1,deepswe_v11,DeepSWE v1.1,true,2,claude_fable51_google_reported;claude_fable51_max,false,observed_in_at_least_one_configuration
+claude_fable51,Claude Fable 5.1,frontierswe_v2,FrontierSWE,true,1,claude_fable51_google_reported,false,observed_in_at_least_one_configuration
+claude_fable51,Claude Fable 5.1,vibe_code_bench_reported,Vibe Code Bench,true,1,claude_fable51_google_reported,false,observed_in_at_least_one_configuration
+claude_fable51,Claude Fable 5.1,terminal_bench_4,Terminal-Bench 4.0,true,3,claude_fable51_google_reported;claude_fable51_max,false,observed_in_at_least_one_configuration
+claude_fable51,Claude Fable 5.1,posttrainbench_v11,PostTrainBench,true,1,claude_fable51_google_reported,false,observed_in_at_least_one_configuration
+claude_fable51,Claude Fable 5.1,terminal_science_01,Terminal-Bench Science 0.1,true,2,claude_fable51_google_reported;claude_fable51_max,false,observed_in_at_least_one_configuration
+claude_fable51,Claude Fable 5.1,labbench_2,LABBench,true,1,claude_fable51_google_reported,false,observed_in_at_least_one_configuration
+claude_fable51,Claude Fable 5.1,riemannbench_reported,RiemannBench,true,1,claude_fable51_google_reported,false,observed_in_at_least_one_configuration
+claude_fable51,Claude Fable 5.1,graphwalks_up_to_128k_bfs_f1,GraphWalks,true,1,claude_fable51_google_reported,false,observed_in_at_least_one_configuration
+claude_fable51,Claude Fable 5.1,graphwalks_256k_to_1m_bfs_f1,GraphWalks,true,1,claude_fable51_google_reported,false,observed_in_at_least_one_configuration
+claude_fable51,Claude Fable 5.1,agents_last_exam_binary,Agent's Last Exam,false,0,,true,publisher_explicitly_not_reported
+claude_fable51,Claude Fable 5.1,osworld_20_offline_partial,OSWorld 2.0,false,0,,true,publisher_explicitly_not_reported
+claude_fable51,Claude Fable 5.1,chartography_reported,Chartography,true,1,claude_fable51_google_reported,false,observed_in_at_least_one_configuration
+claude_fable51,Claude Fable 5.1,lvbench_reported,LVBench,true,1,claude_fable51_google_reported,false,observed_in_at_least_one_configuration
+claude_fable51,Claude Fable 5.1,cwe_bench_v1,CWE-bench,true,1,claude_fable51_google_reported,false,observed_in_at_least_one_configuration
+gemini4_argon,Gemini 4 Argon,vals_index_reported,Vals Index,true,1,gemini4_argon_max,false,observed_in_at_least_one_configuration
+gemini4_argon,Gemini 4 Argon,automationbench_reported,AutomationBench,true,1,gemini4_argon_max,false,observed_in_at_least_one_configuration
+gemini4_argon,Gemini 4 Argon,vals_finance_agent_v2,Vals Finance Agent,true,1,gemini4_argon_max,false,observed_in_at_least_one_configuration
+gemini4_argon,Gemini 4 Argon,harvey_legal_agent_reported,Harvey Legal Agent Benchmark,true,1,gemini4_argon_max,false,observed_in_at_least_one_configuration
+gemini4_argon,Gemini 4 Argon,deepswe_v11,DeepSWE v1.1,true,1,gemini4_argon_max,false,observed_in_at_least_one_configuration
+gemini4_argon,Gemini 4 Argon,frontierswe_v2,FrontierSWE,true,1,gemini4_argon_max,false,observed_in_at_least_one_configuration
+gemini4_argon,Gemini 4 Argon,vibe_code_bench_reported,Vibe Code Bench,true,1,gemini4_argon_max,false,observed_in_at_least_one_configuration
+gemini4_argon,Gemini 4 Argon,terminal_bench_4,Terminal-Bench 4.0,true,1,gemini4_argon_max,false,observed_in_at_least_one_configuration
+gemini4_argon,Gemini 4 Argon,posttrainbench_v11,PostTrainBench,true,1,gemini4_argon_max,false,observed_in_at_least_one_configuration
+gemini4_argon,Gemini 4 Argon,terminal_science_01,Terminal-Bench Science 0.1,true,1,gemini4_argon_max,false,observed_in_at_least_one_configuration
+gemini4_argon,Gemini 4 Argon,labbench_2,LABBench,true,1,gemini4_argon_max,false,observed_in_at_least_one_configuration
+gemini4_argon,Gemini 4 Argon,riemannbench_reported,RiemannBench,true,1,gemini4_argon_max,false,observed_in_at_least_one_configuration
+gemini4_argon,Gemini 4 Argon,graphwalks_up_to_128k_bfs_f1,GraphWalks,true,1,gemini4_argon_max,false,observed_in_at_least_one_configuration
+gemini4_argon,Gemini 4 Argon,graphwalks_256k_to_1m_bfs_f1,GraphWalks,true,1,gemini4_argon_max,false,observed_in_at_least_one_configuration
+gemini4_argon,Gemini 4 Argon,agents_last_exam_binary,Agent's Last Exam,true,1,gemini4_argon_max,false,observed_in_at_least_one_configuration
+gemini4_argon,Gemini 4 Argon,osworld_20_offline_partial,OSWorld 2.0,true,1,gemini4_argon_max,false,observed_in_at_least_one_configuration
+gemini4_argon,Gemini 4 Argon,chartography_reported,Chartography,true,1,gemini4_argon_max,false,observed_in_at_least_one_configuration
+gemini4_argon,Gemini 4 Argon,lvbench_reported,LVBench,true,1,gemini4_argon_max,false,observed_in_at_least_one_configuration
+gemini4_argon,Gemini 4 Argon,cwe_bench_v1,CWE-bench,true,1,gemini4_argon_max,false,observed_in_at_least_one_configuration
+muse_wonder_full,Muse Wonder Full,vals_index_reported,Vals Index,false,0,,false,no_mapped_observation_found; absence_is_not_evidence_of_unavailability
+muse_wonder_full,Muse Wonder Full,automationbench_reported,AutomationBench,false,0,,false,no_mapped_observation_found; absence_is_not_evidence_of_unavailability
+muse_wonder_full,Muse Wonder Full,vals_finance_agent_v2,Vals Finance Agent,true,1,muse_wonder_full_max,false,observed_in_at_least_one_configuration
+muse_wonder_full,Muse Wonder Full,harvey_legal_agent_reported,Harvey Legal Agent Benchmark,false,0,,false,no_mapped_observation_found; absence_is_not_evidence_of_unavailability
+muse_wonder_full,Muse Wonder Full,deepswe_v11,DeepSWE v1.1,true,1,muse_wonder_full_max,false,observed_in_at_least_one_configuration
+muse_wonder_full,Muse Wonder Full,frontierswe_v2,FrontierSWE,false,0,,false,no_mapped_observation_found; absence_is_not_evidence_of_unavailability
+muse_wonder_full,Muse Wonder Full,vibe_code_bench_reported,Vibe Code Bench,false,0,,false,no_mapped_observation_found; absence_is_not_evidence_of_unavailability
+muse_wonder_full,Muse Wonder Full,terminal_bench_4,Terminal-Bench 4.0,true,1,muse_wonder_full_max,false,observed_in_at_least_one_configuration
+muse_wonder_full,Muse Wonder Full,posttrainbench_v11,PostTrainBench,false,0,,false,no_mapped_observation_found; absence_is_not_evidence_of_unavailability
+muse_wonder_full,Muse Wonder Full,terminal_science_01,Terminal-Bench Science 0.1,false,0,,false,no_mapped_observation_found; absence_is_not_evidence_of_unavailability
+muse_wonder_full,Muse Wonder Full,labbench_2,LABBench,false,0,,false,no_mapped_observation_found; absence_is_not_evidence_of_unavailability
+muse_wonder_full,Muse Wonder Full,riemannbench_reported,RiemannBench,false,0,,false,no_mapped_observation_found; absence_is_not_evidence_of_unavailability
+muse_wonder_full,Muse Wonder Full,graphwalks_up_to_128k_bfs_f1,GraphWalks,false,0,,false,no_mapped_observation_found; absence_is_not_evidence_of_unavailability
+muse_wonder_full,Muse Wonder Full,graphwalks_256k_to_1m_bfs_f1,GraphWalks,false,0,,false,no_mapped_observation_found; absence_is_not_evidence_of_unavailability
+muse_wonder_full,Muse Wonder Full,agents_last_exam_binary,Agent's Last Exam,false,0,,false,no_mapped_observation_found; absence_is_not_evidence_of_unavailability
+muse_wonder_full,Muse Wonder Full,osworld_20_offline_partial,OSWorld 2.0,false,0,,false,no_mapped_observation_found; absence_is_not_evidence_of_unavailability
+muse_wonder_full,Muse Wonder Full,chartography_reported,Chartography,false,0,,false,no_mapped_observation_found; absence_is_not_evidence_of_unavailability
+muse_wonder_full,Muse Wonder Full,lvbench_reported,LVBench,false,0,,false,no_mapped_observation_found; absence_is_not_evidence_of_unavailability
+muse_wonder_full,Muse Wonder Full,cwe_bench_v1,CWE-bench,false,0,,false,no_mapped_observation_found; absence_is_not_evidence_of_unavailability
+grok47,Grok 4.7,vals_index_reported,Vals Index,false,0,,false,no_mapped_observation_found; absence_is_not_evidence_of_unavailability
+grok47,Grok 4.7,automationbench_reported,AutomationBench,false,0,,false,no_mapped_observation_found; absence_is_not_evidence_of_unavailability
+grok47,Grok 4.7,vals_finance_agent_v2,Vals Finance Agent,false,0,,false,no_mapped_observation_found; absence_is_not_evidence_of_unavailability
+grok47,Grok 4.7,harvey_legal_agent_reported,Harvey Legal Agent Benchmark,false,0,,false,no_mapped_observation_found; absence_is_not_evidence_of_unavailability
+grok47,Grok 4.7,deepswe_v11,DeepSWE v1.1,true,1,grok47_high,false,observed_in_at_least_one_configuration
+grok47,Grok 4.7,frontierswe_v2,FrontierSWE,false,0,,false,no_mapped_observation_found; absence_is_not_evidence_of_unavailability
+grok47,Grok 4.7,vibe_code_bench_reported,Vibe Code Bench,false,0,,false,no_mapped_observation_found; absence_is_not_evidence_of_unavailability
+grok47,Grok 4.7,terminal_bench_4,Terminal-Bench 4.0,true,1,grok47_xhigh,false,observed_in_at_least_one_configuration
+grok47,Grok 4.7,posttrainbench_v11,PostTrainBench,false,0,,false,no_mapped_observation_found; absence_is_not_evidence_of_unavailability
+grok47,Grok 4.7,terminal_science_01,Terminal-Bench Science 0.1,false,0,,false,no_mapped_observation_found; absence_is_not_evidence_of_unavailability
+grok47,Grok 4.7,labbench_2,LABBench,false,0,,false,no_mapped_observation_found; absence_is_not_evidence_of_unavailability
+grok47,Grok 4.7,riemannbench_reported,RiemannBench,false,0,,false,no_mapped_observation_found; absence_is_not_evidence_of_unavailability
+grok47,Grok 4.7,graphwalks_up_to_128k_bfs_f1,GraphWalks,false,0,,false,no_mapped_observation_found; absence_is_not_evidence_of_unavailability
+grok47,Grok 4.7,graphwalks_256k_to_1m_bfs_f1,GraphWalks,false,0,,false,no_mapped_observation_found; absence_is_not_evidence_of_unavailability
+grok47,Grok 4.7,agents_last_exam_binary,Agent's Last Exam,false,0,,false,no_mapped_observation_found; absence_is_not_evidence_of_unavailability
+grok47,Grok 4.7,osworld_20_offline_partial,OSWorld 2.0,false,0,,false,no_mapped_observation_found; absence_is_not_evidence_of_unavailability
+grok47,Grok 4.7,chartography_reported,Chartography,false,0,,false,no_mapped_observation_found; absence_is_not_evidence_of_unavailability
+grok47,Grok 4.7,lvbench_reported,LVBench,false,0,,false,no_mapped_observation_found; absence_is_not_evidence_of_unavailability
+grok47,Grok 4.7,cwe_bench_v1,CWE-bench,false,0,,false,no_mapped_observation_found; absence_is_not_evidence_of_unavailability
+mistral_large4,Mistral Large 4,vals_index_reported,Vals Index,false,0,,false,no_mapped_observation_found; absence_is_not_evidence_of_unavailability
+mistral_large4,Mistral Large 4,automationbench_reported,AutomationBench,false,0,,false,no_mapped_observation_found; absence_is_not_evidence_of_unavailability
+mistral_large4,Mistral Large 4,vals_finance_agent_v2,Vals Finance Agent,false,0,,false,no_mapped_observation_found; absence_is_not_evidence_of_unavailability
+mistral_large4,Mistral Large 4,harvey_legal_agent_reported,Harvey Legal Agent Benchmark,false,0,,false,no_mapped_observation_found; absence_is_not_evidence_of_unavailability
+mistral_large4,Mistral Large 4,deepswe_v11,DeepSWE v1.1,true,1,mistral_large4_unknown,false,observed_in_at_least_one_configuration
+mistral_large4,Mistral Large 4,frontierswe_v2,FrontierSWE,false,0,,false,no_mapped_observation_found; absence_is_not_evidence_of_unavailability
+mistral_large4,Mistral Large 4,vibe_code_bench_reported,Vibe Code Bench,false,0,,false,no_mapped_observation_found; absence_is_not_evidence_of_unavailability
+mistral_large4,Mistral Large 4,terminal_bench_4,Terminal-Bench 4.0,true,1,mistral_large4_unknown,false,observed_in_at_least_one_configuration
+mistral_large4,Mistral Large 4,posttrainbench_v11,PostTrainBench,false,0,,false,no_mapped_observation_found; absence_is_not_evidence_of_unavailability
+mistral_large4,Mistral Large 4,terminal_science_01,Terminal-Bench Science 0.1,false,0,,false,no_mapped_observation_found; absence_is_not_evidence_of_unavailability
+mistral_large4,Mistral Large 4,labbench_2,LABBench,false,0,,false,no_mapped_observation_found; absence_is_not_evidence_of_unavailability
+mistral_large4,Mistral Large 4,riemannbench_reported,RiemannBench,false,0,,false,no_mapped_observation_found; absence_is_not_evidence_of_unavailability
+mistral_large4,Mistral Large 4,graphwalks_up_to_128k_bfs_f1,GraphWalks,false,0,,false,no_mapped_observation_found; absence_is_not_evidence_of_unavailability
+mistral_large4,Mistral Large 4,graphwalks_256k_to_1m_bfs_f1,GraphWalks,false,0,,false,no_mapped_observation_found; absence_is_not_evidence_of_unavailability
+mistral_large4,Mistral Large 4,agents_last_exam_binary,Agent's Last Exam,false,0,,false,no_mapped_observation_found; absence_is_not_evidence_of_unavailability
+mistral_large4,Mistral Large 4,osworld_20_offline_partial,OSWorld 2.0,false,0,,false,no_mapped_observation_found; absence_is_not_evidence_of_unavailability
+mistral_large4,Mistral Large 4,chartography_reported,Chartography,false,0,,false,no_mapped_observation_found; absence_is_not_evidence_of_unavailability
+mistral_large4,Mistral Large 4,lvbench_reported,LVBench,false,0,,false,no_mapped_observation_found; absence_is_not_evidence_of_unavailability
+mistral_large4,Mistral Large 4,cwe_bench_v1,CWE-bench,false,0,,false,no_mapped_observation_found; absence_is_not_evidence_of_unavailability
+gpt61_sol,GPT-6.1 Sol,vals_index_reported,Vals Index,false,0,,false,no_mapped_observation_found; absence_is_not_evidence_of_unavailability
+gpt61_sol,GPT-6.1 Sol,automationbench_reported,AutomationBench,false,0,,false,no_mapped_observation_found; absence_is_not_evidence_of_unavailability
+gpt61_sol,GPT-6.1 Sol,vals_finance_agent_v2,Vals Finance Agent,false,0,,false,no_mapped_observation_found; absence_is_not_evidence_of_unavailability
+gpt61_sol,GPT-6.1 Sol,harvey_legal_agent_reported,Harvey Legal Agent Benchmark,false,0,,false,no_mapped_observation_found; absence_is_not_evidence_of_unavailability
+gpt61_sol,GPT-6.1 Sol,deepswe_v11,DeepSWE v1.1,false,0,,false,no_mapped_observation_found; absence_is_not_evidence_of_unavailability
+gpt61_sol,GPT-6.1 Sol,frontierswe_v2,FrontierSWE,false,0,,false,no_mapped_observation_found; absence_is_not_evidence_of_unavailability
+gpt61_sol,GPT-6.1 Sol,vibe_code_bench_reported,Vibe Code Bench,false,0,,false,no_mapped_observation_found; absence_is_not_evidence_of_unavailability
+gpt61_sol,GPT-6.1 Sol,terminal_bench_4,Terminal-Bench 4.0,false,0,,false,no_mapped_observation_found; absence_is_not_evidence_of_unavailability
+gpt61_sol,GPT-6.1 Sol,posttrainbench_v11,PostTrainBench,false,0,,false,no_mapped_observation_found; absence_is_not_evidence_of_unavailability
+gpt61_sol,GPT-6.1 Sol,terminal_science_01,Terminal-Bench Science 0.1,false,0,,false,no_mapped_observation_found; absence_is_not_evidence_of_unavailability
+gpt61_sol,GPT-6.1 Sol,labbench_2,LABBench,false,0,,false,no_mapped_observation_found; absence_is_not_evidence_of_unavailability
+gpt61_sol,GPT-6.1 Sol,riemannbench_reported,RiemannBench,false,0,,false,no_mapped_observation_found; absence_is_not_evidence_of_unavailability
+gpt61_sol,GPT-6.1 Sol,graphwalks_up_to_128k_bfs_f1,GraphWalks,false,0,,false,no_mapped_observation_found; absence_is_not_evidence_of_unavailability
+gpt61_sol,GPT-6.1 Sol,graphwalks_256k_to_1m_bfs_f1,GraphWalks,false,0,,false,no_mapped_observation_found; absence_is_not_evidence_of_unavailability
+gpt61_sol,GPT-6.1 Sol,agents_last_exam_binary,Agent's Last Exam,false,0,,false,no_mapped_observation_found; absence_is_not_evidence_of_unavailability
+gpt61_sol,GPT-6.1 Sol,osworld_20_offline_partial,OSWorld 2.0,false,0,,false,no_mapped_observation_found; absence_is_not_evidence_of_unavailability
+gpt61_sol,GPT-6.1 Sol,chartography_reported,Chartography,false,0,,false,no_mapped_observation_found; absence_is_not_evidence_of_unavailability
+gpt61_sol,GPT-6.1 Sol,lvbench_reported,LVBench,false,0,,false,no_mapped_observation_found; absence_is_not_evidence_of_unavailability
+gpt61_sol,GPT-6.1 Sol,cwe_bench_v1,CWE-bench,false,0,,false,no_mapped_observation_found; absence_is_not_evidence_of_unavailability
+muse_spark13,Muse Spark 1.3,vals_index_reported,Vals Index,false,0,,false,no_mapped_observation_found; absence_is_not_evidence_of_unavailability
+muse_spark13,Muse Spark 1.3,automationbench_reported,AutomationBench,false,0,,false,no_mapped_observation_found; absence_is_not_evidence_of_unavailability
+muse_spark13,Muse Spark 1.3,vals_finance_agent_v2,Vals Finance Agent,false,0,,false,no_mapped_observation_found; absence_is_not_evidence_of_unavailability
+muse_spark13,Muse Spark 1.3,harvey_legal_agent_reported,Harvey Legal Agent Benchmark,false,0,,false,no_mapped_observation_found; absence_is_not_evidence_of_unavailability
+muse_spark13,Muse Spark 1.3,deepswe_v11,DeepSWE v1.1,true,1,muse_spark13_max,false,observed_in_at_least_one_configuration
+muse_spark13,Muse Spark 1.3,frontierswe_v2,FrontierSWE,false,0,,false,no_mapped_observation_found; absence_is_not_evidence_of_unavailability
+muse_spark13,Muse Spark 1.3,vibe_code_bench_reported,Vibe Code Bench,false,0,,false,no_mapped_observation_found; absence_is_not_evidence_of_unavailability
+muse_spark13,Muse Spark 1.3,terminal_bench_4,Terminal-Bench 4.0,false,0,,false,no_mapped_observation_found; absence_is_not_evidence_of_unavailability
+muse_spark13,Muse Spark 1.3,posttrainbench_v11,PostTrainBench,false,0,,false,no_mapped_observation_found; absence_is_not_evidence_of_unavailability
+muse_spark13,Muse Spark 1.3,terminal_science_01,Terminal-Bench Science 0.1,false,0,,false,no_mapped_observation_found; absence_is_not_evidence_of_unavailability
+muse_spark13,Muse Spark 1.3,labbench_2,LABBench,false,0,,false,no_mapped_observation_found; absence_is_not_evidence_of_unavailability
+muse_spark13,Muse Spark 1.3,riemannbench_reported,RiemannBench,false,0,,false,no_mapped_observation_found; absence_is_not_evidence_of_unavailability
+muse_spark13,Muse Spark 1.3,graphwalks_up_to_128k_bfs_f1,GraphWalks,false,0,,false,no_mapped_observation_found; absence_is_not_evidence_of_unavailability
+muse_spark13,Muse Spark 1.3,graphwalks_256k_to_1m_bfs_f1,GraphWalks,false,0,,false,no_mapped_observation_found; absence_is_not_evidence_of_unavailability
+muse_spark13,Muse Spark 1.3,agents_last_exam_binary,Agent's Last Exam,false,0,,false,no_mapped_observation_found; absence_is_not_evidence_of_unavailability
+muse_spark13,Muse Spark 1.3,osworld_20_offline_partial,OSWorld 2.0,false,0,,false,no_mapped_observation_found; absence_is_not_evidence_of_unavailability
+muse_spark13,Muse Spark 1.3,chartography_reported,Chartography,false,0,,false,no_mapped_observation_found; absence_is_not_evidence_of_unavailability
+muse_spark13,Muse Spark 1.3,lvbench_reported,LVBench,false,0,,false,no_mapped_observation_found; absence_is_not_evidence_of_unavailability
+muse_spark13,Muse Spark 1.3,cwe_bench_v1,CWE-bench,false,0,,false,no_mapped_observation_found; absence_is_not_evidence_of_unavailability
+muse_wonder,Muse Wonder,vals_index_reported,Vals Index,false,0,,false,no_mapped_observation_found; absence_is_not_evidence_of_unavailability
+muse_wonder,Muse Wonder,automationbench_reported,AutomationBench,false,0,,false,no_mapped_observation_found; absence_is_not_evidence_of_unavailability
+muse_wonder,Muse Wonder,vals_finance_agent_v2,Vals Finance Agent,true,1,muse_wonder_max,false,observed_in_at_least_one_configuration
+muse_wonder,Muse Wonder,harvey_legal_agent_reported,Harvey Legal Agent Benchmark,false,0,,false,no_mapped_observation_found; absence_is_not_evidence_of_unavailability
+muse_wonder,Muse Wonder,deepswe_v11,DeepSWE v1.1,true,1,muse_wonder_max,false,observed_in_at_least_one_configuration
+muse_wonder,Muse Wonder,frontierswe_v2,FrontierSWE,false,0,,false,no_mapped_observation_found; absence_is_not_evidence_of_unavailability
+muse_wonder,Muse Wonder,vibe_code_bench_reported,Vibe Code Bench,false,0,,false,no_mapped_observation_found; absence_is_not_evidence_of_unavailability
+muse_wonder,Muse Wonder,terminal_bench_4,Terminal-Bench 4.0,true,1,muse_wonder_max,false,observed_in_at_least_one_configuration
+muse_wonder,Muse Wonder,posttrainbench_v11,PostTrainBench,false,0,,false,no_mapped_observation_found; absence_is_not_evidence_of_unavailability
+muse_wonder,Muse Wonder,terminal_science_01,Terminal-Bench Science 0.1,false,0,,false,no_mapped_observation_found; absence_is_not_evidence_of_unavailability
+muse_wonder,Muse Wonder,labbench_2,LABBench,false,0,,false,no_mapped_observation_found; absence_is_not_evidence_of_unavailability
+muse_wonder,Muse Wonder,riemannbench_reported,RiemannBench,false,0,,false,no_mapped_observation_found; absence_is_not_evidence_of_unavailability
+muse_wonder,Muse Wonder,graphwalks_up_to_128k_bfs_f1,GraphWalks,false,0,,false,no_mapped_observation_found; absence_is_not_evidence_of_unavailability
+muse_wonder,Muse Wonder,graphwalks_256k_to_1m_bfs_f1,GraphWalks,false,0,,false,no_mapped_observation_found; absence_is_not_evidence_of_unavailability
+muse_wonder,Muse Wonder,agents_last_exam_binary,Agent's Last Exam,false,0,,false,no_mapped_observation_found; absence_is_not_evidence_of_unavailability
+muse_wonder,Muse Wonder,osworld_20_offline_partial,OSWorld 2.0,false,0,,false,no_mapped_observation_found; absence_is_not_evidence_of_unavailability
+muse_wonder,Muse Wonder,chartography_reported,Chartography,false,0,,false,no_mapped_observation_found; absence_is_not_evidence_of_unavailability
+muse_wonder,Muse Wonder,lvbench_reported,LVBench,false,0,,false,no_mapped_observation_found; absence_is_not_evidence_of_unavailability
+muse_wonder,Muse Wonder,cwe_bench_v1,CWE-bench,false,0,,false,no_mapped_observation_found; absence_is_not_evidence_of_unavailability

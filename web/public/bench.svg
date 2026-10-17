@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
+  <title>All the Benches — a bench with a bar-chart backrest</title>
+  <rect width="32" height="32" rx="8" fill="#285943"/>
+  <g fill="#F8FAF7">
+    <rect x="7" y="11" width="5" height="7" rx="1"/>
+    <rect x="13.5" y="8" width="5" height="10" rx="1"/>
+    <rect x="20" y="5" width="5" height="13" rx="1"/>
+    <rect x="4" y="19.5" width="24" height="3" rx="1.5"/>
+    <rect x="7" y="22" width="3" height="5" rx="1"/>
+    <rect x="22" y="22" width="3" height="5" rx="1"/>
+  </g>
+</svg>

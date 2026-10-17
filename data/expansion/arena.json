@@ -1,0 +1,1863 @@
+{
+  "sources": [
+    {
+      "id": "arena_agent_leaderboard_20261016",
+      "url": "https://arena.ai/leaderboard/agent",
+      "title": "Agent Arena leaderboard — Overall (16 October 2026)",
+      "publisher": "Arena",
+      "original_evaluator": "Arena",
+      "retrieved_at": "2026-10-17T12:00:00Z",
+      "published_at": "2026-10-16T00:00:00Z",
+      "version": "Overall leaderboard snapshot, 2026-10-16",
+      "method": "Manual transcription of exact model rows and displayed signal columns from Arena’s public leaderboard.",
+      "locator": "Overall table; exact local configurations Claude Opus 5.5 (Max), GPT-6 Astra (Max), Claude Fable 5.1 (Max), GPT-6.1 Sol (Max), Muse Wonder (Max), Muse Spark 1.3 (Max), and Grok 4.7 (xHigh). Columns Net Improvement through Tool Hallucination; all six signal values and displayed intervals retained."
+    },
+    {
+      "id": "arena_text_leaderboard_20261015",
+      "url": "https://arena.ai/leaderboard/chat/text",
+      "title": "Text Arena leaderboard — Overall (15 October 2026)",
+      "publisher": "Arena",
+      "original_evaluator": "Arena",
+      "retrieved_at": "2026-10-17T12:00:00Z",
+      "published_at": "2026-10-15T00:00:00Z",
+      "version": "Overall leaderboard snapshot, 2026-10-15",
+      "method": "Manual transcription of exact model rows from Arena’s public leaderboard; displayed Arena score and ± confidence interval retained.",
+      "locator": "Overall table rows Muse Wonder (Max), Claude Fable 5.1 (Max), GPT-6.1 Sol (Max), GPT-6 Astra (Max), with score ± interval and vote count."
+    },
+    {
+      "id": "arena_agent_signal_definitions",
+      "url": "https://arena.ai/resources/agent-arena-signals",
+      "title": "Agent Arena Signal Definitions",
+      "publisher": "Arena",
+      "retrieved_at": "2026-10-17T12:00:00Z",
+      "published_at": "2026-10-12T00:00:00Z",
+      "version": "Last updated 2026-10-12",
+      "method": "Primary metric definitions for Agent Arena signal columns.",
+      "locator": "Sections Confirmed Success, Praise vs Complaint, Steerability, Bash Reliability, and Tool Hallucinations."
+    },
+    {
+      "id": "arena_leaderboard_dataset_card",
+      "url": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset",
+      "title": "Arena Leaderboard Dataset card and schema",
+      "publisher": "Arena (lmarena-ai)",
+      "retrieved_at": "2026-10-17T12:00:00Z",
+      "version": "Current card inspected 2026-10-17",
+      "license": "CC BY 4.0",
+      "method": "Used to verify published schema, category/split coverage, and historical export availability; scores here transcribed from arena.ai pages.",
+      "locator": "README sections Subsets, Splits, Schema; rating lower/upper bounds and Agent Arena signal score fields."
+    },
+    {
+      "id": "arena_ranking_method",
+      "url": "https://arena.ai/blog/ranking-method",
+      "title": "Arena’s Ranking Method",
+      "publisher": "Arena",
+      "original_evaluator": "Arena",
+      "retrieved_at": "2026-10-17T12:00:00Z",
+      "published_at": "2025-11-14T00:00:00Z",
+      "version": "Updated 2026-02-28",
+      "method": "Primary documentation for score confidence intervals and rank spread interpretation.",
+      "locator": "Paragraphs 25–37: Arena scores are reported with confidence intervals; rank spread reflects possible rank based on score intervals."
+    },
+    {
+      "id": "arena_webdev_leaderboard_20261016",
+      "url": "https://arena.ai/leaderboard/code/webdev",
+      "title": "Code Arena: WebDev Overall leaderboard (16 October 2026)",
+      "publisher": "Arena",
+      "original_evaluator": "Arena",
+      "retrieved_at": "2026-10-17T12:00:00Z",
+      "published_at": "2026-10-16T00:00:00Z",
+      "version": "Overall leaderboard snapshot, 2026-10-16",
+      "method": "Manual transcription of exact model rows from Arena’s public WebDev leaderboard.",
+      "locator": "Overall table rows Claude Opus 5.5 (Max), GPT-6 Astra (Max), GPT-6.1 Sol (Max), Claude Fable 5.1 (Max); displayed score ± interval and vote count."
+    },
+    {
+      "id": "arena_search_leaderboard_20261013",
+      "url": "https://arena.ai/leaderboard/chat/search",
+      "title": "Search Arena leaderboard (13 October 2026)",
+      "publisher": "Arena",
+      "original_evaluator": "Arena",
+      "retrieved_at": "2026-10-17T12:00:00Z",
+      "published_at": "2026-10-13T00:00:00Z",
+      "version": "Overall leaderboard snapshot, 2026-10-13",
+      "method": "Manual transcription of exact model rows from Arena’s public Search Arena leaderboard.",
+      "locator": "Overall table rows GPT-6 Astra (Max) and GPT-6.1 Sol (Max); displayed score ± interval and vote count."
+    },
+    {
+      "id": "arena_vision_leaderboard_20261009",
+      "url": "https://arena.ai/leaderboard/chat/vision",
+      "title": "Vision Arena Overall leaderboard (9 October 2026)",
+      "publisher": "Arena",
+      "original_evaluator": "Arena",
+      "retrieved_at": "2026-10-17T12:00:00Z",
+      "published_at": "2026-10-09T00:00:00Z",
+      "version": "Overall leaderboard snapshot, 2026-10-09",
+      "method": "Manual transcription of exact model rows from Arena’s public Vision Arena leaderboard.",
+      "locator": "Overall table rows GPT-6.1 Sol (Max), Claude Fable 5.1 (Max), GPT-6 Astra (Max); displayed score ± interval and vote count."
+    }
+  ],
+  "labs": [],
+  "models": [],
+  "configurations": [],
+  "benchmarks": [
+    {
+      "id": "arena_text_overall_bt_20261015",
+      "family_id": "arena_text_preference",
+      "name": "Text Arena Overall",
+      "version": "Leaderboard published 2026-10-15",
+      "category": "text",
+      "modality": "text",
+      "task": "Human pairwise preference, overall category",
+      "metric_name": "Arena rating (Bradley–Terry)",
+      "unit": "Arena rating points",
+      "direction": "higher",
+      "owner": "Arena",
+      "documentation_url": "https://arena.ai/leaderboard/chat/text"
+    },
+    {
+      "id": "arena_agent_net_improvement_20261016",
+      "family_id": "arena_agent_signals",
+      "name": "Agent Arena Overall Net Improvement",
+      "version": "Leaderboard published 2026-10-16",
+      "category": "agent",
+      "modality": "text, tools",
+      "task": "Arena Agent Arena overall Net Improvement signal; aggregate score from real agent sessions, not a task pass rate",
+      "metric_name": "Net Improvement",
+      "unit": "percent",
+      "direction": "higher",
+      "owner": "Arena",
+      "documentation_url": "https://arena.ai/leaderboard/agent"
+    },
+    {
+      "id": "arena_agent_confirmed_success_20261016",
+      "family_id": "arena_agent_signals",
+      "name": "Agent Arena Confirmed Success",
+      "version": "Leaderboard published 2026-10-16",
+      "category": "agent",
+      "modality": "text, tools",
+      "task": "Arena signal based on explicit user confirmations that a task was completed; retain Arena aggregate score as reported",
+      "metric_name": "Confirmed Success",
+      "unit": "percent",
+      "direction": "higher",
+      "owner": "Arena",
+      "documentation_url": "https://arena.ai/leaderboard/agent"
+    },
+    {
+      "id": "arena_agent_praise_complaint_20261016",
+      "family_id": "arena_agent_signals",
+      "name": "Agent Arena Praise vs Complaint",
+      "version": "Leaderboard published 2026-10-16",
+      "category": "agent",
+      "modality": "text, tools",
+      "task": "Arena signal derived from explicit user praise or complaint; retain Arena aggregate score as reported",
+      "metric_name": "Praise vs Complaint",
+      "unit": "percent",
+      "direction": "higher",
+      "owner": "Arena",
+      "documentation_url": "https://arena.ai/leaderboard/agent"
+    },
+    {
+      "id": "arena_agent_steerability_20261016",
+      "family_id": "arena_agent_signals",
+      "name": "Agent Arena Steerability",
+      "version": "Leaderboard published 2026-10-16",
+      "category": "agent",
+      "modality": "text, tools",
+      "task": "Arena signal derived from user correction effort; retain Arena aggregate score as reported",
+      "metric_name": "Steerability",
+      "unit": "percent",
+      "direction": "higher",
+      "owner": "Arena",
+      "documentation_url": "https://arena.ai/leaderboard/agent"
+    },
+    {
+      "id": "arena_agent_bash_reliability_20261016",
+      "family_id": "arena_agent_signals",
+      "name": "Agent Arena Bash Reliability",
+      "version": "Leaderboard published 2026-10-16",
+      "category": "agent",
+      "modality": "text, tools",
+      "task": "Arena bash reliability signal derived from agent-caused bash failures; retain Arena aggregate score as reported",
+      "metric_name": "Bash Reliability",
+      "unit": "percent",
+      "direction": "higher",
+      "owner": "Arena",
+      "documentation_url": "https://arena.ai/leaderboard/agent"
+    },
+    {
+      "id": "arena_agent_tool_hallucination_20261016",
+      "family_id": "arena_agent_signals",
+      "name": "Agent Arena Tool Hallucination",
+      "version": "Leaderboard published 2026-10-16",
+      "category": "agent",
+      "modality": "text, tools",
+      "task": "Arena signal derived from invalid or unavailable tool calls; lower rate is better",
+      "metric_name": "Tool Hallucination",
+      "unit": "percent",
+      "direction": "lower",
+      "owner": "Arena",
+      "documentation_url": "https://arena.ai/leaderboard/agent"
+    },
+    {
+      "id": "arena_webdev_overall_bt_20261016",
+      "family_id": "arena_code_preference",
+      "name": "Code Arena: WebDev Overall",
+      "version": "Leaderboard published 2026-10-16",
+      "category": "coding",
+      "modality": "text, code, tools",
+      "task": "Human pairwise preference on multi-step web development tasks",
+      "metric_name": "Arena rating (Bradley–Terry)",
+      "unit": "Arena rating points",
+      "direction": "higher",
+      "owner": "Arena",
+      "documentation_url": "https://arena.ai/leaderboard/code/webdev"
+    },
+    {
+      "id": "arena_search_overall_bt_20261013",
+      "family_id": "arena_search_preference",
+      "name": "Search Arena Overall",
+      "version": "Leaderboard published 2026-10-13",
+      "category": "search",
+      "modality": "text, web search",
+      "task": "Human pairwise preference on LLM tasks with integrated web search",
+      "metric_name": "Arena rating (Bradley–Terry)",
+      "unit": "Arena rating points",
+      "direction": "higher",
+      "owner": "Arena",
+      "documentation_url": "https://arena.ai/leaderboard/chat/search"
+    },
+    {
+      "id": "arena_vision_overall_bt_20261009",
+      "family_id": "arena_vision_preference",
+      "name": "Vision Arena Overall",
+      "version": "Leaderboard published 2026-10-09",
+      "category": "vision",
+      "modality": "image, text",
+      "task": "Human pairwise preference on multimodal tasks with visual inputs",
+      "metric_name": "Arena rating (Bradley–Terry)",
+      "unit": "Arena rating points",
+      "direction": "higher",
+      "owner": "Arena",
+      "documentation_url": "https://arena.ai/leaderboard/chat/vision"
+    }
+  ],
+  "series": [
+    {
+      "id": "arena_text_overall_bt_20261015_series",
+      "benchmark_id": "arena_text_overall_bt_20261015",
+      "protocol": "Arena public human preference or real-world agent session evaluation as described by Arena",
+      "protocol_version": "Leaderboard published 2026-10-15",
+      "evaluator": "Arena",
+      "comparability": "Values are comparable only within this leaderboard metric and snapshot; cross-metric comparisons are invalid.",
+      "comparability_status": "comparable",
+      "setup_fingerprint": "arena_text_overall_bt_20261015"
+    },
+    {
+      "id": "arena_agent_net_improvement_20261016_series",
+      "benchmark_id": "arena_agent_net_improvement_20261016",
+      "protocol": "Arena public human preference or real-world agent session evaluation as described by Arena",
+      "protocol_version": "Leaderboard published 2026-10-16",
+      "evaluator": "Arena",
+      "comparability": "Values are comparable only within this leaderboard metric and snapshot; cross-metric comparisons are invalid.",
+      "comparability_status": "comparable",
+      "setup_fingerprint": "arena_agent_net_improvement_20261016"
+    },
+    {
+      "id": "arena_agent_confirmed_success_20261016_series",
+      "benchmark_id": "arena_agent_confirmed_success_20261016",
+      "protocol": "Arena public human preference or real-world agent session evaluation as described by Arena",
+      "protocol_version": "Leaderboard published 2026-10-16",
+      "evaluator": "Arena",
+      "comparability": "Values are comparable only within this leaderboard metric and snapshot; cross-metric comparisons are invalid.",
+      "comparability_status": "comparable",
+      "setup_fingerprint": "arena_agent_confirmed_success_20261016"
+    },
+    {
+      "id": "arena_agent_praise_complaint_20261016_series",
+      "benchmark_id": "arena_agent_praise_complaint_20261016",
+      "protocol": "Arena public human preference or real-world agent session evaluation as described by Arena",
+      "protocol_version": "Leaderboard published 2026-10-16",
+      "evaluator": "Arena",
+      "comparability": "Values are comparable only within this leaderboard metric and snapshot; cross-metric comparisons are invalid.",
+      "comparability_status": "comparable",
+      "setup_fingerprint": "arena_agent_praise_complaint_20261016"
+    },
+    {
+      "id": "arena_agent_steerability_20261016_series",
+      "benchmark_id": "arena_agent_steerability_20261016",
+      "protocol": "Arena public human preference or real-world agent session evaluation as described by Arena",
+      "protocol_version": "Leaderboard published 2026-10-16",
+      "evaluator": "Arena",
+      "comparability": "Values are comparable only within this leaderboard metric and snapshot; cross-metric comparisons are invalid.",
+      "comparability_status": "comparable",
+      "setup_fingerprint": "arena_agent_steerability_20261016"
+    },
+    {
+      "id": "arena_agent_bash_reliability_20261016_series",
+      "benchmark_id": "arena_agent_bash_reliability_20261016",
+      "protocol": "Arena public human preference or real-world agent session evaluation as described by Arena",
+      "protocol_version": "Leaderboard published 2026-10-16",
+      "evaluator": "Arena",
+      "comparability": "Values are comparable only within this leaderboard metric and snapshot; cross-metric comparisons are invalid.",
+      "comparability_status": "comparable",
+      "setup_fingerprint": "arena_agent_bash_reliability_20261016"
+    },
+    {
+      "id": "arena_agent_tool_hallucination_20261016_series",
+      "benchmark_id": "arena_agent_tool_hallucination_20261016",
+      "protocol": "Arena public human preference or real-world agent session evaluation as described by Arena",
+      "protocol_version": "Leaderboard published 2026-10-16",
+      "evaluator": "Arena",
+      "comparability": "Values are comparable only within this leaderboard metric and snapshot; cross-metric comparisons are invalid.",
+      "comparability_status": "comparable",
+      "setup_fingerprint": "arena_agent_tool_hallucination_20261016"
+    },
+    {
+      "id": "arena_webdev_overall_bt_20261016_series",
+      "benchmark_id": "arena_webdev_overall_bt_20261016",
+      "protocol": "Arena public human pairwise preference leaderboard",
+      "protocol_version": "Leaderboard published 2026-10-16",
+      "evaluator": "Arena",
+      "comparability": "Comparable only within this leaderboard and dated snapshot. Arena ratings are not accuracy percentages and are not comparable across distinct Arena categories or dates.",
+      "comparability_status": "comparable",
+      "setup_fingerprint": "arena_webdev_overall_bt_20261016"
+    },
+    {
+      "id": "arena_search_overall_bt_20261013_series",
+      "benchmark_id": "arena_search_overall_bt_20261013",
+      "protocol": "Arena public human pairwise preference leaderboard",
+      "protocol_version": "Leaderboard published 2026-10-13",
+      "evaluator": "Arena",
+      "comparability": "Comparable only within this leaderboard and dated snapshot. Arena ratings are not accuracy percentages and are not comparable across distinct Arena categories or dates.",
+      "comparability_status": "comparable",
+      "setup_fingerprint": "arena_search_overall_bt_20261013"
+    },
+    {
+      "id": "arena_vision_overall_bt_20261009_series",
+      "benchmark_id": "arena_vision_overall_bt_20261009",
+      "protocol": "Arena public human pairwise preference leaderboard",
+      "protocol_version": "Leaderboard published 2026-10-09",
+      "evaluator": "Arena",
+      "comparability": "Comparable only within this leaderboard and dated snapshot. Arena ratings are not accuracy percentages and are not comparable across distinct Arena categories or dates.",
+      "comparability_status": "comparable",
+      "setup_fingerprint": "arena_vision_overall_bt_20261009"
+    }
+  ],
+  "observations": [
+    {
+      "id": "arena_claude_opus55_max_net_20261016",
+      "configuration_id": "claude_opus55_max",
+      "benchmark_id": "arena_agent_net_improvement_20261016",
+      "series_id": "arena_agent_net_improvement_20261016_series",
+      "value": 18.88,
+      "unit": "percent",
+      "source_id": "arena_agent_leaderboard_20261016",
+      "locator": "Overall table row Claude Opus 5.5 (Max), column Net Improvement (18.88% ± 2.74%); 10,551 sessions.",
+      "evaluator": "Arena",
+      "reporting_relationship": "evaluator_measurement",
+      "reported_at": "2026-10-16T00:00:00Z",
+      "evaluated_at": null,
+      "setup": {
+        "sessions": 10551,
+        "configuration_label": "Claude Opus 5.5 (Max)"
+      },
+      "uncertainty": {
+        "kind": "published confidence interval",
+        "half_width": 2.74,
+        "display": "±",
+        "confidence_level": null,
+        "note": "The leaderboard displays ± interval; its confidence level is not stated on the captured table."
+      },
+      "review_state": "reviewed"
+    },
+    {
+      "id": "arena_claude_opus55_max_success_20261016",
+      "configuration_id": "claude_opus55_max",
+      "benchmark_id": "arena_agent_confirmed_success_20261016",
+      "series_id": "arena_agent_confirmed_success_20261016_series",
+      "value": 20.31,
+      "unit": "percent",
+      "source_id": "arena_agent_leaderboard_20261016",
+      "locator": "Overall table row Claude Opus 5.5 (Max), column Confirmed Success (20.31% ± 4.17%); 10,551 sessions.",
+      "evaluator": "Arena",
+      "reporting_relationship": "evaluator_measurement",
+      "reported_at": "2026-10-16T00:00:00Z",
+      "evaluated_at": null,
+      "setup": {
+        "sessions": 10551,
+        "configuration_label": "Claude Opus 5.5 (Max)"
+      },
+      "uncertainty": {
+        "kind": "published confidence interval",
+        "half_width": 4.17,
+        "display": "±",
+        "confidence_level": null,
+        "note": "The leaderboard displays ± interval; its confidence level is not stated on the captured table."
+      },
+      "review_state": "reviewed"
+    },
+    {
+      "id": "arena_claude_opus55_max_praise_20261016",
+      "configuration_id": "claude_opus55_max",
+      "benchmark_id": "arena_agent_praise_complaint_20261016",
+      "series_id": "arena_agent_praise_complaint_20261016_series",
+      "value": 39.93,
+      "unit": "percent",
+      "source_id": "arena_agent_leaderboard_20261016",
+      "locator": "Overall table row Claude Opus 5.5 (Max), column Praise vs Complaint (39.93% ± 10.64%); 10,551 sessions.",
+      "evaluator": "Arena",
+      "reporting_relationship": "evaluator_measurement",
+      "reported_at": "2026-10-16T00:00:00Z",
+      "evaluated_at": null,
+      "setup": {
+        "sessions": 10551,
+        "configuration_label": "Claude Opus 5.5 (Max)"
+      },
+      "uncertainty": {
+        "kind": "published confidence interval",
+        "half_width": 10.64,
+        "display": "±",
+        "confidence_level": null,
+        "note": "The leaderboard displays ± interval; its confidence level is not stated on the captured table."
+      },
+      "review_state": "reviewed"
+    },
+    {
+      "id": "arena_claude_opus55_max_steer_20261016",
+      "configuration_id": "claude_opus55_max",
+      "benchmark_id": "arena_agent_steerability_20261016",
+      "series_id": "arena_agent_steerability_20261016_series",
+      "value": 16.4,
+      "unit": "percent",
+      "source_id": "arena_agent_leaderboard_20261016",
+      "locator": "Overall table row Claude Opus 5.5 (Max), column Steerability (16.40% ± 2.37%); 10,551 sessions.",
+      "evaluator": "Arena",
+      "reporting_relationship": "evaluator_measurement",
+      "reported_at": "2026-10-16T00:00:00Z",
+      "evaluated_at": null,
+      "setup": {
+        "sessions": 10551,
+        "configuration_label": "Claude Opus 5.5 (Max)"
+      },
+      "uncertainty": {
+        "kind": "published confidence interval",
+        "half_width": 2.37,
+        "display": "±",
+        "confidence_level": null,
+        "note": "The leaderboard displays ± interval; its confidence level is not stated on the captured table."
+      },
+      "review_state": "reviewed"
+    },
+    {
+      "id": "arena_claude_opus55_max_bash_20261016",
+      "configuration_id": "claude_opus55_max",
+      "benchmark_id": "arena_agent_bash_reliability_20261016",
+      "series_id": "arena_agent_bash_reliability_20261016_series",
+      "value": 15.42,
+      "unit": "percent",
+      "source_id": "arena_agent_leaderboard_20261016",
+      "locator": "Overall table row Claude Opus 5.5 (Max), column Bash Reliability (15.42% ± 0.66%); 10,551 sessions.",
+      "evaluator": "Arena",
+      "reporting_relationship": "evaluator_measurement",
+      "reported_at": "2026-10-16T00:00:00Z",
+      "evaluated_at": null,
+      "setup": {
+        "sessions": 10551,
+        "configuration_label": "Claude Opus 5.5 (Max)"
+      },
+      "uncertainty": {
+        "kind": "published confidence interval",
+        "half_width": 0.66,
+        "display": "±",
+        "confidence_level": null,
+        "note": "The leaderboard displays ± interval; its confidence level is not stated on the captured table."
+      },
+      "review_state": "reviewed"
+    },
+    {
+      "id": "arena_claude_opus55_max_halluc_20261016",
+      "configuration_id": "claude_opus55_max",
+      "benchmark_id": "arena_agent_tool_hallucination_20261016",
+      "series_id": "arena_agent_tool_hallucination_20261016_series",
+      "value": 0.6,
+      "unit": "percent",
+      "source_id": "arena_agent_leaderboard_20261016",
+      "locator": "Overall table row Claude Opus 5.5 (Max), column Tool Hallucination (0.60% ± 0.08%); 10,551 sessions.",
+      "evaluator": "Arena",
+      "reporting_relationship": "evaluator_measurement",
+      "reported_at": "2026-10-16T00:00:00Z",
+      "evaluated_at": null,
+      "setup": {
+        "sessions": 10551,
+        "configuration_label": "Claude Opus 5.5 (Max)"
+      },
+      "uncertainty": {
+        "kind": "published confidence interval",
+        "half_width": 0.08,
+        "display": "±",
+        "confidence_level": null,
+        "note": "The leaderboard displays ± interval; its confidence level is not stated on the captured table."
+      },
+      "review_state": "reviewed"
+    },
+    {
+      "id": "arena_gpt6_astra_max_net_20261016",
+      "configuration_id": "gpt6_astra_max",
+      "benchmark_id": "arena_agent_net_improvement_20261016",
+      "series_id": "arena_agent_net_improvement_20261016_series",
+      "value": 14.13,
+      "unit": "percent",
+      "source_id": "arena_agent_leaderboard_20261016",
+      "locator": "Overall table row GPT-6 Astra (Max), column Net Improvement (14.13% ± 2.30%); 13,168 sessions.",
+      "evaluator": "Arena",
+      "reporting_relationship": "evaluator_measurement",
+      "reported_at": "2026-10-16T00:00:00Z",
+      "evaluated_at": null,
+      "setup": {
+        "sessions": 13168,
+        "configuration_label": "GPT-6 Astra (Max)"
+      },
+      "uncertainty": {
+        "kind": "published confidence interval",
+        "half_width": 2.3,
+        "display": "±",
+        "confidence_level": null,
+        "note": "The leaderboard displays ± interval; its confidence level is not stated on the captured table."
+      },
+      "review_state": "reviewed"
+    },
+    {
+      "id": "arena_gpt6_astra_max_success_20261016",
+      "configuration_id": "gpt6_astra_max",
+      "benchmark_id": "arena_agent_confirmed_success_20261016",
+      "series_id": "arena_agent_confirmed_success_20261016_series",
+      "value": 12.06,
+      "unit": "percent",
+      "source_id": "arena_agent_leaderboard_20261016",
+      "locator": "Overall table row GPT-6 Astra (Max), column Confirmed Success (12.06% ± 4.05%); 13,168 sessions.",
+      "evaluator": "Arena",
+      "reporting_relationship": "evaluator_measurement",
+      "reported_at": "2026-10-16T00:00:00Z",
+      "evaluated_at": null,
+      "setup": {
+        "sessions": 13168,
+        "configuration_label": "GPT-6 Astra (Max)"
+      },
+      "uncertainty": {
+        "kind": "published confidence interval",
+        "half_width": 4.05,
+        "display": "±",
+        "confidence_level": null,
+        "note": "The leaderboard displays ± interval; its confidence level is not stated on the captured table."
+      },
+      "review_state": "reviewed"
+    },
+    {
+      "id": "arena_gpt6_astra_max_praise_20261016",
+      "configuration_id": "gpt6_astra_max",
+      "benchmark_id": "arena_agent_praise_complaint_20261016",
+      "series_id": "arena_agent_praise_complaint_20261016_series",
+      "value": 31.14,
+      "unit": "percent",
+      "source_id": "arena_agent_leaderboard_20261016",
+      "locator": "Overall table row GPT-6 Astra (Max), column Praise vs Complaint (31.14% ± 8.41%); 13,168 sessions.",
+      "evaluator": "Arena",
+      "reporting_relationship": "evaluator_measurement",
+      "reported_at": "2026-10-16T00:00:00Z",
+      "evaluated_at": null,
+      "setup": {
+        "sessions": 13168,
+        "configuration_label": "GPT-6 Astra (Max)"
+      },
+      "uncertainty": {
+        "kind": "published confidence interval",
+        "half_width": 8.41,
+        "display": "±",
+        "confidence_level": null,
+        "note": "The leaderboard displays ± interval; its confidence level is not stated on the captured table."
+      },
+      "review_state": "reviewed"
+    },
+    {
+      "id": "arena_gpt6_astra_max_steer_20261016",
+      "configuration_id": "gpt6_astra_max",
+      "benchmark_id": "arena_agent_steerability_20261016",
+      "series_id": "arena_agent_steerability_20261016_series",
+      "value": 14.78,
+      "unit": "percent",
+      "source_id": "arena_agent_leaderboard_20261016",
+      "locator": "Overall table row GPT-6 Astra (Max), column Steerability (14.78% ± 2.36%); 13,168 sessions.",
+      "evaluator": "Arena",
+      "reporting_relationship": "evaluator_measurement",
+      "reported_at": "2026-10-16T00:00:00Z",
+      "evaluated_at": null,
+      "setup": {
+        "sessions": 13168,
+        "configuration_label": "GPT-6 Astra (Max)"
+      },
+      "uncertainty": {
+        "kind": "published confidence interval",
+        "half_width": 2.36,
+        "display": "±",
+        "confidence_level": null,
+        "note": "The leaderboard displays ± interval; its confidence level is not stated on the captured table."
+      },
+      "review_state": "reviewed"
+    },
+    {
+      "id": "arena_gpt6_astra_max_bash_20261016",
+      "configuration_id": "gpt6_astra_max",
+      "benchmark_id": "arena_agent_bash_reliability_20261016",
+      "series_id": "arena_agent_bash_reliability_20261016_series",
+      "value": 9.98,
+      "unit": "percent",
+      "source_id": "arena_agent_leaderboard_20261016",
+      "locator": "Overall table row GPT-6 Astra (Max), column Bash Reliability (9.98% ± 1.73%); 13,168 sessions.",
+      "evaluator": "Arena",
+      "reporting_relationship": "evaluator_measurement",
+      "reported_at": "2026-10-16T00:00:00Z",
+      "evaluated_at": null,
+      "setup": {
+        "sessions": 13168,
+        "configuration_label": "GPT-6 Astra (Max)"
+      },
+      "uncertainty": {
+        "kind": "published confidence interval",
+        "half_width": 1.73,
+        "display": "±",
+        "confidence_level": null,
+        "note": "The leaderboard displays ± interval; its confidence level is not stated on the captured table."
+      },
+      "review_state": "reviewed"
+    },
+    {
+      "id": "arena_gpt6_astra_max_halluc_20261016",
+      "configuration_id": "gpt6_astra_max",
+      "benchmark_id": "arena_agent_tool_hallucination_20261016",
+      "series_id": "arena_agent_tool_hallucination_20261016_series",
+      "value": 0.62,
+      "unit": "percent",
+      "source_id": "arena_agent_leaderboard_20261016",
+      "locator": "Overall table row GPT-6 Astra (Max), column Tool Hallucination (0.62% ± 0.08%); 13,168 sessions.",
+      "evaluator": "Arena",
+      "reporting_relationship": "evaluator_measurement",
+      "reported_at": "2026-10-16T00:00:00Z",
+      "evaluated_at": null,
+      "setup": {
+        "sessions": 13168,
+        "configuration_label": "GPT-6 Astra (Max)"
+      },
+      "uncertainty": {
+        "kind": "published confidence interval",
+        "half_width": 0.08,
+        "display": "±",
+        "confidence_level": null,
+        "note": "The leaderboard displays ± interval; its confidence level is not stated on the captured table."
+      },
+      "review_state": "reviewed"
+    },
+    {
+      "id": "arena_claude_fable51_max_net_20261016",
+      "configuration_id": "claude_fable51_max",
+      "benchmark_id": "arena_agent_net_improvement_20261016",
+      "series_id": "arena_agent_net_improvement_20261016_series",
+      "value": 14.03,
+      "unit": "percent",
+      "source_id": "arena_agent_leaderboard_20261016",
+      "locator": "Overall table row Claude Fable 5.1 (Max), column Net Improvement (14.03% ± 1.99%); 16,374 sessions.",
+      "evaluator": "Arena",
+      "reporting_relationship": "evaluator_measurement",
+      "reported_at": "2026-10-16T00:00:00Z",
+      "evaluated_at": null,
+      "setup": {
+        "sessions": 16374,
+        "configuration_label": "Claude Fable 5.1 (Max)"
+      },
+      "uncertainty": {
+        "kind": "published confidence interval",
+        "half_width": 1.99,
+        "display": "±",
+        "confidence_level": null,
+        "note": "The leaderboard displays ± interval; its confidence level is not stated on the captured table."
+      },
+      "review_state": "reviewed"
+    },
+    {
+      "id": "arena_claude_fable51_max_success_20261016",
+      "configuration_id": "claude_fable51_max",
+      "benchmark_id": "arena_agent_confirmed_success_20261016",
+      "series_id": "arena_agent_confirmed_success_20261016_series",
+      "value": 15.73,
+      "unit": "percent",
+      "source_id": "arena_agent_leaderboard_20261016",
+      "locator": "Overall table row Claude Fable 5.1 (Max), column Confirmed Success (15.73% ± 3.35%); 16,374 sessions.",
+      "evaluator": "Arena",
+      "reporting_relationship": "evaluator_measurement",
+      "reported_at": "2026-10-16T00:00:00Z",
+      "evaluated_at": null,
+      "setup": {
+        "sessions": 16374,
+        "configuration_label": "Claude Fable 5.1 (Max)"
+      },
+      "uncertainty": {
+        "kind": "published confidence interval",
+        "half_width": 3.35,
+        "display": "±",
+        "confidence_level": null,
+        "note": "The leaderboard displays ± interval; its confidence level is not stated on the captured table."
+      },
+      "review_state": "reviewed"
+    },
+    {
+      "id": "arena_claude_fable51_max_praise_20261016",
+      "configuration_id": "claude_fable51_max",
+      "benchmark_id": "arena_agent_praise_complaint_20261016",
+      "series_id": "arena_agent_praise_complaint_20261016_series",
+      "value": 27.15,
+      "unit": "percent",
+      "source_id": "arena_agent_leaderboard_20261016",
+      "locator": "Overall table row Claude Fable 5.1 (Max), column Praise vs Complaint (27.15% ± 7.24%); 16,374 sessions.",
+      "evaluator": "Arena",
+      "reporting_relationship": "evaluator_measurement",
+      "reported_at": "2026-10-16T00:00:00Z",
+      "evaluated_at": null,
+      "setup": {
+        "sessions": 16374,
+        "configuration_label": "Claude Fable 5.1 (Max)"
+      },
+      "uncertainty": {
+        "kind": "published confidence interval",
+        "half_width": 7.24,
+        "display": "±",
+        "confidence_level": null,
+        "note": "The leaderboard displays ± interval; its confidence level is not stated on the captured table."
+      },
+      "review_state": "reviewed"
+    },
+    {
+      "id": "arena_claude_fable51_max_steer_20261016",
+      "configuration_id": "claude_fable51_max",
+      "benchmark_id": "arena_agent_steerability_20261016",
+      "series_id": "arena_agent_steerability_20261016_series",
+      "value": 14.55,
+      "unit": "percent",
+      "source_id": "arena_agent_leaderboard_20261016",
+      "locator": "Overall table row Claude Fable 5.1 (Max), column Steerability (14.55% ± 2.32%); 16,374 sessions.",
+      "evaluator": "Arena",
+      "reporting_relationship": "evaluator_measurement",
+      "reported_at": "2026-10-16T00:00:00Z",
+      "evaluated_at": null,
+      "setup": {
+        "sessions": 16374,
+        "configuration_label": "Claude Fable 5.1 (Max)"
+      },
+      "uncertainty": {
+        "kind": "published confidence interval",
+        "half_width": 2.32,
+        "display": "±",
+        "confidence_level": null,
+        "note": "The leaderboard displays ± interval; its confidence level is not stated on the captured table."
+      },
+      "review_state": "reviewed"
+    },
+    {
+      "id": "arena_claude_fable51_max_bash_20261016",
+      "configuration_id": "claude_fable51_max",
+      "benchmark_id": "arena_agent_bash_reliability_20261016",
+      "series_id": "arena_agent_bash_reliability_20261016_series",
+      "value": 10.24,
+      "unit": "percent",
+      "source_id": "arena_agent_leaderboard_20261016",
+      "locator": "Overall table row Claude Fable 5.1 (Max), column Bash Reliability (10.24% ± 1.03%); 16,374 sessions.",
+      "evaluator": "Arena",
+      "reporting_relationship": "evaluator_measurement",
+      "reported_at": "2026-10-16T00:00:00Z",
+      "evaluated_at": null,
+      "setup": {
+        "sessions": 16374,
+        "configuration_label": "Claude Fable 5.1 (Max)"
+      },
+      "uncertainty": {
+        "kind": "published confidence interval",
+        "half_width": 1.03,
+        "display": "±",
+        "confidence_level": null,
+        "note": "The leaderboard displays ± interval; its confidence level is not stated on the captured table."
+      },
+      "review_state": "reviewed"
+    },
+    {
+      "id": "arena_claude_fable51_max_halluc_20261016",
+      "configuration_id": "claude_fable51_max",
+      "benchmark_id": "arena_agent_tool_hallucination_20261016",
+      "series_id": "arena_agent_tool_hallucination_20261016_series",
+      "value": 0.6,
+      "unit": "percent",
+      "source_id": "arena_agent_leaderboard_20261016",
+      "locator": "Overall table row Claude Fable 5.1 (Max), column Tool Hallucination (0.60% ± 0.10%); 16,374 sessions.",
+      "evaluator": "Arena",
+      "reporting_relationship": "evaluator_measurement",
+      "reported_at": "2026-10-16T00:00:00Z",
+      "evaluated_at": null,
+      "setup": {
+        "sessions": 16374,
+        "configuration_label": "Claude Fable 5.1 (Max)"
+      },
+      "uncertainty": {
+        "kind": "published confidence interval",
+        "half_width": 0.1,
+        "display": "±",
+        "confidence_level": null,
+        "note": "The leaderboard displays ± interval; its confidence level is not stated on the captured table."
+      },
+      "review_state": "reviewed"
+    },
+    {
+      "id": "arena_gpt61_sol_max_net_20261016",
+      "configuration_id": "gpt61_sol_max",
+      "benchmark_id": "arena_agent_net_improvement_20261016",
+      "series_id": "arena_agent_net_improvement_20261016_series",
+      "value": 13.6,
+      "unit": "percent",
+      "source_id": "arena_agent_leaderboard_20261016",
+      "locator": "Overall table row GPT-6.1 Sol (Max), column Net Improvement (13.60% ± 1.90%); 13,444 sessions.",
+      "evaluator": "Arena",
+      "reporting_relationship": "evaluator_measurement",
+      "reported_at": "2026-10-16T00:00:00Z",
+      "evaluated_at": null,
+      "setup": {
+        "sessions": 13444,
+        "configuration_label": "GPT-6.1 Sol (Max)"
+      },
+      "uncertainty": {
+        "kind": "published confidence interval",
+        "half_width": 1.9,
+        "display": "±",
+        "confidence_level": null,
+        "note": "The leaderboard displays ± interval; its confidence level is not stated on the captured table."
+      },
+      "review_state": "reviewed"
+    },
+    {
+      "id": "arena_gpt61_sol_max_success_20261016",
+      "configuration_id": "gpt61_sol_max",
+      "benchmark_id": "arena_agent_confirmed_success_20261016",
+      "series_id": "arena_agent_confirmed_success_20261016_series",
+      "value": 13.77,
+      "unit": "percent",
+      "source_id": "arena_agent_leaderboard_20261016",
+      "locator": "Overall table row GPT-6.1 Sol (Max), column Confirmed Success (13.77% ± 3.20%); 13,444 sessions.",
+      "evaluator": "Arena",
+      "reporting_relationship": "evaluator_measurement",
+      "reported_at": "2026-10-16T00:00:00Z",
+      "evaluated_at": null,
+      "setup": {
+        "sessions": 13444,
+        "configuration_label": "GPT-6.1 Sol (Max)"
+      },
+      "uncertainty": {
+        "kind": "published confidence interval",
+        "half_width": 3.2,
+        "display": "±",
+        "confidence_level": null,
+        "note": "The leaderboard displays ± interval; its confidence level is not stated on the captured table."
+      },
+      "review_state": "reviewed"
+    },
+    {
+      "id": "arena_gpt61_sol_max_praise_20261016",
+      "configuration_id": "gpt61_sol_max",
+      "benchmark_id": "arena_agent_praise_complaint_20261016",
+      "series_id": "arena_agent_praise_complaint_20261016_series",
+      "value": 31.75,
+      "unit": "percent",
+      "source_id": "arena_agent_leaderboard_20261016",
+      "locator": "Overall table row GPT-6.1 Sol (Max), column Praise vs Complaint (31.75% ± 6.84%); 13,444 sessions.",
+      "evaluator": "Arena",
+      "reporting_relationship": "evaluator_measurement",
+      "reported_at": "2026-10-16T00:00:00Z",
+      "evaluated_at": null,
+      "setup": {
+        "sessions": 13444,
+        "configuration_label": "GPT-6.1 Sol (Max)"
+      },
+      "uncertainty": {
+        "kind": "published confidence interval",
+        "half_width": 6.84,
+        "display": "±",
+        "confidence_level": null,
+        "note": "The leaderboard displays ± interval; its confidence level is not stated on the captured table."
+      },
+      "review_state": "reviewed"
+    },
+    {
+      "id": "arena_gpt61_sol_max_steer_20261016",
+      "configuration_id": "gpt61_sol_max",
+      "benchmark_id": "arena_agent_steerability_20261016",
+      "series_id": "arena_agent_steerability_20261016_series",
+      "value": 13.85,
+      "unit": "percent",
+      "source_id": "arena_agent_leaderboard_20261016",
+      "locator": "Overall table row GPT-6.1 Sol (Max), column Steerability (13.85% ± 1.90%); 13,444 sessions.",
+      "evaluator": "Arena",
+      "reporting_relationship": "evaluator_measurement",
+      "reported_at": "2026-10-16T00:00:00Z",
+      "evaluated_at": null,
+      "setup": {
+        "sessions": 13444,
+        "configuration_label": "GPT-6.1 Sol (Max)"
+      },
+      "uncertainty": {
+        "kind": "published confidence interval",
+        "half_width": 1.9,
+        "display": "±",
+        "confidence_level": null,
+        "note": "The leaderboard displays ± interval; its confidence level is not stated on the captured table."
+      },
+      "review_state": "reviewed"
+    },
+    {
+      "id": "arena_gpt61_sol_max_bash_20261016",
+      "configuration_id": "gpt61_sol_max",
+      "benchmark_id": "arena_agent_bash_reliability_20261016",
+      "series_id": "arena_agent_bash_reliability_20261016_series",
+      "value": 2.35,
+      "unit": "percent",
+      "source_id": "arena_agent_leaderboard_20261016",
+      "locator": "Overall table row GPT-6.1 Sol (Max), column Bash Reliability (2.35% ± 1.53%); 13,444 sessions.",
+      "evaluator": "Arena",
+      "reporting_relationship": "evaluator_measurement",
+      "reported_at": "2026-10-16T00:00:00Z",
+      "evaluated_at": null,
+      "setup": {
+        "sessions": 13444,
+        "configuration_label": "GPT-6.1 Sol (Max)"
+      },
+      "uncertainty": {
+        "kind": "published confidence interval",
+        "half_width": 1.53,
+        "display": "±",
+        "confidence_level": null,
+        "note": "The leaderboard displays ± interval; its confidence level is not stated on the captured table."
+      },
+      "review_state": "reviewed"
+    },
+    {
+      "id": "arena_gpt61_sol_max_halluc_20261016",
+      "configuration_id": "gpt61_sol_max",
+      "benchmark_id": "arena_agent_tool_hallucination_20261016",
+      "series_id": "arena_agent_tool_hallucination_20261016_series",
+      "value": 0.67,
+      "unit": "percent",
+      "source_id": "arena_agent_leaderboard_20261016",
+      "locator": "Overall table row GPT-6.1 Sol (Max), column Tool Hallucination (0.67% ± 0.04%); 13,444 sessions.",
+      "evaluator": "Arena",
+      "reporting_relationship": "evaluator_measurement",
+      "reported_at": "2026-10-16T00:00:00Z",
+      "evaluated_at": null,
+      "setup": {
+        "sessions": 13444,
+        "configuration_label": "GPT-6.1 Sol (Max)"
+      },
+      "uncertainty": {
+        "kind": "published confidence interval",
+        "half_width": 0.04,
+        "display": "±",
+        "confidence_level": null,
+        "note": "The leaderboard displays ± interval; its confidence level is not stated on the captured table."
+      },
+      "review_state": "reviewed"
+    },
+    {
+      "id": "arena_muse_wonder_max_text_overall_20261015",
+      "configuration_id": "muse_wonder_max",
+      "benchmark_id": "arena_text_overall_bt_20261015",
+      "series_id": "arena_text_overall_bt_20261015_series",
+      "value": 1509,
+      "unit": "Arena rating points",
+      "source_id": "arena_text_leaderboard_20261015",
+      "locator": "Overall table row Muse Wonder (Max), Arena score 1509 ± 11; 3,247 votes.",
+      "evaluator": "Arena",
+      "reporting_relationship": "evaluator_measurement",
+      "reported_at": "2026-10-15T00:00:00Z",
+      "evaluated_at": null,
+      "setup": {
+        "votes": 3247,
+        "configuration_label": "Muse Wonder (Max)",
+        "rating_method": "Bradley–Terry, per Arena leaderboard dataset card; relative preference rating, not accuracy."
+      },
+      "uncertainty": {
+        "kind": "published confidence interval",
+        "half_width": 11,
+        "display": "±",
+        "confidence_level": null,
+        "note": "The leaderboard displays ± interval; its confidence level is not stated on the captured table."
+      },
+      "review_state": "reviewed"
+    },
+    {
+      "id": "arena_claude_fable51_max_text_overall_20261015",
+      "configuration_id": "claude_fable51_max",
+      "benchmark_id": "arena_text_overall_bt_20261015",
+      "series_id": "arena_text_overall_bt_20261015_series",
+      "value": 1502,
+      "unit": "Arena rating points",
+      "source_id": "arena_text_leaderboard_20261015",
+      "locator": "Overall table row Claude Fable 5.1 (Max), Arena score 1502 ± 6; 14,590 votes.",
+      "evaluator": "Arena",
+      "reporting_relationship": "evaluator_measurement",
+      "reported_at": "2026-10-15T00:00:00Z",
+      "evaluated_at": null,
+      "setup": {
+        "votes": 14590,
+        "configuration_label": "Claude Fable 5.1 (Max)",
+        "rating_method": "Bradley–Terry, per Arena leaderboard dataset card; relative preference rating, not accuracy."
+      },
+      "uncertainty": {
+        "kind": "published confidence interval",
+        "half_width": 6,
+        "display": "±",
+        "confidence_level": null,
+        "note": "The leaderboard displays ± interval; its confidence level is not stated on the captured table."
+      },
+      "review_state": "reviewed"
+    },
+    {
+      "id": "arena_gpt61_sol_max_text_overall_20261015",
+      "configuration_id": "gpt61_sol_max",
+      "benchmark_id": "arena_text_overall_bt_20261015",
+      "series_id": "arena_text_overall_bt_20261015_series",
+      "value": 1484,
+      "unit": "Arena rating points",
+      "source_id": "arena_text_leaderboard_20261015",
+      "locator": "Overall table row GPT-6.1 Sol (Max), Arena score 1484 ± 8; 6,320 votes.",
+      "evaluator": "Arena",
+      "reporting_relationship": "evaluator_measurement",
+      "reported_at": "2026-10-15T00:00:00Z",
+      "evaluated_at": null,
+      "setup": {
+        "votes": 6320,
+        "configuration_label": "GPT-6.1 Sol (Max)",
+        "rating_method": "Bradley–Terry, per Arena leaderboard dataset card; relative preference rating, not accuracy."
+      },
+      "uncertainty": {
+        "kind": "published confidence interval",
+        "half_width": 8,
+        "display": "±",
+        "confidence_level": null,
+        "note": "The leaderboard displays ± interval; its confidence level is not stated on the captured table."
+      },
+      "review_state": "reviewed"
+    },
+    {
+      "id": "arena_gpt6_astra_max_text_overall_20261015",
+      "configuration_id": "gpt6_astra_max",
+      "benchmark_id": "arena_text_overall_bt_20261015",
+      "series_id": "arena_text_overall_bt_20261015_series",
+      "value": 1477,
+      "unit": "Arena rating points",
+      "source_id": "arena_text_leaderboard_20261015",
+      "locator": "Overall table row GPT-6 Astra (Max), Arena score 1477 ± 6; 12,163 votes.",
+      "evaluator": "Arena",
+      "reporting_relationship": "evaluator_measurement",
+      "reported_at": "2026-10-15T00:00:00Z",
+      "evaluated_at": null,
+      "setup": {
+        "votes": 12163,
+        "configuration_label": "GPT-6 Astra (Max)",
+        "rating_method": "Bradley–Terry, per Arena leaderboard dataset card; relative preference rating, not accuracy."
+      },
+      "uncertainty": {
+        "kind": "published confidence interval",
+        "half_width": 6,
+        "display": "±",
+        "confidence_level": null,
+        "note": "The leaderboard displays ± interval; its confidence level is not stated on the captured table."
+      },
+      "review_state": "reviewed"
+    },
+    {
+      "id": "arena_claude_opus55_max_webdev_overall_20261016",
+      "configuration_id": "claude_opus55_max",
+      "benchmark_id": "arena_webdev_overall_bt_20261016",
+      "series_id": "arena_webdev_overall_bt_20261016_series",
+      "value": 1807,
+      "unit": "Arena rating points",
+      "source_id": "arena_webdev_leaderboard_20261016",
+      "locator": "Overall table row Claude Opus 5.5 (Max), Arena score 1807 ± 14; 2,775 votes.",
+      "evaluator": "Arena",
+      "reporting_relationship": "evaluator_measurement",
+      "reported_at": "2026-10-16T00:00:00Z",
+      "evaluated_at": null,
+      "setup": {
+        "votes": 2775,
+        "configuration_label": "Claude Opus 5.5 (Max)",
+        "rating_method": "Bradley–Terry; a relative preference rating, not an accuracy percentage."
+      },
+      "uncertainty": {
+        "kind": "published confidence interval",
+        "half_width": 14,
+        "display": "±",
+        "confidence_level": null,
+        "note": "The leaderboard displays ± interval; its confidence level is not stated on the captured table."
+      },
+      "review_state": "reviewed"
+    },
+    {
+      "id": "arena_gpt6_astra_max_webdev_overall_20261016",
+      "configuration_id": "gpt6_astra_max",
+      "benchmark_id": "arena_webdev_overall_bt_20261016",
+      "series_id": "arena_webdev_overall_bt_20261016_series",
+      "value": 1777,
+      "unit": "Arena rating points",
+      "source_id": "arena_webdev_leaderboard_20261016",
+      "locator": "Overall table row GPT-6 Astra (Max), Arena score 1777 ± 10; 6,014 votes.",
+      "evaluator": "Arena",
+      "reporting_relationship": "evaluator_measurement",
+      "reported_at": "2026-10-16T00:00:00Z",
+      "evaluated_at": null,
+      "setup": {
+        "votes": 6014,
+        "configuration_label": "GPT-6 Astra (Max)",
+        "rating_method": "Bradley–Terry; a relative preference rating, not an accuracy percentage."
+      },
+      "uncertainty": {
+        "kind": "published confidence interval",
+        "half_width": 10,
+        "display": "±",
+        "confidence_level": null,
+        "note": "The leaderboard displays ± interval; its confidence level is not stated on the captured table."
+      },
+      "review_state": "reviewed"
+    },
+    {
+      "id": "arena_gpt61_sol_max_webdev_overall_20261016",
+      "configuration_id": "gpt61_sol_max",
+      "benchmark_id": "arena_webdev_overall_bt_20261016",
+      "series_id": "arena_webdev_overall_bt_20261016_series",
+      "value": 1755,
+      "unit": "Arena rating points",
+      "source_id": "arena_webdev_leaderboard_20261016",
+      "locator": "Overall table row GPT-6.1 Sol (Max), Arena score 1755 ± 13; 2,863 votes.",
+      "evaluator": "Arena",
+      "reporting_relationship": "evaluator_measurement",
+      "reported_at": "2026-10-16T00:00:00Z",
+      "evaluated_at": null,
+      "setup": {
+        "votes": 2863,
+        "configuration_label": "GPT-6.1 Sol (Max)",
+        "rating_method": "Bradley–Terry; a relative preference rating, not an accuracy percentage."
+      },
+      "uncertainty": {
+        "kind": "published confidence interval",
+        "half_width": 13,
+        "display": "±",
+        "confidence_level": null,
+        "note": "The leaderboard displays ± interval; its confidence level is not stated on the captured table."
+      },
+      "review_state": "reviewed"
+    },
+    {
+      "id": "arena_claude_fable51_max_webdev_overall_20261016",
+      "configuration_id": "claude_fable51_max",
+      "benchmark_id": "arena_webdev_overall_bt_20261016",
+      "series_id": "arena_webdev_overall_bt_20261016_series",
+      "value": 1741,
+      "unit": "Arena rating points",
+      "source_id": "arena_webdev_leaderboard_20261016",
+      "locator": "Overall table row Claude Fable 5.1 (Max), Arena score 1741 ± 9; 7,503 votes.",
+      "evaluator": "Arena",
+      "reporting_relationship": "evaluator_measurement",
+      "reported_at": "2026-10-16T00:00:00Z",
+      "evaluated_at": null,
+      "setup": {
+        "votes": 7503,
+        "configuration_label": "Claude Fable 5.1 (Max)",
+        "rating_method": "Bradley–Terry; a relative preference rating, not an accuracy percentage."
+      },
+      "uncertainty": {
+        "kind": "published confidence interval",
+        "half_width": 9,
+        "display": "±",
+        "confidence_level": null,
+        "note": "The leaderboard displays ± interval; its confidence level is not stated on the captured table."
+      },
+      "review_state": "reviewed"
+    },
+    {
+      "id": "arena_gpt6_astra_max_search_overall_20261013",
+      "configuration_id": "gpt6_astra_max",
+      "benchmark_id": "arena_search_overall_bt_20261013",
+      "series_id": "arena_search_overall_bt_20261013_series",
+      "value": 1234,
+      "unit": "Arena rating points",
+      "source_id": "arena_search_leaderboard_20261013",
+      "locator": "Overall table row GPT-6 Astra (Max), Arena score 1234 ± 8; 18,483 votes.",
+      "evaluator": "Arena",
+      "reporting_relationship": "evaluator_measurement",
+      "reported_at": "2026-10-13T00:00:00Z",
+      "evaluated_at": null,
+      "setup": {
+        "votes": 18483,
+        "configuration_label": "GPT-6 Astra (Max)",
+        "rating_method": "Bradley–Terry; a relative preference rating, not an accuracy percentage."
+      },
+      "uncertainty": {
+        "kind": "published confidence interval",
+        "half_width": 8,
+        "display": "±",
+        "confidence_level": null,
+        "note": "The leaderboard displays ± interval; its confidence level is not stated on the captured table."
+      },
+      "review_state": "reviewed"
+    },
+    {
+      "id": "arena_gpt61_sol_max_search_overall_20261013",
+      "configuration_id": "gpt61_sol_max",
+      "benchmark_id": "arena_search_overall_bt_20261013",
+      "series_id": "arena_search_overall_bt_20261013_series",
+      "value": 1233,
+      "unit": "Arena rating points",
+      "source_id": "arena_search_leaderboard_20261013",
+      "locator": "Overall table row GPT-6.1 Sol (Max), Arena score 1233 ± 9; 5,555 votes.",
+      "evaluator": "Arena",
+      "reporting_relationship": "evaluator_measurement",
+      "reported_at": "2026-10-13T00:00:00Z",
+      "evaluated_at": null,
+      "setup": {
+        "votes": 5555,
+        "configuration_label": "GPT-6.1 Sol (Max)",
+        "rating_method": "Bradley–Terry; a relative preference rating, not an accuracy percentage."
+      },
+      "uncertainty": {
+        "kind": "published confidence interval",
+        "half_width": 9,
+        "display": "±",
+        "confidence_level": null,
+        "note": "The leaderboard displays ± interval; its confidence level is not stated on the captured table."
+      },
+      "review_state": "reviewed"
+    },
+    {
+      "id": "arena_gpt61_sol_max_vision_overall_20261009",
+      "configuration_id": "gpt61_sol_max",
+      "benchmark_id": "arena_vision_overall_bt_20261009",
+      "series_id": "arena_vision_overall_bt_20261009_series",
+      "value": 1294,
+      "unit": "Arena rating points",
+      "source_id": "arena_vision_leaderboard_20261009",
+      "locator": "Overall table row GPT-6.1 Sol (Max), Arena score 1294 ± 14; 1,813 votes.",
+      "evaluator": "Arena",
+      "reporting_relationship": "evaluator_measurement",
+      "reported_at": "2026-10-09T00:00:00Z",
+      "evaluated_at": null,
+      "setup": {
+        "votes": 1813,
+        "configuration_label": "GPT-6.1 Sol (Max)",
+        "rating_method": "Bradley–Terry; a relative preference rating, not an accuracy percentage."
+      },
+      "uncertainty": {
+        "kind": "published confidence interval",
+        "half_width": 14,
+        "display": "±",
+        "confidence_level": null,
+        "note": "The leaderboard displays ± interval; its confidence level is not stated on the captured table."
+      },
+      "review_state": "reviewed"
+    },
+    {
+      "id": "arena_claude_fable51_max_vision_overall_20261009",
+      "configuration_id": "claude_fable51_max",
+      "benchmark_id": "arena_vision_overall_bt_20261009",
+      "series_id": "arena_vision_overall_bt_20261009_series",
+      "value": 1286,
+      "unit": "Arena rating points",
+      "source_id": "arena_vision_leaderboard_20261009",
+      "locator": "Overall table row Claude Fable 5.1 (Max), Arena score 1286 ± 10; 4,648 votes.",
+      "evaluator": "Arena",
+      "reporting_relationship": "evaluator_measurement",
+      "reported_at": "2026-10-09T00:00:00Z",
+      "evaluated_at": null,
+      "setup": {
+        "votes": 4648,
+        "configuration_label": "Claude Fable 5.1 (Max)",
+        "rating_method": "Bradley–Terry; a relative preference rating, not an accuracy percentage."
+      },
+      "uncertainty": {
+        "kind": "published confidence interval",
+        "half_width": 10,
+        "display": "±",
+        "confidence_level": null,
+        "note": "The leaderboard displays ± interval; its confidence level is not stated on the captured table."
+      },
+      "review_state": "reviewed"
+    },
+    {
+      "id": "arena_gpt6_astra_max_vision_overall_20261009",
+      "configuration_id": "gpt6_astra_max",
+      "benchmark_id": "arena_vision_overall_bt_20261009",
+      "series_id": "arena_vision_overall_bt_20261009_series",
+      "value": 1286,
+      "unit": "Arena rating points",
+      "source_id": "arena_vision_leaderboard_20261009",
+      "locator": "Overall table row GPT-6 Astra (Max), Arena score 1286 ± 11; 3,590 votes.",
+      "evaluator": "Arena",
+      "reporting_relationship": "evaluator_measurement",
+      "reported_at": "2026-10-09T00:00:00Z",
+      "evaluated_at": null,
+      "setup": {
+        "votes": 3590,
+        "configuration_label": "GPT-6 Astra (Max)",
+        "rating_method": "Bradley–Terry; a relative preference rating, not an accuracy percentage."
+      },
+      "uncertainty": {
+        "kind": "published confidence interval",
+        "half_width": 11,
+        "display": "±",
+        "confidence_level": null,
+        "note": "The leaderboard displays ± interval; its confidence level is not stated on the captured table."
+      },
+      "review_state": "reviewed"
+    },
+    {
+      "id": "arena_muse_wonder_max_net_improvement_20261016",
+      "configuration_id": "muse_wonder_max",
+      "benchmark_id": "arena_agent_net_improvement_20261016",
+      "series_id": "arena_agent_net_improvement_20261016_series",
+      "value": 4.94,
+      "unit": "percent",
+      "source_id": "arena_agent_leaderboard_20261016",
+      "locator": "Overall table row Muse Wonder (Max), column Net Improvement (4.94% ± 1.71%); 7,690 sessions.",
+      "evaluator": "Arena",
+      "reporting_relationship": "evaluator_measurement",
+      "reported_at": "2026-10-16T00:00:00Z",
+      "evaluated_at": null,
+      "setup": {
+        "sessions": 7690,
+        "configuration_label": "Muse Wonder (Max)"
+      },
+      "uncertainty": {
+        "kind": "published confidence interval",
+        "half_width": 1.71,
+        "display": "±",
+        "confidence_level": null,
+        "note": "The leaderboard displays ± interval; its confidence level is not stated on the captured table."
+      },
+      "review_state": "reviewed"
+    },
+    {
+      "id": "arena_muse_wonder_max_confirmed_success_20261016",
+      "configuration_id": "muse_wonder_max",
+      "benchmark_id": "arena_agent_confirmed_success_20261016",
+      "series_id": "arena_agent_confirmed_success_20261016_series",
+      "value": 9.51,
+      "unit": "percent",
+      "source_id": "arena_agent_leaderboard_20261016",
+      "locator": "Overall table row Muse Wonder (Max), column Confirmed Success (9.51% ± 3.54%); 7,690 sessions.",
+      "evaluator": "Arena",
+      "reporting_relationship": "evaluator_measurement",
+      "reported_at": "2026-10-16T00:00:00Z",
+      "evaluated_at": null,
+      "setup": {
+        "sessions": 7690,
+        "configuration_label": "Muse Wonder (Max)"
+      },
+      "uncertainty": {
+        "kind": "published confidence interval",
+        "half_width": 3.54,
+        "display": "±",
+        "confidence_level": null,
+        "note": "The leaderboard displays ± interval; its confidence level is not stated on the captured table."
+      },
+      "review_state": "reviewed"
+    },
+    {
+      "id": "arena_muse_wonder_max_praise_complaint_20261016",
+      "configuration_id": "muse_wonder_max",
+      "benchmark_id": "arena_agent_praise_complaint_20261016",
+      "series_id": "arena_agent_praise_complaint_20261016_series",
+      "value": 4.41,
+      "unit": "percent",
+      "source_id": "arena_agent_leaderboard_20261016",
+      "locator": "Overall table row Muse Wonder (Max), column Praise vs Complaint (4.41% ± 5.53%); 7,690 sessions.",
+      "evaluator": "Arena",
+      "reporting_relationship": "evaluator_measurement",
+      "reported_at": "2026-10-16T00:00:00Z",
+      "evaluated_at": null,
+      "setup": {
+        "sessions": 7690,
+        "configuration_label": "Muse Wonder (Max)"
+      },
+      "uncertainty": {
+        "kind": "published confidence interval",
+        "half_width": 5.53,
+        "display": "±",
+        "confidence_level": null,
+        "note": "The leaderboard displays ± interval; its confidence level is not stated on the captured table."
+      },
+      "review_state": "reviewed"
+    },
+    {
+      "id": "arena_muse_wonder_max_steerability_20261016",
+      "configuration_id": "muse_wonder_max",
+      "benchmark_id": "arena_agent_steerability_20261016",
+      "series_id": "arena_agent_steerability_20261016_series",
+      "value": 5.16,
+      "unit": "percent",
+      "source_id": "arena_agent_leaderboard_20261016",
+      "locator": "Overall table row Muse Wonder (Max), column Steerability (5.16% ± 2.3%); 7,690 sessions.",
+      "evaluator": "Arena",
+      "reporting_relationship": "evaluator_measurement",
+      "reported_at": "2026-10-16T00:00:00Z",
+      "evaluated_at": null,
+      "setup": {
+        "sessions": 7690,
+        "configuration_label": "Muse Wonder (Max)"
+      },
+      "uncertainty": {
+        "kind": "published confidence interval",
+        "half_width": 2.3,
+        "display": "±",
+        "confidence_level": null,
+        "note": "The leaderboard displays ± interval; its confidence level is not stated on the captured table."
+      },
+      "review_state": "reviewed"
+    },
+    {
+      "id": "arena_muse_wonder_max_bash_reliability_20261016",
+      "configuration_id": "muse_wonder_max",
+      "benchmark_id": "arena_agent_bash_reliability_20261016",
+      "series_id": "arena_agent_bash_reliability_20261016_series",
+      "value": 5.73,
+      "unit": "percent",
+      "source_id": "arena_agent_leaderboard_20261016",
+      "locator": "Overall table row Muse Wonder (Max), column Bash Reliability (5.73% ± 1.43%); 7,690 sessions.",
+      "evaluator": "Arena",
+      "reporting_relationship": "evaluator_measurement",
+      "reported_at": "2026-10-16T00:00:00Z",
+      "evaluated_at": null,
+      "setup": {
+        "sessions": 7690,
+        "configuration_label": "Muse Wonder (Max)"
+      },
+      "uncertainty": {
+        "kind": "published confidence interval",
+        "half_width": 1.43,
+        "display": "±",
+        "confidence_level": null,
+        "note": "The leaderboard displays ± interval; its confidence level is not stated on the captured table."
+      },
+      "review_state": "reviewed"
+    },
+    {
+      "id": "arena_muse_wonder_max_tool_hallucination_20261016",
+      "configuration_id": "muse_wonder_max",
+      "benchmark_id": "arena_agent_tool_hallucination_20261016",
+      "series_id": "arena_agent_tool_hallucination_20261016_series",
+      "value": 0.26,
+      "unit": "percent",
+      "source_id": "arena_agent_leaderboard_20261016",
+      "locator": "Overall table row Muse Wonder (Max), column Tool Hallucination (0.26% ± 0.26%); 7,690 sessions.",
+      "evaluator": "Arena",
+      "reporting_relationship": "evaluator_measurement",
+      "reported_at": "2026-10-16T00:00:00Z",
+      "evaluated_at": null,
+      "setup": {
+        "sessions": 7690,
+        "configuration_label": "Muse Wonder (Max)"
+      },
+      "uncertainty": {
+        "kind": "published confidence interval",
+        "half_width": 0.26,
+        "display": "±",
+        "confidence_level": null,
+        "note": "The leaderboard displays ± interval; its confidence level is not stated on the captured table."
+      },
+      "review_state": "reviewed"
+    },
+    {
+      "id": "arena_muse_spark13_max_net_improvement_20261016",
+      "configuration_id": "muse_spark13_max",
+      "benchmark_id": "arena_agent_net_improvement_20261016",
+      "series_id": "arena_agent_net_improvement_20261016_series",
+      "value": 3.82,
+      "unit": "percent",
+      "source_id": "arena_agent_leaderboard_20261016",
+      "locator": "Overall table row Muse Spark 1.3 (Max), column Net Improvement (3.82% ± 0.83%); 73,912 sessions.",
+      "evaluator": "Arena",
+      "reporting_relationship": "evaluator_measurement",
+      "reported_at": "2026-10-16T00:00:00Z",
+      "evaluated_at": null,
+      "setup": {
+        "sessions": 73912,
+        "configuration_label": "Muse Spark 1.3 (Max)"
+      },
+      "uncertainty": {
+        "kind": "published confidence interval",
+        "half_width": 0.83,
+        "display": "±",
+        "confidence_level": null,
+        "note": "The leaderboard displays ± interval; its confidence level is not stated on the captured table."
+      },
+      "review_state": "reviewed"
+    },
+    {
+      "id": "arena_muse_spark13_max_confirmed_success_20261016",
+      "configuration_id": "muse_spark13_max",
+      "benchmark_id": "arena_agent_confirmed_success_20261016",
+      "series_id": "arena_agent_confirmed_success_20261016_series",
+      "value": 5.51,
+      "unit": "percent",
+      "source_id": "arena_agent_leaderboard_20261016",
+      "locator": "Overall table row Muse Spark 1.3 (Max), column Confirmed Success (5.51% ± 1.68%); 73,912 sessions.",
+      "evaluator": "Arena",
+      "reporting_relationship": "evaluator_measurement",
+      "reported_at": "2026-10-16T00:00:00Z",
+      "evaluated_at": null,
+      "setup": {
+        "sessions": 73912,
+        "configuration_label": "Muse Spark 1.3 (Max)"
+      },
+      "uncertainty": {
+        "kind": "published confidence interval",
+        "half_width": 1.68,
+        "display": "±",
+        "confidence_level": null,
+        "note": "The leaderboard displays ± interval; its confidence level is not stated on the captured table."
+      },
+      "review_state": "reviewed"
+    },
+    {
+      "id": "arena_muse_spark13_max_praise_complaint_20261016",
+      "configuration_id": "muse_spark13_max",
+      "benchmark_id": "arena_agent_praise_complaint_20261016",
+      "series_id": "arena_agent_praise_complaint_20261016_series",
+      "value": 4.32,
+      "unit": "percent",
+      "source_id": "arena_agent_leaderboard_20261016",
+      "locator": "Overall table row Muse Spark 1.3 (Max), column Praise vs Complaint (4.32% ± 2.65%); 73,912 sessions.",
+      "evaluator": "Arena",
+      "reporting_relationship": "evaluator_measurement",
+      "reported_at": "2026-10-16T00:00:00Z",
+      "evaluated_at": null,
+      "setup": {
+        "sessions": 73912,
+        "configuration_label": "Muse Spark 1.3 (Max)"
+      },
+      "uncertainty": {
+        "kind": "published confidence interval",
+        "half_width": 2.65,
+        "display": "±",
+        "confidence_level": null,
+        "note": "The leaderboard displays ± interval; its confidence level is not stated on the captured table."
+      },
+      "review_state": "reviewed"
+    },
+    {
+      "id": "arena_muse_spark13_max_steerability_20261016",
+      "configuration_id": "muse_spark13_max",
+      "benchmark_id": "arena_agent_steerability_20261016",
+      "series_id": "arena_agent_steerability_20261016_series",
+      "value": 5.49,
+      "unit": "percent",
+      "source_id": "arena_agent_leaderboard_20261016",
+      "locator": "Overall table row Muse Spark 1.3 (Max), column Steerability (5.49% ± 1.13%); 73,912 sessions.",
+      "evaluator": "Arena",
+      "reporting_relationship": "evaluator_measurement",
+      "reported_at": "2026-10-16T00:00:00Z",
+      "evaluated_at": null,
+      "setup": {
+        "sessions": 73912,
+        "configuration_label": "Muse Spark 1.3 (Max)"
+      },
+      "uncertainty": {
+        "kind": "published confidence interval",
+        "half_width": 1.13,
+        "display": "±",
+        "confidence_level": null,
+        "note": "The leaderboard displays ± interval; its confidence level is not stated on the captured table."
+      },
+      "review_state": "reviewed"
+    },
+    {
+      "id": "arena_muse_spark13_max_bash_reliability_20261016",
+      "configuration_id": "muse_spark13_max",
+      "benchmark_id": "arena_agent_bash_reliability_20261016",
+      "series_id": "arena_agent_bash_reliability_20261016_series",
+      "value": 2.6,
+      "unit": "percent",
+      "source_id": "arena_agent_leaderboard_20261016",
+      "locator": "Overall table row Muse Spark 1.3 (Max), column Bash Reliability (2.6% ± 0.87%); 73,912 sessions.",
+      "evaluator": "Arena",
+      "reporting_relationship": "evaluator_measurement",
+      "reported_at": "2026-10-16T00:00:00Z",
+      "evaluated_at": null,
+      "setup": {
+        "sessions": 73912,
+        "configuration_label": "Muse Spark 1.3 (Max)"
+      },
+      "uncertainty": {
+        "kind": "published confidence interval",
+        "half_width": 0.87,
+        "display": "±",
+        "confidence_level": null,
+        "note": "The leaderboard displays ± interval; its confidence level is not stated on the captured table."
+      },
+      "review_state": "reviewed"
+    },
+    {
+      "id": "arena_muse_spark13_max_tool_hallucination_20261016",
+      "configuration_id": "muse_spark13_max",
+      "benchmark_id": "arena_agent_tool_hallucination_20261016",
+      "series_id": "arena_agent_tool_hallucination_20261016_series",
+      "value": 0.58,
+      "unit": "percent",
+      "source_id": "arena_agent_leaderboard_20261016",
+      "locator": "Overall table row Muse Spark 1.3 (Max), column Tool Hallucination (0.58% ± 0.06%); 73,912 sessions.",
+      "evaluator": "Arena",
+      "reporting_relationship": "evaluator_measurement",
+      "reported_at": "2026-10-16T00:00:00Z",
+      "evaluated_at": null,
+      "setup": {
+        "sessions": 73912,
+        "configuration_label": "Muse Spark 1.3 (Max)"
+      },
+      "uncertainty": {
+        "kind": "published confidence interval",
+        "half_width": 0.06,
+        "display": "±",
+        "confidence_level": null,
+        "note": "The leaderboard displays ± interval; its confidence level is not stated on the captured table."
+      },
+      "review_state": "reviewed"
+    },
+    {
+      "id": "arena_grok47_xhigh_net_improvement_20261016",
+      "configuration_id": "grok47_xhigh",
+      "benchmark_id": "arena_agent_net_improvement_20261016",
+      "series_id": "arena_agent_net_improvement_20261016_series",
+      "value": 3.21,
+      "unit": "percent",
+      "source_id": "arena_agent_leaderboard_20261016",
+      "locator": "Overall table row Grok 4.7 (xHigh), column Net Improvement (3.21% ± 1.63%); 15,127 sessions.",
+      "evaluator": "Arena",
+      "reporting_relationship": "evaluator_measurement",
+      "reported_at": "2026-10-16T00:00:00Z",
+      "evaluated_at": null,
+      "setup": {
+        "sessions": 15127,
+        "configuration_label": "Grok 4.7 (xHigh)"
+      },
+      "uncertainty": {
+        "kind": "published confidence interval",
+        "half_width": 1.63,
+        "display": "±",
+        "confidence_level": null,
+        "note": "The leaderboard displays ± interval; its confidence level is not stated on the captured table."
+      },
+      "review_state": "reviewed"
+    },
+    {
+      "id": "arena_grok47_xhigh_confirmed_success_20261016",
+      "configuration_id": "grok47_xhigh",
+      "benchmark_id": "arena_agent_confirmed_success_20261016",
+      "series_id": "arena_agent_confirmed_success_20261016_series",
+      "value": 6.84,
+      "unit": "percent",
+      "source_id": "arena_agent_leaderboard_20261016",
+      "locator": "Overall table row Grok 4.7 (xHigh), column Confirmed Success (6.84% ± 3.32%); 15,127 sessions.",
+      "evaluator": "Arena",
+      "reporting_relationship": "evaluator_measurement",
+      "reported_at": "2026-10-16T00:00:00Z",
+      "evaluated_at": null,
+      "setup": {
+        "sessions": 15127,
+        "configuration_label": "Grok 4.7 (xHigh)"
+      },
+      "uncertainty": {
+        "kind": "published confidence interval",
+        "half_width": 3.32,
+        "display": "±",
+        "confidence_level": null,
+        "note": "The leaderboard displays ± interval; its confidence level is not stated on the captured table."
+      },
+      "review_state": "reviewed"
+    },
+    {
+      "id": "arena_grok47_xhigh_praise_complaint_20261016",
+      "configuration_id": "grok47_xhigh",
+      "benchmark_id": "arena_agent_praise_complaint_20261016",
+      "series_id": "arena_agent_praise_complaint_20261016_series",
+      "value": 2.95,
+      "unit": "percent",
+      "source_id": "arena_agent_leaderboard_20261016",
+      "locator": "Overall table row Grok 4.7 (xHigh), column Praise vs Complaint (2.95% ± 5.12%); 15,127 sessions.",
+      "evaluator": "Arena",
+      "reporting_relationship": "evaluator_measurement",
+      "reported_at": "2026-10-16T00:00:00Z",
+      "evaluated_at": null,
+      "setup": {
+        "sessions": 15127,
+        "configuration_label": "Grok 4.7 (xHigh)"
+      },
+      "uncertainty": {
+        "kind": "published confidence interval",
+        "half_width": 5.12,
+        "display": "±",
+        "confidence_level": null,
+        "note": "The leaderboard displays ± interval; its confidence level is not stated on the captured table."
+      },
+      "review_state": "reviewed"
+    },
+    {
+      "id": "arena_grok47_xhigh_steerability_20261016",
+      "configuration_id": "grok47_xhigh",
+      "benchmark_id": "arena_agent_steerability_20261016",
+      "series_id": "arena_agent_steerability_20261016_series",
+      "value": 0.52,
+      "unit": "percent",
+      "source_id": "arena_agent_leaderboard_20261016",
+      "locator": "Overall table row Grok 4.7 (xHigh), column Steerability (0.52% ± 2.53%); 15,127 sessions.",
+      "evaluator": "Arena",
+      "reporting_relationship": "evaluator_measurement",
+      "reported_at": "2026-10-16T00:00:00Z",
+      "evaluated_at": null,
+      "setup": {
+        "sessions": 15127,
+        "configuration_label": "Grok 4.7 (xHigh)"
+      },
+      "uncertainty": {
+        "kind": "published confidence interval",
+        "half_width": 2.53,
+        "display": "±",
+        "confidence_level": null,
+        "note": "The leaderboard displays ± interval; its confidence level is not stated on the captured table."
+      },
+      "review_state": "reviewed"
+    },
+    {
+      "id": "arena_grok47_xhigh_bash_reliability_20261016",
+      "configuration_id": "grok47_xhigh",
+      "benchmark_id": "arena_agent_bash_reliability_20261016",
+      "series_id": "arena_agent_bash_reliability_20261016_series",
+      "value": 9.15,
+      "unit": "percent",
+      "source_id": "arena_agent_leaderboard_20261016",
+      "locator": "Overall table row Grok 4.7 (xHigh), column Bash Reliability (9.15% ± 0.76%); 15,127 sessions.",
+      "evaluator": "Arena",
+      "reporting_relationship": "evaluator_measurement",
+      "reported_at": "2026-10-16T00:00:00Z",
+      "evaluated_at": null,
+      "setup": {
+        "sessions": 15127,
+        "configuration_label": "Grok 4.7 (xHigh)"
+      },
+      "uncertainty": {
+        "kind": "published confidence interval",
+        "half_width": 0.76,
+        "display": "±",
+        "confidence_level": null,
+        "note": "The leaderboard displays ± interval; its confidence level is not stated on the captured table."
+      },
+      "review_state": "reviewed"
+    },
+    {
+      "id": "arena_grok47_xhigh_tool_hallucination_20261016",
+      "configuration_id": "grok47_xhigh",
+      "benchmark_id": "arena_agent_tool_hallucination_20261016",
+      "series_id": "arena_agent_tool_hallucination_20261016_series",
+      "value": 0.59,
+      "unit": "percent",
+      "source_id": "arena_agent_leaderboard_20261016",
+      "locator": "Overall table row Grok 4.7 (xHigh), column Tool Hallucination (0.59% ± 0.05%); 15,127 sessions.",
+      "evaluator": "Arena",
+      "reporting_relationship": "evaluator_measurement",
+      "reported_at": "2026-10-16T00:00:00Z",
+      "evaluated_at": null,
+      "setup": {
+        "sessions": 15127,
+        "configuration_label": "Grok 4.7 (xHigh)"
+      },
+      "uncertainty": {
+        "kind": "published confidence interval",
+        "half_width": 0.05,
+        "display": "±",
+        "confidence_level": null,
+        "note": "The leaderboard displays ± interval; its confidence level is not stated on the captured table."
+      },
+      "review_state": "reviewed"
+    }
+  ],
+  "routes": [],
+  "prices": [],
+  "usage": [],
+  "presets": [
+    {
+      "id": "arena_oct2026",
+      "version": "1.0.0",
+      "name": "Arena leaderboards — October 2026",
+      "model_configuration_ids": [
+        "claude_opus55_max",
+        "gpt6_astra_max",
+        "claude_fable51_max",
+        "gpt61_sol_max",
+        "muse_wonder_max",
+        "muse_spark13_max",
+        "grok47_xhigh"
+      ],
+      "benchmark_ids": [
+        "arena_text_overall_bt_20261015",
+        "arena_agent_net_improvement_20261016",
+        "arena_agent_confirmed_success_20261016",
+        "arena_agent_praise_complaint_20261016",
+        "arena_agent_steerability_20261016",
+        "arena_agent_bash_reliability_20261016",
+        "arena_agent_tool_hallucination_20261016",
+        "arena_webdev_overall_bt_20261016",
+        "arena_search_overall_bt_20261013",
+        "arena_vision_overall_bt_20261009"
+      ],
+      "reason": "Dated Arena preference and Agent Arena signal snapshots. Arena rating points are relative preference ratings and are not accuracy; compare only within the same dated leaderboard. Agent signals are separate measures.",
+      "reviewed_at": "2026-10-17"
+    }
+  ],
+  "coverage_gaps": [
+    {
+      "id": "arena_uncovered_text_categories",
+      "scope": "Arena Text Arena category-specific leaderboards (Math, Coding, Instruction Following, Creative Writing, Expert, Occupational and other categories)",
+      "reason": "This snapshot includes only overall Text Arena. Add each category (including Math, Coding, Instruction Following, Creative Writing, Expert and Occupational) as its own benchmark variant after exact configuration matching and source-backed row capture.",
+      "source_ids": [
+        "arena_text_leaderboard_20261015",
+        "arena_leaderboard_dataset_card"
+      ]
+    },
+    {
+      "id": "arena_uncovered_modalities",
+      "scope": "Arena Document, Image-to-WebDev, Text-to-Image, Image Edit, Text-to-Video, Image-to-Video, Video Edit, and other non-text arenas",
+      "reason": "Vision overall, Code Arena: WebDev overall, and Search Arena overall have reviewed snapshots. Other modalities and Arena categories remain separate leaderboards; they require their own source-backed variants and exact model/config mapping.",
+      "source_ids": [
+        "arena_leaderboard_dataset_card"
+      ]
+    },
+    {
+      "id": "arena_agent_categories_not_expanded",
+      "scope": "Agent Arena categories Code, Chat and Work, and other signal leaderboards",
+      "reason": "This capture covers Agent Arena Overall only; category and signal leaderboards are separate slices and are not inferred from the overall table.",
+      "source_ids": [
+        "arena_agent_leaderboard_20261016",
+        "arena_agent_signal_definitions"
+      ]
+    },
+    {
+      "id": "arena_category_ratings_not_interchangeable",
+      "scope": "Arena rating comparisons across Text, Vision, Search and WebDev leaderboards or across snapshot dates",
+      "reason": "Each arena/category is a distinct evaluation series; rating points are relative preference scores and should not be compared across categories or dates. This is documented as an interpretation constraint, not a missing score.",
+      "source_ids": [
+        "arena_ranking_method",
+        "arena_leaderboard_dataset_card"
+      ]
+    }
+  ],
+  "metadata_claims": [],
+  "external_mappings": [],
+  "missing_cells": []
+}

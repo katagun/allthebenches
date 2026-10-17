@@ -39,13 +39,15 @@ The DOM node count dropped by about 94.5%. The test wall-time improvement includ
 At 320, 390, 768, and 1024 CSS pixels, verify the compact Options disclosure,
 scrollable category strip, model/benchmark pagination, and both table orientations.
 The document must not overflow horizontally; the table may scroll internally.
-Phone tables render bounded groups of three data columns so users can swipe between
-models without mounting the complete matrix. Verify sticky headers during vertical
+Phone benchmark-row tables fit four score columns at 375–390px and five at 430px,
+using 60px model columns and a 96px sticky benchmark label. Smaller phones fit
+three. Model-row tables retain bounded groups of three scrollable columns. Verify sticky headers during vertical
 scroll and sticky row labels during horizontal scroll. Open a numeric score and
 check source links and the Close control in its evidence sheet. At desktop widths
 (above 1100px), verify the existing toolbar and layout are unchanged.
 
 Browser viewport tests must record the actual `innerWidth`, since browser zoom can
-make requested device dimensions differ from CSS pixel dimensions. Component tests
-and column-budget tests run in pre-commit; these visual and scrolling checks require
-a real browser and are not claimed as automated layout coverage.
+make requested device dimensions differ from CSS pixel dimensions. Playwright Chromium checks now enforce overflow, space budgets, sticky scrolling,
+column counts, and control reachability in pre-commit and both CI workflows.
+See CONTRIBUTING.md for browser setup and failure artifacts. Physical-device
+touch interaction and non-Chromium coverage still require manual testing.

@@ -21,3 +21,6 @@ artifacts/
 data/curated/source_snapshots/
 
 .pnpm-store/
+
+web/test-results/
+web/playwright-report/

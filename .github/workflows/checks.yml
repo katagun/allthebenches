@@ -46,3 +46,15 @@ jobs:
       - run: pnpm run build
         working-directory: web
       - run: uv run python scripts/check-bundle.py
+      - name: Install layout test browser
+        run: pnpm exec playwright install --with-deps --only-shell chromium
+        working-directory: web
+      - name: Mobile and desktop layout regression checks
+        run: pnpm test:layout
+        working-directory: web
+      - uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: layout-failure-artifacts
+          path: web/test-results/
+          retention-days: 7

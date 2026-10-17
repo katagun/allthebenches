@@ -14,5 +14,6 @@ uv run benches validate
 uv run python -m scripts.check-generated
 VITE_BASE_PATH=/allthebenches/ pnpm --dir web run build
 uv run python scripts/check-bundle.py
+LAYOUT_BASE_PATH=/allthebenches/ pnpm --dir web test:layout
 pnpm --dir web audit --audit-level low
 uv run python scripts/audit-python-dependencies.py

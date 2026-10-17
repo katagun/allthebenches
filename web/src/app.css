@@ -164,3 +164,25 @@
   .notice{flex-wrap:wrap;font-size:11px;padding:8px}
   [data-slot="sheet-content"]{max-width:100vw}
 }
+
+/* Dense portrait comparison: 4 scores at 375–390px, 5 at 430px. */
+@media(max-width:600px){
+  .transposed-table{min-width:calc(96px + 60px * var(--mobile-columns))!important}
+  .transposed-table .sticky-model-head,.transposed-table .sticky-model-cell{width:96px;min-width:96px;max-width:96px;padding:6px}
+  .transposed-table th:not(.sticky-model-head),.transposed-table td:not(.sticky-model-cell){width:60px;min-width:60px;max-width:60px;padding:5px 3px}
+  .transposed-table .model-cell{display:flex;flex-direction:column;gap:3px}
+  .transposed-table .model-cell>[role="checkbox"]{float:none;margin:0;width:14px;height:14px;align-self:center}
+  .transposed-table .model-ident{width:100%}
+  .transposed-table .model-title-line{display:flex;flex-direction:column;gap:2px}
+  .transposed-table .model-link{display:flex;flex-direction:column;gap:3px;text-align:center;font-size:10px;line-height:1.2;width:100%}
+  .transposed-table .model-link>span{white-space:normal;overflow:visible}
+  .transposed-table .expand-button{order:2;height:18px;width:24px}
+  .transposed-table .reasoning-label{display:block;text-align:center;font-size:8px;padding:1px 2px;margin-top:3px}
+  .transposed-table .reasoning-prefix{display:none}
+  .transposed-table .score-button{min-width:0;padding:4px 0;font-size:11px;white-space:normal;overflow-wrap:anywhere}
+  .transposed-table .reported-dot{margin-left:1px}
+  .transposed-table .bench-heading{font-size:10px}
+  .transposed-table .bench-heading small{font-size:8px}
+  .transposed-table .header-button{gap:2px}
+  .transposed-table .header-button>svg{width:10px;height:10px}
+}

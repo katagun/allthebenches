@@ -39,12 +39,15 @@ The DOM node count dropped by about 94.5%. The test wall-time improvement includ
 At 320, 390, 768, and 1024 CSS pixels, verify the compact Options disclosure,
 scrollable category strip, model/benchmark pagination, and both table orientations.
 The document must not overflow horizontally; the table may scroll internally.
-Phone benchmark-row tables fit four score columns at 375–390px and five at 430px,
-using 60px model columns and a 96px sticky benchmark label. Smaller phones fit
-three. Model-row tables retain bounded groups of three scrollable columns. Verify sticky headers during vertical
+Phone benchmark-row tables default to readable 116px model columns and a 126px
+sticky benchmark label, with internal scrolling. Options → Dense matrix fits four
+score columns at 375–390px and five at 430px using 60px model columns and a 96px
+sticky benchmark label. Smaller phones fit three in dense mode. Model-row tables retain bounded groups of three scrollable columns. Verify sticky headers during vertical
 scroll and sticky row labels during horizontal scroll. Open a numeric score and
 check source links and the Close control in its evidence sheet. At desktop widths
-(above 1100px), verify the existing toolbar and layout are unchanged.
+(above 1100px), verify the workspace navigation and matrix toolbar each stay on one row.
+The model picker must support searching, exact configuration selection, cancellation,
+and URL restoration of the resulting comparison.
 
 Browser viewport tests must record the actual `innerWidth`, since browser zoom can
 make requested device dimensions differ from CSS pixel dimensions. Playwright Chromium checks now enforce overflow, space budgets, sticky scrolling,

@@ -28,12 +28,6 @@ for (const width of [320, 375, 390, 430, 768, 1024]) {
       const header = await page.locator('thead').boundingBox();
       expect(header!.height).toBeLessThan(190);
       await expect(page.getByRole('button', { name: 'Options', exact: true })).toHaveAttribute('aria-expanded', 'false');
-      if (orientation === 'benchmarks' && width >= 375 && width <= 430) {
-        const count = width === 430 ? 5 : 4;
-        await expect(page.locator('thead th')).toHaveCount(count + 1);
-        const scroll = page.locator('[data-slot="table-container"]');
-        expect(await scroll.evaluate(el => el.scrollWidth - el.clientWidth)).toBeLessThanOrEqual(1);
-      }
       // All-model coverage provides enough rows to require vertical scrolling.
       await page.getByRole('button', { name: 'All models', exact: true }).click();
       await expect(page.locator('tbody tr').nth(15)).toBeAttached();
@@ -66,8 +60,61 @@ test('desktop toolbar stays on one row', async ({ page }) => {
   await ready(page);
   await expect(page.getByRole('button', { name: 'Options', exact: true })).toBeHidden();
   await noOverflow(page);
-  const centers = await page.locator('.primary-controls .toolbar > *, .primary-controls .site-header, .repository-link').evaluateAll(elements => elements.map(el => {
+  const centers = await page.locator('.primary-controls .toolbar > :not(.dense-toggle)').evaluateAll(elements => elements.map(el => {
     const r = el.getBoundingClientRect(); return r.top + r.height / 2;
   }));
   expect(Math.max(...centers) - Math.min(...centers)).toBeLessThan(3);
+});
+
+for (const width of [375, 390, 430]) {
+  test(`${width}px optional dense matrix fits four or five models`, async ({ page }) => {
+    await page.setViewportSize({ width, height: 844 });
+    await ready(page);
+    await page.getByRole('button', { name: 'Options', exact: true }).click();
+    await page.getByRole('button', { name: 'Dense matrix', exact: true }).click();
+    await page.getByRole('button', { name: 'Options', exact: true }).click();
+    await expect(page.locator('thead th')).toHaveCount(width === 430 ? 6 : 5);
+    const scroll = page.locator('[data-slot="table-container"]');
+    expect(await scroll.evaluate(el => el.scrollWidth - el.clientWidth)).toBeLessThanOrEqual(1);
+    await noOverflow(page);
+  });
+}
+
+for (const width of [390, 1422]) {
+  test(`${width}px choose models, compare and restore shared state`, async ({ page }) => {
+    await page.setViewportSize({ width, height: 900 });
+    await ready(page);
+    await page.getByRole('button', { name: 'Choose models', exact: true }).click();
+    await page.getByRole('searchbox', { name: 'Find a model' }).fill('Claude 3');
+    const choices = page.getByRole('dialog').getByRole('checkbox');
+    await choices.nth(0).check();
+    await choices.nth(1).check();
+    await page.getByRole('button', { name: 'Compare selected models', exact: true }).click();
+    await expect(page.locator('thead th')).toHaveCount(3);
+    await expect(page.locator('.selection-strip button')).toHaveCount(2);
+    await noOverflow(page);
+    await page.reload();
+    await expect(page.locator('thead th')).toHaveCount(3);
+    await expect(page.getByRole('button', { name: 'Compare', exact: true })).toHaveAttribute('aria-pressed', 'true');
+    await page.getByRole('button', { name: 'Explore', exact: true }).click();
+    await expect(page.getByRole('button', { name: 'Explore', exact: true })).toHaveAttribute('aria-pressed', 'true');
+  });
+}
+
+test('picker limits selection and discards cancelled edits', async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await ready(page);
+  await page.getByRole('button', { name: 'Compare', exact: true }).click();
+  const choices = page.getByRole('dialog').getByRole('checkbox');
+  for (let i = 0; i < 5; i++) await choices.nth(i).check();
+  await expect(choices.nth(5)).toBeDisabled();
+  await page.getByRole('button', { name: 'Close', exact: true }).click();
+  await expect(page.locator('.selection-strip')).toHaveCount(0);
+  await page.getByRole('button', { name: 'Compare', exact: true }).click();
+  await expect(page.getByRole('button', { name: 'Compare selected models', exact: true })).toBeDisabled();
+  await page.getByRole('button', { name: 'Close', exact: true }).click();
+  await page.getByRole('button', { name: 'Benchmarks', exact: true }).click();
+  await page.getByRole('searchbox', { name: 'Find a benchmark' }).fill('GraphWalks');
+  await expect(page.locator('.column-group').first()).toContainText('GraphWalks');
+  await noOverflow(page);
 });

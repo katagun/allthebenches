@@ -1,5 +1,5 @@
 import type { CatalogSnapshot, DetailsSnapshot, ManifestSnapshot, MarketSnapshot, Observation, ResultsSnapshot } from '../generated/dataset';
-export type ObservationIndex = Pick<Observation, 'id' | 'configuration_id' | 'benchmark_id' | 'series_id' | 'review_state' | 'reporting_relationship' | 'setup'>;
+export type ObservationIndex = Pick<Observation, 'id' | 'configuration_id' | 'benchmark_id' | 'series_id' | 'review_state' | 'reporting_relationship' | 'setup' | 'value' | 'unit'>;
 export type AppData = { catalog: CatalogSnapshot; results: Omit<ResultsSnapshot, 'observations'> & { observations: ObservationIndex[] }; details: Omit<DetailsSnapshot, 'observations'> & { observations: ObservationIndex[] }; market: MarketSnapshot; manifest: ManifestSnapshot };
 export type FullAppData = Omit<AppData, 'details' | 'results'> & { details: DetailsSnapshot; results: ResultsSnapshot };
 type ComparisonPayload = Pick<AppData, 'catalog' | 'market' | 'manifest'> & { cells: ResultsSnapshot['cells']; observations: ObservationIndex[]; series: DetailsSnapshot['series']; evidence_file: string };

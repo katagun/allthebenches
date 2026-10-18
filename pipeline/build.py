@@ -196,6 +196,8 @@ def build(dataset: Dataset, output: Path, feeds: list[dict[str, Any]] | None = N
                              "benchmarks": len(dataset.benchmarks)},
                 "feeds": feeds or []}
     (output / "manifest.json").write_bytes(canonical_json(manifest))
+    from .runtime_snapshot import write_runtime_snapshot
+    write_runtime_snapshot(output, {name: json.loads(value) for name, value in encoded.items()}, json.loads(canonical_json(manifest)))
     from .static_pages import build_static_pages
     build_static_pages(dataset, output.parent)
     return manifest

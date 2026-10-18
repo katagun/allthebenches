@@ -9,7 +9,8 @@ import manifest from '../public/data/manifest.json';
 import market from '../public/data/market.json';
 import results from '../public/data/results.json';
 import App from './App';
-import type { AppData } from './data/snapshots';
+import { clearSnapshotCache, type AppData } from './data/snapshots';
+import { comparisonFixture } from './test/comparisonFixture';
 import { decodeViewState, DEFAULT_VIEW } from './state/viewState';
 
 const fixture: AppData = { catalog, details, manifest, market, results } as unknown as AppData;
@@ -21,12 +22,13 @@ const selectedConfigurationIds = allModels.model_configuration_ids ?? [];
 const state = { ...structuredClone(DEFAULT_VIEW), orientation: 'models-rows' as const, presetId: allModels.id, visibleColumnIds: selectedBenchmarkIds };
 let activeFiles: typeof files = files;
 beforeEach(() => {
+  clearSnapshotCache();
   activeFiles = files;
   window.history.replaceState({}, '', `/?v=${encodeURIComponent(JSON.stringify(state))}`);
   window.localStorage.clear();
   vi.stubGlobal('fetch', vi.fn(async (input: RequestInfo | URL) => {
-    const key = String(input).split('/').pop()?.replace('.json', '') as keyof typeof activeFiles;
-    return { ok: true, status: 200, json: async () => activeFiles[key] } as Response;
+    const key = String(input).split('/').pop()?.replace('.json', '') as string;
+    return { ok: true, status: 200, json: async () => (key === 'comparison' ? comparisonFixture(activeFiles) : key.startsWith('evidence-') ? activeFiles.details : activeFiles[key as keyof typeof activeFiles]) } as Response;
   }));
 });
 afterEach(() => { cleanup(); vi.unstubAllGlobals(); vi.restoreAllMocks(); });

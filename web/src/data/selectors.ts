@@ -1,4 +1,4 @@
-import type { AppData } from './snapshots';
+import type { AppData, ObservationIndex } from './snapshots';
 import type { Configuration, DisplayCell, Lab, ModelRelease, Observation, PriceObservation, ServingRoute, UsageObservation } from '../generated/dataset';
 import type { ViewState } from '../state/viewState';
 export type DisplayRow = { id: string; configuration: Configuration; model: ModelRelease; lab: Lab; labs: Lab[]; expanded: boolean; observations: Map<string, DisplayCell>; prices: PriceObservation[]; routes: ServingRoute[]; usage: UsageObservation[]; reviewedCount: number };
@@ -17,7 +17,7 @@ type SelectorIndexes = {
   categoryBenchmarkIds: Map<string, string[]>;
   knownConfigurationIds: Set<string>;
   cellsByConfiguration: Map<string, Map<string, DisplayCell>>;
-  reviewedObservationsByConfiguration: Map<string, Observation[]>;
+  reviewedObservationsByConfiguration: Map<string, ObservationIndex[]>;
   reviewedCountByConfiguration: Map<string, number>;
   observationSeriesStatus: Map<string, string | null | undefined>;
   parameterClaims: Map<string, AppData['catalog']['metadata_claims'][number]>;
@@ -166,7 +166,7 @@ function parameterRange(indexes: SelectorIndexes, modelId: string, field: Parame
   if (value && typeof value === 'object') { const lo = number((value as { min?: unknown }).min); const hi = number((value as { max?: unknown }).max); if (lo !== null && hi !== null) return [lo, hi]; }
   return null;
 }
-function completeSetup(o: Observation, seriesComparability?: string | null): boolean {
+function completeSetup(o: ObservationIndex, seriesComparability?: string | null): boolean {
   const setup = o.setup ?? {};
   const required = ['tools', 'harness', 'reasoning', 'pass_k', 'task_count', 'prompt_protocol', 'grader', 'fallback_models', 'resource_budget'];
   const known = (key: string) => Object.entries(setup).some(([k, value]) => (k === key || (key === 'pass_k' && ['sampling', 'passk'].includes(k)) || (key === 'resource_budget' && ['budget', 'limits'].includes(k))) && value !== null && value !== undefined && value !== 'unknown' && value !== 'not reported' && value !== 'not stated');

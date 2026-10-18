@@ -8,7 +8,8 @@ import manifestJson from '../public/data/manifest.json';
 import marketJson from '../public/data/market.json';
 import resultsJson from '../public/data/results.json';
 import App, { makeDefault } from './App';
-import type { AppData } from './data/snapshots';
+import { clearSnapshotCache, type AppData } from './data/snapshots';
+import { comparisonFixture } from './test/comparisonFixture';
 import { DEFAULT_VIEW, decodeViewState, encodeViewState, storageKey } from './state/viewState';
 
 const targetCell = resultsJson.cells.find(cell => cell.value !== null);
@@ -25,6 +26,7 @@ fixture.catalog.presets = [...fixture.catalog.presets.filter(p => p.id !== histo
 const files = { catalog: fixture.catalog, details: fixture.details, manifest: fixture.manifest, market: fixture.market, results: fixture.results };
 
 beforeEach(() => {
+  clearSnapshotCache();
   Object.defineProperties(HTMLElement.prototype, {
     hasPointerCapture: { configurable: true, value: () => false },
     setPointerCapture: { configurable: true, value: () => undefined },
@@ -34,8 +36,8 @@ beforeEach(() => {
   window.history.replaceState({}, '', '/');
   window.localStorage.clear();
   vi.stubGlobal('fetch', vi.fn(async (input: RequestInfo | URL) => {
-    const name = String(input).split('/').pop()?.replace('.json', '') as keyof typeof files;
-    return { ok: true, status: 200, json: async () => files[name] } as Response;
+    const name = String(input).split('/').pop()?.replace('.json', '') as string;
+    return { ok: true, status: 200, json: async () => (name === 'comparison' ? comparisonFixture(files) : name.startsWith('evidence-') ? files.details : files[name as keyof typeof files]) } as Response;
   }));
 });
 afterEach(() => { cleanup(); vi.unstubAllGlobals(); vi.restoreAllMocks(); });

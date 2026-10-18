@@ -181,7 +181,11 @@ test('wide desktop comparisons keep compact columns and bounded rendering', asyn
   await expect(page.locator('thead th')).toHaveCount(20 - modelCount + 1);
   const lastWidths = await page.locator('thead th:not(:first-child)').evaluateAll(elements => elements.map(el => el.getBoundingClientRect().width));
   for (const width of lastWidths) expect(width).toBeCloseTo(150, 0);
+  expect(new URL(page.url()).searchParams.has('v')).toBe(false);
+  expect(new URL(page.url()).hash).toMatch(/^#\/\?v=b1\./);
+  const request = page.waitForRequest(request => request.isNavigationRequest());
   await page.reload();
+  expect((await request).url().length).toBeLessThan(200);
   await expect(page.locator('.selection-strip button')).toHaveCount(20);
   await expect(page.locator('thead th')).toHaveCount(modelCount + 1);
 });

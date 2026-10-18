@@ -1,3 +1,4 @@
+import { urlState } from '../state/stateRuntime';
 import { cleanup, render, screen } from '@testing-library/react';
 import { afterEach, expect, it, vi } from 'vitest';
 import EntityPage from './EntityPage';
@@ -27,7 +28,7 @@ it('keeps conflicting published reports separate and excludes unpublished candid
   expect(container.textContent).not.toContain('999');
   expect(screen.queryByText('Source c')).toBeNull();
   const link = screen.getByRole('link', { name: 'View this model in the matrix →' });
-  const encoded = new URL(link.getAttribute('href')!, 'https://example.org').searchParams.get('v')!;
+  const encoded = urlState(new URL(link.getAttribute('href')!, 'https://example.org'))!;
   const decoded = decodeViewState(encoded);
   expect(decoded.ok).toBe(true);
   if (decoded.ok) {

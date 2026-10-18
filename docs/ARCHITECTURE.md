@@ -114,3 +114,18 @@ The pre-commit and CI gates cover render/update regressions, state parsing, filt
 Deployments build from committed reviewed data. No API key belongs in a `VITE_` variable: those values are public build inputs. Upstream text and source URLs are evidence, not executable instructions. Generated snapshots and diagrams are committed artifacts; diagrams render natively on GitHub and require no diagram service.
 
 See [Deployment](DEPLOYMENT.md), [Contributing](../CONTRIBUTING.md), and [Security](../SECURITY.md).
+
+## Dedicated reference pages
+
+`Router.tsx` uses `#/models/<id>` and `#/benchmarks/<id>` routes, which survive
+refreshes on GitHub Pages without a server rewrite or 404 fallback. Detail pages
+are lazy-loaded. The existing `v` matrix-state parameter is retained when users
+follow entity links; Back to comparison matrix removes only the hash. Explicit
+“View in the matrix” links create a new focused view: the benchmark across all
+models, or the model's configuration with the most published observations.
+
+`EntityPage.tsx` reads the same static snapshots as the matrix. Score cards include
+only observations referenced by published display cells, keep conflicting reports
+separate, and expose their original source, locator, protocol, and setup. Rendering
+is bounded to 25 score cards per page. Unknown IDs and malformed routes show a
+recoverable not-found page. No runtime API or new hosting service is required.

@@ -5862,6 +5862,62 @@
       "unit": "index",
       "upper_bound": 1,
       "version": "full-panel-10x"
+    },
+    {
+      "id": "terminal_bench_21",
+      "family_id": "terminal_bench_21",
+      "name": "Terminal-Bench 2.1",
+      "version": "2.1",
+      "category": "coding",
+      "modality": "text",
+      "metric_name": "pass rate",
+      "unit": "%",
+      "lower_bound": 0,
+      "upper_bound": 100,
+      "direction": "higher",
+      "documentation_url": "https://z.ai/blog/glm-5.3"
+    },
+    {
+      "id": "toolathlon_verified",
+      "family_id": "toolathlon_verified",
+      "name": "Toolathlon Verified",
+      "version": "unversioned-as-reported",
+      "category": "agent",
+      "modality": "text",
+      "metric_name": "pass rate",
+      "unit": "%",
+      "lower_bound": 0,
+      "upper_bound": 100,
+      "direction": "higher",
+      "documentation_url": "https://z.ai/blog/glm-5.3"
+    },
+    {
+      "id": "automationbench_v106",
+      "family_id": "automationbench_v106",
+      "name": "AutomationBench v1.0.6",
+      "version": "1.0.6",
+      "category": "agent",
+      "modality": "text",
+      "metric_name": "reported score",
+      "unit": "%",
+      "lower_bound": 0,
+      "upper_bound": 100,
+      "direction": "higher",
+      "documentation_url": "https://z.ai/blog/glm-5.3"
+    },
+    {
+      "id": "agents_last_exam_cli",
+      "family_id": "agents_last_exam_cli",
+      "name": "Agents’ Last Exam (CLI)",
+      "version": "unversioned-as-reported",
+      "category": "agent",
+      "modality": "text",
+      "metric_name": "pass rate",
+      "unit": "%",
+      "lower_bound": 0,
+      "upper_bound": 100,
+      "direction": "higher",
+      "documentation_url": "https://z.ai/blog/glm-5.3"
     }
   ],
   "configurations": [
@@ -6400,6 +6456,30 @@
       "precision": null,
       "reasoning_budget_tokens": null,
       "reasoning_label": "OpenRouter/model default; reasoning setting unreported"
+    },
+    {
+      "id": "glm53_zai_reported",
+      "model_id": "glm53",
+      "mode": "unknown",
+      "reasoning_label": "Z.ai reported; exact effort varies or is unreported"
+    },
+    {
+      "id": "kimi_k3_zai_reported",
+      "model_id": "kimi_k3",
+      "mode": "unknown",
+      "reasoning_label": "Z.ai reported; exact effort varies or is unreported"
+    },
+    {
+      "id": "deepseek_v4_pro_0813_zai_reported",
+      "model_id": "deepseek_v4_pro_0813",
+      "mode": "unknown",
+      "reasoning_label": "Z.ai reported; exact effort varies or is unreported"
+    },
+    {
+      "id": "qwen38_max_zai_reported",
+      "model_id": "qwen38_max",
+      "mode": "unknown",
+      "reasoning_label": "Z.ai reported; exact effort varies or is unreported"
     }
   ],
   "coverage_gaps": [
@@ -6567,6 +6647,14 @@
       "source_ids": [
         "arena_ranking_method",
         "arena_leaderboard_dataset_card"
+      ]
+    },
+    {
+      "id": "chinese_frontier_current_versions",
+      "scope": "DeepSeek, Qwen, GLM and Kimi frontier coverage",
+      "reason": "Initial coverage is five rows from the August GLM-5.3 comparison table. Newer checkpoint results, current weight availability for GLM and shared October frontier benchmarks remain to be verified. Missing cells are not zero.",
+      "source_ids": [
+        "zai_glm53_launch"
       ]
     }
   ],
@@ -7015,6 +7103,26 @@
         "deepseek_r1_release"
       ],
       "verified_at": "2026-10-17"
+    },
+    {
+      "id": "zai",
+      "name": "Z.ai / Zhipu AI",
+      "hq_country_codes": [
+        "cn"
+      ],
+      "source_ids": [
+        "zai_glm53_launch"
+      ]
+    },
+    {
+      "id": "moonshot",
+      "name": "Moonshot AI",
+      "hq_country_codes": [
+        "cn"
+      ],
+      "source_ids": [
+        "kimi_k3_launch"
+      ]
     }
   ],
   "metadata_claims": [
@@ -8236,6 +8344,86 @@
       "upstream_ids": {},
       "version": "Mixtral 8x7B Instruct",
       "weights_state": "available"
+    },
+    {
+      "id": "glm53",
+      "name": "GLM-5.3",
+      "lab_ids": [
+        "zai"
+      ],
+      "family_id": "glm53",
+      "version": "GLM-5.3",
+      "release_date": "2026-08-14",
+      "release_date_precision": "day",
+      "access_state": "available",
+      "weights_state": "announced",
+      "modalities": [
+        "text"
+      ],
+      "source_ids": [
+        "zai_glm53_launch"
+      ]
+    },
+    {
+      "id": "kimi_k3",
+      "name": "Kimi K3",
+      "lab_ids": [
+        "moonshot"
+      ],
+      "family_id": "kimi_k3",
+      "version": "Kimi K3",
+      "release_date": "2026-07-17",
+      "release_date_precision": "day",
+      "access_state": "available",
+      "weights_state": "available",
+      "modalities": [
+        "text",
+        "image"
+      ],
+      "source_ids": [
+        "kimi_k3_launch",
+        "kimi_k3_weights",
+        "zai_glm53_launch"
+      ]
+    },
+    {
+      "id": "deepseek_v4_pro_0813",
+      "name": "DeepSeek V4 Pro 0813",
+      "lab_ids": [
+        "deepseek"
+      ],
+      "family_id": "deepseek_v4_pro_0813",
+      "version": "DeepSeek V4 Pro 0813",
+      "release_date": null,
+      "release_date_precision": "unknown",
+      "access_state": "unknown",
+      "weights_state": "unknown",
+      "modalities": [
+        "text"
+      ],
+      "source_ids": [
+        "zai_glm53_launch"
+      ]
+    },
+    {
+      "id": "qwen38_max",
+      "name": "Qwen3.8-Max",
+      "lab_ids": [
+        "qwen"
+      ],
+      "family_id": "qwen38_max",
+      "version": "Qwen3.8-Max",
+      "release_date": null,
+      "release_date_precision": "unknown",
+      "access_state": "unknown",
+      "weights_state": "unknown",
+      "modalities": [
+        "text"
+      ],
+      "source_ids": [
+        "qwen38_launch",
+        "zai_glm53_launch"
+      ]
     }
   ],
   "observations": [
@@ -24575,6 +24763,366 @@
       },
       "unit": "percent",
       "value": 0.59
+    },
+    {
+      "id": "o_glm53_zai_reported_deepswe_v11",
+      "configuration_id": "glm53_zai_reported",
+      "benchmark_id": "deepswe_v11",
+      "series_id": "deepswe_v11_zai_glm53",
+      "value": 66.9,
+      "unit": "%",
+      "source_id": "zai_glm53_launch",
+      "locator": "Performance across comparison models: DeepSWE v1.1 row, glm53 column",
+      "evaluator": "Z.ai",
+      "reporting_relationship": "self_report",
+      "reported_at": "2026-08-14T00:00:00Z",
+      "setup": {
+        "protocol": "GLM: mini-swe-agent; 6h timeout, 400K context. Peer settings unspecified.",
+        "comparability": "Peer harnesses and exact effort are not fully specified; no common-harness claim."
+      },
+      "review_state": "reviewed"
+    },
+    {
+      "id": "o_kimi_k3_zai_reported_deepswe_v11",
+      "configuration_id": "kimi_k3_zai_reported",
+      "benchmark_id": "deepswe_v11",
+      "series_id": "deepswe_v11_zai_glm53",
+      "value": 67.5,
+      "unit": "%",
+      "source_id": "zai_glm53_launch",
+      "locator": "Performance across comparison models: DeepSWE v1.1 row, kimi_k3 column",
+      "evaluator": "Not individually specified in Z.ai comparison table",
+      "reporting_relationship": "quoted_result",
+      "reported_at": "2026-08-14T00:00:00Z",
+      "setup": {
+        "protocol": "GLM: mini-swe-agent; 6h timeout, 400K context. Peer settings unspecified.",
+        "comparability": "Peer harnesses and exact effort are not fully specified; no common-harness claim."
+      },
+      "review_state": "reviewed"
+    },
+    {
+      "id": "o_deepseek_v4_pro_0813_zai_reported_deepswe_v11",
+      "configuration_id": "deepseek_v4_pro_0813_zai_reported",
+      "benchmark_id": "deepswe_v11",
+      "series_id": "deepswe_v11_zai_glm53",
+      "value": 62.7,
+      "unit": "%",
+      "source_id": "zai_glm53_launch",
+      "locator": "Performance across comparison models: DeepSWE v1.1 row, deepseek_v4_pro_0813 column",
+      "evaluator": "Not individually specified in Z.ai comparison table",
+      "reporting_relationship": "quoted_result",
+      "reported_at": "2026-08-14T00:00:00Z",
+      "setup": {
+        "protocol": "GLM: mini-swe-agent; 6h timeout, 400K context. Peer settings unspecified.",
+        "comparability": "Peer harnesses and exact effort are not fully specified; no common-harness claim."
+      },
+      "review_state": "reviewed"
+    },
+    {
+      "id": "o_qwen38_max_zai_reported_deepswe_v11",
+      "configuration_id": "qwen38_max_zai_reported",
+      "benchmark_id": "deepswe_v11",
+      "series_id": "deepswe_v11_zai_glm53",
+      "value": 56.6,
+      "unit": "%",
+      "source_id": "zai_glm53_launch",
+      "locator": "Performance across comparison models: DeepSWE v1.1 row, qwen38_max column",
+      "evaluator": "Not individually specified in Z.ai comparison table",
+      "reporting_relationship": "quoted_result",
+      "reported_at": "2026-08-14T00:00:00Z",
+      "setup": {
+        "protocol": "GLM: mini-swe-agent; 6h timeout, 400K context. Peer settings unspecified.",
+        "comparability": "Peer harnesses and exact effort are not fully specified; no common-harness claim."
+      },
+      "review_state": "reviewed"
+    },
+    {
+      "id": "o_glm53_zai_reported_terminal_bench_21",
+      "configuration_id": "glm53_zai_reported",
+      "benchmark_id": "terminal_bench_21",
+      "series_id": "terminal_bench_21_zai_glm53",
+      "value": 88.2,
+      "unit": "%",
+      "source_id": "zai_glm53_launch",
+      "locator": "Performance across comparison models: Terminal-Bench 2.1 row, glm53 column",
+      "evaluator": "Z.ai",
+      "reporting_relationship": "self_report",
+      "reported_at": "2026-08-14T00:00:00Z",
+      "setup": {
+        "protocol": "GLM: Claude Code 2.1.207, 6h timeout, 65536 output tokens. Peer settings unspecified.",
+        "comparability": "Peer harnesses and exact effort are not fully specified; no common-harness claim."
+      },
+      "review_state": "reviewed"
+    },
+    {
+      "id": "o_kimi_k3_zai_reported_terminal_bench_21",
+      "configuration_id": "kimi_k3_zai_reported",
+      "benchmark_id": "terminal_bench_21",
+      "series_id": "terminal_bench_21_zai_glm53",
+      "value": 88.3,
+      "unit": "%",
+      "source_id": "zai_glm53_launch",
+      "locator": "Performance across comparison models: Terminal-Bench 2.1 row, kimi_k3 column",
+      "evaluator": "Not individually specified in Z.ai comparison table",
+      "reporting_relationship": "quoted_result",
+      "reported_at": "2026-08-14T00:00:00Z",
+      "setup": {
+        "protocol": "GLM: Claude Code 2.1.207, 6h timeout, 65536 output tokens. Peer settings unspecified.",
+        "comparability": "Peer harnesses and exact effort are not fully specified; no common-harness claim."
+      },
+      "review_state": "reviewed"
+    },
+    {
+      "id": "o_deepseek_v4_pro_0813_zai_reported_terminal_bench_21",
+      "configuration_id": "deepseek_v4_pro_0813_zai_reported",
+      "benchmark_id": "terminal_bench_21",
+      "series_id": "terminal_bench_21_zai_glm53",
+      "value": 87.9,
+      "unit": "%",
+      "source_id": "zai_glm53_launch",
+      "locator": "Performance across comparison models: Terminal-Bench 2.1 row, deepseek_v4_pro_0813 column",
+      "evaluator": "Not individually specified in Z.ai comparison table",
+      "reporting_relationship": "quoted_result",
+      "reported_at": "2026-08-14T00:00:00Z",
+      "setup": {
+        "protocol": "GLM: Claude Code 2.1.207, 6h timeout, 65536 output tokens. Peer settings unspecified.",
+        "comparability": "Peer harnesses and exact effort are not fully specified; no common-harness claim."
+      },
+      "review_state": "reviewed"
+    },
+    {
+      "id": "o_qwen38_max_zai_reported_terminal_bench_21",
+      "configuration_id": "qwen38_max_zai_reported",
+      "benchmark_id": "terminal_bench_21",
+      "series_id": "terminal_bench_21_zai_glm53",
+      "value": 86.6,
+      "unit": "%",
+      "source_id": "zai_glm53_launch",
+      "locator": "Performance across comparison models: Terminal-Bench 2.1 row, qwen38_max column",
+      "evaluator": "Not individually specified in Z.ai comparison table",
+      "reporting_relationship": "quoted_result",
+      "reported_at": "2026-08-14T00:00:00Z",
+      "setup": {
+        "protocol": "GLM: Claude Code 2.1.207, 6h timeout, 65536 output tokens. Peer settings unspecified.",
+        "comparability": "Peer harnesses and exact effort are not fully specified; no common-harness claim."
+      },
+      "review_state": "reviewed"
+    },
+    {
+      "id": "o_glm53_zai_reported_toolathlon_verified",
+      "configuration_id": "glm53_zai_reported",
+      "benchmark_id": "toolathlon_verified",
+      "series_id": "toolathlon_verified_zai_glm53",
+      "value": 73.0,
+      "unit": "%",
+      "source_id": "zai_glm53_launch",
+      "locator": "Performance across comparison models: Toolathlon Verified row, glm53 column",
+      "evaluator": "Z.ai",
+      "reporting_relationship": "self_report",
+      "reported_at": "2026-08-14T00:00:00Z",
+      "setup": {
+        "protocol": "Official evaluation service; pass@1 averaged over three runs. Peer settings unspecified.",
+        "comparability": "Peer harnesses and exact effort are not fully specified; no common-harness claim."
+      },
+      "review_state": "reviewed"
+    },
+    {
+      "id": "o_kimi_k3_zai_reported_toolathlon_verified",
+      "configuration_id": "kimi_k3_zai_reported",
+      "benchmark_id": "toolathlon_verified",
+      "series_id": "toolathlon_verified_zai_glm53",
+      "value": 76.5,
+      "unit": "%",
+      "source_id": "zai_glm53_launch",
+      "locator": "Performance across comparison models: Toolathlon Verified row, kimi_k3 column",
+      "evaluator": "Not individually specified in Z.ai comparison table",
+      "reporting_relationship": "quoted_result",
+      "reported_at": "2026-08-14T00:00:00Z",
+      "setup": {
+        "protocol": "Official evaluation service; pass@1 averaged over three runs. Peer settings unspecified.",
+        "comparability": "Peer harnesses and exact effort are not fully specified; no common-harness claim."
+      },
+      "review_state": "reviewed"
+    },
+    {
+      "id": "o_deepseek_v4_pro_0813_zai_reported_toolathlon_verified",
+      "configuration_id": "deepseek_v4_pro_0813_zai_reported",
+      "benchmark_id": "toolathlon_verified",
+      "series_id": "toolathlon_verified_zai_glm53",
+      "value": 74.1,
+      "unit": "%",
+      "source_id": "zai_glm53_launch",
+      "locator": "Performance across comparison models: Toolathlon Verified row, deepseek_v4_pro_0813 column",
+      "evaluator": "Not individually specified in Z.ai comparison table",
+      "reporting_relationship": "quoted_result",
+      "reported_at": "2026-08-14T00:00:00Z",
+      "setup": {
+        "protocol": "Official evaluation service; pass@1 averaged over three runs. Peer settings unspecified.",
+        "comparability": "Peer harnesses and exact effort are not fully specified; no common-harness claim."
+      },
+      "review_state": "reviewed"
+    },
+    {
+      "id": "o_qwen38_max_zai_reported_toolathlon_verified",
+      "configuration_id": "qwen38_max_zai_reported",
+      "benchmark_id": "toolathlon_verified",
+      "series_id": "toolathlon_verified_zai_glm53",
+      "value": 72.5,
+      "unit": "%",
+      "source_id": "zai_glm53_launch",
+      "locator": "Performance across comparison models: Toolathlon Verified row, qwen38_max column",
+      "evaluator": "Not individually specified in Z.ai comparison table",
+      "reporting_relationship": "quoted_result",
+      "reported_at": "2026-08-14T00:00:00Z",
+      "setup": {
+        "protocol": "Official evaluation service; pass@1 averaged over three runs. Peer settings unspecified.",
+        "comparability": "Peer harnesses and exact effort are not fully specified; no common-harness claim."
+      },
+      "review_state": "reviewed"
+    },
+    {
+      "id": "o_glm53_zai_reported_automationbench_v106",
+      "configuration_id": "glm53_zai_reported",
+      "benchmark_id": "automationbench_v106",
+      "series_id": "automationbench_v106_zai_glm53",
+      "value": 48.2,
+      "unit": "%",
+      "source_id": "zai_glm53_launch",
+      "locator": "Performance across comparison models: AutomationBench v1.0.6 row, glm53 column",
+      "evaluator": "Z.ai",
+      "reporting_relationship": "self_report",
+      "reported_at": "2026-08-14T00:00:00Z",
+      "setup": {
+        "protocol": "Version 1.0.6 with null-type fix (PR #13); separate from unversioned results.",
+        "comparability": "Peer harnesses and exact effort are not fully specified; no common-harness claim."
+      },
+      "review_state": "reviewed"
+    },
+    {
+      "id": "o_kimi_k3_zai_reported_automationbench_v106",
+      "configuration_id": "kimi_k3_zai_reported",
+      "benchmark_id": "automationbench_v106",
+      "series_id": "automationbench_v106_zai_glm53",
+      "value": 46.7,
+      "unit": "%",
+      "source_id": "zai_glm53_launch",
+      "locator": "Performance across comparison models: AutomationBench v1.0.6 row, kimi_k3 column",
+      "evaluator": "Not individually specified in Z.ai comparison table",
+      "reporting_relationship": "quoted_result",
+      "reported_at": "2026-08-14T00:00:00Z",
+      "setup": {
+        "protocol": "Version 1.0.6 with null-type fix (PR #13); separate from unversioned results.",
+        "comparability": "Peer harnesses and exact effort are not fully specified; no common-harness claim."
+      },
+      "review_state": "reviewed"
+    },
+    {
+      "id": "o_deepseek_v4_pro_0813_zai_reported_automationbench_v106",
+      "configuration_id": "deepseek_v4_pro_0813_zai_reported",
+      "benchmark_id": "automationbench_v106",
+      "series_id": "automationbench_v106_zai_glm53",
+      "value": 43.2,
+      "unit": "%",
+      "source_id": "zai_glm53_launch",
+      "locator": "Performance across comparison models: AutomationBench v1.0.6 row, deepseek_v4_pro_0813 column",
+      "evaluator": "Not individually specified in Z.ai comparison table",
+      "reporting_relationship": "quoted_result",
+      "reported_at": "2026-08-14T00:00:00Z",
+      "setup": {
+        "protocol": "Version 1.0.6 with null-type fix (PR #13); separate from unversioned results.",
+        "comparability": "Peer harnesses and exact effort are not fully specified; no common-harness claim."
+      },
+      "review_state": "reviewed"
+    },
+    {
+      "id": "o_qwen38_max_zai_reported_automationbench_v106",
+      "configuration_id": "qwen38_max_zai_reported",
+      "benchmark_id": "automationbench_v106",
+      "series_id": "automationbench_v106_zai_glm53",
+      "value": 39.8,
+      "unit": "%",
+      "source_id": "zai_glm53_launch",
+      "locator": "Performance across comparison models: AutomationBench v1.0.6 row, qwen38_max column",
+      "evaluator": "Not individually specified in Z.ai comparison table",
+      "reporting_relationship": "quoted_result",
+      "reported_at": "2026-08-14T00:00:00Z",
+      "setup": {
+        "protocol": "Version 1.0.6 with null-type fix (PR #13); separate from unversioned results.",
+        "comparability": "Peer harnesses and exact effort are not fully specified; no common-harness claim."
+      },
+      "review_state": "reviewed"
+    },
+    {
+      "id": "o_glm53_zai_reported_agents_last_exam_cli",
+      "configuration_id": "glm53_zai_reported",
+      "benchmark_id": "agents_last_exam_cli",
+      "series_id": "agents_last_exam_cli_zai_glm53",
+      "value": 28.5,
+      "unit": "%",
+      "source_id": "zai_glm53_launch",
+      "locator": "Performance across comparison models: Agents’ Last Exam (CLI) row, glm53 column",
+      "evaluator": "Z.ai",
+      "reporting_relationship": "self_report",
+      "reported_at": "2026-08-14T00:00:00Z",
+      "setup": {
+        "protocol": "CLI protocol, 105 tasks. GLM: Claude Code, max effort, 1M context, 64K output. Peer settings unspecified.",
+        "comparability": "Peer harnesses and exact effort are not fully specified; no common-harness claim."
+      },
+      "review_state": "reviewed"
+    },
+    {
+      "id": "o_kimi_k3_zai_reported_agents_last_exam_cli",
+      "configuration_id": "kimi_k3_zai_reported",
+      "benchmark_id": "agents_last_exam_cli",
+      "series_id": "agents_last_exam_cli_zai_glm53",
+      "value": 27.6,
+      "unit": "%",
+      "source_id": "zai_glm53_launch",
+      "locator": "Performance across comparison models: Agents’ Last Exam (CLI) row, kimi_k3 column",
+      "evaluator": "Not individually specified in Z.ai comparison table",
+      "reporting_relationship": "quoted_result",
+      "reported_at": "2026-08-14T00:00:00Z",
+      "setup": {
+        "protocol": "CLI protocol, 105 tasks. GLM: Claude Code, max effort, 1M context, 64K output. Peer settings unspecified.",
+        "comparability": "Peer harnesses and exact effort are not fully specified; no common-harness claim."
+      },
+      "review_state": "reviewed"
+    },
+    {
+      "id": "o_deepseek_v4_pro_0813_zai_reported_agents_last_exam_cli",
+      "configuration_id": "deepseek_v4_pro_0813_zai_reported",
+      "benchmark_id": "agents_last_exam_cli",
+      "series_id": "agents_last_exam_cli_zai_glm53",
+      "value": 25.7,
+      "unit": "%",
+      "source_id": "zai_glm53_launch",
+      "locator": "Performance across comparison models: Agents’ Last Exam (CLI) row, deepseek_v4_pro_0813 column",
+      "evaluator": "Not individually specified in Z.ai comparison table",
+      "reporting_relationship": "quoted_result",
+      "reported_at": "2026-08-14T00:00:00Z",
+      "setup": {
+        "protocol": "CLI protocol, 105 tasks. GLM: Claude Code, max effort, 1M context, 64K output. Peer settings unspecified.",
+        "comparability": "Peer harnesses and exact effort are not fully specified; no common-harness claim."
+      },
+      "review_state": "reviewed"
+    },
+    {
+      "id": "o_qwen38_max_zai_reported_agents_last_exam_cli",
+      "configuration_id": "qwen38_max_zai_reported",
+      "benchmark_id": "agents_last_exam_cli",
+      "series_id": "agents_last_exam_cli_zai_glm53",
+      "value": 27.0,
+      "unit": "%",
+      "source_id": "zai_glm53_launch",
+      "locator": "Performance across comparison models: Agents’ Last Exam (CLI) row, qwen38_max column",
+      "evaluator": "Not individually specified in Z.ai comparison table",
+      "reporting_relationship": "quoted_result",
+      "reported_at": "2026-08-14T00:00:00Z",
+      "setup": {
+        "protocol": "CLI protocol, 105 tasks. GLM: Claude Code, max effort, 1M context, 64K output. Peer settings unspecified.",
+        "comparability": "Peer harnesses and exact effort are not fully specified; no common-harness claim."
+      },
+      "review_state": "reviewed"
     }
   ],
   "presets": [
@@ -24601,7 +25149,11 @@
         "cwe_bench_v1",
         "gdp_pdf_surge",
         "meta_cyberbench_asr",
-        "mistral_b3"
+        "mistral_b3",
+        "terminal_bench_21",
+        "toolathlon_verified",
+        "automationbench_v106",
+        "agents_last_exam_cli"
       ],
       "id": "frontier_oct2026",
       "model_configuration_ids": [
@@ -24614,13 +25166,17 @@
         "mistral_large4_unknown",
         "gpt61_sol_max",
         "muse_spark13_max",
-        "muse_wonder_max"
+        "muse_wonder_max",
+        "glm53_zai_reported",
+        "kimi_k3_zai_reported",
+        "deepseek_v4_pro_0813_zai_reported",
+        "qwen38_max_zai_reported"
       ],
       "name": "Frontier — October 2026",
-      "reason": "Contains the 19 benchmark rows in Google’s Gemini 4 Argon evaluation table, with the existing GDP and safety selections retained. Methodology and results are source-specific; exact unreported effort labels remain unresolved.",
+      "reason": "Contains the 19 benchmark rows in Google’s Gemini 4 Argon evaluation table, with the existing GDP and safety selections retained. Methodology and results are source-specific; exact unreported effort labels remain unresolved. Includes DeepSeek V4 Pro 0813, Qwen3.8-Max, GLM-5.3 and Kimi K3 from the Z.ai comparison table; explicit older benchmark versions remain separate.",
       "reviewed_at": "2026-10-17",
       "saturation_policy_version": "manual-v1",
-      "version": "1.1.0"
+      "version": "1.2.0"
     },
     {
       "benchmark_ids": [
@@ -24932,7 +25488,11 @@
         "traces_ifr_i",
         "vals_finance_agent_v2",
         "vals_index_reported",
-        "vibe_code_bench_reported"
+        "vibe_code_bench_reported",
+        "terminal_bench_21",
+        "toolathlon_verified",
+        "automationbench_v106",
+        "agents_last_exam_cli"
       ],
       "id": "all_models_oct2026",
       "model_configuration_ids": [
@@ -25002,13 +25562,17 @@
         "qwen3_14b_base_default",
         "qwen3_30b_a3b_base_default",
         "qwen3_8b_base_default",
-        "qwen_agentworld_35b_a3b_default"
+        "qwen_agentworld_35b_a3b_default",
+        "glm53_zai_reported",
+        "kimi_k3_zai_reported",
+        "deepseek_v4_pro_0813_zai_reported",
+        "qwen38_max_zai_reported"
       ],
       "name": "All models — October 2026",
       "reason": "Discovery and benchmarked releases, including explicitly unscored current rows and historical GPT-4. Includes all exact configurations and all curated benchmark variants, including BullshitBench V1/V2 and TRACES.",
       "reviewed_at": "2026-10-17",
       "saturation_policy_version": null,
-      "version": "1.0.0"
+      "version": "1.2.0"
     },
     {
       "benchmark_ids": [
@@ -31380,6 +31944,46 @@
       "sampling": "10 full-panel iterations; 42 probes per model; temperature 1.0 as reported for the TRACES model panel. Current snapshot does not provide token caps per model.",
       "setup_fingerprint": null,
       "tools": "OpenRouter chat-completions API"
+    },
+    {
+      "id": "deepswe_v11_zai_glm53",
+      "benchmark_id": "deepswe_v11",
+      "protocol": "GLM: mini-swe-agent; 6h timeout, 400K context. Peer settings unspecified.",
+      "evaluator": "Z.ai / cited evaluators",
+      "comparability_status": "unknown",
+      "comparability": "Source-specific results; peer harnesses and effort are not fully specified."
+    },
+    {
+      "id": "terminal_bench_21_zai_glm53",
+      "benchmark_id": "terminal_bench_21",
+      "protocol": "GLM: Claude Code 2.1.207, 6h timeout, 65536 output tokens. Peer settings unspecified.",
+      "evaluator": "Z.ai / cited evaluators",
+      "comparability_status": "unknown",
+      "comparability": "Source-specific results; peer harnesses and effort are not fully specified."
+    },
+    {
+      "id": "toolathlon_verified_zai_glm53",
+      "benchmark_id": "toolathlon_verified",
+      "protocol": "Official evaluation service; pass@1 averaged over three runs. Peer settings unspecified.",
+      "evaluator": "Z.ai / cited evaluators",
+      "comparability_status": "unknown",
+      "comparability": "Source-specific results; peer harnesses and effort are not fully specified."
+    },
+    {
+      "id": "automationbench_v106_zai_glm53",
+      "benchmark_id": "automationbench_v106",
+      "protocol": "Version 1.0.6 with null-type fix (PR #13); separate from unversioned results.",
+      "evaluator": "Z.ai / cited evaluators",
+      "comparability_status": "unknown",
+      "comparability": "Source-specific results; peer harnesses and effort are not fully specified."
+    },
+    {
+      "id": "agents_last_exam_cli_zai_glm53",
+      "benchmark_id": "agents_last_exam_cli",
+      "protocol": "CLI protocol, 105 tasks. GLM: Claude Code, max effort, 1M context, 64K output. Peer settings unspecified.",
+      "evaluator": "Z.ai / cited evaluators",
+      "comparability_status": "unknown",
+      "comparability": "Source-specific results; peer harnesses and effort are not fully specified."
     }
   ],
   "sources": [
@@ -32463,6 +33067,40 @@
       "title": "The Planes Don’t Land: Introducing TRACES",
       "url": "https://intellicat.ai/introducing-traces/",
       "version": null
+    },
+    {
+      "id": "zai_glm53_launch",
+      "url": "https://z.ai/blog/glm-5.3",
+      "title": "GLM-5.3: Frontier Coding with Emergent Cyber Capabilities",
+      "publisher": "Z.ai",
+      "published_at": "2026-08-14T00:00:00Z",
+      "retrieved_at": "2026-10-18T03:01:15.142434+00:00",
+      "method": "Manual extraction of public comparison table and evaluation notes",
+      "locator": "Performance across comparison models; DeepSWE, Terminal Bench 2.1, Toolathlon Verified, AutomationBench v1.0.6, and ALE-CLI rows"
+    },
+    {
+      "id": "qwen38_launch",
+      "url": "https://qwen.ai/blog?id=qwen3.8",
+      "title": "Qwen3.8-Max",
+      "publisher": "Qwen / Alibaba Cloud",
+      "retrieved_at": "2026-10-18T03:01:15.142586+00:00",
+      "method": "Official release page review"
+    },
+    {
+      "id": "kimi_k3_launch",
+      "url": "https://www.kimi.com/news/kimi-k3",
+      "title": "Kimi K3 launch",
+      "publisher": "Moonshot AI",
+      "retrieved_at": "2026-10-18T03:01:15.142588+00:00",
+      "method": "Official release page review"
+    },
+    {
+      "id": "kimi_k3_weights",
+      "url": "https://www.kimi.com/news/kimi-k3-open-source",
+      "title": "Kimi K3 open release",
+      "publisher": "Moonshot AI",
+      "retrieved_at": "2026-10-18T03:01:15.142589+00:00",
+      "method": "Official release page review"
     }
   ],
   "usage": []

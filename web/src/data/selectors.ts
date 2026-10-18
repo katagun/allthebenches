@@ -175,6 +175,45 @@ function completeSetup(o: ObservationIndex, seriesComparability?: string | null)
   const seriesDeclared = seriesComparability === 'comparable';
   return required.filter(known).length >= 4 && seriesDeclared && Object.values(setup).every(value => value !== null && value !== undefined && value !== 'unknown' && value !== 'not reported' && value !== 'not stated');
 }
+export type OutsideViewBenchmarkMatch = { benchmarkId: string; name: string; presetIds: string[] };
+export type OutsideViewSearch = {
+  totalCount: number;
+  matches: OutsideViewBenchmarkMatch[];
+  suggestedPreset: { id: string; name: string; matchedBenchmarkIds: string[] } | null;
+};
+
+/** Benchmarks matching the query across the whole catalog but hidden by the current view. */
+export function benchmarkMatchesOutsideView(data: AppData, view: ViewState, limit = 5): OutsideViewSearch {
+  const empty: OutsideViewSearch = { totalCount: 0, matches: [], suggestedPreset: null };
+  const query = view.search.trim().toLowerCase();
+  if (!query) return empty;
+  const preset = data.catalog.presets.find(item => item.id === view.presetId);
+  const visibleIds = new Set(view.visibleColumnIds.length ? view.visibleColumnIds : list(preset?.benchmark_ids));
+  const matches = list(data.catalog.benchmarks).filter(item =>
+    !visibleIds.has(item.id)
+    && (view.categoryId === null || item.category === view.categoryId)
+    && (!view.filters.saturationStates.length || data.catalog.saturation.some(state => state.benchmark_id === item.id && view.filters.saturationStates.includes(state.state)))
+    && `${item.name} ${item.version ?? ''} ${item.metric_name} ${item.subset ?? ''}`.toLowerCase().includes(query));
+  if (!matches.length) return empty;
+  const limited = matches.slice(0, Math.max(0, limit));
+  const withPresets: OutsideViewBenchmarkMatch[] = limited.map(item => ({
+    benchmarkId: item.id,
+    name: item.name,
+    presetIds: list(data.catalog.presets).filter(candidate => candidate.id !== view.presetId && list(candidate.benchmark_ids).includes(item.id)).map(candidate => candidate.id),
+  }));
+  const matchedIds = new Set(matches.map(item => item.id));
+  const suggested = list(data.catalog.presets)
+    .filter(candidate => candidate.id !== view.presetId)
+    .map(candidate => ({ candidate, matched: list(candidate.benchmark_ids).filter(id => matchedIds.has(id)) }))
+    .filter(entry => entry.matched.length > 0)
+    .sort((a, b) => b.matched.length - a.matched.length || list(a.candidate.benchmark_ids).length - list(b.candidate.benchmark_ids).length || a.candidate.name.localeCompare(b.candidate.name))[0];
+  return {
+    totalCount: matches.length,
+    matches: withPresets,
+    suggestedPreset: suggested ? { id: suggested.candidate.id, name: suggested.candidate.name, matchedBenchmarkIds: suggested.matched } : null,
+  };
+}
+
 /** Search benchmark metadata within the current view without changing saved column selections. */
 export function benchmarkSearchForView(data: AppData, view: ViewState) {
   const preset = data.catalog.presets.find(item => item.id === view.presetId);

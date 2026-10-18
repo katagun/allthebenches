@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { benchmarkSearchForView, otherConfigurationScores, reportedCellScores, hasResultOnBenchmarks, numericScoreCount, orderColumnsByModelCoverage, rowsForView } from './selectors';
+import { benchmarkMatchesOutsideView, benchmarkSearchForView, otherConfigurationScores, reportedCellScores, hasResultOnBenchmarks, numericScoreCount, orderColumnsByModelCoverage, rowsForView } from './selectors';
 import type { AppData } from './snapshots';
 import { DEFAULT_VIEW } from '../state/viewState';
 
@@ -155,6 +155,26 @@ describe('table row selectors', () => {
     const data = dataset({ c1: { b1: 90 } }, [{ id: 'route', model_id: 'model', provider: 'Provider' }]);
     data.market.usage.push({ id: 'usage', platform: 'openrouter', upstream_route_id: undefined, total: 5 } as never);
     expect(rowsForView(data, structuredClone(DEFAULT_VIEW), new Set())[0].usage.map(item => item.id)).toEqual(['usage']);
+  });
+});
+
+describe('outside-view benchmark matches', () => {
+  it('finds catalog matches hidden by the current view and suggests the most focused preset', () => {
+    const data = dataset({ c1: { b1: 90 } });
+    data.catalog.benchmarks.push({ id: 'b3', family_id: 'f3', name: 'TRACES-like Benchmark', version: '1', category: 'safety', modality: 'text', metric_name: 'score', unit: '%', direction: 'higher' });
+    data.catalog.presets.push(
+      { id: 'traces_like', version: '1', name: 'TRACES-like', model_configuration_ids: ['c1'], benchmark_ids: ['b3'] },
+      { id: 'everything', version: '1', name: 'Everything', model_configuration_ids: ['c1'], benchmark_ids: ['b1', 'b2', 'b3'] },
+    );
+    const view = { ...structuredClone(DEFAULT_VIEW), search: 'traces-like', visibleColumnIds: ['b1', 'b2'] };
+    const outside = benchmarkMatchesOutsideView(data, view);
+    expect(outside.totalCount).toBe(1);
+    expect(outside.matches.map(item => item.benchmarkId)).toEqual(['b3']);
+    expect(outside.suggestedPreset?.id).toBe('traces_like');
+    expect(outside.suggestedPreset?.matchedBenchmarkIds).toEqual(['b3']);
+    expect(benchmarkMatchesOutsideView(data, { ...view, search: 'Benchmark 2' }).totalCount).toBe(0);
+    expect(benchmarkMatchesOutsideView(data, { ...view, search: '' }).totalCount).toBe(0);
+    expect(benchmarkMatchesOutsideView(data, { ...view, search: 'traces-like', categoryId: 'coding' }).totalCount).toBe(0);
   });
 });
 

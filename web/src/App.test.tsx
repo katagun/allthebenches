@@ -75,6 +75,20 @@ describe('App view workflows', () => {
       expect(decodeViewState(urlState(window.location)!)).toMatchObject({ ok: true, value: { search: '', visibleColumnIds: view.visibleColumnIds } });
     });
   }
+  it('suggests the preset holding benchmarks that match outside the current view', async () => {
+    const frontier = fixture.catalog.presets.find(item => item.id === 'frontier_oct2026')!;
+    expect((frontier.benchmark_ids ?? []).some(id => id.toLowerCase().includes('trace'))).toBe(false);
+    setSharedUrl(viewWith({ presetId: frontier.id, visibleColumnIds: frontier.benchmark_ids ?? [], search: 'TRACES' }));
+    const user = userEvent.setup();
+    render(<App />);
+    const actions = await screen.findAllByRole('button', { name: /Show TRACES/ });
+    expect(actions.length).toBeGreaterThan(0);
+    await user.click(actions[0]);
+    await waitFor(() => {
+      expect(decodeViewState(urlState(window.location)!)).toMatchObject({ ok: true, value: { presetId: 'traces_oct2026' } });
+    });
+    expect(await screen.findAllByText(/TRACES Influence Failure Rate/)).not.toHaveLength(0);
+  });
   it('renders the same evidence in the transposed orientation with bounded model columns', async () => {
     const view = viewWith({ orientation: 'benchmarks-rows' });
     setSharedUrl(view);

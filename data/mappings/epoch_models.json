@@ -1,0 +1,574 @@
+{
+  "claude-3-5-sonnet-20240620": {
+    "model_id": "claude35_sonnet_june",
+    "source_group": "Claude 3.5 Sonnet",
+    "source_display_name": "Claude 3.5 Sonnet (Jun 2024)"
+  },
+  "claude-3-haiku-20240307": {
+    "model_id": "claude3_haiku",
+    "source_group": "Claude 3 Haiku",
+    "source_display_name": ""
+  },
+  "claude-3-opus-20240229": {
+    "model_id": "claude3_opus",
+    "source_group": "Claude 3 Opus",
+    "source_display_name": ""
+  },
+  "claude-3-sonnet-20240229": {
+    "model_id": "claude3_sonnet",
+    "source_group": "Claude 3 Sonnet",
+    "source_display_name": ""
+  },
+  "claude-fable-5-1_high": {
+    "model_id": "claude_fable51",
+    "source_group": "Claude Fable 5.1",
+    "source_display_name": "Claude Fable 5.1 (high)"
+  },
+  "claude-fable-5-1_low": {
+    "model_id": "claude_fable51",
+    "source_group": "Claude Fable 5.1",
+    "source_display_name": "Claude Fable 5.1 (low)"
+  },
+  "claude-fable-5-1_max": {
+    "model_id": "claude_fable51",
+    "source_group": "Claude Fable 5.1",
+    "source_display_name": "Claude Fable 5.1 (max)"
+  },
+  "claude-fable-5-1_medium": {
+    "model_id": "claude_fable51",
+    "source_group": "Claude Fable 5.1",
+    "source_display_name": "Claude Fable 5.1 (medium)"
+  },
+  "claude-fable-5-1_unknown": {
+    "model_id": "claude_fable51",
+    "source_group": "Claude Fable 5.1",
+    "source_display_name": "Claude Fable 5.1 (unknown)"
+  },
+  "claude-fable-5-1_xhigh": {
+    "model_id": "claude_fable51",
+    "source_group": "Claude Fable 5.1",
+    "source_display_name": "Claude Fable 5.1 (xhigh)"
+  },
+  "claude-opus-5": {
+    "model_id": "claude_opus5",
+    "source_group": "Claude Opus 5",
+    "source_display_name": "Claude Opus 5"
+  },
+  "claude-opus-5_high": {
+    "model_id": "claude_opus5",
+    "source_group": "Claude Opus 5",
+    "source_display_name": "Claude Opus 5 (high)"
+  },
+  "claude-opus-5_low": {
+    "model_id": "claude_opus5",
+    "source_group": "Claude Opus 5",
+    "source_display_name": "Claude Opus 5 (low)"
+  },
+  "claude-opus-5_max": {
+    "model_id": "claude_opus5",
+    "source_group": "Claude Opus 5",
+    "source_display_name": "Claude Opus 5 (max)"
+  },
+  "claude-opus-5_medium": {
+    "model_id": "claude_opus5",
+    "source_group": "Claude Opus 5",
+    "source_display_name": "Claude Opus 5 (medium)"
+  },
+  "claude-opus-5_unknown": {
+    "model_id": "claude_opus5",
+    "source_group": "Claude Opus 5",
+    "source_display_name": "Claude Opus 5 (unknown)"
+  },
+  "claude-opus-5_xhigh": {
+    "model_id": "claude_opus5",
+    "source_group": "Claude Opus 5",
+    "source_display_name": "Claude Opus 5 (xhigh)"
+  },
+  "claude-opus-5-5_high": {
+    "model_id": "claude_opus55",
+    "source_group": "Claude Opus 5.5",
+    "source_display_name": "Claude Opus 5.5 (high)"
+  },
+  "claude-opus-5-5_low": {
+    "model_id": "claude_opus55",
+    "source_group": "Claude Opus 5.5",
+    "source_display_name": "Claude Opus 5.5 (low)"
+  },
+  "claude-opus-5-5_max": {
+    "model_id": "claude_opus55",
+    "source_group": "Claude Opus 5.5",
+    "source_display_name": "Claude Opus 5.5 (max)"
+  },
+  "claude-opus-5-5_medium": {
+    "model_id": "claude_opus55",
+    "source_group": "Claude Opus 5.5",
+    "source_display_name": "Claude Opus 5.5 (medium)"
+  },
+  "claude-opus-5-5_unknown": {
+    "model_id": "claude_opus55",
+    "source_group": "Claude Opus 5.5",
+    "source_display_name": "Claude Opus 5.5 (unknown)"
+  },
+  "claude-opus-5-5_xhigh": {
+    "model_id": "claude_opus55",
+    "source_group": "Claude Opus 5.5",
+    "source_display_name": "Claude Opus 5.5 (xhigh)"
+  },
+  "DeepSeek-R1": {
+    "model_id": "deepseek_r1",
+    "source_group": "DeepSeek-R1",
+    "source_display_name": ""
+  },
+  "DeepSeek-R1-Distill-Qwen-7B": {
+    "model_id": "deepseek_r1_distill_qwen_7b",
+    "source_group": "DeepSeek-R1-Distill-Qwen-7B",
+    "source_display_name": ""
+  },
+  "DeepSeek-R1-Distill-Qwen-32B": {
+    "model_id": "deepseek_r1_distill_qwen_32b",
+    "source_group": "DeepSeek-R1-Distill-Qwen-32B",
+    "source_display_name": ""
+  },
+  "deepseek-v4-pro-0813_high": {
+    "model_id": "deepseek_v4_pro_0813",
+    "source_group": "DeepSeek V4 Pro 0813",
+    "source_display_name": "DeepSeek V4 Pro 0813 (high)"
+  },
+  "deepseek-v4-pro-0813_low": {
+    "model_id": "deepseek_v4_pro_0813",
+    "source_group": "DeepSeek V4 Pro 0813",
+    "source_display_name": "DeepSeek V4 Pro 0813 (low)"
+  },
+  "deepseek-v4-pro-0813_max": {
+    "model_id": "deepseek_v4_pro_0813",
+    "source_group": "DeepSeek V4 Pro 0813",
+    "source_display_name": "DeepSeek V4 Pro 0813 (max)"
+  },
+  "deepseek-v4-pro-0813_none": {
+    "model_id": "deepseek_v4_pro_0813",
+    "source_group": "DeepSeek V4 Pro 0813",
+    "source_display_name": "DeepSeek V4 Pro 0813 (none)"
+  },
+  "deepseek-v4-pro-0813_unknown": {
+    "model_id": "deepseek_v4_pro_0813",
+    "source_group": "DeepSeek V4 Pro 0813",
+    "source_display_name": "DeepSeek V4 Pro 0813 (unknown)"
+  },
+  "deepseek-v4.1-flash_high": {
+    "model_id": "deepseek_v4_1_flash",
+    "source_group": "DeepSeek V4.1 Flash",
+    "source_display_name": "DeepSeek V4.1 Flash (high)"
+  },
+  "deepseek-v4.1-flash_low": {
+    "model_id": "deepseek_v4_1_flash",
+    "source_group": "DeepSeek V4.1 Flash",
+    "source_display_name": "DeepSeek V4.1 Flash (low)"
+  },
+  "deepseek-v4.1-flash_max": {
+    "model_id": "deepseek_v4_1_flash",
+    "source_group": "DeepSeek V4.1 Flash",
+    "source_display_name": "DeepSeek V4.1 Flash (max)"
+  },
+  "deepseek-v4.1-flash_none": {
+    "model_id": "deepseek_v4_1_flash",
+    "source_group": "DeepSeek V4.1 Flash",
+    "source_display_name": "DeepSeek V4.1 Flash (none)"
+  },
+  "deepseek-v4.1-flash_unknown": {
+    "model_id": "deepseek_v4_1_flash",
+    "source_group": "DeepSeek V4.1 Flash",
+    "source_display_name": "DeepSeek V4.1 Flash (unknown)"
+  },
+  "gemini-1.0-pro-001": {
+    "model_id": "gemini10_pro",
+    "source_group": "Gemini 1.0 Pro",
+    "source_display_name": ""
+  },
+  "gemini-4-argon_high": {
+    "model_id": "gemini4_argon",
+    "source_group": "Gemini 4 Argon",
+    "source_display_name": "Gemini 4 Argon (high)"
+  },
+  "gemini-4-argon_low": {
+    "model_id": "gemini4_argon",
+    "source_group": "Gemini 4 Argon",
+    "source_display_name": "Gemini 4 Argon (low)"
+  },
+  "gemini-4-argon_medium": {
+    "model_id": "gemini4_argon",
+    "source_group": "Gemini 4 Argon",
+    "source_display_name": "Gemini 4 Argon (medium)"
+  },
+  "gemini-4-argon_minimal": {
+    "model_id": "gemini4_argon",
+    "source_group": "Gemini 4 Argon",
+    "source_display_name": "Gemini 4 Argon (minimal)"
+  },
+  "gemini-4-argon_unknown": {
+    "model_id": "gemini4_argon",
+    "source_group": "Gemini 4 Argon",
+    "source_display_name": "Gemini 4 Argon (unknown)"
+  },
+  "glm-5.3_high": {
+    "model_id": "glm53",
+    "source_group": "GLM-5.3",
+    "source_display_name": "GLM-5.3 (high)"
+  },
+  "glm-5.3_low": {
+    "model_id": "glm53",
+    "source_group": "GLM-5.3",
+    "source_display_name": "GLM-5.3 (low)"
+  },
+  "glm-5.3_max": {
+    "model_id": "glm53",
+    "source_group": "GLM-5.3",
+    "source_display_name": "GLM-5.3 (max)"
+  },
+  "glm-5.3_unknown": {
+    "model_id": "glm53",
+    "source_group": "GLM-5.3",
+    "source_display_name": "GLM-5.3 (unknown thinking)"
+  },
+  "glm-5.3-flash_high": {
+    "model_id": "glm53_flash",
+    "source_group": "GLM-5.3-Flash",
+    "source_display_name": "GLM-5.3-Flash (high)"
+  },
+  "glm-5.3-flash_low": {
+    "model_id": "glm53_flash",
+    "source_group": "GLM-5.3-Flash",
+    "source_display_name": "GLM-5.3-Flash (low)"
+  },
+  "glm-5.3-flash_max": {
+    "model_id": "glm53_flash",
+    "source_group": "GLM-5.3-Flash",
+    "source_display_name": "GLM-5.3-Flash (max)"
+  },
+  "glm-5.3-flash_unknown": {
+    "model_id": "glm53_flash",
+    "source_group": "GLM-5.3-Flash",
+    "source_display_name": "GLM-5.3-Flash (unknown)"
+  },
+  "gpt-5.6-sol_high": {
+    "model_id": "gpt56_sol",
+    "source_group": "GPT-5.6 Sol",
+    "source_display_name": "GPT-5.6 Sol (high)"
+  },
+  "gpt-5.6-sol_low": {
+    "model_id": "gpt56_sol",
+    "source_group": "GPT-5.6 Sol",
+    "source_display_name": "GPT-5.6 Sol (low)"
+  },
+  "gpt-5.6-sol_max": {
+    "model_id": "gpt56_sol",
+    "source_group": "GPT-5.6 Sol",
+    "source_display_name": "GPT-5.6 Sol (max)"
+  },
+  "gpt-5.6-sol_medium": {
+    "model_id": "gpt56_sol",
+    "source_group": "GPT-5.6 Sol",
+    "source_display_name": "GPT-5.6 Sol (medium)"
+  },
+  "gpt-5.6-sol_none": {
+    "model_id": "gpt56_sol",
+    "source_group": "GPT-5.6 Sol",
+    "source_display_name": "GPT-5.6 Sol (none)"
+  },
+  "gpt-5.6-sol_unknown": {
+    "model_id": "gpt56_sol",
+    "source_group": "GPT-5.6 Sol",
+    "source_display_name": "GPT-5.6 Sol (unknown thinking)"
+  },
+  "gpt-5.6-sol_xhigh": {
+    "model_id": "gpt56_sol",
+    "source_group": "GPT-5.6 Sol",
+    "source_display_name": "GPT-5.6 Sol (xhigh)"
+  },
+  "gpt-6-astra_high": {
+    "model_id": "gpt6_astra",
+    "source_group": "GPT-6 Astra",
+    "source_display_name": "GPT-6 Astra (high)"
+  },
+  "gpt-6-astra_low": {
+    "model_id": "gpt6_astra",
+    "source_group": "GPT-6 Astra",
+    "source_display_name": "GPT-6 Astra (low)"
+  },
+  "gpt-6-astra_max": {
+    "model_id": "gpt6_astra",
+    "source_group": "GPT-6 Astra",
+    "source_display_name": "GPT-6 Astra (max)"
+  },
+  "gpt-6-astra_medium": {
+    "model_id": "gpt6_astra",
+    "source_group": "GPT-6 Astra",
+    "source_display_name": "GPT-6 Astra (medium)"
+  },
+  "gpt-6-astra_none": {
+    "model_id": "gpt6_astra",
+    "source_group": "GPT-6 Astra",
+    "source_display_name": "GPT-6 Astra (none)"
+  },
+  "gpt-6-astra_unknown": {
+    "model_id": "gpt6_astra",
+    "source_group": "GPT-6 Astra",
+    "source_display_name": "GPT-6 Astra (unknown thinking)"
+  },
+  "gpt-6-astra_xhigh": {
+    "model_id": "gpt6_astra",
+    "source_group": "GPT-6 Astra",
+    "source_display_name": "GPT-6 Astra (xhigh)"
+  },
+  "gpt-6.1-sol_high": {
+    "model_id": "gpt61_sol",
+    "source_group": "GPT-6.1 Sol",
+    "source_display_name": "GPT-6.1 Sol (high)"
+  },
+  "gpt-6.1-sol_low": {
+    "model_id": "gpt61_sol",
+    "source_group": "GPT-6.1 Sol",
+    "source_display_name": "GPT-6.1 Sol (low)"
+  },
+  "gpt-6.1-sol_max": {
+    "model_id": "gpt61_sol",
+    "source_group": "GPT-6.1 Sol",
+    "source_display_name": "GPT-6.1 Sol (max)"
+  },
+  "gpt-6.1-sol_medium": {
+    "model_id": "gpt61_sol",
+    "source_group": "GPT-6.1 Sol",
+    "source_display_name": "GPT-6.1 Sol (medium)"
+  },
+  "gpt-6.1-sol_unknown": {
+    "model_id": "gpt61_sol",
+    "source_group": "GPT-6.1 Sol",
+    "source_display_name": "GPT-6.1 Sol (unknown thinking)"
+  },
+  "gpt-6.1-sol_xhigh": {
+    "model_id": "gpt61_sol",
+    "source_group": "GPT-6.1 Sol",
+    "source_display_name": "GPT-6.1 Sol (xhigh)"
+  },
+  "grok-4.6_high": {
+    "model_id": "grok46",
+    "source_group": "Grok 4.6",
+    "source_display_name": "Grok 4.6 (high)"
+  },
+  "grok-4.6_low": {
+    "model_id": "grok46",
+    "source_group": "Grok 4.6",
+    "source_display_name": "Grok 4.6 (low)"
+  },
+  "grok-4.6_medium": {
+    "model_id": "grok46",
+    "source_group": "Grok 4.6",
+    "source_display_name": "Grok 4.6 (medium)"
+  },
+  "grok-4.6_unknown": {
+    "model_id": "grok46",
+    "source_group": "Grok 4.6",
+    "source_display_name": "Grok 4.6 (unknown)"
+  },
+  "grok-4.6_xhigh": {
+    "model_id": "grok46",
+    "source_group": "Grok 4.6",
+    "source_display_name": "Grok 4.6 (xhigh)"
+  },
+  "grok-4.7_high": {
+    "model_id": "grok47",
+    "source_group": "Grok 4.7",
+    "source_display_name": "Grok 4.7 (high)"
+  },
+  "grok-4.7_low": {
+    "model_id": "grok47",
+    "source_group": "Grok 4.7",
+    "source_display_name": "Grok 4.7 (low)"
+  },
+  "grok-4.7_medium": {
+    "model_id": "grok47",
+    "source_group": "Grok 4.7",
+    "source_display_name": "Grok 4.7 (medium)"
+  },
+  "grok-4.7_unknown": {
+    "model_id": "grok47",
+    "source_group": "Grok 4.7",
+    "source_display_name": "Grok 4.7 (unknown)"
+  },
+  "grok-4.7_xhigh": {
+    "model_id": "grok47",
+    "source_group": "Grok 4.7",
+    "source_display_name": "Grok 4.7 (xhigh)"
+  },
+  "kimi-k3_high": {
+    "model_id": "kimi_k3",
+    "source_group": "Kimi K3",
+    "source_display_name": "Kimi K3 (high)"
+  },
+  "kimi-k3_low": {
+    "model_id": "kimi_k3",
+    "source_group": "Kimi K3",
+    "source_display_name": "Kimi K3 (low)"
+  },
+  "kimi-k3_max": {
+    "model_id": "kimi_k3",
+    "source_group": "Kimi K3",
+    "source_display_name": "Kimi K3 (max)"
+  },
+  "kimi-k3_unknown": {
+    "model_id": "kimi_k3",
+    "source_group": "Kimi K3",
+    "source_display_name": "Kimi K3 (unknown)"
+  },
+  "mistral-large-4-0_high": {
+    "model_id": "mistral_large4",
+    "source_group": "Mistral Large 4",
+    "source_display_name": "Mistral Large 4 (high)"
+  },
+  "mistral-large-4-0_none": {
+    "model_id": "mistral_large4",
+    "source_group": "Mistral Large 4",
+    "source_display_name": "Mistral Large 4 (none)"
+  },
+  "mistral-large-4-0_unknown": {
+    "model_id": "mistral_large4",
+    "source_group": "Mistral Large 4",
+    "source_display_name": "Mistral Large 4 (unknown)"
+  },
+  "muse-spark-1.3_high": {
+    "model_id": "muse_spark13",
+    "source_group": "Muse Spark 1.3",
+    "source_display_name": "Muse Spark 1.3 (high)"
+  },
+  "muse-spark-1.3_low": {
+    "model_id": "muse_spark13",
+    "source_group": "Muse Spark 1.3",
+    "source_display_name": "Muse Spark 1.3 (low)"
+  },
+  "muse-spark-1.3_max": {
+    "model_id": "muse_spark13",
+    "source_group": "Muse Spark 1.3",
+    "source_display_name": "Muse Spark 1.3 (max)"
+  },
+  "muse-spark-1.3_medium": {
+    "model_id": "muse_spark13",
+    "source_group": "Muse Spark 1.3",
+    "source_display_name": "Muse Spark 1.3 (medium)"
+  },
+  "muse-spark-1.3_minimal": {
+    "model_id": "muse_spark13",
+    "source_group": "Muse Spark 1.3",
+    "source_display_name": "Muse Spark 1.3 (minimal)"
+  },
+  "muse-spark-1.3_unknown": {
+    "model_id": "muse_spark13",
+    "source_group": "Muse Spark 1.3",
+    "source_display_name": "Muse Spark 1.3 (unknown)"
+  },
+  "muse-spark-1.3_xhigh": {
+    "model_id": "muse_spark13",
+    "source_group": "Muse Spark 1.3",
+    "source_display_name": "Muse Spark 1.3 (xhigh)"
+  },
+  "muse-wonder-1.0_high": {
+    "model_id": "muse_wonder",
+    "source_group": "Muse Wonder",
+    "source_display_name": "Muse Wonder (high)"
+  },
+  "muse-wonder-1.0_low": {
+    "model_id": "muse_wonder",
+    "source_group": "Muse Wonder",
+    "source_display_name": "Muse Wonder (low)"
+  },
+  "muse-wonder-1.0_max": {
+    "model_id": "muse_wonder",
+    "source_group": "Muse Wonder",
+    "source_display_name": "Muse Wonder (max)"
+  },
+  "muse-wonder-1.0_medium": {
+    "model_id": "muse_wonder",
+    "source_group": "Muse Wonder",
+    "source_display_name": "Muse Wonder (medium)"
+  },
+  "muse-wonder-1.0_minimal": {
+    "model_id": "muse_wonder",
+    "source_group": "Muse Wonder",
+    "source_display_name": "Muse Wonder (minimal)"
+  },
+  "muse-wonder-1.0_unknown": {
+    "model_id": "muse_wonder",
+    "source_group": "Muse Wonder",
+    "source_display_name": "Muse Wonder (unknown)"
+  },
+  "muse-wonder-1.0_xhigh": {
+    "model_id": "muse_wonder",
+    "source_group": "Muse Wonder",
+    "source_display_name": "Muse Wonder (xhigh)"
+  },
+  "qwen3.8-27b": {
+    "model_id": "qwen38_27b",
+    "source_group": "Qwen 3.8 27B",
+    "source_display_name": "Qwen3.8 27B"
+  },
+  "qwen3.8-27b_low": {
+    "model_id": "qwen38_27b",
+    "source_group": "Qwen 3.8 27B",
+    "source_display_name": "Qwen3.8 27B (low)"
+  },
+  "qwen3.8-27b_medium": {
+    "model_id": "qwen38_27b",
+    "source_group": "Qwen 3.8 27B",
+    "source_display_name": "Qwen3.8 27B (medium)"
+  },
+  "qwen3.8-27b_none": {
+    "model_id": "qwen38_27b",
+    "source_group": "Qwen 3.8 27B",
+    "source_display_name": "Qwen3.8 27B (no thinking)"
+  },
+  "qwen3.8-27b_xhigh": {
+    "model_id": "qwen38_27b",
+    "source_group": "Qwen 3.8 27B",
+    "source_display_name": "Qwen3.8 27B (xhigh)"
+  },
+  "qwen3.8-max_unknown": {
+    "model_id": "qwen38_max",
+    "source_group": "Qwen 3.8 Max",
+    "source_display_name": "Qwen3.8 Max (unknown)"
+  },
+  "qwen3.8-max_xhigh": {
+    "model_id": "qwen38_max",
+    "source_group": "Qwen 3.8 Max",
+    "source_display_name": "Qwen3.8 Max (xhigh)"
+  },
+  "gpt-4-0314": {
+    "model_id": "gpt4",
+    "mapping_basis": "Exact named release and base/instruct variant; no family-level alias expansion"
+  },
+  "Llama-3.1-8B-Instruct": {
+    "model_id": "llama31_8b_instruct",
+    "mapping_basis": "Exact named release and base/instruct variant; no family-level alias expansion"
+  },
+  "Llama-3.1-70B-Instruct": {
+    "model_id": "llama31_70b_instruct",
+    "mapping_basis": "Exact named release and base/instruct variant; no family-level alias expansion"
+  },
+  "Llama-3.1-405B-Instruct": {
+    "model_id": "llama31_405b_instruct",
+    "mapping_basis": "Exact named release and base/instruct variant; no family-level alias expansion"
+  },
+  "Mistral-7B-v0.1": {
+    "model_id": "mistral_7b",
+    "mapping_basis": "Exact named release and base/instruct variant; no family-level alias expansion"
+  },
+  "Mixtral-8x7B-v0.1": {
+    "model_id": "mixtral_8x7b",
+    "mapping_basis": "Exact named release and base/instruct variant; no family-level alias expansion"
+  },
+  "Mixtral-8x7B-Instruct-v0.1": {
+    "model_id": "mixtral_8x7b_instruct",
+    "mapping_basis": "Exact named release and base/instruct variant; no family-level alias expansion"
+  },
+  "qwen2.5-72b-instruct": {
+    "model_id": "qwen25_72b_instruct",
+    "mapping_basis": "Exact named release and base/instruct variant; no family-level alias expansion"
+  }
+}

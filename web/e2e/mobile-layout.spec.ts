@@ -412,3 +412,33 @@ test('landscape phone shows five compact model columns and desktop remains a mat
   await page.screenshot({ path: testInfo.outputPath('desktop-1440x900.png'), fullPage: false });
   await noOverflow(page);
 });
+
+test('benchmark rows stay compact with linked names and separate sorting', async ({ page }) => {
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await ready(page);
+  await expect(page.getByText('About benchmark', { exact: true })).toHaveCount(0);
+  const label = page.locator('tbody .benchmark-detail-link').first();
+  await expect(label).toHaveAttribute('href', /benchmarks/);
+  const firstRow = page.locator('tbody tr').first();
+  expect((await firstRow.boundingBox())!.height).toBeLessThanOrEqual(48);
+  await label.focus();
+  await expect(page.getByRole('tooltip')).toContainText('is better');
+  await page.keyboard.press('Escape');
+  await expect(page.getByRole('tooltip')).toHaveCount(0);
+  await firstRow.getByRole('button', { name: /^Sort by/ }).click();
+  await expect(page.locator('table')).toBeVisible();
+  await expect(page.locator('.entity-kind')).toHaveCount(0);
+  await page.locator('tbody .benchmark-detail-link').first().click();
+  await expect(page.locator('.entity-kind')).toHaveText('Benchmark variant');
+});
+
+test('expanded catalog keeps categories and numeric scores inside compact desktop bounds', async ({ page }) => {
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await ready(page);
+  await page.getByRole('button', { name: 'All models', exact: true }).click();
+  await expect(page.getByText('Updating comparison…', { exact: false })).toHaveCount(0);
+  await expect(page.locator('.results-caption').first()).toContainText('configurations');
+  expect((await page.locator('.category-nav').boundingBox())!.height).toBeLessThanOrEqual(44);
+  expect(await page.locator('.score-button').evaluateAll(buttons => buttons.filter(button => /^[-\d]/.test(button.textContent ?? '') && button.scrollWidth > button.clientWidth + 1).length)).toBe(0);
+  await noOverflow(page);
+});

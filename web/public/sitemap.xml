@@ -1,6 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://allthebenches.com/benchmarks/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/aa_aime_2025/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/aa_analyst_agent/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/aa_apex_agents/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/aa_automationbench_657/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/aa_briefcase_v11/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/aa_critpt/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/aa_enterprise_ops_657/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/aa_gdp_pdf/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/aa_gdpval_v21/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/aa_gpqa_diamond/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/aa_hle_text/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/aa_ifbench/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/aa_intelligence_index_v432/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/aa_itbench_sre/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/aa_lcr_v11/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/aa_livecodebench/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/aa_mlcr_hard/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/aa_mmmu_pro/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/aa_omniscience_accuracy/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/aa_omniscience_hallucination/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/aa_omniscience_index/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/aa_scicode/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/aa_tau2_telecom/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/aa_tau3_banking/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/aa_terminal_hard/</loc></url>
   <url><loc>https://allthebenches.com/benchmarks/agents_last_exam_binary/</loc></url>
   <url><loc>https://allthebenches.com/benchmarks/agents_last_exam_cli/</loc></url>
   <url><loc>https://allthebenches.com/benchmarks/agentworld_android/</loc></url>
@@ -22,6 +47,123 @@
   <url><loc>https://allthebenches.com/benchmarks/arena_agent_praise_complaint_20261016/</loc></url>
   <url><loc>https://allthebenches.com/benchmarks/arena_agent_steerability_20261016/</loc></url>
   <url><loc>https://allthebenches.com/benchmarks/arena_agent_tool_hallucination_20261016/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/arena_hf_agent_bash_recovery_steps_overall_20261008/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/arena_hf_agent_bash_reliability_no_prereq_overall_20261014/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/arena_hf_agent_bash_reliability_overall_20261016/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/arena_hf_agent_overall_20261016/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/arena_hf_agent_praise_complaint_overall_20261016/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/arena_hf_agent_steerability_overall_20261016/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/arena_hf_agent_task_outcome_explicit_overall_20261016/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/arena_hf_agent_tool_hallucination_overall_20261016/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/arena_hf_document_overall_20260913/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/arena_hf_document_style_control_overall_20260913/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/arena_hf_search_factuality_overall_20261013/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/arena_hf_search_style_control_overall_20261013/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/arena_hf_text_chinese_20261015/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/arena_hf_text_coding_20261015/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/arena_hf_text_creative_writing_20261015/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/arena_hf_text_english_20261015/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/arena_hf_text_exclude_ties_20261015/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/arena_hf_text_expert_20261015/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/arena_hf_text_factuality_chinese_20261015/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/arena_hf_text_factuality_coding_20261015/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/arena_hf_text_factuality_creative_writing_20261015/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/arena_hf_text_factuality_english_20261015/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/arena_hf_text_factuality_exclude_ties_20261015/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/arena_hf_text_factuality_expert_20261015/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/arena_hf_text_factuality_french_20261015/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/arena_hf_text_factuality_german_20261015/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/arena_hf_text_factuality_hard_prompts_20261015/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/arena_hf_text_factuality_hard_prompts_english_20261015/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/arena_hf_text_factuality_industry_business_and_management_and_financial_operations_20261015/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/arena_hf_text_factuality_industry_entertainment_and_sports_and_media_20261015/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/arena_hf_text_factuality_industry_legal_and_government_20261015/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/arena_hf_text_factuality_industry_life_and_physical_and_social_science_20261015/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/arena_hf_text_factuality_industry_mathematical_20261015/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/arena_hf_text_factuality_industry_medicine_and_healthcare_20261015/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/arena_hf_text_factuality_industry_software_and_it_services_20261015/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/arena_hf_text_factuality_industry_writing_and_literature_and_language_20261015/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/arena_hf_text_factuality_instruction_following_20261015/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/arena_hf_text_factuality_japanese_20261015/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/arena_hf_text_factuality_korean_20261015/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/arena_hf_text_factuality_longer_query_20261015/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/arena_hf_text_factuality_math_20261015/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/arena_hf_text_factuality_multi_turn_20261015/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/arena_hf_text_factuality_non_english_20261015/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/arena_hf_text_factuality_overall_20261015/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/arena_hf_text_factuality_polish_20261015/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/arena_hf_text_factuality_russian_20261015/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/arena_hf_text_factuality_spanish_20261015/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/arena_hf_text_french_20261015/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/arena_hf_text_german_20261015/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/arena_hf_text_hard_prompts_20261015/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/arena_hf_text_hard_prompts_english_20261015/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/arena_hf_text_industry_business_and_management_and_financial_operations_20261015/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/arena_hf_text_industry_entertainment_and_sports_and_media_20261015/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/arena_hf_text_industry_legal_and_government_20261015/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/arena_hf_text_industry_life_and_physical_and_social_science_20261015/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/arena_hf_text_industry_mathematical_20261015/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/arena_hf_text_industry_medicine_and_healthcare_20261015/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/arena_hf_text_industry_software_and_it_services_20261015/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/arena_hf_text_industry_writing_and_literature_and_language_20261015/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/arena_hf_text_instruction_following_20261015/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/arena_hf_text_japanese_20261015/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/arena_hf_text_korean_20261015/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/arena_hf_text_longer_query_20261015/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/arena_hf_text_math_20261015/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/arena_hf_text_multi_turn_20261015/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/arena_hf_text_non_english_20261015/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/arena_hf_text_polish_20261015/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/arena_hf_text_russian_20261015/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/arena_hf_text_spanish_20261015/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/arena_hf_text_style_control_chinese_20261015/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/arena_hf_text_style_control_coding_20261015/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/arena_hf_text_style_control_creative_writing_20261015/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/arena_hf_text_style_control_english_20261015/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/arena_hf_text_style_control_exclude_ties_20261015/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/arena_hf_text_style_control_expert_20261015/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/arena_hf_text_style_control_french_20261015/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/arena_hf_text_style_control_german_20261015/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/arena_hf_text_style_control_hard_prompts_20261015/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/arena_hf_text_style_control_hard_prompts_english_20261015/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/arena_hf_text_style_control_industry_business_and_management_and_financial_operations_20261015/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/arena_hf_text_style_control_industry_entertainment_and_sports_and_media_20261015/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/arena_hf_text_style_control_industry_legal_and_government_20261015/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/arena_hf_text_style_control_industry_life_and_physical_and_social_science_20261015/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/arena_hf_text_style_control_industry_mathematical_20261015/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/arena_hf_text_style_control_industry_medicine_and_healthcare_20261015/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/arena_hf_text_style_control_industry_software_and_it_services_20261015/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/arena_hf_text_style_control_industry_writing_and_literature_and_language_20261015/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/arena_hf_text_style_control_instruction_following_20261015/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/arena_hf_text_style_control_japanese_20261015/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/arena_hf_text_style_control_korean_20261015/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/arena_hf_text_style_control_longer_query_20261015/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/arena_hf_text_style_control_math_20261015/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/arena_hf_text_style_control_multi_turn_20261015/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/arena_hf_text_style_control_non_english_20261015/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/arena_hf_text_style_control_overall_20261015/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/arena_hf_text_style_control_polish_20261015/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/arena_hf_text_style_control_russian_20261015/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/arena_hf_text_style_control_spanish_20261015/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/arena_hf_vision_chinese_20261009/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/arena_hf_vision_creative_writing_vision_20261009/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/arena_hf_vision_diagram_20261009/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/arena_hf_vision_english_20261009/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/arena_hf_vision_homework_20261009/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/arena_hf_vision_humor_20261009/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/arena_hf_vision_ocr_20261009/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/arena_hf_vision_style_control_chinese_20261009/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/arena_hf_vision_style_control_creative_writing_vision_20261009/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/arena_hf_vision_style_control_diagram_20261009/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/arena_hf_vision_style_control_english_20261009/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/arena_hf_vision_style_control_homework_20261009/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/arena_hf_vision_style_control_humor_20261009/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/arena_hf_vision_style_control_ocr_20261009/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/arena_hf_vision_style_control_overall_20261009/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/arena_hf_webdev_image_to_webdev_20261009/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/arena_hf_webdev_webdev_20261016/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/arena_hf_webdev_webdev_html_20261016/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/arena_hf_webdev_webdev_react_20261016/</loc></url>
   <url><loc>https://allthebenches.com/benchmarks/arena_search_overall_bt_20261013/</loc></url>
   <url><loc>https://allthebenches.com/benchmarks/arena_text_overall_bt_20261015/</loc></url>
   <url><loc>https://allthebenches.com/benchmarks/arena_vision_overall_bt_20261009/</loc></url>
@@ -87,6 +229,76 @@
   <url><loc>https://allthebenches.com/benchmarks/dsv3base_race_middle/</loc></url>
   <url><loc>https://allthebenches.com/benchmarks/dsv3base_triviaqa/</loc></url>
   <url><loc>https://allthebenches.com/benchmarks/dsv3base_winogrande/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/epoch_adversarial_nli_external/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/epoch_aider_polyglot_external/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/epoch_ale_bench_external/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/epoch_algotune_external/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/epoch_apex_agents_external/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/epoch_arc_agi_2_external/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/epoch_arc_agi_external/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/epoch_arc_ai2_external/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/epoch_balrog_external/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/epoch_bbh_external/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/epoch_blueprint_bench_2_external/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/epoch_bool_q_external/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/epoch_btf3_external/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/epoch_cad_eval_external/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/epoch_chess_puzzles/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/epoch_critpt_external/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/epoch_cursorbench_external/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/epoch_cybench_external/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/epoch_deepswe_external/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/epoch_dtbench_external/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/epoch_ebr_bench/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/epoch_enigma_eval_external/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/epoch_fictionlivebench_external/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/epoch_frontiercode_external/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/epoch_frontiermath/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/epoch_frontiermath_erdos/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/epoch_frontiermath_tier_4/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/epoch_frontiermath_tier_4_v2/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/epoch_frontiermath_tiers_1_3_v2/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/epoch_frontierswe_external/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/epoch_furniture_assembly/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/epoch_gbaeval_external/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/epoch_gdp_pdf_external/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/epoch_gpqa_diamond/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/epoch_gsm8k_external/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/epoch_gso_external/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/epoch_hella_swag_external/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/epoch_hle_external/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/epoch_lech_mazur_writing_external/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/epoch_live_bench_external/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/epoch_lmca_external/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/epoch_math_level_5/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/epoch_metr_time_horizons_external/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/epoch_mirrorcode/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/epoch_mmlu_external/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/epoch_mystery_game_puzzles/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/epoch_open_book_qa_external/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/epoch_osworld_2_external/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/epoch_otis_mock_aime_2024_2025/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/epoch_piqa_external/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/epoch_posttrainbench_external/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/epoch_proofbench_external/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/epoch_rli_external/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/epoch_scicode_external/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/epoch_science_qa_external/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/epoch_simplebench_external/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/epoch_simpleqa_verified/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/epoch_spireclimb/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/epoch_spireclimb_sts1_a20_heart/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/epoch_spireclimb_sts2_a10/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/epoch_surface_evolver_bench_external/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/epoch_the_agent_company_external/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/epoch_trivia_qa_external/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/epoch_vending_bench_2_external/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/epoch_video_mme_external/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/epoch_vpct_external/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/epoch_webdev_arena_external/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/epoch_weirdml_external/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/epoch_weirdml_v3_external/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/epoch_wino_grande_external/</loc></url>
   <url><loc>https://allthebenches.com/benchmarks/frontiercode_v11/</loc></url>
   <url><loc>https://allthebenches.com/benchmarks/frontierswe_v2/</loc></url>
   <url><loc>https://allthebenches.com/benchmarks/gdp_pdf_surge/</loc></url>
@@ -245,6 +457,36 @@
   <url><loc>https://allthebenches.com/benchmarks/humaneval_2023/</loc></url>
   <url><loc>https://allthebenches.com/benchmarks/jobbench_meta_reported/</loc></url>
   <url><loc>https://allthebenches.com/benchmarks/labbench_2/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/livebench_v1_20260625_amps_hard/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/livebench_v1_20260625_code_completion/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/livebench_v1_20260625_code_generation/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/livebench_v1_20260625_connections/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/livebench_v1_20260625_consecutive_events/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/livebench_v1_20260625_integrals_with_game/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/livebench_v1_20260625_javascript/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/livebench_v1_20260625_logic_with_navigation/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/livebench_v1_20260625_math_comp/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/livebench_v1_20260625_olympiad/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/livebench_v1_20260625_paraphrase/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/livebench_v1_20260625_plot_unscrambling/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/livebench_v1_20260625_python/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/livebench_v1_20260625_simplify/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/livebench_v1_20260625_spatial/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/livebench_v1_20260625_story_generation/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/livebench_v1_20260625_summarize/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/livebench_v1_20260625_tablejoin/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/livebench_v1_20260625_tablereformat/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/livebench_v1_20260625_theory_of_mind/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/livebench_v1_20260625_typescript/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/livebench_v1_20260625_typos/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/livebench_v1_20260625_zebra_puzzle/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/livebench_v2_20260902_browser/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/livebench_v2_20260902_coding/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/livebench_v2_20260902_data_analysis/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/livebench_v2_20260902_design_layout/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/livebench_v2_20260902_long_horizon/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/livebench_v2_20260902_reasoning/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/livebench_v2_20260902_research/</loc></url>
   <url><loc>https://allthebenches.com/benchmarks/lvbench_reported/</loc></url>
   <url><loc>https://allthebenches.com/benchmarks/meta_aa_intelligence_index_v43/</loc></url>
   <url><loc>https://allthebenches.com/benchmarks/meta_cyberbench_asr/</loc></url>
@@ -316,8 +558,41 @@
   <url><loc>https://allthebenches.com/benchmarks/traces_edi_mean/</loc></url>
   <url><loc>https://allthebenches.com/benchmarks/traces_ifr_a/</loc></url>
   <url><loc>https://allthebenches.com/benchmarks/traces_ifr_i/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/vals_aime_unversioned_as_reported/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/vals_biomysterybench_unversioned_as_reported/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/vals_code_migration_unversioned_as_reported/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/vals_corpfin_unversioned_as_reported/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/vals_cua_bench_unversioned_as_reported/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/vals_cyberbench_unversioned_as_reported/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/vals_excel_modeling_benchmark_unversioned_as_reported/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/vals_finance_agent_unversioned_as_reported/</loc></url>
   <url><loc>https://allthebenches.com/benchmarks/vals_finance_agent_v2/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/vals_harvey_s_legal_agent_benchmark_unversioned_as_reported/</loc></url>
   <url><loc>https://allthebenches.com/benchmarks/vals_index_reported/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/vals_ioi_unversioned_as_reported/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/vals_legal_research_bench_unversioned_as_reported/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/vals_legalbench_unversioned_as_reported/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/vals_math_500_unversioned_as_reported/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/vals_medcode_unversioned_as_reported/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/vals_medqa_unversioned_as_reported/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/vals_medscribe_unversioned_as_reported/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/vals_mmlu_pro_unversioned_as_reported/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/vals_mmmu_pro_unversioned_as_reported/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/vals_mortgagetax_unversioned_as_reported/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/vals_mysterymechanism_unversioned_as_reported/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/vals_proofbench_unversioned_as_reported/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/vals_public_benefits_bench_unversioned_as_reported/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/vals_sage_unversioned_as_reported/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/vals_skillsbench_unversioned_as_reported/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/vals_sre_bench_unversioned_as_reported/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/vals_swe_bench_verified_unversioned_as_reported/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/vals_tax_agent_bench_unversioned_as_reported/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/vals_taxeval_unversioned_as_reported/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/vals_terminal_bench_science_unversioned_as_reported/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/vals_time_horizon_index_ksp_unversioned_as_reported/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/vals_vals_multimodal_index_unversioned_as_reported/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/vals_vals_web_search_index_unversioned_as_reported/</loc></url>
+  <url><loc>https://allthebenches.com/benchmarks/vals_vibe_code_bench_1_100_unversioned_as_reported/</loc></url>
   <url><loc>https://allthebenches.com/benchmarks/vibe_code_bench_reported/</loc></url>
   <url><loc>https://allthebenches.com/models/</loc></url>
   <url><loc>https://allthebenches.com/models/claude35_sonnet_june/</loc></url>

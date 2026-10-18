@@ -1,0 +1,99 @@
+{
+  "reviewed_at": "2026-10-18",
+  "integrated_at": "2026-10-18T14:53:03.967571+00:00",
+  "imports": [
+    {
+      "path": "data/expansion/epoch-2026-10-18.json",
+      "sha256": "d5f150e385e85ba059934c1d783b8d897e7a10257ff6235ee0e7f77d4a5aee88",
+      "preset_id": "epoch_oct2026",
+      "name": "Epoch \u2014 October 2026",
+      "scope": "Primary score per benchmark CSV in the 18 October archive, exact verified catalog releases. External measures retain source scale; per-run setup and secondary fields are preserved in evidence.",
+      "observations": 925
+    },
+    {
+      "path": "data/expansion/vals-2026-10-18.json",
+      "sha256": "6126af0a476fbf7fd9bb37e1c464333a27219f11a4377674c2ced4054633a7cb",
+      "preset_id": "vals_oct2026",
+      "name": "Vals \u2014 October 2026",
+      "scope": "45 public leaderboard page snapshots; exact releases and profile-verified aliases. Model-profile defaults are evidence, not an assertion of row-level reasoning settings.",
+      "observations": 533
+    },
+    {
+      "path": "data/expansion/aa-2026-10-18.json",
+      "sha256": "a4fc938e6f5e6276ed50ad6e843cbe3d3924b30e638bbf557fcb2208b2db6505",
+      "preset_id": "aa_oct2026",
+      "name": "Artificial Analysis \u2014 October 2026",
+      "scope": "Published metric fields for exact releases/configurations in the captured public payload; estimated composite index values excluded. SciCode dataset under-review caveat retained.",
+      "observations": 1082
+    },
+    {
+      "path": "data/expansion/arena-hf.json",
+      "sha256": "309fd30f08d297ce6058509a4d467f65b19997704230d9b17123842316e33406",
+      "preset_id": "arena_snapshot_oct2026",
+      "name": "Arena complete snapshot \u2014 October 2026",
+      "scope": "All 24 latest partitions at pinned official Hugging Face revision, exact mapped catalog releases. Categories/dates and signed agent IPS measures remain separate.",
+      "observations": 2564
+    },
+    {
+      "path": "data/expansion/livebench.json",
+      "sha256": "fc85437b07462632e65739af4bf83d0890495f5b2f0d1f6b868dfaddd9dcf016",
+      "preset_id": "livebench_oct2026",
+      "name": "LiveBench \u2014 October 2026",
+      "scope": "All numeric task/suite cells for exact mapped releases in v1 2026-06-25 and v2 key 2026-09-02 (displayed 2026-10-14). No inferred aggregate averages.",
+      "observations": 586
+    }
+  ],
+  "coverage_updates": [
+    {
+      "id": "gap_mistral_large4_full_matrix",
+      "reason": "The 18 October evaluator imports add Epoch, Vals, Artificial Analysis, Arena and LiveBench results for exact Mistral Large 4 releases. These retain independent protocols and explicit or unknown settings; they are not one harmonized run. Preview status and unreleased weights remain unchanged.",
+      "scope": "model:mistral_large4 benchmark observations",
+      "source_ids": [
+        "mistral_large4"
+      ]
+    },
+    {
+      "id": "gap_deepseek_v41_flash",
+      "reason": "Exact DeepSeek V4.1 Flash evaluator results are imported where model identity is verified. The earlier official changelog title/footnote disagreement remains unresolved for that launch-table claim; no V4-Flash score is transferred by resemblance.",
+      "scope": "DeepSeek current model benchmark observations",
+      "source_ids": []
+    },
+    {
+      "id": "arena_uncovered_text_categories",
+      "reason": "The pinned 18 October HF snapshot now includes all text category rows that map to existing releases, with style-control variants separate. Unmatched external model aliases and out-of-catalog releases remain in the source coverage audit.",
+      "scope": "Arena Text Arena category-specific leaderboards (Math, Coding, Instruction Following, Creative Writing, Expert, Occupational and other categories)",
+      "source_ids": [
+        "arena_text_leaderboard_20261015",
+        "arena_leaderboard_dataset_card"
+      ]
+    },
+    {
+      "id": "arena_uncovered_modalities",
+      "reason": "All 24 latest official Arena dataset partitions were inventoried. Every verified existing-model match is imported in its own category/date/metric; out-of-catalog image/video models remain outside this model catalog.",
+      "scope": "Arena Document, Image-to-WebDev, Text-to-Image, Image Edit, Text-to-Video, Image-to-Video, Video Edit, and other non-text arenas",
+      "source_ids": [
+        "arena_leaderboard_dataset_card"
+      ]
+    },
+    {
+      "id": "arena_agent_categories_not_expanded",
+      "reason": "Agent category and signal slices for verified existing releases are now imported from the pinned HF snapshot. Signed IPS effects remain distinct from the earlier website percentage signal cards.",
+      "scope": "Agent Arena categories Code, Chat and Work, and other signal leaderboards",
+      "source_ids": [
+        "arena_agent_leaderboard_20261016",
+        "arena_agent_signal_definitions"
+      ]
+    },
+    {
+      "id": "chinese_frontier_current_versions",
+      "scope": "DeepSeek, Qwen, GLM and Kimi frontier coverage",
+      "reason": "Exact DeepSeek, Qwen, GLM and Kimi releases now have source-specific Epoch, Vals, AA, Arena and LiveBench results where published and verified. Ambiguous family aliases and dated refreshes are not transferred to neighboring catalog releases.",
+      "source_ids": [
+        "zai_glm53_launch"
+      ]
+    }
+  ],
+  "resolved_gap_ids": [
+    "gap_six_model_four_column_matrix"
+  ]
+}

@@ -1,0 +1,682 @@
+{
+  "reviewed_on": "2026-10-18",
+  "status": "research candidates, not integrated or fully protocol-reviewed",
+  "captures": [
+    {
+      "url": "https://epoch.ai/data/benchmark_data.zip",
+      "sha256": "6d4b51e3b2ba6421b62c510ebe9aba02597aa1b9c57443670b5810878fbf73a1"
+    },
+    {
+      "url": "https://www.vals.ai/models/mistralai_mistral-large-4",
+      "sha256": "b638f68cc561e4c45607408b52893dc494ad1fafc5427e48983bc8e1dbfadc13"
+    },
+    {
+      "url": "https://artificialanalysis.ai/models/mistral-large-4",
+      "sha256": "026cbfe13d5a8bd64a53a11e41529d80908d67b2e6e386a6cf2838606d95cd15"
+    },
+    {
+      "url": "https://livebench.ai/table_2026_09_02.csv",
+      "sha256": "dea13d4db85a4a1c898f29835f5c58635848f1904870490ff14259596d66abcc"
+    },
+    {
+      "url": "https://livebench.ai/v1/table_2026_06_25.csv",
+      "sha256": "09d810986777c92b75b40a58a1829e0318e34cb5693ecae970b3145852271ba7"
+    },
+    {
+      "url": "https://www.benchleader.com/models/mistral-large-4",
+      "sha256": "12d79cde286486db8025b6b9e3611b94c169f0d3133501b017acc896ad73d69a"
+    },
+    {
+      "url": "https://www.benchleader.com/benchmarks",
+      "sha256": "377e57a27d2d6fe8e9040d7558b3e07d5802fe132599edf616b599a2bdba3002"
+    }
+  ],
+  "epoch_archive_matches": [
+    {
+      "file": "gpqa_diamond.csv",
+      "row": {
+        "Model version": "mistral-large-4-0_high",
+        "mean_score": "0.8806818181818182",
+        "Best score (across scorers)": "0.8806818181818182",
+        "Release date": "2026-10-06",
+        "Organization": "Mistral AI",
+        "Country": "France",
+        "Training compute (FLOP)": "",
+        "Training compute notes": "",
+        "stderr": "0.019328132475292338",
+        "Log viewer": "",
+        "Logs": "",
+        "Started at": "2026-10-12T21:38:22.000Z",
+        "id": "Ekx5phukyiJhAcQodMfS2p"
+      }
+    },
+    {
+      "file": "otis_mock_aime_2024_2025.csv",
+      "row": {
+        "Model version": "mistral-large-4-0_high",
+        "mean_score": "0.9833333333333333",
+        "Best score (across scorers)": "0.9833333333333333",
+        "Release date": "2026-10-06",
+        "Organization": "Mistral AI",
+        "Country": "France",
+        "Training compute (FLOP)": "",
+        "Training compute notes": "",
+        "stderr": "0.006405884289881728",
+        "Log viewer": "",
+        "Logs": "",
+        "Started at": "2026-10-12T21:38:35.000Z",
+        "id": "Pby5WuP8Muu6Jzs2v5gB7F"
+      }
+    },
+    {
+      "file": "frontiermath_tiers_1_3_v2.csv",
+      "row": {
+        "Model version": "mistral-large-4-0_high",
+        "mean_score": "0.5859649122807018",
+        "Best score (across scorers)": "0.5859649122807018",
+        "Release date": "2026-10-06",
+        "Organization": "Mistral AI",
+        "Country": "France",
+        "Training compute (FLOP)": "",
+        "Training compute notes": "",
+        "stderr": "0.02922773823944577",
+        "Log viewer": "",
+        "Logs": "",
+        "Started at": "2026-10-12T21:38:35.000Z",
+        "id": "CAstp8hQG6Aehvtw85bMDX"
+      }
+    },
+    {
+      "file": "frontiermath_tier_4_v2.csv",
+      "row": {
+        "Model version": "mistral-large-4-0_high",
+        "mean_score": "0.2682926829268293",
+        "Best score (across scorers)": "0.2682926829268293",
+        "Release date": "2026-10-06",
+        "Organization": "Mistral AI",
+        "Country": "France",
+        "Training compute (FLOP)": "",
+        "Training compute notes": "",
+        "stderr": "0.07005564203095158",
+        "Log viewer": "",
+        "Logs": "",
+        "Started at": "2026-10-12T21:38:35.000Z",
+        "id": "TzoNRjKto6wEuZ5PmQPAw8"
+      }
+    },
+    {
+      "file": "simpleqa_verified.csv",
+      "row": {
+        "Model version": "mistral-large-4-0_high",
+        "mean_score": "0.2",
+        "Best score (across scorers)": "0.2",
+        "Release date": "2026-10-06",
+        "Organization": "Mistral AI",
+        "Country": "France",
+        "Training compute (FLOP)": "",
+        "Training compute notes": "",
+        "stderr": "0.012655439943366657",
+        "Log viewer": "",
+        "Logs": "",
+        "Started at": "2026-10-09T14:12:09.000Z",
+        "id": "hvNNKdnzLvr9X8zVxWKcfk"
+      }
+    },
+    {
+      "file": "chess_puzzles.csv",
+      "row": {
+        "Model version": "mistral-large-4-0_high",
+        "mean_score": "0.33",
+        "Best score (across scorers)": "0.33",
+        "Release date": "2026-10-06",
+        "Organization": "Mistral AI",
+        "Country": "France",
+        "Training compute (FLOP)": "",
+        "Training compute notes": "",
+        "stderr": "0.04725815626252608",
+        "Log viewer": "",
+        "Logs": "",
+        "Started at": "2026-10-15T22:52:59.000Z",
+        "id": "eNdDCt2u6A8mPisK56SApU"
+      }
+    },
+    {
+      "file": "mystery_game_puzzles.csv",
+      "row": {
+        "Model version": "mistral-large-4-0_high",
+        "mean_score": "0.17",
+        "Best score (across scorers)": "0.17",
+        "Release date": "2026-10-06",
+        "Organization": "Mistral AI",
+        "Country": "France",
+        "Training compute (FLOP)": "",
+        "Training compute notes": "",
+        "stderr": "0.03775251680686369",
+        "Log viewer": "",
+        "Logs": "",
+        "Started at": "2026-10-13T22:01:32.000Z",
+        "id": "LT9xLJnaU4UHsBQrvu3rbU"
+      }
+    },
+    {
+      "file": "furniture_assembly.csv",
+      "row": {
+        "Model version": "mistral-large-4-0_high",
+        "mean_score": "0.20833333333333334",
+        "Best score (across scorers)": "0.20833333333333334",
+        "Release date": "2026-10-06",
+        "Organization": "Mistral AI",
+        "Country": "France",
+        "Training compute (FLOP)": "",
+        "Training compute notes": "",
+        "stderr": "0.052199728697406675",
+        "Log viewer": "",
+        "Logs": "",
+        "Started at": "2026-10-14T00:39:04.000Z",
+        "id": "cETggiScYbsKGvPW5BAVWJ"
+      }
+    },
+    {
+      "file": "frontiercode_external.csv",
+      "row": {
+        "Model version": "mistral-large-4-0_high",
+        "Main score": "0.3943",
+        "Harness": "chisel",
+        "Reasoning effort": "high",
+        "Release date": "2026-10-06",
+        "Organization": "Mistral AI",
+        "Country": "France",
+        "Training compute (FLOP)": "",
+        "Training compute notes": "",
+        "Name": "Mistral Large 4 (Preview)",
+        "Aggregation": "Mean@5",
+        "Source": "https://cognition.com/frontiercode",
+        "Notes": ""
+      }
+    },
+    {
+      "file": "scicode_external.csv",
+      "row": {
+        "Model version": "mistral-large-4-0_unknown",
+        "Score": "0.541666666666667",
+        "Provider": "Mistral",
+        "AA model slug": "mistral-large-4",
+        "Release date": "2026-10-06",
+        "Organization": "Mistral AI",
+        "Country": "France",
+        "Training compute (FLOP)": "",
+        "Training compute notes": "",
+        "Name": "Mistral Large 4 Preview",
+        "Source": "https://artificialanalysis.ai/evaluations/scicode",
+        "Notes": ""
+      }
+    },
+    {
+      "file": "ale_bench_external.csv",
+      "row": {
+        "Model version": "mistral-large-4-0_unknown",
+        "Performance": "1213.15",
+        "Release date": "2026-10-06",
+        "Organization": "Mistral AI",
+        "Country": "France",
+        "Training compute (FLOP)": "",
+        "Training compute notes": "",
+        "Name": "mistral-large-4",
+        "Cost": "0.456946",
+        "Notes": "",
+        "Total tokens (K)": "121.609",
+        "Input tokens (K)": "17.6214",
+        "Output tokens (K)": "103.9876",
+        "Rank": "451.82",
+        "id": "recyIQCyCKeiINnL2"
+      }
+    },
+    {
+      "file": "critpt_external.csv",
+      "row": {
+        "Model version": "mistral-large-4-0_unknown",
+        "Accuracy": "0.105714285714286",
+        "Release date": "2026-10-06",
+        "Organization": "Mistral AI",
+        "Country": "France",
+        "Training compute (FLOP)": "",
+        "Training compute notes": "",
+        "Name": "Mistral Large 4 Preview",
+        "Cost": "",
+        "id": "recq4PLydfJLH3soL"
+      }
+    },
+    {
+      "file": "surface_evolver_bench_external.csv",
+      "row": {
+        "Model version": "mistral-large-4-0_unknown",
+        "Mean score": "0.28125",
+        "Pass rate": "0.1875",
+        "Provider": "mistral",
+        "Release date": "2026-10-06",
+        "Organization": "Mistral AI",
+        "Country": "France",
+        "Training compute (FLOP)": "",
+        "Training compute notes": "",
+        "Name": "mistral-large-4-0",
+        "Total tokens": "5653545",
+        "Total cost (USD)": "6.0171848",
+        "Source": "https://yhenon.github.io/surface-evolver-llm-eval/",
+        "Notes": ""
+      }
+    },
+    {
+      "file": "proofbench_external.csv",
+      "row": {
+        "Model version": "mistral-large-4-0_unknown",
+        "Accuracy": "0.1",
+        "Accuracy Standard Error": "",
+        "Reasoning effort": "",
+        "Release date": "2026-10-06",
+        "Organization": "Mistral AI",
+        "Country": "France",
+        "Training compute (FLOP)": "",
+        "Training compute notes": "",
+        "Name": "mistralai/mistral-large-4",
+        "Provider": "",
+        "Latency (seconds)": "1258.806",
+        "Cost per test (USD)": "0.642365",
+        "Source": "https://www.vals.ai/benchmarks/proof_bench",
+        "Notes": ""
+      }
+    },
+    {
+      "file": "epoch_capabilities_index/eci_scores.csv",
+      "row": {
+        "Model": "Mistral Large 4",
+        "Display name": "Mistral Large 4",
+        "eci": "146.9",
+        "eci_ci_low": "143.68",
+        "eci_ci_high": "150.94",
+        "date": "2026-10-06",
+        "Organization": "Mistral AI",
+        "Country (of organization)": "France",
+        "Model accessibility": "Unknown",
+        "Accessibility group": "Other",
+        "model_versions": ""
+      }
+    },
+    {
+      "file": "epoch_capabilities_index/processed_data_for_eci.csv",
+      "row": {
+        "model_id": "m189",
+        "benchmark_id": "b13",
+        "performance": "0.8409090909090909",
+        "benchmark": "GPQA diamond",
+        "benchmark_release_date": "2023-11-20",
+        "model": "Mistral Large 4",
+        "model_version": "mistral-large-4-0_high",
+        "Model": "Mistral Large 4",
+        "date": "2026-10-06",
+        "source": ""
+      }
+    },
+    {
+      "file": "epoch_capabilities_index/processed_data_for_eci.csv",
+      "row": {
+        "model_id": "m189",
+        "benchmark_id": "b15",
+        "performance": "0.9833166499833165",
+        "benchmark": "OTIS Mock AIME 2024-2025",
+        "benchmark_release_date": "2024-12-19",
+        "model": "Mistral Large 4",
+        "model_version": "mistral-large-4-0_high",
+        "Model": "Mistral Large 4",
+        "date": "2026-10-06",
+        "source": ""
+      }
+    },
+    {
+      "file": "epoch_capabilities_index/processed_data_for_eci.csv",
+      "row": {
+        "model_id": "m189",
+        "benchmark_id": "b22",
+        "performance": "0.2",
+        "benchmark": "SimpleQA Verified",
+        "benchmark_release_date": "2025-09-09",
+        "model": "Mistral Large 4",
+        "model_version": "mistral-large-4-0_high",
+        "Model": "Mistral Large 4",
+        "date": "2026-10-06",
+        "source": ""
+      }
+    },
+    {
+      "file": "epoch_capabilities_index/processed_data_for_eci.csv",
+      "row": {
+        "model_id": "m189",
+        "benchmark_id": "b43",
+        "performance": "0.08570169640890066",
+        "benchmark": "Mystery Game Puzzles",
+        "benchmark_release_date": "2026-07-30",
+        "model": "Mistral Large 4",
+        "model_version": "mistral-large-4-0_high",
+        "Model": "Mistral Large 4",
+        "date": "2026-10-06",
+        "source": ""
+      }
+    },
+    {
+      "file": "epoch_capabilities_index/processed_data_for_eci.csv",
+      "row": {
+        "model_id": "m189",
+        "benchmark_id": "b48",
+        "performance": "0.28125",
+        "benchmark": "Surface Evolver Bench",
+        "benchmark_release_date": "2026-06-19",
+        "model": "Mistral Large 4",
+        "model_version": "mistral-large-4-0_unknown",
+        "Model": "Mistral Large 4",
+        "date": "2026-10-06",
+        "source": "https://yhenon.github.io/surface-evolver-llm-eval/"
+      }
+    },
+    {
+      "file": "epoch_capabilities_index/processed_data_for_eci.csv",
+      "row": {
+        "model_id": "m189",
+        "benchmark_id": "b50",
+        "performance": "0.1",
+        "benchmark": "ProofBench",
+        "benchmark_release_date": "2026-01-30",
+        "model": "Mistral Large 4",
+        "model_version": "mistral-large-4-0_unknown",
+        "Model": "Mistral Large 4",
+        "date": "2026-10-06",
+        "source": "https://www.vals.ai/benchmarks/proof_bench"
+      }
+    },
+    {
+      "file": "epoch_capabilities_index/processed_data_for_eci.csv",
+      "row": {
+        "model_id": "m189",
+        "benchmark_id": "b51",
+        "performance": "0.3943",
+        "benchmark": "FrontierCode",
+        "benchmark_release_date": "2026-06-08",
+        "model": "Mistral Large 4",
+        "model_version": "mistral-large-4-0_high",
+        "Model": "Mistral Large 4",
+        "date": "2026-10-06",
+        "source": "https://cognition.com/frontiercode"
+      }
+    },
+    {
+      "file": "epoch_capabilities_index/processed_data_for_eci.csv",
+      "row": {
+        "model_id": "m189",
+        "benchmark_id": "b52",
+        "performance": "0.0",
+        "benchmark": "Furniture Assembly",
+        "benchmark_release_date": "2026-09-23",
+        "model": "Mistral Large 4",
+        "model_version": "mistral-large-4-0_high",
+        "Model": "Mistral Large 4",
+        "date": "2026-10-06",
+        "source": ""
+      }
+    },
+    {
+      "file": "model_metadata.csv",
+      "row": {
+        "model_version": "mistral-large-4-0_high",
+        "model_group": "Mistral Large 4",
+        "date": "2026-10-06",
+        "display_name": "Mistral Large 4 (high)",
+        "organization": "Mistral AI",
+        "country": "France",
+        "accessibility": "",
+        "training_compute_flop": ""
+      }
+    },
+    {
+      "file": "model_metadata.csv",
+      "row": {
+        "model_version": "mistral-large-4-0_none",
+        "model_group": "Mistral Large 4",
+        "date": "2026-10-06",
+        "display_name": "Mistral Large 4 (none)",
+        "organization": "Mistral AI",
+        "country": "France",
+        "accessibility": "",
+        "training_compute_flop": ""
+      }
+    },
+    {
+      "file": "model_metadata.csv",
+      "row": {
+        "model_version": "mistral-large-4-0_unknown",
+        "model_group": "Mistral Large 4",
+        "date": "2026-10-06",
+        "display_name": "Mistral Large 4 (unknown)",
+        "organization": "Mistral AI",
+        "country": "France",
+        "accessibility": "",
+        "training_compute_flop": ""
+      }
+    }
+  ],
+  "vals": {
+    "source_url": "https://www.vals.ai/models/mistralai_mistral-large-4",
+    "model": "mistralai/mistral-large-4",
+    "reasoning_effort": "high (page hyperparameter section)",
+    "displayed_percentages": {
+      "Vals Index": 48.66,
+      "Code Migration": 30.56,
+      "Excel Modeling Benchmark": 56.21,
+      "Finance Agent v2": 54.68,
+      "Legal Research Bench": 31.73,
+      "MedCode": 40.69,
+      "MedScribe": 80.43,
+      "MysteryMechanism": 12.16,
+      "ProofBench v1.1": 10.0,
+      "Tax Agent Bench": 30.39,
+      "Vibe Code Bench 1-100": 14.26,
+      "Vibe Code Bench v1.1": 78.4,
+      "BioMysteryBench": 67.04,
+      "Harvey's Legal Agent Benchmark": 15.83,
+      "IOI": 45.28,
+      "SWE-bench Multimodal": 33.13,
+      "Terminal-Bench 4.0": 27.78
+    },
+    "note": "Preserve individual benchmark versions and uncertainty; index is composite. These are page values, not inferred cross-evaluator matches."
+  },
+  "artificial_analysis": {
+    "source_url": "https://artificialanalysis.ai/models/mistral-large-4",
+    "locator": "currentModel object in public page serialization",
+    "raw_fields": {
+      "slug": "mistral-large-4",
+      "name": "Mistral Large 4 Preview",
+      "isOpenWeights": false,
+      "contextWindowTokens": 524288,
+      "intelligenceIndex": 38.3770408917494,
+      "omniscience": -5.3,
+      "omniscienceAccuracy": 0.25816666666666666,
+      "omniscienceHallucinationRate": 0.4194563019546169,
+      "harveyLab": 0.030555555555555555,
+      "gdpPdfAllPass": 0.186,
+      "gdpval": 1422.17,
+      "gdpvalNormalized": 0.461085,
+      "terminalBench40": 0.267676767676768,
+      "scicode": 0.541666666666667,
+      "lcr": 0.813333333333333,
+      "hle": 0.35032437442076,
+      "critpt": 0.105714285714286,
+      "mmmuPro": 0.764161849710983,
+      "automationBenchPartialScore": 0.5990136246808686,
+      "briefcaseBreakdown": {
+        "overall": {
+          "elo": 1391.97,
+          "lower95ci": 1381.46,
+          "upper95ci": 1402.29
+        },
+        "rubricPassRate": 0.45151515151515154,
+        "analyticalQuality": {
+          "elo": 1510.25,
+          "lower95ci": 1491.19,
+          "upper95ci": 1529.87
+        },
+        "presentation": {
+          "elo": 1355.26,
+          "lower95ci": 1336.51,
+          "upper95ci": 1375.43
+        }
+      },
+      "intelligenceIndexCost": {
+        "total": 1607.1226785120361,
+        "input": 770.7095147720361,
+        "nonCacheInput": 33.32859792,
+        "cacheRead": 481.852273980914,
+        "cacheWrite": 255.5286428711221,
+        "output": 836.41316374,
+        "reasoning": 743.2135721999999,
+        "answer": 93.19959153999999
+      },
+      "intelligenceIndexCostPerTask": {
+        "cost": {
+          "total": 1.1341017484612892,
+          "input": 0.8437420921281225,
+          "nonCacheInput": 0.024438710791923564,
+          "cacheRead": 0.5749966143719745,
+          "cacheWrite": 0.24430676696422438,
+          "output": 0.29035965633316657,
+          "reasoning": 0.2177512244268516,
+          "answer": 0.07260843190631494
+        },
+        "evaluations": [
+          {
+            "slug": "aa-briefcase",
+            "weightedCostPerTask": 0.35693828287698676
+          },
+          {
+            "slug": "gdpval-aa",
+            "weightedCostPerTask": 0.08738702267549224
+          },
+          {
+            "slug": "automationbench-aa",
+            "weightedCostPerTask": 0.01563262702648857
+          },
+          {
+            "slug": "terminalbench-4-0",
+            "weightedCostPerTask": 0.5810090019381636
+          },
+          {
+            "slug": "scicode",
+            "weightedCostPerTask": 0.006695450937500001
+          },
+          {
+            "slug": "humanitys-last-exam",
+            "weightedCostPerTask": 0.0199366336218721
+          },
+          {
+            "slug": "gdp-pdf",
+            "weightedCostPerTask": 0.021647267239999997
+          },
+          {
+            "slug": "critpt",
+            "weightedCostPerTask": 0.03544726451428571
+          },
+          {
+            "slug": "omniscience",
+            "weightedCostPerTask": 0.0024909950004999995
+          },
+          {
+            "slug": "artificial-analysis-long-context-reasoning",
+            "weightedCostPerTask": 0.006917202630000001
+          }
+        ]
+      },
+      "performanceByPromptType": {
+        "medium": {
+          "medianOutputSpeed": 62.0253185763944,
+          "medianTimeToFirstChunk": 0.792685718999963,
+          "medianTimeToFirstAnswerToken": 33.037582575703254,
+          "medianEndToEndResponseTime": 41.09880678987908
+        },
+        "long": {
+          "medianOutputSpeed": 74.6598314451162,
+          "medianTimeToFirstChunk": 1.65529901000008,
+          "medianTimeToFirstAnswerToken": 28.443465568750433,
+          "medianEndToEndResponseTime": 35.140507208438024
+        },
+        "hundredK": {
+          "medianOutputSpeed": 111.23750793265,
+          "medianTimeToFirstChunk": 10.405516429,
+          "medianTimeToFirstAnswerToken": 28.38506341067926,
+          "medianEndToEndResponseTime": 32.87995015609907
+        },
+        "mediumParallel": {
+          "medianOutputSpeed": 92.1251245147548,
+          "medianTimeToFirstChunk": 0.763967413500012,
+          "medianTimeToFirstAnswerToken": 22.47357172105977,
+          "medianEndToEndResponseTime": 27.90097279794971
+        }
+      },
+      "timescaleData": {
+        "medianOutputSpeed": 74.6598314451162,
+        "medianTimeToFirstChunk": 1.65529901000008
+      },
+      "timeToFirstAnswerToken": {
+        "input": 1.65529901000008,
+        "reasoning": 26.788166558750355,
+        "total": 28.443465568750433
+      }
+    },
+    "note": "Keep raw units. Percent-like fractions, Elo and signed indices are different. Page payload is not a stable API; use documented API for production where covered."
+  },
+  "livebench_v2": {
+    "source_url": "https://livebench.ai/table_2026_09_02.csv",
+    "release_key": "2026-09-02",
+    "display_label": "2026-10-14",
+    "rows": [
+      {
+        "model": "mistral-large-4",
+        "design_layout": "65.6",
+        "research": "28.1",
+        "browser": "8.0",
+        "coding": "60.0",
+        "long_horizon": "11.8",
+        "data_analysis": "76.5",
+        "reasoning": "83.9"
+      }
+    ],
+    "note": "Seven task/category values. Do not infer an overall score or merge with v1. Frontend maps the release key to the display label."
+  },
+  "livebench_v1": {
+    "source_url": "https://livebench.ai/v1/table_2026_06_25.csv",
+    "rows": [
+      {
+        "model": "mistral-large-4-high",
+        "AMPS_Hard": "98.0",
+        "code_completion": "78.261",
+        "code_generation": "76.056",
+        "connections": "48.0",
+        "consecutive_events": "80.529",
+        "integrals_with_game": "90.0",
+        "javascript": "68.182",
+        "logic_with_navigation": "68.0",
+        "math_comp": "97.059",
+        "olympiad": "89.28",
+        "paraphrase": "63.967",
+        "plot_unscrambling": "40.927",
+        "python": "60.0",
+        "simplify": "66.183",
+        "spatial": "94.0",
+        "story_generation": "67.5",
+        "summarize": "61.633",
+        "tablejoin": "49.096",
+        "tablereformat": "100.0",
+        "theory_of_mind": "80.769",
+        "typescript": "43.333",
+        "typos": "60.0",
+        "zebra_puzzle": "93.0"
+      }
+    ],
+    "note": "Task-level historical suite. Needs category mapping/aggregation review; do not derive category scores by unweighted averaging."
+  }
+}

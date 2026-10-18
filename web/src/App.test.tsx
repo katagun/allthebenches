@@ -103,12 +103,12 @@ describe('App view workflows', () => {
     expect((await screen.findByRole('searchbox', { name: 'Search models, labs, or benchmarks' }) as HTMLInputElement).value).toBe(view.search);
   });
 
-  it('preserves reported decimal precision in table cells and evidence', async () => {
+  it('keeps source precision in evidence and accessible labels while displaying compact scores', async () => {
     const preciseFiles: Record<string, any> = JSON.parse(JSON.stringify(dataFiles));
     const checks = [
-      { benchmarkId: 'terminal_bench_4', value: 0.983 },
-      { benchmarkId: 'deepswe_v11', value: 0.5282 },
-      { benchmarkId: 'automationbench_reported', value: 1.691 },
+      { benchmarkId: 'terminal_bench_4', value: 0.983, displayed: '0.983' },
+      { benchmarkId: 'deepswe_v11', value: 0.5282, displayed: '0.5282' },
+      { benchmarkId: 'automationbench_reported', value: 1.691, displayed: '1.69' },
     ];
     for (const check of checks) {
       const cell = preciseFiles.results.cells.find((item: any) => item.configuration_id === 'gpt6_astra_google_reported' && item.benchmark_id === check.benchmarkId);
@@ -135,7 +135,8 @@ describe('App view workflows', () => {
       expect(benchmark).toBeDefined();
       const formatted = String(check.value);
       const score = within(row).getByRole('button', { name: new RegExp(`GPT-6 Astra, ${benchmark!.name}:`) });
-      expect(score.textContent).toContain(formatted);
+      expect(score.textContent).toContain(check.displayed);
+      expect(score.getAttribute('aria-label')).toContain(formatted);
       await user.click(score);
       const dialog = await screen.findByRole('dialog');
       expect(within(dialog).getAllByText(new RegExp(formatted.replace('.', '\\.'))).length).toBeGreaterThan(0);

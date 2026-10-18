@@ -46,7 +46,7 @@ def _document(title: str, description: str, canonical: str, body: str) -> str:
 :root{{color-scheme:light;--ink:#17202a;--muted:#586573;--line:#d9e0e6;--surface:#fff;--wash:#f4f7f9;--accent:#245b79}}
 *{{box-sizing:border-box}}body{{margin:0;background:var(--wash);color:var(--ink);font:16px/1.55 system-ui,-apple-system,sans-serif}}
 main{{max-width:1100px;margin:0 auto;padding:1.25rem}}header,section,.notice{{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:1rem;margin:1rem 0}}
-h1{{line-height:1.2}}h2{{font-size:1.25rem}}a{{color:var(--accent);overflow-wrap:anywhere}}nav{{display:flex;gap:1rem;flex-wrap:wrap}}.muted{{color:var(--muted)}}
+h1,h2,h3,p{{overflow-wrap:anywhere}}h1{{line-height:1.2}}h2{{font-size:1.25rem}}a{{color:var(--accent);overflow-wrap:anywhere}}nav{{display:flex;gap:1rem;flex-wrap:wrap}}.muted{{color:var(--muted)}}
 .grid{{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,290px),1fr));gap:.8rem}}.card{{border:1px solid var(--line);border-radius:8px;padding:.8rem;min-width:0}}
 dl{{display:grid;grid-template-columns:minmax(8rem,auto) 1fr;gap:.25rem .75rem}}dt{{color:var(--muted)}}dd{{margin:0;overflow-wrap:anywhere}}
 table{{width:100%;border-collapse:collapse}}th,td{{text-align:left;vertical-align:top;padding:.6rem;border-bottom:1px solid var(--line)}}.scroll{{overflow-x:auto}}

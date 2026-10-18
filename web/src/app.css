@@ -470,7 +470,6 @@
 @media(min-width:801px){.secondary-controls .category-nav{min-width:0;flex:1 1 480px;flex-wrap:nowrap;overflow-x:auto;scrollbar-width:thin}.secondary-controls .category-nav button{flex:none}}
 
 .score-button[data-other-setups]{color:var(--foreground);white-space:nowrap}
-.score-button[data-other-setups] sup,.score-button[data-multiple-reports] sup{font-size:9px;margin-left:3px}
 .alternative-setup{width:100%;height:auto;min-height:36px;white-space:normal;overflow-wrap:anywhere;text-align:left;justify-content:flex-start;margin-top:6px}
 
 /* Mobile uses one quiet, model-row comparison in either orientation. */

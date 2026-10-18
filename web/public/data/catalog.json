@@ -5870,6 +5870,82 @@
       "unit": "index",
       "upper_bound": 1.0,
       "version": "full-panel-10x"
+    },
+    {
+      "category": "coding",
+      "direction": "higher",
+      "documentation_url": "https://z.ai/blog/glm-5.3",
+      "family_id": "terminal_bench_21",
+      "id": "terminal_bench_21",
+      "lower_bound": 0.0,
+      "metric_name": "pass rate",
+      "modality": "text",
+      "name": "Terminal-Bench 2.1",
+      "owner": null,
+      "scorer_version": null,
+      "split": null,
+      "subset": null,
+      "task": null,
+      "unit": "%",
+      "upper_bound": 100.0,
+      "version": "2.1"
+    },
+    {
+      "category": "agent",
+      "direction": "higher",
+      "documentation_url": "https://z.ai/blog/glm-5.3",
+      "family_id": "toolathlon_verified",
+      "id": "toolathlon_verified",
+      "lower_bound": 0.0,
+      "metric_name": "pass rate",
+      "modality": "text",
+      "name": "Toolathlon Verified",
+      "owner": null,
+      "scorer_version": null,
+      "split": null,
+      "subset": null,
+      "task": null,
+      "unit": "%",
+      "upper_bound": 100.0,
+      "version": "unversioned-as-reported"
+    },
+    {
+      "category": "agent",
+      "direction": "higher",
+      "documentation_url": "https://z.ai/blog/glm-5.3",
+      "family_id": "automationbench_v106",
+      "id": "automationbench_v106",
+      "lower_bound": 0.0,
+      "metric_name": "reported score",
+      "modality": "text",
+      "name": "AutomationBench v1.0.6",
+      "owner": null,
+      "scorer_version": null,
+      "split": null,
+      "subset": null,
+      "task": null,
+      "unit": "%",
+      "upper_bound": 100.0,
+      "version": "1.0.6"
+    },
+    {
+      "category": "agent",
+      "direction": "higher",
+      "documentation_url": "https://z.ai/blog/glm-5.3",
+      "family_id": "agents_last_exam_cli",
+      "id": "agents_last_exam_cli",
+      "lower_bound": 0.0,
+      "metric_name": "pass rate",
+      "modality": "text",
+      "name": "Agents’ Last Exam (CLI)",
+      "owner": null,
+      "scorer_version": null,
+      "split": null,
+      "subset": null,
+      "task": null,
+      "unit": "%",
+      "upper_bound": 100.0,
+      "version": "unversioned-as-reported"
     }
   ],
   "configurations": [
@@ -6408,6 +6484,38 @@
       "precision": null,
       "reasoning_budget_tokens": null,
       "reasoning_label": "OpenRouter/model default; reasoning setting unreported"
+    },
+    {
+      "id": "glm53_zai_reported",
+      "mode": "unknown",
+      "model_id": "glm53",
+      "precision": null,
+      "reasoning_budget_tokens": null,
+      "reasoning_label": "Z.ai reported; exact effort varies or is unreported"
+    },
+    {
+      "id": "kimi_k3_zai_reported",
+      "mode": "unknown",
+      "model_id": "kimi_k3",
+      "precision": null,
+      "reasoning_budget_tokens": null,
+      "reasoning_label": "Z.ai reported; exact effort varies or is unreported"
+    },
+    {
+      "id": "deepseek_v4_pro_0813_zai_reported",
+      "mode": "unknown",
+      "model_id": "deepseek_v4_pro_0813",
+      "precision": null,
+      "reasoning_budget_tokens": null,
+      "reasoning_label": "Z.ai reported; exact effort varies or is unreported"
+    },
+    {
+      "id": "qwen38_max_zai_reported",
+      "mode": "unknown",
+      "model_id": "qwen38_max",
+      "precision": null,
+      "reasoning_budget_tokens": null,
+      "reasoning_label": "Z.ai reported; exact effort varies or is unreported"
     }
   ],
   "coverage_gaps": [
@@ -6576,6 +6684,14 @@
         "arena_ranking_method",
         "arena_leaderboard_dataset_card"
       ]
+    },
+    {
+      "id": "chinese_frontier_current_versions",
+      "reason": "Initial coverage is five rows from the August GLM-5.3 comparison table. Newer checkpoint results, current weight availability for GLM and shared October frontier benchmarks remain to be verified. Missing cells are not zero.",
+      "scope": "DeepSeek, Qwen, GLM and Kimi frontier coverage",
+      "source_ids": [
+        "zai_glm53_launch"
+      ]
     }
   ],
   "data_version": "0.3.0-dev",
@@ -6702,6 +6818,30 @@
         "deepseek_r1_release"
       ],
       "verified_at": "2026-10-17"
+    },
+    {
+      "aliases": [],
+      "hq_country_codes": [
+        "cn"
+      ],
+      "id": "zai",
+      "name": "Z.ai / Zhipu AI",
+      "source_ids": [
+        "zai_glm53_launch"
+      ],
+      "verified_at": null
+    },
+    {
+      "aliases": [],
+      "hq_country_codes": [
+        "cn"
+      ],
+      "id": "moonshot",
+      "name": "Moonshot AI",
+      "source_ids": [
+        "kimi_k3_launch"
+      ],
+      "verified_at": null
     }
   ],
   "metadata_claims": [
@@ -7923,6 +8063,98 @@
       "upstream_ids": {},
       "version": "Mixtral 8x7B Instruct",
       "weights_state": "available"
+    },
+    {
+      "access_state": "available",
+      "aliases": [],
+      "family_id": "glm53",
+      "first_seen_at": null,
+      "id": "glm53",
+      "lab_ids": [
+        "zai"
+      ],
+      "modalities": [
+        "text"
+      ],
+      "name": "GLM-5.3",
+      "release_date": "2026-08-14",
+      "release_date_precision": "day",
+      "source_ids": [
+        "zai_glm53_launch"
+      ],
+      "upstream_ids": {},
+      "version": "GLM-5.3",
+      "weights_state": "announced"
+    },
+    {
+      "access_state": "available",
+      "aliases": [],
+      "family_id": "kimi_k3",
+      "first_seen_at": null,
+      "id": "kimi_k3",
+      "lab_ids": [
+        "moonshot"
+      ],
+      "modalities": [
+        "text",
+        "image"
+      ],
+      "name": "Kimi K3",
+      "release_date": "2026-07-17",
+      "release_date_precision": "day",
+      "source_ids": [
+        "kimi_k3_launch",
+        "kimi_k3_weights",
+        "zai_glm53_launch"
+      ],
+      "upstream_ids": {},
+      "version": "Kimi K3",
+      "weights_state": "available"
+    },
+    {
+      "access_state": "unknown",
+      "aliases": [],
+      "family_id": "deepseek_v4_pro_0813",
+      "first_seen_at": null,
+      "id": "deepseek_v4_pro_0813",
+      "lab_ids": [
+        "deepseek"
+      ],
+      "modalities": [
+        "text"
+      ],
+      "name": "DeepSeek V4 Pro 0813",
+      "release_date": null,
+      "release_date_precision": "unknown",
+      "source_ids": [
+        "zai_glm53_launch"
+      ],
+      "upstream_ids": {},
+      "version": "DeepSeek V4 Pro 0813",
+      "weights_state": "unknown"
+    },
+    {
+      "access_state": "unknown",
+      "aliases": [],
+      "family_id": "qwen38_max",
+      "first_seen_at": null,
+      "id": "qwen38_max",
+      "lab_ids": [
+        "qwen"
+      ],
+      "modalities": [
+        "text"
+      ],
+      "name": "Qwen3.8-Max",
+      "release_date": null,
+      "release_date_precision": "unknown",
+      "source_ids": [
+        "qwen38_launch",
+        "zai_glm53_launch"
+      ],
+      "upstream_ids": {},
+      "version": "Qwen3.8-Max",
+      "weights_state": "unknown"
     }
   ],
   "presets": [
@@ -7949,7 +8181,11 @@
         "cwe_bench_v1",
         "gdp_pdf_surge",
         "meta_cyberbench_asr",
-        "mistral_b3"
+        "mistral_b3",
+        "terminal_bench_21",
+        "toolathlon_verified",
+        "automationbench_v106",
+        "agents_last_exam_cli"
       ],
       "id": "frontier_oct2026",
       "model_configuration_ids": [
@@ -7962,13 +8198,17 @@
         "mistral_large4_unknown",
         "gpt61_sol_max",
         "muse_spark13_max",
-        "muse_wonder_max"
+        "muse_wonder_max",
+        "glm53_zai_reported",
+        "kimi_k3_zai_reported",
+        "deepseek_v4_pro_0813_zai_reported",
+        "qwen38_max_zai_reported"
       ],
       "name": "Frontier — October 2026",
-      "reason": "Contains the 19 benchmark rows in Google’s Gemini 4 Argon evaluation table, with the existing GDP and safety selections retained. Methodology and results are source-specific; exact unreported effort labels remain unresolved.",
+      "reason": "Contains the 19 benchmark rows in Google’s Gemini 4 Argon evaluation table, with the existing GDP and safety selections retained. Methodology and results are source-specific; exact unreported effort labels remain unresolved. Includes DeepSeek V4 Pro 0813, Qwen3.8-Max, GLM-5.3 and Kimi K3 from the Z.ai comparison table; explicit older benchmark versions remain separate.",
       "reviewed_at": "2026-10-17",
       "saturation_policy_version": "manual-v1",
-      "version": "1.1.0"
+      "version": "1.2.0"
     },
     {
       "benchmark_ids": [
@@ -8280,7 +8520,11 @@
         "traces_ifr_i",
         "vals_finance_agent_v2",
         "vals_index_reported",
-        "vibe_code_bench_reported"
+        "vibe_code_bench_reported",
+        "terminal_bench_21",
+        "toolathlon_verified",
+        "automationbench_v106",
+        "agents_last_exam_cli"
       ],
       "id": "all_models_oct2026",
       "model_configuration_ids": [
@@ -8350,13 +8594,17 @@
         "qwen3_14b_base_default",
         "qwen3_30b_a3b_base_default",
         "qwen3_8b_base_default",
-        "qwen_agentworld_35b_a3b_default"
+        "qwen_agentworld_35b_a3b_default",
+        "glm53_zai_reported",
+        "kimi_k3_zai_reported",
+        "deepseek_v4_pro_0813_zai_reported",
+        "qwen38_max_zai_reported"
       ],
       "name": "All models — October 2026",
       "reason": "Discovery and benchmarked releases, including explicitly unscored current rows and historical GPT-4. Includes all exact configurations and all curated benchmark variants, including BullshitBench V1/V2 and TRACES.",
       "reviewed_at": "2026-10-17",
       "saturation_policy_version": null,
-      "version": "1.0.0"
+      "version": "1.2.0"
     },
     {
       "benchmark_ids": [
@@ -8886,6 +9134,77 @@
       "required_labs": 2,
       "required_models": 3,
       "series_id": "series_terminal_bench_4_xai_grok47",
+      "state": "unknown",
+      "threshold": 95.0,
+      "threshold_formula": "lower_bound + 0.95 × (upper_bound - lower_bound)"
+    },
+    {
+      "benchmark_id": "deepswe_v11",
+      "distinct_lab_count": 4,
+      "distinct_model_count": 4,
+      "eligible": true,
+      "evidence": [
+        {
+          "configuration_ids": [
+            "deepseek_v4_pro_0813_zai_reported"
+          ],
+          "conservative_value": 62.7,
+          "lab_ids": [
+            "deepseek"
+          ],
+          "model_id": "deepseek_v4_pro_0813",
+          "observation_ids": [
+            "o_deepseek_v4_pro_0813_zai_reported_deepswe_v11"
+          ]
+        },
+        {
+          "configuration_ids": [
+            "glm53_zai_reported"
+          ],
+          "conservative_value": 66.9,
+          "lab_ids": [
+            "zai"
+          ],
+          "model_id": "glm53",
+          "observation_ids": [
+            "o_glm53_zai_reported_deepswe_v11"
+          ]
+        },
+        {
+          "configuration_ids": [
+            "kimi_k3_zai_reported"
+          ],
+          "conservative_value": 67.5,
+          "lab_ids": [
+            "moonshot"
+          ],
+          "model_id": "kimi_k3",
+          "observation_ids": [
+            "o_kimi_k3_zai_reported_deepswe_v11"
+          ]
+        },
+        {
+          "configuration_ids": [
+            "qwen38_max_zai_reported"
+          ],
+          "conservative_value": 56.6,
+          "lab_ids": [
+            "qwen"
+          ],
+          "model_id": "qwen38_max",
+          "observation_ids": [
+            "o_qwen38_max_zai_reported_deepswe_v11"
+          ]
+        }
+      ],
+      "high_lab_count": 0,
+      "high_lab_ids": [],
+      "ineligible_reasons": [],
+      "models_at_threshold": [],
+      "policy_version": "capability-saturation-1.0",
+      "required_labs": 2,
+      "required_models": 3,
+      "series_id": "deepswe_v11_zai_glm53",
       "state": "unknown",
       "threshold": 95.0,
       "threshold_formula": "lower_bound + 0.95 × (upper_bound - lower_bound)"
@@ -23197,6 +23516,290 @@
       "series_id": "traces_edi_mean_intellicat_full_panel_10x",
       "state": "ineligible",
       "threshold": null,
+      "threshold_formula": "lower_bound + 0.95 × (upper_bound - lower_bound)"
+    },
+    {
+      "benchmark_id": "terminal_bench_21",
+      "distinct_lab_count": 4,
+      "distinct_model_count": 4,
+      "eligible": true,
+      "evidence": [
+        {
+          "configuration_ids": [
+            "deepseek_v4_pro_0813_zai_reported"
+          ],
+          "conservative_value": 87.9,
+          "lab_ids": [
+            "deepseek"
+          ],
+          "model_id": "deepseek_v4_pro_0813",
+          "observation_ids": [
+            "o_deepseek_v4_pro_0813_zai_reported_terminal_bench_21"
+          ]
+        },
+        {
+          "configuration_ids": [
+            "glm53_zai_reported"
+          ],
+          "conservative_value": 88.2,
+          "lab_ids": [
+            "zai"
+          ],
+          "model_id": "glm53",
+          "observation_ids": [
+            "o_glm53_zai_reported_terminal_bench_21"
+          ]
+        },
+        {
+          "configuration_ids": [
+            "kimi_k3_zai_reported"
+          ],
+          "conservative_value": 88.3,
+          "lab_ids": [
+            "moonshot"
+          ],
+          "model_id": "kimi_k3",
+          "observation_ids": [
+            "o_kimi_k3_zai_reported_terminal_bench_21"
+          ]
+        },
+        {
+          "configuration_ids": [
+            "qwen38_max_zai_reported"
+          ],
+          "conservative_value": 86.6,
+          "lab_ids": [
+            "qwen"
+          ],
+          "model_id": "qwen38_max",
+          "observation_ids": [
+            "o_qwen38_max_zai_reported_terminal_bench_21"
+          ]
+        }
+      ],
+      "high_lab_count": 0,
+      "high_lab_ids": [],
+      "ineligible_reasons": [],
+      "models_at_threshold": [],
+      "policy_version": "capability-saturation-1.0",
+      "required_labs": 2,
+      "required_models": 3,
+      "series_id": "terminal_bench_21_zai_glm53",
+      "state": "unknown",
+      "threshold": 95.0,
+      "threshold_formula": "lower_bound + 0.95 × (upper_bound - lower_bound)"
+    },
+    {
+      "benchmark_id": "toolathlon_verified",
+      "distinct_lab_count": 4,
+      "distinct_model_count": 4,
+      "eligible": true,
+      "evidence": [
+        {
+          "configuration_ids": [
+            "deepseek_v4_pro_0813_zai_reported"
+          ],
+          "conservative_value": 74.1,
+          "lab_ids": [
+            "deepseek"
+          ],
+          "model_id": "deepseek_v4_pro_0813",
+          "observation_ids": [
+            "o_deepseek_v4_pro_0813_zai_reported_toolathlon_verified"
+          ]
+        },
+        {
+          "configuration_ids": [
+            "glm53_zai_reported"
+          ],
+          "conservative_value": 73.0,
+          "lab_ids": [
+            "zai"
+          ],
+          "model_id": "glm53",
+          "observation_ids": [
+            "o_glm53_zai_reported_toolathlon_verified"
+          ]
+        },
+        {
+          "configuration_ids": [
+            "kimi_k3_zai_reported"
+          ],
+          "conservative_value": 76.5,
+          "lab_ids": [
+            "moonshot"
+          ],
+          "model_id": "kimi_k3",
+          "observation_ids": [
+            "o_kimi_k3_zai_reported_toolathlon_verified"
+          ]
+        },
+        {
+          "configuration_ids": [
+            "qwen38_max_zai_reported"
+          ],
+          "conservative_value": 72.5,
+          "lab_ids": [
+            "qwen"
+          ],
+          "model_id": "qwen38_max",
+          "observation_ids": [
+            "o_qwen38_max_zai_reported_toolathlon_verified"
+          ]
+        }
+      ],
+      "high_lab_count": 0,
+      "high_lab_ids": [],
+      "ineligible_reasons": [],
+      "models_at_threshold": [],
+      "policy_version": "capability-saturation-1.0",
+      "required_labs": 2,
+      "required_models": 3,
+      "series_id": "toolathlon_verified_zai_glm53",
+      "state": "unknown",
+      "threshold": 95.0,
+      "threshold_formula": "lower_bound + 0.95 × (upper_bound - lower_bound)"
+    },
+    {
+      "benchmark_id": "automationbench_v106",
+      "distinct_lab_count": 4,
+      "distinct_model_count": 4,
+      "eligible": true,
+      "evidence": [
+        {
+          "configuration_ids": [
+            "deepseek_v4_pro_0813_zai_reported"
+          ],
+          "conservative_value": 43.2,
+          "lab_ids": [
+            "deepseek"
+          ],
+          "model_id": "deepseek_v4_pro_0813",
+          "observation_ids": [
+            "o_deepseek_v4_pro_0813_zai_reported_automationbench_v106"
+          ]
+        },
+        {
+          "configuration_ids": [
+            "glm53_zai_reported"
+          ],
+          "conservative_value": 48.2,
+          "lab_ids": [
+            "zai"
+          ],
+          "model_id": "glm53",
+          "observation_ids": [
+            "o_glm53_zai_reported_automationbench_v106"
+          ]
+        },
+        {
+          "configuration_ids": [
+            "kimi_k3_zai_reported"
+          ],
+          "conservative_value": 46.7,
+          "lab_ids": [
+            "moonshot"
+          ],
+          "model_id": "kimi_k3",
+          "observation_ids": [
+            "o_kimi_k3_zai_reported_automationbench_v106"
+          ]
+        },
+        {
+          "configuration_ids": [
+            "qwen38_max_zai_reported"
+          ],
+          "conservative_value": 39.8,
+          "lab_ids": [
+            "qwen"
+          ],
+          "model_id": "qwen38_max",
+          "observation_ids": [
+            "o_qwen38_max_zai_reported_automationbench_v106"
+          ]
+        }
+      ],
+      "high_lab_count": 0,
+      "high_lab_ids": [],
+      "ineligible_reasons": [],
+      "models_at_threshold": [],
+      "policy_version": "capability-saturation-1.0",
+      "required_labs": 2,
+      "required_models": 3,
+      "series_id": "automationbench_v106_zai_glm53",
+      "state": "unknown",
+      "threshold": 95.0,
+      "threshold_formula": "lower_bound + 0.95 × (upper_bound - lower_bound)"
+    },
+    {
+      "benchmark_id": "agents_last_exam_cli",
+      "distinct_lab_count": 4,
+      "distinct_model_count": 4,
+      "eligible": true,
+      "evidence": [
+        {
+          "configuration_ids": [
+            "deepseek_v4_pro_0813_zai_reported"
+          ],
+          "conservative_value": 25.7,
+          "lab_ids": [
+            "deepseek"
+          ],
+          "model_id": "deepseek_v4_pro_0813",
+          "observation_ids": [
+            "o_deepseek_v4_pro_0813_zai_reported_agents_last_exam_cli"
+          ]
+        },
+        {
+          "configuration_ids": [
+            "glm53_zai_reported"
+          ],
+          "conservative_value": 28.5,
+          "lab_ids": [
+            "zai"
+          ],
+          "model_id": "glm53",
+          "observation_ids": [
+            "o_glm53_zai_reported_agents_last_exam_cli"
+          ]
+        },
+        {
+          "configuration_ids": [
+            "kimi_k3_zai_reported"
+          ],
+          "conservative_value": 27.6,
+          "lab_ids": [
+            "moonshot"
+          ],
+          "model_id": "kimi_k3",
+          "observation_ids": [
+            "o_kimi_k3_zai_reported_agents_last_exam_cli"
+          ]
+        },
+        {
+          "configuration_ids": [
+            "qwen38_max_zai_reported"
+          ],
+          "conservative_value": 27.0,
+          "lab_ids": [
+            "qwen"
+          ],
+          "model_id": "qwen38_max",
+          "observation_ids": [
+            "o_qwen38_max_zai_reported_agents_last_exam_cli"
+          ]
+        }
+      ],
+      "high_lab_count": 0,
+      "high_lab_ids": [],
+      "ineligible_reasons": [],
+      "models_at_threshold": [],
+      "policy_version": "capability-saturation-1.0",
+      "required_labs": 2,
+      "required_models": 3,
+      "series_id": "agents_last_exam_cli_zai_glm53",
+      "state": "unknown",
+      "threshold": 95.0,
       "threshold_formula": "lower_bound + 0.95 × (upper_bound - lower_bound)"
     }
   ],

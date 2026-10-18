@@ -1,6 +1,6 @@
 {
   "id": "frontier_oct2026",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "name": "Frontier — October 2026",
   "model_configuration_ids": [
     "gpt6_astra_google_reported",
@@ -12,7 +12,11 @@
     "mistral_large4_unknown",
     "gpt61_sol_max",
     "muse_spark13_max",
-    "muse_wonder_max"
+    "muse_wonder_max",
+    "glm53_zai_reported",
+    "kimi_k3_zai_reported",
+    "deepseek_v4_pro_0813_zai_reported",
+    "qwen38_max_zai_reported"
   ],
   "benchmark_ids": [
     "vals_index_reported",
@@ -36,9 +40,13 @@
     "cwe_bench_v1",
     "gdp_pdf_surge",
     "meta_cyberbench_asr",
-    "mistral_b3"
+    "mistral_b3",
+    "terminal_bench_21",
+    "toolathlon_verified",
+    "automationbench_v106",
+    "agents_last_exam_cli"
   ],
-  "reason": "Contains the 19 benchmark rows in Google’s Gemini 4 Argon evaluation table, with the existing GDP and safety selections retained. Methodology and results are source-specific; exact unreported effort labels remain unresolved.",
+  "reason": "Contains the 19 benchmark rows in Google’s Gemini 4 Argon evaluation table, with the existing GDP and safety selections retained. Methodology and results are source-specific; exact unreported effort labels remain unresolved. Includes DeepSeek V4 Pro 0813, Qwen3.8-Max, GLM-5.3 and Kimi K3 from the Z.ai comparison table; explicit older benchmark versions remain separate.",
   "reviewed_at": "2026-10-17",
   "saturation_policy_version": "manual-v1"
 }

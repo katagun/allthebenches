@@ -2586,6 +2586,61 @@
       "value": 84.9
     },
     {
+      "benchmark_id": "agents_last_exam_cli",
+      "configuration_id": "deepseek_v4_pro_0813_zai_reported",
+      "observation_ids": [
+        "o_deepseek_v4_pro_0813_zai_reported_agents_last_exam_cli"
+      ],
+      "series_id": "agents_last_exam_cli_zai_glm53",
+      "state": "selected",
+      "unit": "%",
+      "value": 25.7
+    },
+    {
+      "benchmark_id": "automationbench_v106",
+      "configuration_id": "deepseek_v4_pro_0813_zai_reported",
+      "observation_ids": [
+        "o_deepseek_v4_pro_0813_zai_reported_automationbench_v106"
+      ],
+      "series_id": "automationbench_v106_zai_glm53",
+      "state": "selected",
+      "unit": "%",
+      "value": 43.2
+    },
+    {
+      "benchmark_id": "deepswe_v11",
+      "configuration_id": "deepseek_v4_pro_0813_zai_reported",
+      "observation_ids": [
+        "o_deepseek_v4_pro_0813_zai_reported_deepswe_v11"
+      ],
+      "series_id": "deepswe_v11_zai_glm53",
+      "state": "selected",
+      "unit": "%",
+      "value": 62.7
+    },
+    {
+      "benchmark_id": "terminal_bench_21",
+      "configuration_id": "deepseek_v4_pro_0813_zai_reported",
+      "observation_ids": [
+        "o_deepseek_v4_pro_0813_zai_reported_terminal_bench_21"
+      ],
+      "series_id": "terminal_bench_21_zai_glm53",
+      "state": "selected",
+      "unit": "%",
+      "value": 87.9
+    },
+    {
+      "benchmark_id": "toolathlon_verified",
+      "configuration_id": "deepseek_v4_pro_0813_zai_reported",
+      "observation_ids": [
+        "o_deepseek_v4_pro_0813_zai_reported_toolathlon_verified"
+      ],
+      "series_id": "toolathlon_verified_zai_glm53",
+      "state": "selected",
+      "unit": "%",
+      "value": 74.1
+    },
+    {
       "benchmark_id": "hist_gemini10_humaneval_0_shot_post_trained_api_model",
       "configuration_id": "gemini10_pro_api_posttrained",
       "observation_ids": [
@@ -3354,6 +3409,61 @@
       "state": "selected",
       "unit": "%",
       "value": 91.9
+    },
+    {
+      "benchmark_id": "agents_last_exam_cli",
+      "configuration_id": "glm53_zai_reported",
+      "observation_ids": [
+        "o_glm53_zai_reported_agents_last_exam_cli"
+      ],
+      "series_id": "agents_last_exam_cli_zai_glm53",
+      "state": "selected",
+      "unit": "%",
+      "value": 28.5
+    },
+    {
+      "benchmark_id": "automationbench_v106",
+      "configuration_id": "glm53_zai_reported",
+      "observation_ids": [
+        "o_glm53_zai_reported_automationbench_v106"
+      ],
+      "series_id": "automationbench_v106_zai_glm53",
+      "state": "selected",
+      "unit": "%",
+      "value": 48.2
+    },
+    {
+      "benchmark_id": "deepswe_v11",
+      "configuration_id": "glm53_zai_reported",
+      "observation_ids": [
+        "o_glm53_zai_reported_deepswe_v11"
+      ],
+      "series_id": "deepswe_v11_zai_glm53",
+      "state": "selected",
+      "unit": "%",
+      "value": 66.9
+    },
+    {
+      "benchmark_id": "terminal_bench_21",
+      "configuration_id": "glm53_zai_reported",
+      "observation_ids": [
+        "o_glm53_zai_reported_terminal_bench_21"
+      ],
+      "series_id": "terminal_bench_21_zai_glm53",
+      "state": "selected",
+      "unit": "%",
+      "value": 88.2
+    },
+    {
+      "benchmark_id": "toolathlon_verified",
+      "configuration_id": "glm53_zai_reported",
+      "observation_ids": [
+        "o_glm53_zai_reported_toolathlon_verified"
+      ],
+      "series_id": "toolathlon_verified_zai_glm53",
+      "state": "selected",
+      "unit": "%",
+      "value": 73.0
     },
     {
       "benchmark_id": "gsm8k_2023",
@@ -4927,6 +5037,61 @@
       "state": "selected",
       "unit": "%",
       "value": 37.6
+    },
+    {
+      "benchmark_id": "agents_last_exam_cli",
+      "configuration_id": "kimi_k3_zai_reported",
+      "observation_ids": [
+        "o_kimi_k3_zai_reported_agents_last_exam_cli"
+      ],
+      "series_id": "agents_last_exam_cli_zai_glm53",
+      "state": "selected",
+      "unit": "%",
+      "value": 27.6
+    },
+    {
+      "benchmark_id": "automationbench_v106",
+      "configuration_id": "kimi_k3_zai_reported",
+      "observation_ids": [
+        "o_kimi_k3_zai_reported_automationbench_v106"
+      ],
+      "series_id": "automationbench_v106_zai_glm53",
+      "state": "selected",
+      "unit": "%",
+      "value": 46.7
+    },
+    {
+      "benchmark_id": "deepswe_v11",
+      "configuration_id": "kimi_k3_zai_reported",
+      "observation_ids": [
+        "o_kimi_k3_zai_reported_deepswe_v11"
+      ],
+      "series_id": "deepswe_v11_zai_glm53",
+      "state": "selected",
+      "unit": "%",
+      "value": 67.5
+    },
+    {
+      "benchmark_id": "terminal_bench_21",
+      "configuration_id": "kimi_k3_zai_reported",
+      "observation_ids": [
+        "o_kimi_k3_zai_reported_terminal_bench_21"
+      ],
+      "series_id": "terminal_bench_21_zai_glm53",
+      "state": "selected",
+      "unit": "%",
+      "value": 88.3
+    },
+    {
+      "benchmark_id": "toolathlon_verified",
+      "configuration_id": "kimi_k3_zai_reported",
+      "observation_ids": [
+        "o_kimi_k3_zai_reported_toolathlon_verified"
+      ],
+      "series_id": "toolathlon_verified_zai_glm53",
+      "state": "selected",
+      "unit": "%",
+      "value": 76.5
     },
     {
       "benchmark_id": "hist_llama31_arc_challenge_0_shot",
@@ -6709,6 +6874,61 @@
       "state": "selected",
       "unit": "%",
       "value": 75.1
+    },
+    {
+      "benchmark_id": "agents_last_exam_cli",
+      "configuration_id": "qwen38_max_zai_reported",
+      "observation_ids": [
+        "o_qwen38_max_zai_reported_agents_last_exam_cli"
+      ],
+      "series_id": "agents_last_exam_cli_zai_glm53",
+      "state": "selected",
+      "unit": "%",
+      "value": 27.0
+    },
+    {
+      "benchmark_id": "automationbench_v106",
+      "configuration_id": "qwen38_max_zai_reported",
+      "observation_ids": [
+        "o_qwen38_max_zai_reported_automationbench_v106"
+      ],
+      "series_id": "automationbench_v106_zai_glm53",
+      "state": "selected",
+      "unit": "%",
+      "value": 39.8
+    },
+    {
+      "benchmark_id": "deepswe_v11",
+      "configuration_id": "qwen38_max_zai_reported",
+      "observation_ids": [
+        "o_qwen38_max_zai_reported_deepswe_v11"
+      ],
+      "series_id": "deepswe_v11_zai_glm53",
+      "state": "selected",
+      "unit": "%",
+      "value": 56.6
+    },
+    {
+      "benchmark_id": "terminal_bench_21",
+      "configuration_id": "qwen38_max_zai_reported",
+      "observation_ids": [
+        "o_qwen38_max_zai_reported_terminal_bench_21"
+      ],
+      "series_id": "terminal_bench_21_zai_glm53",
+      "state": "selected",
+      "unit": "%",
+      "value": 86.6
+    },
+    {
+      "benchmark_id": "toolathlon_verified",
+      "configuration_id": "qwen38_max_zai_reported",
+      "observation_ids": [
+        "o_qwen38_max_zai_reported_toolathlon_verified"
+      ],
+      "series_id": "toolathlon_verified_zai_glm53",
+      "state": "selected",
+      "unit": "%",
+      "value": 72.5
     },
     {
       "benchmark_id": "qwen3_base_bbh",
@@ -23649,6 +23869,426 @@
       },
       "unit": "percent",
       "value": 0.59
+    },
+    {
+      "benchmark_id": "deepswe_v11",
+      "configuration_id": "glm53_zai_reported",
+      "evaluated_at": null,
+      "evaluator": "Z.ai",
+      "id": "o_glm53_zai_reported_deepswe_v11",
+      "locator": "Performance across comparison models: DeepSWE v1.1 row, glm53 column",
+      "reported_at": "2026-08-14T00:00:00Z",
+      "reporting_relationship": "self_report",
+      "review_state": "reviewed",
+      "series_id": "deepswe_v11_zai_glm53",
+      "setup": {
+        "comparability": "Peer harnesses and exact effort are not fully specified; no common-harness claim.",
+        "protocol": "GLM: mini-swe-agent; 6h timeout, 400K context. Peer settings unspecified."
+      },
+      "source_id": "zai_glm53_launch",
+      "supersedes": [],
+      "uncertainty": null,
+      "unit": "%",
+      "value": 66.9
+    },
+    {
+      "benchmark_id": "deepswe_v11",
+      "configuration_id": "kimi_k3_zai_reported",
+      "evaluated_at": null,
+      "evaluator": "Not individually specified in Z.ai comparison table",
+      "id": "o_kimi_k3_zai_reported_deepswe_v11",
+      "locator": "Performance across comparison models: DeepSWE v1.1 row, kimi_k3 column",
+      "reported_at": "2026-08-14T00:00:00Z",
+      "reporting_relationship": "quoted_result",
+      "review_state": "reviewed",
+      "series_id": "deepswe_v11_zai_glm53",
+      "setup": {
+        "comparability": "Peer harnesses and exact effort are not fully specified; no common-harness claim.",
+        "protocol": "GLM: mini-swe-agent; 6h timeout, 400K context. Peer settings unspecified."
+      },
+      "source_id": "zai_glm53_launch",
+      "supersedes": [],
+      "uncertainty": null,
+      "unit": "%",
+      "value": 67.5
+    },
+    {
+      "benchmark_id": "deepswe_v11",
+      "configuration_id": "deepseek_v4_pro_0813_zai_reported",
+      "evaluated_at": null,
+      "evaluator": "Not individually specified in Z.ai comparison table",
+      "id": "o_deepseek_v4_pro_0813_zai_reported_deepswe_v11",
+      "locator": "Performance across comparison models: DeepSWE v1.1 row, deepseek_v4_pro_0813 column",
+      "reported_at": "2026-08-14T00:00:00Z",
+      "reporting_relationship": "quoted_result",
+      "review_state": "reviewed",
+      "series_id": "deepswe_v11_zai_glm53",
+      "setup": {
+        "comparability": "Peer harnesses and exact effort are not fully specified; no common-harness claim.",
+        "protocol": "GLM: mini-swe-agent; 6h timeout, 400K context. Peer settings unspecified."
+      },
+      "source_id": "zai_glm53_launch",
+      "supersedes": [],
+      "uncertainty": null,
+      "unit": "%",
+      "value": 62.7
+    },
+    {
+      "benchmark_id": "deepswe_v11",
+      "configuration_id": "qwen38_max_zai_reported",
+      "evaluated_at": null,
+      "evaluator": "Not individually specified in Z.ai comparison table",
+      "id": "o_qwen38_max_zai_reported_deepswe_v11",
+      "locator": "Performance across comparison models: DeepSWE v1.1 row, qwen38_max column",
+      "reported_at": "2026-08-14T00:00:00Z",
+      "reporting_relationship": "quoted_result",
+      "review_state": "reviewed",
+      "series_id": "deepswe_v11_zai_glm53",
+      "setup": {
+        "comparability": "Peer harnesses and exact effort are not fully specified; no common-harness claim.",
+        "protocol": "GLM: mini-swe-agent; 6h timeout, 400K context. Peer settings unspecified."
+      },
+      "source_id": "zai_glm53_launch",
+      "supersedes": [],
+      "uncertainty": null,
+      "unit": "%",
+      "value": 56.6
+    },
+    {
+      "benchmark_id": "terminal_bench_21",
+      "configuration_id": "glm53_zai_reported",
+      "evaluated_at": null,
+      "evaluator": "Z.ai",
+      "id": "o_glm53_zai_reported_terminal_bench_21",
+      "locator": "Performance across comparison models: Terminal-Bench 2.1 row, glm53 column",
+      "reported_at": "2026-08-14T00:00:00Z",
+      "reporting_relationship": "self_report",
+      "review_state": "reviewed",
+      "series_id": "terminal_bench_21_zai_glm53",
+      "setup": {
+        "comparability": "Peer harnesses and exact effort are not fully specified; no common-harness claim.",
+        "protocol": "GLM: Claude Code 2.1.207, 6h timeout, 65536 output tokens. Peer settings unspecified."
+      },
+      "source_id": "zai_glm53_launch",
+      "supersedes": [],
+      "uncertainty": null,
+      "unit": "%",
+      "value": 88.2
+    },
+    {
+      "benchmark_id": "terminal_bench_21",
+      "configuration_id": "kimi_k3_zai_reported",
+      "evaluated_at": null,
+      "evaluator": "Not individually specified in Z.ai comparison table",
+      "id": "o_kimi_k3_zai_reported_terminal_bench_21",
+      "locator": "Performance across comparison models: Terminal-Bench 2.1 row, kimi_k3 column",
+      "reported_at": "2026-08-14T00:00:00Z",
+      "reporting_relationship": "quoted_result",
+      "review_state": "reviewed",
+      "series_id": "terminal_bench_21_zai_glm53",
+      "setup": {
+        "comparability": "Peer harnesses and exact effort are not fully specified; no common-harness claim.",
+        "protocol": "GLM: Claude Code 2.1.207, 6h timeout, 65536 output tokens. Peer settings unspecified."
+      },
+      "source_id": "zai_glm53_launch",
+      "supersedes": [],
+      "uncertainty": null,
+      "unit": "%",
+      "value": 88.3
+    },
+    {
+      "benchmark_id": "terminal_bench_21",
+      "configuration_id": "deepseek_v4_pro_0813_zai_reported",
+      "evaluated_at": null,
+      "evaluator": "Not individually specified in Z.ai comparison table",
+      "id": "o_deepseek_v4_pro_0813_zai_reported_terminal_bench_21",
+      "locator": "Performance across comparison models: Terminal-Bench 2.1 row, deepseek_v4_pro_0813 column",
+      "reported_at": "2026-08-14T00:00:00Z",
+      "reporting_relationship": "quoted_result",
+      "review_state": "reviewed",
+      "series_id": "terminal_bench_21_zai_glm53",
+      "setup": {
+        "comparability": "Peer harnesses and exact effort are not fully specified; no common-harness claim.",
+        "protocol": "GLM: Claude Code 2.1.207, 6h timeout, 65536 output tokens. Peer settings unspecified."
+      },
+      "source_id": "zai_glm53_launch",
+      "supersedes": [],
+      "uncertainty": null,
+      "unit": "%",
+      "value": 87.9
+    },
+    {
+      "benchmark_id": "terminal_bench_21",
+      "configuration_id": "qwen38_max_zai_reported",
+      "evaluated_at": null,
+      "evaluator": "Not individually specified in Z.ai comparison table",
+      "id": "o_qwen38_max_zai_reported_terminal_bench_21",
+      "locator": "Performance across comparison models: Terminal-Bench 2.1 row, qwen38_max column",
+      "reported_at": "2026-08-14T00:00:00Z",
+      "reporting_relationship": "quoted_result",
+      "review_state": "reviewed",
+      "series_id": "terminal_bench_21_zai_glm53",
+      "setup": {
+        "comparability": "Peer harnesses and exact effort are not fully specified; no common-harness claim.",
+        "protocol": "GLM: Claude Code 2.1.207, 6h timeout, 65536 output tokens. Peer settings unspecified."
+      },
+      "source_id": "zai_glm53_launch",
+      "supersedes": [],
+      "uncertainty": null,
+      "unit": "%",
+      "value": 86.6
+    },
+    {
+      "benchmark_id": "toolathlon_verified",
+      "configuration_id": "glm53_zai_reported",
+      "evaluated_at": null,
+      "evaluator": "Z.ai",
+      "id": "o_glm53_zai_reported_toolathlon_verified",
+      "locator": "Performance across comparison models: Toolathlon Verified row, glm53 column",
+      "reported_at": "2026-08-14T00:00:00Z",
+      "reporting_relationship": "self_report",
+      "review_state": "reviewed",
+      "series_id": "toolathlon_verified_zai_glm53",
+      "setup": {
+        "comparability": "Peer harnesses and exact effort are not fully specified; no common-harness claim.",
+        "protocol": "Official evaluation service; pass@1 averaged over three runs. Peer settings unspecified."
+      },
+      "source_id": "zai_glm53_launch",
+      "supersedes": [],
+      "uncertainty": null,
+      "unit": "%",
+      "value": 73.0
+    },
+    {
+      "benchmark_id": "toolathlon_verified",
+      "configuration_id": "kimi_k3_zai_reported",
+      "evaluated_at": null,
+      "evaluator": "Not individually specified in Z.ai comparison table",
+      "id": "o_kimi_k3_zai_reported_toolathlon_verified",
+      "locator": "Performance across comparison models: Toolathlon Verified row, kimi_k3 column",
+      "reported_at": "2026-08-14T00:00:00Z",
+      "reporting_relationship": "quoted_result",
+      "review_state": "reviewed",
+      "series_id": "toolathlon_verified_zai_glm53",
+      "setup": {
+        "comparability": "Peer harnesses and exact effort are not fully specified; no common-harness claim.",
+        "protocol": "Official evaluation service; pass@1 averaged over three runs. Peer settings unspecified."
+      },
+      "source_id": "zai_glm53_launch",
+      "supersedes": [],
+      "uncertainty": null,
+      "unit": "%",
+      "value": 76.5
+    },
+    {
+      "benchmark_id": "toolathlon_verified",
+      "configuration_id": "deepseek_v4_pro_0813_zai_reported",
+      "evaluated_at": null,
+      "evaluator": "Not individually specified in Z.ai comparison table",
+      "id": "o_deepseek_v4_pro_0813_zai_reported_toolathlon_verified",
+      "locator": "Performance across comparison models: Toolathlon Verified row, deepseek_v4_pro_0813 column",
+      "reported_at": "2026-08-14T00:00:00Z",
+      "reporting_relationship": "quoted_result",
+      "review_state": "reviewed",
+      "series_id": "toolathlon_verified_zai_glm53",
+      "setup": {
+        "comparability": "Peer harnesses and exact effort are not fully specified; no common-harness claim.",
+        "protocol": "Official evaluation service; pass@1 averaged over three runs. Peer settings unspecified."
+      },
+      "source_id": "zai_glm53_launch",
+      "supersedes": [],
+      "uncertainty": null,
+      "unit": "%",
+      "value": 74.1
+    },
+    {
+      "benchmark_id": "toolathlon_verified",
+      "configuration_id": "qwen38_max_zai_reported",
+      "evaluated_at": null,
+      "evaluator": "Not individually specified in Z.ai comparison table",
+      "id": "o_qwen38_max_zai_reported_toolathlon_verified",
+      "locator": "Performance across comparison models: Toolathlon Verified row, qwen38_max column",
+      "reported_at": "2026-08-14T00:00:00Z",
+      "reporting_relationship": "quoted_result",
+      "review_state": "reviewed",
+      "series_id": "toolathlon_verified_zai_glm53",
+      "setup": {
+        "comparability": "Peer harnesses and exact effort are not fully specified; no common-harness claim.",
+        "protocol": "Official evaluation service; pass@1 averaged over three runs. Peer settings unspecified."
+      },
+      "source_id": "zai_glm53_launch",
+      "supersedes": [],
+      "uncertainty": null,
+      "unit": "%",
+      "value": 72.5
+    },
+    {
+      "benchmark_id": "automationbench_v106",
+      "configuration_id": "glm53_zai_reported",
+      "evaluated_at": null,
+      "evaluator": "Z.ai",
+      "id": "o_glm53_zai_reported_automationbench_v106",
+      "locator": "Performance across comparison models: AutomationBench v1.0.6 row, glm53 column",
+      "reported_at": "2026-08-14T00:00:00Z",
+      "reporting_relationship": "self_report",
+      "review_state": "reviewed",
+      "series_id": "automationbench_v106_zai_glm53",
+      "setup": {
+        "comparability": "Peer harnesses and exact effort are not fully specified; no common-harness claim.",
+        "protocol": "Version 1.0.6 with null-type fix (PR #13); separate from unversioned results."
+      },
+      "source_id": "zai_glm53_launch",
+      "supersedes": [],
+      "uncertainty": null,
+      "unit": "%",
+      "value": 48.2
+    },
+    {
+      "benchmark_id": "automationbench_v106",
+      "configuration_id": "kimi_k3_zai_reported",
+      "evaluated_at": null,
+      "evaluator": "Not individually specified in Z.ai comparison table",
+      "id": "o_kimi_k3_zai_reported_automationbench_v106",
+      "locator": "Performance across comparison models: AutomationBench v1.0.6 row, kimi_k3 column",
+      "reported_at": "2026-08-14T00:00:00Z",
+      "reporting_relationship": "quoted_result",
+      "review_state": "reviewed",
+      "series_id": "automationbench_v106_zai_glm53",
+      "setup": {
+        "comparability": "Peer harnesses and exact effort are not fully specified; no common-harness claim.",
+        "protocol": "Version 1.0.6 with null-type fix (PR #13); separate from unversioned results."
+      },
+      "source_id": "zai_glm53_launch",
+      "supersedes": [],
+      "uncertainty": null,
+      "unit": "%",
+      "value": 46.7
+    },
+    {
+      "benchmark_id": "automationbench_v106",
+      "configuration_id": "deepseek_v4_pro_0813_zai_reported",
+      "evaluated_at": null,
+      "evaluator": "Not individually specified in Z.ai comparison table",
+      "id": "o_deepseek_v4_pro_0813_zai_reported_automationbench_v106",
+      "locator": "Performance across comparison models: AutomationBench v1.0.6 row, deepseek_v4_pro_0813 column",
+      "reported_at": "2026-08-14T00:00:00Z",
+      "reporting_relationship": "quoted_result",
+      "review_state": "reviewed",
+      "series_id": "automationbench_v106_zai_glm53",
+      "setup": {
+        "comparability": "Peer harnesses and exact effort are not fully specified; no common-harness claim.",
+        "protocol": "Version 1.0.6 with null-type fix (PR #13); separate from unversioned results."
+      },
+      "source_id": "zai_glm53_launch",
+      "supersedes": [],
+      "uncertainty": null,
+      "unit": "%",
+      "value": 43.2
+    },
+    {
+      "benchmark_id": "automationbench_v106",
+      "configuration_id": "qwen38_max_zai_reported",
+      "evaluated_at": null,
+      "evaluator": "Not individually specified in Z.ai comparison table",
+      "id": "o_qwen38_max_zai_reported_automationbench_v106",
+      "locator": "Performance across comparison models: AutomationBench v1.0.6 row, qwen38_max column",
+      "reported_at": "2026-08-14T00:00:00Z",
+      "reporting_relationship": "quoted_result",
+      "review_state": "reviewed",
+      "series_id": "automationbench_v106_zai_glm53",
+      "setup": {
+        "comparability": "Peer harnesses and exact effort are not fully specified; no common-harness claim.",
+        "protocol": "Version 1.0.6 with null-type fix (PR #13); separate from unversioned results."
+      },
+      "source_id": "zai_glm53_launch",
+      "supersedes": [],
+      "uncertainty": null,
+      "unit": "%",
+      "value": 39.8
+    },
+    {
+      "benchmark_id": "agents_last_exam_cli",
+      "configuration_id": "glm53_zai_reported",
+      "evaluated_at": null,
+      "evaluator": "Z.ai",
+      "id": "o_glm53_zai_reported_agents_last_exam_cli",
+      "locator": "Performance across comparison models: Agents’ Last Exam (CLI) row, glm53 column",
+      "reported_at": "2026-08-14T00:00:00Z",
+      "reporting_relationship": "self_report",
+      "review_state": "reviewed",
+      "series_id": "agents_last_exam_cli_zai_glm53",
+      "setup": {
+        "comparability": "Peer harnesses and exact effort are not fully specified; no common-harness claim.",
+        "protocol": "CLI protocol, 105 tasks. GLM: Claude Code, max effort, 1M context, 64K output. Peer settings unspecified."
+      },
+      "source_id": "zai_glm53_launch",
+      "supersedes": [],
+      "uncertainty": null,
+      "unit": "%",
+      "value": 28.5
+    },
+    {
+      "benchmark_id": "agents_last_exam_cli",
+      "configuration_id": "kimi_k3_zai_reported",
+      "evaluated_at": null,
+      "evaluator": "Not individually specified in Z.ai comparison table",
+      "id": "o_kimi_k3_zai_reported_agents_last_exam_cli",
+      "locator": "Performance across comparison models: Agents’ Last Exam (CLI) row, kimi_k3 column",
+      "reported_at": "2026-08-14T00:00:00Z",
+      "reporting_relationship": "quoted_result",
+      "review_state": "reviewed",
+      "series_id": "agents_last_exam_cli_zai_glm53",
+      "setup": {
+        "comparability": "Peer harnesses and exact effort are not fully specified; no common-harness claim.",
+        "protocol": "CLI protocol, 105 tasks. GLM: Claude Code, max effort, 1M context, 64K output. Peer settings unspecified."
+      },
+      "source_id": "zai_glm53_launch",
+      "supersedes": [],
+      "uncertainty": null,
+      "unit": "%",
+      "value": 27.6
+    },
+    {
+      "benchmark_id": "agents_last_exam_cli",
+      "configuration_id": "deepseek_v4_pro_0813_zai_reported",
+      "evaluated_at": null,
+      "evaluator": "Not individually specified in Z.ai comparison table",
+      "id": "o_deepseek_v4_pro_0813_zai_reported_agents_last_exam_cli",
+      "locator": "Performance across comparison models: Agents’ Last Exam (CLI) row, deepseek_v4_pro_0813 column",
+      "reported_at": "2026-08-14T00:00:00Z",
+      "reporting_relationship": "quoted_result",
+      "review_state": "reviewed",
+      "series_id": "agents_last_exam_cli_zai_glm53",
+      "setup": {
+        "comparability": "Peer harnesses and exact effort are not fully specified; no common-harness claim.",
+        "protocol": "CLI protocol, 105 tasks. GLM: Claude Code, max effort, 1M context, 64K output. Peer settings unspecified."
+      },
+      "source_id": "zai_glm53_launch",
+      "supersedes": [],
+      "uncertainty": null,
+      "unit": "%",
+      "value": 25.7
+    },
+    {
+      "benchmark_id": "agents_last_exam_cli",
+      "configuration_id": "qwen38_max_zai_reported",
+      "evaluated_at": null,
+      "evaluator": "Not individually specified in Z.ai comparison table",
+      "id": "o_qwen38_max_zai_reported_agents_last_exam_cli",
+      "locator": "Performance across comparison models: Agents’ Last Exam (CLI) row, qwen38_max column",
+      "reported_at": "2026-08-14T00:00:00Z",
+      "reporting_relationship": "quoted_result",
+      "review_state": "reviewed",
+      "series_id": "agents_last_exam_cli_zai_glm53",
+      "setup": {
+        "comparability": "Peer harnesses and exact effort are not fully specified; no common-harness claim.",
+        "protocol": "CLI protocol, 105 tasks. GLM: Claude Code, max effort, 1M context, 64K output. Peer settings unspecified."
+      },
+      "source_id": "zai_glm53_launch",
+      "supersedes": [],
+      "uncertainty": null,
+      "unit": "%",
+      "value": 27.0
     }
   ],
   "schema_version": "1.0.0"

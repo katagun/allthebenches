@@ -1,6 +1,6 @@
 {
   "id": "all_models_oct2026",
-  "version": "1.0.0",
+  "version": "1.2.0",
   "name": "All models — October 2026",
   "model_configuration_ids": [
     "bb_claude_fable51_low",
@@ -69,7 +69,11 @@
     "qwen3_14b_base_default",
     "qwen3_30b_a3b_base_default",
     "qwen3_8b_base_default",
-    "qwen_agentworld_35b_a3b_default"
+    "qwen_agentworld_35b_a3b_default",
+    "glm53_zai_reported",
+    "kimi_k3_zai_reported",
+    "deepseek_v4_pro_0813_zai_reported",
+    "qwen38_max_zai_reported"
   ],
   "benchmark_ids": [
     "agents_last_exam_binary",
@@ -380,7 +384,11 @@
     "traces_ifr_i",
     "vals_finance_agent_v2",
     "vals_index_reported",
-    "vibe_code_bench_reported"
+    "vibe_code_bench_reported",
+    "terminal_bench_21",
+    "toolathlon_verified",
+    "automationbench_v106",
+    "agents_last_exam_cli"
   ],
   "reason": "Discovery and benchmarked releases, including explicitly unscored current rows and historical GPT-4. Includes all exact configurations and all curated benchmark variants, including BullshitBench V1/V2 and TRACES.",
   "reviewed_at": "2026-10-17",

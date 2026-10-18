@@ -52,11 +52,11 @@ describe('curated preset switching', () => {
     expect(location.search).toBe('');
     expect(location.hash).toBe('');
     expect(localStorage.getItem(storageKey('/'))).toBeNull();
-    expect((screen.getByRole('searchbox', { name: 'Search models' }) as HTMLInputElement).value).toBe('');
+    expect((screen.getByRole('searchbox', { name: 'Search models, labs, or benchmarks' }) as HTMLInputElement).value).toBe('');
     cleanup();
     render(<App/>);
     await screen.findByRole('button', { name: 'Frontier' });
-    expect((screen.getByRole('searchbox', { name: 'Search models' }) as HTMLInputElement).value).toBe('');
+    expect((screen.getByRole('searchbox', { name: 'Search models, labs, or benchmarks' }) as HTMLInputElement).value).toBe('');
   });
   it('keeps the full all-model benchmark selection within the shared-view URL bound', () => {
     const preset = fixture.catalog.presets.find(item => item.name.toLowerCase().includes('all models') && (item.benchmark_ids?.length ?? 0) >= 300);
@@ -91,7 +91,7 @@ describe('curated preset switching', () => {
     window.history.replaceState({}, '', url);
     const user = userEvent.setup();
     const first = render(<App/>);
-    await screen.findByRole('searchbox', { name: 'Search models' });
+    await screen.findByRole('searchbox', { name: 'Search models, labs, or benchmarks' });
     await user.click(screen.getByRole('combobox', { name: 'More model sets' }));
     await user.click(await screen.findByRole('option', { name: historicalPreset.name }));
 

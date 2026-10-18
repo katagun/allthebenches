@@ -277,15 +277,15 @@ for (const width of [375, 1422]) {
 
 test('matrix search is preserved when navigating immediately, then Back and Forward', async ({ page }) => {
   await ready(page);
-  await page.getByRole('searchbox', { name: 'Search models', exact: true }).fill('Gemini');
+  await page.getByRole('searchbox', { name: 'Search models, labs, or benchmarks', exact: true }).fill('Gemini');
   await page.getByRole('link', { name: 'Models', exact: true }).click();
   await expect(page.getByRole('heading', { name: 'Models', exact: true })).toBeVisible();
   await page.goBack();
-  await expect(page.getByRole('searchbox', { name: 'Search models', exact: true })).toHaveValue('Gemini');
+  await expect(page.getByRole('searchbox', { name: 'Search models, labs, or benchmarks', exact: true })).toHaveValue('Gemini');
   await page.goForward();
   await expect(page.getByRole('heading', { name: 'Models', exact: true })).toBeVisible();
   await page.getByRole('link', { name: 'Matrix', exact: true }).click();
-  await expect(page.getByRole('searchbox', { name: 'Search models', exact: true })).toHaveValue('Gemini');
+  await expect(page.getByRole('searchbox', { name: 'Search models, labs, or benchmarks', exact: true })).toHaveValue('Gemini');
 });
 
 for (const theme of ['system', 'class']) {

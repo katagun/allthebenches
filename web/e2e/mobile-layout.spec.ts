@@ -276,3 +276,41 @@ test('matrix search is preserved when navigating immediately, then Back and Forw
   await page.getByRole('link', { name: 'Matrix', exact: true }).click();
   await expect(page.getByRole('searchbox', { name: 'Search models', exact: true })).toHaveValue('Gemini');
 });
+
+for (const theme of ['system', 'class']) {
+  for (const orientation of ['benchmarks', 'models']) {
+    test(`dark ${theme} ${orientation}: score hover and focus retain readable contrast`, async ({ page }) => {
+      await page.setViewportSize({ width: 1422, height: 900 });
+      await page.emulateMedia({ colorScheme: theme === 'system' ? 'dark' : 'light' });
+      await ready(page);
+      if (theme === 'class') await page.evaluate(() => document.documentElement.classList.add('dark'));
+      if (orientation === 'models') {
+        await page.getByRole('combobox', { name: 'Table orientation' }).click();
+        await page.getByRole('option', { name: 'Model rows', exact: true }).click();
+      }
+      const score = page.locator('.score-button[data-heat]').first();
+      await expect(score).toBeVisible();
+      for (const interaction of ['hover', 'focus']) {
+        if (interaction === 'hover') await score.hover();
+        else { await page.mouse.move(0, 0); await page.keyboard.press('Tab'); await score.focus(); }
+        if (interaction === 'focus') expect(await score.evaluate(element => element.matches(':focus-visible'))).toBe(true);
+        const contrast = await score.evaluate(element => {
+          const style = getComputedStyle(element);
+          const canvas = document.createElement('canvas');
+          canvas.width = canvas.height = 1;
+          const context = canvas.getContext('2d')!;
+          const luminance = (color: string) => {
+            context.clearRect(0, 0, 1, 1); context.fillStyle = color; context.fillRect(0, 0, 1, 1);
+            const rgb = [...context.getImageData(0, 0, 1, 1).data].slice(0, 3).map(v => {
+              const c = v / 255; return c <= 0.04045 ? c / 12.92 : ((c + 0.055) / 1.055) ** 2.4;
+            });
+            return rgb[0] * .2126 + rgb[1] * .7152 + rgb[2] * .0722;
+          };
+          const text = luminance(style.color), background = luminance(style.backgroundColor);
+          return (Math.max(text, background) + .05) / (Math.min(text, background) + .05);
+        });
+        expect(contrast).toBeGreaterThanOrEqual(4.5);
+      }
+    });
+  }
+}

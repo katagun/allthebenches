@@ -22,9 +22,9 @@ export type Observation = { id: string; configuration_id: string; benchmark_id: 
 
 export type Preset = { id: string; version: string; name: string; model_configuration_ids?: Array<string>; benchmark_ids?: Array<string>; reason?: string | null; reviewed_at?: string | null; saturation_policy_version?: string | null };
 
-export type PriceObservation = { id: string; route_id?: string | null; quote_scope?: string; currency: string; input_price?: number | string | null; output_price?: number | string | null; cache_read_price?: number | string | null; cache_write_price?: number | string | null; cache_write_1h_price?: number | string | null; additional_charges?: Array<RoutePriceCharge>; price_unit: string; context_tier?: string | null; observed_at: string; source_id: string; available?: boolean; restrictions?: Array<string> };
+export type PriceObservation = { id: string; route_id?: string | null; quote_scope?: string; currency: string; input_price?: number | string | null; output_price?: number | string | null; cache_read_price?: number | string | null; cache_write_price?: number | string | null; cache_write_1h_price?: number | string | null; discount_fraction?: number | string | null; additional_charges?: Array<RoutePriceCharge>; price_unit: string; context_tier?: string | null; observed_at: string; source_id: string; available?: boolean; restrictions?: Array<string> };
 
-export type RoutePerformance = { id: string; route_id: string; metric: "latency" | "throughput"; percentile: "p50" | "p75" | "p90" | "p99"; value: number; unit: "source_reported" | "tokens_per_second"; workload?: string | null; sample_window_seconds: number; sample_count?: number | null; observed_at: string; source_id: string };
+export type RoutePerformance = { id: string; route_id: string; metric: "latency" | "throughput"; percentile: "p50" | "p75" | "p90" | "p99"; value: number; unit: "source_reported" | "seconds" | "tokens_per_second"; workload?: string | null; sample_window_seconds: number; sample_count?: number | null; source_value?: number | null; source_unit?: "source_reported" | "milliseconds" | "tokens_per_second" | null; normalization_basis?: "official_client" | "inferred_ms_scale" | null; observed_at: string; source_id: string };
 
 export type RoutePriceCharge = { name: string; amount: number | string; unit: string };
 

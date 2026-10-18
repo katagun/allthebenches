@@ -2,6 +2,13 @@ import { describe, expect, it } from 'vitest';
 import { DEFAULT_VIEW, decodeViewState, encodeViewState, forgetSavedView, parseViewState, readSavedView, storageKey, writeSavedView } from './viewState';
 
 describe('versioned view state', () => {
+  it('shares the selected portrait benchmark and accepts older links', () => {
+    const view = { ...structuredClone(DEFAULT_VIEW), portraitBenchmarkId: 'arc_agi_2_semi_private' };
+    expect(decodeViewState(encodeViewState(view))).toMatchObject({ ok: true, value: { portraitBenchmarkId: view.portraitBenchmarkId } });
+    expect(parseViewState({ ...view, portraitBenchmarkId: undefined })).toMatchObject({ ok: true, value: { portraitBenchmarkId: null } });
+    expect(parseViewState({ ...view, portraitBenchmarkId: 1 }).ok).toBe(false);
+    expect(parseViewState(view, { knownBenchmarkIds: new Set() })).toMatchObject({ ok: true, unresolved: ['portrait benchmark: arc_agi_2_semi_private'] });
+  });
   it('persists orientation and defaults older links to benchmark rows', () => {
     const view = { ...structuredClone(DEFAULT_VIEW), orientation: 'benchmarks-rows' as const };
     expect(decodeViewState(encodeViewState(view))).toMatchObject({ ok: true, value: { orientation: 'benchmarks-rows' } });

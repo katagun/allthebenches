@@ -37,29 +37,50 @@ def _catalogs(staging: Path):
     }
 
 
-def _per_million(raw: Any) -> str | None:
+def _per_million(raw: Any, multiplier: Decimal = Decimal(1)) -> str | None:
     if raw is None: return None
     try:
-        return format(Decimal(str(raw)) * Decimal(1_000_000), "f")
+        return format(Decimal(str(raw)) * Decimal(1_000_000) * multiplier, "f")
+    except (InvalidOperation, ValueError):
+        return None
+
+
+def _decimal(raw: Any) -> Decimal | None:
+    if raw is None:
+        return None
+    try:
+        value = Decimal(str(raw))
+        return value if value.is_finite() and value >= 0 else None
     except (InvalidOperation, ValueError):
         return None
 
 
 def _quote(price: dict[str, Any] | None) -> dict[str, Any] | None:
     if not isinstance(price, dict): return None
-    fields = {"prompt":"input", "completion":"output", "input_cache_read":"cache_read", "input_cache_write":"cache_write"}
-    values = {label:price.get(key) for key,label in fields.items() if price.get(key) is not None}
+    discount = _decimal(price.get("discount")) if price.get("discount") is not None else Decimal(0)
+    if ("discount" in price and discount is None) or (discount is not None and discount > 1): return None
+    assert discount is not None
+    multiplier = Decimal(1) - discount
+    fields = {"prompt":"input", "completion":"output", "input_cache_read":"cache_read", "input_cache_write":"cache_write", "input_cache_write_1h":"cache_write_1h"}
+    values = {label:price.get(key) for key,label in fields.items() if _decimal(price.get(key)) is not None}
     auxiliary = []
-    auxiliary_keys = ("image", "image_output", "request", "web_search", "audio", "audio_output",
-                      "input_audio_cache", "image_token", "input_cache_write_1h")
-    for key in auxiliary_keys:
-        if price.get(key) is not None:
-            auxiliary.append({"name":key, "raw":str(price[key]), "unit":"source_reported_unit"})
+    auxiliary_units = {"image":"USD per input image", "image_output":"USD per output image",
+                       "request":"USD per request", "web_search":"USD per web search",
+                       "audio":"USD per audio input token", "audio_output":"USD per audio output token",
+                       "input_audio_cache":"USD per cached audio input token", "image_token":"USD per image token",
+                       "internal_reasoning":"USD per internal reasoning token"}
+    for key, unit in auxiliary_units.items():
+        amount = _decimal(price.get(key))
+        if amount is not None:
+            auxiliary.append({"name":key, "listed_raw":str(price[key]),
+                              "effective_raw":format(amount * multiplier, "f"), "unit":unit})
     if not values and not auxiliary: return None
-    return {"source_unit":"USD per token", "raw":values,
-            "usd_per_million_tokens":{label:_per_million(value) for label,value in values.items()},
+    return {"source_unit":"USD per token", "listed_raw":values,
+            "effective_usd_per_million_tokens":{label:_per_million(value,multiplier) for label,value in values.items()},
+            "discount_fraction":str(discount) if price.get("discount") is not None else None,
             "auxiliary_charges":auxiliary,
-            "conversion":"raw USD/token × 1,000,000; auxiliary charge units are unspecified by the endpoint API and remain source-reported",
+            "conversion":"USD/token × (1 − discount) × 1,000,000; the OpenRouter endpoint schema defines separate billing units for per-request, per-search, image, audio, and image-token charges",
+            "pricing_overrides":"Conditional overrides are not included; values reflect default endpoint conditions." if price.get("overrides") else None,
             "overrides":price.get("overrides", [])}
 
 
@@ -69,9 +90,9 @@ def _endpoint_performance(endpoint: dict[str, Any]) -> dict[str, Any] | None:
     if not metrics:
         return None
     return {"sample_window_seconds":1800, "reported_fields":metrics,
-            "units":{"latency_last_30m":"unit not specified in the endpoint API; source values retained",
+            "units":{"latency_last_30m":"live payload values estimated to be milliseconds by scale; importer normalizes to estimated seconds",
                      "throughput_last_30m":"tokens per second"},
-            "interpretation":"OpenRouter provider endpoint metrics use the rolling 30-minute window. Endpoint API docs do not state the latency unit or measurement semantics; values are preserved as reported. Throughput is tokens/second per OpenRouter's documentation. Workload request_count is the reported sample count when present."}
+            "interpretation":"OpenRouter provider endpoint metrics use the rolling 30-minute window. The endpoint example uses fractional latency values but does not document its unit; current live endpoint values are in the hundreds or thousands. Those live values are estimated as milliseconds by scale and normalized to seconds; the current website client formatter has a generic millisecond-to-second latency conversion, but this field-to-formatter path is unconfirmed. OpenRouter describes model-page latency as total round-trip time and reasoning-model latency as time until the first reasoning token, so event semantics may vary by model. Throughput is tokens/second; OpenRouter says reasoning-model throughput includes reasoning and output tokens. Workload request_count is the reported sample count when present."}
 
 
 def candidate_openrouter_ids(dataset_path: Path, staging: Path) -> list[str]:

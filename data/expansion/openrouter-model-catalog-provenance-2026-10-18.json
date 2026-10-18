@@ -1,0 +1,10 @@
+{
+  "url": "https://openrouter.ai/api/v1/models",
+  "retrieved_at": "2026-10-18T13:33:27.188636+00:00",
+  "content_sha256": "c2c629aae5b45de78cd9fa1f2f708b5fa53cbae951dc16d60f667de2df49d2a7",
+  "local_response": "data/expansion/openrouter-model-catalog-2026-10-18.json",
+  "identities_reviewed": [
+    "deepseek/deepseek-r1",
+    "deepseek/deepseek-r1-0528"
+  ]
+}

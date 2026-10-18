@@ -131,3 +131,9 @@ is bounded to 25 score cards per page. Unknown IDs and malformed routes show a
 recoverable not-found page. No runtime API or new hosting service is required.
 
 The Python build also generates `/models/<id>/` and `/benchmarks/<id>/` HTML pages, directory indexes, a sitemap, and robots.txt. These contain reviewed scores and original sources without requiring JavaScript; hash routes retain the interactive experience. See [Static pages](STATIC_PAGES.md) and [Freshness](FRESHNESS.md).
+
+## Responsive comparison surfaces
+
+Portrait phones (up to 600 CSS pixels) mount `PortraitComparison` instead of the matrix. It reuses the same filtered configuration rows, model identities, score rendering, and evidence panels. A selected benchmark is stored as `portraitBenchmarkId` in the shared view state; without a selection, the view chooses a visible benchmark with the most unambiguous scores. Model rows are ordered by score direction, with missing or ambiguous results last, and paginated in groups of 20. The matrix remains available as an explicit alternative. Only one surface is mounted at a time.
+
+Landscape phones use the matrix with five compact model columns and secondary controls behind Options. Desktop retains width-based column capacity and existing DOM bounds. Layout tests cover overflow, sticky cells, visible score space, rotation, evidence access, and shared-state restoration; they run in pre-commit and CI.

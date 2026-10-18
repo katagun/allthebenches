@@ -108,7 +108,7 @@ describe('App view workflows', () => {
       const name = String(input).split('/').pop()?.replace('.json', '') ?? '';
       return response(preciseFiles[name]);
     }));
-    setSharedUrl(viewWith({ presetId: 'frontier_oct2026', visibleColumnIds: checks.map(check => check.benchmarkId) }));
+    setSharedUrl(viewWith({ presetId: 'frontier_oct2026', compare: true, selectedConfigurationIds: ['gpt6_astra_google_reported'], visibleColumnIds: checks.map(check => check.benchmarkId) }));
 
     const user = userEvent.setup();
     render(<App />);

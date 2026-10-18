@@ -1,0 +1,372 @@
+[
+  {
+    "model_id": "gpt61_sol",
+    "url": "https://arcprize.org/results/openai-gpt-6-1-sol",
+    "sha256": "bfd330f6200bed9ef92a852f22ee2bbc651826ffab21a12b81527a7664c46ed9",
+    "retrieved_at": "2026-10-18T03:13:44.877659+00:00",
+    "table": [
+      [
+        "Variant",
+        "ARC-AGI-1",
+        "ARC-AGI-2",
+        "ARC-AGI-3 (Standard harness)",
+        "ARC-AGI-3 (Provider Adapter harness)"
+      ],
+      [
+        "Max",
+        "96.5%",
+        "94.2%",
+        "52.7%",
+        "96.2%"
+      ],
+      [
+        "XHigh",
+        "98.5%",
+        "91.7%",
+        "39.9%",
+        "96.4%"
+      ],
+      [
+        "High",
+        "98.5%",
+        "91.7%",
+        "26.7%",
+        "95.0%"
+      ],
+      [
+        "Medium",
+        "95.5%",
+        "86.7%",
+        "10.6%",
+        "91.0%"
+      ],
+      [
+        "Low",
+        "93.5%",
+        "76.7%",
+        "3.9%",
+        "82.8%"
+      ]
+    ]
+  },
+  {
+    "model_id": "gpt6_astra",
+    "url": "https://arcprize.org/results/openai-gpt-6-astra",
+    "sha256": "56782a69fd47c4c218086427fe8eeef8929c8729ebb1876708b4b6b7ecfd5a5e",
+    "retrieved_at": "2026-10-18T03:13:45.029258+00:00",
+    "table": [
+      [
+        "Variant",
+        "ARC-AGI-1",
+        "ARC-AGI-2",
+        "ARC-AGI-3 (Standard harness)",
+        "ARC-AGI-3 (Provider Adapter harness)"
+      ],
+      [
+        "Max",
+        "97.5%",
+        "95.0%",
+        "62.7%",
+        "98.6%"
+      ],
+      [
+        "XHigh",
+        "98.5%",
+        "93.3%",
+        "59.3%",
+        "98.4%"
+      ],
+      [
+        "High",
+        "98.5%",
+        "92.1%",
+        "54.8%",
+        "99.9%"
+      ],
+      [
+        "Medium",
+        "97.5%",
+        "92.1%",
+        "38.6%",
+        "98.4%"
+      ],
+      [
+        "Low",
+        "96.5%",
+        "85.4%",
+        "17.5%",
+        "98.0%"
+      ],
+      [
+        "None",
+        "86.0%",
+        "59.6%",
+        "35.2%",
+        "96.7%"
+      ]
+    ]
+  },
+  {
+    "model_id": "gemini4_argon",
+    "url": "https://arcprize.org/results/google-gemini-4-argon",
+    "sha256": "3508c4675048491fc4e64c7b7d8bd5cfb6e7ea694edded1bcf304a4db4b1b34e",
+    "retrieved_at": "2026-10-18T03:13:45.262480+00:00",
+    "table": [
+      [
+        "Variant",
+        "ARC-AGI-1",
+        "ARC-AGI-2",
+        "ARC-AGI-3 (Standard harness)",
+        "ARC-AGI-3 (Provider Adapter harness)"
+      ],
+      [
+        "High",
+        "98.5%",
+        "91.3%",
+        "\u2014",
+        "97.3%"
+      ],
+      [
+        "Medium",
+        "98.5%",
+        "87.1%",
+        "46.3%",
+        "97.3%"
+      ],
+      [
+        "Low",
+        "76.5%",
+        "42.1%",
+        "49.8%",
+        "97.5%"
+      ]
+    ]
+  },
+  {
+    "model_id": "grok47",
+    "url": "https://arcprize.org/results/xai-grok-4-7",
+    "sha256": "586d3ad92ca14a79e5f588706c2b42177490483312ee21967c1120b961d5aa9e",
+    "retrieved_at": "2026-10-18T03:13:45.500964+00:00",
+    "table": [
+      [
+        "Variant",
+        "ARC-AGI-1",
+        "ARC-AGI-2",
+        "ARC-AGI-3 (Standard harness)",
+        "ARC-AGI-3 (Provider Adapter harness)"
+      ],
+      [
+        "XHigh",
+        "89.5%",
+        "61.4%",
+        "1.8%",
+        "7.0%"
+      ],
+      [
+        "High",
+        "90.2%",
+        "58.3%",
+        "1.7%",
+        "10.0%"
+      ],
+      [
+        "Medium",
+        "90.0%",
+        "58.8%",
+        "1.7%",
+        "8.4%"
+      ],
+      [
+        "Low",
+        "63.3%",
+        "16.7%",
+        "0.2%",
+        "0.8%"
+      ]
+    ]
+  },
+  {
+    "model_id": "claude_opus55",
+    "url": "https://arcprize.org/results/anthropic-claude-opus-5-5",
+    "sha256": "b9e4269f9dadee96db03bdf9999370aa62f354812f8a83b7baf1b07eeda104dd",
+    "retrieved_at": "2026-10-18T03:13:45.739954+00:00",
+    "table": [
+      [
+        "Variant",
+        "ARC-AGI-1",
+        "ARC-AGI-2",
+        "ARC-AGI-3"
+      ],
+      [
+        "Max",
+        "97.5%",
+        "91.7%",
+        "\u2014"
+      ],
+      [
+        "XHigh",
+        "97.5%",
+        "92.5%",
+        "\u2014"
+      ],
+      [
+        "High",
+        "98.5%",
+        "93.3%",
+        "\u2014"
+      ],
+      [
+        "Medium",
+        "97.5%",
+        "87.5%",
+        "\u2014"
+      ],
+      [
+        "Low",
+        "88.5%",
+        "70.1%",
+        "\u2014"
+      ]
+    ]
+  },
+  {
+    "model_id": "claude_fable51",
+    "url": "https://arcprize.org/results/anthropic-claude-fable-5-1",
+    "sha256": "e6069074f6fe00e997120e9226ecfa6461424a11329feefaae0efe363b3d891d",
+    "retrieved_at": "2026-10-18T03:13:46.013534+00:00",
+    "table": [
+      [
+        "Variant",
+        "ARC-AGI-1",
+        "ARC-AGI-2",
+        "ARC-AGI-3"
+      ],
+      [
+        "Max",
+        "97.5%",
+        "90.0%",
+        "\u2014"
+      ],
+      [
+        "XHigh",
+        "96.5%",
+        "90.0%",
+        "\u2014"
+      ],
+      [
+        "High",
+        "96.0%",
+        "88.8%",
+        "\u2014"
+      ],
+      [
+        "Medium",
+        "94.5%",
+        "86.3%",
+        "\u2014"
+      ],
+      [
+        "Low",
+        "90.0%",
+        "78.3%",
+        "\u2014"
+      ]
+    ]
+  },
+  {
+    "model_id": "deepseek_v4_pro_0813",
+    "url": "https://arcprize.org/results/deepseek-v4-pro-0813",
+    "sha256": "c39597f07881d9c11e5b5e4a1da88f76e2acc7fbbec89f043aed4ff334b3bc6f",
+    "retrieved_at": "2026-10-18T03:13:46.251079+00:00",
+    "table": [
+      [
+        "Variant",
+        "ARC-AGI-1",
+        "ARC-AGI-2",
+        "ARC-AGI-3"
+      ],
+      [
+        "Max",
+        "90.0%",
+        "61.3%",
+        "\u2014"
+      ],
+      [
+        "High",
+        "87.2%",
+        "59.7%",
+        "\u2014"
+      ],
+      [
+        "Low",
+        "90.5%",
+        "56.3%",
+        "\u2014"
+      ],
+      [
+        "None",
+        "13.0%",
+        "0.8%",
+        "\u2014"
+      ]
+    ]
+  },
+  {
+    "model_id": "kimi_k3",
+    "url": "https://arcprize.org/results/moonshot-kimi-k3",
+    "sha256": "54525fc03a62343e0574c34b99a5430b899727bd6795e69f710a9f51f0c8bc45",
+    "retrieved_at": "2026-10-18T03:13:46.468224+00:00",
+    "table": [
+      [
+        "Variant",
+        "ARC-AGI-1",
+        "ARC-AGI-2",
+        "ARC-AGI-3"
+      ],
+      [
+        "Max",
+        "94.5%",
+        "60.4%",
+        "\u2014"
+      ],
+      [
+        "High",
+        "86.7%",
+        "55.0%",
+        "\u2014"
+      ],
+      [
+        "Low",
+        "65.7%",
+        "12.4%",
+        "\u2014"
+      ]
+    ]
+  },
+  {
+    "model_id": "claude_opus5",
+    "url": "https://arcprize.org/results/anthropic-claude-opus-5",
+    "sha256": "b9364bb6a6ac97f02d913e3ddf13d689e7535c4ed6763dcab0cb272136132982",
+    "retrieved_at": "2026-10-18T03:13:46.584563+00:00",
+    "table": [
+      [
+        "Variant",
+        "ARC-AGI-1",
+        "ARC-AGI-2",
+        "ARC-AGI-3"
+      ],
+      [
+        "Max",
+        "97.5%",
+        "90.4%",
+        "\u2014"
+      ],
+      [
+        "High",
+        "97.5%",
+        "88.3%",
+        "30.2%"
+      ]
+    ]
+  }
+]

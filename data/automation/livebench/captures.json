@@ -1,0 +1,51 @@
+{
+  "https://livebench.ai/": {
+    "bytes": 889,
+    "content_type": "text/html; charset=utf-8",
+    "retrieved_at": "2026-10-18T16:20:52.538677+00:00",
+    "sha256": "0df6712aba143efdabd179149251af60499d6f5c38b499f298960855549b55e7",
+    "url": "https://livebench.ai/"
+  },
+  "https://livebench.ai/breakdown_2026_09_02.json": {
+    "bytes": 83044,
+    "content_type": "application/json; charset=utf-8",
+    "retrieved_at": "2026-10-18T16:20:52.726704+00:00",
+    "sha256": "8aa70d4dda6071ecb7589211edfea6f93c4f52cadba7da059ff8421fdb6e65ab",
+    "url": "https://livebench.ai/breakdown_2026_09_02.json"
+  },
+  "https://livebench.ai/categories_2026_09_02.json": {
+    "bytes": 272,
+    "content_type": "application/json; charset=utf-8",
+    "retrieved_at": "2026-10-18T16:20:52.721616+00:00",
+    "sha256": "6af780738e495c0339618208ded779325e59d951c38ead7a566fe54e68bb07b1",
+    "url": "https://livebench.ai/categories_2026_09_02.json"
+  },
+  "https://livebench.ai/static/js/main.38b3cf3c.js": {
+    "bytes": 359617,
+    "content_type": "application/javascript; charset=utf-8",
+    "retrieved_at": "2026-10-18T16:20:52.737194+00:00",
+    "sha256": "9d753925034a4107c9bff51667faa07f48322d32e6f34d534f833cb2357edbb7",
+    "url": "https://livebench.ai/static/js/main.38b3cf3c.js"
+  },
+  "https://livebench.ai/table_2026_09_02.csv": {
+    "bytes": 2492,
+    "content_type": "text/csv; charset=utf-8",
+    "retrieved_at": "2026-10-18T16:20:52.630612+00:00",
+    "sha256": "dea13d4db85a4a1c898f29835f5c58635848f1904870490ff14259596d66abcc",
+    "url": "https://livebench.ai/table_2026_09_02.csv"
+  },
+  "https://livebench.ai/v1/categories_2026_06_25.json": {
+    "bytes": 725,
+    "content_type": "application/json; charset=utf-8",
+    "retrieved_at": "2026-10-18T16:20:52.717418+00:00",
+    "sha256": "dad300ad18655b69db720e1b88fc5a5eac06c5b2f0e52c2bf50f10ff057674f3",
+    "url": "https://livebench.ai/v1/categories_2026_06_25.json"
+  },
+  "https://livebench.ai/v1/table_2026_06_25.csv": {
+    "bytes": 11910,
+    "content_type": "text/csv; charset=utf-8",
+    "retrieved_at": "2026-10-18T16:20:52.626004+00:00",
+    "sha256": "09d810986777c92b75b40a58a1829e0318e34cb5693ecae970b3145852271ba7",
+    "url": "https://livebench.ai/v1/table_2026_06_25.csv"
+  }
+}

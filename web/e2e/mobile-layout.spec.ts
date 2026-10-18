@@ -288,6 +288,51 @@ test('matrix search is preserved when navigating immediately, then Back and Forw
   await expect(page.getByRole('searchbox', { name: 'Search models, labs, or benchmarks', exact: true })).toHaveValue('Gemini');
 });
 
+for (const theme of ['system', 'class', 'light']) {
+  test(`portrait ${theme}: heatmap scores have readable resting and interactive contrast`, async ({ page }) => {
+    await page.setViewportSize({ width: 390, height: 844 });
+    await page.emulateMedia({ colorScheme: theme === 'system' ? 'dark' : 'light' });
+    await ready(page, false);
+    if (theme === 'class') await page.evaluate(() => document.documentElement.classList.add('dark'));
+    const scores = page.locator('.portrait-model-score .score-button[data-heat]');
+    await expect(scores.first()).toBeVisible();
+    for (const interaction of ['rest', 'hover', 'focus']) {
+      for (const score of await scores.all()) {
+        if (interaction === 'hover') await score.hover();
+        if (interaction === 'focus') { await page.mouse.move(0, 0); await page.keyboard.press('Tab'); await score.focus(); }
+        const contrast = await score.evaluate(element => {
+          const canvas = document.createElement('canvas');
+          canvas.width = canvas.height = 1;
+          const context = canvas.getContext('2d')!;
+          const paint = (color: string) => { context.fillStyle = color; context.fillRect(0, 0, 1, 1); };
+          const luminance = () => {
+            const rgb = [...context.getImageData(0, 0, 1, 1).data].slice(0, 3).map(value => {
+              const c = value / 255;
+              return c <= .04045 ? c / 12.92 : ((c + .055) / 1.055) ** 2.4;
+            });
+            return rgb[0] * .2126 + rgb[1] * .7152 + rgb[2] * .0722;
+          };
+          const ancestors: Element[] = [];
+          for (let parent = element.parentElement; parent; parent = parent.parentElement) ancestors.unshift(parent);
+          paint('white');
+          for (const parent of ancestors) paint(getComputedStyle(parent).backgroundColor);
+          const style = getComputedStyle(element);
+          paint(style.backgroundColor);
+          const heat = getComputedStyle(element, '::before');
+          context.globalAlpha = Number(heat.opacity);
+          paint(heat.backgroundColor);
+          context.globalAlpha = 1;
+          const background = luminance();
+          paint(style.color);
+          const text = luminance();
+          return (Math.max(text, background) + .05) / (Math.min(text, background) + .05);
+        });
+        expect(contrast).toBeGreaterThanOrEqual(4.5);
+      }
+    }
+  });
+}
+
 for (const theme of ['system', 'class']) {
   for (const orientation of ['benchmarks', 'models']) {
     test(`dark ${theme} ${orientation}: score hover and focus retain readable contrast`, async ({ page }) => {

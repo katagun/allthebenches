@@ -55,7 +55,7 @@
 
 /* A decorative full-cell fill behind the unchanged, accessible score button. */
 .benchmark-table td:has(.score-button[data-heat]){position:relative;isolation:isolate}
-.score-button[data-heat]::before{content:"";position:absolute;inset:0;background:var(--heat-fill);z-index:-1;pointer-events:none}
+.score-button[data-heat]::before{content:"";position:absolute;inset:0;background:var(--heat-fill);opacity:var(--heat-opacity,.55);z-index:-1;pointer-events:none}
 .score-button[data-heat]{color:var(--heat-text,#183b30)}
 .score-button[data-heat]:hover,.score-button[data-heat]:focus-visible{background:var(--accent);color:var(--accent-foreground)}
 .score-button:focus-visible{outline:2px solid var(--ring);outline-offset:2px}
@@ -206,7 +206,6 @@
 .category-nav button{font-size:12px}
 .table-card{box-shadow:0 1px 3px #00000006;border-color:var(--border)}
 .benchmark-table th{background:var(--background)}
-.benchmark-table .score-button[data-heat]::before{opacity:var(--heat-opacity,.55)}
 .transposed-table .model-cell>[role="checkbox"],.transposed-table .expand-button{display:none}
 .transposed-table .model-link{font-size:12px;line-height:1.35}
 .transposed-table .reasoning-label{background:transparent;padding-left:0;color:var(--muted-foreground);font-weight:400}

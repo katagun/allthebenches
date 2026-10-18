@@ -51,4 +51,16 @@ def test_reviewed_snapshot_manifest_matches_production_and_presets():
             assert published['source_id'] == candidate['source_id']
             assert published['benchmark_id'] in preset['benchmark_ids']
             assert published['configuration_id'] in preset['model_configuration_ids']
-    assert merge_fragments(data, fragments, reviewed=True) == data
+    # Replaying historical imports must preserve the explicitly reviewed source-link
+    # correction without pretending the original snapshot used the corrected URL.
+    from copy import deepcopy
+    historical = deepcopy(data)
+    correction = json.loads(Path('data/corrections/livebench-source-links-2026-10-18.json').read_text())
+    sources = {s['id']: s for s in historical['sources']}
+    for change in correction['corrections']:
+        source = sources[change['source_id']]
+        assert source['content_sha256'] == change['content_sha256']
+        for field, values in change['fields'].items():
+            assert source[field] == values['after']
+            source[field] = values['before']
+    assert merge_fragments(historical, fragments, reviewed=True) == historical

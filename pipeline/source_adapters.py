@@ -74,7 +74,17 @@ def _vals(archive: Archive, retrieved_at: str, dataset: dict) -> tuple[dict, dic
     snapshot["retrieved_at"] = retrieved_at
     snapshot["rows"] = []
     decisions = []
-    contracts = {(r["source_slug"], r["model_label"], r["model_page_href"]): r for r in baseline["rows"]}
+    # Only explicitly reviewed protocol fields distinguish repeated model entries.
+    # Price, duration, rank and scores are measurements, never identity keys.
+    protocol_fields = {"web_search": ("Search Tool",)}
+
+    def identity(slug, label, href, cells):
+        return (slug, label, href, *(cells.get(field) for field in protocol_fields.get(slug, ())))
+
+    contracts = {}
+    for row in baseline["rows"]:
+        key = identity(row["source_slug"], row["model_label"], row["model_page_href"], row["protocol_cells"])
+        contracts.setdefault(key, []).append(row)
     for page in snapshot["pages"]:
         raw = archive.fetch(page["url"]).read_bytes()
         parser = Tables()
@@ -89,7 +99,8 @@ def _vals(archive: Archive, retrieved_at: str, dataset: dict) -> tuple[dict, dic
         if not rows:
             raise ValueError(f"Empty Vals leaderboard: {page['url']}")
         identity_counts = Counter(
-            (r["cells"][expected.index("Model")], r["hrefs"][0])
+            identity(page["slug"], r["cells"][expected.index("Model")], r["hrefs"][0],
+                     dict(zip(expected, r["cells"], strict=True)))
             for r in rows if len(r["cells"]) == len(expected) and len(set(r["hrefs"])) == 1
         )
         for position, row in enumerate(rows, 1):
@@ -99,14 +110,15 @@ def _vals(archive: Archive, retrieved_at: str, dataset: dict) -> tuple[dict, dic
                 raise ValueError(f"Vals row shape drift: {page['slug']} row {position}")
             label = cells[expected.index("Model")]
             href = row["hrefs"][0] if row["hrefs"] else ""
-            key = (page["slug"], label, href)
-            if identity_counts[(label, href)] > 1:
+            key = identity(page["slug"], label, href, dict(zip(expected, cells, strict=True)))
+            if identity_counts[key] > 1 or len(contracts.get(key, [])) > 1:
                 decisions.append({**decision, "status": "unresolved_duplicate_identity"})
                 continue
-            template = contracts.get(key)
-            if template is None:
+            templates = contracts.get(key, [])
+            if not templates:
                 decisions.append({**decision, "status": "unresolved_identity"})
                 continue
+            template = templates[0]
             score = cells[expected.index(template["score_header"])].strip()
             pattern = r"[+-]?(?:\d+(?:\.\d*)?|\.\d+)" + ("%" if template["unit"] == "%" else "")
             if re.fullmatch(pattern, score) is None:

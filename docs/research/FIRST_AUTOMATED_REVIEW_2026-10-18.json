@@ -1,0 +1,124 @@
+{
+  "decision": "Preserve all published scores; fix collector identity and source links; archive review evidence.",
+  "new_results": 0,
+  "published_observations": 6538,
+  "review_date": "2026-10-18",
+  "sources": {
+    "aa": {
+      "captures_sha256": "7b18217a46ad6a74ae2d9222363e6783cbf7f71406e4bc861d49acc49c5be73c",
+      "changed_scores": 0,
+      "coverage_counts": {
+        "candidate_observations": 1082,
+        "source_models": 704
+      },
+      "decision_counts": {
+        "mapped": 67,
+        "unresolved_identity_or_configuration": 637
+      },
+      "denominators": null,
+      "new_results": 0,
+      "original_candidate_sha256": "4b729a09f67af3b69ec3389382ddb14c7a9f1d646b9c36c6236bfbe6506e55aa",
+      "original_proposed_observations": 1082,
+      "raw_captures_verified": 1,
+      "replayed_candidate_observations": 1082,
+      "verified_existing_results": 1082
+    },
+    "arena": {
+      "captures_sha256": "81251e001e86aa085398c8d01dcc473006e68937f0ae47f6cc96942033c13a39",
+      "changed_scores": 0,
+      "coverage_counts": {
+        "benchmarks": 0,
+        "candidate_observations": 0,
+        "duplicate_identical": 2564,
+        "series": 121,
+        "source_specific_configurations": 0,
+        "unresolved_alias": 27823,
+        "unresolved_alias_labels": 2097,
+        "unresolved_configuration_labels": 0
+      },
+      "decision_counts": {
+        "duplicate_identical": 2564
+      },
+      "denominators": {
+        "scored_records": 30387,
+        "source_records": 30387
+      },
+      "new_results": 0,
+      "original_candidate_sha256": "c7a11aad5aa0f803646be356ca02713a83966930c44413fa14d00a802ffaa080",
+      "original_proposed_observations": 2564,
+      "raw_captures_verified": 26,
+      "replayed_candidate_observations": 0,
+      "verified_existing_results": 2564
+    },
+    "epoch": {
+      "captures_sha256": "4304b554e37b36bc91207b431f36897823ca167c3aeb3a55750ad50dedb5ed00",
+      "changed_scores": 0,
+      "coverage_counts": {
+        "excluded_conflicting_reasoning_settings": 1,
+        "excluded_unreviewed_metric_contract": 8,
+        "staged": 925,
+        "unresolved_model": 6175
+      },
+      "decision_counts": {},
+      "denominators": null,
+      "new_results": 0,
+      "original_candidate_sha256": "309365c2063282acf97f92cd3aac839c76459b208d614fc5bc4328092c19767e",
+      "original_proposed_observations": 925,
+      "raw_captures_verified": 1,
+      "replayed_candidate_observations": 925,
+      "verified_existing_results": 925
+    },
+    "livebench": {
+      "captures_sha256": "727dccf65763d90a8a3994d08a64b77de9b7eb8e8fd0372f5e6e9332821fb5e1",
+      "changed_scores": 0,
+      "coverage_counts": {
+        "candidate_observations": 0,
+        "duplicate_existing": 586,
+        "no_score_cells": 0,
+        "source_specific_configurations": 0,
+        "unresolved_alias_cells": 1390,
+        "unresolved_configuration_cells": 0
+      },
+      "decision_counts": {
+        "duplicate_existing": 586
+      },
+      "denominators": {
+        "v1": {
+          "numeric_score_cells": 1633,
+          "source_rows": 71
+        },
+        "v2": {
+          "numeric_score_cells": 343,
+          "source_rows": 49
+        }
+      },
+      "new_results": 0,
+      "original_candidate_sha256": "36c18a0c01d6465bab07bea830b9e6e6a822b8073fb59a3d9ad5a5bffd18f7aa",
+      "original_proposed_observations": 196,
+      "raw_captures_verified": 7,
+      "replayed_candidate_observations": 0,
+      "verified_existing_results": 586
+    },
+    "vals": {
+      "captures_sha256": "fbf090325181194101f99a75be8bf7c68893aad66d65a2572853cb99cd420687",
+      "changed_scores": 0,
+      "coverage_counts": {
+        "candidate_observations": 533,
+        "rows_seen": 3177
+      },
+      "decision_counts": {
+        "candidate_import": 533,
+        "unresolved_duplicate_identity": 19,
+        "unresolved_identity": 2625
+      },
+      "denominators": null,
+      "new_results": 0,
+      "original_candidate_sha256": "c0756c5c13185757e81a3b6f3223613b095ca9fe9b0c1c430fe9f89682671436",
+      "original_proposed_observations": 531,
+      "raw_captures_verified": 45,
+      "replayed_candidate_observations": 533,
+      "verified_existing_results": 533
+    }
+  },
+  "verified_existing_results": 5690
+}

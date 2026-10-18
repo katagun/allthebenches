@@ -29,10 +29,11 @@ def test_arena_import_pins_revision_and_keeps_explicit_effort():
 def test_arena_import_accounts_duplicate_and_new_exact_configuration(monkeypatch, tmp_path):
     integrated = json.loads((ROOT / "data/curated/dataset.json").read_text())
     dataset = dataset_before_staged_import(integrated, "arena-hf")
-    # Keep the test focused on configuration creation even though later importers
-    # have since added the same generic effort labels for this model.
-    dataset["configurations"] = [c for c in dataset["configurations"] if not (
-        c["model_id"] == "claude_opus55" and (c.get("reasoning_label") or "").casefold() == "high")]
+    # Make this fixture's reviewed source identity explicit. Generic equal-effort
+    # configurations from other evaluators must not establish source identity.
+    prior = next(o for o in dataset["observations"]
+                 if o["id"] == "arena_gpt6_astra_max_text_overall_20261015")
+    prior["setup"].update(upstream_model_id="GPT-6 Astra (Max)", reasoning_effort="max")
     rows = [
         {"model_name": "GPT-6 Astra (Max)", "organization": "openai", "license": "Proprietary",
          "rating": 1500.5, "rating_lower": 1498.0, "rating_upper": 1503.0, "variance": 1.5,
@@ -60,8 +61,8 @@ def test_arena_import_accounts_duplicate_and_new_exact_configuration(monkeypatch
                  "lfs": {"oid": arena_import.sha256(path)}}]
     fragment, coverage = arena_import.build(dataset, {"text": path}, manifest)
     assert len(fragment["observations"]) == 3
-    imported = next(o for o in fragment["observations"] if o["configuration_id"] == "gpt6_astra_high")
-    assert imported["configuration_id"] == "gpt6_astra_high"
+    imported = next(o for o in fragment["observations"] if o["configuration_id"] == "arena_hf_gpt6_astra_high")
+    assert imported["configuration_id"] == "arena_hf_gpt6_astra_high"
     assert imported["setup"]["reasoning_effort"] == "high"
     assert imported["uncertainty"]["lower_bound"] == 1488.0
     assert imported["setup"]["source_count"] == 567

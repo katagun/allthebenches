@@ -106,7 +106,10 @@ def build(dataset: dict, v1_path: Path, v2_path: Path, categories_v1_path: Path,
           categories_v2_path: Path, breakdown_v2_path: Path, frontend_config_path: Path,
           retrieved_at: str = "2026-10-18T00:00:00Z") -> tuple[dict, dict]:
     model_lookup = canonical_model_lookup(dataset)
-    configs = config_lookup(dataset)
+    from pipeline.arena_import import source_configuration_index
+
+    source_configs = source_configuration_index(dataset, "LiveBench")
+    configurations = {c["id"]: c for c in dataset["configurations"]}
     frontend_capture = json.loads(frontend_config_path.read_text(encoding="utf-8"))
     frontend = frontend_capture["v2_models"]
     v1_categories = json.loads(categories_v1_path.read_text(encoding="utf-8"))
@@ -213,11 +216,10 @@ def build(dataset: dict, v1_path: Path, v2_path: Path, categories_v1_path: Path,
                     queued["numeric_cells"] += 1
                     queued["columns"].append(column)
                     continue
-                config_id = configs.get((model_id, effort))
-                if not config_id and effort == "unknown":
-                    unknown_configs = [c for c in dataset["configurations"] if c["model_id"] == model_id and (c.get("reasoning_label") or "unknown").casefold() == "unknown"]
-                    if len(unknown_configs) == 1:
-                        config_id = unknown_configs[0]["id"]
+                config_id = source_configs.get((external_name, model_id, effort))
+                source_config_id = f"livebench_{model_id}_{effort}"
+                if config_id is None and source_config_id in configurations:
+                    config_id = source_config_id
                 if config_id is None:
                     key = (model_id, effort)
                     if key not in created_configs:

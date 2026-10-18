@@ -42,11 +42,11 @@
   "files": {
     "catalog.json": {
       "bytes": 4267591,
-      "sha256": "4c16cd97b2b045345345fdc11bd03b8ea91825c41622e8676599be48219652c3"
+      "sha256": "01cd03e73658462dc567e8b205aa062de0c264513af3c52aec18f70290a9cbd3"
     },
     "details.json": {
       "bytes": 11385823,
-      "sha256": "c6ad2d2e279e679f36500f02866317d942d8a054f15828ccb977345fb7d56120"
+      "sha256": "bdefa3306f93f72b9185fa142f048d5c046df996458e72cb63b4704db91ecd99"
     },
     "market.json": {
       "bytes": 410606,
@@ -57,7 +57,7 @@
       "sha256": "c3fe4b4b81a9e07eb384da49040ec5cd6524732b5b10a26cbcc754daec917221"
     }
   },
-  "generated_at": "2026-10-18T14:53:03.967571+00:00",
+  "generated_at": "2026-10-18T16:31:54.358528+00:00",
   "schema_version": "1.0.0",
-  "snapshot_id": "49c4bb68f3b1d696"
+  "snapshot_id": "83c9bb43ef43b7d5"
 }

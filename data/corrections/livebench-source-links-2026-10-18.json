@@ -1,0 +1,36 @@
+{
+  "reviewed_on": "2026-10-18",
+  "reason": "Correct URL date separators; content hashes unchanged and successful official downloads archived.",
+  "corrections": [
+    {
+      "source_id": "livebench_v1_20260625",
+      "content_sha256": "09d810986777c92b75b40a58a1829e0318e34cb5693ecae970b3145852271ba7",
+      "evidence": "data/automation/livebench/captures.json",
+      "fields": {
+        "url": {
+          "before": "https://livebench.ai/v1/table_2026-06-25.csv",
+          "after": "https://livebench.ai/v1/table_2026_06_25.csv"
+        },
+        "locator": {
+          "before": "CSV header and all model rows; categories from https://livebench.ai/v1/categories_2026-06-25.json",
+          "after": "CSV header and all model rows; categories from https://livebench.ai/v1/categories_2026_06_25.json"
+        }
+      }
+    },
+    {
+      "source_id": "livebench_v2_20260902",
+      "content_sha256": "dea13d4db85a4a1c898f29835f5c58635848f1904870490ff14259596d66abcc",
+      "evidence": "data/automation/livebench/captures.json",
+      "fields": {
+        "url": {
+          "before": "https://livebench.ai/table_2026-09-02.csv",
+          "after": "https://livebench.ai/table_2026_09_02.csv"
+        },
+        "locator": {
+          "before": "CSV header and all model rows; categories from https://livebench.ai/categories_2026-09-02.json",
+          "after": "CSV header and all model rows; categories from https://livebench.ai/categories_2026_09_02.json"
+        }
+      }
+    }
+  ]
+}

@@ -1120,6 +1120,23 @@
           "title": "Currency",
           "type": "string"
         },
+        "discount_fraction": {
+          "anyOf": [
+            {
+              "maximum": 1.0,
+              "minimum": 0.0,
+              "type": "number"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Discount Fraction"
+        },
         "id": {
           "title": "Id",
           "type": "string"
@@ -1218,6 +1235,22 @@
           "title": "Metric",
           "type": "string"
         },
+        "normalization_basis": {
+          "anyOf": [
+            {
+              "enum": [
+                "official_client",
+                "inferred_ms_scale"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Normalization Basis"
+        },
         "observed_at": {
           "format": "date-time",
           "title": "Observed At",
@@ -1259,9 +1292,40 @@
           "title": "Source Id",
           "type": "string"
         },
+        "source_unit": {
+          "anyOf": [
+            {
+              "enum": [
+                "source_reported",
+                "milliseconds",
+                "tokens_per_second"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Source Unit"
+        },
+        "source_value": {
+          "anyOf": [
+            {
+              "minimum": 0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Source Value"
+        },
         "unit": {
           "enum": [
             "source_reported",
+            "seconds",
             "tokens_per_second"
           ],
           "title": "Unit",

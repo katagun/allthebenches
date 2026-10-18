@@ -1,8 +1,16 @@
 import { test, expect, type Page } from '@playwright/test';
 
-async function ready(page: Page) {
+async function ready(page: Page, matrix = true) {
   await page.goto('./');
-  await expect(page.locator('tbody tr').first()).toBeVisible();
+  const viewport = page.viewportSize()!;
+  const portraitCards = viewport.width <= 600 && viewport.height > viewport.width;
+  if (portraitCards) {
+    if (matrix) {
+      await expect(page.getByRole('button', { name: 'Matrix view', exact: true })).toBeVisible();
+      await page.getByRole('button', { name: 'Matrix view', exact: true }).click();
+      await expect(page.locator('thead')).toBeVisible();
+    } else await expect(page.locator('.portrait-model-card').first()).toBeVisible();
+  } else await expect(page.locator('tbody tr').first()).toBeAttached();
   await expect(page.getByText('Updating comparison…', { exact: false })).toHaveCount(0);
 }
 
@@ -94,6 +102,7 @@ for (const width of [390, 1422]) {
     await expect(page.locator('.selection-strip button')).toHaveCount(2);
     await noOverflow(page);
     await page.reload();
+    if (width <= 600) await page.getByRole('button', { name: 'Matrix view', exact: true }).click();
     await expect(page.locator('thead th')).toHaveCount(3);
     await expect(page.getByRole('button', { name: 'Compare', exact: true })).toHaveAttribute('aria-pressed', 'true');
     await page.getByRole('button', { name: 'Explore', exact: true }).click();
@@ -143,11 +152,13 @@ for (const width of [390, 768, 1422]) {
     await page.getByRole('searchbox', { name: 'Search scores' }).fill('zzzz-no-match');
     await expect(page.getByText('No scores match your search.')).toBeVisible();
     await page.locator('.entity-back').click();
+    if (width <= 600) await page.getByRole('button', { name: 'Matrix view', exact: true }).click();
     await expect(page.locator('tbody tr').first()).toBeVisible();
     expect(page.url().replace(/#$/, '')).toBe(matrixUrl.replace(/#$/, ''));
     await page.locator('.benchmark-detail-link').first().click();
     await expect(page.locator('.entity-kind')).toHaveText('Benchmark variant');
     await page.getByRole('link', { name: 'View this benchmark in the matrix →', exact: true }).click();
+    if (width <= 600) await page.getByRole('button', { name: 'Matrix view', exact: true }).click();
     await expect(page.locator('tbody tr')).toHaveCount(1);
     await noOverflow(page);
     const options = page.getByRole('button', { name: /^Options/ });
@@ -314,3 +325,90 @@ for (const theme of ['system', 'class']) {
     });
   }
 }
+
+test('portrait cards switch benchmarks and keep evidence, model details, selection, and missing scores available', async ({ page }, testInfo) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await ready(page, false);
+  const cards = page.locator('.portrait-model-card');
+  await expect(page.locator('.portrait-comparison')).toBeVisible();
+  await expect(page.locator('.portrait-comparison tbody')).toHaveCount(0);
+  await expect(cards.first()).toBeVisible();
+  const heatedScore = page.locator('.portrait-model-score .score-button[data-heat]').first();
+  await expect(heatedScore).toBeVisible();
+  expect(await heatedScore.evaluate(button => { const parent = getComputedStyle(button.parentElement!); return parent.position === 'relative' && parent.isolation === 'isolate'; })).toBe(true);
+  await page.screenshot({ path: testInfo.outputPath('portrait-cards-390x844.png'), fullPage: false });
+
+  const picker = page.locator('.portrait-benchmark-picker');
+  const originalTitle = await picker.locator('strong').innerText();
+  const originalUrl = page.url();
+  await picker.click();
+  const search = page.getByRole('searchbox', { name: 'Search benchmarks' });
+  await search.fill('GraphWalks');
+  await expect(page.getByRole('option').first()).toBeVisible();
+  await expect(picker.locator('strong')).toHaveText(originalTitle);
+  const newBenchmark = await page.getByRole('option').first().locator('strong').innerText();
+  await page.getByRole('option').first().click();
+  await expect(picker.locator('strong')).toHaveText(newBenchmark);
+  expect(page.url()).not.toBe(originalUrl);
+  await page.reload();
+  await expect(picker.locator('strong')).toHaveText(newBenchmark);
+  await page.setViewportSize({ width: 844, height: 390 });
+  await expect(page.locator('.transposed-table')).toBeVisible();
+  await page.setViewportSize({ width: 390, height: 844 });
+  await expect(page.locator('.portrait-comparison')).toBeVisible();
+  await expect(page.locator('.portrait-benchmark-picker strong')).toHaveText(newBenchmark);
+
+  const evidenceScore = page.locator('.portrait-model-card .score-button').first();
+  await evidenceScore.click();
+  await expect(page.getByRole('heading', { name: 'Result evidence' })).toBeVisible();
+  await expect(page.getByText('Configuration', { exact: true })).toBeVisible();
+  await page.getByRole('button', { name: 'Close' }).click();
+
+  const selectedModel = page.locator('.portrait-model-card .model-link').first();
+  const modelName = (await selectedModel.innerText()).trim();
+  await selectedModel.click();
+  await expect(page.getByRole('heading', { level: 1 })).toHaveText(modelName);
+  await page.locator('.entity-back').click();
+  await expect(page.locator('.portrait-comparison')).toBeVisible();
+  const selection = page.locator('.portrait-model-card [role="checkbox"]').first();
+  await selection.click();
+  await expect(selection).toHaveAttribute('aria-checked', 'true');
+
+  await page.getByRole('button', { name: 'Options', exact: true }).click();
+  const hideEmpty = page.getByLabel('Hide rows empty on this page');
+  if (await hideEmpty.isChecked()) await hideEmpty.uncheck();
+  await page.getByRole('button', { name: 'Options', exact: true }).click();
+  await expect(page.locator('.portrait-model-card .score-button.missing').first()).toBeVisible();
+  await page.getByRole('button', { name: 'Options', exact: true }).click();
+  await page.getByRole('combobox', { name: 'Table orientation' }).click();
+  await page.getByRole('option', { name: 'Model rows', exact: true }).click();
+  await expect(page.locator('thead')).toBeVisible();
+  await expect(page.locator('.portrait-comparison')).toBeHidden();
+});
+
+test('landscape phone shows five compact model columns and desktop remains a matrix', async ({ page }, testInfo) => {
+  await page.setViewportSize({ width: 844, height: 390 });
+  await ready(page, false);
+  await expect(page.locator('.transposed-table')).toBeVisible();
+  await expect(page.locator('.app-shell')).toHaveAttribute('data-landscape-phone', 'true');
+  await expect(page.locator('.transposed-table thead th')).toHaveCount(6);
+  const firstTwoRows = await page.locator('.transposed-table tbody tr').evaluateAll(rows => rows.slice(0, 2).map(row => { const box = row.getBoundingClientRect(); return { top: box.top, bottom: box.bottom }; }));
+  expect(firstTwoRows).toHaveLength(2);
+  expect(firstTwoRows[0].top).toBeLessThan(220);
+  expect(firstTwoRows[1].bottom).toBeLessThanOrEqual(390);
+  const landscapeScroll = page.locator('.table-card');
+  expect(await landscapeScroll.evaluate(el => el.scrollWidth - el.clientWidth)).toBeLessThanOrEqual(1);
+  await noOverflow(page);
+  await page.screenshot({ path: testInfo.outputPath('landscape-844x390.png'), fullPage: false });
+  await page.getByRole('button', { name: 'Options', exact: true }).click();
+  await expect(page.getByRole('navigation', { name: 'Workspace' })).toBeVisible();
+  await expect(page.getByRole('button', { name: 'All models', exact: true })).toBeVisible();
+  await expect(page.getByRole('navigation', { name: 'Benchmark categories' })).toBeVisible();
+
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await ready(page, false);
+  await expect(page.locator('.portrait-comparison')).toBeHidden();
+  await expect(page.locator('thead')).toBeVisible();
+  await page.screenshot({ path: testInfo.outputPath('desktop-1440x900.png'), fullPage: false });
+  await noOverflow(page);
+});

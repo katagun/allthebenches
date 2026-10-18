@@ -381,3 +381,76 @@
 @media(max-width:1100px){.catalog-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:768px){.workspace-nav nav{overflow-x:auto}.workspace-nav nav a{font-size:12px;padding:0 10px}.catalog-tools{grid-template-columns:1fr 1fr}.catalog-tools input{grid-column:1/-1}.evidence-breakdown{grid-template-columns:1fr 1fr}}
 @media(max-width:480px){.catalog-grid{grid-template-columns:1fr}.catalog-card{padding:14px}.directory-nav{gap:8px 16px}.workspace-nav nav button{padding:0 8px}.workspace-nav nav a{padding:0 8px}}
+
+/* Portrait comparison cards replace the horizontally dense matrix on narrow phones. */
+.portrait-comparison{display:none}
+.portrait-benchmark-picker{display:flex;align-items:center;justify-content:space-between;gap:10px;min-width:0;flex:1;text-align:left;padding:8px 10px;height:auto;white-space:normal}
+.portrait-benchmark-picker-copy{display:flex;flex-direction:column;min-width:0;gap:2px}
+.portrait-benchmark-picker-copy strong{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:13px}
+.portrait-benchmark-picker-copy small{color:var(--muted-foreground);font-size:11px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.portrait-comparison-head{display:flex;align-items:center;gap:8px;padding:10px 10px 6px}
+.portrait-benchmark-summary{display:flex;justify-content:space-between;gap:8px;padding:0 12px 8px;color:var(--muted-foreground);font-size:10px}
+.portrait-results-toolbar{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:7px 12px;border-block:1px solid var(--border);font-size:10px;color:var(--muted-foreground)}
+.portrait-results-toolbar>div{display:flex;align-items:center;gap:5px}
+.portrait-results-toolbar button{height:28px;padding-inline:8px;font-size:11px}
+.portrait-model-list{flex:1;min-height:0;overflow:auto;overscroll-behavior:contain}
+.portrait-model-card{display:grid;grid-template-columns:minmax(0,1fr) 84px;align-items:center;gap:8px;min-height:60px;padding:8px 12px;border-bottom:1px solid var(--border)}
+.portrait-model-identity{min-width:0;overflow:hidden}
+.portrait-model-identity .model-cell{min-width:0;gap:7px}
+.portrait-model-identity .model-link{max-width:100%;white-space:normal;line-height:1.25;font-size:12px}
+.portrait-model-identity .model-title-line{flex-wrap:wrap}
+.portrait-model-identity .model-subtitle{font-size:10px}
+.portrait-model-identity .reasoning-label{display:inline-block;max-width:100%;white-space:normal;font-size:9px;padding:1px 5px;margin-top:2px}
+.portrait-model-identity .expand-button{display:none}
+.portrait-model-score{position:relative;isolation:isolate;text-align:right}
+.portrait-model-score .score-button{min-width:62px;max-width:84px;font-size:15px;font-weight:400;text-align:right}
+.portrait-model-score .score-button[data-best]{font-weight:750}
+.portrait-model-score .score-coverage{display:none}
+.portrait-evidence-hint{margin:0;padding:7px 12px;color:var(--muted-foreground);font-size:10px}
+.portrait-empty,.portrait-status{padding:14px;margin:0;color:var(--muted-foreground);font-size:12px}
+.portrait-benchmark-sheet{gap:0;padding-bottom:env(safe-area-inset-bottom)}
+.portrait-benchmark-sheet [data-slot="sheet-header"]{padding-bottom:8px}
+.portrait-benchmark-search{padding:0 16px 10px}
+.portrait-benchmark-options{overflow:auto;min-height:100px;padding:0 12px 12px}
+.portrait-benchmark-option{display:flex;width:100%;flex-direction:column;gap:2px;padding:10px 8px;border:0;border-bottom:1px solid var(--border);background:transparent;text-align:left;color:var(--foreground)}
+.portrait-benchmark-option[aria-selected="true"]{background:var(--secondary)}
+.portrait-benchmark-option strong{font-size:13px}
+.portrait-benchmark-option span,.portrait-benchmark-option small{font-size:11px;color:var(--muted-foreground)}
+.portrait-card-toggle{display:none}
+@media(max-width:600px) and (orientation:portrait){
+  .app-shell{padding-inline:12px}
+  .app-shell[data-portrait-matrix="false"]>.table-card,.app-shell[data-portrait-matrix="false"]>.mobile-table-hint{display:none!important}
+  .app-shell[data-portrait-matrix="false"]>.portrait-comparison{display:flex;flex:1 1 0;flex-direction:column;min-height:240px;overflow:hidden;border:1px solid var(--border);border-radius:9px;background:var(--card)}
+  .app-shell[data-portrait-matrix="true"]>.portrait-comparison{display:none}
+  .app-shell[data-portrait-matrix="true"]>.mobile-table-hint{display:flex;align-items:center;justify-content:space-between;gap:8px;padding-bottom:2px}
+  .app-shell[data-portrait-matrix="true"] .portrait-card-toggle{display:inline-flex;height:24px;padding-inline:7px;font-size:10px}
+}
+@media(max-width:1000px) and (orientation:landscape){
+  .app-shell[data-landscape-phone="true"] .table-card{overflow:auto}
+  .app-shell[data-landscape-phone="true"] .transposed-table{width:calc(126px + 132px * var(--mobile-columns));min-width:100%!important;table-layout:fixed}
+  .app-shell[data-landscape-phone="true"] .transposed-table .sticky-model-head,.app-shell[data-landscape-phone="true"] .transposed-table .sticky-model-cell{width:126px;min-width:126px;max-width:126px;padding:6px}
+  .app-shell[data-landscape-phone="true"] .transposed-table th:not(.sticky-model-head),.app-shell[data-landscape-phone="true"] .transposed-table td:not(.sticky-model-cell){width:132px;min-width:132px;max-width:132px;padding:5px 4px}
+  .app-shell[data-landscape-phone="true"] .transposed-table .model-cell{display:flex;flex-direction:column;align-items:flex-start;gap:3px}
+  .app-shell[data-landscape-phone="true"] .transposed-table .model-cell>[role="checkbox"]{display:block;margin:0;width:13px;height:13px}
+  .app-shell[data-landscape-phone="true"] .transposed-table .model-link{font-size:10px;line-height:1.2;white-space:normal;overflow-wrap:anywhere}
+  .app-shell[data-landscape-phone="true"] .transposed-table .reasoning-label{font-size:8px;padding:1px 3px;margin-top:2px}
+  .app-shell[data-landscape-phone="true"] .transposed-table .bench-heading{font-size:10px;gap:2px}
+  .app-shell[data-landscape-phone="true"] .transposed-table .bench-heading small{font-size:8px;line-height:1.15}
+  .app-shell[data-landscape-phone="true"] .transposed-table .score-button{font-size:11px;min-width:0;padding:2px 0}
+  .app-shell[data-landscape-phone="true"] .transposed-table .score-coverage{display:none}
+  .app-shell[data-landscape-phone="true"]>.primary-controls{padding-top:4px;padding-bottom:4px}
+  .app-shell[data-landscape-phone="true"]>.secondary-controls .category-nav{padding-top:4px;padding-bottom:2px}
+  .app-shell[data-landscape-phone="true"] .transpose-pagination{padding:2px 5px;gap:2px}
+  .app-shell[data-landscape-phone="true"] .transpose-pagination button{height:25px;min-width:30px;padding:0 6px}
+  .app-shell[data-landscape-phone="true"] .transpose-pagination nav>span{font-size:9px}
+  .app-shell[data-landscape-phone="true"] .transposed-table thead th{height:48px;padding-top:5px;padding-bottom:5px}
+  .app-shell[data-landscape-phone="true"] .transposed-table tbody td{height:40px;padding-block:3px}
+  .app-shell[data-landscape-phone="true"][data-mobile-options="false"]>.workspace-nav nav{display:none}
+  .app-shell[data-landscape-phone="true"][data-mobile-options="false"]>.secondary-controls .category-nav,.app-shell[data-landscape-phone="true"][data-mobile-options="false"]>.secondary-controls .results-caption,.app-shell[data-landscape-phone="true"][data-mobile-options="false"]>.mobile-table-hint{display:none}
+  .app-shell[data-landscape-phone="true"][data-mobile-options="false"]>.primary-controls .view-tabs{display:none}
+  .app-shell[data-landscape-phone="true"][data-mobile-options="true"]>.workspace-nav nav{display:flex}
+  .app-shell[data-landscape-phone="true"][data-mobile-options="true"]>.primary-controls .view-tabs{display:flex}
+  .app-shell[data-landscape-phone="true"][data-mobile-options="true"]>.secondary-controls .category-nav{display:flex}
+  .app-shell[data-landscape-phone="true"][data-mobile-options="true"]>.secondary-controls .results-caption{display:flex}
+  .app-shell[data-landscape-phone="true"][data-mobile-options="true"]>.mobile-table-hint{display:block}
+}

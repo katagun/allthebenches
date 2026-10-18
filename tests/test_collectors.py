@@ -97,4 +97,4 @@ def test_reconciliation_requires_exact_id_and_excludes_benchmark_metadata(tmp_pa
     assert model["models_dev"]["external_id"] == "vendor/example-model"
     assert "benchmarks" not in model["models_dev"]["metadata"]
     assert "benchmarks" not in model["atlas"]["source_metadata"]
-    assert model["openrouter"]["endpoints"][0]["pricing"]["usd_per_million_tokens"]["input"] == "3.000000"
+    assert model["openrouter"]["endpoints"][0]["pricing"]["effective_usd_per_million_tokens"]["input"] == "3.000000"

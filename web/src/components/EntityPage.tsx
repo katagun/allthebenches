@@ -17,6 +17,13 @@ const ageLabel = (timestamp: string) => {
   const minutes = Math.max(0, Math.floor((Date.now() - Date.parse(timestamp)) / 60_000));
   return minutes < 1 ? 'under a minute ago' : `${minutes} minute${minutes === 1 ? '' : 's'} ago`;
 };
+const compactAgeLabel = (timestamp: string) => {
+  const minutes = Math.max(0, Math.floor((Date.now() - Date.parse(timestamp)) / 60_000));
+  if (minutes < 1) return '<1m ago';
+  if (minutes < 60) return `${minutes}m ago`;
+  const hours = Math.floor(minutes / 60);
+  return hours < 24 ? `${hours}h ago` : `${Math.floor(hours / 24)}d ago`;
+};
 
 export default function EntityPage({ route }: { route: EntityRoute | null }) {
   const [data, setData] = useState<AppData | null>(null);
@@ -70,16 +77,25 @@ function EntityContent({ data, route }: { data: AppData; route: EntityRoute | nu
       const prices = data.market.prices.filter(price => price.route_id === route.id);
       const performance = (data.market.performance ?? []).filter(item => item.route_id === route.id);
       const groups = [...new Map(performance.map(item => [`${item.metric}:${item.workload ?? 'all workloads'}`, item.workload])).entries()];
-      return <div key={route.id}><p><strong>{route.provider}</strong> · {route.availability} · {route.routing_variant ?? 'Provider variant unknown'} · {route.quantization ?? 'Quantization unknown'}</p>
-        {prices.map(price => <div key={price.id}><p>Input {price.input_price ?? 'unknown'} / output {price.output_price ?? 'unknown'} {price.currency} {price.price_unit} · observed {new Date(price.observed_at).toLocaleString()} · <a href={sources.get(price.source_id)?.url} target="_blank" rel="noreferrer">Source</a></p>
-          <p>Cache read {price.cache_read_price ?? 'unknown'} · standard cache write {price.cache_write_price ?? 'unknown'} {price.currency} {price.price_unit}{price.cache_write_1h_price != null ? ` · 1-hour cache write ${price.cache_write_1h_price} ${price.currency} ${price.price_unit}` : ''}</p>
+      const listedPrice = prices[0];
+      const medianLatency = performance.find(item => item.metric === 'latency' && item.percentile === 'p50' && item.workload == null);
+      const medianThroughput = performance.find(item => item.metric === 'throughput' && item.percentile === 'p50' && item.workload == null);
+      const latencyLabel = medianLatency ? medianLatency.normalization_basis === 'inferred_ms_scale' ? `≈${medianLatency.value.toLocaleString(undefined, { maximumFractionDigits: 2 })} s (unit inferred)` : `${medianLatency.value.toLocaleString(undefined, { maximumFractionDigits: 2 })} ${medianLatency.unit === 'source_reported' ? '(API-reported unit)' : 's'}` : 'unknown';
+      const performanceCapturedAt = performance[0]?.observed_at;
+      const performanceWindowSeconds = Math.max(0, ...performance.map(item => item.sample_window_seconds));
+      const performanceStale = !!performanceCapturedAt && Date.now() - Date.parse(performanceCapturedAt) > performanceWindowSeconds * 1000;
+      return <details className="entity-route" key={route.id}><summary><strong>{route.provider}</strong> · {route.routing_variant ?? 'Provider variant unknown'} · {route.availability} · In {listedPrice?.input_price ?? 'unknown'} / out {listedPrice?.output_price ?? 'unknown'} {listedPrice?.currency ?? 'USD'} per 1M · p50 latency {latencyLabel} · p50 throughput {medianThroughput ? `${medianThroughput.value.toLocaleString()} tokens/s` : 'unknown'}{performanceCapturedAt ? ` · metrics ${compactAgeLabel(performanceCapturedAt)}${performanceStale ? ' · stale' : ''}` : ''}</summary><div>
+        <p>{route.quantization ?? 'Quantization unknown'}</p>
+        {prices.map(price => { const discountFraction = price.discount_fraction == null ? undefined : Number(price.discount_fraction); return <div key={price.id}><p>Input {price.input_price ?? 'unknown'} / output {price.output_price ?? 'unknown'} {price.price_unit}{discountFraction != null && discountFraction > 0 ? ` after ${(discountFraction * 100).toLocaleString()}% endpoint discount` : ''} · observed {new Date(price.observed_at).toLocaleString()} · <a href={sources.get(price.source_id)?.url} target="_blank" rel="noreferrer">Source</a></p>
+          <p>Cache read {price.cache_read_price ?? 'unknown'} · standard cache write {price.cache_write_price ?? 'unknown'} {price.price_unit}{price.cache_write_1h_price != null ? ` · 1-hour cache write ${price.cache_write_1h_price} ${price.price_unit}` : ''}</p>
           {(price.additional_charges ?? []).map(charge => <p key={charge.name}>{charge.name.replaceAll('_', ' ')}: {charge.amount} {charge.unit === 'source_reported_unit' ? 'USD (billing unit not specified by the API)' : charge.unit}</p>)}
-        </div>)}
-        {performance.length > 0 && <><h4>Observed endpoint performance</h4><p>OpenRouter source snapshot; each metric covers the preceding 30 minutes when collected. Snapshot age is measured from collection time, and values may be stale after that window. Latency unit and measurement semantics are not specified in the endpoint API, so values are shown as reported. Throughput is tokens per second.</p>
-          {groups.map(([key, workload]) => { const values = performance.filter(item => `${item.metric}:${item.workload ?? 'all workloads'}` === key); const observed = values[0].observed_at; const stale = Date.now() - Date.parse(observed) > Math.max(...values.map(item => item.sample_window_seconds)) * 1000; return <div key={key}><strong>{values[0].metric.replaceAll('_', ' ')} · {workload ?? 'all workloads'}</strong><dl>{values.sort((a, b) => a.percentile.localeCompare(b.percentile)).map(item => <div key={item.id}><dt>{item.percentile}</dt><dd>{item.value.toLocaleString()} {item.unit === 'tokens_per_second' ? 'tokens/s' : '(source unit)'}</dd></div>)}</dl><p>Collected {new Date(observed).toLocaleString()} ({ageLabel(observed)}){stale ? ' · stale: snapshot is older than its 30-minute sample window' : ''}{values.some(item => item.sample_count != null) ? ` · ${values.find(item => item.sample_count != null)?.sample_count} requests in workload sample` : ''} · <a href={sources.get(values[0].source_id)?.url} target="_blank" rel="noreferrer">Source</a></p></div>; })}
+          {(price.restrictions ?? []).map((restriction, index) => <p key={`${price.id}-restriction-${index}`}>{restriction}</p>)}
+        </div>; })}
+        {performance.length > 0 && <><h4>Observed endpoint performance</h4><p>OpenRouter source snapshot; each metric covers the preceding 30 minutes when collected. Snapshot age is measured from collection time, and values may be stale after that window. The endpoint API does not document latency units. A generic OpenRouter client formatter converts millisecond-scale latency values to seconds, but its use with this specific endpoint field is unconfirmed. We estimate seconds from the current endpoint values' scale and retain the original API value beside each estimate. OpenRouter describes page latency as total round-trip time, while its reasoning-model update describes latency as time to the first reasoning token; the reported metric's event therefore may vary by model. Throughput is tokens per second; on reasoning models it includes reasoning and output tokens.</p>
+          {groups.map(([key, workload]) => { const values = performance.filter(item => `${item.metric}:${item.workload ?? 'all workloads'}` === key); const observed = values[0].observed_at; const stale = Date.now() - Date.parse(observed) > Math.max(...values.map(item => item.sample_window_seconds)) * 1000; return <div key={key}><strong>{values[0].metric.replaceAll('_', ' ')} · {workload ?? 'all workloads'}</strong><dl>{values.sort((a, b) => a.percentile.localeCompare(b.percentile)).map(item => <div key={item.id}><dt>{item.percentile}</dt><dd>{item.value.toLocaleString(undefined, { maximumFractionDigits: 3 })} {item.unit === 'tokens_per_second' ? 'tokens/s' : item.normalization_basis === 'inferred_ms_scale' ? 's (unit inferred)' : item.unit === 'source_reported' ? '(API-reported unit)' : 's'}{item.source_value != null ? ` · source ${item.source_value} ${item.source_unit === 'source_reported' ? '(API-reported unit)' : item.source_unit ?? ''}` : ''}</dd></div>)}</dl><p>Collected {new Date(observed).toLocaleString()} ({ageLabel(observed)}){stale ? ' · stale: snapshot is older than its 30-minute sample window' : ''}{values.some(item => item.sample_count != null) ? ` · ${values.find(item => item.sample_count != null)?.sample_count} requests in workload sample` : ''} · <a href={sources.get(values[0].source_id)?.url} target="_blank" rel="noreferrer">Source</a></p></div>; })}
         </>}
         {performance.length === 0 && <p>No endpoint performance observations are published.</p>}
-      </div>;
+      </div></details>;
     })}</details>}
     <section className="entity-sources"><h2>Sources</h2>{sourceIds.length === 0 ? <p>No source records are attached.</p> : <ul>{sourceIds.map(id => { const source = sources.get(id); return source && <li key={id}><a href={source.url} target="_blank" rel="noreferrer">{source.title} <ExternalLink size={12}/></a><small>{source.publisher}{source.attribution ? ` · ${source.attribution}` : ''}</small></li>; })}</ul>}</section>
     <footer className="entity-footer">Snapshot {data.manifest.snapshot_id} · <a href={routeHref("/")}>Back to comparison matrix</a></footer>

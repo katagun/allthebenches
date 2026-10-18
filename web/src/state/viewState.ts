@@ -14,6 +14,7 @@ export type ViewState = {
   includeUnbenchmarked: boolean;
   hideEmptyPageRows: boolean;
   orientation: 'models-rows' | 'benchmarks-rows';
+  portraitBenchmarkId: string | null;
   filters: {
     labIds: string[]; countryCodes: string[]; releaseYears: number[];
     accessStates: string[]; weightsAvailable: boolean | null; modalities: string[];
@@ -32,7 +33,7 @@ export type SavedEnvelope = { format_version: 1; saved_at: string; view: ViewSta
 
 export const DEFAULT_VIEW: ViewState = {
   version: 1, presetId: 'frontier_oct2026', categoryId: null, search: '',
-  visibleColumnIds: [], sort: null, selectedConfigurationIds: [], compare: false, includeUnbenchmarked: false, hideEmptyPageRows: false, orientation: 'benchmarks-rows',
+  visibleColumnIds: [], sort: null, selectedConfigurationIds: [], compare: false, includeUnbenchmarked: false, hideEmptyPageRows: false, orientation: 'benchmarks-rows', portraitBenchmarkId: null,
   filters: {
     labIds: [], countryCodes: [], releaseYears: [], accessStates: [], weightsAvailable: null,
     modalities: [], architectureIds: [], reasoningModes: [], minTotalParametersB: null,
@@ -56,6 +57,7 @@ const bool = (v: unknown): v is boolean => typeof v === 'boolean';
 export function parseViewState(raw: unknown, ctx: ValidationContext = {}): ParseResult {
   if (!object(raw) || raw.version !== VIEW_VERSION) return { ok: false, reason: 'Unsupported or invalid view version' };
   if (raw.orientation !== undefined && raw.orientation !== 'models-rows' && raw.orientation !== 'benchmarks-rows') return { ok: false, reason: 'Invalid orientation' };
+  if (raw.portraitBenchmarkId !== undefined && raw.portraitBenchmarkId !== null && !str(raw.portraitBenchmarkId)) return { ok: false, reason: 'Invalid portrait benchmark' };
   const f = raw.filters;
   if (!object(f) || !str(raw.presetId) || !(raw.categoryId === null || str(raw.categoryId)) || typeof raw.search !== 'string' || raw.search.length > 500 || !strings(raw.visibleColumnIds) || !strings(raw.selectedConfigurationIds) || !bool(raw.compare) || !bool(raw.includeUnbenchmarked) || (raw.hideEmptyPageRows !== undefined && !bool(raw.hideEmptyPageRows))) return { ok: false, reason: 'Invalid view fields' };
   const stringKeys = ['labIds','countryCodes','accessStates','modalities','architectureIds','reasoningModes','benchmarkIds','saturationStates','routeIds'] as const;
@@ -79,9 +81,10 @@ export function parseViewState(raw: unknown, ctx: ValidationContext = {}): Parse
     comparableOnly: f.comparableOnly as boolean, providerReportedAllowed: f.providerReportedAllowed as boolean, independentOnly: f.independentOnly as boolean, incompleteSetupAllowed: f.incompleteSetupAllowed as boolean,
     maxInputPricePerMillion: f.maxInputPricePerMillion as number | null, maxOutputPricePerMillion: f.maxOutputPricePerMillion as number | null, routeIds: [...f.routeIds as string[]], includeFreeRoutes: f.includeFreeRoutes as boolean, openRouterUsageAvailable: f.openRouterUsageAvailable as boolean | null,
   };
-  const value: ViewState = { version: VIEW_VERSION, presetId: raw.presetId, categoryId: raw.categoryId as string | null, search: raw.search, visibleColumnIds: [...raw.visibleColumnIds as string[]], sort: sort === null ? null : { id: (sort as {id:string}).id, direction: (sort as {direction:SortDirection}).direction }, selectedConfigurationIds: [...raw.selectedConfigurationIds as string[]], compare: raw.compare, includeUnbenchmarked: raw.includeUnbenchmarked, hideEmptyPageRows: raw.hideEmptyPageRows === true, orientation: raw.orientation === 'models-rows' ? 'models-rows' : 'benchmarks-rows', filters: cleanFilters };
+  const value: ViewState = { version: VIEW_VERSION, presetId: raw.presetId, categoryId: raw.categoryId as string | null, search: raw.search, visibleColumnIds: [...raw.visibleColumnIds as string[]], sort: sort === null ? null : { id: (sort as {id:string}).id, direction: (sort as {direction:SortDirection}).direction }, selectedConfigurationIds: [...raw.selectedConfigurationIds as string[]], compare: raw.compare, includeUnbenchmarked: raw.includeUnbenchmarked, hideEmptyPageRows: raw.hideEmptyPageRows === true, orientation: raw.orientation === 'models-rows' ? 'models-rows' : 'benchmarks-rows', portraitBenchmarkId: typeof raw.portraitBenchmarkId === 'string' ? raw.portraitBenchmarkId : null, filters: cleanFilters };
   const unresolved: string[] = [];
   const checkIds = (name: string, ids: string[], known?: ReadonlySet<string>) => { if (known) for (const id of ids) if (!known.has(id)) unresolved.push(`${name}: ${id}`); };
+  if (value.portraitBenchmarkId) checkIds('portrait benchmark', [value.portraitBenchmarkId], ctx.knownBenchmarkIds);
   if (value.categoryId) checkIds('category', [value.categoryId], ctx.knownCategoryIds);
   checkIds('column', value.visibleColumnIds, ctx.knownColumnIds);
   checkIds('configuration', value.selectedConfigurationIds, ctx.knownConfigurationIds);

@@ -155,10 +155,13 @@ class RoutePerformance(StrictModel):
     metric: Literal["latency", "throughput"]
     percentile: Literal["p50", "p75", "p90", "p99"]
     value: float = Field(ge=0, allow_inf_nan=False)
-    unit: Literal["source_reported", "tokens_per_second"]
+    unit: Literal["source_reported", "seconds", "tokens_per_second"]
     workload: str | None = None
     sample_window_seconds: int = Field(gt=0)
     sample_count: int | None = Field(default=None, ge=0)
+    source_value: float | None = Field(default=None, ge=0, allow_inf_nan=False)
+    source_unit: Literal["source_reported", "milliseconds", "tokens_per_second"] | None = None
+    normalization_basis: Literal["official_client", "inferred_ms_scale"] | None = None
     observed_at: datetime
     source_id: str
 
@@ -171,9 +174,9 @@ class RoutePerformance(StrictModel):
 
     @model_validator(mode="after")
     def unit_matches_metric(self):
-        expected = "source_reported" if self.metric == "latency" else "tokens_per_second"
-        if self.unit != expected:
-            raise ValueError(f"{self.metric} requires unit {expected!r}")
+        allowed = {"seconds", "source_reported"} if self.metric == "latency" else {"tokens_per_second"}
+        if self.unit not in allowed:
+            raise ValueError(f"{self.metric} requires one of {sorted(allowed)!r}")
         return self
 
 
@@ -187,6 +190,7 @@ class PriceObservation(StrictModel):
     cache_read_price: Decimal | None = None
     cache_write_price: Decimal | None = None
     cache_write_1h_price: Decimal | None = None
+    discount_fraction: Decimal | None = Field(default=None, ge=0, le=1)
     additional_charges: list[RoutePriceCharge] = Field(default_factory=list)
     price_unit: str
     context_tier: str | None = None

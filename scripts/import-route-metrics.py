@@ -25,9 +25,15 @@ PERCENTILES = ("p50", "p75", "p90", "p99")
 TOKEN_PRICE_KEYS = {
     "prompt": "input_price", "completion": "output_price",
     "input_cache_read": "cache_read_price", "input_cache_write": "cache_write_price",
+    "input_cache_write_1h": "cache_write_1h_price",
 }
-AUXILIARY_KEYS = ("image", "image_output", "request", "web_search", "audio", "audio_output",
-                  "input_audio_cache", "image_token", "input_cache_write_1h")
+AUXILIARY_UNITS = {
+    "image": "USD per input image", "image_output": "USD per output image",
+    "request": "USD per request", "web_search": "USD per web search",
+    "audio": "USD per audio input token", "audio_output": "USD per audio output token",
+    "input_audio_cache": "USD per cached audio input token", "image_token": "USD per image token",
+    "internal_reasoning": "USD per internal reasoning token",
+}
 
 
 def _decimal(value: Any) -> Decimal | None:
@@ -63,13 +69,20 @@ def _price_record(route: dict[str, Any], endpoint: dict[str, Any], observed_at: 
     pricing = endpoint.get("pricing")
     if not isinstance(pricing, dict):
         return None
+    discount = _decimal(pricing.get("discount"))
+    if "discount" in pricing and discount is None:
+        return None
+    if discount is not None and discount > 1:
+        return None
+    multiplier = Decimal(1) - discount if discount is not None else Decimal(1)
     fields = {name: str(parsed * Decimal(1_000_000)) for key, name in TOKEN_PRICE_KEYS.items()
               if (parsed := _decimal(pricing.get(key))) is not None}
+    fields = {name: str(Decimal(value) * multiplier) for name, value in fields.items()}
     charges = []
-    for key in AUXILIARY_KEYS:
+    for key, unit in AUXILIARY_UNITS.items():
         amount = _decimal(pricing.get(key))
         if amount is not None:
-            charges.append({"name": key, "amount": str(amount), "unit": "source_reported_unit"})
+            charges.append({"name": key, "amount": str(amount * multiplier), "unit": unit})
     if not fields and not charges:
         return None
     base = dict(existing or {})
@@ -78,14 +91,20 @@ def _price_record(route: dict[str, Any], endpoint: dict[str, Any], observed_at: 
     for field in TOKEN_PRICE_KEYS.values():
         base[field] = fields.get(field)
     base.update(fields)
+    restrictions = ["USD per-token rates, including 1-hour cache writes, are multiplied by 1,000,000. Other charges retain their documented USD billing unit."]
+    if discount is not None:
+        restrictions.append("Displayed prices include the endpoint discount applied to listed charges.")
+    if pricing.get("overrides"):
+        restrictions.append("Conditional pricing overrides are not modeled; values reflect default endpoint conditions.")
     base.update({
         "id": (existing or {}).get("id") or f"price_openrouter_{hashlib.sha256(route['id'].encode()).hexdigest()[:16]}",
         "route_id": route["id"], "quote_scope": "OpenRouter provider endpoint listed price",
         "currency": "USD", "price_unit": "USD per 1M tokens", "context_tier": "default",
         "observed_at": observed_at, "source_id": source_id,
-        "available": endpoint.get("status", 0) == 0,
+        "discount_fraction": str(discount) if discount is not None else None,
+        "available": endpoint.get("status") == 0,
         "additional_charges": charges,
-        "restrictions": ["Token rates are USD per token in the OpenRouter source and are multiplied by 1,000,000. Additional charge units are unspecified in the endpoint API and remain source-reported."],
+        "restrictions": restrictions,
     })
     return base
 
@@ -115,7 +134,7 @@ def _percentile_rows(route: dict[str, Any], metric: str, raw: Any, workload: str
                      sample_count: int | None, observed_at: str, source_id: str) -> list[dict[str, Any]]:
     if not isinstance(raw, dict):
         return []
-    unit = "source_reported" if metric == "latency" else "tokens_per_second"
+    unit = "seconds" if metric == "latency" else "tokens_per_second"
     rows = []
     for percentile in PERCENTILES:
         value = _decimal(raw.get(percentile))
@@ -123,10 +142,18 @@ def _percentile_rows(route: dict[str, Any], metric: str, raw: Any, workload: str
             continue
         # Stable IDs allow an import to replace the current point in place.
         identity = "\0".join((route["id"], metric, workload or "all_workloads", percentile))
+        source_value = value
+        # Infer a millisecond scale from captured payloads and the site's generic
+        # formatter; the endpoint field's unit is not explicitly documented.
+        if metric == "latency":
+            value /= Decimal(1_000)
         rows.append({"id": f"perf_{hashlib.sha256(identity.encode()).hexdigest()[:24]}", "route_id": route["id"], "metric": metric,
                      "percentile": percentile, "value": float(value), "unit": unit,
                      "workload": workload, "sample_window_seconds": 1800,
-                     "sample_count": sample_count, "observed_at": observed_at,
+                     "sample_count": sample_count, "source_value": float(source_value),
+                     "source_unit": "source_reported" if metric == "latency" else "tokens_per_second",
+                     "normalization_basis": "inferred_ms_scale" if metric == "latency" else None,
+                     "observed_at": observed_at,
                      "source_id": source_id})
     return rows
 

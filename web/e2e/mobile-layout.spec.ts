@@ -487,3 +487,17 @@ test('expanded catalog keeps categories and numeric scores inside compact deskto
   expect(await page.locator('.score-button').evaluateAll(buttons => buttons.filter(button => /^[-\d]/.test(button.textContent ?? '') && button.scrollWidth > button.clientWidth + 1).length)).toBe(0);
   await noOverflow(page);
 });
+
+test('cold matrix renders without evidence downloads and lazy evidence remains accessible', async ({ page }) => {
+  const requests: string[] = [];
+  page.on('request', request => { if (request.url().includes('/data/')) requests.push(request.url()); });
+  await page.route('**/data/details.json', route => route.abort());
+  await page.route('**/data/results.json', route => route.abort());
+  await ready(page);
+  expect(requests.filter(url => url.endsWith('/comparison.json'))).toHaveLength(1);
+  expect(requests.some(url => /evidence-.*\.json/.test(url))).toBe(false);
+  await page.locator('.score-button[data-heat]').first().click();
+  await expect(page.getByRole('heading', { name: 'Result evidence', exact: true })).toBeVisible();
+  await expect(page.locator('.evidence-record').first()).toBeVisible();
+  expect(requests.filter(url => /evidence-.*\.json/.test(url))).toHaveLength(1);
+});

@@ -24,7 +24,7 @@ const fixture = {
   }, manifest: { snapshot_id: 'fixture' },
 } as unknown as AppData;
 
-vi.mock('../data/snapshots', () => ({ loadSnapshots: () => Promise.resolve(fixture) }));
+vi.mock('../data/snapshots', () => ({ loadFullSnapshots: () => Promise.resolve(fixture) }));
 afterEach(cleanup);
 
 it('keeps conflicting published reports separate and excludes unpublished candidates', async () => {

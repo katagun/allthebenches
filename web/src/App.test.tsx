@@ -8,7 +8,8 @@ import manifest from '../public/data/manifest.json';
 import market from '../public/data/market.json';
 import results from '../public/data/results.json';
 import App from './App';
-import type { AppData } from './data/snapshots';
+import { clearSnapshotCache, type AppData } from './data/snapshots';
+import { comparisonFixture } from './test/comparisonFixture';
 import { storageKey, decodeViewState } from './state/viewState';
 import { DEFAULT_VIEW, type ViewState } from './state/viewState';
 
@@ -21,8 +22,8 @@ function response(body: unknown, ok = true, status = 200) {
 }
 function mockSuccessfulFetch() {
   vi.stubGlobal('fetch', vi.fn(async (input: RequestInfo | URL) => {
-    const name = String(input).split('/').pop()?.replace('.json', '') as keyof typeof dataFiles;
-    return response(dataFiles[name]);
+    const name = String(input).split('/').pop()?.replace('.json', '') as string;
+    return response((name === 'comparison' ? comparisonFixture(dataFiles) : name.startsWith('evidence-') ? dataFiles.details : dataFiles[name as keyof typeof dataFiles]));
   }));
 }
 function viewWith(overrides: Partial<ViewState> = {}): ViewState {
@@ -44,6 +45,7 @@ function savedEnvelope(view: ViewState) {
 }
 
 beforeEach(() => {
+  clearSnapshotCache();
   if (originalStorageDescriptor) Object.defineProperty(window, 'localStorage', originalStorageDescriptor);
   window.history.replaceState({}, '', '/');
   window.localStorage.clear();
@@ -122,7 +124,7 @@ describe('App view workflows', () => {
     }
     vi.stubGlobal('fetch', vi.fn(async (input: RequestInfo | URL) => {
       const name = String(input).split('/').pop()?.replace('.json', '') ?? '';
-      return response(preciseFiles[name]);
+      return response((name === 'comparison' ? comparisonFixture(preciseFiles) : name.startsWith('evidence-') ? preciseFiles.details : preciseFiles[name]));
     }));
     setSharedUrl(viewWith({ presetId: 'frontier_oct2026', compare: true, selectedConfigurationIds: ['gpt6_astra_google_reported'], visibleColumnIds: checks.map(check => check.benchmarkId) }));
 
@@ -213,17 +215,17 @@ describe('App view workflows', () => {
     const fetchMock = vi.fn()
       .mockResolvedValueOnce(response({}, false, 503))
       .mockImplementation(async (input: RequestInfo | URL) => {
-        const name = String(input).split('/').pop()?.replace('.json', '') as keyof typeof dataFiles;
-        return response(dataFiles[name]);
+        const name = String(input).split('/').pop()?.replace('.json', '') as string;
+        return response((name === 'comparison' ? comparisonFixture(dataFiles) : name.startsWith('evidence-') ? dataFiles.details : dataFiles[name as keyof typeof dataFiles]));
       });
     vi.stubGlobal('fetch', fetchMock);
 
     const user = userEvent.setup();
     render(<App />);
-    expect(await screen.findByText('Could not load catalog data (503)')).not.toBeNull();
+    expect(await screen.findByText('Could not load published data (503)')).not.toBeNull();
     const callsBeforeRetry = fetchMock.mock.calls.length;
     await user.click(screen.getByRole('button', { name: 'Try again' }));
     expect(await screen.findByRole('searchbox', { name: 'Search models, labs, or benchmarks' })).not.toBeNull();
-    expect(fetchMock).toHaveBeenCalledTimes(callsBeforeRetry + 5);
+    expect(fetchMock).toHaveBeenCalledTimes(callsBeforeRetry + 1);
   });
 });

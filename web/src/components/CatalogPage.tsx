@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from 'react';
-import { loadSnapshots, type AppData } from '../data/snapshots';
+import { loadFullSnapshots, type FullAppData as AppData } from '../data/snapshots';
 import { coverageIndex } from '../data/coverage';
 import { useCatalogState } from '../state/catalogState';
 import { DEFAULT_VIEW } from '../state/viewState';
@@ -13,7 +13,7 @@ export type CatalogKind = 'models' | 'benchmarks' | 'evidence';
 export default function CatalogPage({ kind }: { kind: CatalogKind }) {
   const [data, setData] = useState<AppData | null>(null);
   const [error, setError] = useState(false);
-  useEffect(() => { let active = true; loadSnapshots().then(d => { if (active) setData(d); }).catch(() => { if (active) setError(true); }); return () => { active = false; }; }, []);
+  useEffect(() => { let active = true; loadFullSnapshots().then(d => { if (active) setData(d); }).catch(() => { if (active) setError(true); }); return () => { active = false; }; }, []);
   useEffect(() => { document.title = `${kind === 'evidence' ? 'Coverage & evidence' : kind[0].toUpperCase() + kind.slice(1)} · All the Benches`; return () => { document.title = 'All the Benches · Model evaluations'; }; }, [kind]);
   return <main className="entity-page catalog-page"><DirectoryNav active={kind}/>{error ? <p role="alert">Could not load the catalog. Reload to retry.</p> : data ? <CatalogContent key={kind} data={data} kind={kind}/> : <p role="status">Loading catalog…</p>}</main>;
 }

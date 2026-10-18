@@ -1,0 +1,5302 @@
+{
+  "adapter_sha256": "33b47f886b04d528c76344218af833f4811af1e15021ef41bf134cedbe40a30a",
+  "candidate_observations": 196,
+  "candidate_sha256": "36c18a0c01d6465bab07bea830b9e6e6a822b8073fb59a3d9ad5a5bffd18f7aa",
+  "conflicts": [
+    {
+      "changed_fields": [
+        "locator",
+        "retrieved_at",
+        "url"
+      ],
+      "id": "livebench_v1_20260625",
+      "table": "sources"
+    },
+    {
+      "changed_fields": [
+        "locator",
+        "retrieved_at",
+        "url"
+      ],
+      "id": "livebench_v2_20260902",
+      "table": "sources"
+    }
+  ],
+  "contract": {
+    "adapter": "livebench",
+    "cadence": "daily",
+    "scope": "Reviewed v1/v2 release contracts; frontend changes flagged for review"
+  },
+  "coverage": {
+    "captures": [
+      {
+        "breakdown_sha256": null,
+        "breakdown_url": null,
+        "categories_sha256": "dad300ad18655b69db720e1b88fc5a5eac06c5b2f0e52c2bf50f10ff057674f3",
+        "categories_url": "https://livebench.ai/v1/categories_2026_06_25.json",
+        "columns": 23,
+        "display_date": "2026-06-25",
+        "frontend_config_sha256": "ef4701dfa7fd8584d7078f80345338ff9b5759d4ab3a597e2dfc3e7bc5a2a7a8",
+        "generation": "v1",
+        "numeric_cells": 1633,
+        "release_key": "2026-06-25",
+        "rows": 71,
+        "sha256": "09d810986777c92b75b40a58a1829e0318e34cb5693ecae970b3145852271ba7",
+        "table_url": "https://livebench.ai/v1/table_2026_06_25.csv"
+      },
+      {
+        "breakdown_sha256": "8aa70d4dda6071ecb7589211edfea6f93c4f52cadba7da059ff8421fdb6e65ab",
+        "breakdown_url": "https://livebench.ai/breakdown_2026_09_02.json",
+        "categories_sha256": "6af780738e495c0339618208ded779325e59d951c38ead7a566fe54e68bb07b1",
+        "categories_url": "https://livebench.ai/categories_2026_09_02.json",
+        "columns": 7,
+        "display_date": "2026-10-14",
+        "frontend_config_sha256": "ef4701dfa7fd8584d7078f80345338ff9b5759d4ab3a597e2dfc3e7bc5a2a7a8",
+        "generation": "v2",
+        "numeric_cells": 343,
+        "release_key": "2026-09-02",
+        "rows": 49,
+        "sha256": "dea13d4db85a4a1c898f29835f5c58635848f1904870490ff14259596d66abcc",
+        "table_url": "https://livebench.ai/table_2026_09_02.csv"
+      }
+    ],
+    "configuration_policy": "Use an explicit source effort label when published; create source-specific exact-effort configurations when no matching canonical configuration exists; use unknown only when the source omits effort.",
+    "counts": {
+      "candidate_observations": 196,
+      "duplicate_existing": 390,
+      "no_score_cells": 0,
+      "source_specific_configurations": 0,
+      "unresolved_alias_cells": 1390,
+      "unresolved_configuration_cells": 0
+    },
+    "decisions": [
+      {
+        "column": "AMPS_Hard",
+        "existing_observation_id": "o_livebench_v1_20260625_amps_hard_gpt56_sol_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "gpt-5.6-sol-max",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "AMPS_Hard",
+        "existing_observation_id": "o_livebench_v1_20260625_amps_hard_claude_opus5_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "claude-opus-5-max-effort",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "AMPS_Hard",
+        "existing_observation_id": "o_livebench_v1_20260625_amps_hard_livebench_qwen38_max_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "qwen3.8-max",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "AMPS_Hard",
+        "existing_observation_id": "o_livebench_v1_20260625_amps_hard_livebench_qwen38_27b_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "qwen3.8-27b",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "AMPS_Hard",
+        "existing_observation_id": "o_livebench_v1_20260625_amps_hard_claude_fable51_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "claude-fable-5-1-max-effort",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "AMPS_Hard",
+        "existing_observation_id": "o_livebench_v1_20260625_amps_hard_muse_spark13_xhigh",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "muse-spark-1.3-xhigh",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "AMPS_Hard",
+        "existing_observation_id": "o_livebench_v1_20260625_amps_hard_gpt6_astra_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "gpt-6-astra-max",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "AMPS_Hard",
+        "existing_observation_id": "o_livebench_v1_20260625_amps_hard_grok47_xhigh",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "grok-4.7-xhigh",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "AMPS_Hard",
+        "existing_observation_id": "o_livebench_v1_20260625_amps_hard_claude_opus55_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "claude-opus-5-5-max-effort",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "AMPS_Hard",
+        "existing_observation_id": "o_livebench_v1_20260625_amps_hard_claude_opus55_xhigh",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "claude-opus-5-5-xhigh-effort",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "AMPS_Hard",
+        "existing_observation_id": "o_livebench_v1_20260625_amps_hard_gpt61_sol_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "gpt-6.1-sol-max",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "AMPS_Hard",
+        "existing_observation_id": "o_livebench_v1_20260625_amps_hard_bb_mistral_large4_high",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "mistral-large-4-high",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "AMPS_Hard",
+        "existing_observation_id": "o_livebench_v1_20260625_amps_hard_muse_wonder_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "muse-wonder-1.0-max",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "code_completion",
+        "existing_observation_id": "o_livebench_v1_20260625_code_completion_gpt56_sol_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "gpt-5.6-sol-max",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "code_completion",
+        "existing_observation_id": "o_livebench_v1_20260625_code_completion_claude_opus5_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "claude-opus-5-max-effort",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "code_completion",
+        "existing_observation_id": "o_livebench_v1_20260625_code_completion_livebench_qwen38_max_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "qwen3.8-max",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "code_completion",
+        "existing_observation_id": "o_livebench_v1_20260625_code_completion_livebench_qwen38_27b_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "qwen3.8-27b",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "code_completion",
+        "existing_observation_id": "o_livebench_v1_20260625_code_completion_claude_fable51_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "claude-fable-5-1-max-effort",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "code_completion",
+        "existing_observation_id": "o_livebench_v1_20260625_code_completion_muse_spark13_xhigh",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "muse-spark-1.3-xhigh",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "code_completion",
+        "existing_observation_id": "o_livebench_v1_20260625_code_completion_gpt6_astra_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "gpt-6-astra-max",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "code_completion",
+        "existing_observation_id": "o_livebench_v1_20260625_code_completion_grok47_xhigh",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "grok-4.7-xhigh",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "code_completion",
+        "existing_observation_id": "o_livebench_v1_20260625_code_completion_claude_opus55_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "claude-opus-5-5-max-effort",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "code_completion",
+        "existing_observation_id": "o_livebench_v1_20260625_code_completion_claude_opus55_xhigh",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "claude-opus-5-5-xhigh-effort",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "code_completion",
+        "existing_observation_id": "o_livebench_v1_20260625_code_completion_gpt61_sol_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "gpt-6.1-sol-max",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "code_completion",
+        "existing_observation_id": "o_livebench_v1_20260625_code_completion_bb_mistral_large4_high",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "mistral-large-4-high",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "code_completion",
+        "existing_observation_id": "o_livebench_v1_20260625_code_completion_muse_wonder_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "muse-wonder-1.0-max",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "code_generation",
+        "existing_observation_id": "o_livebench_v1_20260625_code_generation_gpt56_sol_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "gpt-5.6-sol-max",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "code_generation",
+        "existing_observation_id": "o_livebench_v1_20260625_code_generation_claude_opus5_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "claude-opus-5-max-effort",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "code_generation",
+        "existing_observation_id": "o_livebench_v1_20260625_code_generation_livebench_qwen38_max_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "qwen3.8-max",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "code_generation",
+        "existing_observation_id": "o_livebench_v1_20260625_code_generation_livebench_qwen38_27b_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "qwen3.8-27b",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "code_generation",
+        "existing_observation_id": "o_livebench_v1_20260625_code_generation_claude_fable51_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "claude-fable-5-1-max-effort",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "code_generation",
+        "existing_observation_id": "o_livebench_v1_20260625_code_generation_muse_spark13_xhigh",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "muse-spark-1.3-xhigh",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "code_generation",
+        "existing_observation_id": "o_livebench_v1_20260625_code_generation_gpt6_astra_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "gpt-6-astra-max",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "code_generation",
+        "existing_observation_id": "o_livebench_v1_20260625_code_generation_grok47_xhigh",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "grok-4.7-xhigh",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "code_generation",
+        "existing_observation_id": "o_livebench_v1_20260625_code_generation_claude_opus55_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "claude-opus-5-5-max-effort",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "code_generation",
+        "existing_observation_id": "o_livebench_v1_20260625_code_generation_claude_opus55_xhigh",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "claude-opus-5-5-xhigh-effort",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "code_generation",
+        "existing_observation_id": "o_livebench_v1_20260625_code_generation_gpt61_sol_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "gpt-6.1-sol-max",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "code_generation",
+        "existing_observation_id": "o_livebench_v1_20260625_code_generation_bb_mistral_large4_high",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "mistral-large-4-high",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "code_generation",
+        "existing_observation_id": "o_livebench_v1_20260625_code_generation_muse_wonder_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "muse-wonder-1.0-max",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "connections",
+        "existing_observation_id": "o_livebench_v1_20260625_connections_gpt56_sol_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "gpt-5.6-sol-max",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "connections",
+        "existing_observation_id": "o_livebench_v1_20260625_connections_claude_opus5_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "claude-opus-5-max-effort",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "connections",
+        "existing_observation_id": "o_livebench_v1_20260625_connections_livebench_qwen38_max_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "qwen3.8-max",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "connections",
+        "existing_observation_id": "o_livebench_v1_20260625_connections_livebench_qwen38_27b_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "qwen3.8-27b",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "connections",
+        "existing_observation_id": "o_livebench_v1_20260625_connections_claude_fable51_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "claude-fable-5-1-max-effort",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "connections",
+        "existing_observation_id": "o_livebench_v1_20260625_connections_muse_spark13_xhigh",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "muse-spark-1.3-xhigh",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "connections",
+        "existing_observation_id": "o_livebench_v1_20260625_connections_gpt6_astra_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "gpt-6-astra-max",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "connections",
+        "existing_observation_id": "o_livebench_v1_20260625_connections_grok47_xhigh",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "grok-4.7-xhigh",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "connections",
+        "existing_observation_id": "o_livebench_v1_20260625_connections_claude_opus55_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "claude-opus-5-5-max-effort",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "connections",
+        "existing_observation_id": "o_livebench_v1_20260625_connections_claude_opus55_xhigh",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "claude-opus-5-5-xhigh-effort",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "connections",
+        "existing_observation_id": "o_livebench_v1_20260625_connections_gpt61_sol_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "gpt-6.1-sol-max",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "connections",
+        "existing_observation_id": "o_livebench_v1_20260625_connections_bb_mistral_large4_high",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "mistral-large-4-high",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "connections",
+        "existing_observation_id": "o_livebench_v1_20260625_connections_muse_wonder_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "muse-wonder-1.0-max",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "consecutive_events",
+        "existing_observation_id": "o_livebench_v1_20260625_consecutive_events_gpt56_sol_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "gpt-5.6-sol-max",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "consecutive_events",
+        "existing_observation_id": "o_livebench_v1_20260625_consecutive_events_claude_opus5_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "claude-opus-5-max-effort",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "consecutive_events",
+        "existing_observation_id": "o_livebench_v1_20260625_consecutive_events_livebench_qwen38_max_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "qwen3.8-max",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "consecutive_events",
+        "existing_observation_id": "o_livebench_v1_20260625_consecutive_events_livebench_qwen38_27b_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "qwen3.8-27b",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "consecutive_events",
+        "existing_observation_id": "o_livebench_v1_20260625_consecutive_events_claude_fable51_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "claude-fable-5-1-max-effort",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "consecutive_events",
+        "existing_observation_id": "o_livebench_v1_20260625_consecutive_events_muse_spark13_xhigh",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "muse-spark-1.3-xhigh",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "consecutive_events",
+        "existing_observation_id": "o_livebench_v1_20260625_consecutive_events_gpt6_astra_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "gpt-6-astra-max",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "consecutive_events",
+        "existing_observation_id": "o_livebench_v1_20260625_consecutive_events_grok47_xhigh",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "grok-4.7-xhigh",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "consecutive_events",
+        "existing_observation_id": "o_livebench_v1_20260625_consecutive_events_claude_opus55_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "claude-opus-5-5-max-effort",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "consecutive_events",
+        "existing_observation_id": "o_livebench_v1_20260625_consecutive_events_claude_opus55_xhigh",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "claude-opus-5-5-xhigh-effort",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "consecutive_events",
+        "existing_observation_id": "o_livebench_v1_20260625_consecutive_events_gpt61_sol_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "gpt-6.1-sol-max",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "consecutive_events",
+        "existing_observation_id": "o_livebench_v1_20260625_consecutive_events_bb_mistral_large4_high",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "mistral-large-4-high",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "consecutive_events",
+        "existing_observation_id": "o_livebench_v1_20260625_consecutive_events_muse_wonder_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "muse-wonder-1.0-max",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "integrals_with_game",
+        "existing_observation_id": "o_livebench_v1_20260625_integrals_with_game_gpt56_sol_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "gpt-5.6-sol-max",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "integrals_with_game",
+        "existing_observation_id": "o_livebench_v1_20260625_integrals_with_game_claude_opus5_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "claude-opus-5-max-effort",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "integrals_with_game",
+        "existing_observation_id": "o_livebench_v1_20260625_integrals_with_game_livebench_qwen38_max_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "qwen3.8-max",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "integrals_with_game",
+        "existing_observation_id": "o_livebench_v1_20260625_integrals_with_game_livebench_qwen38_27b_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "qwen3.8-27b",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "integrals_with_game",
+        "existing_observation_id": "o_livebench_v1_20260625_integrals_with_game_claude_fable51_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "claude-fable-5-1-max-effort",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "integrals_with_game",
+        "existing_observation_id": "o_livebench_v1_20260625_integrals_with_game_muse_spark13_xhigh",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "muse-spark-1.3-xhigh",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "integrals_with_game",
+        "existing_observation_id": "o_livebench_v1_20260625_integrals_with_game_gpt6_astra_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "gpt-6-astra-max",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "integrals_with_game",
+        "existing_observation_id": "o_livebench_v1_20260625_integrals_with_game_grok47_xhigh",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "grok-4.7-xhigh",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "integrals_with_game",
+        "existing_observation_id": "o_livebench_v1_20260625_integrals_with_game_claude_opus55_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "claude-opus-5-5-max-effort",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "integrals_with_game",
+        "existing_observation_id": "o_livebench_v1_20260625_integrals_with_game_claude_opus55_xhigh",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "claude-opus-5-5-xhigh-effort",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "integrals_with_game",
+        "existing_observation_id": "o_livebench_v1_20260625_integrals_with_game_gpt61_sol_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "gpt-6.1-sol-max",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "integrals_with_game",
+        "existing_observation_id": "o_livebench_v1_20260625_integrals_with_game_bb_mistral_large4_high",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "mistral-large-4-high",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "integrals_with_game",
+        "existing_observation_id": "o_livebench_v1_20260625_integrals_with_game_muse_wonder_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "muse-wonder-1.0-max",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "javascript",
+        "existing_observation_id": "o_livebench_v1_20260625_javascript_gpt56_sol_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "gpt-5.6-sol-max",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "javascript",
+        "existing_observation_id": "o_livebench_v1_20260625_javascript_claude_opus5_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "claude-opus-5-max-effort",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "javascript",
+        "existing_observation_id": "o_livebench_v1_20260625_javascript_livebench_qwen38_max_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "qwen3.8-max",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "javascript",
+        "existing_observation_id": "o_livebench_v1_20260625_javascript_livebench_qwen38_27b_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "qwen3.8-27b",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "javascript",
+        "existing_observation_id": "o_livebench_v1_20260625_javascript_claude_fable51_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "claude-fable-5-1-max-effort",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "javascript",
+        "existing_observation_id": "o_livebench_v1_20260625_javascript_muse_spark13_xhigh",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "muse-spark-1.3-xhigh",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "javascript",
+        "existing_observation_id": "o_livebench_v1_20260625_javascript_gpt6_astra_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "gpt-6-astra-max",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "javascript",
+        "existing_observation_id": "o_livebench_v1_20260625_javascript_grok47_xhigh",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "grok-4.7-xhigh",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "javascript",
+        "existing_observation_id": "o_livebench_v1_20260625_javascript_claude_opus55_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "claude-opus-5-5-max-effort",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "javascript",
+        "existing_observation_id": "o_livebench_v1_20260625_javascript_claude_opus55_xhigh",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "claude-opus-5-5-xhigh-effort",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "javascript",
+        "existing_observation_id": "o_livebench_v1_20260625_javascript_gpt61_sol_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "gpt-6.1-sol-max",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "javascript",
+        "existing_observation_id": "o_livebench_v1_20260625_javascript_bb_mistral_large4_high",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "mistral-large-4-high",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "javascript",
+        "existing_observation_id": "o_livebench_v1_20260625_javascript_muse_wonder_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "muse-wonder-1.0-max",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "logic_with_navigation",
+        "existing_observation_id": "o_livebench_v1_20260625_logic_with_navigation_gpt56_sol_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "gpt-5.6-sol-max",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "logic_with_navigation",
+        "existing_observation_id": "o_livebench_v1_20260625_logic_with_navigation_claude_opus5_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "claude-opus-5-max-effort",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "logic_with_navigation",
+        "existing_observation_id": "o_livebench_v1_20260625_logic_with_navigation_livebench_qwen38_max_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "qwen3.8-max",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "logic_with_navigation",
+        "existing_observation_id": "o_livebench_v1_20260625_logic_with_navigation_livebench_qwen38_27b_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "qwen3.8-27b",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "logic_with_navigation",
+        "existing_observation_id": "o_livebench_v1_20260625_logic_with_navigation_claude_fable51_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "claude-fable-5-1-max-effort",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "logic_with_navigation",
+        "existing_observation_id": "o_livebench_v1_20260625_logic_with_navigation_muse_spark13_xhigh",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "muse-spark-1.3-xhigh",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "logic_with_navigation",
+        "existing_observation_id": "o_livebench_v1_20260625_logic_with_navigation_gpt6_astra_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "gpt-6-astra-max",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "logic_with_navigation",
+        "existing_observation_id": "o_livebench_v1_20260625_logic_with_navigation_grok47_xhigh",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "grok-4.7-xhigh",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "logic_with_navigation",
+        "existing_observation_id": "o_livebench_v1_20260625_logic_with_navigation_claude_opus55_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "claude-opus-5-5-max-effort",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "logic_with_navigation",
+        "existing_observation_id": "o_livebench_v1_20260625_logic_with_navigation_claude_opus55_xhigh",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "claude-opus-5-5-xhigh-effort",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "logic_with_navigation",
+        "existing_observation_id": "o_livebench_v1_20260625_logic_with_navigation_gpt61_sol_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "gpt-6.1-sol-max",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "logic_with_navigation",
+        "existing_observation_id": "o_livebench_v1_20260625_logic_with_navigation_bb_mistral_large4_high",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "mistral-large-4-high",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "logic_with_navigation",
+        "existing_observation_id": "o_livebench_v1_20260625_logic_with_navigation_muse_wonder_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "muse-wonder-1.0-max",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "math_comp",
+        "existing_observation_id": "o_livebench_v1_20260625_math_comp_gpt56_sol_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "gpt-5.6-sol-max",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "math_comp",
+        "existing_observation_id": "o_livebench_v1_20260625_math_comp_claude_opus5_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "claude-opus-5-max-effort",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "math_comp",
+        "existing_observation_id": "o_livebench_v1_20260625_math_comp_livebench_qwen38_max_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "qwen3.8-max",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "math_comp",
+        "existing_observation_id": "o_livebench_v1_20260625_math_comp_livebench_qwen38_27b_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "qwen3.8-27b",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "math_comp",
+        "existing_observation_id": "o_livebench_v1_20260625_math_comp_claude_fable51_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "claude-fable-5-1-max-effort",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "math_comp",
+        "existing_observation_id": "o_livebench_v1_20260625_math_comp_muse_spark13_xhigh",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "muse-spark-1.3-xhigh",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "math_comp",
+        "existing_observation_id": "o_livebench_v1_20260625_math_comp_gpt6_astra_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "gpt-6-astra-max",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "math_comp",
+        "existing_observation_id": "o_livebench_v1_20260625_math_comp_grok47_xhigh",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "grok-4.7-xhigh",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "math_comp",
+        "existing_observation_id": "o_livebench_v1_20260625_math_comp_claude_opus55_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "claude-opus-5-5-max-effort",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "math_comp",
+        "existing_observation_id": "o_livebench_v1_20260625_math_comp_claude_opus55_xhigh",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "claude-opus-5-5-xhigh-effort",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "math_comp",
+        "existing_observation_id": "o_livebench_v1_20260625_math_comp_gpt61_sol_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "gpt-6.1-sol-max",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "math_comp",
+        "existing_observation_id": "o_livebench_v1_20260625_math_comp_bb_mistral_large4_high",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "mistral-large-4-high",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "math_comp",
+        "existing_observation_id": "o_livebench_v1_20260625_math_comp_muse_wonder_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "muse-wonder-1.0-max",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "olympiad",
+        "existing_observation_id": "o_livebench_v1_20260625_olympiad_gpt56_sol_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "gpt-5.6-sol-max",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "olympiad",
+        "existing_observation_id": "o_livebench_v1_20260625_olympiad_claude_opus5_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "claude-opus-5-max-effort",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "olympiad",
+        "existing_observation_id": "o_livebench_v1_20260625_olympiad_livebench_qwen38_max_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "qwen3.8-max",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "olympiad",
+        "existing_observation_id": "o_livebench_v1_20260625_olympiad_livebench_qwen38_27b_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "qwen3.8-27b",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "olympiad",
+        "existing_observation_id": "o_livebench_v1_20260625_olympiad_claude_fable51_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "claude-fable-5-1-max-effort",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "olympiad",
+        "existing_observation_id": "o_livebench_v1_20260625_olympiad_muse_spark13_xhigh",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "muse-spark-1.3-xhigh",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "olympiad",
+        "existing_observation_id": "o_livebench_v1_20260625_olympiad_gpt6_astra_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "gpt-6-astra-max",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "olympiad",
+        "existing_observation_id": "o_livebench_v1_20260625_olympiad_grok47_xhigh",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "grok-4.7-xhigh",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "olympiad",
+        "existing_observation_id": "o_livebench_v1_20260625_olympiad_claude_opus55_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "claude-opus-5-5-max-effort",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "olympiad",
+        "existing_observation_id": "o_livebench_v1_20260625_olympiad_claude_opus55_xhigh",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "claude-opus-5-5-xhigh-effort",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "olympiad",
+        "existing_observation_id": "o_livebench_v1_20260625_olympiad_gpt61_sol_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "gpt-6.1-sol-max",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "olympiad",
+        "existing_observation_id": "o_livebench_v1_20260625_olympiad_bb_mistral_large4_high",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "mistral-large-4-high",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "olympiad",
+        "existing_observation_id": "o_livebench_v1_20260625_olympiad_muse_wonder_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "muse-wonder-1.0-max",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "paraphrase",
+        "existing_observation_id": "o_livebench_v1_20260625_paraphrase_gpt56_sol_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "gpt-5.6-sol-max",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "paraphrase",
+        "existing_observation_id": "o_livebench_v1_20260625_paraphrase_claude_opus5_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "claude-opus-5-max-effort",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "paraphrase",
+        "existing_observation_id": "o_livebench_v1_20260625_paraphrase_livebench_qwen38_max_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "qwen3.8-max",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "paraphrase",
+        "existing_observation_id": "o_livebench_v1_20260625_paraphrase_livebench_qwen38_27b_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "qwen3.8-27b",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "paraphrase",
+        "existing_observation_id": "o_livebench_v1_20260625_paraphrase_claude_fable51_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "claude-fable-5-1-max-effort",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "paraphrase",
+        "existing_observation_id": "o_livebench_v1_20260625_paraphrase_muse_spark13_xhigh",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "muse-spark-1.3-xhigh",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "paraphrase",
+        "existing_observation_id": "o_livebench_v1_20260625_paraphrase_gpt6_astra_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "gpt-6-astra-max",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "paraphrase",
+        "existing_observation_id": "o_livebench_v1_20260625_paraphrase_grok47_xhigh",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "grok-4.7-xhigh",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "paraphrase",
+        "existing_observation_id": "o_livebench_v1_20260625_paraphrase_claude_opus55_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "claude-opus-5-5-max-effort",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "paraphrase",
+        "existing_observation_id": "o_livebench_v1_20260625_paraphrase_claude_opus55_xhigh",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "claude-opus-5-5-xhigh-effort",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "paraphrase",
+        "existing_observation_id": "o_livebench_v1_20260625_paraphrase_gpt61_sol_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "gpt-6.1-sol-max",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "paraphrase",
+        "existing_observation_id": "o_livebench_v1_20260625_paraphrase_bb_mistral_large4_high",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "mistral-large-4-high",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "paraphrase",
+        "existing_observation_id": "o_livebench_v1_20260625_paraphrase_muse_wonder_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "muse-wonder-1.0-max",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "plot_unscrambling",
+        "existing_observation_id": "o_livebench_v1_20260625_plot_unscrambling_gpt56_sol_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "gpt-5.6-sol-max",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "plot_unscrambling",
+        "existing_observation_id": "o_livebench_v1_20260625_plot_unscrambling_claude_opus5_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "claude-opus-5-max-effort",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "plot_unscrambling",
+        "existing_observation_id": "o_livebench_v1_20260625_plot_unscrambling_livebench_qwen38_max_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "qwen3.8-max",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "plot_unscrambling",
+        "existing_observation_id": "o_livebench_v1_20260625_plot_unscrambling_livebench_qwen38_27b_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "qwen3.8-27b",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "plot_unscrambling",
+        "existing_observation_id": "o_livebench_v1_20260625_plot_unscrambling_claude_fable51_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "claude-fable-5-1-max-effort",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "plot_unscrambling",
+        "existing_observation_id": "o_livebench_v1_20260625_plot_unscrambling_muse_spark13_xhigh",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "muse-spark-1.3-xhigh",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "plot_unscrambling",
+        "existing_observation_id": "o_livebench_v1_20260625_plot_unscrambling_gpt6_astra_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "gpt-6-astra-max",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "plot_unscrambling",
+        "existing_observation_id": "o_livebench_v1_20260625_plot_unscrambling_grok47_xhigh",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "grok-4.7-xhigh",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "plot_unscrambling",
+        "existing_observation_id": "o_livebench_v1_20260625_plot_unscrambling_claude_opus55_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "claude-opus-5-5-max-effort",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "plot_unscrambling",
+        "existing_observation_id": "o_livebench_v1_20260625_plot_unscrambling_claude_opus55_xhigh",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "claude-opus-5-5-xhigh-effort",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "plot_unscrambling",
+        "existing_observation_id": "o_livebench_v1_20260625_plot_unscrambling_gpt61_sol_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "gpt-6.1-sol-max",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "plot_unscrambling",
+        "existing_observation_id": "o_livebench_v1_20260625_plot_unscrambling_bb_mistral_large4_high",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "mistral-large-4-high",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "plot_unscrambling",
+        "existing_observation_id": "o_livebench_v1_20260625_plot_unscrambling_muse_wonder_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "muse-wonder-1.0-max",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "python",
+        "existing_observation_id": "o_livebench_v1_20260625_python_gpt56_sol_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "gpt-5.6-sol-max",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "python",
+        "existing_observation_id": "o_livebench_v1_20260625_python_claude_opus5_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "claude-opus-5-max-effort",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "python",
+        "existing_observation_id": "o_livebench_v1_20260625_python_livebench_qwen38_max_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "qwen3.8-max",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "python",
+        "existing_observation_id": "o_livebench_v1_20260625_python_livebench_qwen38_27b_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "qwen3.8-27b",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "python",
+        "existing_observation_id": "o_livebench_v1_20260625_python_claude_fable51_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "claude-fable-5-1-max-effort",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "python",
+        "existing_observation_id": "o_livebench_v1_20260625_python_muse_spark13_xhigh",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "muse-spark-1.3-xhigh",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "python",
+        "existing_observation_id": "o_livebench_v1_20260625_python_gpt6_astra_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "gpt-6-astra-max",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "python",
+        "existing_observation_id": "o_livebench_v1_20260625_python_grok47_xhigh",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "grok-4.7-xhigh",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "python",
+        "existing_observation_id": "o_livebench_v1_20260625_python_claude_opus55_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "claude-opus-5-5-max-effort",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "python",
+        "existing_observation_id": "o_livebench_v1_20260625_python_claude_opus55_xhigh",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "claude-opus-5-5-xhigh-effort",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "python",
+        "existing_observation_id": "o_livebench_v1_20260625_python_gpt61_sol_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "gpt-6.1-sol-max",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "python",
+        "existing_observation_id": "o_livebench_v1_20260625_python_bb_mistral_large4_high",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "mistral-large-4-high",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "python",
+        "existing_observation_id": "o_livebench_v1_20260625_python_muse_wonder_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "muse-wonder-1.0-max",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "simplify",
+        "existing_observation_id": "o_livebench_v1_20260625_simplify_gpt56_sol_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "gpt-5.6-sol-max",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "simplify",
+        "existing_observation_id": "o_livebench_v1_20260625_simplify_claude_opus5_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "claude-opus-5-max-effort",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "simplify",
+        "existing_observation_id": "o_livebench_v1_20260625_simplify_livebench_qwen38_max_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "qwen3.8-max",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "simplify",
+        "existing_observation_id": "o_livebench_v1_20260625_simplify_livebench_qwen38_27b_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "qwen3.8-27b",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "simplify",
+        "existing_observation_id": "o_livebench_v1_20260625_simplify_claude_fable51_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "claude-fable-5-1-max-effort",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "simplify",
+        "existing_observation_id": "o_livebench_v1_20260625_simplify_muse_spark13_xhigh",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "muse-spark-1.3-xhigh",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "simplify",
+        "existing_observation_id": "o_livebench_v1_20260625_simplify_gpt6_astra_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "gpt-6-astra-max",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "simplify",
+        "existing_observation_id": "o_livebench_v1_20260625_simplify_grok47_xhigh",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "grok-4.7-xhigh",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "simplify",
+        "existing_observation_id": "o_livebench_v1_20260625_simplify_claude_opus55_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "claude-opus-5-5-max-effort",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "simplify",
+        "existing_observation_id": "o_livebench_v1_20260625_simplify_claude_opus55_xhigh",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "claude-opus-5-5-xhigh-effort",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "simplify",
+        "existing_observation_id": "o_livebench_v1_20260625_simplify_gpt61_sol_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "gpt-6.1-sol-max",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "simplify",
+        "existing_observation_id": "o_livebench_v1_20260625_simplify_bb_mistral_large4_high",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "mistral-large-4-high",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "simplify",
+        "existing_observation_id": "o_livebench_v1_20260625_simplify_muse_wonder_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "muse-wonder-1.0-max",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "spatial",
+        "existing_observation_id": "o_livebench_v1_20260625_spatial_gpt56_sol_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "gpt-5.6-sol-max",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "spatial",
+        "existing_observation_id": "o_livebench_v1_20260625_spatial_claude_opus5_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "claude-opus-5-max-effort",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "spatial",
+        "existing_observation_id": "o_livebench_v1_20260625_spatial_livebench_qwen38_max_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "qwen3.8-max",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "spatial",
+        "existing_observation_id": "o_livebench_v1_20260625_spatial_livebench_qwen38_27b_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "qwen3.8-27b",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "spatial",
+        "existing_observation_id": "o_livebench_v1_20260625_spatial_claude_fable51_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "claude-fable-5-1-max-effort",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "spatial",
+        "existing_observation_id": "o_livebench_v1_20260625_spatial_muse_spark13_xhigh",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "muse-spark-1.3-xhigh",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "spatial",
+        "existing_observation_id": "o_livebench_v1_20260625_spatial_gpt6_astra_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "gpt-6-astra-max",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "spatial",
+        "existing_observation_id": "o_livebench_v1_20260625_spatial_grok47_xhigh",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "grok-4.7-xhigh",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "spatial",
+        "existing_observation_id": "o_livebench_v1_20260625_spatial_claude_opus55_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "claude-opus-5-5-max-effort",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "spatial",
+        "existing_observation_id": "o_livebench_v1_20260625_spatial_claude_opus55_xhigh",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "claude-opus-5-5-xhigh-effort",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "spatial",
+        "existing_observation_id": "o_livebench_v1_20260625_spatial_gpt61_sol_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "gpt-6.1-sol-max",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "spatial",
+        "existing_observation_id": "o_livebench_v1_20260625_spatial_bb_mistral_large4_high",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "mistral-large-4-high",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "spatial",
+        "existing_observation_id": "o_livebench_v1_20260625_spatial_muse_wonder_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "muse-wonder-1.0-max",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "story_generation",
+        "existing_observation_id": "o_livebench_v1_20260625_story_generation_gpt56_sol_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "gpt-5.6-sol-max",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "story_generation",
+        "existing_observation_id": "o_livebench_v1_20260625_story_generation_claude_opus5_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "claude-opus-5-max-effort",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "story_generation",
+        "existing_observation_id": "o_livebench_v1_20260625_story_generation_livebench_qwen38_max_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "qwen3.8-max",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "story_generation",
+        "existing_observation_id": "o_livebench_v1_20260625_story_generation_livebench_qwen38_27b_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "qwen3.8-27b",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "story_generation",
+        "existing_observation_id": "o_livebench_v1_20260625_story_generation_claude_fable51_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "claude-fable-5-1-max-effort",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "story_generation",
+        "existing_observation_id": "o_livebench_v1_20260625_story_generation_muse_spark13_xhigh",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "muse-spark-1.3-xhigh",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "story_generation",
+        "existing_observation_id": "o_livebench_v1_20260625_story_generation_gpt6_astra_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "gpt-6-astra-max",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "story_generation",
+        "existing_observation_id": "o_livebench_v1_20260625_story_generation_grok47_xhigh",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "grok-4.7-xhigh",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "story_generation",
+        "existing_observation_id": "o_livebench_v1_20260625_story_generation_claude_opus55_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "claude-opus-5-5-max-effort",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "story_generation",
+        "existing_observation_id": "o_livebench_v1_20260625_story_generation_claude_opus55_xhigh",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "claude-opus-5-5-xhigh-effort",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "story_generation",
+        "existing_observation_id": "o_livebench_v1_20260625_story_generation_gpt61_sol_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "gpt-6.1-sol-max",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "story_generation",
+        "existing_observation_id": "o_livebench_v1_20260625_story_generation_bb_mistral_large4_high",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "mistral-large-4-high",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "story_generation",
+        "existing_observation_id": "o_livebench_v1_20260625_story_generation_muse_wonder_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "muse-wonder-1.0-max",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "summarize",
+        "existing_observation_id": "o_livebench_v1_20260625_summarize_gpt56_sol_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "gpt-5.6-sol-max",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "summarize",
+        "existing_observation_id": "o_livebench_v1_20260625_summarize_claude_opus5_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "claude-opus-5-max-effort",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "summarize",
+        "existing_observation_id": "o_livebench_v1_20260625_summarize_livebench_qwen38_max_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "qwen3.8-max",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "summarize",
+        "existing_observation_id": "o_livebench_v1_20260625_summarize_livebench_qwen38_27b_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "qwen3.8-27b",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "summarize",
+        "existing_observation_id": "o_livebench_v1_20260625_summarize_claude_fable51_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "claude-fable-5-1-max-effort",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "summarize",
+        "existing_observation_id": "o_livebench_v1_20260625_summarize_muse_spark13_xhigh",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "muse-spark-1.3-xhigh",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "summarize",
+        "existing_observation_id": "o_livebench_v1_20260625_summarize_gpt6_astra_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "gpt-6-astra-max",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "summarize",
+        "existing_observation_id": "o_livebench_v1_20260625_summarize_grok47_xhigh",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "grok-4.7-xhigh",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "summarize",
+        "existing_observation_id": "o_livebench_v1_20260625_summarize_claude_opus55_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "claude-opus-5-5-max-effort",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "summarize",
+        "existing_observation_id": "o_livebench_v1_20260625_summarize_claude_opus55_xhigh",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "claude-opus-5-5-xhigh-effort",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "summarize",
+        "existing_observation_id": "o_livebench_v1_20260625_summarize_gpt61_sol_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "gpt-6.1-sol-max",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "summarize",
+        "existing_observation_id": "o_livebench_v1_20260625_summarize_bb_mistral_large4_high",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "mistral-large-4-high",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "summarize",
+        "existing_observation_id": "o_livebench_v1_20260625_summarize_muse_wonder_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "muse-wonder-1.0-max",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "tablejoin",
+        "existing_observation_id": "o_livebench_v1_20260625_tablejoin_gpt56_sol_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "gpt-5.6-sol-max",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "tablejoin",
+        "existing_observation_id": "o_livebench_v1_20260625_tablejoin_claude_opus5_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "claude-opus-5-max-effort",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "tablejoin",
+        "existing_observation_id": "o_livebench_v1_20260625_tablejoin_livebench_qwen38_max_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "qwen3.8-max",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "tablejoin",
+        "existing_observation_id": "o_livebench_v1_20260625_tablejoin_livebench_qwen38_27b_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "qwen3.8-27b",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "tablejoin",
+        "existing_observation_id": "o_livebench_v1_20260625_tablejoin_claude_fable51_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "claude-fable-5-1-max-effort",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "tablejoin",
+        "existing_observation_id": "o_livebench_v1_20260625_tablejoin_muse_spark13_xhigh",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "muse-spark-1.3-xhigh",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "tablejoin",
+        "existing_observation_id": "o_livebench_v1_20260625_tablejoin_gpt6_astra_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "gpt-6-astra-max",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "tablejoin",
+        "existing_observation_id": "o_livebench_v1_20260625_tablejoin_grok47_xhigh",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "grok-4.7-xhigh",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "tablejoin",
+        "existing_observation_id": "o_livebench_v1_20260625_tablejoin_claude_opus55_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "claude-opus-5-5-max-effort",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "tablejoin",
+        "existing_observation_id": "o_livebench_v1_20260625_tablejoin_claude_opus55_xhigh",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "claude-opus-5-5-xhigh-effort",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "tablejoin",
+        "existing_observation_id": "o_livebench_v1_20260625_tablejoin_gpt61_sol_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "gpt-6.1-sol-max",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "tablejoin",
+        "existing_observation_id": "o_livebench_v1_20260625_tablejoin_bb_mistral_large4_high",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "mistral-large-4-high",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "tablejoin",
+        "existing_observation_id": "o_livebench_v1_20260625_tablejoin_muse_wonder_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "muse-wonder-1.0-max",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "tablereformat",
+        "existing_observation_id": "o_livebench_v1_20260625_tablereformat_gpt56_sol_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "gpt-5.6-sol-max",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "tablereformat",
+        "existing_observation_id": "o_livebench_v1_20260625_tablereformat_claude_opus5_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "claude-opus-5-max-effort",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "tablereformat",
+        "existing_observation_id": "o_livebench_v1_20260625_tablereformat_livebench_qwen38_max_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "qwen3.8-max",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "tablereformat",
+        "existing_observation_id": "o_livebench_v1_20260625_tablereformat_livebench_qwen38_27b_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "qwen3.8-27b",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "tablereformat",
+        "existing_observation_id": "o_livebench_v1_20260625_tablereformat_claude_fable51_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "claude-fable-5-1-max-effort",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "tablereformat",
+        "existing_observation_id": "o_livebench_v1_20260625_tablereformat_muse_spark13_xhigh",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "muse-spark-1.3-xhigh",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "tablereformat",
+        "existing_observation_id": "o_livebench_v1_20260625_tablereformat_gpt6_astra_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "gpt-6-astra-max",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "tablereformat",
+        "existing_observation_id": "o_livebench_v1_20260625_tablereformat_grok47_xhigh",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "grok-4.7-xhigh",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "tablereformat",
+        "existing_observation_id": "o_livebench_v1_20260625_tablereformat_claude_opus55_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "claude-opus-5-5-max-effort",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "tablereformat",
+        "existing_observation_id": "o_livebench_v1_20260625_tablereformat_claude_opus55_xhigh",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "claude-opus-5-5-xhigh-effort",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "tablereformat",
+        "existing_observation_id": "o_livebench_v1_20260625_tablereformat_gpt61_sol_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "gpt-6.1-sol-max",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "tablereformat",
+        "existing_observation_id": "o_livebench_v1_20260625_tablereformat_bb_mistral_large4_high",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "mistral-large-4-high",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "tablereformat",
+        "existing_observation_id": "o_livebench_v1_20260625_tablereformat_muse_wonder_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "muse-wonder-1.0-max",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "theory_of_mind",
+        "existing_observation_id": "o_livebench_v1_20260625_theory_of_mind_gpt56_sol_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "gpt-5.6-sol-max",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "theory_of_mind",
+        "existing_observation_id": "o_livebench_v1_20260625_theory_of_mind_claude_opus5_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "claude-opus-5-max-effort",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "theory_of_mind",
+        "existing_observation_id": "o_livebench_v1_20260625_theory_of_mind_livebench_qwen38_max_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "qwen3.8-max",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "theory_of_mind",
+        "existing_observation_id": "o_livebench_v1_20260625_theory_of_mind_livebench_qwen38_27b_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "qwen3.8-27b",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "theory_of_mind",
+        "existing_observation_id": "o_livebench_v1_20260625_theory_of_mind_claude_fable51_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "claude-fable-5-1-max-effort",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "theory_of_mind",
+        "existing_observation_id": "o_livebench_v1_20260625_theory_of_mind_muse_spark13_xhigh",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "muse-spark-1.3-xhigh",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "theory_of_mind",
+        "existing_observation_id": "o_livebench_v1_20260625_theory_of_mind_gpt6_astra_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "gpt-6-astra-max",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "theory_of_mind",
+        "existing_observation_id": "o_livebench_v1_20260625_theory_of_mind_grok47_xhigh",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "grok-4.7-xhigh",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "theory_of_mind",
+        "existing_observation_id": "o_livebench_v1_20260625_theory_of_mind_claude_opus55_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "claude-opus-5-5-max-effort",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "theory_of_mind",
+        "existing_observation_id": "o_livebench_v1_20260625_theory_of_mind_claude_opus55_xhigh",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "claude-opus-5-5-xhigh-effort",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "theory_of_mind",
+        "existing_observation_id": "o_livebench_v1_20260625_theory_of_mind_gpt61_sol_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "gpt-6.1-sol-max",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "theory_of_mind",
+        "existing_observation_id": "o_livebench_v1_20260625_theory_of_mind_bb_mistral_large4_high",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "mistral-large-4-high",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "theory_of_mind",
+        "existing_observation_id": "o_livebench_v1_20260625_theory_of_mind_muse_wonder_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "muse-wonder-1.0-max",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "typescript",
+        "existing_observation_id": "o_livebench_v1_20260625_typescript_gpt56_sol_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "gpt-5.6-sol-max",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "typescript",
+        "existing_observation_id": "o_livebench_v1_20260625_typescript_claude_opus5_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "claude-opus-5-max-effort",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "typescript",
+        "existing_observation_id": "o_livebench_v1_20260625_typescript_livebench_qwen38_max_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "qwen3.8-max",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "typescript",
+        "existing_observation_id": "o_livebench_v1_20260625_typescript_livebench_qwen38_27b_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "qwen3.8-27b",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "typescript",
+        "existing_observation_id": "o_livebench_v1_20260625_typescript_claude_fable51_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "claude-fable-5-1-max-effort",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "typescript",
+        "existing_observation_id": "o_livebench_v1_20260625_typescript_muse_spark13_xhigh",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "muse-spark-1.3-xhigh",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "typescript",
+        "existing_observation_id": "o_livebench_v1_20260625_typescript_gpt6_astra_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "gpt-6-astra-max",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "typescript",
+        "existing_observation_id": "o_livebench_v1_20260625_typescript_grok47_xhigh",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "grok-4.7-xhigh",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "typescript",
+        "existing_observation_id": "o_livebench_v1_20260625_typescript_claude_opus55_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "claude-opus-5-5-max-effort",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "typescript",
+        "existing_observation_id": "o_livebench_v1_20260625_typescript_claude_opus55_xhigh",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "claude-opus-5-5-xhigh-effort",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "typescript",
+        "existing_observation_id": "o_livebench_v1_20260625_typescript_gpt61_sol_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "gpt-6.1-sol-max",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "typescript",
+        "existing_observation_id": "o_livebench_v1_20260625_typescript_bb_mistral_large4_high",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "mistral-large-4-high",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "typescript",
+        "existing_observation_id": "o_livebench_v1_20260625_typescript_muse_wonder_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "muse-wonder-1.0-max",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "typos",
+        "existing_observation_id": "o_livebench_v1_20260625_typos_gpt56_sol_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "gpt-5.6-sol-max",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "typos",
+        "existing_observation_id": "o_livebench_v1_20260625_typos_claude_opus5_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "claude-opus-5-max-effort",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "typos",
+        "existing_observation_id": "o_livebench_v1_20260625_typos_livebench_qwen38_max_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "qwen3.8-max",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "typos",
+        "existing_observation_id": "o_livebench_v1_20260625_typos_livebench_qwen38_27b_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "qwen3.8-27b",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "typos",
+        "existing_observation_id": "o_livebench_v1_20260625_typos_claude_fable51_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "claude-fable-5-1-max-effort",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "typos",
+        "existing_observation_id": "o_livebench_v1_20260625_typos_muse_spark13_xhigh",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "muse-spark-1.3-xhigh",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "typos",
+        "existing_observation_id": "o_livebench_v1_20260625_typos_gpt6_astra_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "gpt-6-astra-max",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "typos",
+        "existing_observation_id": "o_livebench_v1_20260625_typos_grok47_xhigh",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "grok-4.7-xhigh",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "typos",
+        "existing_observation_id": "o_livebench_v1_20260625_typos_claude_opus55_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "claude-opus-5-5-max-effort",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "typos",
+        "existing_observation_id": "o_livebench_v1_20260625_typos_claude_opus55_xhigh",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "claude-opus-5-5-xhigh-effort",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "typos",
+        "existing_observation_id": "o_livebench_v1_20260625_typos_gpt61_sol_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "gpt-6.1-sol-max",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "typos",
+        "existing_observation_id": "o_livebench_v1_20260625_typos_bb_mistral_large4_high",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "mistral-large-4-high",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "typos",
+        "existing_observation_id": "o_livebench_v1_20260625_typos_muse_wonder_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "muse-wonder-1.0-max",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "zebra_puzzle",
+        "existing_observation_id": "o_livebench_v1_20260625_zebra_puzzle_gpt56_sol_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "gpt-5.6-sol-max",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "zebra_puzzle",
+        "existing_observation_id": "o_livebench_v1_20260625_zebra_puzzle_claude_opus5_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "claude-opus-5-max-effort",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "zebra_puzzle",
+        "existing_observation_id": "o_livebench_v1_20260625_zebra_puzzle_livebench_qwen38_max_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "qwen3.8-max",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "zebra_puzzle",
+        "existing_observation_id": "o_livebench_v1_20260625_zebra_puzzle_livebench_qwen38_27b_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "qwen3.8-27b",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "zebra_puzzle",
+        "existing_observation_id": "o_livebench_v1_20260625_zebra_puzzle_claude_fable51_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "claude-fable-5-1-max-effort",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "zebra_puzzle",
+        "existing_observation_id": "o_livebench_v1_20260625_zebra_puzzle_muse_spark13_xhigh",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "muse-spark-1.3-xhigh",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "zebra_puzzle",
+        "existing_observation_id": "o_livebench_v1_20260625_zebra_puzzle_gpt6_astra_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "gpt-6-astra-max",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "zebra_puzzle",
+        "existing_observation_id": "o_livebench_v1_20260625_zebra_puzzle_grok47_xhigh",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "grok-4.7-xhigh",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "zebra_puzzle",
+        "existing_observation_id": "o_livebench_v1_20260625_zebra_puzzle_claude_opus55_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "claude-opus-5-5-max-effort",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "zebra_puzzle",
+        "existing_observation_id": "o_livebench_v1_20260625_zebra_puzzle_claude_opus55_xhigh",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "claude-opus-5-5-xhigh-effort",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "zebra_puzzle",
+        "existing_observation_id": "o_livebench_v1_20260625_zebra_puzzle_gpt61_sol_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "gpt-6.1-sol-max",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "zebra_puzzle",
+        "existing_observation_id": "o_livebench_v1_20260625_zebra_puzzle_bb_mistral_large4_high",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "mistral-large-4-high",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "zebra_puzzle",
+        "existing_observation_id": "o_livebench_v1_20260625_zebra_puzzle_muse_wonder_max",
+        "release": "2026-06-25",
+        "same_value": true,
+        "source_row": "muse-wonder-1.0-max",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "design_layout",
+        "existing_observation_id": "o_livebench_v2_20260902_design_layout_claude_opus5_max",
+        "release": "2026-09-02",
+        "same_value": true,
+        "source_row": "claude-opus-5",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "design_layout",
+        "existing_observation_id": "o_livebench_v2_20260902_design_layout_gpt56_sol_max",
+        "release": "2026-09-02",
+        "same_value": true,
+        "source_row": "gpt-5.6-sol",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "design_layout",
+        "existing_observation_id": "o_livebench_v2_20260902_design_layout_livebench_qwen38_max_max",
+        "release": "2026-09-02",
+        "same_value": true,
+        "source_row": "qwen3.8-max",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "design_layout",
+        "existing_observation_id": "o_livebench_v2_20260902_design_layout_claude_fable51_max",
+        "release": "2026-09-02",
+        "same_value": true,
+        "source_row": "claude-fable-5.1",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "design_layout",
+        "existing_observation_id": "o_livebench_v2_20260902_design_layout_gpt6_astra_max",
+        "release": "2026-09-02",
+        "same_value": true,
+        "source_row": "gpt-6-astra",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "design_layout",
+        "existing_observation_id": "o_livebench_v2_20260902_design_layout_muse_spark13_max",
+        "release": "2026-09-02",
+        "same_value": true,
+        "source_row": "muse-spark-1.3",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "design_layout",
+        "existing_observation_id": "o_livebench_v2_20260902_design_layout_muse_wonder_max",
+        "release": "2026-09-02",
+        "same_value": true,
+        "source_row": "muse-wonder-1.0",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "design_layout",
+        "existing_observation_id": "o_livebench_v2_20260902_design_layout_claude_opus55_max",
+        "release": "2026-09-02",
+        "same_value": true,
+        "source_row": "claude-opus-5.5",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "design_layout",
+        "existing_observation_id": "o_livebench_v2_20260902_design_layout_gpt61_sol_max",
+        "release": "2026-09-02",
+        "same_value": true,
+        "source_row": "gpt-6.1-sol",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "design_layout",
+        "existing_observation_id": "o_livebench_v2_20260902_design_layout_grok47_xhigh",
+        "release": "2026-09-02",
+        "same_value": true,
+        "source_row": "grok-4.7",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "design_layout",
+        "existing_observation_id": "o_livebench_v2_20260902_design_layout_bb_gemini4_argon_high",
+        "release": "2026-09-02",
+        "same_value": true,
+        "source_row": "gemini-4-argon",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "design_layout",
+        "existing_observation_id": "o_livebench_v2_20260902_design_layout_livebench_qwen38_27b_max",
+        "release": "2026-09-02",
+        "same_value": true,
+        "source_row": "qwen3.8-27b",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "design_layout",
+        "existing_observation_id": "o_livebench_v2_20260902_design_layout_bb_mistral_large4_high",
+        "release": "2026-09-02",
+        "same_value": true,
+        "source_row": "mistral-large-4",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "research",
+        "existing_observation_id": "o_livebench_v2_20260902_research_claude_opus5_max",
+        "release": "2026-09-02",
+        "same_value": true,
+        "source_row": "claude-opus-5",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "research",
+        "existing_observation_id": "o_livebench_v2_20260902_research_gpt56_sol_max",
+        "release": "2026-09-02",
+        "same_value": true,
+        "source_row": "gpt-5.6-sol",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "research",
+        "existing_observation_id": "o_livebench_v2_20260902_research_livebench_qwen38_max_max",
+        "release": "2026-09-02",
+        "same_value": true,
+        "source_row": "qwen3.8-max",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "research",
+        "existing_observation_id": "o_livebench_v2_20260902_research_claude_fable51_max",
+        "release": "2026-09-02",
+        "same_value": true,
+        "source_row": "claude-fable-5.1",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "research",
+        "existing_observation_id": "o_livebench_v2_20260902_research_gpt6_astra_max",
+        "release": "2026-09-02",
+        "same_value": true,
+        "source_row": "gpt-6-astra",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "research",
+        "existing_observation_id": "o_livebench_v2_20260902_research_muse_spark13_max",
+        "release": "2026-09-02",
+        "same_value": true,
+        "source_row": "muse-spark-1.3",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "research",
+        "existing_observation_id": "o_livebench_v2_20260902_research_muse_wonder_max",
+        "release": "2026-09-02",
+        "same_value": true,
+        "source_row": "muse-wonder-1.0",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "research",
+        "existing_observation_id": "o_livebench_v2_20260902_research_claude_opus55_max",
+        "release": "2026-09-02",
+        "same_value": true,
+        "source_row": "claude-opus-5.5",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "research",
+        "existing_observation_id": "o_livebench_v2_20260902_research_gpt61_sol_max",
+        "release": "2026-09-02",
+        "same_value": true,
+        "source_row": "gpt-6.1-sol",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "research",
+        "existing_observation_id": "o_livebench_v2_20260902_research_grok47_xhigh",
+        "release": "2026-09-02",
+        "same_value": true,
+        "source_row": "grok-4.7",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "research",
+        "existing_observation_id": "o_livebench_v2_20260902_research_bb_gemini4_argon_high",
+        "release": "2026-09-02",
+        "same_value": true,
+        "source_row": "gemini-4-argon",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "research",
+        "existing_observation_id": "o_livebench_v2_20260902_research_livebench_qwen38_27b_max",
+        "release": "2026-09-02",
+        "same_value": true,
+        "source_row": "qwen3.8-27b",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "research",
+        "existing_observation_id": "o_livebench_v2_20260902_research_bb_mistral_large4_high",
+        "release": "2026-09-02",
+        "same_value": true,
+        "source_row": "mistral-large-4",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "browser",
+        "existing_observation_id": "o_livebench_v2_20260902_browser_claude_opus5_max",
+        "release": "2026-09-02",
+        "same_value": true,
+        "source_row": "claude-opus-5",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "browser",
+        "existing_observation_id": "o_livebench_v2_20260902_browser_gpt56_sol_max",
+        "release": "2026-09-02",
+        "same_value": true,
+        "source_row": "gpt-5.6-sol",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "browser",
+        "existing_observation_id": "o_livebench_v2_20260902_browser_livebench_qwen38_max_max",
+        "release": "2026-09-02",
+        "same_value": true,
+        "source_row": "qwen3.8-max",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "browser",
+        "existing_observation_id": "o_livebench_v2_20260902_browser_claude_fable51_max",
+        "release": "2026-09-02",
+        "same_value": true,
+        "source_row": "claude-fable-5.1",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "browser",
+        "existing_observation_id": "o_livebench_v2_20260902_browser_gpt6_astra_max",
+        "release": "2026-09-02",
+        "same_value": true,
+        "source_row": "gpt-6-astra",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "browser",
+        "existing_observation_id": "o_livebench_v2_20260902_browser_muse_spark13_max",
+        "release": "2026-09-02",
+        "same_value": true,
+        "source_row": "muse-spark-1.3",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "browser",
+        "existing_observation_id": "o_livebench_v2_20260902_browser_muse_wonder_max",
+        "release": "2026-09-02",
+        "same_value": true,
+        "source_row": "muse-wonder-1.0",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "browser",
+        "existing_observation_id": "o_livebench_v2_20260902_browser_claude_opus55_max",
+        "release": "2026-09-02",
+        "same_value": true,
+        "source_row": "claude-opus-5.5",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "browser",
+        "existing_observation_id": "o_livebench_v2_20260902_browser_gpt61_sol_max",
+        "release": "2026-09-02",
+        "same_value": true,
+        "source_row": "gpt-6.1-sol",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "browser",
+        "existing_observation_id": "o_livebench_v2_20260902_browser_grok47_xhigh",
+        "release": "2026-09-02",
+        "same_value": true,
+        "source_row": "grok-4.7",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "browser",
+        "existing_observation_id": "o_livebench_v2_20260902_browser_bb_gemini4_argon_high",
+        "release": "2026-09-02",
+        "same_value": true,
+        "source_row": "gemini-4-argon",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "browser",
+        "existing_observation_id": "o_livebench_v2_20260902_browser_livebench_qwen38_27b_max",
+        "release": "2026-09-02",
+        "same_value": true,
+        "source_row": "qwen3.8-27b",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "browser",
+        "existing_observation_id": "o_livebench_v2_20260902_browser_bb_mistral_large4_high",
+        "release": "2026-09-02",
+        "same_value": true,
+        "source_row": "mistral-large-4",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "coding",
+        "existing_observation_id": "o_livebench_v2_20260902_coding_claude_opus5_max",
+        "release": "2026-09-02",
+        "same_value": true,
+        "source_row": "claude-opus-5",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "coding",
+        "existing_observation_id": "o_livebench_v2_20260902_coding_gpt56_sol_max",
+        "release": "2026-09-02",
+        "same_value": true,
+        "source_row": "gpt-5.6-sol",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "coding",
+        "existing_observation_id": "o_livebench_v2_20260902_coding_livebench_qwen38_max_max",
+        "release": "2026-09-02",
+        "same_value": true,
+        "source_row": "qwen3.8-max",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "coding",
+        "existing_observation_id": "o_livebench_v2_20260902_coding_claude_fable51_max",
+        "release": "2026-09-02",
+        "same_value": true,
+        "source_row": "claude-fable-5.1",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "coding",
+        "existing_observation_id": "o_livebench_v2_20260902_coding_gpt6_astra_max",
+        "release": "2026-09-02",
+        "same_value": true,
+        "source_row": "gpt-6-astra",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "coding",
+        "existing_observation_id": "o_livebench_v2_20260902_coding_muse_spark13_max",
+        "release": "2026-09-02",
+        "same_value": true,
+        "source_row": "muse-spark-1.3",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "coding",
+        "existing_observation_id": "o_livebench_v2_20260902_coding_muse_wonder_max",
+        "release": "2026-09-02",
+        "same_value": true,
+        "source_row": "muse-wonder-1.0",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "coding",
+        "existing_observation_id": "o_livebench_v2_20260902_coding_claude_opus55_max",
+        "release": "2026-09-02",
+        "same_value": true,
+        "source_row": "claude-opus-5.5",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "coding",
+        "existing_observation_id": "o_livebench_v2_20260902_coding_gpt61_sol_max",
+        "release": "2026-09-02",
+        "same_value": true,
+        "source_row": "gpt-6.1-sol",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "coding",
+        "existing_observation_id": "o_livebench_v2_20260902_coding_grok47_xhigh",
+        "release": "2026-09-02",
+        "same_value": true,
+        "source_row": "grok-4.7",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "coding",
+        "existing_observation_id": "o_livebench_v2_20260902_coding_bb_gemini4_argon_high",
+        "release": "2026-09-02",
+        "same_value": true,
+        "source_row": "gemini-4-argon",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "coding",
+        "existing_observation_id": "o_livebench_v2_20260902_coding_livebench_qwen38_27b_max",
+        "release": "2026-09-02",
+        "same_value": true,
+        "source_row": "qwen3.8-27b",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "coding",
+        "existing_observation_id": "o_livebench_v2_20260902_coding_bb_mistral_large4_high",
+        "release": "2026-09-02",
+        "same_value": true,
+        "source_row": "mistral-large-4",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "long_horizon",
+        "existing_observation_id": "o_livebench_v2_20260902_long_horizon_claude_opus5_max",
+        "release": "2026-09-02",
+        "same_value": true,
+        "source_row": "claude-opus-5",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "long_horizon",
+        "existing_observation_id": "o_livebench_v2_20260902_long_horizon_gpt56_sol_max",
+        "release": "2026-09-02",
+        "same_value": true,
+        "source_row": "gpt-5.6-sol",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "long_horizon",
+        "existing_observation_id": "o_livebench_v2_20260902_long_horizon_livebench_qwen38_max_max",
+        "release": "2026-09-02",
+        "same_value": true,
+        "source_row": "qwen3.8-max",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "long_horizon",
+        "existing_observation_id": "o_livebench_v2_20260902_long_horizon_claude_fable51_max",
+        "release": "2026-09-02",
+        "same_value": true,
+        "source_row": "claude-fable-5.1",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "long_horizon",
+        "existing_observation_id": "o_livebench_v2_20260902_long_horizon_gpt6_astra_max",
+        "release": "2026-09-02",
+        "same_value": true,
+        "source_row": "gpt-6-astra",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "long_horizon",
+        "existing_observation_id": "o_livebench_v2_20260902_long_horizon_muse_spark13_max",
+        "release": "2026-09-02",
+        "same_value": true,
+        "source_row": "muse-spark-1.3",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "long_horizon",
+        "existing_observation_id": "o_livebench_v2_20260902_long_horizon_muse_wonder_max",
+        "release": "2026-09-02",
+        "same_value": true,
+        "source_row": "muse-wonder-1.0",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "long_horizon",
+        "existing_observation_id": "o_livebench_v2_20260902_long_horizon_claude_opus55_max",
+        "release": "2026-09-02",
+        "same_value": true,
+        "source_row": "claude-opus-5.5",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "long_horizon",
+        "existing_observation_id": "o_livebench_v2_20260902_long_horizon_gpt61_sol_max",
+        "release": "2026-09-02",
+        "same_value": true,
+        "source_row": "gpt-6.1-sol",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "long_horizon",
+        "existing_observation_id": "o_livebench_v2_20260902_long_horizon_grok47_xhigh",
+        "release": "2026-09-02",
+        "same_value": true,
+        "source_row": "grok-4.7",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "long_horizon",
+        "existing_observation_id": "o_livebench_v2_20260902_long_horizon_bb_gemini4_argon_high",
+        "release": "2026-09-02",
+        "same_value": true,
+        "source_row": "gemini-4-argon",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "long_horizon",
+        "existing_observation_id": "o_livebench_v2_20260902_long_horizon_livebench_qwen38_27b_max",
+        "release": "2026-09-02",
+        "same_value": true,
+        "source_row": "qwen3.8-27b",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "long_horizon",
+        "existing_observation_id": "o_livebench_v2_20260902_long_horizon_bb_mistral_large4_high",
+        "release": "2026-09-02",
+        "same_value": true,
+        "source_row": "mistral-large-4",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "data_analysis",
+        "existing_observation_id": "o_livebench_v2_20260902_data_analysis_claude_opus5_max",
+        "release": "2026-09-02",
+        "same_value": true,
+        "source_row": "claude-opus-5",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "data_analysis",
+        "existing_observation_id": "o_livebench_v2_20260902_data_analysis_gpt56_sol_max",
+        "release": "2026-09-02",
+        "same_value": true,
+        "source_row": "gpt-5.6-sol",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "data_analysis",
+        "existing_observation_id": "o_livebench_v2_20260902_data_analysis_livebench_qwen38_max_max",
+        "release": "2026-09-02",
+        "same_value": true,
+        "source_row": "qwen3.8-max",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "data_analysis",
+        "existing_observation_id": "o_livebench_v2_20260902_data_analysis_claude_fable51_max",
+        "release": "2026-09-02",
+        "same_value": true,
+        "source_row": "claude-fable-5.1",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "data_analysis",
+        "existing_observation_id": "o_livebench_v2_20260902_data_analysis_gpt6_astra_max",
+        "release": "2026-09-02",
+        "same_value": true,
+        "source_row": "gpt-6-astra",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "data_analysis",
+        "existing_observation_id": "o_livebench_v2_20260902_data_analysis_muse_spark13_max",
+        "release": "2026-09-02",
+        "same_value": true,
+        "source_row": "muse-spark-1.3",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "data_analysis",
+        "existing_observation_id": "o_livebench_v2_20260902_data_analysis_muse_wonder_max",
+        "release": "2026-09-02",
+        "same_value": true,
+        "source_row": "muse-wonder-1.0",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "data_analysis",
+        "existing_observation_id": "o_livebench_v2_20260902_data_analysis_claude_opus55_max",
+        "release": "2026-09-02",
+        "same_value": true,
+        "source_row": "claude-opus-5.5",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "data_analysis",
+        "existing_observation_id": "o_livebench_v2_20260902_data_analysis_gpt61_sol_max",
+        "release": "2026-09-02",
+        "same_value": true,
+        "source_row": "gpt-6.1-sol",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "data_analysis",
+        "existing_observation_id": "o_livebench_v2_20260902_data_analysis_grok47_xhigh",
+        "release": "2026-09-02",
+        "same_value": true,
+        "source_row": "grok-4.7",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "data_analysis",
+        "existing_observation_id": "o_livebench_v2_20260902_data_analysis_bb_gemini4_argon_high",
+        "release": "2026-09-02",
+        "same_value": true,
+        "source_row": "gemini-4-argon",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "data_analysis",
+        "existing_observation_id": "o_livebench_v2_20260902_data_analysis_livebench_qwen38_27b_max",
+        "release": "2026-09-02",
+        "same_value": true,
+        "source_row": "qwen3.8-27b",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "data_analysis",
+        "existing_observation_id": "o_livebench_v2_20260902_data_analysis_bb_mistral_large4_high",
+        "release": "2026-09-02",
+        "same_value": true,
+        "source_row": "mistral-large-4",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "reasoning",
+        "existing_observation_id": "o_livebench_v2_20260902_reasoning_claude_opus5_max",
+        "release": "2026-09-02",
+        "same_value": true,
+        "source_row": "claude-opus-5",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "reasoning",
+        "existing_observation_id": "o_livebench_v2_20260902_reasoning_gpt56_sol_max",
+        "release": "2026-09-02",
+        "same_value": true,
+        "source_row": "gpt-5.6-sol",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "reasoning",
+        "existing_observation_id": "o_livebench_v2_20260902_reasoning_livebench_qwen38_max_max",
+        "release": "2026-09-02",
+        "same_value": true,
+        "source_row": "qwen3.8-max",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "reasoning",
+        "existing_observation_id": "o_livebench_v2_20260902_reasoning_claude_fable51_max",
+        "release": "2026-09-02",
+        "same_value": true,
+        "source_row": "claude-fable-5.1",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "reasoning",
+        "existing_observation_id": "o_livebench_v2_20260902_reasoning_gpt6_astra_max",
+        "release": "2026-09-02",
+        "same_value": true,
+        "source_row": "gpt-6-astra",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "reasoning",
+        "existing_observation_id": "o_livebench_v2_20260902_reasoning_muse_spark13_max",
+        "release": "2026-09-02",
+        "same_value": true,
+        "source_row": "muse-spark-1.3",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "reasoning",
+        "existing_observation_id": "o_livebench_v2_20260902_reasoning_muse_wonder_max",
+        "release": "2026-09-02",
+        "same_value": true,
+        "source_row": "muse-wonder-1.0",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "reasoning",
+        "existing_observation_id": "o_livebench_v2_20260902_reasoning_claude_opus55_max",
+        "release": "2026-09-02",
+        "same_value": true,
+        "source_row": "claude-opus-5.5",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "reasoning",
+        "existing_observation_id": "o_livebench_v2_20260902_reasoning_gpt61_sol_max",
+        "release": "2026-09-02",
+        "same_value": true,
+        "source_row": "gpt-6.1-sol",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "reasoning",
+        "existing_observation_id": "o_livebench_v2_20260902_reasoning_grok47_xhigh",
+        "release": "2026-09-02",
+        "same_value": true,
+        "source_row": "grok-4.7",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "reasoning",
+        "existing_observation_id": "o_livebench_v2_20260902_reasoning_bb_gemini4_argon_high",
+        "release": "2026-09-02",
+        "same_value": true,
+        "source_row": "gemini-4-argon",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "reasoning",
+        "existing_observation_id": "o_livebench_v2_20260902_reasoning_livebench_qwen38_27b_max",
+        "release": "2026-09-02",
+        "same_value": true,
+        "source_row": "qwen3.8-27b",
+        "status": "duplicate_existing"
+      },
+      {
+        "column": "reasoning",
+        "existing_observation_id": "o_livebench_v2_20260902_reasoning_bb_mistral_large4_high",
+        "release": "2026-09-02",
+        "same_value": true,
+        "source_row": "mistral-large-4",
+        "status": "duplicate_existing"
+      }
+    ],
+    "denominators": {
+      "v1": {
+        "numeric_score_cells": 1633,
+        "source_rows": 71
+      },
+      "v2": {
+        "numeric_score_cells": 343,
+        "source_rows": 49
+      }
+    },
+    "discovered_frontend_assets": [
+      "./static/js/main.38b3cf3c.js"
+    ],
+    "explicit_source_aliases": [
+      {
+        "display_name": "Muse Wonder 1.0",
+        "evidence_url": "https://dev.meta.ai/models/muse-wonder",
+        "identity_basis": "Captured frontend key/display metadata identifies Muse Wonder 1.0; Meta's official release page names Muse Wonder and Muse Wonder Full as distinct models, so the key maps to Muse Wonder only.",
+        "model_id": "muse_wonder",
+        "upstream_key": "muse-wonder-1.0"
+      }
+    ],
+    "identity_policy": "Only exact normalized canonical names/aliases from the source display metadata are mapped; unresolved rows remain queued.",
+    "metric_policy": "Preserve each published task/suite score on its 0–100 scale. Do not reconstruct suite scores from breakdowns or average across suites/categories. No interval is supplied by these CSV captures.",
+    "release_discovery_required": false,
+    "release_policy": "Keep v1 and v2 as distinct suites; v2 release key 2026-09-02 is reported with frontend display date 2026-10-14.",
+    "scope": "Pinned reviewed v1/v2 release keys and frontend asset; new releases require contract review.",
+    "snapshot": {
+      "retrieved_at": "2026-10-18T16:20:52.737194+00:00",
+      "v1_key": "2026-06-25",
+      "v2_display_date": "2026-10-14",
+      "v2_key": "2026-09-02"
+    },
+    "source": "LiveBench",
+    "status_counts_by_release": {
+      "2026-06-25": {
+        "candidate_import": 161,
+        "duplicate_existing": 299,
+        "unresolved_alias": 1173
+      },
+      "2026-09-02": {
+        "candidate_import": 35,
+        "duplicate_existing": 91,
+        "unresolved_alias": 217
+      }
+    },
+    "unresolved_aliases": [
+      {
+        "columns": [
+          "AMPS_Hard",
+          "code_completion",
+          "code_generation",
+          "connections",
+          "consecutive_events",
+          "integrals_with_game",
+          "javascript",
+          "logic_with_navigation",
+          "math_comp",
+          "olympiad",
+          "paraphrase",
+          "plot_unscrambling",
+          "python",
+          "simplify",
+          "spatial",
+          "story_generation",
+          "summarize",
+          "tablejoin",
+          "tablereformat",
+          "theory_of_mind",
+          "typescript",
+          "typos",
+          "zebra_puzzle"
+        ],
+        "generation": "v1",
+        "normalized_display": "claude opus 4 5 20251101 thinking 64k",
+        "numeric_cells": 23,
+        "source_model": "claude-opus-4-5-20251101-thinking-64k-high-effort"
+      },
+      {
+        "columns": [
+          "AMPS_Hard",
+          "code_completion",
+          "code_generation",
+          "connections",
+          "consecutive_events",
+          "integrals_with_game",
+          "javascript",
+          "logic_with_navigation",
+          "math_comp",
+          "olympiad",
+          "paraphrase",
+          "plot_unscrambling",
+          "python",
+          "simplify",
+          "spatial",
+          "story_generation",
+          "summarize",
+          "tablejoin",
+          "tablereformat",
+          "theory_of_mind",
+          "typescript",
+          "typos",
+          "zebra_puzzle"
+        ],
+        "generation": "v1",
+        "normalized_display": "claude opus 4 6 thinking auto",
+        "numeric_cells": 23,
+        "source_model": "claude-opus-4-6-thinking-auto-high-effort"
+      },
+      {
+        "columns": [
+          "AMPS_Hard",
+          "code_completion",
+          "code_generation",
+          "connections",
+          "consecutive_events",
+          "integrals_with_game",
+          "javascript",
+          "logic_with_navigation",
+          "math_comp",
+          "olympiad",
+          "paraphrase",
+          "plot_unscrambling",
+          "python",
+          "simplify",
+          "spatial",
+          "story_generation",
+          "summarize",
+          "tablejoin",
+          "tablereformat",
+          "theory_of_mind",
+          "typescript",
+          "typos",
+          "zebra_puzzle"
+        ],
+        "generation": "v1",
+        "normalized_display": "claude opus 4 7",
+        "numeric_cells": 23,
+        "source_model": "claude-opus-4-7-xhigh-effort"
+      },
+      {
+        "columns": [
+          "AMPS_Hard",
+          "code_completion",
+          "code_generation",
+          "connections",
+          "consecutive_events",
+          "integrals_with_game",
+          "javascript",
+          "logic_with_navigation",
+          "math_comp",
+          "olympiad",
+          "paraphrase",
+          "plot_unscrambling",
+          "python",
+          "simplify",
+          "spatial",
+          "story_generation",
+          "summarize",
+          "tablejoin",
+          "tablereformat",
+          "theory_of_mind",
+          "typescript",
+          "typos",
+          "zebra_puzzle"
+        ],
+        "generation": "v1",
+        "normalized_display": "claude sonnet 4 6 thinking auto",
+        "numeric_cells": 23,
+        "source_model": "claude-sonnet-4-6-thinking-auto-medium-effort"
+      },
+      {
+        "columns": [
+          "AMPS_Hard",
+          "code_completion",
+          "code_generation",
+          "connections",
+          "consecutive_events",
+          "integrals_with_game",
+          "javascript",
+          "logic_with_navigation",
+          "math_comp",
+          "olympiad",
+          "paraphrase",
+          "plot_unscrambling",
+          "python",
+          "simplify",
+          "spatial",
+          "story_generation",
+          "summarize",
+          "tablejoin",
+          "tablereformat",
+          "theory_of_mind",
+          "typescript",
+          "typos",
+          "zebra_puzzle"
+        ],
+        "generation": "v1",
+        "normalized_display": "claude sonnet 5",
+        "numeric_cells": 23,
+        "source_model": "claude-sonnet-5-xhigh-effort"
+      },
+      {
+        "columns": [
+          "AMPS_Hard",
+          "code_completion",
+          "code_generation",
+          "connections",
+          "consecutive_events",
+          "integrals_with_game",
+          "javascript",
+          "logic_with_navigation",
+          "math_comp",
+          "olympiad",
+          "paraphrase",
+          "plot_unscrambling",
+          "python",
+          "simplify",
+          "spatial",
+          "story_generation",
+          "summarize",
+          "tablejoin",
+          "tablereformat",
+          "theory_of_mind",
+          "typescript",
+          "typos",
+          "zebra_puzzle"
+        ],
+        "generation": "v1",
+        "normalized_display": "deepseek v4 flash",
+        "numeric_cells": 23,
+        "source_model": "deepseek-v4-flash"
+      },
+      {
+        "columns": [
+          "AMPS_Hard",
+          "code_completion",
+          "code_generation",
+          "connections",
+          "consecutive_events",
+          "integrals_with_game",
+          "javascript",
+          "logic_with_navigation",
+          "math_comp",
+          "olympiad",
+          "paraphrase",
+          "plot_unscrambling",
+          "python",
+          "simplify",
+          "spatial",
+          "story_generation",
+          "summarize",
+          "tablejoin",
+          "tablereformat",
+          "theory_of_mind",
+          "typescript",
+          "typos",
+          "zebra_puzzle"
+        ],
+        "generation": "v1",
+        "normalized_display": "deepseek v4 pro",
+        "numeric_cells": 23,
+        "source_model": "deepseek-v4-pro"
+      },
+      {
+        "columns": [
+          "AMPS_Hard",
+          "code_completion",
+          "code_generation",
+          "connections",
+          "consecutive_events",
+          "integrals_with_game",
+          "javascript",
+          "logic_with_navigation",
+          "math_comp",
+          "olympiad",
+          "paraphrase",
+          "plot_unscrambling",
+          "python",
+          "simplify",
+          "spatial",
+          "story_generation",
+          "summarize",
+          "tablejoin",
+          "tablereformat",
+          "theory_of_mind",
+          "typescript",
+          "typos",
+          "zebra_puzzle"
+        ],
+        "generation": "v1",
+        "normalized_display": "gemini 3 1 pro preview",
+        "numeric_cells": 23,
+        "source_model": "gemini-3.1-pro-preview-high"
+      },
+      {
+        "columns": [
+          "AMPS_Hard",
+          "code_completion",
+          "code_generation",
+          "connections",
+          "consecutive_events",
+          "integrals_with_game",
+          "javascript",
+          "logic_with_navigation",
+          "math_comp",
+          "olympiad",
+          "paraphrase",
+          "plot_unscrambling",
+          "python",
+          "simplify",
+          "spatial",
+          "story_generation",
+          "summarize",
+          "tablejoin",
+          "tablereformat",
+          "theory_of_mind",
+          "typescript",
+          "typos",
+          "zebra_puzzle"
+        ],
+        "generation": "v1",
+        "normalized_display": "gemini 3 5 flash",
+        "numeric_cells": 23,
+        "source_model": "gemini-3.5-flash-high"
+      },
+      {
+        "columns": [
+          "AMPS_Hard",
+          "code_completion",
+          "code_generation",
+          "connections",
+          "consecutive_events",
+          "integrals_with_game",
+          "javascript",
+          "logic_with_navigation",
+          "math_comp",
+          "olympiad",
+          "paraphrase",
+          "plot_unscrambling",
+          "python",
+          "simplify",
+          "spatial",
+          "story_generation",
+          "summarize",
+          "tablejoin",
+          "tablereformat",
+          "theory_of_mind",
+          "typescript",
+          "typos",
+          "zebra_puzzle"
+        ],
+        "generation": "v1",
+        "normalized_display": "glm 5 2",
+        "numeric_cells": 23,
+        "source_model": "glm-5.2"
+      },
+      {
+        "columns": [
+          "AMPS_Hard",
+          "code_completion",
+          "code_generation",
+          "connections",
+          "consecutive_events",
+          "integrals_with_game",
+          "javascript",
+          "logic_with_navigation",
+          "math_comp",
+          "olympiad",
+          "paraphrase",
+          "plot_unscrambling",
+          "python",
+          "simplify",
+          "spatial",
+          "story_generation",
+          "summarize",
+          "tablejoin",
+          "tablereformat",
+          "theory_of_mind",
+          "typescript",
+          "typos",
+          "zebra_puzzle"
+        ],
+        "generation": "v1",
+        "normalized_display": "gpt 5 2 2025 12 11",
+        "numeric_cells": 23,
+        "source_model": "gpt-5.2-2025-12-11-high"
+      },
+      {
+        "columns": [
+          "AMPS_Hard",
+          "code_completion",
+          "code_generation",
+          "connections",
+          "consecutive_events",
+          "integrals_with_game",
+          "javascript",
+          "logic_with_navigation",
+          "math_comp",
+          "olympiad",
+          "paraphrase",
+          "plot_unscrambling",
+          "python",
+          "simplify",
+          "spatial",
+          "story_generation",
+          "summarize",
+          "tablejoin",
+          "tablereformat",
+          "theory_of_mind",
+          "typescript",
+          "typos",
+          "zebra_puzzle"
+        ],
+        "generation": "v1",
+        "normalized_display": "gpt 5 2 codex",
+        "numeric_cells": 23,
+        "source_model": "gpt-5.2-codex"
+      },
+      {
+        "columns": [
+          "AMPS_Hard",
+          "code_completion",
+          "code_generation",
+          "connections",
+          "consecutive_events",
+          "integrals_with_game",
+          "javascript",
+          "logic_with_navigation",
+          "math_comp",
+          "olympiad",
+          "paraphrase",
+          "plot_unscrambling",
+          "python",
+          "simplify",
+          "spatial",
+          "story_generation",
+          "summarize",
+          "tablejoin",
+          "tablereformat",
+          "theory_of_mind",
+          "typescript",
+          "typos",
+          "zebra_puzzle"
+        ],
+        "generation": "v1",
+        "normalized_display": "gpt 5 4 mini",
+        "numeric_cells": 23,
+        "source_model": "gpt-5.4-mini-xhigh"
+      },
+      {
+        "columns": [
+          "AMPS_Hard",
+          "code_completion",
+          "code_generation",
+          "connections",
+          "consecutive_events",
+          "integrals_with_game",
+          "javascript",
+          "logic_with_navigation",
+          "math_comp",
+          "olympiad",
+          "paraphrase",
+          "plot_unscrambling",
+          "python",
+          "simplify",
+          "spatial",
+          "story_generation",
+          "summarize",
+          "tablejoin",
+          "tablereformat",
+          "theory_of_mind",
+          "typescript",
+          "typos",
+          "zebra_puzzle"
+        ],
+        "generation": "v1",
+        "normalized_display": "gpt 5 4 nano",
+        "numeric_cells": 23,
+        "source_model": "gpt-5.4-nano-xhigh"
+      },
+      {
+        "columns": [
+          "AMPS_Hard",
+          "code_completion",
+          "code_generation",
+          "connections",
+          "consecutive_events",
+          "integrals_with_game",
+          "javascript",
+          "logic_with_navigation",
+          "math_comp",
+          "olympiad",
+          "paraphrase",
+          "plot_unscrambling",
+          "python",
+          "simplify",
+          "spatial",
+          "story_generation",
+          "summarize",
+          "tablejoin",
+          "tablereformat",
+          "theory_of_mind",
+          "typescript",
+          "typos",
+          "zebra_puzzle"
+        ],
+        "generation": "v1",
+        "normalized_display": "gpt 5 4",
+        "numeric_cells": 23,
+        "source_model": "gpt-5.4-xhigh"
+      },
+      {
+        "columns": [
+          "AMPS_Hard",
+          "code_completion",
+          "code_generation",
+          "connections",
+          "consecutive_events",
+          "integrals_with_game",
+          "javascript",
+          "logic_with_navigation",
+          "math_comp",
+          "olympiad",
+          "paraphrase",
+          "plot_unscrambling",
+          "python",
+          "simplify",
+          "spatial",
+          "story_generation",
+          "summarize",
+          "tablejoin",
+          "tablereformat",
+          "theory_of_mind",
+          "typescript",
+          "typos",
+          "zebra_puzzle"
+        ],
+        "generation": "v1",
+        "normalized_display": "gpt 5 5",
+        "numeric_cells": 23,
+        "source_model": "gpt-5.5-xhigh"
+      },
+      {
+        "columns": [
+          "AMPS_Hard",
+          "code_completion",
+          "code_generation",
+          "connections",
+          "consecutive_events",
+          "integrals_with_game",
+          "javascript",
+          "logic_with_navigation",
+          "math_comp",
+          "olympiad",
+          "paraphrase",
+          "plot_unscrambling",
+          "python",
+          "simplify",
+          "spatial",
+          "story_generation",
+          "summarize",
+          "tablejoin",
+          "tablereformat",
+          "theory_of_mind",
+          "typescript",
+          "typos",
+          "zebra_puzzle"
+        ],
+        "generation": "v1",
+        "normalized_display": "grok 4 3",
+        "numeric_cells": 23,
+        "source_model": "grok-4.3"
+      },
+      {
+        "columns": [
+          "AMPS_Hard",
+          "code_completion",
+          "code_generation",
+          "connections",
+          "consecutive_events",
+          "integrals_with_game",
+          "javascript",
+          "logic_with_navigation",
+          "math_comp",
+          "olympiad",
+          "paraphrase",
+          "plot_unscrambling",
+          "python",
+          "simplify",
+          "spatial",
+          "story_generation",
+          "summarize",
+          "tablejoin",
+          "tablereformat",
+          "theory_of_mind",
+          "typescript",
+          "typos",
+          "zebra_puzzle"
+        ],
+        "generation": "v1",
+        "normalized_display": "grok 4 5",
+        "numeric_cells": 23,
+        "source_model": "grok-4.5"
+      },
+      {
+        "columns": [
+          "AMPS_Hard",
+          "code_completion",
+          "code_generation",
+          "connections",
+          "consecutive_events",
+          "integrals_with_game",
+          "javascript",
+          "logic_with_navigation",
+          "math_comp",
+          "olympiad",
+          "paraphrase",
+          "plot_unscrambling",
+          "python",
+          "simplify",
+          "spatial",
+          "story_generation",
+          "summarize",
+          "tablejoin",
+          "tablereformat",
+          "theory_of_mind",
+          "typescript",
+          "typos",
+          "zebra_puzzle"
+        ],
+        "generation": "v1",
+        "normalized_display": "grok build 0 1",
+        "numeric_cells": 23,
+        "source_model": "grok-build-0.1"
+      },
+      {
+        "columns": [
+          "AMPS_Hard",
+          "code_completion",
+          "code_generation",
+          "connections",
+          "consecutive_events",
+          "integrals_with_game",
+          "javascript",
+          "logic_with_navigation",
+          "math_comp",
+          "olympiad",
+          "paraphrase",
+          "plot_unscrambling",
+          "python",
+          "simplify",
+          "spatial",
+          "story_generation",
+          "summarize",
+          "tablejoin",
+          "tablereformat",
+          "theory_of_mind",
+          "typescript",
+          "typos",
+          "zebra_puzzle"
+        ],
+        "generation": "v1",
+        "normalized_display": "kimi k2 6 thinking",
+        "numeric_cells": 23,
+        "source_model": "kimi-k2.6-thinking"
+      },
+      {
+        "columns": [
+          "AMPS_Hard",
+          "code_completion",
+          "code_generation",
+          "connections",
+          "consecutive_events",
+          "integrals_with_game",
+          "javascript",
+          "logic_with_navigation",
+          "math_comp",
+          "olympiad",
+          "paraphrase",
+          "plot_unscrambling",
+          "python",
+          "simplify",
+          "spatial",
+          "story_generation",
+          "summarize",
+          "tablejoin",
+          "tablereformat",
+          "theory_of_mind",
+          "typescript",
+          "typos",
+          "zebra_puzzle"
+        ],
+        "generation": "v1",
+        "normalized_display": "kimi k2 7 code",
+        "numeric_cells": 23,
+        "source_model": "kimi-k2.7-code"
+      },
+      {
+        "columns": [
+          "AMPS_Hard",
+          "code_completion",
+          "code_generation",
+          "connections",
+          "consecutive_events",
+          "integrals_with_game",
+          "javascript",
+          "logic_with_navigation",
+          "math_comp",
+          "olympiad",
+          "paraphrase",
+          "plot_unscrambling",
+          "python",
+          "simplify",
+          "spatial",
+          "story_generation",
+          "summarize",
+          "tablejoin",
+          "tablereformat",
+          "theory_of_mind",
+          "typescript",
+          "typos",
+          "zebra_puzzle"
+        ],
+        "generation": "v1",
+        "normalized_display": "minimax m3",
+        "numeric_cells": 23,
+        "source_model": "minimax-m3"
+      },
+      {
+        "columns": [
+          "AMPS_Hard",
+          "code_completion",
+          "code_generation",
+          "connections",
+          "consecutive_events",
+          "integrals_with_game",
+          "javascript",
+          "logic_with_navigation",
+          "math_comp",
+          "olympiad",
+          "paraphrase",
+          "plot_unscrambling",
+          "python",
+          "simplify",
+          "spatial",
+          "story_generation",
+          "summarize",
+          "tablejoin",
+          "tablereformat",
+          "theory_of_mind",
+          "typescript",
+          "typos",
+          "zebra_puzzle"
+        ],
+        "generation": "v1",
+        "normalized_display": "qwen3 6 27b",
+        "numeric_cells": 23,
+        "source_model": "qwen3.6-27b"
+      },
+      {
+        "columns": [
+          "AMPS_Hard",
+          "code_completion",
+          "code_generation",
+          "connections",
+          "consecutive_events",
+          "integrals_with_game",
+          "javascript",
+          "logic_with_navigation",
+          "math_comp",
+          "olympiad",
+          "paraphrase",
+          "plot_unscrambling",
+          "python",
+          "simplify",
+          "spatial",
+          "story_generation",
+          "summarize",
+          "tablejoin",
+          "tablereformat",
+          "theory_of_mind",
+          "typescript",
+          "typos",
+          "zebra_puzzle"
+        ],
+        "generation": "v1",
+        "normalized_display": "qwen3 6 plus",
+        "numeric_cells": 23,
+        "source_model": "qwen3.6-plus"
+      },
+      {
+        "columns": [
+          "AMPS_Hard",
+          "code_completion",
+          "code_generation",
+          "connections",
+          "consecutive_events",
+          "integrals_with_game",
+          "javascript",
+          "logic_with_navigation",
+          "math_comp",
+          "olympiad",
+          "paraphrase",
+          "plot_unscrambling",
+          "python",
+          "simplify",
+          "spatial",
+          "story_generation",
+          "summarize",
+          "tablejoin",
+          "tablereformat",
+          "theory_of_mind",
+          "typescript",
+          "typos",
+          "zebra_puzzle"
+        ],
+        "generation": "v1",
+        "normalized_display": "qwen3 7",
+        "numeric_cells": 23,
+        "source_model": "qwen3.7-max"
+      },
+      {
+        "columns": [
+          "AMPS_Hard",
+          "code_completion",
+          "code_generation",
+          "connections",
+          "consecutive_events",
+          "integrals_with_game",
+          "javascript",
+          "logic_with_navigation",
+          "math_comp",
+          "olympiad",
+          "paraphrase",
+          "plot_unscrambling",
+          "python",
+          "simplify",
+          "spatial",
+          "story_generation",
+          "summarize",
+          "tablejoin",
+          "tablereformat",
+          "theory_of_mind",
+          "typescript",
+          "typos",
+          "zebra_puzzle"
+        ],
+        "generation": "v1",
+        "normalized_display": "gpt 5 6 terra",
+        "numeric_cells": 23,
+        "source_model": "gpt-5.6-terra-max"
+      },
+      {
+        "columns": [
+          "AMPS_Hard",
+          "code_completion",
+          "code_generation",
+          "connections",
+          "consecutive_events",
+          "integrals_with_game",
+          "javascript",
+          "logic_with_navigation",
+          "math_comp",
+          "olympiad",
+          "paraphrase",
+          "plot_unscrambling",
+          "python",
+          "simplify",
+          "spatial",
+          "story_generation",
+          "summarize",
+          "tablejoin",
+          "tablereformat",
+          "theory_of_mind",
+          "typescript",
+          "typos",
+          "zebra_puzzle"
+        ],
+        "generation": "v1",
+        "normalized_display": "gpt 5 6 luna",
+        "numeric_cells": 23,
+        "source_model": "gpt-5.6-luna-max"
+      },
+      {
+        "columns": [
+          "AMPS_Hard",
+          "code_completion",
+          "code_generation",
+          "connections",
+          "consecutive_events",
+          "integrals_with_game",
+          "javascript",
+          "logic_with_navigation",
+          "math_comp",
+          "olympiad",
+          "paraphrase",
+          "plot_unscrambling",
+          "python",
+          "simplify",
+          "spatial",
+          "story_generation",
+          "summarize",
+          "tablejoin",
+          "tablereformat",
+          "theory_of_mind",
+          "typescript",
+          "typos",
+          "zebra_puzzle"
+        ],
+        "generation": "v1",
+        "normalized_display": "claude fable 5",
+        "numeric_cells": 23,
+        "source_model": "claude-fable-5-max-effort"
+      },
+      {
+        "columns": [
+          "AMPS_Hard",
+          "code_completion",
+          "code_generation",
+          "connections",
+          "consecutive_events",
+          "integrals_with_game",
+          "javascript",
+          "logic_with_navigation",
+          "math_comp",
+          "olympiad",
+          "paraphrase",
+          "plot_unscrambling",
+          "python",
+          "simplify",
+          "spatial",
+          "story_generation",
+          "summarize",
+          "tablejoin",
+          "tablereformat",
+          "theory_of_mind",
+          "typescript",
+          "typos",
+          "zebra_puzzle"
+        ],
+        "generation": "v1",
+        "normalized_display": "muse spark 1 1",
+        "numeric_cells": 23,
+        "source_model": "muse-spark-1.1-xhigh"
+      },
+      {
+        "columns": [
+          "AMPS_Hard",
+          "code_completion",
+          "code_generation",
+          "connections",
+          "consecutive_events",
+          "integrals_with_game",
+          "javascript",
+          "logic_with_navigation",
+          "math_comp",
+          "olympiad",
+          "paraphrase",
+          "plot_unscrambling",
+          "python",
+          "simplify",
+          "spatial",
+          "story_generation",
+          "summarize",
+          "tablejoin",
+          "tablereformat",
+          "theory_of_mind",
+          "typescript",
+          "typos",
+          "zebra_puzzle"
+        ],
+        "generation": "v1",
+        "normalized_display": "inkling",
+        "numeric_cells": 23,
+        "source_model": "inkling-xhigh"
+      },
+      {
+        "columns": [
+          "AMPS_Hard",
+          "code_completion",
+          "code_generation",
+          "connections",
+          "consecutive_events",
+          "integrals_with_game",
+          "javascript",
+          "logic_with_navigation",
+          "math_comp",
+          "olympiad",
+          "paraphrase",
+          "plot_unscrambling",
+          "python",
+          "simplify",
+          "spatial",
+          "story_generation",
+          "summarize",
+          "tablejoin",
+          "tablereformat",
+          "theory_of_mind",
+          "typescript",
+          "typos",
+          "zebra_puzzle"
+        ],
+        "generation": "v1",
+        "normalized_display": "gemini 3 5 flash lite",
+        "numeric_cells": 23,
+        "source_model": "gemini-3.5-flash-lite-high"
+      },
+      {
+        "columns": [
+          "AMPS_Hard",
+          "code_completion",
+          "code_generation",
+          "connections",
+          "consecutive_events",
+          "integrals_with_game",
+          "javascript",
+          "logic_with_navigation",
+          "math_comp",
+          "olympiad",
+          "paraphrase",
+          "plot_unscrambling",
+          "python",
+          "simplify",
+          "spatial",
+          "story_generation",
+          "summarize",
+          "tablejoin",
+          "tablereformat",
+          "theory_of_mind",
+          "typescript",
+          "typos",
+          "zebra_puzzle"
+        ],
+        "generation": "v1",
+        "normalized_display": "gemini 3 6 flash",
+        "numeric_cells": 23,
+        "source_model": "gemini-3.6-flash-high"
+      },
+      {
+        "columns": [
+          "AMPS_Hard",
+          "code_completion",
+          "code_generation",
+          "connections",
+          "consecutive_events",
+          "integrals_with_game",
+          "javascript",
+          "logic_with_navigation",
+          "math_comp",
+          "olympiad",
+          "paraphrase",
+          "plot_unscrambling",
+          "python",
+          "simplify",
+          "spatial",
+          "story_generation",
+          "summarize",
+          "tablejoin",
+          "tablereformat",
+          "theory_of_mind",
+          "typescript",
+          "typos",
+          "zebra_puzzle"
+        ],
+        "generation": "v1",
+        "normalized_display": "claude opus 4 8",
+        "numeric_cells": 23,
+        "source_model": "claude-opus-4-8-max-effort"
+      },
+      {
+        "columns": [
+          "AMPS_Hard",
+          "code_completion",
+          "code_generation",
+          "connections",
+          "consecutive_events",
+          "integrals_with_game",
+          "javascript",
+          "logic_with_navigation",
+          "math_comp",
+          "olympiad",
+          "paraphrase",
+          "plot_unscrambling",
+          "python",
+          "simplify",
+          "spatial",
+          "story_generation",
+          "summarize",
+          "tablejoin",
+          "tablereformat",
+          "theory_of_mind",
+          "typescript",
+          "typos",
+          "zebra_puzzle"
+        ],
+        "generation": "v1",
+        "normalized_display": "deepseek v4 flash 0731",
+        "numeric_cells": 23,
+        "source_model": "deepseek-v4-flash-0731"
+      },
+      {
+        "columns": [
+          "AMPS_Hard",
+          "code_completion",
+          "code_generation",
+          "connections",
+          "consecutive_events",
+          "integrals_with_game",
+          "javascript",
+          "logic_with_navigation",
+          "math_comp",
+          "olympiad",
+          "paraphrase",
+          "plot_unscrambling",
+          "python",
+          "simplify",
+          "spatial",
+          "story_generation",
+          "summarize",
+          "tablejoin",
+          "tablereformat",
+          "theory_of_mind",
+          "typescript",
+          "typos",
+          "zebra_puzzle"
+        ],
+        "generation": "v1",
+        "normalized_display": "muse spark 1 2",
+        "numeric_cells": 23,
+        "source_model": "muse-spark-1.2-xhigh"
+      },
+      {
+        "columns": [
+          "AMPS_Hard",
+          "code_completion",
+          "code_generation",
+          "connections",
+          "consecutive_events",
+          "integrals_with_game",
+          "javascript",
+          "logic_with_navigation",
+          "math_comp",
+          "olympiad",
+          "paraphrase",
+          "plot_unscrambling",
+          "python",
+          "simplify",
+          "spatial",
+          "story_generation",
+          "summarize",
+          "tablejoin",
+          "tablereformat",
+          "theory_of_mind",
+          "typescript",
+          "typos",
+          "zebra_puzzle"
+        ],
+        "generation": "v1",
+        "normalized_display": "smaug agentic",
+        "numeric_cells": 23,
+        "source_model": "smaug-agentic"
+      },
+      {
+        "columns": [
+          "AMPS_Hard",
+          "code_completion",
+          "code_generation",
+          "connections",
+          "consecutive_events",
+          "integrals_with_game",
+          "javascript",
+          "logic_with_navigation",
+          "math_comp",
+          "olympiad",
+          "paraphrase",
+          "plot_unscrambling",
+          "python",
+          "simplify",
+          "spatial",
+          "story_generation",
+          "summarize",
+          "tablejoin",
+          "tablereformat",
+          "theory_of_mind",
+          "typescript",
+          "typos",
+          "zebra_puzzle"
+        ],
+        "generation": "v1",
+        "normalized_display": "smaug mini",
+        "numeric_cells": 23,
+        "source_model": "smaug-mini"
+      },
+      {
+        "columns": [
+          "AMPS_Hard",
+          "code_completion",
+          "code_generation",
+          "connections",
+          "consecutive_events",
+          "integrals_with_game",
+          "javascript",
+          "logic_with_navigation",
+          "math_comp",
+          "olympiad",
+          "paraphrase",
+          "plot_unscrambling",
+          "python",
+          "simplify",
+          "spatial",
+          "story_generation",
+          "summarize",
+          "tablejoin",
+          "tablereformat",
+          "theory_of_mind",
+          "typescript",
+          "typos",
+          "zebra_puzzle"
+        ],
+        "generation": "v1",
+        "normalized_display": "gemini 3 7 flash",
+        "numeric_cells": 23,
+        "source_model": "gemini-3.7-flash-high"
+      },
+      {
+        "columns": [
+          "AMPS_Hard",
+          "code_completion",
+          "code_generation",
+          "connections",
+          "consecutive_events",
+          "integrals_with_game",
+          "javascript",
+          "logic_with_navigation",
+          "math_comp",
+          "olympiad",
+          "paraphrase",
+          "plot_unscrambling",
+          "python",
+          "simplify",
+          "spatial",
+          "story_generation",
+          "summarize",
+          "tablejoin",
+          "tablereformat",
+          "theory_of_mind",
+          "typescript",
+          "typos",
+          "zebra_puzzle"
+        ],
+        "generation": "v1",
+        "normalized_display": "ox alpha",
+        "numeric_cells": 23,
+        "source_model": "ox-alpha-max"
+      },
+      {
+        "columns": [
+          "AMPS_Hard",
+          "code_completion",
+          "code_generation",
+          "connections",
+          "consecutive_events",
+          "integrals_with_game",
+          "javascript",
+          "logic_with_navigation",
+          "math_comp",
+          "olympiad",
+          "paraphrase",
+          "plot_unscrambling",
+          "python",
+          "simplify",
+          "spatial",
+          "story_generation",
+          "summarize",
+          "tablejoin",
+          "tablereformat",
+          "theory_of_mind",
+          "typescript",
+          "typos",
+          "zebra_puzzle"
+        ],
+        "generation": "v1",
+        "normalized_display": "deepseek v4 flash vision exp",
+        "numeric_cells": 23,
+        "source_model": "deepseek-v4-flash-vision-exp"
+      },
+      {
+        "columns": [
+          "AMPS_Hard",
+          "code_completion",
+          "code_generation",
+          "connections",
+          "consecutive_events",
+          "integrals_with_game",
+          "javascript",
+          "logic_with_navigation",
+          "math_comp",
+          "olympiad",
+          "paraphrase",
+          "plot_unscrambling",
+          "python",
+          "simplify",
+          "spatial",
+          "story_generation",
+          "summarize",
+          "tablejoin",
+          "tablereformat",
+          "theory_of_mind",
+          "typescript",
+          "typos",
+          "zebra_puzzle"
+        ],
+        "generation": "v1",
+        "normalized_display": "qwen3 8 flash next",
+        "numeric_cells": 23,
+        "source_model": "qwen3.8-flash-next"
+      },
+      {
+        "columns": [
+          "AMPS_Hard",
+          "code_completion",
+          "code_generation",
+          "connections",
+          "consecutive_events",
+          "integrals_with_game",
+          "javascript",
+          "logic_with_navigation",
+          "math_comp",
+          "olympiad",
+          "paraphrase",
+          "plot_unscrambling",
+          "python",
+          "simplify",
+          "spatial",
+          "story_generation",
+          "summarize",
+          "tablejoin",
+          "tablereformat",
+          "theory_of_mind",
+          "typescript",
+          "typos",
+          "zebra_puzzle"
+        ],
+        "generation": "v1",
+        "normalized_display": "nemotron 3 ultra 550b a55b",
+        "numeric_cells": 23,
+        "source_model": "nemotron-3-ultra-550b-a55b"
+      },
+      {
+        "columns": [
+          "AMPS_Hard",
+          "code_completion",
+          "code_generation",
+          "connections",
+          "consecutive_events",
+          "integrals_with_game",
+          "javascript",
+          "logic_with_navigation",
+          "math_comp",
+          "olympiad",
+          "paraphrase",
+          "plot_unscrambling",
+          "python",
+          "simplify",
+          "spatial",
+          "story_generation",
+          "summarize",
+          "tablejoin",
+          "tablereformat",
+          "theory_of_mind",
+          "typescript",
+          "typos",
+          "zebra_puzzle"
+        ],
+        "generation": "v1",
+        "normalized_display": "gemini 3 8 flash",
+        "numeric_cells": 23,
+        "source_model": "gemini-3.8-flash-high"
+      },
+      {
+        "columns": [
+          "AMPS_Hard",
+          "code_completion",
+          "code_generation",
+          "connections",
+          "consecutive_events",
+          "integrals_with_game",
+          "javascript",
+          "logic_with_navigation",
+          "math_comp",
+          "olympiad",
+          "paraphrase",
+          "plot_unscrambling",
+          "python",
+          "simplify",
+          "spatial",
+          "story_generation",
+          "summarize",
+          "tablejoin",
+          "tablereformat",
+          "theory_of_mind",
+          "typescript",
+          "typos",
+          "zebra_puzzle"
+        ],
+        "generation": "v1",
+        "normalized_display": "smaug flash",
+        "numeric_cells": 23,
+        "source_model": "smaug-flash"
+      },
+      {
+        "columns": [
+          "AMPS_Hard",
+          "code_completion",
+          "code_generation",
+          "connections",
+          "consecutive_events",
+          "integrals_with_game",
+          "javascript",
+          "logic_with_navigation",
+          "math_comp",
+          "olympiad",
+          "paraphrase",
+          "plot_unscrambling",
+          "python",
+          "simplify",
+          "spatial",
+          "story_generation",
+          "summarize",
+          "tablejoin",
+          "tablereformat",
+          "theory_of_mind",
+          "typescript",
+          "typos",
+          "zebra_puzzle"
+        ],
+        "generation": "v1",
+        "normalized_display": "gpt 6 sol",
+        "numeric_cells": 23,
+        "source_model": "gpt-6-sol-max"
+      },
+      {
+        "columns": [
+          "AMPS_Hard",
+          "code_completion",
+          "code_generation",
+          "connections",
+          "consecutive_events",
+          "integrals_with_game",
+          "javascript",
+          "logic_with_navigation",
+          "math_comp",
+          "olympiad",
+          "paraphrase",
+          "plot_unscrambling",
+          "python",
+          "simplify",
+          "spatial",
+          "story_generation",
+          "summarize",
+          "tablejoin",
+          "tablereformat",
+          "theory_of_mind",
+          "typescript",
+          "typos",
+          "zebra_puzzle"
+        ],
+        "generation": "v1",
+        "normalized_display": "gpt 6 luna",
+        "numeric_cells": 23,
+        "source_model": "gpt-6-luna-max"
+      },
+      {
+        "columns": [
+          "AMPS_Hard",
+          "code_completion",
+          "code_generation",
+          "connections",
+          "consecutive_events",
+          "integrals_with_game",
+          "javascript",
+          "logic_with_navigation",
+          "math_comp",
+          "olympiad",
+          "paraphrase",
+          "plot_unscrambling",
+          "python",
+          "simplify",
+          "spatial",
+          "story_generation",
+          "summarize",
+          "tablejoin",
+          "tablereformat",
+          "theory_of_mind",
+          "typescript",
+          "typos",
+          "zebra_puzzle"
+        ],
+        "generation": "v1",
+        "normalized_display": "claude sonnet 5 5",
+        "numeric_cells": 23,
+        "source_model": "claude-sonnet-5-5-max-effort"
+      },
+      {
+        "columns": [
+          "AMPS_Hard",
+          "code_completion",
+          "code_generation",
+          "connections",
+          "consecutive_events",
+          "integrals_with_game",
+          "javascript",
+          "logic_with_navigation",
+          "math_comp",
+          "olympiad",
+          "paraphrase",
+          "plot_unscrambling",
+          "python",
+          "simplify",
+          "spatial",
+          "story_generation",
+          "summarize",
+          "tablejoin",
+          "tablereformat",
+          "theory_of_mind",
+          "typescript",
+          "typos",
+          "zebra_puzzle"
+        ],
+        "generation": "v1",
+        "normalized_display": "claude sonnet 5 5",
+        "numeric_cells": 23,
+        "source_model": "claude-sonnet-5-5-xhigh-effort"
+      },
+      {
+        "columns": [
+          "AMPS_Hard",
+          "code_completion",
+          "code_generation",
+          "connections",
+          "consecutive_events",
+          "integrals_with_game",
+          "javascript",
+          "logic_with_navigation",
+          "math_comp",
+          "olympiad",
+          "paraphrase",
+          "plot_unscrambling",
+          "python",
+          "simplify",
+          "spatial",
+          "story_generation",
+          "summarize",
+          "tablejoin",
+          "tablereformat",
+          "theory_of_mind",
+          "typescript",
+          "typos",
+          "zebra_puzzle"
+        ],
+        "generation": "v1",
+        "normalized_display": "claude haiku 5 5",
+        "numeric_cells": 23,
+        "source_model": "claude-haiku-5-5-xhigh-effort"
+      },
+      {
+        "columns": [
+          "AMPS_Hard",
+          "code_completion",
+          "code_generation",
+          "connections",
+          "consecutive_events",
+          "integrals_with_game",
+          "javascript",
+          "logic_with_navigation",
+          "math_comp",
+          "olympiad",
+          "paraphrase",
+          "plot_unscrambling",
+          "python",
+          "simplify",
+          "spatial",
+          "story_generation",
+          "summarize",
+          "tablejoin",
+          "tablereformat",
+          "theory_of_mind",
+          "typescript",
+          "typos",
+          "zebra_puzzle"
+        ],
+        "generation": "v1",
+        "normalized_display": "claude haiku 5 5",
+        "numeric_cells": 23,
+        "source_model": "claude-haiku-5-5-max-effort"
+      },
+      {
+        "columns": [
+          "AMPS_Hard",
+          "code_completion",
+          "code_generation",
+          "connections",
+          "consecutive_events",
+          "integrals_with_game",
+          "javascript",
+          "logic_with_navigation",
+          "math_comp",
+          "olympiad",
+          "paraphrase",
+          "plot_unscrambling",
+          "python",
+          "simplify",
+          "spatial",
+          "story_generation",
+          "summarize",
+          "tablejoin",
+          "tablereformat",
+          "theory_of_mind",
+          "typescript",
+          "typos",
+          "zebra_puzzle"
+        ],
+        "generation": "v1",
+        "normalized_display": "nemotron 3 5 lightning 30b a3b",
+        "numeric_cells": 23,
+        "source_model": "nemotron-3.5-lightning-30b-a3b"
+      },
+      {
+        "columns": [
+          "design_layout",
+          "research",
+          "browser",
+          "coding",
+          "long_horizon",
+          "data_analysis",
+          "reasoning"
+        ],
+        "generation": "v2",
+        "normalized_display": "claude opus 4 8",
+        "numeric_cells": 7,
+        "source_model": "claude-opus-4.8"
+      },
+      {
+        "columns": [
+          "design_layout",
+          "research",
+          "browser",
+          "coding",
+          "long_horizon",
+          "data_analysis",
+          "reasoning"
+        ],
+        "generation": "v2",
+        "normalized_display": "claude sonnet 5",
+        "numeric_cells": 7,
+        "source_model": "claude-sonnet-5"
+      },
+      {
+        "columns": [
+          "design_layout",
+          "research",
+          "browser",
+          "coding",
+          "long_horizon",
+          "data_analysis",
+          "reasoning"
+        ],
+        "generation": "v2",
+        "normalized_display": "claude haiku 4 5",
+        "numeric_cells": 7,
+        "source_model": "claude-haiku-4.5"
+      },
+      {
+        "columns": [
+          "design_layout",
+          "research",
+          "browser",
+          "coding",
+          "long_horizon",
+          "data_analysis",
+          "reasoning"
+        ],
+        "generation": "v2",
+        "normalized_display": "gpt 5 6 terra",
+        "numeric_cells": 7,
+        "source_model": "gpt-5.6-terra"
+      },
+      {
+        "columns": [
+          "design_layout",
+          "research",
+          "browser",
+          "coding",
+          "long_horizon",
+          "data_analysis",
+          "reasoning"
+        ],
+        "generation": "v2",
+        "normalized_display": "gpt 5 6 luna",
+        "numeric_cells": 7,
+        "source_model": "gpt-5.6-luna"
+      },
+      {
+        "columns": [
+          "design_layout",
+          "research",
+          "browser",
+          "coding",
+          "long_horizon",
+          "data_analysis",
+          "reasoning"
+        ],
+        "generation": "v2",
+        "normalized_display": "gpt 5 5",
+        "numeric_cells": 7,
+        "source_model": "gpt-5.5"
+      },
+      {
+        "columns": [
+          "design_layout",
+          "research",
+          "browser",
+          "coding",
+          "long_horizon",
+          "data_analysis",
+          "reasoning"
+        ],
+        "generation": "v2",
+        "normalized_display": "muse spark 1 2",
+        "numeric_cells": 7,
+        "source_model": "muse-spark-1.2"
+      },
+      {
+        "columns": [
+          "design_layout",
+          "research",
+          "browser",
+          "coding",
+          "long_horizon",
+          "data_analysis",
+          "reasoning"
+        ],
+        "generation": "v2",
+        "normalized_display": "gemini 3 1 pro",
+        "numeric_cells": 7,
+        "source_model": "gemini-3.1-pro"
+      },
+      {
+        "columns": [
+          "design_layout",
+          "research",
+          "browser",
+          "coding",
+          "long_horizon",
+          "data_analysis",
+          "reasoning"
+        ],
+        "generation": "v2",
+        "normalized_display": "gemini 3 7 flash",
+        "numeric_cells": 7,
+        "source_model": "gemini-3.7-flash"
+      },
+      {
+        "columns": [
+          "design_layout",
+          "research",
+          "browser",
+          "coding",
+          "long_horizon",
+          "data_analysis",
+          "reasoning"
+        ],
+        "generation": "v2",
+        "normalized_display": "deepseek v4 flash vision",
+        "numeric_cells": 7,
+        "source_model": "deepseek-v4-flash-vision"
+      },
+      {
+        "columns": [
+          "design_layout",
+          "research",
+          "browser",
+          "coding",
+          "long_horizon",
+          "data_analysis",
+          "reasoning"
+        ],
+        "generation": "v2",
+        "normalized_display": "qwen3 8 flash",
+        "numeric_cells": 7,
+        "source_model": "qwen3.8-flash"
+      },
+      {
+        "columns": [
+          "design_layout",
+          "research",
+          "browser",
+          "coding",
+          "long_horizon",
+          "data_analysis",
+          "reasoning"
+        ],
+        "generation": "v2",
+        "normalized_display": "grok 4 5",
+        "numeric_cells": 7,
+        "source_model": "grok-4.5"
+      },
+      {
+        "columns": [
+          "design_layout",
+          "research",
+          "browser",
+          "coding",
+          "long_horizon",
+          "data_analysis",
+          "reasoning"
+        ],
+        "generation": "v2",
+        "normalized_display": "claude fable 5",
+        "numeric_cells": 7,
+        "source_model": "claude-fable-5"
+      },
+      {
+        "columns": [
+          "design_layout",
+          "research",
+          "browser",
+          "coding",
+          "long_horizon",
+          "data_analysis",
+          "reasoning"
+        ],
+        "generation": "v2",
+        "normalized_display": "claude sonnet 4 6",
+        "numeric_cells": 7,
+        "source_model": "claude-sonnet-4.6"
+      },
+      {
+        "columns": [
+          "design_layout",
+          "research",
+          "browser",
+          "coding",
+          "long_horizon",
+          "data_analysis",
+          "reasoning"
+        ],
+        "generation": "v2",
+        "normalized_display": "gemini 3 8 flash",
+        "numeric_cells": 7,
+        "source_model": "gemini-3.8-flash"
+      },
+      {
+        "columns": [
+          "design_layout",
+          "research",
+          "browser",
+          "coding",
+          "long_horizon",
+          "data_analysis",
+          "reasoning"
+        ],
+        "generation": "v2",
+        "normalized_display": "smaug flash",
+        "numeric_cells": 7,
+        "source_model": "smaug-flash"
+      },
+      {
+        "columns": [
+          "design_layout",
+          "research",
+          "browser",
+          "coding",
+          "long_horizon",
+          "data_analysis",
+          "reasoning"
+        ],
+        "generation": "v2",
+        "normalized_display": "claude sonnet 5 5",
+        "numeric_cells": 7,
+        "source_model": "claude-sonnet-5.5"
+      },
+      {
+        "columns": [
+          "design_layout",
+          "research",
+          "browser",
+          "coding",
+          "long_horizon",
+          "data_analysis",
+          "reasoning"
+        ],
+        "generation": "v2",
+        "normalized_display": "gpt 6 sol",
+        "numeric_cells": 7,
+        "source_model": "gpt-6-sol"
+      },
+      {
+        "columns": [
+          "design_layout",
+          "research",
+          "browser",
+          "coding",
+          "long_horizon",
+          "data_analysis",
+          "reasoning"
+        ],
+        "generation": "v2",
+        "normalized_display": "gpt 6 luna",
+        "numeric_cells": 7,
+        "source_model": "gpt-6-luna"
+      },
+      {
+        "columns": [
+          "design_layout",
+          "research",
+          "browser",
+          "coding",
+          "long_horizon",
+          "data_analysis",
+          "reasoning"
+        ],
+        "generation": "v2",
+        "normalized_display": "claude haiku 5 5",
+        "numeric_cells": 7,
+        "source_model": "claude-haiku-5.5"
+      },
+      {
+        "columns": [
+          "design_layout",
+          "research",
+          "browser",
+          "coding",
+          "long_horizon",
+          "data_analysis",
+          "reasoning"
+        ],
+        "generation": "v2",
+        "normalized_display": "inkling",
+        "numeric_cells": 7,
+        "source_model": "inkling"
+      },
+      {
+        "columns": [
+          "design_layout",
+          "research",
+          "browser",
+          "coding",
+          "long_horizon",
+          "data_analysis",
+          "reasoning"
+        ],
+        "generation": "v2",
+        "normalized_display": "minimax m3",
+        "numeric_cells": 7,
+        "source_model": "minimax-m3"
+      },
+      {
+        "columns": [
+          "design_layout",
+          "research",
+          "browser",
+          "coding",
+          "long_horizon",
+          "data_analysis",
+          "reasoning"
+        ],
+        "generation": "v2",
+        "normalized_display": "nemotron 3 ultra",
+        "numeric_cells": 7,
+        "source_model": "nemotron-ultra-3"
+      },
+      {
+        "columns": [
+          "design_layout",
+          "research",
+          "browser",
+          "coding",
+          "long_horizon",
+          "data_analysis",
+          "reasoning"
+        ],
+        "generation": "v2",
+        "normalized_display": "nemotron 3 5 lightning",
+        "numeric_cells": 7,
+        "source_model": "nemotron-lightning-3.5"
+      },
+      {
+        "columns": [
+          "design_layout",
+          "research",
+          "browser",
+          "coding",
+          "long_horizon",
+          "data_analysis",
+          "reasoning"
+        ],
+        "generation": "v2",
+        "normalized_display": "mimo v2 6 pro",
+        "numeric_cells": 7,
+        "source_model": "mimo-v2.6-pro"
+      },
+      {
+        "columns": [
+          "design_layout",
+          "research",
+          "browser",
+          "coding",
+          "long_horizon",
+          "data_analysis",
+          "reasoning"
+        ],
+        "generation": "v2",
+        "normalized_display": "gemma 4 31b",
+        "numeric_cells": 7,
+        "source_model": "gemma-4-31b"
+      },
+      {
+        "columns": [
+          "design_layout",
+          "research",
+          "browser",
+          "coding",
+          "long_horizon",
+          "data_analysis",
+          "reasoning"
+        ],
+        "generation": "v2",
+        "normalized_display": "step 5 preview",
+        "numeric_cells": 7,
+        "source_model": "step-5-preview"
+      },
+      {
+        "columns": [
+          "design_layout",
+          "research",
+          "browser",
+          "coding",
+          "long_horizon",
+          "data_analysis",
+          "reasoning"
+        ],
+        "generation": "v2",
+        "normalized_display": "nemotron 3 5 super vl",
+        "numeric_cells": 7,
+        "source_model": "nemotron-super-vl-3.5"
+      },
+      {
+        "columns": [
+          "design_layout",
+          "research",
+          "browser",
+          "coding",
+          "long_horizon",
+          "data_analysis",
+          "reasoning"
+        ],
+        "generation": "v2",
+        "normalized_display": "muse spark open",
+        "numeric_cells": 7,
+        "source_model": "muse-spark-open"
+      },
+      {
+        "columns": [
+          "design_layout",
+          "research",
+          "browser",
+          "coding",
+          "long_horizon",
+          "data_analysis",
+          "reasoning"
+        ],
+        "generation": "v2",
+        "normalized_display": "beam 1 0",
+        "numeric_cells": 7,
+        "source_model": "beam-1.0"
+      },
+      {
+        "columns": [
+          "design_layout",
+          "research",
+          "browser",
+          "coding",
+          "long_horizon",
+          "data_analysis",
+          "reasoning"
+        ],
+        "generation": "v2",
+        "normalized_display": "deepseek v4 1 flash 1017",
+        "numeric_cells": 7,
+        "source_model": "deepseek-v4.1-flash-1017"
+      }
+    ],
+    "unresolved_configurations": []
+  },
+  "dataset_sha256": "c67d2ad2c4ebed0c1f19a24fcb18daba2d19146c2a63e614f4c158add5108a3c",
+  "dependency_lock_sha256": "2c008e6d463d37c7ab73c7a0d307ebf6392f238097fd450a61077c8e1e7d4c15",
+  "entities": {
+    "conflict": 2,
+    "new": 196,
+    "unchanged": 72
+  },
+  "evidence_sha256": "20d1df91314dbca2a9cf893e239db78f169e58ef57ec45e8ee879a1834db6298",
+  "latency_policy": "source_reported_only",
+  "mapping_contract_sha256": "96170c95a488663db1eb5213bd17a76489b081979593e0d7fbaa17f41ddd1304",
+  "publication": "review_required",
+  "source": "livebench"
+}

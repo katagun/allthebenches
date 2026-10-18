@@ -1,0 +1,218 @@
+{
+  "snapshot_id": "vals_mistral_large4_2026-10-18",
+  "retrieved_at": "2026-10-18T00:00:00Z",
+  "retrieval_precision": "date; exact capture time not recorded",
+  "source_url": "https://www.vals.ai/models/mistralai_mistral-large-4",
+  "source_title": "Mistral Large 4 Benchmarks, Cost and Capabilities",
+  "source_model_label": "mistralai/mistral-large-4",
+  "canonical_model_id": "mistral_large4",
+  "reasoning_effort": "high",
+  "reasoning_effort_locator": "View Hyperparameter Settings; Reasoning Effort: high",
+  "html_sha256": "b638f68cc561e4c45607408b52893dc494ad1fafc5427e48983bc8e1dbfadc13",
+  "methodology_url": "https://www.vals.ai/methodology",
+  "methodology_note": "Vals states that it reports standard errors; depending on benchmark structure, SEM is computed over instances or independent runs. The model page does not identify which basis applies to each row.",
+  "rows": [
+    {
+      "benchmark_label": "Vals Index",
+      "benchmark_version": "not stated",
+      "benchmark_url": "https://www.vals.ai/benchmarks/vals_index",
+      "value": 48.66,
+      "unit": "%",
+      "standard_error": 1.13,
+      "page_locator": "benchmark row: Vals Index",
+      "rank": 34,
+      "rank_population": 49
+    },
+    {
+      "benchmark_label": "Code Migration",
+      "benchmark_version": "not stated",
+      "benchmark_url": "https://www.vals.ai/benchmarks/code-migration",
+      "value": 30.56,
+      "unit": "%",
+      "standard_error": 4.22,
+      "page_locator": "benchmark row: Code Migration",
+      "rank": 41,
+      "rank_population": 78
+    },
+    {
+      "benchmark_label": "EMB",
+      "benchmark_name": "Excel Modeling Benchmark",
+      "benchmark_version": "not stated",
+      "benchmark_url": "https://www.vals.ai/benchmarks/emb",
+      "value": 56.21,
+      "unit": "%",
+      "standard_error": 3.22,
+      "page_locator": "benchmark row: EMB",
+      "rank": 46,
+      "rank_population": 75
+    },
+    {
+      "benchmark_label": "Finance Agent (v2)",
+      "benchmark_version": "v2",
+      "benchmark_url": "https://www.vals.ai/benchmarks/fabv2",
+      "value": 54.68,
+      "unit": "%",
+      "standard_error": 0.58,
+      "page_locator": "benchmark row: Finance Agent (v2)",
+      "rank": 25,
+      "rank_population": 79,
+      "benchmark_name": "Finance Agent v2"
+    },
+    {
+      "benchmark_label": "Legal Research Bench",
+      "benchmark_version": "not stated",
+      "benchmark_url": "https://www.vals.ai/benchmarks/legal_research",
+      "value": 31.73,
+      "unit": "%",
+      "standard_error": 3.23,
+      "page_locator": "benchmark row: Legal Research Bench",
+      "rank": 43,
+      "rank_population": 79
+    },
+    {
+      "benchmark_label": "MedCode",
+      "benchmark_version": "not stated",
+      "benchmark_url": "https://www.vals.ai/benchmarks/medcode",
+      "value": 40.69,
+      "unit": "%",
+      "standard_error": 2.17,
+      "page_locator": "benchmark row: MedCode",
+      "rank": 61,
+      "rank_population": 107
+    },
+    {
+      "benchmark_label": "MedScribe",
+      "benchmark_version": "not stated",
+      "benchmark_url": "https://www.vals.ai/benchmarks/medscribe",
+      "value": 80.43,
+      "unit": "%",
+      "standard_error": 2.0,
+      "page_locator": "benchmark row: MedScribe",
+      "rank": 57,
+      "rank_population": 109
+    },
+    {
+      "benchmark_label": "MysteryMechanism",
+      "benchmark_version": "not stated",
+      "benchmark_url": "https://www.vals.ai/benchmarks/mysterymechanism",
+      "value": 12.16,
+      "unit": "%",
+      "standard_error": 2.2,
+      "page_locator": "benchmark row: MysteryMechanism",
+      "rank": 27,
+      "rank_population": 27
+    },
+    {
+      "benchmark_label": "ProofBench v1.1",
+      "benchmark_version": "v1.1",
+      "benchmark_url": "https://www.vals.ai/benchmarks/proof_bench",
+      "value": 10.0,
+      "unit": "%",
+      "standard_error": 3.02,
+      "page_locator": "benchmark row: ProofBench v1.1",
+      "rank": 45,
+      "rank_population": 50
+    },
+    {
+      "benchmark_label": "Tax Agent Bench",
+      "benchmark_version": "not stated",
+      "benchmark_url": "https://www.vals.ai/benchmarks/tax_agent_bench",
+      "value": 30.39,
+      "unit": "%",
+      "standard_error": 3.31,
+      "page_locator": "benchmark row: Tax Agent Bench",
+      "rank": 25,
+      "rank_population": 70
+    },
+    {
+      "benchmark_label": "Vibe Code Bench 1-100",
+      "benchmark_version": "1-100",
+      "benchmark_url": "https://www.vals.ai/benchmarks/vcb-1-100",
+      "value": 14.26,
+      "unit": "%",
+      "standard_error": 3.21,
+      "page_locator": "benchmark row: Vibe Code Bench 1-100",
+      "rank": 20,
+      "rank_population": 25
+    },
+    {
+      "benchmark_label": "Vibe Code Bench v1.1",
+      "benchmark_version": "v1.1",
+      "benchmark_url": "https://www.vals.ai/benchmarks/vibe-code",
+      "value": 78.4,
+      "unit": "%",
+      "standard_error": 3.55,
+      "page_locator": "benchmark row: Vibe Code Bench v1.1",
+      "rank": 28,
+      "rank_population": 113
+    },
+    {
+      "benchmark_label": "BioMysteryBench",
+      "benchmark_version": "not stated",
+      "benchmark_url": "https://www.vals.ai/benchmarks/biomysterybench",
+      "value": 67.04,
+      "unit": "%",
+      "standard_error": 2.67,
+      "page_locator": "benchmark row: BioMysteryBench",
+      "rank": 20,
+      "rank_population": 27
+    },
+    {
+      "benchmark_label": "Harvey's Legal Agent Benchmark",
+      "benchmark_version": "not stated",
+      "benchmark_url": "https://www.vals.ai/benchmarks/hlab",
+      "value": 15.83,
+      "unit": "%",
+      "standard_error": 2.96,
+      "page_locator": "benchmark row: Harvey's Legal Agent Benchmark",
+      "rank": 10,
+      "rank_population": 80
+    },
+    {
+      "benchmark_label": "IOI",
+      "benchmark_version": "not stated",
+      "benchmark_url": "https://www.vals.ai/benchmarks/ioi",
+      "value": 45.28,
+      "unit": "%",
+      "standard_error": 3.78,
+      "page_locator": "benchmark row: IOI",
+      "rank": 31,
+      "rank_population": 44
+    },
+    {
+      "benchmark_label": "SWE-bench Multimodal",
+      "benchmark_version": "not stated",
+      "benchmark_url": "https://www.vals.ai/benchmarks/swebench-multimodal",
+      "value": 33.13,
+      "unit": "%",
+      "standard_error": 2.15,
+      "page_locator": "benchmark row: SWE-bench Multimodal",
+      "rank": 20,
+      "rank_population": 20
+    },
+    {
+      "benchmark_label": "Terminal-Bench 4.0",
+      "benchmark_version": "4.0",
+      "benchmark_url": "https://www.vals.ai/benchmarks/terminal-bench-4",
+      "value": 27.78,
+      "unit": "%",
+      "standard_error": 1.82,
+      "page_locator": "benchmark row: Terminal-Bench 4.0",
+      "rank": 20,
+      "rank_population": 49
+    }
+  ],
+  "coverage": {
+    "candidate_rows": 17,
+    "imported_rows": 17,
+    "unresolved_rows": 0,
+    "excluded_rows": 0,
+    "unresolved": [],
+    "excluded": []
+  },
+  "reuse_review": {
+    "license": null,
+    "attribution": "Vals AI, source model and benchmark pages linked on each result.",
+    "note": "No explicit open-data license or reuse grant was identified for these displayed scores. Retain source attribution; redistribution terms remain unstated."
+  }
+}

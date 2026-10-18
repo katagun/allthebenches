@@ -454,3 +454,18 @@
   .app-shell[data-landscape-phone="true"][data-mobile-options="true"]>.secondary-controls .results-caption{display:flex}
   .app-shell[data-landscape-phone="true"][data-mobile-options="true"]>.mobile-table-hint{display:block}
 }
+
+/* Benchmark names carry the detail link; metric explanations live in the tooltip. */
+.benchmark-heading-compact{display:flex;align-items:center;gap:4px;min-width:0}
+.benchmark-heading-compact .benchmark-detail-link{display:block;flex:1;min-width:0;margin:0;color:var(--foreground);font-size:12px;font-weight:600;line-height:1.35;text-decoration:none;white-space:normal;overflow-wrap:anywhere}
+.benchmark-heading-compact .benchmark-detail-link:hover{text-decoration:underline;text-underline-offset:3px;color:var(--primary)}
+.benchmark-variant-label{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:10px;font-weight:400;color:var(--muted-foreground);margin-top:2px}
+.benchmark-sort{display:grid;place-items:center;flex:none;width:24px;height:28px;padding:0;border:0;border-radius:4px;background:transparent;color:var(--foreground);cursor:pointer}
+.benchmark-sort svg{width:12px;height:12px}
+.benchmark-sort:hover{background:var(--accent)}
+.benchmark-sort:focus-visible,.benchmark-detail-link:focus-visible{outline:2px solid var(--ring);outline-offset:2px}
+.table-card .transposed-table tbody td{height:40px;padding-block:4px}
+.table-card.comfortable .transposed-table tbody td{height:44px}
+@media(max-width:600px){.benchmark-heading-compact .benchmark-detail-link{font-size:10px}.benchmark-heading-compact{gap:0}.benchmark-sort{width:20px}.benchmark-variant-label{font-size:9px}}
+/* Growing source catalogs must not turn category navigation into a tall header. */
+@media(min-width:801px){.secondary-controls .category-nav{min-width:0;flex:1 1 480px;flex-wrap:nowrap;overflow-x:auto;scrollbar-width:thin}.secondary-controls .category-nav button{flex:none}}

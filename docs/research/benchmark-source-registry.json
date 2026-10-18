@@ -1,0 +1,597 @@
+{
+  "reviewed_on": "2026-10-18",
+  "scope": "All 219 benchmark pages linked by Benchleader on this date; not all benchmarks on the internet. Publisher attribution is verified; ingestion contracts and original-publisher licenses still require review.",
+  "publishers": [
+    {
+      "publisher": "ARC Prize",
+      "benchmark_count": 3,
+      "source_urls": [
+        "https://arcprize.org/leaderboard"
+      ],
+      "status": "discovered"
+    },
+    {
+      "publisher": "Aider polyglot leaderboard",
+      "benchmark_count": 1,
+      "source_urls": [
+        "https://aider.chat/docs/leaderboards/"
+      ],
+      "status": "discovered"
+    },
+    {
+      "publisher": "AlgoTune",
+      "benchmark_count": 1,
+      "source_urls": [
+        "https://algotune.io"
+      ],
+      "status": "discovered"
+    },
+    {
+      "publisher": "Andon Labs",
+      "benchmark_count": 1,
+      "source_urls": [
+        "https://andonlabs.com"
+      ],
+      "status": "discovered"
+    },
+    {
+      "publisher": "Arena (LMArena)",
+      "benchmark_count": 13,
+      "source_urls": [
+        "https://arena.ai/leaderboard/agent",
+        "https://arena.ai/leaderboard/chat/document",
+        "https://arena.ai/leaderboard/chat/search",
+        "https://arena.ai/leaderboard/chat/text",
+        "https://arena.ai/leaderboard/chat/text/coding",
+        "https://arena.ai/leaderboard/chat/text/creative-writing",
+        "https://arena.ai/leaderboard/chat/text/hard-prompts",
+        "https://arena.ai/leaderboard/chat/text/instruction-following",
+        "https://arena.ai/leaderboard/chat/text/longer-query",
+        "https://arena.ai/leaderboard/chat/text/math",
+        "https://arena.ai/leaderboard/chat/text/multi-turn",
+        "https://arena.ai/leaderboard/chat/vision",
+        "https://arena.ai/leaderboard/code/webdev"
+      ],
+      "status": "discovered"
+    },
+    {
+      "publisher": "Artificial Analysis",
+      "benchmark_count": 34,
+      "source_urls": [
+        "https://artificialanalysis.ai/evaluations/aa-3d",
+        "https://artificialanalysis.ai/evaluations/aa-analyst-agent",
+        "https://artificialanalysis.ai/evaluations/aa-briefcase",
+        "https://artificialanalysis.ai/evaluations/apex-agents-aa",
+        "https://artificialanalysis.ai/evaluations/artificial-analysis-long-context-reasoning",
+        "https://artificialanalysis.ai/evaluations/artificial-analysis-openness-index",
+        "https://artificialanalysis.ai/evaluations/automationbench-aa",
+        "https://artificialanalysis.ai/evaluations/critpt",
+        "https://artificialanalysis.ai/evaluations/enterprise-ops-gym-aa",
+        "https://artificialanalysis.ai/evaluations/frontiercode",
+        "https://artificialanalysis.ai/evaluations/gdp-pdf",
+        "https://artificialanalysis.ai/evaluations/gdpval-aa",
+        "https://artificialanalysis.ai/evaluations/global-mmlu-lite",
+        "https://artificialanalysis.ai/evaluations/gpqa-diamond",
+        "https://artificialanalysis.ai/evaluations/humanitys-last-exam",
+        "https://artificialanalysis.ai/evaluations/ifbench",
+        "https://artificialanalysis.ai/evaluations/itbench-aa",
+        "https://artificialanalysis.ai/evaluations/mlcr-aa",
+        "https://artificialanalysis.ai/evaluations/mmmu-pro",
+        "https://artificialanalysis.ai/evaluations/omniscience",
+        "https://artificialanalysis.ai/evaluations/scicode",
+        "https://artificialanalysis.ai/evaluations/tau2-bench",
+        "https://artificialanalysis.ai/evaluations/tau3-banking",
+        "https://artificialanalysis.ai/evaluations/terminal-bench-science",
+        "https://artificialanalysis.ai/evaluations/terminalbench-2-1",
+        "https://artificialanalysis.ai/evaluations/terminalbench-4-0",
+        "https://artificialanalysis.ai/evaluations/terminalbench-hard",
+        "https://artificialanalysis.ai/leaderboards/models"
+      ],
+      "status": "discovered"
+    },
+    {
+      "publisher": "BALROG",
+      "benchmark_count": 1,
+      "source_urls": [
+        "https://balrogai.com"
+      ],
+      "status": "discovered"
+    },
+    {
+      "publisher": "Berkeley Function Calling Leaderboard",
+      "benchmark_count": 1,
+      "source_urls": [
+        "https://gorilla.cs.berkeley.edu/leaderboard.html"
+      ],
+      "status": "discovered"
+    },
+    {
+      "publisher": "BrowseComp-Plus",
+      "benchmark_count": 1,
+      "source_urls": [
+        "https://github.com/texttron/BrowseComp-Plus"
+      ],
+      "status": "discovered"
+    },
+    {
+      "publisher": "Cognition",
+      "benchmark_count": 1,
+      "source_urls": [
+        "https://cognition.com/frontiercode"
+      ],
+      "status": "discovered"
+    },
+    {
+      "publisher": "Cursor",
+      "benchmark_count": 1,
+      "source_urls": [
+        "https://cursor.com"
+      ],
+      "status": "discovered"
+    },
+    {
+      "publisher": "Cybench",
+      "benchmark_count": 1,
+      "source_urls": [
+        "https://cybench.github.io"
+      ],
+      "status": "discovered"
+    },
+    {
+      "publisher": "DeepResearch Bench",
+      "benchmark_count": 1,
+      "source_urls": [
+        "https://deepresearch-bench.github.io"
+      ],
+      "status": "discovered"
+    },
+    {
+      "publisher": "EQ-Bench",
+      "benchmark_count": 1,
+      "source_urls": [
+        "https://eqbench.com/"
+      ],
+      "status": "discovered"
+    },
+    {
+      "publisher": "Epoch AI Benchmarking Hub",
+      "benchmark_count": 44,
+      "source_urls": [
+        "https://epoch.ai/benchmarks",
+        "https://epoch.ai/benchmarks/adversarial-nli",
+        "https://epoch.ai/benchmarks/ale-bench",
+        "https://epoch.ai/benchmarks/arc-ai2",
+        "https://epoch.ai/benchmarks/bbh",
+        "https://epoch.ai/benchmarks/blueprint-bench-2",
+        "https://epoch.ai/benchmarks/btf-3",
+        "https://epoch.ai/benchmarks/cad-eval",
+        "https://epoch.ai/benchmarks/chess-puzzles",
+        "https://epoch.ai/benchmarks/cl-bench",
+        "https://epoch.ai/benchmarks/cl-bench-life",
+        "https://epoch.ai/benchmarks/deepswe",
+        "https://epoch.ai/benchmarks/dtbench",
+        "https://epoch.ai/benchmarks/ebr-bench",
+        "https://epoch.ai/benchmarks/eci",
+        "https://epoch.ai/benchmarks/exploitbench",
+        "https://epoch.ai/benchmarks/frontiermath",
+        "https://epoch.ai/benchmarks/frontierswe",
+        "https://epoch.ai/benchmarks/gbaeval",
+        "https://epoch.ai/benchmarks/gdp-pdf",
+        "https://epoch.ai/benchmarks/gpqa-diamond",
+        "https://epoch.ai/benchmarks/gsm8k",
+        "https://epoch.ai/benchmarks/hella-swag",
+        "https://epoch.ai/benchmarks/lambada",
+        "https://epoch.ai/benchmarks/lmca",
+        "https://epoch.ai/benchmarks/math-level-5",
+        "https://epoch.ai/benchmarks/mindcube",
+        "https://epoch.ai/benchmarks/mirrorcode",
+        "https://epoch.ai/benchmarks/mmlu",
+        "https://epoch.ai/benchmarks/mystery-game-puzzles",
+        "https://epoch.ai/benchmarks/open-book-qa",
+        "https://epoch.ai/benchmarks/otis-mock-aime-2024-2025",
+        "https://epoch.ai/benchmarks/piqa",
+        "https://epoch.ai/benchmarks/post-train-bench",
+        "https://epoch.ai/benchmarks/science-qa",
+        "https://epoch.ai/benchmarks/simpleqa-verified",
+        "https://epoch.ai/benchmarks/spatialviz-bench",
+        "https://epoch.ai/benchmarks/superglue",
+        "https://epoch.ai/benchmarks/surface-evolver-bench",
+        "https://epoch.ai/benchmarks/swe-bench-verified",
+        "https://epoch.ai/benchmarks/trivia-qa",
+        "https://epoch.ai/benchmarks/vpct",
+        "https://epoch.ai/benchmarks/wino-grande"
+      ],
+      "status": "discovered"
+    },
+    {
+      "publisher": "Fiction.live",
+      "benchmark_count": 1,
+      "source_urls": [
+        "https://fiction.live/stories/Fiction-liveBench-Mar-14-2025/oQdzQvKHw8JyXbN87"
+      ],
+      "status": "discovered"
+    },
+    {
+      "publisher": "ForecastBench",
+      "benchmark_count": 1,
+      "source_urls": [
+        "https://www.forecastbench.org"
+      ],
+      "status": "discovered"
+    },
+    {
+      "publisher": "GSO-Bench",
+      "benchmark_count": 1,
+      "source_urls": [
+        "https://gso-bench.github.io"
+      ],
+      "status": "discovered"
+    },
+    {
+      "publisher": "GeoBench",
+      "benchmark_count": 1,
+      "source_urls": [
+        "https://geobench.org"
+      ],
+      "status": "discovered"
+    },
+    {
+      "publisher": "Google",
+      "benchmark_count": 2,
+      "source_urls": [
+        "https://www.kaggle.com/benchmarks/google/dsqa",
+        "https://www.kaggle.com/benchmarks/google/facts-search"
+      ],
+      "status": "discovered"
+    },
+    {
+      "publisher": "HELM Capabilities",
+      "benchmark_count": 6,
+      "source_urls": [
+        "https://crfm.stanford.edu/helm/capabilities/latest/#/leaderboard"
+      ],
+      "status": "discovered"
+    },
+    {
+      "publisher": "Harvey",
+      "benchmark_count": 1,
+      "source_urls": [
+        "https://www.harvey.ai"
+      ],
+      "status": "discovered"
+    },
+    {
+      "publisher": "Kagi LLM Benchmark",
+      "benchmark_count": 1,
+      "source_urls": [
+        "https://help.kagi.com/kagi/ai/llm-benchmark.html"
+      ],
+      "status": "discovered"
+    },
+    {
+      "publisher": "Lech Mazur",
+      "benchmark_count": 1,
+      "source_urls": [
+        "https://github.com/lechmazur/writing"
+      ],
+      "status": "discovered"
+    },
+    {
+      "publisher": "LiveBench",
+      "benchmark_count": 8,
+      "source_urls": [
+        "https://livebench.ai"
+      ],
+      "status": "discovered"
+    },
+    {
+      "publisher": "METR",
+      "benchmark_count": 1,
+      "source_urls": [
+        "https://metr.org"
+      ],
+      "status": "discovered"
+    },
+    {
+      "publisher": "MMMU",
+      "benchmark_count": 2,
+      "source_urls": [
+        "https://mmmu-benchmark.github.io/#leaderboard"
+      ],
+      "status": "discovered"
+    },
+    {
+      "publisher": "MathArena",
+      "benchmark_count": 4,
+      "source_urls": [
+        "https://matharena.ai/?comp=aime--aime_2026",
+        "https://matharena.ai/?comp=apex--apex_2025",
+        "https://matharena.ai/?comp=hmmt--hmmt_feb_2026",
+        "https://matharena.ai/?comp=imo--imo_2025"
+      ],
+      "status": "discovered"
+    },
+    {
+      "publisher": "Mercor",
+      "benchmark_count": 1,
+      "source_urls": [
+        "https://www.mercor.com/apex"
+      ],
+      "status": "discovered"
+    },
+    {
+      "publisher": "OSWorld",
+      "benchmark_count": 1,
+      "source_urls": [
+        "https://osworld-v1.xlang.ai/"
+      ],
+      "status": "discovered"
+    },
+    {
+      "publisher": "OpenAI",
+      "benchmark_count": 2,
+      "source_urls": [
+        "https://openai.com/index/browsecomp/",
+        "https://openai.com/index/gdpval/"
+      ],
+      "status": "discovered"
+    },
+    {
+      "publisher": "SWE-bench",
+      "benchmark_count": 2,
+      "source_urls": [
+        "https://www.swebench.com/#verified"
+      ],
+      "status": "discovered"
+    },
+    {
+      "publisher": "Scale AI / CAIS",
+      "benchmark_count": 2,
+      "source_urls": [
+        "https://scale.com/leaderboard/humanitys_last_exam",
+        "https://www.remotelabor.ai"
+      ],
+      "status": "discovered"
+    },
+    {
+      "publisher": "Scale AI SEAL",
+      "benchmark_count": 23,
+      "source_urls": [
+        "https://labs.scale.com/leaderboard/audiomc",
+        "https://labs.scale.com/leaderboard/audiomc-audio",
+        "https://labs.scale.com/leaderboard/audiomc-text",
+        "https://labs.scale.com/leaderboard/drugdiscoverybench",
+        "https://labs.scale.com/leaderboard/enigma_eval",
+        "https://labs.scale.com/leaderboard/fortress",
+        "https://labs.scale.com/leaderboard/hil",
+        "https://labs.scale.com/leaderboard/mask",
+        "https://labs.scale.com/leaderboard/mcp_atlas",
+        "https://labs.scale.com/leaderboard/multichallenge",
+        "https://labs.scale.com/leaderboard/multinrc",
+        "https://labs.scale.com/leaderboard/prbench-finance",
+        "https://labs.scale.com/leaderboard/prbench-legal",
+        "https://labs.scale.com/leaderboard/propensitybench",
+        "https://labs.scale.com/leaderboard/scipredict",
+        "https://labs.scale.com/leaderboard/swe_bench_pro",
+        "https://labs.scale.com/leaderboard/swe_bench_pro_private",
+        "https://labs.scale.com/leaderboard/sweatlas-qna",
+        "https://labs.scale.com/leaderboard/sweatlas-refactoring",
+        "https://labs.scale.com/leaderboard/sweatlas-tw",
+        "https://labs.scale.com/leaderboard/tutorbench",
+        "https://labs.scale.com/leaderboard/visual_language_understanding",
+        "https://labs.scale.com/leaderboard/vtb"
+      ],
+      "status": "discovered"
+    },
+    {
+      "publisher": "SciCode",
+      "benchmark_count": 1,
+      "source_urls": [
+        "https://scicode-bench.github.io"
+      ],
+      "status": "discovered"
+    },
+    {
+      "publisher": "SimpleBench",
+      "benchmark_count": 1,
+      "source_urls": [
+        "https://simple-bench.com"
+      ],
+      "status": "discovered"
+    },
+    {
+      "publisher": "Startrise",
+      "benchmark_count": 1,
+      "source_urls": [
+        "https://www.startrise.io/benchmark/"
+      ],
+      "status": "discovered"
+    },
+    {
+      "publisher": "Terminal-Bench",
+      "benchmark_count": 1,
+      "source_urls": [
+        "https://www.tbench.ai/leaderboard"
+      ],
+      "status": "discovered"
+    },
+    {
+      "publisher": "TheAgentCompany",
+      "benchmark_count": 1,
+      "source_urls": [
+        "https://the-agent-company.com"
+      ],
+      "status": "discovered"
+    },
+    {
+      "publisher": "Vals AI",
+      "benchmark_count": 45,
+      "source_urls": [
+        "https://www.vals.ai/benchmarks/aime",
+        "https://www.vals.ai/benchmarks/biomysterybench",
+        "https://www.vals.ai/benchmarks/case_law_v2",
+        "https://www.vals.ai/benchmarks/code-migration",
+        "https://www.vals.ai/benchmarks/corp_fin_v2",
+        "https://www.vals.ai/benchmarks/cua_bench",
+        "https://www.vals.ai/benchmarks/cyber",
+        "https://www.vals.ai/benchmarks/emb",
+        "https://www.vals.ai/benchmarks/fabv2",
+        "https://www.vals.ai/benchmarks/gpqa",
+        "https://www.vals.ai/benchmarks/hlab",
+        "https://www.vals.ai/benchmarks/ioi",
+        "https://www.vals.ai/benchmarks/lcb",
+        "https://www.vals.ai/benchmarks/legal_bench",
+        "https://www.vals.ai/benchmarks/legal_research",
+        "https://www.vals.ai/benchmarks/math500",
+        "https://www.vals.ai/benchmarks/medcode",
+        "https://www.vals.ai/benchmarks/medqa",
+        "https://www.vals.ai/benchmarks/medscribe",
+        "https://www.vals.ai/benchmarks/mgsm",
+        "https://www.vals.ai/benchmarks/mmlu_pro",
+        "https://www.vals.ai/benchmarks/mmmu",
+        "https://www.vals.ai/benchmarks/mortgage_tax",
+        "https://www.vals.ai/benchmarks/mysterymechanism",
+        "https://www.vals.ai/benchmarks/poker_agent",
+        "https://www.vals.ai/benchmarks/programbench",
+        "https://www.vals.ai/benchmarks/proof_bench",
+        "https://www.vals.ai/benchmarks/public-benefits-bench",
+        "https://www.vals.ai/benchmarks/sage",
+        "https://www.vals.ai/benchmarks/skillsbench",
+        "https://www.vals.ai/benchmarks/srebench",
+        "https://www.vals.ai/benchmarks/swebench",
+        "https://www.vals.ai/benchmarks/tax_agent_bench",
+        "https://www.vals.ai/benchmarks/tax_eval_v2",
+        "https://www.vals.ai/benchmarks/terminal-bench-2",
+        "https://www.vals.ai/benchmarks/terminal-bench-2-1",
+        "https://www.vals.ai/benchmarks/terminal-bench-4",
+        "https://www.vals.ai/benchmarks/terminal-bench-science",
+        "https://www.vals.ai/benchmarks/time_horizon_index",
+        "https://www.vals.ai/benchmarks/vals_index",
+        "https://www.vals.ai/benchmarks/vals_multimodal_index",
+        "https://www.vals.ai/benchmarks/vcb-1-100",
+        "https://www.vals.ai/benchmarks/vibe-code",
+        "https://www.vals.ai/benchmarks/voice-code-bench",
+        "https://www.vals.ai/benchmarks/web_search"
+      ],
+      "status": "discovered"
+    },
+    {
+      "publisher": "Video-MME",
+      "benchmark_count": 1,
+      "source_urls": [
+        "https://video-mme.github.io"
+      ],
+      "status": "discovered"
+    },
+    {
+      "publisher": "WeirdML",
+      "benchmark_count": 1,
+      "source_urls": [
+        "https://htihle.github.io/weirdml.html"
+      ],
+      "status": "discovered"
+    },
+    {
+      "publisher": "τ²-bench",
+      "benchmark_count": 1,
+      "source_urls": [
+        "https://taubench.com"
+      ],
+      "status": "discovered"
+    }
+  ],
+  "summary_feed_sources": [
+    {
+      "name": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/leaderboards/models"
+    },
+    {
+      "name": "Epoch AI Benchmarking Hub",
+      "url": "https://epoch.ai/benchmarks"
+    },
+    {
+      "name": "Arena (LMArena)",
+      "url": "https://arena.ai/leaderboard"
+    },
+    {
+      "name": "LiveBench",
+      "url": "https://livebench.ai"
+    },
+    {
+      "name": "Aider polyglot leaderboard",
+      "url": "https://aider.chat/docs/leaderboards/"
+    },
+    {
+      "name": "SWE-bench",
+      "url": "https://www.swebench.com"
+    },
+    {
+      "name": "ARC Prize",
+      "url": "https://arcprize.org/leaderboard"
+    },
+    {
+      "name": "Berkeley Function Calling Leaderboard",
+      "url": "https://gorilla.cs.berkeley.edu/leaderboard.html"
+    },
+    {
+      "name": "τ²-bench",
+      "url": "https://taubench.com"
+    },
+    {
+      "name": "Vals AI",
+      "url": "https://www.vals.ai/benchmarks"
+    },
+    {
+      "name": "MathArena",
+      "url": "https://matharena.ai"
+    },
+    {
+      "name": "Scale AI SEAL",
+      "url": "https://labs.scale.com/leaderboard"
+    },
+    {
+      "name": "Terminal-Bench",
+      "url": "https://www.tbench.ai/leaderboard"
+    },
+    {
+      "name": "EQ-Bench",
+      "url": "https://eqbench.com"
+    },
+    {
+      "name": "MMMU",
+      "url": "https://mmmu-benchmark.github.io"
+    },
+    {
+      "name": "Kagi LLM Benchmark",
+      "url": "https://help.kagi.com/kagi/ai/llm-benchmark.html"
+    },
+    {
+      "name": "BrowseComp-Plus",
+      "url": "https://huggingface.co/spaces/Tevatron/BrowseComp-Plus"
+    },
+    {
+      "name": "Kaggle Benchmarks",
+      "url": "https://www.kaggle.com/benchmarks"
+    },
+    {
+      "name": "HELM Capabilities",
+      "url": "https://crfm.stanford.edu/helm/capabilities/latest/"
+    },
+    {
+      "name": "models.dev",
+      "url": "https://models.dev"
+    },
+    {
+      "name": "Startrise",
+      "url": "https://www.startrise.io/benchmark/"
+    },
+    {
+      "name": "LiteLLM price table",
+      "url": "https://github.com/BerriAI/litellm/blob/main/model_prices_and_context_window.json"
+    },
+    {
+      "name": "OpenRouter",
+      "url": "https://openrouter.ai/models"
+    }
+  ]
+}

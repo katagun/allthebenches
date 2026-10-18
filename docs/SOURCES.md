@@ -1,5 +1,7 @@
 # All the Benches source map
 
+Latest coverage research: [Benchleader comparison and source audit, 18 October 2026](research/BENCHLEADER_AUDIT.md), including a complete inventory of its 219 benchmark pages and 43 credited publishers, plus primary-source Mistral Large 4 candidates. This is an ingestion queue, not an assertion that these sources are already collected.
+
 Research checkpoint: 17 October 2026. These are source leads and verified documentation capabilities, not a completed extraction of benchmark observations. Recheck releases and source contracts immediately before launch. The authoritative launch roster is a reviewed preset, not this research list.
 
 ## Reuse existing catalogs
@@ -62,3 +64,7 @@ This is a selection queue. Final benchmark IDs, units, source priority, threshol
 The chosen frontend is React, TypeScript, Vite, and TanStack Table with shadcn/ui, Radix primitives, and Tailwind CSS. The Python pipeline uses Pydantic, HTTPX, and a small number of parsers as needed. These are implementation decisions for familiarity and delivery speed, not claims of benchmark superiority.
 
 [Vite's GitHub Pages instructions](https://vite.dev/guide/static-deploy.html#github-pages) require the correct repository base path and describe Actions deployment. [Pydantic's JSON Schema documentation](https://docs.pydantic.dev/latest/concepts/json_schema/) supports generating the shared schema from Python models. Pin actual dependency versions and generated-schema tooling during bootstrap.
+
+## 18 October evaluator import update
+
+The Epoch → Vals → Artificial Analysis → Arena → LiveBench snapshot imports are now integrated. See [reviewed source imports and remaining exclusions](research/SOURCE_IMPORTS_2026-10-18.md) for current counts and the authoritative coverage boundary. Earlier seed coverage counts below/above describe the initial collection, not the expanded snapshot.

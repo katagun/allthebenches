@@ -1,0 +1,68 @@
+benchmark,benchleader_url,publisher,source_url,verification
+GPQA Diamond,https://www.benchleader.com/benchmarks/gpqa_diamond,Epoch AI Benchmarking Hub,https://epoch.ai/benchmarks/gpqa-diamond,discovery lead; not a curated result
+Arena Hard Prompts,https://www.benchleader.com/benchmarks/lmarena_text_hard,Arena (LMArena),https://lmarena.ai/leaderboard/text/hard-prompts,discovery lead; not a curated result
+LiveBench Reasoning,https://www.benchleader.com/benchmarks/livebench_reasoning,LiveBench,https://livebench.ai,discovery lead; not a curated result
+Humanity's Last Exam (AA),https://www.benchleader.com/benchmarks/aa_hle,Artificial Analysis,https://artificialanalysis.ai/models/mistral-large-4,discovery lead; not a curated result
+CritPt,https://www.benchleader.com/benchmarks/aa_critpt,Artificial Analysis,https://artificialanalysis.ai/models/mistral-large-4,discovery lead; not a curated result
+MysteryMechanism,https://www.benchleader.com/benchmarks/vals_mystery_mechanism,Vals AI,https://www.vals.ai/benchmarks/mysterymechanism,discovery lead; not a curated result
+Chess Puzzles,https://www.benchleader.com/benchmarks/chess_puzzles,Epoch AI Benchmarking Hub,https://epoch.ai/benchmarks/chess-puzzles,discovery lead; not a curated result
+Mystery Game Puzzles,https://www.benchleader.com/benchmarks/mystery_game_puzzles,Epoch AI Benchmarking Hub,https://epoch.ai/benchmarks/mystery-game-puzzles,discovery lead; not a curated result
+SciCode,https://www.benchleader.com/benchmarks/scicode,SciCode,https://scicode-bench.github.io,discovery lead; not a curated result
+FrontierCode,https://www.benchleader.com/benchmarks/frontiercode,Cognition,https://cognition.com/frontiercode,discovery lead; not a curated result
+Arena Coding,https://www.benchleader.com/benchmarks/lmarena_text_coding,Arena (LMArena),https://lmarena.ai/leaderboard/text/coding,discovery lead; not a curated result
+Arena WebDev,https://www.benchleader.com/benchmarks/lmarena_webdev,Arena (LMArena),https://lmarena.ai/leaderboard/webdev,discovery lead; not a curated result
+LiveBench Coding,https://www.benchleader.com/benchmarks/livebench_coding,LiveBench,https://livebench.ai,discovery lead; not a curated result
+SciCode (AA),https://www.benchleader.com/benchmarks/aa_scicode,Artificial Analysis,https://artificialanalysis.ai/models/mistral-large-4,discovery lead; not a curated result
+IOI,https://www.benchleader.com/benchmarks/vals_ioi,Vals AI,https://www.vals.ai/benchmarks/ioi,discovery lead; not a curated result
+Code Migration,https://www.benchleader.com/benchmarks/vals_code_migration,Vals AI,https://www.vals.ai/benchmarks/code-migration,discovery lead; not a curated result
+Vibe Code Bench 1-100,https://www.benchleader.com/benchmarks/vals_vibe_code_bench,Vals AI,https://www.vals.ai/benchmarks/vcb-1-100,discovery lead; not a curated result
+Vibe Code Bench v1.1,https://www.benchleader.com/benchmarks/vals_vibe_code,Vals AI,https://www.vals.ai/benchmarks/vibe-code,discovery lead; not a curated result
+Surface Evolver Bench,https://www.benchleader.com/benchmarks/surface_evolver_bench,Epoch AI Benchmarking Hub,https://epoch.ai/benchmarks/surface-evolver-bench-external,discovery lead; not a curated result
+ALE-Bench,https://www.benchleader.com/benchmarks/ale_bench,Epoch AI Benchmarking Hub,https://epoch.ai/benchmarks/ale-bench-external,discovery lead; not a curated result
+Terminal-Bench 4.0 (AA),https://www.benchleader.com/benchmarks/aa_terminalbench_40,Artificial Analysis,https://artificialanalysis.ai/models/mistral-large-4,discovery lead; not a curated result
+Arena Agent,https://www.benchleader.com/benchmarks/lmarena_agent,Arena (LMArena),https://lmarena.ai/leaderboard/agent,discovery lead; not a curated result
+LiveBench Agentic Coding,https://www.benchleader.com/benchmarks/livebench_agentic_coding,LiveBench,https://livebench.ai,discovery lead; not a curated result
+GDPval-AA v2.1,https://www.benchleader.com/benchmarks/aa_gdpval,Artificial Analysis,https://artificialanalysis.ai/models/mistral-large-4,discovery lead; not a curated result
+Finance Agent v2,https://www.benchleader.com/benchmarks/vals_finance_agent,Vals AI,https://www.vals.ai/benchmarks/fabv2,discovery lead; not a curated result
+Harvey's Legal Agent Benchmark,https://www.benchleader.com/benchmarks/vals_hlab,Vals AI,https://www.vals.ai/benchmarks/hlab,discovery lead; not a curated result
+Legal Research Bench,https://www.benchleader.com/benchmarks/vals_legal_research,Vals AI,https://www.vals.ai/benchmarks/legal_research,discovery lead; not a curated result
+Tax Agent Bench,https://www.benchleader.com/benchmarks/vals_tax_agent,Vals AI,https://www.vals.ai/benchmarks/tax_agent_bench,discovery lead; not a curated result
+Terminal-Bench 4.0 (Vals),https://www.benchleader.com/benchmarks/vals_terminal_bench_4,Vals AI,https://www.vals.ai/benchmarks/terminal-bench-4,discovery lead; not a curated result
+AutomationBench,https://www.benchleader.com/benchmarks/aa_automationbench,Artificial Analysis,https://artificialanalysis.ai/models/mistral-large-4,discovery lead; not a curated result
+GDP.pdf,https://www.benchleader.com/benchmarks/aa_gdp_pdf,Artificial Analysis,https://artificialanalysis.ai/models/mistral-large-4,discovery lead; not a curated result
+Harvey LAB-AA v1.1,https://www.benchleader.com/benchmarks/aa_harvey_lab,Harvey,https://www.harvey.ai,discovery lead; not a curated result
+AA-Briefcase v1.1,https://www.benchleader.com/benchmarks/aa_briefcase,Artificial Analysis,https://artificialanalysis.ai/models/mistral-large-4,discovery lead; not a curated result
+CWE-Bench (AA),https://www.benchleader.com/benchmarks/aa_cwe_bench,Artificial Analysis,https://artificialanalysis.ai/models/mistral-large-4,discovery lead; not a curated result
+DeepSec-Bench (AA),https://www.benchleader.com/benchmarks/aa_deepsec_bench,Artificial Analysis,https://artificialanalysis.ai/models/mistral-large-4,discovery lead; not a curated result
+CyberGym end-to-end (AA),https://www.benchleader.com/benchmarks/aa_cybergym_e2e,Artificial Analysis,https://artificialanalysis.ai/models/mistral-large-4,discovery lead; not a curated result
+FrontierMath Tiers 1–3,https://www.benchleader.com/benchmarks/frontiermath_t1_3,Epoch AI Benchmarking Hub,https://epoch.ai/benchmarks/frontiermath-tiers-1-3-v2,discovery lead; not a curated result
+FrontierMath Tier 4,https://www.benchleader.com/benchmarks/frontiermath_t4,Epoch AI Benchmarking Hub,https://epoch.ai/benchmarks/frontiermath-tier-4-v2,discovery lead; not a curated result
+OTIS Mock AIME,https://www.benchleader.com/benchmarks/otis_mock_aime,Epoch AI Benchmarking Hub,https://epoch.ai/benchmarks/otis-mock-aime-2024-2025,discovery lead; not a curated result
+ProofBench,https://www.benchleader.com/benchmarks/proofbench,Vals AI,https://www.vals.ai/benchmarks/proof_bench,discovery lead; not a curated result
+LiveBench Mathematics,https://www.benchleader.com/benchmarks/livebench_math,LiveBench,https://livebench.ai,discovery lead; not a curated result
+Arena Maths,https://www.benchleader.com/benchmarks/lmarena_text_math,Arena (LMArena),https://lmarena.ai/leaderboard/text/math,discovery lead; not a curated result
+SimpleQA Verified,https://www.benchleader.com/benchmarks/simpleqa_verified,Epoch AI Benchmarking Hub,https://epoch.ai/benchmarks/simpleqa-verified,discovery lead; not a curated result
+LiveBench Data Analysis,https://www.benchleader.com/benchmarks/livebench_data,LiveBench,https://livebench.ai,discovery lead; not a curated result
+AA-Omniscience,https://www.benchleader.com/benchmarks/aa_omniscience,Artificial Analysis,https://artificialanalysis.ai/models/mistral-large-4,discovery lead; not a curated result
+BioMysteryBench,https://www.benchleader.com/benchmarks/vals_biomysterybench,Vals AI,https://www.vals.ai/benchmarks/biomysterybench,discovery lead; not a curated result
+Excel Modeling Benchmark,https://www.benchleader.com/benchmarks/vals_emb,Vals AI,https://www.vals.ai/benchmarks/emb,discovery lead; not a curated result
+MedCode,https://www.benchleader.com/benchmarks/vals_medcode,Vals AI,https://www.vals.ai/benchmarks/medcode,discovery lead; not a curated result
+MedScribe,https://www.benchleader.com/benchmarks/vals_medscribe,Vals AI,https://www.vals.ai/benchmarks/medscribe,discovery lead; not a curated result
+AA-Omniscience: accuracy,https://www.benchleader.com/benchmarks/aa_omniscience_accuracy,Artificial Analysis,https://artificialanalysis.ai/models/mistral-large-4,discovery lead; not a curated result
+AA-Omniscience: non-hallucination,https://www.benchleader.com/benchmarks/aa_omniscience_non_hallucination,Artificial Analysis,https://artificialanalysis.ai/models/mistral-large-4,discovery lead; not a curated result
+LiveBench Language,https://www.benchleader.com/benchmarks/livebench_language,LiveBench,https://livebench.ai,discovery lead; not a curated result
+LiveBench Instruction Following,https://www.benchleader.com/benchmarks/livebench_if,LiveBench,https://livebench.ai,discovery lead; not a curated result
+Arena Instruction Following,https://www.benchleader.com/benchmarks/lmarena_text_if,Arena (LMArena),https://lmarena.ai/leaderboard/text/instruction-following,discovery lead; not a curated result
+Arena Text,https://www.benchleader.com/benchmarks/lmarena_text,Arena (LMArena),https://lmarena.ai/leaderboard/text,discovery lead; not a curated result
+Arena Creative Writing,https://www.benchleader.com/benchmarks/lmarena_text_creative,Arena (LMArena),https://lmarena.ai/leaderboard/text/creative-writing,discovery lead; not a curated result
+Arena Multi-turn,https://www.benchleader.com/benchmarks/lmarena_text_multiturn,Arena (LMArena),https://lmarena.ai/leaderboard/text/multi-turn,discovery lead; not a curated result
+Arena Longer Queries,https://www.benchleader.com/benchmarks/lmarena_text_longer,Arena (LMArena),https://lmarena.ai/leaderboard/text/longer-query,discovery lead; not a curated result
+MMMU-Pro,https://www.benchleader.com/benchmarks/aa_mmmu_pro,Artificial Analysis,https://artificialanalysis.ai/models/mistral-large-4,discovery lead; not a curated result
+AA-3D,https://www.benchleader.com/benchmarks/aa_3d,Artificial Analysis,https://artificialanalysis.ai/models/mistral-large-4,discovery lead; not a curated result
+AA-LCR,https://www.benchleader.com/benchmarks/aa_lcr,Artificial Analysis,https://artificialanalysis.ai/models/mistral-large-4,discovery lead; not a curated result
+Epoch Capabilities Index,https://www.benchleader.com/benchmarks/epoch_eci,Epoch AI Benchmarking Hub,https://epoch.ai/benchmarks/eci,discovery lead; not a curated result
+LiveBench,https://www.benchleader.com/benchmarks/livebench_global,LiveBench,https://livebench.ai,discovery lead; not a curated result
+AA Intelligence Index v4.3.2,https://www.benchleader.com/benchmarks/aa_intelligence_index,Artificial Analysis,https://artificialanalysis.ai/models/mistral-large-4,discovery lead; not a curated result
+Vals Index,https://www.benchleader.com/benchmarks/vals_index,Vals AI,https://www.vals.ai/benchmarks/vals_index,discovery lead; not a curated result
+AA Cyber Index,https://www.benchleader.com/benchmarks/aa_cyber_index,Artificial Analysis,https://artificialanalysis.ai/models/mistral-large-4,discovery lead; not a curated result
+FORTRESS,https://www.benchleader.com/benchmarks/scale_fortress,Scale AI SEAL,https://labs.scale.com/leaderboard/fortress,discovery lead; not a curated result

@@ -1,5 +1,7 @@
 # Benchmark coverage audit
 
+For the newer 18 October source inventory and Mistral investigation, see [Benchleader coverage audit](research/BENCHLEADER_AUDIT.md). The counts below describe the older 17 October snapshot; they are not current totals.
+
 **Reviewed 17 October 2026 against the live primary pages and the merged local snapshot.** The snapshot has 37 releases, 67 configurations, 309 benchmark variants, and 663 observations. The 75 BullshitBench and 12 TRACES observations previously held in expansion files are integrated, as are 18 more Agent Arena observations for three exact frontier configurations. None of those are outstanding gaps. Coverage means a result was found for an exact release and source-defined benchmark variant. An empty cell means no mapped observation was found, unless the source explicitly marks that cell as unreported.
 
 ## Frontier matrix
@@ -68,3 +70,7 @@ For the 27 TRACES panel rows, record identity as unresolved until the release is
 1. Inspect the Mistral Dense 200 widget and linked benchmark details; add the 42% row if the metric and setup can be identified.
 2. Resolve absolute GPT-6.1 values from the full Zapier “See 116 more” list and dynamic benchmark-owner data where available; retain the launch page's deltas as claims only.
 3. Review the remaining 27 TRACES model identities, then capture useful Arena Code/Chat/Work slices with exact release/config matching.
+
+## 18 October evaluator import update
+
+The Epoch → Vals → Artificial Analysis → Arena → LiveBench snapshot imports are now integrated. See [reviewed source imports and remaining exclusions](research/SOURCE_IMPORTS_2026-10-18.md) for current counts and the authoritative coverage boundary. Earlier seed coverage counts below/above describe the initial collection, not the expanded snapshot.

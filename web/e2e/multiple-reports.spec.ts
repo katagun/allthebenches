@@ -6,7 +6,8 @@ test('multiple reports show a numeric range without downloading evidence', async
   await page.setViewportSize({ width: 1440, height: 900 });
   await page.goto('./');
   const score = page.getByRole('button', { name: /Claude Fable 5.1, Terminal-Bench 4.0: Multiple reports:/ });
-  await expect(score).toHaveText('55.8–57.9%‡');
+  await expect(score).toHaveText('55.8–57.9%');
+  await expect(score).toHaveAttribute('title', /Multiple source reports.*lowest and highest reported scores/);
   await expect(score).not.toHaveAttribute('data-heat');
   await expect(score).not.toHaveAttribute('data-best');
   expect(evidenceRequests).toHaveLength(0);

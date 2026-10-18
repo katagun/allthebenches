@@ -517,7 +517,7 @@ test('Mistral missing cells preview numeric scores with explicit alternate setup
   await ready(page);
   await page.getByRole('searchbox', { name: 'Search models, labs, or benchmarks', exact: true }).fill('Mistral');
   const alternate = page.getByRole('button', { name: /Mistral Large 4, Vals Index: No score for this setup/ });
-  await expect(alternate).toHaveText('48.66†');
+  await expect(alternate).toHaveText('48.66%†');
   await expect(alternate).not.toHaveAttribute('data-heat');
   await expect(alternate).not.toHaveAttribute('data-best');
   await alternate.click();

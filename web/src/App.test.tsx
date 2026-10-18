@@ -57,6 +57,22 @@ afterEach(() => {
 });
 
 describe('App view workflows', () => {
+  for (const orientation of ['models-rows', 'benchmarks-rows'] as const) {
+    it(`searches benchmarks and restores the full matrix on clear in ${orientation}`, async () => {
+      const view = viewWith({ orientation });
+      const benchmark = fixture.catalog.benchmarks.find(item => item.id === view.visibleColumnIds[0])!;
+      setSharedUrl({ ...view, search: benchmark.name });
+      render(<App />);
+      const table = await screen.findByRole('table');
+      await waitFor(() => expect(within(table).getAllByRole('button', { name: /show evidence/ }).length).toBeGreaterThan(0));
+      const axisCount = () => orientation === 'models-rows' ? within(screen.getByRole('table')).getAllByRole('columnheader').length : within(screen.getByRole('table')).getAllByRole('row').length;
+      expect(axisCount()).toBe(2);
+      const input = screen.getByRole('searchbox', { name: 'Search models, labs, or benchmarks' });
+      await userEvent.setup().clear(input);
+      await waitFor(() => expect(axisCount()).toBe(3));
+      expect(decodeViewState(urlState(window.location)!)).toMatchObject({ ok: true, value: { search: '', visibleColumnIds: view.visibleColumnIds } });
+    });
+  }
   it('renders the same evidence in the transposed orientation with bounded model columns', async () => {
     const view = viewWith({ orientation: 'benchmarks-rows' });
     setSharedUrl(view);
@@ -76,7 +92,7 @@ describe('App view workflows', () => {
     const user = userEvent.setup();
     const clipboard = vi.spyOn(navigator.clipboard, 'writeText').mockResolvedValue();
     render(<App />);
-    await screen.findByRole('searchbox', { name: 'Search models' });
+    await screen.findByRole('searchbox', { name: 'Search models, labs, or benchmarks' });
     await user.click(screen.getByRole('button', { name: 'Share' }));
     const shared = new URLSearchParams(new URL(clipboard.mock.calls[0][0]).hash.split('?')[1]).get('v')!;
     expect(shared).toMatch(/^b1\.[A-Za-z0-9_-]+$/);
@@ -84,7 +100,7 @@ describe('App view workflows', () => {
     cleanup();
     window.history.replaceState({}, '', '#/?' + new URLSearchParams({ v: shared }));
     render(<App />);
-    expect((await screen.findByRole('searchbox', { name: 'Search models' }) as HTMLInputElement).value).toBe(view.search);
+    expect((await screen.findByRole('searchbox', { name: 'Search models, labs, or benchmarks' }) as HTMLInputElement).value).toBe(view.search);
   });
 
   it('preserves reported decimal precision in table cells and evidence', async () => {
@@ -112,7 +128,7 @@ describe('App view workflows', () => {
 
     const user = userEvent.setup();
     render(<App />);
-    await screen.findByRole('searchbox', { name: 'Search models' });
+    await screen.findByRole('searchbox', { name: 'Search models, labs, or benchmarks' });
     const row = await screen.findByRole('row', { name: /GPT-6 Astra/ });
     for (const check of checks) {
       const benchmark = fixture.catalog.benchmarks.find(item => item.id === check.benchmarkId);
@@ -131,7 +147,7 @@ describe('App view workflows', () => {
   it('discards filter draft on Cancel and writes it only when Apply is chosen', async () => {
     const user = userEvent.setup();
     render(<App />);
-    await screen.findByRole('searchbox', { name: 'Search models' });
+    await screen.findByRole('searchbox', { name: 'Search models, labs, or benchmarks' });
     const before = window.location.href;
     await user.click(screen.getByRole('button', { name: /Filters/ }));
     const dialog = await screen.findByRole('dialog');
@@ -154,7 +170,7 @@ describe('App view workflows', () => {
   it('restores the prior applied view when the browser emits popstate', async () => {
     const user = userEvent.setup();
     render(<App />);
-    await screen.findByRole('searchbox', { name: 'Search models' });
+    await screen.findByRole('searchbox', { name: 'Search models, labs, or benchmarks' });
     await user.click(screen.getByRole('button', { name: 'All models' }));
     await waitFor(() => expect(screen.getByRole('button', { name: 'All models' }).getAttribute('aria-pressed')).toBe('true'));
     expect(decodeViewState(urlState(window.location)!)).toMatchObject({ ok: true, value: { presetId: 'all_models_oct2026' } });
@@ -172,7 +188,7 @@ describe('App view workflows', () => {
     const before = window.localStorage.getItem(key);
 
     render(<App />);
-    expect((await screen.findByRole('searchbox', { name: 'Search models' }) as HTMLInputElement).value).toBe('shared-only-query');
+    expect((await screen.findByRole('searchbox', { name: 'Search models, labs, or benchmarks' }) as HTMLInputElement).value).toBe('shared-only-query');
     expect(window.localStorage.getItem(key)).toBe(before);
     await userEvent.setup().click(screen.getByRole('button', { name: /Filters/ }));
     expect(await screen.findByText(/Save this view on this device/)).not.toBeNull();
@@ -184,12 +200,12 @@ describe('App view workflows', () => {
     Object.defineProperty(window, 'localStorage', { configurable: true, get: () => { throw new Error('blocked'); } });
 
     render(<App />);
-    expect((await screen.findByRole('searchbox', { name: 'Search models' }) as HTMLInputElement).value).toBe('url-still-works');
+    expect((await screen.findByRole('searchbox', { name: 'Search models, labs, or benchmarks' }) as HTMLInputElement).value).toBe('url-still-works');
     expect(urlState(window.location)).toContain('url-still-works');
 
     setSharedUrl(viewWith({ search: 'url-back-forward-still-works' }));
     window.dispatchEvent(new PopStateEvent('popstate'));
-    await waitFor(() => expect((screen.getByRole('searchbox', { name: 'Search models' }) as HTMLInputElement).value).toBe('url-back-forward-still-works'));
+    await waitFor(() => expect((screen.getByRole('searchbox', { name: 'Search models, labs, or benchmarks' }) as HTMLInputElement).value).toBe('url-back-forward-still-works'));
   });
 
   it('shows a recoverable load error and retries the snapshot request', async () => {
@@ -206,7 +222,7 @@ describe('App view workflows', () => {
     expect(await screen.findByText('Could not load catalog data (503)')).not.toBeNull();
     const callsBeforeRetry = fetchMock.mock.calls.length;
     await user.click(screen.getByRole('button', { name: 'Try again' }));
-    expect(await screen.findByRole('searchbox', { name: 'Search models' })).not.toBeNull();
+    expect(await screen.findByRole('searchbox', { name: 'Search models, labs, or benchmarks' })).not.toBeNull();
     expect(fetchMock).toHaveBeenCalledTimes(callsBeforeRetry + 5);
   });
 });

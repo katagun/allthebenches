@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { hasResultOnBenchmarks, numericScoreCount, orderColumnsByModelCoverage, rowsForView } from './selectors';
+import { benchmarkSearchForView, hasResultOnBenchmarks, numericScoreCount, orderColumnsByModelCoverage, rowsForView } from './selectors';
 import type { AppData } from './snapshots';
 import { DEFAULT_VIEW } from '../state/viewState';
 
@@ -24,6 +24,20 @@ function dataset(values: Record<string, Record<string, number | null>>, routes: 
 }
 
 describe('table row selectors', () => {
+  it('searches benchmarks without filtering out models and preserves the selected benchmark set', () => {
+    const data = dataset({ c1: { b1: 90, b2: 80 } });
+    const view = { ...structuredClone(DEFAULT_VIEW), search: '  BENCHMARK 2  ', visibleColumnIds: ['b1', 'b2'] };
+    expect(benchmarkSearchForView(data, view).benchmarks.map(item => item.id)).toEqual(['b2']);
+    expect(rowsForView(data, view, new Set())).toHaveLength(1);
+    expect(view.visibleColumnIds).toEqual(['b1', 'b2']);
+    expect(benchmarkSearchForView(data, { ...view, search: '' }).benchmarks).toHaveLength(2);
+    expect(rowsForView(data, { ...view, search: 'lab' }, new Set())).toHaveLength(1);
+    expect(rowsForView(data, { ...view, search: 'model' }, new Set())).toHaveLength(1);
+    expect(rowsForView(data, { ...view, search: 'no-such-match' }, new Set())).toHaveLength(0);
+    expect(rowsForView(data, { ...view, categoryId: 'coding' }, new Set())).toHaveLength(0);
+    expect(rowsForView(data, { ...view, filters: { ...view.filters, labIds: ['different-lab'] } }, new Set())).toHaveLength(0);
+    expect(rowsForView(data, { ...view, visibleColumnIds: ['b1'] }, new Set())).toHaveLength(0);
+  });
   it('chooses one highest-coverage configuration for the all-model primary row, counting zero', () => {
     const data = dataset({ c1: { b1: 90 }, c2: { b1: 10, b2: 0 } });
     const view = { ...structuredClone(DEFAULT_VIEW), visibleColumnIds: ['b1', 'b2'] };

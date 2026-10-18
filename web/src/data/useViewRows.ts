@@ -8,12 +8,13 @@ type RowState = { data: AppData; key: string; rows: DisplayRow[]; error: string 
 export const EMPTY_ROWS: DisplayRow[] = [];
 
 /** Only fields consumed by row selection and ordering belong in this key.
- * Column visibility and ordinary checkbox selections must not re-run a query.
+ * Column visibility affects benchmark searches; ordinary checkbox selections do not re-run a query.
  */
 function rowQueryKey(view: ViewState, expandedIds: string[]) {
   const { presetId, categoryId, search, sort, compare, includeUnbenchmarked, filters } = view;
   return JSON.stringify({
     presetId, categoryId, search, sort, compare, includeUnbenchmarked, filters,
+    searchBenchmarkIds: search.trim() ? view.visibleColumnIds : [],
     selectedConfigurationIds: compare ? view.selectedConfigurationIds : [],
     expandedIds,
   });

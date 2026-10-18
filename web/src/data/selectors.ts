@@ -173,10 +173,23 @@ function completeSetup(o: Observation, seriesComparability?: string | null): boo
   const seriesDeclared = seriesComparability === 'comparable';
   return required.filter(known).length >= 4 && seriesDeclared && Object.values(setup).every(value => value !== null && value !== undefined && value !== 'unknown' && value !== 'not reported' && value !== 'not stated');
 }
-function applyFilters(indexes: SelectorIndexes, row: DisplayRow, view: ViewState): boolean {
+/** Search benchmark metadata within the current view without changing saved column selections. */
+export function benchmarkSearchForView(data: AppData, view: ViewState) {
+  const preset = data.catalog.presets.find(item => item.id === view.presetId);
+  const ids = view.visibleColumnIds.length ? view.visibleColumnIds : list(preset?.benchmark_ids);
+  const byId = new Map(data.catalog.benchmarks.map(item => [item.id, item]));
+  const benchmarks = ids.map(id => byId.get(id)).filter((item): item is AppData['catalog']['benchmarks'][number] => !!item
+    && (view.categoryId === null || item.category === view.categoryId)
+    && (!view.filters.saturationStates.length || data.catalog.saturation.some(state => state.benchmark_id === item.id && view.filters.saturationStates.includes(state.state))));
+  const query = view.search.trim().toLowerCase();
+  const matches = query ? benchmarks.filter(item => `${item.name} ${item.version ?? ''} ${item.metric_name} ${item.subset ?? ''}`.toLowerCase().includes(query)) : [];
+  return { benchmarks: matches.length ? matches : benchmarks, matchesBenchmark: matches.length > 0 };
+}
+
+function applyFilters(indexes: SelectorIndexes, row: DisplayRow, view: ViewState, matchesBenchmark: boolean): boolean {
   const f = view.filters;
   if (view.compare && !view.selectedConfigurationIds.includes(row.configuration.id)) return false;
-  if (view.search && !`${row.model.name} ${row.model.version ?? ''} ${row.lab.name} ${row.configuration.reasoning_label ?? ''}`.toLowerCase().includes(view.search.toLowerCase())) return false;
+  if (view.search.trim() && !matchesBenchmark && !`${row.model.name} ${row.model.version ?? ''} ${row.labs.map(lab => lab.name).join(' ')} ${row.configuration.reasoning_label ?? ''}`.toLowerCase().includes(view.search.trim().toLowerCase())) return false;
   if (f.labIds.length && !f.labIds.some(id => row.labs.some(lab => lab.id === id))) return false;
   if (f.countryCodes.length && !f.countryCodes.some(code => row.labs.some(lab => list(lab.hq_country_codes).includes(code)))) return false;
   if (f.releaseYears.length && !f.releaseYears.includes(Number(row.model.release_date?.slice(0, 4)))) return false;
@@ -232,20 +245,17 @@ export function rowsForView(data: AppData, view: ViewState, expandedIds: Set<str
     const group = configurationsByModel.get(configuration.model_id);
     if (group) group.push(configuration); else configurationsByModel.set(configuration.model_id, [configuration]);
   }
+  const benchmarkSearch = benchmarkSearchForView(data, view);
   const candidates: DisplayRow[] = configurations.map(configuration => {
     const model = indexes.modelsById.get(configuration.model_id)!; const labs = model.lab_ids.map(id => indexes.labsById.get(id)).filter((x): x is Lab => !!x); const lab = labs[0]!;
     const routes = list(indexes.routesByModel.get(model.id));
     return { id: configuration.id, configuration, model, lab, labs, expanded: expandedIds.has(model.id), observations: indexes.cellsByConfiguration.get(configuration.id) ?? new Map(), prices: list(indexes.pricesByModel.get(model.id)), routes, usage: list(indexes.usageByModel.get(model.id)), reviewedCount: indexes.reviewedCountByConfiguration.get(configuration.id) ?? 0 };
-  }).filter(row => !!row.model && !!row.lab && applyFilters(indexes, row, view));
+  }).filter(row => !!row.model && !!row.lab && applyFilters(indexes, row, view, benchmarkSearch.matchesBenchmark));
   const byModel = new Map<string, DisplayRow[]>();
   for (const row of candidates) { const group = byModel.get(row.model.id); if (group) group.push(row); else byModel.set(row.model.id, [row]); }
   const output: DisplayRow[] = [];
   if (view.compare) return candidates.filter(row => view.selectedConfigurationIds.includes(row.configuration.id));
-  const visibleIds = new Set(view.visibleColumnIds.length ? view.visibleColumnIds : list(preset.benchmark_ids));
-  const selectedBenchmarks = list(data.catalog.benchmarks).filter(benchmark => visibleIds.has(benchmark.id)
-    && (view.categoryId === null || benchmark.category === view.categoryId)
-    && (!view.filters.saturationStates.length || list(data.catalog.saturation).some(item => item.benchmark_id === benchmark.id && view.filters.saturationStates.includes(item.state))))
-    .map(benchmark => benchmark.id);
+  const selectedBenchmarks = benchmarkSearch.benchmarks.map(benchmark => benchmark.id);
   for (const [modelId, matched] of byModel) {
     const allConfigIds = new Set(list(configurationsByModel.get(modelId)).map(c => c.id));
     const matchedOptions = matched.filter(row => allConfigIds.has(row.configuration.id));

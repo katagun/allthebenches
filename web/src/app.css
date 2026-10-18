@@ -329,3 +329,19 @@
 .entity-metadata p,.entity-metadata>div{margin-top:8px}
 .entity-score-title strong{max-width:45%;white-space:normal;text-align:right;flex-shrink:0}
 .entity-score-title strong small{display:block;overflow-wrap:anywhere}
+
+/* Keep model identity consistent across matrix, picker, and reference pages. */
+.model-identity{display:inline-flex;align-items:flex-start;gap:6px;min-width:0;max-width:100%;text-align:inherit}
+.model-identity .model-brand-icon{flex-shrink:0}
+.model-identity .model-name{min-width:0;white-space:normal;overflow-wrap:anywhere}
+.entity-heading .model-identity{align-items:center;gap:12px}
+@media(min-width:1101px){
+  .transposed-table{width:calc(260px + 150px * var(--mobile-columns));table-layout:fixed}
+  .transposed-table th:not(.sticky-model-head),.transposed-table td:not(.sticky-model-cell){width:150px;min-width:150px;max-width:150px}
+}
+@media(max-width:600px){
+  .app-shell[data-dense="true"] .transposed-table .model-identity{flex-direction:column;align-items:center;gap:3px;width:100%}
+}
+.selection-strip .model-identity{color:var(--foreground);align-items:center}
+.selection-strip .model-identity .model-name{color:inherit}
+.selection-strip .model-brand-icon{width:14px;height:14px}

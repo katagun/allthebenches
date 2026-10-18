@@ -10,6 +10,7 @@ describe('responsive column budget', () => {
   });
   it('fits more model columns in benchmark-row orientation', () => {
     expect(columnCapacity(1360, 0, true)).toBe(7);
+    expect(columnCapacity(2458, 0, true)).toBe(14);
     expect(columnCapacity(1360)).toBe(5);
     expect(columnCapacity(10000, 0, true)).toBe(24);
   });

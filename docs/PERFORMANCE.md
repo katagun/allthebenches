@@ -54,3 +54,9 @@ make requested device dimensions differ from CSS pixel dimensions. Playwright Ch
 column counts, and control reachability in pre-commit and both CI workflows.
 See CONTRIBUTING.md for browser setup and failure artifacts. Physical-device
 touch interaction and non-Chromium coverage still require manual testing.
+
+Desktop benchmark-row columns remain 150px wide, even when a comparison contains
+only a few models or reaches a partial final page. The viewport determines the
+page capacity (14 model columns at a 2458px table viewport), capped at 24 rendered
+columns. Selection count is independent of this rendering budget. Browser checks
+exercise a 20-configuration selection, URL restoration, and final-page widths.

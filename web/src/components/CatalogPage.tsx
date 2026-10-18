@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import { loadSnapshots, type AppData } from '../data/snapshots';
 import { coverageIndex } from '../data/coverage';
+import { useCatalogState } from '../state/catalogState';
 import { DEFAULT_VIEW } from '../state/viewState';
 import { routeHref, viewUrl } from '../state/stateRuntime';
 import { ModelIdentity } from './ModelIdentity';
@@ -17,10 +18,8 @@ export default function CatalogPage({ kind }: { kind: CatalogKind }) {
   return <main className="entity-page catalog-page"><DirectoryNav active={kind}/>{error ? <p role="alert">Could not load the catalog. Reload to retry.</p> : data ? <CatalogContent key={kind} data={data} kind={kind}/> : <p role="status">Loading catalog…</p>}</main>;
 }
 function CatalogContent({ data, kind }: { data: AppData; kind: CatalogKind }) {
-  const [query, setQuery] = useState('');
-  const [filter, setFilter] = useState('all');
-  const [order, setOrder] = useState('coverage');
-  const [page, setPage] = useState(0);
+  const { query, filter, order, page, update } = useCatalogState(kind);
+  useEffect(() => { window.scrollTo(0, 0); }, [page]);
   const coverage = useMemo(() => coverageIndex(data), [data]);
   const labs = new Map(data.catalog.labs.map(l => [l.id, l]));
   const models = kind === 'models';
@@ -33,7 +32,7 @@ function CatalogContent({ data, kind }: { data: AppData; kind: CatalogKind }) {
   if (kind === 'evidence') return <Evidence data={data} coverage={coverage}/>;
   return <>
     <header className="catalog-heading"><h1>{models ? 'Models' : 'Benchmark variants'}</h1><p>{models ? 'Find a release, inspect its evidence, then compare exact reasoning configurations.' : 'Find the exact version and metric. Coverage counts describe this snapshot, not the whole field.'}</p></header>
-    <div className="catalog-tools"><Input type="search" aria-label="Search catalog" placeholder={models ? 'Search models or labs…' : 'Search benchmarks, families or versions…'} value={query} onChange={e => { setQuery(e.target.value); setPage(0); }}/><Select value={filter} onValueChange={v => { setFilter(v); setPage(0); }}><SelectTrigger aria-label={models ? 'Filter by lab' : 'Filter by category'}><SelectValue/></SelectTrigger><SelectContent><SelectItem value="all">{models ? 'All labs' : 'All categories'}</SelectItem>{(models ? data.catalog.labs.map(l => ({ id: l.id, name: l.name })) : categories.map(c => ({ id: c, name: c }))).map(x => <SelectItem value={x.id} key={x.id}>{x.name}</SelectItem>)}</SelectContent></Select><Select value={order} onValueChange={v => { setOrder(v); setPage(0); }}><SelectTrigger aria-label="Sort catalog"><SelectValue/></SelectTrigger><SelectContent><SelectItem value="coverage">Most coverage</SelectItem><SelectItem value="name">Name A–Z</SelectItem>{models && <SelectItem value="recent">Newest release</SelectItem>}</SelectContent></Select></div>
+    <div className="catalog-tools"><Input type="search" aria-label="Search catalog" placeholder={models ? 'Search models or labs…' : 'Search benchmarks, families or versions…'} value={query} onChange={e => { update({ query: e.target.value, page: 0 }); }}/><Select value={filter} onValueChange={v => { update({ filter: v, page: 0 }); }}><SelectTrigger aria-label={models ? 'Filter by lab' : 'Filter by category'}><SelectValue/></SelectTrigger><SelectContent><SelectItem value="all">{models ? 'All labs' : 'All categories'}</SelectItem>{(models ? data.catalog.labs.map(l => ({ id: l.id, name: l.name })) : categories.map(c => ({ id: c, name: c }))).map(x => <SelectItem value={x.id} key={x.id}>{x.name}</SelectItem>)}</SelectContent></Select><Select value={order} onValueChange={v => { update({ order: v, page: 0 }); }}><SelectTrigger aria-label="Sort catalog"><SelectValue/></SelectTrigger><SelectContent><SelectItem value="coverage">Most coverage</SelectItem><SelectItem value="name">Name A–Z</SelectItem>{models && <SelectItem value="recent">Newest release</SelectItem>}</SelectContent></Select></div>
     <p className="catalog-count" role="status">{entries.length} {models ? 'releases' : 'variants'} · Coverage counts unique {models ? 'benchmark variants' : 'model releases'} with numeric, undisputed results.</p>
     <div className="catalog-grid">{entries.slice(currentPage * 24, (currentPage + 1) * 24).map(entry => {
       const m = entry.model; const b = entry.benchmark;
@@ -41,8 +40,8 @@ function CatalogContent({ data, kind }: { data: AppData; kind: CatalogKind }) {
       if (m) { view.compare = true; view.selectedConfigurationIds = data.catalog.configurations.filter(c => c.model_id === m.id).map(c => c.id); }
       return <article className="catalog-card" key={entry.id}><h2><a href={routeHref(`/${kind}/${encodeURIComponent(entry.id)}`)}>{m ? <ModelIdentity name={m.name} labId={m.lab_ids[0]} labName={labs.get(m.lab_ids[0])?.name}/> : entry.name}</a></h2><p>{m ? `${m.lab_ids.map(id => labs.get(id)?.name ?? id).join(' · ')} · ${m.release_date ?? 'Release date unknown'}` : `${b!.category} · ${b!.version === 'unversioned-as-reported' ? 'Version not specified' : b!.version}`}</p><p>{m ? `${m.access_state ?? 'Access unknown'} · weights ${m.weights_state ?? 'unknown'}` : `${b!.metric_name} · ${b!.unit} · ${b!.direction} is better`}</p>{b?.subset && <p>{b.subset}</p>}<div className="catalog-card-bottom"><span><strong>{entry.count}</strong> {models ? 'variants scored' : `of ${data.catalog.models.length} releases scored`}</span><a href={viewUrl(view).toString()}>Open matrix →</a></div></article>;
     })}</div>
-    {!entries.length && <div className="catalog-empty"><p>No matches. Try a broader search or reset the filters.</p><Button variant="outline" onClick={() => { setQuery(''); setFilter('all'); }}>Reset filters</Button></div>}
-    {pages > 1 && <nav className="entity-pagination" aria-label="Catalog pages"><Button variant="outline" disabled={currentPage === 0} onClick={() => setPage(currentPage - 1)}>Previous</Button><span>{currentPage + 1} / {pages}</span><Button variant="outline" disabled={currentPage + 1 >= pages} onClick={() => setPage(currentPage + 1)}>Next</Button></nav>}
+    {!entries.length && <div className="catalog-empty"><p>No matches. Try a broader search or reset the filters.</p><Button variant="outline" onClick={() => { update({ query: '', filter: 'all', page: 0 }); }}>Reset filters</Button></div>}
+    {pages > 1 && <nav className="entity-pagination" aria-label="Catalog pages"><Button variant="outline" disabled={currentPage === 0} onClick={() => update({ page: currentPage - 1 }, true)}>Previous</Button><span>{currentPage + 1} / {pages}</span><Button variant="outline" disabled={currentPage + 1 >= pages} onClick={() => update({ page: currentPage + 1 }, true)}>Next</Button></nav>}
     <p className="entity-footer">Snapshot generated {data.manifest.generated_at?.slice(0,10) ?? 'Unknown'} · <a href={routeHref('/evidence')}>Coverage, sources & limitations</a></p>
   </>;
 }

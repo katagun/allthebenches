@@ -5,6 +5,7 @@ import pytest
 from pydantic import ValidationError
 
 from pipeline.build import assess_saturation, build, select_observations
+from pipeline.cli import main
 from pipeline.schema import Dataset
 
 
@@ -27,6 +28,43 @@ def test_zero_is_valid_and_build_keeps_it(tmp_path):
     results = json.loads((tmp_path / "results.json").read_text())
     assert results["observations"][0]["value"] == 0
     assert json.loads((tmp_path / "market.json").read_text())["prices"][0]["input_price"] == "0"
+
+
+def test_rebuild_preserves_feeds_unless_explicitly_replaced(tmp_path):
+    feeds = [{"source_id": "test", "status": "ok", "as_of": "2026-10-17T00:00:00Z"}]
+    build(sample(), tmp_path, feeds)
+    build(sample(10), tmp_path)
+    manifest = json.loads((tmp_path / "manifest.json").read_text())
+    comparison = json.loads((tmp_path / "comparison.json").read_text())
+    assert manifest["feeds"] == feeds
+    assert comparison["manifest"] == manifest
+    assert comparison["observations"][0]["value"] == 10
+    build(sample(10), tmp_path, [])
+    manifest = json.loads((tmp_path / "manifest.json").read_text())
+    assert manifest["feeds"] == []
+    assert json.loads((tmp_path / "comparison.json").read_text())["manifest"] == manifest
+
+
+@pytest.mark.parametrize("with_staging", [False, True])
+def test_offline_cli_rebuild_is_identical_with_or_without_staging(tmp_path, monkeypatch, with_staging):
+    monkeypatch.chdir(tmp_path)
+    source = tmp_path / "dataset.json"
+    source.write_text(sample().model_dump_json())
+    output = tmp_path / "web/public/data"
+    feeds = [{"source_id": "test", "status": "ok"}]
+    build(sample(), output, feeds)
+    before = {p.name: p.read_bytes() for p in output.iterdir() if p.is_file()}
+    if with_staging:
+        staging = tmp_path / "data/staging"
+        staging.mkdir(parents=True)
+        (staging / "test.json").write_text(json.dumps({"source": "test", "status": "stale"}))
+    assert main(["build", "--offline", "--input", str(source)]) == 0
+    assert {p.name: p.read_bytes() for p in output.iterdir() if p.is_file()} == before
+    if with_staging:
+        assert main(["build", "--input", str(source)]) == 0
+        manifest = json.loads((output / "manifest.json").read_text())
+        assert manifest["feeds"][0]["status"] == "stale"
+        assert json.loads((output / "comparison.json").read_text())["manifest"] == manifest
 
 
 def test_foreign_key_unit_and_bounds_reject_publication():

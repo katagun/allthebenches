@@ -306,10 +306,13 @@ export function otherConfigurationResults(data: AppData, row: DisplayRow, benchm
 
 /** Numeric preview only; never use alternate setups for sorting or winner highlighting. */
 export function otherConfigurationScores(data: AppData, row: DisplayRow, benchmarkId: string): number[] {
-  const ids = new Set(otherConfigurationResults(data, row, benchmarkId));
+  const ids = otherConfigurationResults(data, row, benchmarkId);
+  const index = selectorIndexes(data);
   const unit = data.catalog.benchmarks.find(benchmark => benchmark.id === benchmarkId)?.unit;
-  return [...new Set(data.results.cells.filter(cell => ids.has(cell.configuration_id)
-    && cell.benchmark_id === benchmarkId && cell.unit === unit && cell.state !== 'disputed'
+  return [...new Set(ids.flatMap(id => {
+    const cell = index.cellsByConfiguration.get(id)?.get(benchmarkId);
+    return cell ? [cell] : [];
+  }).filter(cell => cell.unit === unit && cell.state !== 'disputed'
     && cell.observation_ids.length === 1 && cell.value !== null && Number.isFinite(cell.value))
     .map(cell => cell.value!))].sort((a, b) => a - b);
 }

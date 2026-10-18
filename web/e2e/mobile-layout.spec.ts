@@ -506,7 +506,7 @@ test('cold matrix renders without evidence downloads and lazy evidence remains a
   await ready(page);
   expect(requests.filter(url => url.endsWith('/comparison.json'))).toHaveLength(1);
   expect(requests.some(url => /evidence-.*\.json/.test(url))).toBe(false);
-  await page.locator('.score-button[data-heat]').first().click();
+  await page.locator('.score-button[data-heat]:not([data-other-setups])').first().click();
   await expect(page.getByRole('heading', { name: 'Result evidence', exact: true })).toBeVisible();
   await expect(page.locator('.evidence-record').first()).toBeVisible();
   expect(requests.filter(url => /evidence-.*\.json/.test(url))).toHaveLength(1);
@@ -519,7 +519,7 @@ test('Mistral missing cells preview numeric scores with alternate setup tooltips
   const alternate = page.getByRole('button', { name: /Mistral Large 4, Vals Index: No score for this setup/ });
   await expect(alternate).toHaveText('48.66%');
   await expect(alternate).toHaveAttribute('title', /Reported scores from other configurations/);
-  await expect(alternate).not.toHaveAttribute('data-heat');
+  await expect(alternate).toHaveAttribute('data-heat', 'true');
   await expect(alternate).not.toHaveAttribute('data-best');
   await alternate.click();
   await expect(page.getByRole('heading', { name: 'Results in other configurations (1)' })).toBeVisible();

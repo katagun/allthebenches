@@ -1,5 +1,6 @@
 """Regression tests that prove quality gates fail on broken artifacts."""
 import importlib.util
+import json
 from pathlib import Path
 import random
 import shutil
@@ -26,6 +27,28 @@ def test_generated_gate_catches_stale_types_and_data(tmp_path):
         with (tmp_path / relative).open('a') as file:
             file.write(' ')
     assert set(check(tmp_path)) == {'web/src/generated/dataset.ts', 'web/public/data/results.json'}
+
+
+def test_generated_gate_catches_and_offline_build_repairs_manifest_drift(tmp_path, monkeypatch):
+    from pipeline.cli import main
+
+    shutil.copytree(ROOT / 'data/curated', tmp_path / 'data/curated')
+    public = tmp_path / 'web/public/data'
+    feeds = [{'source_id': 'test', 'status': 'ok'}]
+    build(load_dataset(tmp_path / 'data/curated/dataset.json'), public, feeds)
+    export_schema(tmp_path)
+    # Reproduce the deployment failure: comparison has lost the published feeds.
+    comparison = json.loads((public / 'comparison.json').read_text())
+    comparison['manifest']['feeds'] = []
+    (public / 'comparison.json').write_text(json.dumps(comparison))
+    check = load_script('check-generated').check_generated
+    assert check(tmp_path) == ['web/public/data/comparison.json']
+    monkeypatch.chdir(tmp_path)
+    assert main(['build', '--offline']) == 0
+    assert check(tmp_path) == []
+    manifest = json.loads((public / 'manifest.json').read_text())
+    assert manifest['feeds'] == feeds
+    assert json.loads((public / 'comparison.json').read_text())['manifest'] == manifest
 
 
 def test_bundle_gate_rejects_missing_and_oversized_assets(tmp_path):

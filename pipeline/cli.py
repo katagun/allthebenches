@@ -18,7 +18,7 @@ def main(argv: list[str] | None = None) -> int:
     build_cmd = sub.add_parser("build", help="build static output from local curated data")
     build_cmd.add_argument("--input", type=Path, default=Path("data/curated/dataset.json"))
     build_cmd.add_argument("--output", type=Path, default=Path("web/public/data"))
-    build_cmd.add_argument("--offline", action="store_true", help="accepted for explicit offline CI/build invocation")
+    build_cmd.add_argument("--offline", action="store_true", help="preserve published feed metadata; ignore local staging files")
     schema_cmd = sub.add_parser("schema", help="regenerate JSON Schema and TypeScript declarations")
     schema_cmd.add_argument("--root", type=Path, default=Path.cwd())
     collect_cmd = sub.add_parser("collect", help="stage metadata feeds; never edits curated records")
@@ -38,9 +38,10 @@ def main(argv: list[str] | None = None) -> int:
             print(f"Valid dataset: {len(dataset.models)} models, {len(dataset.observations)} observations")
         elif args.command == "build":
             dataset = load_dataset(args.input)
-            feeds = []
+            feeds = None
             staging = Path("data/staging")
-            if staging.exists():
+            if not args.offline and staging.exists():
+                feeds = []
                 for feed_path in sorted(staging.glob("*.json")):
                     if feed_path.name.endswith("-mapping-queue.json"):
                         continue

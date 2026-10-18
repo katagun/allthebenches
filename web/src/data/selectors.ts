@@ -221,7 +221,7 @@ export function rowsForView(data: AppData, view: ViewState, expandedIds: Set<str
   const preset = indexes.presetsById.get(view.presetId);
   if (!preset) return [];
   const presetConfigIds = new Set(list(preset.model_configuration_ids));
-  const allModelPreset = list(data.catalog.models).length > 0 && list(data.catalog.models).every(model => list(preset.model_configuration_ids).some(id => indexes.configurationsById.get(id)?.model_id === model.id));
+  const allModelPreset = presetIncludesAllModels(data, preset.id);
   const modelIds = new Set([...presetConfigIds].map(id => indexes.configurationsById.get(id)?.model_id).filter((x): x is string => !!x));
   if (!presetConfigIds.size || !modelIds.size) return [];
   let configurations = [...modelIds].flatMap(modelId => list(indexes.configurationsByModel.get(modelId)))
@@ -260,6 +260,13 @@ export function rowsForView(data: AppData, view: ViewState, expandedIds: Set<str
     if (expandedIds.has(modelId)) output.push(...matchedOptions.filter(row => row.id !== primary.id));
   }
   return output;
+}
+/** Detect broad presets by membership rather than a date-specific preset ID. */
+export function presetIncludesAllModels(data: AppData, presetId: string): boolean {
+  const indexes = selectorIndexes(data);
+  const preset = indexes.presetsById.get(presetId);
+  const included = new Set(list(preset?.model_configuration_ids).map(id => indexes.configurationsById.get(id)?.model_id));
+  return data.catalog.models.length > 0 && data.catalog.models.every(model => included.has(model.id));
 }
 export function setupComplete(o: Observation): boolean { return completeSetup(o); }
 export function numeric(value: number | string | null | undefined): number | null { if (value === null || value === undefined) return null; const n = Number(value); return Number.isFinite(n) ? n : null; }

@@ -9,6 +9,22 @@ import { queryRows } from './rowQuery';
 import { DEFAULT_VIEW } from '../state/viewState';
 
 describe('worker row ordering', () => {
+  it('defaults all-model presets to newest releases first, with stable ties and unknown dates last', () => {
+    const data = structuredClone({ catalog, details, manifest, market, results }) as unknown as AppData;
+    // Deliberately avoid a hard-coded all-model preset ID.
+    data.catalog.presets = [{ id: 'everything', version: '1', name: 'All models', model_configuration_ids: data.catalog.configurations.map(c => c.id), benchmark_ids: [] }];
+    data.catalog.models.forEach((model, index) => { model.release_date = index === 0 ? null : index <= 2 ? '2026-10-18' : '2024-03-04'; });
+    const view = { ...DEFAULT_VIEW, presetId: 'everything', includeUnbenchmarked: true, sort: null };
+    const rows = queryRows(data, view, new Set());
+    expect(rows.slice(0, 2).map(row => row.model.release_date)).toEqual(['2026-10-18', '2026-10-18']);
+    expect(rows.at(-1)?.model.id).toBe(data.catalog.models[0].id);
+    expect(rows.map(row => row.model.release_date ?? '')).toEqual(rows.map(row => row.model.release_date ?? '').sort().reverse());
+    const tiedNames = rows.slice(0, 2).map(row => `${row.lab.name} ${row.model.name}`);
+    expect(tiedNames).toEqual([...tiedNames].sort((a, b) => a.localeCompare(b)));
+    const explicit = queryRows(data, { ...view, sort: { id: 'model', direction: 'asc' } }, new Set());
+    const names = explicit.map(row => `${row.lab.name} ${row.model.name}`);
+    expect(names).toEqual([...names].sort((a, b) => a.localeCompare(b)));
+  });
   it('sorts the full result with zero intact and missing scores last in either direction', () => {
     const base = { catalog, details, manifest, market, results } as unknown as AppData;
     const selected = queryRows(base, DEFAULT_VIEW, new Set()).slice(0, 3);

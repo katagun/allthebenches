@@ -9,3 +9,10 @@ export function compactScore(value: number): string {
 export function detailScore(value: number): string {
   return value !== 0 && Math.abs(value) < .005 ? value.toExponential(2) : ordinary.format(value);
 }
+
+/** A range of reported values, not an average or confidence interval. */
+export function compactScoreRange(values: readonly number[]): string | null {
+  if (!values.length) return null;
+  const low = Math.min(...values), high = Math.max(...values);
+  return low === high ? compactScore(low) : `${compactScore(low)}–${compactScore(high)}`;
+}

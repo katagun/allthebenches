@@ -19,6 +19,7 @@ type SelectorIndexes = {
   cellsByConfiguration: Map<string, Map<string, DisplayCell>>;
   reviewedObservationsByConfiguration: Map<string, ObservationIndex[]>;
   reviewedCountByConfiguration: Map<string, number>;
+  observationsById: Map<string, ObservationIndex>;
   observationSeriesStatus: Map<string, string | null | undefined>;
   parameterClaims: Map<string, AppData['catalog']['metadata_claims'][number]>;
   routesByModel: Map<string, ServingRoute[]>;
@@ -65,6 +66,7 @@ function selectorIndexes(data: AppData): SelectorIndexes {
     cellsByConfiguration: new Map(),
     reviewedObservationsByConfiguration: new Map(),
     reviewedCountByConfiguration: new Map(),
+    observationsById: new Map(list(details.observations).map(record => [record.id, record])),
     observationSeriesStatus: new Map(),
     parameterClaims: new Map(),
     routesByModel: new Map(),
@@ -310,4 +312,15 @@ export function otherConfigurationScores(data: AppData, row: DisplayRow, benchma
     && cell.benchmark_id === benchmarkId && cell.unit === unit && cell.state !== 'disputed'
     && cell.observation_ids.length === 1 && cell.value !== null && Number.isFinite(cell.value))
     .map(cell => cell.value!))].sort((a, b) => a - b);
+}
+
+/** Summarize only the published reports attached to this exact cell, in its benchmark unit. */
+export function reportedCellScores(data: AppData, cell: DisplayCell, unit: string): number[] {
+  const index = selectorIndexes(data);
+  const reports = cell.observation_ids.map(id => index.observationsById.get(id));
+  // An incomplete or mixed-unit set cannot truthfully be presented as a complete range.
+  if (!reports.length || reports.some(record => !record || record.configuration_id !== cell.configuration_id
+    || record.benchmark_id !== cell.benchmark_id || record.unit !== unit || !Number.isFinite(record.value)
+    || !['reviewed', 'disputed'].includes(record.review_state ?? ''))) return [];
+  return [...new Set(reports.map(record => record!.value))].sort((a, b) => a - b);
 }

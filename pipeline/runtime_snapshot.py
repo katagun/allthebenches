@@ -11,7 +11,7 @@ def write_runtime_snapshot(output: Path, payloads: dict, manifest: dict) -> None
     details = payloads['details.json']
     # Keep every setup key and unknown marker: filtering semantics must match full evidence.
     def summary(observation):
-        fields = ('id', 'configuration_id', 'benchmark_id', 'series_id', 'review_state', 'reporting_relationship')
+        fields = ('id', 'configuration_id', 'benchmark_id', 'series_id', 'review_state', 'reporting_relationship', 'value', 'unit')
         record = {key: observation[key] for key in fields if key in observation}
         record['setup'] = {key: value if value is None or isinstance(value, str) and value in ('unknown', 'not reported', 'not stated') else True
                            for key, value in observation.get('setup', {}).items()}

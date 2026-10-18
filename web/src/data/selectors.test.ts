@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { benchmarkSearchForView, otherConfigurationScores, hasResultOnBenchmarks, numericScoreCount, orderColumnsByModelCoverage, rowsForView } from './selectors';
+import { benchmarkSearchForView, otherConfigurationScores, reportedCellScores, hasResultOnBenchmarks, numericScoreCount, orderColumnsByModelCoverage, rowsForView } from './selectors';
 import type { AppData } from './snapshots';
 import { DEFAULT_VIEW } from '../state/viewState';
 
@@ -173,5 +173,37 @@ describe('alternate setup numeric previews', () => {
     data.results.cells[3].unit = 'rating';
     const row = rowsForView(data, structuredClone(DEFAULT_VIEW), new Set())[0];
     expect(otherConfigurationScores(data, row, 'b2')).toEqual([]);
+  });
+});
+
+describe('multiple-report score summaries', () => {
+  function reports(values: number[]) {
+    const data = dataset({ c1: { b1: 90 } });
+    const cell = data.results.cells[0];
+    cell.state = 'disputed';
+    cell.value = null;
+    cell.observation_ids = values.map((_, i) => `report-${i}`);
+    data.details.observations = values.map((value, i) => ({ id: `report-${i}`, configuration_id: 'c1', benchmark_id: 'b1', value, unit: '%', review_state: 'reviewed', reporting_relationship: 'self_report' }));
+    return { data, cell };
+  }
+  it('retains conflicting scores and zero without picking a winner', () => {
+    const { data, cell } = reports([57.9, 0, 55.8, 57.9]);
+    expect(reportedCellScores(data, cell, '%')).toEqual([0, 55.8, 57.9]);
+    expect(cell.value).toBeNull();
+    expect(cell.state).toBe('disputed');
+  });
+  it('collapses agreeing reports to one score', () => {
+    const { data, cell } = reports([55.8, 55.8]);
+    expect(reportedCellScores(data, cell, '%')).toEqual([55.8]);
+  });
+  it.each(['unit', 'review', 'missing', 'benchmark', 'nonfinite'])('does not summarize an invalid %s report set', kind => {
+    const { data, cell } = reports([55.8, 57.9]);
+    const record = data.details.observations[1];
+    if (kind === 'unit') record.unit = 'rating';
+    if (kind === 'review') record.review_state = 'retracted';
+    if (kind === 'missing') data.details.observations.pop();
+    if (kind === 'benchmark') record.benchmark_id = 'b2';
+    if (kind === 'nonfinite') record.value = NaN;
+    expect(reportedCellScores(data, cell, '%')).toEqual([]);
   });
 });

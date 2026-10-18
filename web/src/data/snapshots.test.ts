@@ -49,3 +49,10 @@ it('compact data preserves every preset and evidence-sensitive filter result', a
     expect(summarize(compact)).toEqual(summarize(full));
   }
 });
+
+it('includes exact published report values and units before downloading evidence', () => {
+  const records = new Map(comparison.observations.map((record: { id: string; value: number; unit: string }) => [record.id, record]));
+  for (const report of details.observations) {
+    expect(records.get(report.id)).toMatchObject({ value: report.value, unit: report.unit });
+  }
+});

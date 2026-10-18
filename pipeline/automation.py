@@ -169,7 +169,7 @@ def run(source: str, output: Path, dataset_path: Path, *, offline=False) -> dict
                 if capture:
                     row['retrieved_at'] = capture['retrieved_at']
             report = assess(fragment, dataset)
-            if not fragment.get('observations') and not coverage.get('counts', {}).get('duplicate_existing'):
+            if not fragment.get('observations') and not (coverage.get('counts', {}).get('duplicate_existing') or coverage.get('counts', {}).get('duplicate_identical')):
                 raise ValueError('No candidate or accounted existing observations; source requires investigation')
             report.update({'source': source, 'coverage': coverage, 'contract': REGISTRY['sources'][source],
                            'dataset_sha256': digest(dataset_path.read_bytes()),

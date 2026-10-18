@@ -33,8 +33,10 @@ def test_livebench_import_preserves_releases_categories_and_known_effort():
     assert len(mistral) == 30
     wonder = [o for o in fragment["observations"] if o["setup"]["upstream_model_id"].startswith("muse-wonder-1.0")]
     assert len(wonder) == 30
-    assert {o["configuration_id"] for o in wonder} == {"muse_wonder_max"}
-    assert all(o["configuration_id"] != "muse_wonder_full_max" for o in wonder)
+    assert {o["configuration_id"] for o in wonder} == {"livebench_muse_wonder_max"}
+    wonder_config = next(c for c in fragment["configurations"] if c["id"] == "livebench_muse_wonder_max")
+    assert wonder_config["model_id"] == "muse_wonder"
+    assert wonder_config["reasoning_label"] == "max"
     v2 = [o for o in mistral if o["setup"]["release_key"] == "2026-09-02"]
     assert len(v2) == 7
     assert {o["setup"]["reasoning_effort"] for o in mistral} == {"high"}

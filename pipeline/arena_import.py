@@ -110,6 +110,31 @@ def indexes(dataset: dict) -> tuple[dict[str, str], dict[tuple[str, str], str]]:
     return model_lookup, config_lookup
 
 
+def source_configuration_index(dataset: dict, evaluator: str) -> dict[tuple[str, str, str], str]:
+    """Preserve reviewed source identities across replay and catalog growth.
+
+    Equal model/effort labels from another evaluator do not establish identical
+    setups. Ambiguous historical mappings require review instead of list order.
+    """
+    configurations = {item["id"]: item for item in dataset["configurations"]}
+    result: dict[tuple[str, str, str], str] = {}
+    for observation in dataset["observations"]:
+        if observation.get("evaluator") != evaluator:
+            continue
+        setup = observation.get("setup") or {}
+        upstream = setup.get("upstream_model_id")
+        if not upstream:
+            continue
+        config = configurations[observation["configuration_id"]]
+        effort = str(setup.get("reasoning_effort") or "unknown").casefold()
+        key = (upstream, config["model_id"], effort)
+        existing = result.get(key)
+        if existing and existing != config["id"]:
+            raise ValueError(f"Ambiguous {evaluator} configuration identity: {key}")
+        result[key] = config["id"]
+    return result
+
+
 def category_name(partition: str, category: str, publish_date: str) -> str:
     expected_snapshot_dates = {"text": "2026-10-15", "vision": "2026-10-09",
                                "search": "2026-10-13", "webdev": "2026-10-16"}
@@ -158,7 +183,9 @@ def build(dataset: dict, files: dict[str, Path], file_manifest: list[dict], *, r
         import pyarrow.parquet as pq
     except ImportError as exc:
         raise RuntimeError("PyArrow required: uv run --with pyarrow python pipeline/arena_import.py") from exc
-    model_lookup, config_lookup = indexes(dataset)
+    model_lookup, _ = indexes(dataset)
+    source_configs = source_configuration_index(dataset, "Arena")
+    configurations = {c["id"]: c for c in dataset["configurations"]}
     fragment = {key: [] for key in ("sources", "configurations", "benchmarks", "series", "observations", "external_mappings")}
     created_configs: dict[tuple[str, str], dict] = {}
     coverage = {"source": "Arena leaderboard-dataset", "revision": revision,
@@ -228,11 +255,10 @@ def build(dataset: dict, files: dict[str, Path], file_manifest: list[dict], *, r
                     "partition": partition, "category": row.get("category"),
                     "leaderboard_publish_date": row.get("leaderboard_publish_date"), "rows": 1})
                 continue
-            config_id = config_lookup.get((model_id, effort))
-            if not config_id and effort == "unknown":
-                unknown = [c for c in dataset["configurations"] if c["model_id"] == model_id and (c.get("reasoning_label") or "unknown").casefold() == "unknown"]
-                if len(unknown) == 1:
-                    config_id = unknown[0]["id"]
+            config_id = source_configs.get((raw_name, model_id, effort))
+            source_config_id = f"arena_hf_{model_id}_{effort}"
+            if config_id is None and source_config_id in configurations:
+                config_id = source_config_id
             if config_id is None:
                 key = (model_id, effort)
                 if key not in created_configs:
@@ -286,8 +312,11 @@ def build(dataset: dict, files: dict[str, Path], file_manifest: list[dict], *, r
             # Existing manually captured page rows cover these same dated leaderboard runs.
             # Agent Arena's HF IPS estimand is a distinct metric from the site's
             # percentage-style signal cards, so it never aliases their benchmark.
-            prior = None if agent_ips else next((o for o in existing_obs if o["configuration_id"] == config_id and o["benchmark_id"] == benchmark_id
-                          and str(o.get("reported_at") or "").startswith(date)), None)
+            matching_prior = [o for o in existing_obs if o["configuration_id"] == config_id
+                              and o["benchmark_id"] == benchmark_id
+                              and str(o.get("reported_at") or "").startswith(date)]
+            prior = next((o for o in matching_prior if o["source_id"] == source_id),
+                         next(iter(matching_prior), None))
             preserved_prior = False
             prior_decision = None
             if prior:
@@ -303,9 +332,14 @@ def build(dataset: dict, files: dict[str, Path], file_manifest: list[dict], *, r
                 source_upper = row.get(upper_field)
                 interval_match = existing_lower == source_lower and existing_upper == source_upper
                 count_key = "sessions" if partition.startswith("agent") else "votes"
-                existing_count = (prior.get("setup") or {}).get(count_key)
+                prior_setup = prior.get("setup") or {}
+                existing_count = prior_setup.get(count_key)
+                if existing_count is None:
+                    existing_count = prior_setup.get("session_count" if agent_ips else "source_count")
                 source_count = row.get("session_count") if count_key == "sessions" else row.get("vote_count")
                 count_match = existing_count == source_count
+                if agent_ips:
+                    count_match = count_match and prior_setup.get("source_count") == row.get("observation_count")
                 exact_duplicate = same_value and interval_match and count_match
                 prior_decision = {"status": "duplicate_identical" if exact_duplicate else "preserved_alternate_source_snapshot", "existing_observation_id": prior["id"],
                     "same_value": same_value, "source_value": value,

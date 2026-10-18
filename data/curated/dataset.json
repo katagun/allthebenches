@@ -15648,7 +15648,7 @@
       "evidence": "LiveBench v2 row identity; exact model label/display metadata and effort high."
     }
   ],
-  "generated_at": "2026-10-18T14:53:03.967571+00:00",
+  "generated_at": "2026-10-18T16:31:54.358528+00:00",
   "labs": [
     {
       "aliases": [
@@ -266265,7 +266265,7 @@
     },
     {
       "id": "livebench_v1_20260625",
-      "url": "https://livebench.ai/v1/table_2026-06-25.csv",
+      "url": "https://livebench.ai/v1/table_2026_06_25.csv",
       "title": "LiveBench V1 dated score table (2026-06-25)",
       "publisher": "LiveBench",
       "original_evaluator": "LiveBench",
@@ -266276,11 +266276,11 @@
       "license": "Apache-2.0",
       "attribution": "LiveBench; https://livebench.ai and https://github.com/LiveBench/LiveBench",
       "method": "Deterministic import of the official dated CSV; source values remain on the 0–100 scale.",
-      "locator": "CSV header and all model rows; categories from https://livebench.ai/v1/categories_2026-06-25.json"
+      "locator": "CSV header and all model rows; categories from https://livebench.ai/v1/categories_2026_06_25.json"
     },
     {
       "id": "livebench_v2_20260902",
-      "url": "https://livebench.ai/table_2026-09-02.csv",
+      "url": "https://livebench.ai/table_2026_09_02.csv",
       "title": "LiveBench V2 dated score table (2026-10-14)",
       "publisher": "LiveBench",
       "original_evaluator": "LiveBench",
@@ -266291,7 +266291,7 @@
       "license": "Apache-2.0",
       "attribution": "LiveBench; https://livebench.ai and https://github.com/LiveBench/LiveBench",
       "method": "Deterministic import of the official dated CSV; source values remain on the 0–100 scale.",
-      "locator": "CSV header and all model rows; categories from https://livebench.ai/categories_2026-09-02.json"
+      "locator": "CSV header and all model rows; categories from https://livebench.ai/categories_2026_09_02.json"
     }
   ],
   "usage": [],

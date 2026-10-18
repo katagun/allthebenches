@@ -18,6 +18,10 @@ def _e(value: object) -> str:
     return escape(str(value), quote=True)
 
 
+def _score(value: float) -> str:
+    return f"{value:.2e}" if 0 < abs(value) < .005 else f"{value:,.2f}".rstrip("0").rstrip(".")
+
+
 def _url(value: str | None) -> str | None:
     if not value:
         return None
@@ -148,7 +152,7 @@ def build_static_pages(dataset: Dataset, output: Path) -> None:
         for name, variant, config, obs, state in sorted(own_scores, key=lambda row: (row[0], row[1], row[2].id, row[3].id)):
             source = sources.get(obs.source_id)
             source_label = source.title if source else obs.source_id
-            score_cards.append(f'<article class="card"><h3>{_e(name)}</h3><p><strong>{_e(obs.value)} {_e(obs.unit)}</strong></p>'
+            score_cards.append(f'<article class="card"><h3>{_e(name)}</h3><p><strong title="Source value: {_e(obs.value)}">{_e(_score(obs.value))} {_e(obs.unit)}</strong></p>'
                 f'<p class="muted">{_cell_status(state)}</p>'
                 f'<dl><dt>Variant and metric</dt><dd>{variant}</dd><dt>Configuration</dt><dd>{_config_label(config)}</dd>'
                 f'<dt>Evaluator</dt><dd>{_e(obs.evaluator)}</dd><dt>Source</dt><dd>{_link(source.url if source else None, source_label)}</dd>'
@@ -186,7 +190,7 @@ def build_static_pages(dataset: Dataset, output: Path) -> None:
                 rows.append((model.name, model.id, config, obs, source, cell["state"]))
         result_rows = "".join(f'<tr><td><a href="{SITE}/models/{quote(mid, safe="")}/">{_e(name)}</a></td><td>{_config_label(config)}</td>'
             f'<td>{_cell_status(state)}</td>'
-            f'<td>{_e(obs.value)} {_e(obs.unit)}</td><td>{_e(obs.evaluator)}</td><td>{_link(source.url if source else None, source.title if source else obs.source_id)}</td></tr>'
+            f'<td title="Source value: {_e(obs.value)}">{_e(_score(obs.value))} {_e(obs.unit)}</td><td>{_e(obs.evaluator)}</td><td>{_link(source.url if source else None, source.title if source else obs.source_id)}</td></tr>'
             for name, mid, config, obs, source, state in sorted(rows, key=lambda row: (row[0].casefold(), row[2].id, row[3].id)))
         details = [f"<dt>Version</dt><dd>{_e(benchmark.version)}</dd>", f"<dt>Metric</dt><dd>{_e(benchmark.metric_name)} ({_e(benchmark.unit)})</dd>",
                    f"<dt>Category</dt><dd>{_e(benchmark.category)}</dd>", f"<dt>Direction</dt><dd>{_e(benchmark.direction)}</dd>"]

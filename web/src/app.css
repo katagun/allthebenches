@@ -468,3 +468,6 @@
 @media(max-width:600px){.benchmark-heading-compact .benchmark-detail-link{font-size:10px}.benchmark-heading-compact{gap:0}.benchmark-sort{width:20px}.benchmark-variant-label{font-size:9px}}
 /* Growing source catalogs must not turn category navigation into a tall header. */
 @media(min-width:801px){.secondary-controls .category-nav{min-width:0;flex:1 1 480px;flex-wrap:nowrap;overflow-x:auto;scrollbar-width:thin}.secondary-controls .category-nav button{flex:none}}
+
+.score-button[data-other-setups]{font-size:11px;color:var(--foreground);white-space:normal;text-decoration:underline dotted;text-underline-offset:3px}
+.alternative-setup{width:100%;height:auto;min-height:36px;white-space:normal;overflow-wrap:anywhere;text-align:left;justify-content:flex-start;margin-top:6px}

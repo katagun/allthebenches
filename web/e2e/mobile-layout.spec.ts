@@ -113,7 +113,8 @@ test('picker permits more than five selections and discards cancelled edits', as
   await page.getByRole('button', { name: 'Compare', exact: true }).click();
   await expect(page.getByRole('button', { name: 'Compare selected models', exact: true })).toBeDisabled();
   await page.getByRole('button', { name: 'Close', exact: true }).click();
-  await page.getByRole('button', { name: 'Benchmarks', exact: true }).click();
+  await page.getByRole('button', { name: /^Options/ }).click();
+  await page.getByRole('button', { name: 'Columns', exact: true }).click();
   await page.getByRole('searchbox', { name: 'Find a benchmark' }).fill('GraphWalks');
   await expect(page.locator('.column-group').first()).toContainText('GraphWalks');
   await noOverflow(page);
@@ -199,3 +200,34 @@ test('model identity logos appear on model and benchmark reference pages', async
   const icons = page.locator('.entity-score-title .model-identity img');
   expect(await icons.evaluateAll(images => images.every(img => (img as HTMLImageElement).complete && (img as HTMLImageElement).naturalWidth > 0))).toBe(true);
 });
+
+for (const width of [375, 768, 1422]) {
+  test(`${width}px searchable catalogs, exact model matrix and coverage`, async ({ page }) => {
+    await page.setViewportSize({ width, height: 900 });
+    await page.goto('./#/models');
+    await expect(page.getByRole('heading', { level: 1, name: 'Models', exact: true })).toBeVisible();
+    await expect(page.locator('.catalog-card')).toHaveCount(24);
+    await noOverflow(page);
+    await page.getByRole('searchbox', { name: 'Search catalog' }).fill('Claude Opus 5.5');
+    await expect(page.locator('.catalog-card')).toHaveCount(1);
+    await expect(page.locator('.catalog-card .model-brand-icon')).toBeVisible();
+    await page.locator('.catalog-card-bottom a').click();
+    await expect(page.locator('.model-link').first()).toContainText('Claude Opus 5.5');
+    await noOverflow(page);
+    await page.getByRole('link', { name: 'Benchmarks', exact: true }).click();
+    await expect(page.getByRole('heading', { name: 'Benchmark variants' })).toBeVisible();
+    await page.getByRole('searchbox', { name: 'Search catalog' }).fill('zzzzz-no-match');
+    await expect(page.getByText(/No matches/)).toBeVisible();
+    await page.getByRole('button', { name: 'Reset filters' }).click();
+    await expect(page.locator('.catalog-card')).toHaveCount(24);
+    await noOverflow(page);
+    await page.getByRole('link', { name: 'Coverage & evidence', exact: true }).first().click();
+    await expect(page.getByRole('heading', { level: 1, name: 'Coverage & evidence' })).toBeVisible();
+    await page.locator('.gap-list summary').first().click();
+    await expect(page.locator('.gap-list details[open] p')).toBeVisible();
+    await expect(page.getByRole('link', { name: 'manifest.json ↓' })).toHaveAttribute('href', /data\/manifest.json$/);
+    await noOverflow(page);
+    await page.reload();
+    await expect(page.getByRole('heading', { level: 1, name: 'Coverage & evidence' })).toBeVisible();
+  });
+}

@@ -3,6 +3,7 @@ import { ArrowLeft, ExternalLink } from 'lucide-react';
 import { loadSnapshots, type AppData } from '../data/snapshots';
 import { DEFAULT_VIEW } from '../state/viewState';
 import { routeHref, viewUrl } from '../state/stateRuntime';
+import { DirectoryNav } from './DirectoryNav';
 import { ModelIdentity } from './ModelIdentity';
 import { Button } from './ui/button';
 import { Input } from './ui/input';
@@ -15,7 +16,7 @@ export default function EntityPage({ route }: { route: EntityRoute | null }) {
   const [data, setData] = useState<AppData | null>(null);
   const [error, setError] = useState(false);
   useEffect(() => { let active = true; loadSnapshots().then(value => { if (active) setData(value); }).catch(() => { if (active) setError(true); }); return () => { active = false; }; }, []);
-  return <main className="entity-page"><a className="entity-back" href={routeHref("/")}><ArrowLeft size={16}/>Back to comparison matrix</a>{error ? <><h1>Unable to load this page</h1><p>The published dataset could not be loaded. Reload to try again.</p></> : !data ? <p role="status">Loading details…</p> : <EntityContent data={data} route={route}/>}</main>;
+  return <main className="entity-page"><DirectoryNav/><a className="entity-back" href={routeHref("/")}><ArrowLeft size={16}/>Back to comparison matrix</a>{error ? <><h1>Unable to load this page</h1><p>The published dataset could not be loaded. Reload to try again.</p></> : !data ? <p role="status">Loading details…</p> : <EntityContent data={data} route={route}/>}</main>;
 }
 
 function EntityContent({ data, route }: { data: AppData; route: EntityRoute | null }) {
@@ -51,7 +52,7 @@ function EntityContent({ data, route }: { data: AppData; route: EntityRoute | nu
     <section aria-labelledby="entity-scores"><div className="entity-section-heading"><h2 id="entity-scores">Scores</h2><Input aria-label="Search scores" type="search" placeholder={model ? 'Find a benchmark…' : 'Find a model…'} value={query} onChange={event => { setQuery(event.target.value); setPage(0); }}/></div><p className="entity-note">Each published observation keeps its exact configuration and source. Reports may use different evaluation setups; missing results are not zero.</p>
       <div className="entity-scores">{matching.slice(currentPage * 25, (currentPage + 1) * 25).map(record => { const config = configs.get(record.configuration_id); const release = models.get(config?.model_id ?? ''); const metric = benchmarks.get(record.benchmark_id); const source = sources.get(record.source_id); const series = data.details.series.find(item => item.id === record.series_id); return <article className="entity-score" key={record.id}>
         <div className="entity-score-title"><a href={entityHref(model ? 'benchmarks' : 'models', model ? record.benchmark_id : config?.model_id ?? '')}>{model ? metric?.name : <ModelIdentity name={release?.name ?? 'Unknown model'} labId={release?.lab_ids[0]} labName={data.catalog.labs.find(lab => lab.id === release?.lab_ids[0])?.name}/>}</a><strong>{record.value.toLocaleString(undefined, { maximumFractionDigits: 20 })} <small>{record.unit}</small></strong></div>
-        {disputed.has(record.id) && <p className="entity-disputed">Disputed result — conflicting evidence retained</p>}<p>{config?.reasoning_label ?? config?.mode ?? 'Unknown reasoning'}{model && ` · ${versionLabel(metric?.version)}`}</p>
+        {disputed.has(record.id) && <p className="entity-disputed">Disputed result — conflicting evidence retained</p>}<p className="report-relationship">{record.reporting_relationship.replaceAll('_', ' ')}</p><p>{config?.reasoning_label ?? config?.mode ?? 'Unknown reasoning'}{model && ` · ${versionLabel(metric?.version)}`}</p>
         {source && <a className="entity-source-link" href={source.url} target="_blank" rel="noreferrer">{source.title} <ExternalLink size={12}/></a>}
         <details><summary>Evidence & evaluation setup</summary><dl><div><dt>Evaluator</dt><dd>{record.evaluator} · {record.reporting_relationship.replaceAll('_', ' ')}</dd></div><div><dt>Review status</dt><dd>{record.review_state ?? 'Not specified'}</dd></div><div><dt>Reported / evaluated</dt><dd>{record.reported_at ?? 'Unknown'} / {record.evaluated_at ?? 'Unknown'}</dd></div><div><dt>Source locator</dt><dd>{record.locator || 'Not specified'}</dd></div><div><dt>Protocol</dt><dd>{series?.protocol ?? 'Not specified'} · {series?.comparability_status ?? 'Comparability unknown'}</dd></div>{Object.entries(record.setup ?? {}).map(([key, value]) => <div key={key}><dt>{key.replaceAll('_', ' ')}</dt><dd>{typeof value === 'string' ? value : JSON.stringify(value)}</dd></div>)}</dl></details>
       </article>; })}</div>{matching.length === 0 && <p>{records.length ? 'No scores match your search.' : 'No published scores are available for this entry in the current snapshot.'}</p>}

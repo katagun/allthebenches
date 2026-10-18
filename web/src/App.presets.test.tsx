@@ -95,7 +95,7 @@ describe('curated preset switching', () => {
     render(<App/>);
     expect(await screen.findByText(targetModel.name)).toBeTruthy();
     expect(await screen.findByText(targetBenchmark.name)).toBeTruthy();
-    await user.click(screen.getByRole('button', { name: 'Benchmarks' }));
+    await user.click(screen.getByRole('button', { name: 'Columns' }));
     expect(await screen.findByText(/observed price quotes across/)).toBeTruthy();
     expect(screen.getByText(/No public token-volume records in this snapshot/)).toBeTruthy();
     await user.click(screen.getByRole('button', { name: 'Clear' }));

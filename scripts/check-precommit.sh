@@ -4,6 +4,7 @@ set -eu
 cd "$(dirname "$0")/.."
 uv lock --check
 uv run python scripts/check-staged.py
+uv run --group collectors python scripts/check-proposals.py --staged
 pnpm --dir web install --lockfile-only --frozen-lockfile --ignore-scripts
 pnpm --dir web run lint
 pnpm --dir web run typecheck

@@ -16,6 +16,9 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [dependency-groups]
+collectors = [
+    "pyarrow>=23,<24",
+]
 dev = ["ruff>=0.17.1,<0.18"]
 
 [tool.hatch.build.targets.wheel]

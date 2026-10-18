@@ -53,6 +53,7 @@ See [Architecture](docs/ARCHITECTURE.md) for system, data-flow and interaction d
 - [Product and interface specification](docs/PRODUCT.md)
 - [Data contract and comparison rules](docs/DATA_MODEL.md)
 - [Source map](docs/SOURCES.md)
+- [Automated collection and review](docs/COLLECTION_AUTOMATION.md)
 - [Implementation tickets](docs/IMPLEMENTATION_PLAN.md)
 - [Contribution and evidence rules](CONTRIBUTING.md)
 

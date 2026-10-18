@@ -1,3 +1,4 @@
+import { fragmentParams } from './catalogState';
 import { DEFAULT_VIEW, decodeViewState, encodeViewState, readSavedView, storageKey, writeSavedView, forgetSavedView, type ViewState, type ValidationContext } from './viewState';
 export const QUERY_KEY = 'v';
 /** Fragment state never reaches the static host's request-line limit. */
@@ -15,7 +16,14 @@ export function routeHref(path: string): string {
   const value = urlState(location);
   const url = new URL(location.href);
   url.searchParams.delete(QUERY_KEY);
-  url.hash = path + (value === null ? '' : `?v=${encodeURIComponent(value)}`);
+  const params = fragmentParams();
+  if (value !== null) params.set(QUERY_KEY, value);
+  const currentPath = location.hash.split('?')[0];
+  if (/^\/(models|benchmarks)\//.test(path)) {
+    if (currentPath === '#/models' || currentPath === '#/benchmarks') params.set('from', currentPath.slice(2));
+    else if (!/^#\/(models|benchmarks)\//.test(currentPath)) params.delete('from');
+  }
+  url.hash = path + (params.size ? `?${params}` : '');
   return url.pathname + url.search + url.hash;
 }
 export type InitialState = { view: ViewState; source: 'url' | 'saved' | 'default'; notice?: string; unresolved: string[]; remembered: boolean; key: string };

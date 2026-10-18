@@ -3,6 +3,7 @@ import { ArrowLeft, ExternalLink } from 'lucide-react';
 import { loadSnapshots, type AppData } from '../data/snapshots';
 import { DEFAULT_VIEW } from '../state/viewState';
 import { routeHref, viewUrl } from '../state/stateRuntime';
+import { fragmentParams } from '../state/catalogState';
 import { DirectoryNav } from './DirectoryNav';
 import { ModelIdentity } from './ModelIdentity';
 import { Button } from './ui/button';
@@ -16,7 +17,9 @@ export default function EntityPage({ route }: { route: EntityRoute | null }) {
   const [data, setData] = useState<AppData | null>(null);
   const [error, setError] = useState(false);
   useEffect(() => { let active = true; loadSnapshots().then(value => { if (active) setData(value); }).catch(() => { if (active) setError(true); }); return () => { active = false; }; }, []);
-  return <main className="entity-page"><DirectoryNav/><a className="entity-back" href={routeHref("/")}><ArrowLeft size={16}/>Back to comparison matrix</a>{error ? <><h1>Unable to load this page</h1><p>The published dataset could not be loaded. Reload to try again.</p></> : !data ? <p role="status">Loading details…</p> : <EntityContent data={data} route={route}/>}</main>;
+  const origin = fragmentParams().get('from');
+  const directory = origin === 'models' || origin === 'benchmarks' ? origin : null;
+  return <main className="entity-page"><DirectoryNav active={route?.kind}/><a className="entity-back" href={routeHref(directory ? `/${directory}` : '/') }><ArrowLeft size={16}/>{directory ? `Back to ${directory}` : 'Back to comparison matrix'}</a>{error ? <><h1>Unable to load this page</h1><p>The published dataset could not be loaded. Reload to try again.</p></> : !data ? <p role="status">Loading details…</p> : <EntityContent data={data} route={route}/>}</main>;
 }
 
 function EntityContent({ data, route }: { data: AppData; route: EntityRoute | null }) {

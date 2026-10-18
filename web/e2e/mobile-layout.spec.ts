@@ -114,7 +114,7 @@ test('picker permits more than five selections and discards cancelled edits', as
   await expect(page.getByRole('button', { name: 'Compare selected models', exact: true })).toBeDisabled();
   await page.getByRole('button', { name: 'Close', exact: true }).click();
   await page.getByRole('button', { name: /^Options/ }).click();
-  await page.getByRole('button', { name: 'Columns', exact: true }).click();
+  await page.getByRole('button', { name: 'Choose benchmarks', exact: true }).click();
   await page.getByRole('searchbox', { name: 'Find a benchmark' }).fill('GraphWalks');
   await expect(page.locator('.column-group').first()).toContainText('GraphWalks');
   await noOverflow(page);
@@ -150,6 +150,11 @@ for (const width of [390, 768, 1422]) {
     await page.locator('.entity-matrix-link').click();
     await expect(page.locator('tbody tr')).toHaveCount(1);
     await noOverflow(page);
+    const options = page.getByRole('button', { name: /^Options/ });
+    if (await options.isVisible()) await options.click();
+    await page.getByRole('button', { name: 'Choose benchmarks', exact: true }).click();
+    await expect(page.getByRole('dialog').getByRole('checkbox', { checked: true })).toBeDisabled();
+    await page.getByRole('button', { name: 'Done', exact: true }).click();
   });
 }
 
@@ -231,3 +236,43 @@ for (const width of [375, 768, 1422]) {
     await expect(page.getByRole('heading', { level: 1, name: 'Coverage & evidence' })).toBeVisible();
   });
 }
+
+for (const width of [375, 1422]) {
+  test(`${width}px directory state survives detail navigation, Back and reload`, async ({ page }) => {
+    await page.setViewportSize({ width, height: 900 });
+    await page.goto('./#/models');
+    const search = page.getByRole('searchbox', { name: 'Search catalog' });
+    await search.fill('Mistral');
+    await expect(page.locator('.catalog-card')).toHaveCount(4);
+    await page.locator('.catalog-card h2 a').first().click();
+    await expect(page.locator('.entity-score').first()).toBeVisible();
+    await expect(page.locator('.entity-back')).toHaveText('Back to models');
+    await page.goBack();
+    await expect(search).toHaveValue('Mistral');
+    await page.reload();
+    await expect(search).toHaveValue('Mistral');
+    await page.getByRole('link', { name: 'Benchmarks', exact: true }).click();
+    await expect(search).toHaveValue('');
+    await search.fill('GraphWalks');
+    await page.locator('.catalog-card h2 a').first().click();
+    await expect(page.locator('.entity-score').first()).toBeVisible();
+    await page.getByRole('link', { name: 'Back to benchmarks', exact: true }).click();
+    await expect(search).toHaveValue('GraphWalks');
+    await page.getByRole('link', { name: 'Models', exact: true }).click();
+    await expect(search).toHaveValue('Mistral');
+    await noOverflow(page);
+  });
+}
+
+test('matrix search is preserved when navigating immediately, then Back and Forward', async ({ page }) => {
+  await ready(page);
+  await page.getByRole('searchbox', { name: 'Search models', exact: true }).fill('Gemini');
+  await page.getByRole('link', { name: 'Models', exact: true }).click();
+  await expect(page.getByRole('heading', { name: 'Models', exact: true })).toBeVisible();
+  await page.goBack();
+  await expect(page.getByRole('searchbox', { name: 'Search models', exact: true })).toHaveValue('Gemini');
+  await page.goForward();
+  await expect(page.getByRole('heading', { name: 'Models', exact: true })).toBeVisible();
+  await page.getByRole('link', { name: 'Matrix', exact: true }).click();
+  await expect(page.getByRole('searchbox', { name: 'Search models', exact: true })).toHaveValue('Gemini');
+});

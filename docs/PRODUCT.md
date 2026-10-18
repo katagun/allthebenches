@@ -39,7 +39,7 @@ Clicking a score opens its value, unit, exact benchmark/subset, model/configurat
 
 On desktop, the evidence drawer is about 400 pixels wide. On mobile it becomes a full-width sheet. Escape closes it, focus returns to the trigger, and keyboard navigation remains usable. Filter edits apply on Apply; Cancel discards the draft. The active filter summary remains visible after closing the drawer.
 
-Use the same table for comparing two to five selected models. Share the selection, filters, columns, and sort through versioned URL state. Export the current result selection as CSV with configuration, units, sources, and missing-value reasons. Exports must not silently flatten provenance.
+Use the same table for comparing selected model configurations without a five-model selection cap. Share the selection, filters, columns, and sort through versioned URL state. Export the current result selection as CSV with configuration, units, sources, and missing-value reasons. Exports must not silently flatten provenance.
 
 The full applied view is shareable in one `v` URL query parameter containing a versioned JSON envelope encoded with URLSearchParams. The state includes all applied filters, search, preset/category, visible columns, sorting, and comparison selection. A Share action copies the complete URL; pasting it in a new browser must reproduce the same view against the available dataset. Use browser history for committed view changes and restore on back/forward; avoid one history entry per search keystroke. Do not place localStorage opt-in, credentials, or data payloads in the URL. View URLs work beneath the GitHub Pages repository base path without server-side routing.
 

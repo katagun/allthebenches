@@ -101,13 +101,13 @@ for (const width of [390, 1422]) {
   });
 }
 
-test('picker limits selection and discards cancelled edits', async ({ page }) => {
+test('picker permits more than five selections and discards cancelled edits', async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 });
   await ready(page);
   await page.getByRole('button', { name: 'Compare', exact: true }).click();
   const choices = page.getByRole('dialog').getByRole('checkbox');
-  for (let i = 0; i < 5; i++) await choices.nth(i).check();
-  await expect(choices.nth(5)).toBeDisabled();
+  for (let i = 0; i < 8; i++) await choices.nth(i).check();
+  await expect(choices.nth(7)).toBeChecked();
   await page.getByRole('button', { name: 'Close', exact: true }).click();
   await expect(page.locator('.selection-strip')).toHaveCount(0);
   await page.getByRole('button', { name: 'Compare', exact: true }).click();
@@ -159,4 +159,39 @@ test('invalid entity URLs are recoverable', async ({ page }) => {
   await expect(page.locator('tbody tr').first()).toBeVisible();
   await page.goto('./#/benchmarks/not-a-real-benchmark');
   await expect(page.getByRole('heading', { name: 'Page not found' })).toBeVisible();
+});
+
+
+test('wide desktop comparisons keep compact columns and bounded rendering', async ({ page }) => {
+  await page.setViewportSize({ width: 2506, height: 1239 });
+  await ready(page);
+  await page.getByRole('button', { name: 'Choose models', exact: true }).click();
+  const choices = page.getByRole('dialog').getByRole('checkbox');
+  for (let i = 0; i < 20; i++) await choices.nth(i).check();
+  await page.getByRole('button', { name: 'Compare selected models', exact: true }).click();
+  await expect(page.locator('.selection-strip button')).toHaveCount(20);
+  const modelCount = await page.locator('thead th').count() - 1;
+  expect(modelCount).toBeGreaterThanOrEqual(14);
+  expect(modelCount).toBeLessThanOrEqual(16);
+  const widths = await page.locator('thead th:not(:first-child)').evaluateAll(elements => elements.map(el => el.getBoundingClientRect().width));
+  for (const width of widths) expect(width).toBeCloseTo(150, 0);
+  expect(await page.locator('tbody td').count()).toBeLessThanOrEqual(50 * 25);
+  await noOverflow(page);
+  await page.getByRole('button', { name: 'Next models', exact: true }).click();
+  await expect(page.locator('thead th')).toHaveCount(20 - modelCount + 1);
+  const lastWidths = await page.locator('thead th:not(:first-child)').evaluateAll(elements => elements.map(el => el.getBoundingClientRect().width));
+  for (const width of lastWidths) expect(width).toBeCloseTo(150, 0);
+  await page.reload();
+  await expect(page.locator('.selection-strip button')).toHaveCount(20);
+  await expect(page.locator('thead th')).toHaveCount(modelCount + 1);
+});
+
+test('model identity logos appear on model and benchmark reference pages', async ({ page }) => {
+  await page.goto('./#/models/claude_opus55');
+  await expect(page.locator('h1 .model-identity img')).toBeVisible();
+  await page.locator('.entity-score-title a').first().click();
+  await expect(page.locator('.entity-kind')).toHaveText('Benchmark variant');
+  await expect(page.locator('.entity-score-title .model-identity img').first()).toBeVisible();
+  const icons = page.locator('.entity-score-title .model-identity img');
+  expect(await icons.evaluateAll(images => images.every(img => (img as HTMLImageElement).complete && (img as HTMLImageElement).naturalWidth > 0))).toBe(true);
 });

@@ -44,7 +44,7 @@ describe('curated preset switching', () => {
     const preset = fixture.catalog.presets.find(item => item.name.toLowerCase().includes('all models') && (item.benchmark_ids?.length ?? 0) >= 300);
     expect(preset).toBeTruthy();
     if (!preset) return;
-    const encoded = encodeViewState({ ...structuredClone(DEFAULT_VIEW), orientation: 'models-rows' as const, presetId: preset.id, visibleColumnIds: preset.benchmark_ids ?? [] });
+    const encoded = encodeViewState({ ...structuredClone(DEFAULT_VIEW), orientation: 'models-rows' as const, presetId: preset.id, visibleColumnIds: preset.benchmark_ids ?? [], compare: true, selectedConfigurationIds: fixture.catalog.configurations.map(config => config.id) });
     expect(decodeViewState(encoded).ok).toBe(true);
   });
   it('keeps every curated frontier column in the default view, including later pages', () => {

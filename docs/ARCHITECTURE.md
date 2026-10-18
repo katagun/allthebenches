@@ -42,7 +42,7 @@ flowchart TD
   UI --> CSV[CSV download]
 ```
 
-URL state takes precedence over saved state and defaults. `v=b1.` encodes UTF-8 JSON as base64url; legacy JSON links remain readable. Encoding is not encryption. State is size-limited and allowlist-validated. Local storage is opt-in; shared links do not silently replace the saved view.
+URL state takes precedence over saved state and defaults. `#/?v=b1.` stores state in the fragment so large comparisons never reach the static host’s request-line limit. Detail routes carry the same fragment parameter; legacy query-string links remain readable. `b1.` encodes UTF-8 JSON as base64url; legacy JSON links remain readable. Encoding is not encryption. State is size-limited and allowlist-validated. Local storage is opt-in; shared links do not silently replace the saved view.
 
 `loadSnapshots` currently fetches catalog, results, details, market, and manifest together. Evidence panels are opened on demand, but their data is already loaded; this is not lazy data fetching.
 

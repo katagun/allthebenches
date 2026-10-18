@@ -1,3 +1,4 @@
+import { urlState } from './state/stateRuntime';
 import { cleanup, render, screen, waitFor, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
@@ -34,6 +35,7 @@ function viewWith(overrides: Partial<ViewState> = {}): ViewState {
 }
 function setSharedUrl(view: ViewState) {
   const url = new URL(window.location.href);
+  url.hash = '';
   url.searchParams.set('v', JSON.stringify(view));
   window.history.replaceState({}, '', url);
 }
@@ -66,7 +68,7 @@ describe('App view workflows', () => {
     const evidence = within(table).getAllByRole('button', { name: /show evidence/ })[0];
     await userEvent.setup().click(evidence);
     expect(await screen.findByRole('dialog')).toBeTruthy();
-    expect(decodeViewState(new URLSearchParams(window.location.search).get('v')!)).toMatchObject({ ok: true, value: { orientation: 'benchmarks-rows', visibleColumnIds: view.visibleColumnIds } });
+    expect(decodeViewState(urlState(window.location)!)).toMatchObject({ ok: true, value: { orientation: 'benchmarks-rows', visibleColumnIds: view.visibleColumnIds } });
   });
   it('shares a base64url link that restores the complete view', async () => {
     const view = viewWith({ search: 'café 🧠' });
@@ -76,11 +78,11 @@ describe('App view workflows', () => {
     render(<App />);
     await screen.findByRole('searchbox', { name: 'Search models' });
     await user.click(screen.getByRole('button', { name: 'Share' }));
-    const shared = new URL(clipboard.mock.calls[0][0]).searchParams.get('v')!;
+    const shared = new URLSearchParams(new URL(clipboard.mock.calls[0][0]).hash.split('?')[1]).get('v')!;
     expect(shared).toMatch(/^b1\.[A-Za-z0-9_-]+$/);
     expect(decodeViewState(shared)).toMatchObject({ ok: true, value: view });
     cleanup();
-    window.history.replaceState({}, '', '?' + new URLSearchParams({ v: shared }));
+    window.history.replaceState({}, '', '#/?' + new URLSearchParams({ v: shared }));
     render(<App />);
     expect((await screen.findByRole('searchbox', { name: 'Search models' }) as HTMLInputElement).value).toBe(view.search);
   });
@@ -130,7 +132,7 @@ describe('App view workflows', () => {
     const user = userEvent.setup();
     render(<App />);
     await screen.findByRole('searchbox', { name: 'Search models' });
-    const before = window.location.search;
+    const before = window.location.href;
     await user.click(screen.getByRole('button', { name: /Filters/ }));
     const dialog = await screen.findByRole('dialog');
     const lab = fixture.catalog.labs[0];
@@ -138,14 +140,14 @@ describe('App view workflows', () => {
     await user.click(labCheckbox);
     await user.click(within(dialog).getByRole('button', { name: 'Cancel' }));
     await waitFor(() => expect(screen.queryByRole('dialog')).toBeNull());
-    expect(window.location.search).toBe(before);
+    expect(window.location.href).toBe(before);
     expect(screen.getByRole('button', { name: /Filters/ }).textContent).not.toContain('1');
 
     await user.click(screen.getByRole('button', { name: /Filters/ }));
     const nextDialog = await screen.findByRole('dialog');
     await user.click(within(nextDialog).getByRole('checkbox', { name: lab.name }));
     await user.click(within(nextDialog).getByRole('button', { name: 'Apply filters' }));
-    await waitFor(() => expect(decodeViewState(new URLSearchParams(window.location.search).get('v')!)).toMatchObject({ ok: true, value: { filters: { labIds: [lab.id] } } }));
+    await waitFor(() => expect(decodeViewState(urlState(window.location)!)).toMatchObject({ ok: true, value: { filters: { labIds: [lab.id] } } }));
     expect(screen.getByRole('button', { name: /Filters/ }).textContent).toContain('1');
   }, 15_000);
 
@@ -155,7 +157,7 @@ describe('App view workflows', () => {
     await screen.findByRole('searchbox', { name: 'Search models' });
     await user.click(screen.getByRole('button', { name: 'All models' }));
     await waitFor(() => expect(screen.getByRole('button', { name: 'All models' }).getAttribute('aria-pressed')).toBe('true'));
-    expect(decodeViewState(new URLSearchParams(window.location.search).get('v')!)).toMatchObject({ ok: true, value: { presetId: 'all_models_oct2026' } });
+    expect(decodeViewState(urlState(window.location)!)).toMatchObject({ ok: true, value: { presetId: 'all_models_oct2026' } });
     window.history.replaceState({}, '', '/');
     window.dispatchEvent(new PopStateEvent('popstate'));
     await waitFor(() => expect(screen.getByRole('button', { name: 'Frontier' }).getAttribute('aria-pressed')).toBe('true'));
@@ -183,7 +185,7 @@ describe('App view workflows', () => {
 
     render(<App />);
     expect((await screen.findByRole('searchbox', { name: 'Search models' }) as HTMLInputElement).value).toBe('url-still-works');
-    expect(new URLSearchParams(window.location.search).get('v')).toContain('url-still-works');
+    expect(urlState(window.location)).toContain('url-still-works');
 
     setSharedUrl(viewWith({ search: 'url-back-forward-still-works' }));
     window.dispatchEvent(new PopStateEvent('popstate'));

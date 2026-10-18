@@ -1,3 +1,4 @@
+import { urlState } from './state/stateRuntime';
 import { cleanup, render, screen, waitFor } from '@testing-library/react';
 import { Profiler, StrictMode } from 'react';
 import userEvent from '@testing-library/user-event';
@@ -90,7 +91,7 @@ describe('wide table rendering', () => {
     const header = screen.getByRole('columnheader', { name: new RegExp(benchmark.name) });
     await user.click(header.querySelector('button')!);
     await waitFor(() => {
-      const encoded = new URLSearchParams(window.location.search).get('v');
+      const encoded = urlState(window.location);
       expect(encoded).toBeTruthy();
       const decoded = decodeViewState(encoded!);
       expect(decoded.ok && decoded.value.sort?.id).toBe(benchmark.id);
@@ -123,7 +124,7 @@ describe('wide table rendering', () => {
     const selectedRow = container.querySelector('tbody tr')!;
     const selectBox = selectedRow.querySelector('[role="checkbox"]') as HTMLElement;
     await user.click(selectBox);
-    const selectedId = decodeViewState(new URLSearchParams(window.location.search).get('v')!);
+    const selectedId = decodeViewState(urlState(window.location)!);
     expect(selectedId.ok && selectedId.value.selectedConfigurationIds).toHaveLength(1);
 
     await user.click(screen.getByRole('button', { name: 'Next table rows' }));
@@ -131,7 +132,7 @@ describe('wide table rendering', () => {
     const secondPageCheckbox = container.querySelector('tbody tr [role="checkbox"]') as HTMLElement;
     await user.click(secondPageCheckbox);
     expect(screen.getByRole('navigation', { name: 'Table row pages' }).querySelector('[aria-live="polite"]')?.textContent).toMatch(new RegExp(`^Showing rows 51–\\d+ of ${totalRows}$`));
-    const afterPage = decodeViewState(new URLSearchParams(window.location.search).get('v')!);
+    const afterPage = decodeViewState(urlState(window.location)!);
     expect(afterPage.ok && afterPage.value.selectedConfigurationIds).toHaveLength(2);
   }, 30_000);
 

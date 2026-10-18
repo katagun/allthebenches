@@ -1,3 +1,4 @@
+import { urlState } from './state/stateRuntime';
 import { cleanup, render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
@@ -68,7 +69,8 @@ describe('curated preset switching', () => {
     if (!frontier || !selectedConfigurationId) return;
     const priorView = { ...structuredClone(DEFAULT_VIEW), orientation: 'models-rows' as const, presetId: frontier.id, compare: true, selectedConfigurationIds: [selectedConfigurationId] };
     const url = new URL(window.location.href);
-    url.searchParams.set('v', JSON.stringify(priorView));
+    url.hash = '';
+  url.searchParams.set('v', JSON.stringify(priorView));
     window.history.replaceState({}, '', url);
     const user = userEvent.setup();
     const first = render(<App/>);
@@ -77,7 +79,7 @@ describe('curated preset switching', () => {
     await user.click(await screen.findByRole('option', { name: historicalPreset.name }));
 
     await waitFor(() => {
-      const encoded = new URLSearchParams(window.location.search).get('v');
+      const encoded = urlState(window.location);
       expect(encoded).toBeTruthy();
       const parsed = decodeViewState(encoded!);
       expect(parsed.ok).toBe(true);
@@ -99,7 +101,7 @@ describe('curated preset switching', () => {
     await user.click(screen.getByRole('button', { name: 'Clear' }));
     await user.click(screen.getByRole('button', { name: 'Preset columns' }));
     await waitFor(() => {
-      const parsed = decodeViewState(new URLSearchParams(window.location.search).get('v')!);
+      const parsed = decodeViewState(urlState(window.location)!);
       if (!parsed.ok) throw new Error(parsed.reason);
       const state = parsed.value;
       expect(state.visibleColumnIds).toEqual(historicalPreset.benchmark_ids);

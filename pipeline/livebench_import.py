@@ -17,12 +17,14 @@ ROOT = Path(__file__).resolve().parents[1]
 V1_DATE = "2026-06-25"
 V2_KEY = "2026-09-02"
 V2_DISPLAY_DATE = "2026-10-14"
+V1_FILE_KEY = V1_DATE.replace("-", "_")
+V2_FILE_KEY = V2_KEY.replace("-", "_")
 FRONTEND_URL = "https://livebench.ai/static/js/main.38b3cf3c.js"
-V1_URL = f"https://livebench.ai/v1/table_{V1_DATE}.csv"
-V2_URL = f"https://livebench.ai/table_{V2_KEY}.csv"
-V1_CATEGORIES_URL = f"https://livebench.ai/v1/categories_{V1_DATE}.json"
-V2_CATEGORIES_URL = f"https://livebench.ai/categories_{V2_KEY}.json"
-V2_BREAKDOWN_URL = f"https://livebench.ai/breakdown_{V2_KEY}.json"
+V1_URL = f"https://livebench.ai/v1/table_{V1_FILE_KEY}.csv"
+V2_URL = f"https://livebench.ai/table_{V2_FILE_KEY}.csv"
+V1_CATEGORIES_URL = f"https://livebench.ai/v1/categories_{V1_FILE_KEY}.json"
+V2_CATEGORIES_URL = f"https://livebench.ai/categories_{V2_FILE_KEY}.json"
+V2_BREAKDOWN_URL = f"https://livebench.ai/breakdown_{V2_FILE_KEY}.json"
 
 
 def sha256(path: Path) -> str:
@@ -225,7 +227,7 @@ def build(dataset: dict, v1_path: Path, v2_path: Path, categories_v1_path: Path,
                         created_configs[key] = {"id": cid, "model_id": model_id, "reasoning_label": None if effort == "unknown" else effort, "mode": mode}
                     config_id = created_configs[key]["id"]
                 duplicate = next((o for o in dataset["observations"] if o["configuration_id"] == config_id and o["benchmark_id"] == benchmark_id and str(o.get("reported_at") or "").startswith(display_date)), None)
-                if duplicate:
+                if duplicate and float(duplicate["value"]) == value:
                     coverage["decisions"].append({"source_row": external_name, "column": column, "release": release_key, "status": "duplicate_existing", "existing_observation_id": duplicate["id"], "same_value": float(duplicate["value"]) == value})
                     continue
                 oid = f"o_{benchmark_id}_{config_id}"
@@ -238,6 +240,11 @@ def build(dataset: dict, v1_path: Path, v2_path: Path, categories_v1_path: Path,
                         "effort_metadata_sha256": frontend_capture.get("frontend_sha256") if generation == "v2" or external_name in frontend else None,
                         "metric_scope": "single task" if generation == "v1" else "suite score; not an average of suite categories"},
                     "review_state": "candidate"}
+                if duplicate:
+                    obs["id"] += "_correction_" + hashlib.sha256(str(value).encode()).hexdigest()[:12]
+                    oid = obs["id"]
+                    obs["supersedes"] = [duplicate["id"]]
+                    obs["setup"]["correction_previous_value"] = duplicate["value"]
                 fragment["observations"].append(obs)
                 fragment["external_mappings"].append({"id": f"livebench_{generation}_{re.sub(r'[^a-z0-9]+','_',external_name.lower()).strip('_')}", "source_id": source_id,
                     "external_id": external_name, "internal_model_id": model_id, "status": "reviewed",

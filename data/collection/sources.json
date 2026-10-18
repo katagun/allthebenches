@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "publication_policy": "review_only",
+  "latency_policy": "source_reported_only",
+  "sources": {
+    "epoch": {"adapter": "epoch", "cadence": "daily", "scope": "Primary metrics from the official benchmark CSV archive; reviewed model mappings"},
+    "vals": {"adapter": "vals", "cadence": "daily", "scope": "Reviewed benchmark pages, table contracts and exact model/profile mappings"},
+    "aa": {"adapter": "aa", "cadence": "daily", "scope": "Public model-page serialization; reviewed metric fields; estimates excluded"},
+    "arena": {"adapter": "arena", "cadence": "daily", "scope": "Current official Hugging Face revision resolved once; latest partitions"},
+    "livebench": {"adapter": "livebench", "cadence": "daily", "scope": "Reviewed v1/v2 release contracts; frontend changes flagged for review"}
+  }
+}

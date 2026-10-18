@@ -1,0 +1,76 @@
+name: Collect benchmark review proposals
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '23 7 * * *'
+permissions:
+  contents: write
+  pull-requests: write
+  actions: write
+concurrency:
+  group: benchmark-review-collection
+  cancel-in-progress: false
+jobs:
+  collect:
+    strategy:
+      fail-fast: false
+      matrix:
+        source: [epoch, vals, aa, arena, livebench]
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install uv
+      - run: uv sync --frozen --group collectors
+      - name: Restore pending proposal evidence for stable retries
+        env:
+          SOURCE: ${{ matrix.source }}
+        run: |
+          branch="automation/benchmarks-$SOURCE"
+          if git show-ref --verify --quiet "refs/remotes/origin/$branch"; then
+            git restore --source="origin/$branch" -- "data/automation/$SOURCE"
+          fi
+      - name: Collect, validate and classify candidates
+        env:
+          SOURCE: ${{ matrix.source }}
+        run: uv run --frozen --group collectors python -m pipeline.automation --source "$SOURCE" --output "data/automation/$SOURCE"
+      - name: Verify offline replay is identical
+        env:
+          SOURCE: ${{ matrix.source }}
+        run: |
+          cp "data/automation/$SOURCE/candidate.json" /tmp/candidate.json
+          cp "data/automation/$SOURCE/report.json" /tmp/report.json
+          uv run --frozen --group collectors python -m pipeline.automation --source "$SOURCE" --output "data/automation/$SOURCE" --offline
+          cmp /tmp/candidate.json "data/automation/$SOURCE/candidate.json"
+          cmp /tmp/report.json "data/automation/$SOURCE/report.json"
+      - name: Open or update review PR
+        env:
+          GH_TOKEN: ${{ github.token }}
+          SOURCE: ${{ matrix.source }}
+        run: |
+          branch="automation/benchmarks-$SOURCE"
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add "data/automation/$SOURCE"
+          if git diff --cached --quiet; then exit 0; fi
+          # Avoid timestamp-only commits or repeatedly replacing an unchanged open proposal.
+          if git show-ref --verify --quiet "refs/remotes/origin/$branch" && git diff --quiet "origin/$branch" -- "data/automation/$SOURCE"; then exit 0; fi
+          git checkout -B "$branch"
+          git commit -m "data: stage $SOURCE benchmark review proposal"
+          git push --force-with-lease origin "$branch"
+          if [ "$(gh pr list --head "$branch" --state open --json number --jq length)" = 0 ]; then
+            gh pr create --base main --head "$branch" --title "data: review $SOURCE benchmark updates" --body-file "data/automation/$SOURCE/REVIEW.md"
+          fi
+          # GITHUB_TOKEN-created PRs do not trigger pull_request workflows.
+          gh workflow run checks.yml --ref "$branch"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: benchmark-review-${{ matrix.source }}
+          path: data/automation/${{ matrix.source }}/
+          retention-days: 90

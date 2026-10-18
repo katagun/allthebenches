@@ -152,7 +152,8 @@ def resolve_source_model(raw_name: str, model_lookup: dict[str, str]) -> tuple[s
     return base, effort, model_id, evidence
 
 
-def build(dataset: dict, files: dict[str, Path], file_manifest: list[dict]) -> tuple[dict, dict]:
+def build(dataset: dict, files: dict[str, Path], file_manifest: list[dict], *, revision: str = REVISION,
+          retrieved_at: str = RETRIEVED_AT) -> tuple[dict, dict]:
     try:
         import pyarrow.parquet as pq
     except ImportError as exc:
@@ -160,8 +161,8 @@ def build(dataset: dict, files: dict[str, Path], file_manifest: list[dict]) -> t
     model_lookup, config_lookup = indexes(dataset)
     fragment = {key: [] for key in ("sources", "configurations", "benchmarks", "series", "observations", "external_mappings")}
     created_configs: dict[tuple[str, str], dict] = {}
-    coverage = {"source": "Arena leaderboard-dataset", "revision": REVISION,
-        "repository_url": REPO_URL, "retrieved_at": RETRIEVED_AT, "license": "CC BY 4.0",
+    coverage = {"source": "Arena leaderboard-dataset", "revision": revision,
+        "repository_url": REPO_URL, "retrieved_at": retrieved_at, "license": "CC BY 4.0",
         "partitions": [], "denominators": {"source_records": 0, "scored_records": 0},
         "counts": {}, "unresolved_aliases": [], "unresolved_configurations": [], "decisions": [],
         "identity_policy": "Only exact canonical names/aliases after removing an explicit trailing effort label are mapped; unresolved labels remain queued.",
@@ -196,10 +197,10 @@ def build(dataset: dict, files: dict[str, Path], file_manifest: list[dict]) -> t
         count_field = "vote_count" if rating_kind else "observation_count"
         source_id = f"arena_hf_{partition}_20261018"
         source_entry = next(entry for entry in file_manifest if entry["path"].split("/", 1)[0] == partition)
-        fragment["sources"].append({"id": source_id, "url": f"{REPO_URL}/blob/{REVISION}/{source_entry['path']}",
+        fragment["sources"].append({"id": source_id, "url": f"{REPO_URL}/blob/{revision}/{source_entry['path']}",
             "title": f"Arena {partition.replace('_', ' ').title()} latest leaderboard partition", "publisher": "Arena (lmarena-ai)",
-            "original_evaluator": "Arena", "retrieved_at": RETRIEVED_AT,
-            "version": f"latest split at {REVISION}; row-level leaderboard dates retained",
+            "original_evaluator": "Arena", "retrieved_at": retrieved_at,
+            "version": f"latest split at {revision}; row-level leaderboard dates retained",
             "content_sha256": source_entry["sha256"], "license": "CC BY 4.0", "attribution": "Arena / lmarena-ai; CC BY 4.0",
             "method": "Deterministic import of the official Hugging Face latest Parquet partition pinned to an immutable commit.",
             "locator": f"{partition}/latest-00000-of-00001.parquet; fields {', '.join(rows[0].keys())}"})
@@ -260,7 +261,7 @@ def build(dataset: dict, files: dict[str, Path], file_manifest: list[dict]) -> t
                 if rating_kind:
                     lower = None
                 benchmark = {"id": benchmark_id, "family_id": f"arena_hf_{partition}_{norm(row.get('category') or 'overall').replace(' ', '_')}",
-                    "name": f"{name} · {row.get('category') or 'Overall'}", "version": f"Leaderboard published {date}; pinned source revision {REVISION[:7]}",
+                    "name": f"{name} · {row.get('category') or 'Overall'}", "version": f"Leaderboard published {date}; pinned source revision {revision[:7]}",
                     "category": category, "modality": "text, tools" if partition.startswith("agent") or partition == "webdev" else "text",
                     "metric_name": metric_name, "unit": unit,
                     # Agent dataset columns are signed IPS treatment effects, not raw
@@ -278,8 +279,8 @@ def build(dataset: dict, files: dict[str, Path], file_manifest: list[dict]) -> t
             series_id = benchmark_id + f"_hf_{partition}"
             if series_id not in {x["id"] for x in fragment["series"]}:
                 fragment["series"].append({"id": series_id, "benchmark_id": benchmark_id, "evaluator": "Arena",
-                    "protocol": f"Official Arena leaderboard-dataset latest partition at {REVISION}; source metric and interval retained.",
-                    "protocol_version": f"{partition}, published {date}, HF revision {REVISION[:7]}",
+                    "protocol": f"Official Arena leaderboard-dataset latest partition at {revision}; source metric and interval retained.",
+                    "protocol_version": f"{partition}, published {date}, HF revision {revision[:7]}",
                     "comparability_status": "comparable",
                     "comparability": "Comparable only within this Arena subset, category, metric, and pinned source snapshot."})
             # Existing manually captured page rows cover these same dated leaderboard runs.

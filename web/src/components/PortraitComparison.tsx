@@ -19,10 +19,9 @@ type Props = {
   error: string | null;
   renderModel: (id: string) => ReactNode;
   renderScore: (row: DisplayRow, benchmark: BenchmarkVariant) => ReactNode;
-  onMatrix: () => void;
 };
 
-export function PortraitComparison({ rows, benchmarks, selectedBenchmarkId, onBenchmarkChange, hideEmpty, busy, error, renderModel, renderScore, onMatrix }: Props) {
+export function PortraitComparison({ rows, benchmarks, selectedBenchmarkId, onBenchmarkChange, hideEmpty, busy, error, renderModel, renderScore }: Props) {
   const [pickerOpen, setPickerOpen] = useState(false);
   const [query, setQuery] = useState('');
   const [page, setPage] = useState(0);
@@ -65,15 +64,32 @@ export function PortraitComparison({ rows, benchmarks, selectedBenchmarkId, onBe
   const pageCount = Math.max(1, Math.ceil(candidates.length / PAGE_SIZE));
   const safePage = Math.min(page, pageCount - 1);
   const shownRows = candidates.slice(safePage * PAGE_SIZE, (safePage + 1) * PAGE_SIZE);
+  // One shared scale across every page; missing and ambiguous reports have no bar.
+  const values = candidates.flatMap(row => {
+    const cell = selected && row.observations.get(selected.id);
+    return cell && cell.state !== 'disputed' && cell.observation_ids.length === 1 && cell.value !== null && Number.isFinite(Number(cell.value)) ? [Number(cell.value)] : [];
+  });
+  const scaleMin = Math.min(0, ...values);
+  const scaleMax = selected?.unit === '%' ? Math.max(100, ...values) : Math.max(0, ...values);
+  const colors = ['#2563eb', '#0d9488', '#9333ea', '#d97706', '#db2777', '#0891b2'];
+  const bar = (row: DisplayRow) => {
+    const cell = selected && row.observations.get(selected.id);
+    if (!cell || cell.state === 'disputed' || cell.observation_ids.length !== 1 || cell.value === null || !Number.isFinite(Number(cell.value))) return null;
+    const value = Number(cell.value);
+    const range = scaleMax - scaleMin;
+    const zero = range ? -scaleMin / range * 100 : 0;
+    const end = range ? (value - scaleMin) / range * 100 : 0;
+    const colorIndex = [...row.model.name].reduce((hash, char) => (hash * 31 + char.charCodeAt(0)) >>> 0, 0) % colors.length;
+    return <span className="mobile-score-track" aria-hidden="true"><span className="mobile-score-bar" style={{ left: `${Math.min(zero, end)}%`, width: `${Math.abs(end - zero)}%`, backgroundColor: colors[colorIndex] }}/></span>;
+  };
   const metricLabel = (item: BenchmarkVariant) => `${item.metric_name} · ${item.unit}`;
 
-  return <section className="portrait-comparison" aria-label="Portrait benchmark comparison">
+  return <section className="portrait-comparison" aria-label="Mobile benchmark comparison">
     <div className="portrait-comparison-head">
       <Button className="portrait-benchmark-picker" variant="outline" aria-label="Choose benchmark" onClick={() => { setQuery(''); setPickerOpen(true); }} disabled={!benchmarks.length}>
         <span className="portrait-benchmark-picker-copy"><strong>{selected?.name ?? 'No benchmark available'}</strong><small>{selected ? `${versionLabel(selected.version) ? `${versionLabel(selected.version)} · ` : ''}${metricLabel(selected)}` : 'Change filters to show benchmarks'}</small></span>
         <span aria-hidden="true">⌄</span>
       </Button>
-      <Button variant="outline" size="sm" onClick={onMatrix}>Matrix view</Button>
     </div>
     {selected && <div className="portrait-benchmark-summary"><span>{selected.category}</span><span>{selected.direction === 'higher' ? 'Higher' : 'Lower'} is better</span></div>}
     <div className="portrait-results-toolbar" aria-live="polite">
@@ -85,11 +101,11 @@ export function PortraitComparison({ rows, benchmarks, selectedBenchmarkId, onBe
     <div className="portrait-model-list">
       {selected && shownRows.map(row => <article className="portrait-model-card" key={row.id}>
         <div className="portrait-model-identity">{renderModel(row.id)}</div>
-        <div className="portrait-model-score">{renderScore(row, selected)}</div>
+        <div className="portrait-model-score">{bar(row)}{renderScore(row, selected)}</div>
       </article>)}
       {selected && !shownRows.length && <p className="portrait-empty">No configurations match these filters.</p>}
     </div>
-    <p className="portrait-evidence-hint">Tap a score for its sources and evaluation setup. A dash means no reviewed score is available.</p>
+    <p className="portrait-evidence-hint">Tap a score for sources. Bars share one scale; colors identify models. A dash means no reviewed score.</p>
     <Sheet open={pickerOpen} onOpenChange={setPickerOpen}>
       <SheetContent side="bottom" className="portrait-benchmark-sheet">
         <SheetHeader><SheetTitle>Choose a benchmark</SheetTitle><SheetDescription>Search by benchmark, version, metric, unit, or category.</SheetDescription></SheetHeader>

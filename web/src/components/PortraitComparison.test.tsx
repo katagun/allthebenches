@@ -12,7 +12,7 @@ function row(id: string, value: number | null, state: 'selected' | 'agreed' | 'd
   return { id, model: { name: id }, lab: { name: 'Lab' }, observations } as unknown as DisplayRow;
 }
 function renderComparison(rows: DisplayRow[], selected = benchmark()) {
-  return render(<PortraitComparison rows={rows} benchmarks={[selected]} selectedBenchmarkId="bench" onBenchmarkChange={() => {}} hideEmpty={false} busy={false} error={null} onMatrix={() => {}}
+  return render(<PortraitComparison rows={rows} benchmarks={[selected]} selectedBenchmarkId="bench" onBenchmarkChange={() => {}} hideEmpty={false} busy={false} error={null}
     renderModel={id => <button className="model-link">{id}</button>} renderScore={item => <span>{item.id}</span>} />);
 }
 
@@ -21,7 +21,7 @@ it('ranks unambiguous scores by benchmark direction and leaves disputed, multipl
   const ids = () => [...container.querySelectorAll('.portrait-model-card .model-link')].map(item => item.textContent);
   expect(ids()).toEqual(['High', 'Low', 'Disputed', 'Missing', 'Multiple']);
 
-  rerender(<PortraitComparison rows={[row('Low', 20), row('Missing', null), row('High', 90)]} benchmarks={[benchmark('lower')]} selectedBenchmarkId="bench" onBenchmarkChange={() => {}} hideEmpty={false} busy={false} error={null} onMatrix={() => {}} renderModel={id => <button className="model-link">{id}</button>} renderScore={item => <span>{item.id}</span>} />);
+  rerender(<PortraitComparison rows={[row('Low', 20), row('Missing', null), row('High', 90)]} benchmarks={[benchmark('lower')]} selectedBenchmarkId="bench" onBenchmarkChange={() => {}} hideEmpty={false} busy={false} error={null} renderModel={id => <button className="model-link">{id}</button>} renderScore={item => <span>{item.id}</span>} />);
   expect(ids()).toEqual(['Low', 'High', 'Missing']);
 });
 
@@ -38,9 +38,23 @@ it('chooses the most covered visible benchmark by default but preserves an expli
   const sparse = { ...benchmark(), id: 'sparse', name: 'Sparse benchmark' };
   const covered = { ...benchmark(), id: 'covered', name: 'Covered benchmark' };
   const rows = [row('A', 10, 'selected', ['a'], 'sparse'), row('B', 20, 'selected', ['b'], 'covered'), row('C', 30, 'selected', ['c'], 'covered')];
-  const props = { rows, benchmarks: [sparse, covered], onBenchmarkChange: () => {}, hideEmpty: false, busy: false, error: null, onMatrix: () => {}, renderModel: (id: string) => <button className="model-link">{id}</button>, renderScore: (item: DisplayRow) => <span>{item.id}</span> };
+  const props = { rows, benchmarks: [sparse, covered], onBenchmarkChange: () => {}, hideEmpty: false, busy: false, error: null, renderModel: (id: string) => <button className="model-link">{id}</button>, renderScore: (item: DisplayRow) => <span>{item.id}</span> };
   const { rerender } = render(<PortraitComparison {...props} selectedBenchmarkId={null} />);
   expect(screen.getByRole('button', { name: 'Choose benchmark' }).textContent).toContain('Covered benchmark');
   rerender(<PortraitComparison {...props} selectedBenchmarkId="sparse" />);
   expect(screen.getByRole('button', { name: 'Choose benchmark' }).textContent).toContain('Sparse benchmark');
+});
+
+it('uses a shared percentage scale and never draws missing or disputed scores as numeric bars', () => {
+  const { container } = renderComparison([row('High', 80), row('Low', 20), row('Zero', 0), row('Missing', null), row('Disputed', 90, 'disputed')]);
+  const widths = [...container.querySelectorAll<HTMLElement>('.mobile-score-bar')].map(bar => bar.style.width);
+  expect(widths).toEqual(['80%', '20%', '0%']);
+});
+
+it('preserves the bar scale across result pages', () => {
+  const rows = Array.from({ length: 21 }, (_, index) => row(`Model ${index}`, index + 1));
+  const { container } = renderComparison(rows, { ...benchmark(), unit: 'points' });
+  expect(container.querySelector<HTMLElement>('.mobile-score-bar')?.style.width).toBe('100%');
+  fireEvent.click(screen.getByRole('button', { name: 'Next model cards' }));
+  expect(parseFloat(container.querySelector<HTMLElement>('.mobile-score-bar')!.style.width)).toBeCloseTo(100 / 21);
 });

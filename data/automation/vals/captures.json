@@ -1,0 +1,317 @@
+{
+  "https://www.vals.ai/benchmarks/aime": {
+    "bytes": 133758,
+    "content_type": "text/html; charset=utf-8",
+    "retrieved_at": "2026-10-18T16:20:52.627651+00:00",
+    "sha256": "bb6c74a3f489d2bcee525e514c6be64cd9590a4dea57a008da6efbd130f76b53",
+    "url": "https://www.vals.ai/benchmarks/aime"
+  },
+  "https://www.vals.ai/benchmarks/biomysterybench": {
+    "bytes": 177544,
+    "content_type": "text/html; charset=utf-8",
+    "retrieved_at": "2026-10-18T16:20:52.698003+00:00",
+    "sha256": "2e35b85ffc671accd38f3da544c5e7f5d424c64960034d400a3eb3bb8fbc4fb7",
+    "url": "https://www.vals.ai/benchmarks/biomysterybench"
+  },
+  "https://www.vals.ai/benchmarks/case_law_v2": {
+    "bytes": 118067,
+    "content_type": "text/html; charset=utf-8",
+    "retrieved_at": "2026-10-18T16:20:52.761602+00:00",
+    "sha256": "404101a66a9a39e386afaec96e07d89cc5daf4e0b3a30984edd041905f234b03",
+    "url": "https://www.vals.ai/benchmarks/case_law_v2"
+  },
+  "https://www.vals.ai/benchmarks/code-migration": {
+    "bytes": 839658,
+    "content_type": "text/html; charset=utf-8",
+    "retrieved_at": "2026-10-18T16:20:52.909936+00:00",
+    "sha256": "45de6e9c57d6f3439a89dce87a0d442ce142f98794ea8395ce01e90b3907af6a",
+    "url": "https://www.vals.ai/benchmarks/code-migration"
+  },
+  "https://www.vals.ai/benchmarks/corp_fin_v2": {
+    "bytes": 435987,
+    "content_type": "text/html; charset=utf-8",
+    "retrieved_at": "2026-10-18T16:20:53.047034+00:00",
+    "sha256": "447445ff5952b9dbe78cfc37b6546db5fecce823a632cd74500f1e430f0db872",
+    "url": "https://www.vals.ai/benchmarks/corp_fin_v2"
+  },
+  "https://www.vals.ai/benchmarks/cua_bench": {
+    "bytes": 397107,
+    "content_type": "text/html; charset=utf-8",
+    "retrieved_at": "2026-10-18T16:20:53.140956+00:00",
+    "sha256": "fe9ae8f50b35f1f3de503ac0bb8d665960de97940f00be176eb6cb6218e20cc1",
+    "url": "https://www.vals.ai/benchmarks/cua_bench"
+  },
+  "https://www.vals.ai/benchmarks/cyber": {
+    "bytes": 1801513,
+    "content_type": "text/html; charset=utf-8",
+    "retrieved_at": "2026-10-18T16:20:53.278340+00:00",
+    "sha256": "2e430a95f99b2059f257fcab2646b1519f6d7ee838aeb32c99eb53127ded39ef",
+    "url": "https://www.vals.ai/benchmarks/cyber"
+  },
+  "https://www.vals.ai/benchmarks/emb": {
+    "bytes": 744171,
+    "content_type": "text/html; charset=utf-8",
+    "retrieved_at": "2026-10-18T16:20:53.467470+00:00",
+    "sha256": "4b3d4f0ca5c54b22c5295e2e6d9ff026af5f9513fc3090e148d9d116a5fae9b7",
+    "url": "https://www.vals.ai/benchmarks/emb"
+  },
+  "https://www.vals.ai/benchmarks/fabv2": {
+    "bytes": 1738416,
+    "content_type": "text/html; charset=utf-8",
+    "retrieved_at": "2026-10-18T16:20:53.628838+00:00",
+    "sha256": "901778fa5b3bfa6af7c791a6bff7a7271eaae8de1f6cc060ef0818eca0f73009",
+    "url": "https://www.vals.ai/benchmarks/fabv2"
+  },
+  "https://www.vals.ai/benchmarks/gpqa": {
+    "bytes": 376393,
+    "content_type": "text/html; charset=utf-8",
+    "retrieved_at": "2026-10-18T16:20:53.819808+00:00",
+    "sha256": "c11ad234f89eb95a2cc924adb58db13043672dafa15e7b8e7b4f435328f677cc",
+    "url": "https://www.vals.ai/benchmarks/gpqa"
+  },
+  "https://www.vals.ai/benchmarks/hlab": {
+    "bytes": 983604,
+    "content_type": "text/html; charset=utf-8",
+    "retrieved_at": "2026-10-18T16:20:53.914631+00:00",
+    "sha256": "873a859ca9a7893c2be0920d112b11132989f5b253643397f09d55056f0e2960",
+    "url": "https://www.vals.ai/benchmarks/hlab"
+  },
+  "https://www.vals.ai/benchmarks/ioi": {
+    "bytes": 117817,
+    "content_type": "text/html; charset=utf-8",
+    "retrieved_at": "2026-10-18T16:20:54.093456+00:00",
+    "sha256": "dc437c592dbc4cb649b9469a11a76abc1e2a238830f5409495f330b603cc2d2a",
+    "url": "https://www.vals.ai/benchmarks/ioi"
+  },
+  "https://www.vals.ai/benchmarks/lcb": {
+    "bytes": 450091,
+    "content_type": "text/html; charset=utf-8",
+    "retrieved_at": "2026-10-18T16:20:54.154393+00:00",
+    "sha256": "a562562b9b330652f46d064d1059fc8ed2fb0b513f0763036675de6bc5e5b42c",
+    "url": "https://www.vals.ai/benchmarks/lcb"
+  },
+  "https://www.vals.ai/benchmarks/legal_bench": {
+    "bytes": 625389,
+    "content_type": "text/html; charset=utf-8",
+    "retrieved_at": "2026-10-18T16:20:54.250792+00:00",
+    "sha256": "50ac4c4c0492002d0b2119f9f7902dfc3c90673a23d245ae2d7a147f6d4af9cc",
+    "url": "https://www.vals.ai/benchmarks/legal_bench"
+  },
+  "https://www.vals.ai/benchmarks/legal_research": {
+    "bytes": 2309879,
+    "content_type": "text/html; charset=utf-8",
+    "retrieved_at": "2026-10-18T16:20:54.379758+00:00",
+    "sha256": "bbd1fa2648d0a95172c8b5fae17c965688fe00f73112aa0df10c22bb11d6830f",
+    "url": "https://www.vals.ai/benchmarks/legal_research"
+  },
+  "https://www.vals.ai/benchmarks/math500": {
+    "bytes": 127964,
+    "content_type": "text/html; charset=utf-8",
+    "retrieved_at": "2026-10-18T16:20:54.676833+00:00",
+    "sha256": "918fca989ff4a78148114cb62b1a9be843a6894a5183c0ae3b5ad27838a20dfb",
+    "url": "https://www.vals.ai/benchmarks/math500"
+  },
+  "https://www.vals.ai/benchmarks/medcode": {
+    "bytes": 1369516,
+    "content_type": "text/html; charset=utf-8",
+    "retrieved_at": "2026-10-18T16:20:54.745956+00:00",
+    "sha256": "8b5035bc0dd024991b1b3ecf594e413f8774c704ba277d15a1ac1349fcba4970",
+    "url": "https://www.vals.ai/benchmarks/medcode"
+  },
+  "https://www.vals.ai/benchmarks/medqa": {
+    "bytes": 471002,
+    "content_type": "text/html; charset=utf-8",
+    "retrieved_at": "2026-10-18T16:20:54.922817+00:00",
+    "sha256": "36fd2e3ab66110ce0e12f7f3fce141de43caf2b0035aba80a99cec4682165508",
+    "url": "https://www.vals.ai/benchmarks/medqa"
+  },
+  "https://www.vals.ai/benchmarks/medscribe": {
+    "bytes": 1075885,
+    "content_type": "text/html; charset=utf-8",
+    "retrieved_at": "2026-10-18T16:20:55.025803+00:00",
+    "sha256": "e1ed678d980b6b96e0c8df3509a887050911d67b718c8669e0b2191029bcefca",
+    "url": "https://www.vals.ai/benchmarks/medscribe"
+  },
+  "https://www.vals.ai/benchmarks/mgsm": {
+    "bytes": 125712,
+    "content_type": "text/html; charset=utf-8",
+    "retrieved_at": "2026-10-18T16:20:55.163447+00:00",
+    "sha256": "988c0c5da9f9890ee8d60883652560b472dca1fd6e18eec46dfac84a550eb7c3",
+    "url": "https://www.vals.ai/benchmarks/mgsm"
+  },
+  "https://www.vals.ai/benchmarks/mmlu_pro": {
+    "bytes": 1185381,
+    "content_type": "text/html; charset=utf-8",
+    "retrieved_at": "2026-10-18T16:20:55.235857+00:00",
+    "sha256": "151799ec28abbee4d071fbf88479f2e9967bb6a648be31e22ad446d5d573dc4f",
+    "url": "https://www.vals.ai/benchmarks/mmlu_pro"
+  },
+  "https://www.vals.ai/benchmarks/mmmu": {
+    "bytes": 133201,
+    "content_type": "text/html; charset=utf-8",
+    "retrieved_at": "2026-10-18T16:20:55.379524+00:00",
+    "sha256": "467aac4c4efe82fa44a100e7fb56c92bf135530aa606619320a8805fbab7e2ae",
+    "url": "https://www.vals.ai/benchmarks/mmmu"
+  },
+  "https://www.vals.ai/benchmarks/mortgage_tax": {
+    "bytes": 141634,
+    "content_type": "text/html; charset=utf-8",
+    "retrieved_at": "2026-10-18T16:20:55.444180+00:00",
+    "sha256": "625a49e134bf8e1f6ffb2dcdf3de7933731f1ca8118a553cd71100fea7729ff4",
+    "url": "https://www.vals.ai/benchmarks/mortgage_tax"
+  },
+  "https://www.vals.ai/benchmarks/mysterymechanism": {
+    "bytes": 121092,
+    "content_type": "text/html; charset=utf-8",
+    "retrieved_at": "2026-10-18T16:20:55.515729+00:00",
+    "sha256": "24ec66351862d287406409c62fb82997e38bc385c08afe7bc6597ae1430cb998",
+    "url": "https://www.vals.ai/benchmarks/mysterymechanism"
+  },
+  "https://www.vals.ai/benchmarks/poker_agent": {
+    "bytes": 367195,
+    "content_type": "text/html; charset=utf-8",
+    "retrieved_at": "2026-10-18T16:20:55.575734+00:00",
+    "sha256": "7e8b0865b825034b8284767c4e3082763bd2fc0863eb507994ccb89bddb384f0",
+    "url": "https://www.vals.ai/benchmarks/poker_agent"
+  },
+  "https://www.vals.ai/benchmarks/programbench": {
+    "bytes": 123077,
+    "content_type": "text/html; charset=utf-8",
+    "retrieved_at": "2026-10-18T16:20:55.651953+00:00",
+    "sha256": "1fb5bd3a4a4c272edc92a2976a772d6811a09fedae36ece2f161e05ba59d9a1b",
+    "url": "https://www.vals.ai/benchmarks/programbench"
+  },
+  "https://www.vals.ai/benchmarks/proof_bench": {
+    "bytes": 412542,
+    "content_type": "text/html; charset=utf-8",
+    "retrieved_at": "2026-10-18T16:20:55.723656+00:00",
+    "sha256": "1660aa17c354e35bde4532f0068362e4a8348161b65a5ae95dcabd0988aa3196",
+    "url": "https://www.vals.ai/benchmarks/proof_bench"
+  },
+  "https://www.vals.ai/benchmarks/public-benefits-bench": {
+    "bytes": 426063,
+    "content_type": "text/html; charset=utf-8",
+    "retrieved_at": "2026-10-18T16:20:55.851596+00:00",
+    "sha256": "51ab94f93b30607a17793386c0cb40e4084337fb12a3cd24ede26c9c57e8b172",
+    "url": "https://www.vals.ai/benchmarks/public-benefits-bench"
+  },
+  "https://www.vals.ai/benchmarks/sage": {
+    "bytes": 631075,
+    "content_type": "text/html; charset=utf-8",
+    "retrieved_at": "2026-10-18T16:20:55.959243+00:00",
+    "sha256": "dc1f875efea4867a5a3f0588511f3d6da3a7cdd28b9511b0d99d7e8cd2602484",
+    "url": "https://www.vals.ai/benchmarks/sage"
+  },
+  "https://www.vals.ai/benchmarks/skillsbench": {
+    "bytes": 454670,
+    "content_type": "text/html; charset=utf-8",
+    "retrieved_at": "2026-10-18T16:20:56.065136+00:00",
+    "sha256": "e6420142a0f7de9cae3933e095c1ac88db934c9a059fa6c6f32348008dc62dab",
+    "url": "https://www.vals.ai/benchmarks/skillsbench"
+  },
+  "https://www.vals.ai/benchmarks/srebench": {
+    "bytes": 535554,
+    "content_type": "text/html; charset=utf-8",
+    "retrieved_at": "2026-10-18T16:20:56.156693+00:00",
+    "sha256": "f9e0135f7e1c9ecf93c658b87df6ce3e622f73594437448aa2c6b7fbb10093f2",
+    "url": "https://www.vals.ai/benchmarks/srebench"
+  },
+  "https://www.vals.ai/benchmarks/swebench": {
+    "bytes": 1821999,
+    "content_type": "text/html; charset=utf-8",
+    "retrieved_at": "2026-10-18T16:20:56.344006+00:00",
+    "sha256": "510852b1b15a8c6131e0d3da0db0c515c4267125595fc1999b167162ac85db04",
+    "url": "https://www.vals.ai/benchmarks/swebench"
+  },
+  "https://www.vals.ai/benchmarks/tax_agent_bench": {
+    "bytes": 902076,
+    "content_type": "text/html; charset=utf-8",
+    "retrieved_at": "2026-10-18T16:20:56.539985+00:00",
+    "sha256": "fdc83574bf1c48239ef1ee85597526932ab1b5f42e12c95948e997178fb68891",
+    "url": "https://www.vals.ai/benchmarks/tax_agent_bench"
+  },
+  "https://www.vals.ai/benchmarks/tax_eval_v2": {
+    "bytes": 396082,
+    "content_type": "text/html; charset=utf-8",
+    "retrieved_at": "2026-10-18T16:20:56.661998+00:00",
+    "sha256": "8ff901a332a48a1dd7c4b9a179ea2fe7eb65b45cff4e5828fc14415962a0d4c5",
+    "url": "https://www.vals.ai/benchmarks/tax_eval_v2"
+  },
+  "https://www.vals.ai/benchmarks/terminal-bench-2": {
+    "bytes": 125520,
+    "content_type": "text/html; charset=utf-8",
+    "retrieved_at": "2026-10-18T16:20:56.758437+00:00",
+    "sha256": "d4b4f715efa8b6ec34ec352b089a92f091e26f0309a38eb70b8b12849ed949ed",
+    "url": "https://www.vals.ai/benchmarks/terminal-bench-2"
+  },
+  "https://www.vals.ai/benchmarks/terminal-bench-2-1": {
+    "bytes": 129389,
+    "content_type": "text/html; charset=utf-8",
+    "retrieved_at": "2026-10-18T16:20:56.818848+00:00",
+    "sha256": "c56746038893d83aec5bcbbb2403ba6f5a517db5d104fc5f8af201049b864150",
+    "url": "https://www.vals.ai/benchmarks/terminal-bench-2-1"
+  },
+  "https://www.vals.ai/benchmarks/terminal-bench-4": {
+    "bytes": 119431,
+    "content_type": "text/html; charset=utf-8",
+    "retrieved_at": "2026-10-18T16:20:56.883216+00:00",
+    "sha256": "238b8b4bd69ad83a62cd27a26a1c193b22475c77e1d27cbbf9f675eb5a1c3376",
+    "url": "https://www.vals.ai/benchmarks/terminal-bench-4"
+  },
+  "https://www.vals.ai/benchmarks/terminal-bench-science": {
+    "bytes": 112321,
+    "content_type": "text/html; charset=utf-8",
+    "retrieved_at": "2026-10-18T16:20:56.945371+00:00",
+    "sha256": "2f82fdd66eb9524b8d782768b0d4dd0911b508e5bf3dc05282c24d1ee046cad8",
+    "url": "https://www.vals.ai/benchmarks/terminal-bench-science"
+  },
+  "https://www.vals.ai/benchmarks/time_horizon_index": {
+    "bytes": 108260,
+    "content_type": "text/html; charset=utf-8",
+    "retrieved_at": "2026-10-18T16:20:57.004956+00:00",
+    "sha256": "594c9e4220d759eec49489ade19363d4c7df82a58f7b505d6a2a81535a246889",
+    "url": "https://www.vals.ai/benchmarks/time_horizon_index"
+  },
+  "https://www.vals.ai/benchmarks/vals_index": {
+    "bytes": 449403,
+    "content_type": "text/html; charset=utf-8",
+    "retrieved_at": "2026-10-18T16:20:57.065284+00:00",
+    "sha256": "b98adc205b741d12767e2c4788271c8b5b0379b7ed99cea70aa55546094a9511",
+    "url": "https://www.vals.ai/benchmarks/vals_index"
+  },
+  "https://www.vals.ai/benchmarks/vals_multimodal_index": {
+    "bytes": 245674,
+    "content_type": "text/html; charset=utf-8",
+    "retrieved_at": "2026-10-18T16:20:57.151389+00:00",
+    "sha256": "bcc037550a2666716cc29d435fa860943d73504f1c2901bb35ebc7a279e00c50",
+    "url": "https://www.vals.ai/benchmarks/vals_multimodal_index"
+  },
+  "https://www.vals.ai/benchmarks/vcb-1-100": {
+    "bytes": 720063,
+    "content_type": "text/html; charset=utf-8",
+    "retrieved_at": "2026-10-18T16:20:57.223579+00:00",
+    "sha256": "df26c971aec36e72fb21122f4570669dbfac107246db9a822feec0c3deb232fe",
+    "url": "https://www.vals.ai/benchmarks/vcb-1-100"
+  },
+  "https://www.vals.ai/benchmarks/vibe-code": {
+    "bytes": 1102220,
+    "content_type": "text/html; charset=utf-8",
+    "retrieved_at": "2026-10-18T16:20:57.346628+00:00",
+    "sha256": "a272fbd097551a8f99a8967d39aaffc71a1f2816120ca5a743e24fc32953d0d2",
+    "url": "https://www.vals.ai/benchmarks/vibe-code"
+  },
+  "https://www.vals.ai/benchmarks/voice-code-bench": {
+    "bytes": 292329,
+    "content_type": "text/html; charset=utf-8",
+    "retrieved_at": "2026-10-18T16:20:57.484892+00:00",
+    "sha256": "1c468a255094a6826a6bd56d2c34fd31edcfb3082a383a8992b467bef345aab2",
+    "url": "https://www.vals.ai/benchmarks/voice-code-bench"
+  },
+  "https://www.vals.ai/benchmarks/web_search": {
+    "bytes": 273291,
+    "content_type": "text/html; charset=utf-8",
+    "retrieved_at": "2026-10-18T16:20:57.558962+00:00",
+    "sha256": "c21423da95647e2be37c6779a182a33b9e862754cf99a17c1fdd32ba8c78816c",
+    "url": "https://www.vals.ai/benchmarks/web_search"
+  }
+}

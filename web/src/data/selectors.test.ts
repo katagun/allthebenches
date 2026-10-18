@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { benchmarkSearchForView, hasResultOnBenchmarks, numericScoreCount, orderColumnsByModelCoverage, rowsForView } from './selectors';
+import { benchmarkSearchForView, otherConfigurationScores, hasResultOnBenchmarks, numericScoreCount, orderColumnsByModelCoverage, rowsForView } from './selectors';
 import type { AppData } from './snapshots';
 import { DEFAULT_VIEW } from '../state/viewState';
 
@@ -155,5 +155,23 @@ describe('table row selectors', () => {
     const data = dataset({ c1: { b1: 90 } }, [{ id: 'route', model_id: 'model', provider: 'Provider' }]);
     data.market.usage.push({ id: 'usage', platform: 'openrouter', upstream_route_id: undefined, total: 5 } as never);
     expect(rowsForView(data, structuredClone(DEFAULT_VIEW), new Set())[0].usage.map(item => item.id)).toEqual(['usage']);
+  });
+});
+
+describe('alternate setup numeric previews', () => {
+  it('shows a sorted range including zero for the exact benchmark, without changing the selected row', () => {
+    const data = dataset({ c1: { b1: 90 }, c2: { b2: 42 }, c3: { b2: 0 }, c4: { b2: 42 } });
+    const row = rowsForView(data, structuredClone(DEFAULT_VIEW), new Set())[0];
+    expect(otherConfigurationScores(data, row, 'b2')).toEqual([0, 42]);
+    expect(row.observations.has('b2')).toBe(false);
+    expect(otherConfigurationScores(data, row, 'b1')).toEqual([]);
+  });
+  it('excludes disputed, multiple-report and incompatible-unit results', () => {
+    const data = dataset({ c1: { b1: 90 }, c2: { b2: 42 }, c3: { b2: 15 }, c4: { b2: 3 } });
+    data.results.cells[1].state = 'disputed';
+    data.results.cells[2].observation_ids.push('conflicting-report');
+    data.results.cells[3].unit = 'rating';
+    const row = rowsForView(data, structuredClone(DEFAULT_VIEW), new Set())[0];
+    expect(otherConfigurationScores(data, row, 'b2')).toEqual([]);
   });
 });

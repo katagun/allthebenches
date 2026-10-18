@@ -293,11 +293,21 @@ export function numericScoreCount(row: DisplayRow, benchmarkIds?: readonly strin
 }
 export function categoryLabels(benchmarks: AppData['catalog']['benchmarks']): string[] { return [...new Set(benchmarks.map(b => b.category))]; }
 
-/** Exact benchmark only; never substitute a different setup's number into a cell. */
+/** Exact benchmark only; alternative setups remain explicitly labeled. */
 export function otherConfigurationResults(data: AppData, row: DisplayRow, benchmarkId: string): string[] {
   const index = selectorIndexes(data);
   return list(index.configurationsByModel.get(row.model.id)).filter(configuration => {
     if (configuration.id === row.configuration.id) return false;
     return !!index.cellsByConfiguration.get(configuration.id)?.get(benchmarkId)?.observation_ids.length;
   }).map(configuration => configuration.id);
+}
+
+/** Numeric preview only; never use alternate setups for sorting or winner highlighting. */
+export function otherConfigurationScores(data: AppData, row: DisplayRow, benchmarkId: string): number[] {
+  const ids = new Set(otherConfigurationResults(data, row, benchmarkId));
+  const unit = data.catalog.benchmarks.find(benchmark => benchmark.id === benchmarkId)?.unit;
+  return [...new Set(data.results.cells.filter(cell => ids.has(cell.configuration_id)
+    && cell.benchmark_id === benchmarkId && cell.unit === unit && cell.state !== 'disputed'
+    && cell.observation_ids.length === 1 && cell.value !== null && Number.isFinite(cell.value))
+    .map(cell => cell.value!))].sort((a, b) => a - b);
 }

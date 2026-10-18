@@ -9,7 +9,7 @@ import tempfile
 import time
 from datetime import datetime, timezone
 from pathlib import Path
-from urllib.parse import urlparse
+from urllib.parse import urljoin, urlparse
 
 import httpx
 
@@ -20,6 +20,8 @@ ROOT = Path(__file__).resolve().parents[1]
 REGISTRY = json.loads((ROOT / 'data/collection/sources.json').read_text())
 SOURCES = tuple(REGISTRY['sources'])
 HOSTS = {'epoch.ai', 'www.vals.ai', 'artificialanalysis.ai', 'huggingface.co', 'livebench.ai'}
+REDIRECT_HOSTS = HOSTS | {'cdn-lfs.huggingface.co', 'cdn-lfs-us-1.huggingface.co',
+                          'cas-bridge.xethub.hf.co', 'us.aws.cdn.hf.co', 'cdn-lfs.hf.co'}
 MAX_BYTES = 64 * 1024 * 1024
 
 
@@ -83,14 +85,24 @@ class Archive:
     def _download(self, url):
         for attempt in range(3):
             try:
-                with self.client.stream('GET', url) as response:
-                    response.raise_for_status()
-                    raw = bytearray()
-                    for chunk in response.iter_bytes():
-                        raw.extend(chunk)
-                        if len(raw) > MAX_BYTES:
-                            raise ValueError(f'Source exceeds {MAX_BYTES} bytes: {url}')
-                    return bytes(raw), response.headers
+                current = url
+                for _ in range(6):
+                    parsed = urlparse(current)
+                    if (parsed.scheme != 'https' or parsed.hostname not in REDIRECT_HOSTS
+                            or parsed.username or parsed.password or parsed.port not in (None, 443)):
+                        raise ValueError('Unapproved source redirect destination')
+                    with self.client.stream('GET', current, follow_redirects=False) as response:
+                        if response.is_redirect:
+                            current = urljoin(current, response.headers['location'])
+                            continue
+                        response.raise_for_status()
+                        raw = bytearray()
+                        for chunk in response.iter_bytes():
+                            raw.extend(chunk)
+                            if len(raw) > MAX_BYTES:
+                                raise ValueError(f'Source exceeds {MAX_BYTES} bytes: {url}')
+                        return bytes(raw), response.headers
+                raise ValueError('Too many source redirects')
             except (httpx.TransportError, httpx.HTTPStatusError) as exc:
                 if isinstance(exc, httpx.HTTPStatusError) and exc.response.status_code not in (429, 500, 502, 503, 504):
                     raise

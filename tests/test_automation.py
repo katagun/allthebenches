@@ -111,3 +111,15 @@ def test_payload_limit(tmp_path, monkeypatch):
         with pytest.raises(ValueError, match='exceeds'):
             archive.fetch('https://epoch.ai/x')
         assert not archive.captures
+
+
+def test_redirect_cannot_escape_approved_hosts(tmp_path):
+    calls = []
+    def respond(request):
+        calls.append(str(request.url))
+        return httpx.Response(302, headers={'location': 'http://127.0.0.1/private'})
+    with httpx.Client(transport=httpx.MockTransport(respond), follow_redirects=True) as client:
+        archive = Archive(tmp_path / 'archive', tmp_path / 'work', client=client)
+        with pytest.raises(ValueError, match='Unapproved source redirect'):
+            archive.fetch('https://epoch.ai/x')
+        assert calls == ['https://epoch.ai/x']

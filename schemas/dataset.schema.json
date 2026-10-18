@@ -1047,6 +1047,13 @@
     "PriceObservation": {
       "additionalProperties": false,
       "properties": {
+        "additional_charges": {
+          "items": {
+            "$ref": "#/$defs/RoutePriceCharge"
+          },
+          "title": "Additional Charges",
+          "type": "array"
+        },
         "available": {
           "default": true,
           "title": "Available",
@@ -1066,6 +1073,21 @@
           ],
           "default": null,
           "title": "Cache Read Price"
+        },
+        "cache_write_1h_price": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Cache Write 1H Price"
         },
         "cache_write_price": {
           "anyOf": [
@@ -1178,6 +1200,136 @@
         "source_id"
       ],
       "title": "PriceObservation",
+      "type": "object"
+    },
+    "RoutePerformance": {
+      "additionalProperties": false,
+      "description": "One percentile from a source-reported serving performance window.",
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "metric": {
+          "enum": [
+            "latency",
+            "throughput"
+          ],
+          "title": "Metric",
+          "type": "string"
+        },
+        "observed_at": {
+          "format": "date-time",
+          "title": "Observed At",
+          "type": "string"
+        },
+        "percentile": {
+          "enum": [
+            "p50",
+            "p75",
+            "p90",
+            "p99"
+          ],
+          "title": "Percentile",
+          "type": "string"
+        },
+        "route_id": {
+          "title": "Route Id",
+          "type": "string"
+        },
+        "sample_count": {
+          "anyOf": [
+            {
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Sample Count"
+        },
+        "sample_window_seconds": {
+          "exclusiveMinimum": 0,
+          "title": "Sample Window Seconds",
+          "type": "integer"
+        },
+        "source_id": {
+          "title": "Source Id",
+          "type": "string"
+        },
+        "unit": {
+          "enum": [
+            "source_reported",
+            "tokens_per_second"
+          ],
+          "title": "Unit",
+          "type": "string"
+        },
+        "value": {
+          "minimum": 0,
+          "title": "Value",
+          "type": "number"
+        },
+        "workload": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Workload"
+        }
+      },
+      "required": [
+        "id",
+        "route_id",
+        "metric",
+        "percentile",
+        "value",
+        "unit",
+        "sample_window_seconds",
+        "observed_at",
+        "source_id"
+      ],
+      "title": "RoutePerformance",
+      "type": "object"
+    },
+    "RoutePriceCharge": {
+      "additionalProperties": false,
+      "description": "A separately billed item whose unit differs from per-token pricing.",
+      "properties": {
+        "amount": {
+          "anyOf": [
+            {
+              "minimum": 0.0,
+              "type": "number"
+            },
+            {
+              "type": "string"
+            }
+          ],
+          "title": "Amount"
+        },
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "unit": {
+          "title": "Unit",
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "amount",
+        "unit"
+      ],
+      "title": "RoutePriceCharge",
       "type": "object"
     },
     "ServingRoute": {
@@ -1636,6 +1788,13 @@
         "$ref": "#/$defs/Observation"
       },
       "title": "Observations",
+      "type": "array"
+    },
+    "performance": {
+      "items": {
+        "$ref": "#/$defs/RoutePerformance"
+      },
+      "title": "Performance",
       "type": "array"
     },
     "presets": {

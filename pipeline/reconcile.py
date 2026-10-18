@@ -49,10 +49,29 @@ def _quote(price: dict[str, Any] | None) -> dict[str, Any] | None:
     if not isinstance(price, dict): return None
     fields = {"prompt":"input", "completion":"output", "input_cache_read":"cache_read", "input_cache_write":"cache_write"}
     values = {label:price.get(key) for key,label in fields.items() if price.get(key) is not None}
-    if not values: return None
+    auxiliary = []
+    auxiliary_keys = ("image", "image_output", "request", "web_search", "audio", "audio_output",
+                      "input_audio_cache", "image_token", "input_cache_write_1h")
+    for key in auxiliary_keys:
+        if price.get(key) is not None:
+            auxiliary.append({"name":key, "raw":str(price[key]), "unit":"source_reported_unit"})
+    if not values and not auxiliary: return None
     return {"source_unit":"USD per token", "raw":values,
             "usd_per_million_tokens":{label:_per_million(value) for label,value in values.items()},
-            "conversion":"raw USD/token × 1,000,000", "overrides":price.get("overrides", [])}
+            "auxiliary_charges":auxiliary,
+            "conversion":"raw USD/token × 1,000,000; auxiliary charge units are unspecified by the endpoint API and remain source-reported",
+            "overrides":price.get("overrides", [])}
+
+
+def _endpoint_performance(endpoint: dict[str, Any]) -> dict[str, Any] | None:
+    fields = ("latency_last_30m", "throughput_last_30m", "perf_last_30m_by_workload")
+    metrics = {key:endpoint[key] for key in fields if endpoint.get(key) is not None}
+    if not metrics:
+        return None
+    return {"sample_window_seconds":1800, "reported_fields":metrics,
+            "units":{"latency_last_30m":"unit not specified in the endpoint API; source values retained",
+                     "throughput_last_30m":"tokens per second"},
+            "interpretation":"OpenRouter provider endpoint metrics use the rolling 30-minute window. Endpoint API docs do not state the latency unit or measurement semantics; values are preserved as reported. Throughput is tokens/second per OpenRouter's documentation. Workload request_count is the reported sample count when present."}
 
 
 def candidate_openrouter_ids(dataset_path: Path, staging: Path) -> list[str]:
@@ -155,7 +174,8 @@ def create_reconciliation_proposal(dataset_path: Path, staging: Path) -> dict[st
                                                      "tag":ep.get("tag"), "service_tier":ep.get("service_tier"),
                                                      "context_length":ep.get("context_length"), "max_prompt_tokens":ep.get("max_prompt_tokens"),
                                                      "max_completion_tokens":ep.get("max_completion_tokens"), "quantization":ep.get("quantization"),
-                                                     "supported_parameters":ep.get("supported_parameters"), "pricing":_quote(ep.get("pricing"))}
+                                                     "supported_parameters":ep.get("supported_parameters"), "pricing":_quote(ep.get("pricing")),
+                                                     "performance":_endpoint_performance(ep)}
                                                     for ep in endpoint_list],
                                        "endpoint_feed_status":(detail or {}).get("status"),
                                        "endpoint_feed_provenance":{"url":(detail or {}).get("url"),

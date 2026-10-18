@@ -18,7 +18,7 @@ function dataset(values: Record<string, Record<string, number | null>>, routes: 
     },
     results: { schema_version: '1', observations: [], cells },
     details: { schema_version: '1', sources: [], series: [], observations: [], external_mappings: [], metadata_claims: [] },
-    market: { schema_version: '1', routes, prices, usage: [] },
+    market: { schema_version: '1', routes, prices, performance: [], usage: [] },
     manifest: { schema_version: '1', data_version: 'test', snapshot_id: 'test-snapshot', generated_at: null, files: {}, coverage: { models: 1, benchmarked_models: 1, observations: cells.length, display_cells: cells.length, benchmarks: 2 }, feeds: [] },
   } as unknown as AppData;
 }

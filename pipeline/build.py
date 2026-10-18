@@ -61,7 +61,7 @@ def typescript_declarations() -> str:
         "export type CatalogSnapshot = { schema_version: string; data_version: string; generated_at: string | null; labs: Lab[]; models: ModelRelease[]; configurations: Configuration[]; benchmarks: BenchmarkVariant[]; presets: Preset[]; coverage_gaps: CoverageGap[]; metadata_claims: MetadataClaim[]; missing_cells: MissingCell[]; saturation: SaturationAssessment[] };",
         "export type ResultsSnapshot = { schema_version: string; observations: Observation[]; cells: DisplayCell[] };",
         "export type DetailsSnapshot = { schema_version: string; sources: Source[]; series: EvaluationSeries[]; observations: Observation[]; external_mappings: ExternalMapping[]; metadata_claims: MetadataClaim[] };",
-        "export type MarketSnapshot = { schema_version: string; routes: ServingRoute[]; prices: PriceObservation[]; usage: UsageObservation[] };",
+        "export type MarketSnapshot = { schema_version: string; routes: ServingRoute[]; prices: PriceObservation[]; performance: RoutePerformance[]; usage: UsageObservation[] };",
         "export type ManifestSnapshot = { schema_version: string; data_version: string; snapshot_id: string; generated_at: string | null; files: Record<string, { sha256: string; bytes: number }>; coverage: { models: number; benchmarked_models: number; observations: number; display_cells: number; benchmarks: number }; feeds: Array<{ source_id: string; status: string; as_of?: string | null; error?: unknown }>; };",
     ])
     return "\n\n".join(declarations) + "\n"
@@ -177,7 +177,7 @@ def build(dataset: Dataset, output: Path, feeds: list[dict[str, Any]] | None = N
                "series": dataset.series, "observations": dataset.observations,
                "external_mappings": dataset.external_mappings, "metadata_claims": dataset.metadata_claims}
     market = {"schema_version": dataset.schema_version, "routes": dataset.routes,
-              "prices": dataset.prices, "usage": dataset.usage}
+              "prices": dataset.prices, "performance": dataset.performance, "usage": dataset.usage}
     payloads = {"catalog.json": catalog, "results.json": results, "details.json": details, "market.json": market}
     encoded = {name: canonical_json(payload) for name, payload in payloads.items()}
     files = {}
@@ -196,4 +196,6 @@ def build(dataset: Dataset, output: Path, feeds: list[dict[str, Any]] | None = N
                              "benchmarks": len(dataset.benchmarks)},
                 "feeds": feeds or []}
     (output / "manifest.json").write_bytes(canonical_json(manifest))
+    from .static_pages import build_static_pages
+    build_static_pages(dataset, output.parent)
     return manifest

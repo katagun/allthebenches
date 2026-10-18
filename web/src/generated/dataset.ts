@@ -22,7 +22,11 @@ export type Observation = { id: string; configuration_id: string; benchmark_id: 
 
 export type Preset = { id: string; version: string; name: string; model_configuration_ids?: Array<string>; benchmark_ids?: Array<string>; reason?: string | null; reviewed_at?: string | null; saturation_policy_version?: string | null };
 
-export type PriceObservation = { id: string; route_id?: string | null; quote_scope?: string; currency: string; input_price?: number | string | null; output_price?: number | string | null; cache_read_price?: number | string | null; cache_write_price?: number | string | null; price_unit: string; context_tier?: string | null; observed_at: string; source_id: string; available?: boolean; restrictions?: Array<string> };
+export type PriceObservation = { id: string; route_id?: string | null; quote_scope?: string; currency: string; input_price?: number | string | null; output_price?: number | string | null; cache_read_price?: number | string | null; cache_write_price?: number | string | null; cache_write_1h_price?: number | string | null; additional_charges?: Array<RoutePriceCharge>; price_unit: string; context_tier?: string | null; observed_at: string; source_id: string; available?: boolean; restrictions?: Array<string> };
+
+export type RoutePerformance = { id: string; route_id: string; metric: "latency" | "throughput"; percentile: "p50" | "p75" | "p90" | "p99"; value: number; unit: "source_reported" | "tokens_per_second"; workload?: string | null; sample_window_seconds: number; sample_count?: number | null; observed_at: string; source_id: string };
+
+export type RoutePriceCharge = { name: string; amount: number | string; unit: string };
 
 export type ServingRoute = { id: string; model_id: string; provider: string; upstream_model_id?: string | null; routing_variant?: string | null; availability?: string; capabilities?: Array<string>; context_tokens?: number | null; quantization?: string | null; source_ids?: Array<string> };
 
@@ -30,7 +34,7 @@ export type Source = { id: string; url: string; title: string; publisher: string
 
 export type UsageObservation = { id: string; platform: string; platform_variant_id?: string | null; upstream_route_id?: string | null; is_other_bucket?: boolean; period_start: string; period_end: string; grain: string; metric: string; total?: number | null; rank?: number | null; coverage?: "complete" | "lower_bound" | "censored" | "sampled" | "unknown"; sampled?: boolean; source_as_of?: string | null; source_id: string };
 
-export type Dataset = { schema_version?: string; data_version?: string; generated_at?: string | null; sources?: Array<Source>; labs?: Array<Lab>; models?: Array<ModelRelease>; configurations?: Array<Configuration>; benchmarks?: Array<BenchmarkVariant>; series?: Array<EvaluationSeries>; observations?: Array<Observation>; routes?: Array<ServingRoute>; prices?: Array<PriceObservation>; usage?: Array<UsageObservation>; presets?: Array<Preset>; coverage_gaps?: Array<CoverageGap>; metadata_claims?: Array<MetadataClaim>; external_mappings?: Array<ExternalMapping>; missing_cells?: Array<MissingCell> };
+export type Dataset = { schema_version?: string; data_version?: string; generated_at?: string | null; sources?: Array<Source>; labs?: Array<Lab>; models?: Array<ModelRelease>; configurations?: Array<Configuration>; benchmarks?: Array<BenchmarkVariant>; series?: Array<EvaluationSeries>; observations?: Array<Observation>; routes?: Array<ServingRoute>; prices?: Array<PriceObservation>; performance?: Array<RoutePerformance>; usage?: Array<UsageObservation>; presets?: Array<Preset>; coverage_gaps?: Array<CoverageGap>; metadata_claims?: Array<MetadataClaim>; external_mappings?: Array<ExternalMapping>; missing_cells?: Array<MissingCell> };
 
 export type DisplayCell = { configuration_id: string; benchmark_id: string; series_id: string | null; state: 'selected' | 'agreed' | 'disputed'; value: number | null; unit: string | null; observation_ids: string[] };
 
@@ -42,6 +46,6 @@ export type ResultsSnapshot = { schema_version: string; observations: Observatio
 
 export type DetailsSnapshot = { schema_version: string; sources: Source[]; series: EvaluationSeries[]; observations: Observation[]; external_mappings: ExternalMapping[]; metadata_claims: MetadataClaim[] };
 
-export type MarketSnapshot = { schema_version: string; routes: ServingRoute[]; prices: PriceObservation[]; usage: UsageObservation[] };
+export type MarketSnapshot = { schema_version: string; routes: ServingRoute[]; prices: PriceObservation[]; performance: RoutePerformance[]; usage: UsageObservation[] };
 
 export type ManifestSnapshot = { schema_version: string; data_version: string; snapshot_id: string; generated_at: string | null; files: Record<string, { sha256: string; bytes: number }>; coverage: { models: number; benchmarked_models: number; observations: number; display_cells: number; benchmarks: number }; feeds: Array<{ source_id: string; status: string; as_of?: string | null; error?: unknown }>; };

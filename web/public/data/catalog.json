@@ -6787,6 +6787,150 @@
       "precision": null,
       "reasoning_budget_tokens": null,
       "reasoning_label": "high"
+    },
+    {
+      "id": "gpt56_sol_arc_xhigh",
+      "mode": "enabled",
+      "model_id": "gpt56_sol",
+      "precision": null,
+      "reasoning_budget_tokens": null,
+      "reasoning_label": "xhigh"
+    },
+    {
+      "id": "gpt56_sol_arc_high",
+      "mode": "enabled",
+      "model_id": "gpt56_sol",
+      "precision": null,
+      "reasoning_budget_tokens": null,
+      "reasoning_label": "high"
+    },
+    {
+      "id": "gpt56_sol_arc_medium",
+      "mode": "enabled",
+      "model_id": "gpt56_sol",
+      "precision": null,
+      "reasoning_budget_tokens": null,
+      "reasoning_label": "medium"
+    },
+    {
+      "id": "grok46_arc_xhigh",
+      "mode": "enabled",
+      "model_id": "grok46",
+      "precision": null,
+      "reasoning_budget_tokens": null,
+      "reasoning_label": "xhigh"
+    },
+    {
+      "id": "grok46_arc_medium",
+      "mode": "enabled",
+      "model_id": "grok46",
+      "precision": null,
+      "reasoning_budget_tokens": null,
+      "reasoning_label": "medium"
+    },
+    {
+      "id": "grok46_arc_low",
+      "mode": "enabled",
+      "model_id": "grok46",
+      "precision": null,
+      "reasoning_budget_tokens": null,
+      "reasoning_label": "low"
+    },
+    {
+      "id": "deepseek_v4_1_flash_arc_max",
+      "mode": "enabled",
+      "model_id": "deepseek_v4_1_flash",
+      "precision": null,
+      "reasoning_budget_tokens": null,
+      "reasoning_label": "max"
+    },
+    {
+      "id": "deepseek_v4_1_flash_arc_high",
+      "mode": "enabled",
+      "model_id": "deepseek_v4_1_flash",
+      "precision": null,
+      "reasoning_budget_tokens": null,
+      "reasoning_label": "high"
+    },
+    {
+      "id": "deepseek_v4_1_flash_arc_low",
+      "mode": "enabled",
+      "model_id": "deepseek_v4_1_flash",
+      "precision": null,
+      "reasoning_budget_tokens": null,
+      "reasoning_label": "low"
+    },
+    {
+      "id": "deepseek_v4_1_flash_arc_none",
+      "mode": "disabled",
+      "model_id": "deepseek_v4_1_flash",
+      "precision": null,
+      "reasoning_budget_tokens": null,
+      "reasoning_label": "none"
+    },
+    {
+      "id": "dots3_note_preview_arc_max",
+      "mode": "enabled",
+      "model_id": "dots3_note_preview",
+      "precision": null,
+      "reasoning_budget_tokens": null,
+      "reasoning_label": "max"
+    },
+    {
+      "id": "glm53_flash_arc_max",
+      "mode": "enabled",
+      "model_id": "glm53_flash",
+      "precision": null,
+      "reasoning_budget_tokens": null,
+      "reasoning_label": "max"
+    },
+    {
+      "id": "glm53_flash_arc_high",
+      "mode": "enabled",
+      "model_id": "glm53_flash",
+      "precision": null,
+      "reasoning_budget_tokens": null,
+      "reasoning_label": "high"
+    },
+    {
+      "id": "glm53_flash_arc_low",
+      "mode": "enabled",
+      "model_id": "glm53_flash",
+      "precision": null,
+      "reasoning_budget_tokens": null,
+      "reasoning_label": "low"
+    },
+    {
+      "id": "qwen38_27b_arc_xhigh",
+      "mode": "enabled",
+      "model_id": "qwen38_27b",
+      "precision": null,
+      "reasoning_budget_tokens": null,
+      "reasoning_label": "xhigh"
+    },
+    {
+      "id": "qwen38_27b_arc_medium",
+      "mode": "enabled",
+      "model_id": "qwen38_27b",
+      "precision": null,
+      "reasoning_budget_tokens": null,
+      "reasoning_label": "medium"
+    },
+    {
+      "id": "qwen38_27b_arc_low",
+      "mode": "enabled",
+      "model_id": "qwen38_27b",
+      "precision": null,
+      "reasoning_budget_tokens": null,
+      "reasoning_label": "low"
+    },
+    {
+      "id": "qwen38_27b_arc_none",
+      "mode": "disabled",
+      "model_id": "qwen38_27b",
+      "precision": null,
+      "reasoning_budget_tokens": null,
+      "reasoning_label": "none"
     }
   ],
   "coverage_gaps": [
@@ -6966,7 +7110,7 @@
     },
     {
       "id": "arc_agi_coverage",
-      "reason": "All three current ARC-AGI versions are represented. This snapshot covers nine catalog models; other models, public splits, competition systems and the retired ARC-AGI-3 Preview are not yet imported. Unlabeled ARC-AGI-3 harness results remain separate.",
+      "reason": "All three current ARC-AGI versions are represented. This snapshot covers 15 catalog models; other models, public splits, competition systems and the retired ARC-AGI-3 Preview are not yet imported. Unlabeled ARC-AGI-3 harness results remain separate.",
       "scope": "ARC-AGI benchmark series",
       "source_ids": [
         "arc_prize_gpt61_sol",
@@ -6977,7 +7121,13 @@
         "arc_prize_claude_fable51",
         "arc_prize_deepseek_v4_pro_0813",
         "arc_prize_kimi_k3",
-        "arc_prize_claude_opus5"
+        "arc_prize_claude_opus5",
+        "arc_prize_gpt56_sol",
+        "arc_prize_grok46",
+        "arc_prize_deepseek_v4_1_flash",
+        "arc_prize_dots3_note_preview",
+        "arc_prize_glm53_flash",
+        "arc_prize_qwen38_27b"
       ]
     }
   ],
@@ -7129,6 +7279,18 @@
         "kimi_k3_launch"
       ],
       "verified_at": null
+    },
+    {
+      "aliases": [
+        "Dots"
+      ],
+      "hq_country_codes": [],
+      "id": "dots_studio",
+      "name": "Dots Studio",
+      "source_ids": [
+        "arc_prize_dots3_note_preview"
+      ],
+      "verified_at": "2026-10-18"
     }
   ],
   "metadata_claims": [
@@ -8442,6 +8604,86 @@
       "upstream_ids": {},
       "version": "Qwen3.8-Max",
       "weights_state": "unknown"
+    },
+    {
+      "access_state": "unknown",
+      "aliases": [],
+      "family_id": "deepseek_v4_1_flash",
+      "first_seen_at": null,
+      "id": "deepseek_v4_1_flash",
+      "lab_ids": [
+        "deepseek"
+      ],
+      "modalities": [],
+      "name": "DeepSeek V4.1 Flash",
+      "release_date": "2026-09-10",
+      "release_date_precision": "day",
+      "source_ids": [
+        "arc_prize_deepseek_v4_1_flash"
+      ],
+      "upstream_ids": {},
+      "version": "DeepSeek V4.1 Flash",
+      "weights_state": "unknown"
+    },
+    {
+      "access_state": "unknown",
+      "aliases": [],
+      "family_id": "dots3_note_preview",
+      "first_seen_at": null,
+      "id": "dots3_note_preview",
+      "lab_ids": [
+        "dots_studio"
+      ],
+      "modalities": [],
+      "name": "Dots3-Note Preview",
+      "release_date": "2026-08-14",
+      "release_date_precision": "day",
+      "source_ids": [
+        "arc_prize_dots3_note_preview"
+      ],
+      "upstream_ids": {},
+      "version": "Dots3-Note Preview",
+      "weights_state": "unknown"
+    },
+    {
+      "access_state": "unknown",
+      "aliases": [],
+      "family_id": "glm53_flash",
+      "first_seen_at": null,
+      "id": "glm53_flash",
+      "lab_ids": [
+        "zai"
+      ],
+      "modalities": [],
+      "name": "GLM-5.3-Flash",
+      "release_date": "2026-08-26",
+      "release_date_precision": "day",
+      "source_ids": [
+        "arc_prize_glm53_flash"
+      ],
+      "upstream_ids": {},
+      "version": "GLM-5.3-Flash",
+      "weights_state": "unknown"
+    },
+    {
+      "access_state": "unknown",
+      "aliases": [],
+      "family_id": "qwen38_27b",
+      "first_seen_at": null,
+      "id": "qwen38_27b",
+      "lab_ids": [
+        "qwen"
+      ],
+      "modalities": [],
+      "name": "Qwen3.8-27B",
+      "release_date": "2026-08-14",
+      "release_date_precision": "day",
+      "source_ids": [
+        "arc_prize_qwen38_27b"
+      ],
+      "upstream_ids": {},
+      "version": "Qwen3.8-27B",
+      "weights_state": "unknown"
     }
   ],
   "presets": [
@@ -8952,7 +9194,25 @@
         "kimi_k3_arc_max",
         "kimi_k3_arc_high",
         "kimi_k3_arc_low",
-        "claude_opus5_arc_high"
+        "claude_opus5_arc_high",
+        "gpt56_sol_arc_xhigh",
+        "gpt56_sol_arc_high",
+        "gpt56_sol_arc_medium",
+        "grok46_arc_xhigh",
+        "grok46_arc_medium",
+        "grok46_arc_low",
+        "deepseek_v4_1_flash_arc_max",
+        "deepseek_v4_1_flash_arc_high",
+        "deepseek_v4_1_flash_arc_low",
+        "deepseek_v4_1_flash_arc_none",
+        "dots3_note_preview_arc_max",
+        "glm53_flash_arc_max",
+        "glm53_flash_arc_high",
+        "glm53_flash_arc_low",
+        "qwen38_27b_arc_xhigh",
+        "qwen38_27b_arc_medium",
+        "qwen38_27b_arc_low",
+        "qwen38_27b_arc_none"
       ],
       "name": "All models — October 2026",
       "reason": "Discovery and benchmarked releases, including explicitly unscored current rows and historical GPT-4. Includes all exact configurations and all curated benchmark variants, including BullshitBench V1/V2 and TRACES.",
@@ -9233,7 +9493,28 @@
         "kimi_k3_arc_high",
         "kimi_k3_arc_low",
         "claude_opus5_max",
-        "claude_opus5_arc_high"
+        "claude_opus5_arc_high",
+        "gpt56_sol_max",
+        "gpt56_sol_arc_xhigh",
+        "gpt56_sol_arc_high",
+        "gpt56_sol_arc_medium",
+        "bb_gpt56_sol_low",
+        "grok46_arc_xhigh",
+        "grok46_high",
+        "grok46_arc_medium",
+        "grok46_arc_low",
+        "deepseek_v4_1_flash_arc_max",
+        "deepseek_v4_1_flash_arc_high",
+        "deepseek_v4_1_flash_arc_low",
+        "deepseek_v4_1_flash_arc_none",
+        "dots3_note_preview_arc_max",
+        "glm53_flash_arc_max",
+        "glm53_flash_arc_high",
+        "glm53_flash_arc_low",
+        "qwen38_27b_arc_xhigh",
+        "qwen38_27b_arc_medium",
+        "qwen38_27b_arc_low",
+        "qwen38_27b_arc_none"
       ],
       "name": "ARC-AGI · Verified",
       "reason": "ARC-AGI 1, 2 and 3; semi-private results, separated by harness. Missing scores are not zero.",
@@ -24212,8 +24493,8 @@
     },
     {
       "benchmark_id": "arc_agi_1_semi_private",
-      "distinct_lab_count": 6,
-      "distinct_model_count": 9,
+      "distinct_lab_count": 8,
+      "distinct_model_count": 14,
       "eligible": true,
       "evidence": [
         {
@@ -24275,6 +24556,25 @@
         },
         {
           "configuration_ids": [
+            "deepseek_v4_1_flash_arc_high",
+            "deepseek_v4_1_flash_arc_low",
+            "deepseek_v4_1_flash_arc_max",
+            "deepseek_v4_1_flash_arc_none"
+          ],
+          "conservative_value": 7.8,
+          "lab_ids": [
+            "deepseek"
+          ],
+          "model_id": "deepseek_v4_1_flash",
+          "observation_ids": [
+            "o_arc_deepseek_v4_1_flash_high_arc_agi_1_semi_private",
+            "o_arc_deepseek_v4_1_flash_low_arc_agi_1_semi_private",
+            "o_arc_deepseek_v4_1_flash_max_arc_agi_1_semi_private",
+            "o_arc_deepseek_v4_1_flash_none_arc_agi_1_semi_private"
+          ]
+        },
+        {
+          "configuration_ids": [
             "deepseek_v4_pro_0813_arc_high",
             "deepseek_v4_pro_0813_arc_low",
             "deepseek_v4_pro_0813_arc_max",
@@ -24307,6 +24607,44 @@
             "o_arc_gemini4_argon_high_arc_agi_1_semi_private",
             "o_arc_gemini4_argon_low_arc_agi_1_semi_private",
             "o_arc_gemini4_argon_medium_arc_agi_1_semi_private"
+          ]
+        },
+        {
+          "configuration_ids": [
+            "glm53_flash_arc_high",
+            "glm53_flash_arc_low",
+            "glm53_flash_arc_max"
+          ],
+          "conservative_value": 47.0,
+          "lab_ids": [
+            "zai"
+          ],
+          "model_id": "glm53_flash",
+          "observation_ids": [
+            "o_arc_glm53_flash_high_arc_agi_1_semi_private",
+            "o_arc_glm53_flash_low_arc_agi_1_semi_private",
+            "o_arc_glm53_flash_max_arc_agi_1_semi_private"
+          ]
+        },
+        {
+          "configuration_ids": [
+            "bb_gpt56_sol_low",
+            "gpt56_sol_arc_high",
+            "gpt56_sol_arc_medium",
+            "gpt56_sol_arc_xhigh",
+            "gpt56_sol_max"
+          ],
+          "conservative_value": 74.5,
+          "lab_ids": [
+            "openai"
+          ],
+          "model_id": "gpt56_sol",
+          "observation_ids": [
+            "o_arc_gpt56_sol_high_arc_agi_1_semi_private",
+            "o_arc_gpt56_sol_low_arc_agi_1_semi_private",
+            "o_arc_gpt56_sol_max_arc_agi_1_semi_private",
+            "o_arc_gpt56_sol_medium_arc_agi_1_semi_private",
+            "o_arc_gpt56_sol_xhigh_arc_agi_1_semi_private"
           ]
         },
         {
@@ -24355,6 +24693,25 @@
         },
         {
           "configuration_ids": [
+            "grok46_arc_low",
+            "grok46_arc_medium",
+            "grok46_arc_xhigh",
+            "grok46_high"
+          ],
+          "conservative_value": 74.8,
+          "lab_ids": [
+            "xai"
+          ],
+          "model_id": "grok46",
+          "observation_ids": [
+            "o_arc_grok46_high_arc_agi_1_semi_private",
+            "o_arc_grok46_low_arc_agi_1_semi_private",
+            "o_arc_grok46_medium_arc_agi_1_semi_private",
+            "o_arc_grok46_xhigh_arc_agi_1_semi_private"
+          ]
+        },
+        {
+          "configuration_ids": [
             "grok47_arc_low",
             "grok47_arc_medium",
             "grok47_high",
@@ -24388,6 +24745,25 @@
             "o_arc_kimi_k3_low_arc_agi_1_semi_private",
             "o_arc_kimi_k3_max_arc_agi_1_semi_private"
           ]
+        },
+        {
+          "configuration_ids": [
+            "qwen38_27b_arc_low",
+            "qwen38_27b_arc_medium",
+            "qwen38_27b_arc_none",
+            "qwen38_27b_arc_xhigh"
+          ],
+          "conservative_value": 34.0,
+          "lab_ids": [
+            "qwen"
+          ],
+          "model_id": "qwen38_27b",
+          "observation_ids": [
+            "o_arc_qwen38_27b_low_arc_agi_1_semi_private",
+            "o_arc_qwen38_27b_medium_arc_agi_1_semi_private",
+            "o_arc_qwen38_27b_none_arc_agi_1_semi_private",
+            "o_arc_qwen38_27b_xhigh_arc_agi_1_semi_private"
+          ]
         }
       ],
       "high_lab_count": 1,
@@ -24408,8 +24784,8 @@
     },
     {
       "benchmark_id": "arc_agi_2_semi_private",
-      "distinct_lab_count": 6,
-      "distinct_model_count": 9,
+      "distinct_lab_count": 9,
+      "distinct_model_count": 15,
       "eligible": true,
       "evidence": [
         {
@@ -24471,6 +24847,25 @@
         },
         {
           "configuration_ids": [
+            "deepseek_v4_1_flash_arc_high",
+            "deepseek_v4_1_flash_arc_low",
+            "deepseek_v4_1_flash_arc_max",
+            "deepseek_v4_1_flash_arc_none"
+          ],
+          "conservative_value": 1.3,
+          "lab_ids": [
+            "deepseek"
+          ],
+          "model_id": "deepseek_v4_1_flash",
+          "observation_ids": [
+            "o_arc_deepseek_v4_1_flash_high_arc_agi_2_semi_private",
+            "o_arc_deepseek_v4_1_flash_low_arc_agi_2_semi_private",
+            "o_arc_deepseek_v4_1_flash_max_arc_agi_2_semi_private",
+            "o_arc_deepseek_v4_1_flash_none_arc_agi_2_semi_private"
+          ]
+        },
+        {
+          "configuration_ids": [
             "deepseek_v4_pro_0813_arc_high",
             "deepseek_v4_pro_0813_arc_low",
             "deepseek_v4_pro_0813_arc_max",
@@ -24490,6 +24885,19 @@
         },
         {
           "configuration_ids": [
+            "dots3_note_preview_arc_max"
+          ],
+          "conservative_value": 76.8,
+          "lab_ids": [
+            "dots_studio"
+          ],
+          "model_id": "dots3_note_preview",
+          "observation_ids": [
+            "o_arc_dots3_note_preview_max_arc_agi_2_semi_private"
+          ]
+        },
+        {
+          "configuration_ids": [
             "bb_gemini4_argon_high",
             "bb_gemini4_argon_low",
             "gemini4_argon_arc_medium"
@@ -24503,6 +24911,44 @@
             "o_arc_gemini4_argon_high_arc_agi_2_semi_private",
             "o_arc_gemini4_argon_low_arc_agi_2_semi_private",
             "o_arc_gemini4_argon_medium_arc_agi_2_semi_private"
+          ]
+        },
+        {
+          "configuration_ids": [
+            "glm53_flash_arc_high",
+            "glm53_flash_arc_low",
+            "glm53_flash_arc_max"
+          ],
+          "conservative_value": 27.9,
+          "lab_ids": [
+            "zai"
+          ],
+          "model_id": "glm53_flash",
+          "observation_ids": [
+            "o_arc_glm53_flash_high_arc_agi_2_semi_private",
+            "o_arc_glm53_flash_low_arc_agi_2_semi_private",
+            "o_arc_glm53_flash_max_arc_agi_2_semi_private"
+          ]
+        },
+        {
+          "configuration_ids": [
+            "bb_gpt56_sol_low",
+            "gpt56_sol_arc_high",
+            "gpt56_sol_arc_medium",
+            "gpt56_sol_arc_xhigh",
+            "gpt56_sol_max"
+          ],
+          "conservative_value": 42.5,
+          "lab_ids": [
+            "openai"
+          ],
+          "model_id": "gpt56_sol",
+          "observation_ids": [
+            "o_arc_gpt56_sol_high_arc_agi_2_semi_private",
+            "o_arc_gpt56_sol_low_arc_agi_2_semi_private",
+            "o_arc_gpt56_sol_max_arc_agi_2_semi_private",
+            "o_arc_gpt56_sol_medium_arc_agi_2_semi_private",
+            "o_arc_gpt56_sol_xhigh_arc_agi_2_semi_private"
           ]
         },
         {
@@ -24551,6 +24997,25 @@
         },
         {
           "configuration_ids": [
+            "grok46_arc_low",
+            "grok46_arc_medium",
+            "grok46_arc_xhigh",
+            "grok46_high"
+          ],
+          "conservative_value": 27.6,
+          "lab_ids": [
+            "xai"
+          ],
+          "model_id": "grok46",
+          "observation_ids": [
+            "o_arc_grok46_high_arc_agi_2_semi_private",
+            "o_arc_grok46_low_arc_agi_2_semi_private",
+            "o_arc_grok46_medium_arc_agi_2_semi_private",
+            "o_arc_grok46_xhigh_arc_agi_2_semi_private"
+          ]
+        },
+        {
+          "configuration_ids": [
             "grok47_arc_low",
             "grok47_arc_medium",
             "grok47_high",
@@ -24584,6 +25049,25 @@
             "o_arc_kimi_k3_low_arc_agi_2_semi_private",
             "o_arc_kimi_k3_max_arc_agi_2_semi_private"
           ]
+        },
+        {
+          "configuration_ids": [
+            "qwen38_27b_arc_low",
+            "qwen38_27b_arc_medium",
+            "qwen38_27b_arc_none",
+            "qwen38_27b_arc_xhigh"
+          ],
+          "conservative_value": 1.5,
+          "lab_ids": [
+            "qwen"
+          ],
+          "model_id": "qwen38_27b",
+          "observation_ids": [
+            "o_arc_qwen38_27b_low_arc_agi_2_semi_private",
+            "o_arc_qwen38_27b_medium_arc_agi_2_semi_private",
+            "o_arc_qwen38_27b_none_arc_agi_2_semi_private",
+            "o_arc_qwen38_27b_xhigh_arc_agi_2_semi_private"
+          ]
         }
       ],
       "high_lab_count": 0,
@@ -24600,10 +25084,29 @@
     },
     {
       "benchmark_id": "arc_agi_3_standard",
-      "distinct_lab_count": 3,
-      "distinct_model_count": 4,
+      "distinct_lab_count": 4,
+      "distinct_model_count": 5,
       "eligible": true,
       "evidence": [
+        {
+          "configuration_ids": [
+            "deepseek_v4_1_flash_arc_high",
+            "deepseek_v4_1_flash_arc_low",
+            "deepseek_v4_1_flash_arc_max",
+            "deepseek_v4_1_flash_arc_none"
+          ],
+          "conservative_value": 0.3,
+          "lab_ids": [
+            "deepseek"
+          ],
+          "model_id": "deepseek_v4_1_flash",
+          "observation_ids": [
+            "o_arc_deepseek_v4_1_flash_high_arc_agi_3_standard",
+            "o_arc_deepseek_v4_1_flash_low_arc_agi_3_standard",
+            "o_arc_deepseek_v4_1_flash_max_arc_agi_3_standard",
+            "o_arc_deepseek_v4_1_flash_none_arc_agi_3_standard"
+          ]
+        },
         {
           "configuration_ids": [
             "bb_gemini4_argon_low",
@@ -24697,10 +25200,29 @@
     },
     {
       "benchmark_id": "arc_agi_3_provider_adapter",
-      "distinct_lab_count": 3,
-      "distinct_model_count": 4,
+      "distinct_lab_count": 4,
+      "distinct_model_count": 5,
       "eligible": true,
       "evidence": [
+        {
+          "configuration_ids": [
+            "deepseek_v4_1_flash_arc_high",
+            "deepseek_v4_1_flash_arc_low",
+            "deepseek_v4_1_flash_arc_max",
+            "deepseek_v4_1_flash_arc_none"
+          ],
+          "conservative_value": 0.5,
+          "lab_ids": [
+            "deepseek"
+          ],
+          "model_id": "deepseek_v4_1_flash",
+          "observation_ids": [
+            "o_arc_deepseek_v4_1_flash_high_arc_agi_3_provider_adapter",
+            "o_arc_deepseek_v4_1_flash_low_arc_agi_3_provider_adapter",
+            "o_arc_deepseek_v4_1_flash_max_arc_agi_3_provider_adapter",
+            "o_arc_deepseek_v4_1_flash_none_arc_agi_3_provider_adapter"
+          ]
+        },
         {
           "configuration_ids": [
             "bb_gemini4_argon_high",
@@ -24802,8 +25324,8 @@
     },
     {
       "benchmark_id": "arc_agi_3_unspecified",
-      "distinct_lab_count": 1,
-      "distinct_model_count": 1,
+      "distinct_lab_count": 3,
+      "distinct_model_count": 3,
       "eligible": true,
       "evidence": [
         {
@@ -24817,6 +25339,40 @@
           "model_id": "claude_opus5",
           "observation_ids": [
             "o_arc_claude_opus5_high_arc_agi_3_unspecified"
+          ]
+        },
+        {
+          "configuration_ids": [
+            "bb_gpt56_sol_low",
+            "gpt56_sol_arc_high",
+            "gpt56_sol_arc_medium",
+            "gpt56_sol_arc_xhigh",
+            "gpt56_sol_max"
+          ],
+          "conservative_value": 0.3,
+          "lab_ids": [
+            "openai"
+          ],
+          "model_id": "gpt56_sol",
+          "observation_ids": [
+            "o_arc_gpt56_sol_high_arc_agi_3_unspecified",
+            "o_arc_gpt56_sol_low_arc_agi_3_unspecified",
+            "o_arc_gpt56_sol_max_arc_agi_3_unspecified",
+            "o_arc_gpt56_sol_medium_arc_agi_3_unspecified",
+            "o_arc_gpt56_sol_xhigh_arc_agi_3_unspecified"
+          ]
+        },
+        {
+          "configuration_ids": [
+            "grok46_arc_xhigh"
+          ],
+          "conservative_value": 2.1,
+          "lab_ids": [
+            "xai"
+          ],
+          "model_id": "grok46",
+          "observation_ids": [
+            "o_arc_grok46_xhigh_arc_agi_3_unspecified"
           ]
         }
       ],

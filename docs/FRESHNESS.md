@@ -1,0 +1,7 @@
+# Freshness checks
+
+Run `python -m pipeline.freshness` from the repository root. The command reads `data/curated/dataset.json`, writes a JSON report to `freshness-report.json`, and exits with status 1 when mutable data is stale or required provenance is missing. Use `--input`, `--report`, and `--as-of 2026-10-17T12:00:00Z` to select paths or make a check reproducible.
+
+Route price quotes and platform usage observations are mutable and stale when their observation time is missing or more than 48 hours before the check time. Serving performance records use a 30 minute observation window, matching their 30 minute sample window. Usage uses `source_as_of` when present and otherwise the end of its reporting period. Timestamps more than five minutes in the future are reported as issues and fail the check. A record also needs a source ID resolving to a source with a URL, title, and publisher. Prices and performance need `observed_at`; usage needs `period_end`. The JSON keeps stale/future findings in `issues` and provenance gaps in `missing_provenance`. These checks only report status and never modify curated records.
+
+The report includes ages for sources cited by benchmark observations. Their age is informational and has no expiry threshold: historical benchmark results remain evidence of what was reported at the time. The scheduled GitHub Actions run uploads the JSON report even when freshness checks fail. It does not collect data or update curated files.

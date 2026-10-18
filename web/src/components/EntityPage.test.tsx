@@ -14,7 +14,7 @@ const fixture = {
   catalog: { models: [{ id: 'model', name: 'Test model', lab_ids: ['lab'] }], labs: [{ id: 'lab', name: 'Lab' }], configurations: [{ id: 'config', model_id: 'model', reasoning_label: 'high' }], benchmarks: [{ id: 'bench', name: 'Test benchmark', version: 'v1', category: 'math', unit: '%', metric_name: 'Accuracy', direction: 'higher' }], presets: [{ id: 'all', model_configuration_ids: ['config'] }] },
   results: { cells: [{ configuration_id: 'config', benchmark_id: 'bench', state: 'disputed', value: null, observation_ids: ['report-a', 'report-b'] }] },
   details: { observations: records, sources: ['a', 'b', 'c'].map(id => ({ id, title: `Source ${id}`, publisher: 'Lab', url: `https://example.org/${id}` })), metadata_claims: [], series: [] },
-  market: { routes: [], prices: [] }, manifest: { snapshot_id: 'fixture' },
+  market: { routes: [], prices: [], performance: [] }, manifest: { snapshot_id: 'fixture' },
 } as unknown as AppData;
 
 vi.mock('../data/snapshots', () => ({ loadSnapshots: () => Promise.resolve(fixture) }));

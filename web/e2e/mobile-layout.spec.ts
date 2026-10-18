@@ -147,7 +147,7 @@ for (const width of [390, 768, 1422]) {
     expect(page.url().replace(/#$/, '')).toBe(matrixUrl.replace(/#$/, ''));
     await page.locator('.benchmark-detail-link').first().click();
     await expect(page.locator('.entity-kind')).toHaveText('Benchmark variant');
-    await page.locator('.entity-matrix-link').click();
+    await page.getByRole('link', { name: 'View this benchmark in the matrix →', exact: true }).click();
     await expect(page.locator('tbody tr')).toHaveCount(1);
     await noOverflow(page);
     const options = page.getByRole('button', { name: /^Options/ });

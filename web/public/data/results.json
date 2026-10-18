@@ -320,6 +320,39 @@
       "value": 0.66
     },
     {
+      "benchmark_id": "arc_agi_1_semi_private",
+      "configuration_id": "bb_gpt56_sol_low",
+      "observation_ids": [
+        "o_arc_gpt56_sol_low_arc_agi_1_semi_private"
+      ],
+      "series_id": "arc_agi_1_semi_private_verified",
+      "state": "selected",
+      "unit": "%",
+      "value": 74.5
+    },
+    {
+      "benchmark_id": "arc_agi_2_semi_private",
+      "configuration_id": "bb_gpt56_sol_low",
+      "observation_ids": [
+        "o_arc_gpt56_sol_low_arc_agi_2_semi_private"
+      ],
+      "series_id": "arc_agi_2_semi_private_verified",
+      "state": "selected",
+      "unit": "%",
+      "value": 42.5
+    },
+    {
+      "benchmark_id": "arc_agi_3_unspecified",
+      "configuration_id": "bb_gpt56_sol_low",
+      "observation_ids": [
+        "o_arc_gpt56_sol_low_arc_agi_3_unspecified"
+      ],
+      "series_id": "arc_agi_3_unspecified_verified",
+      "state": "selected",
+      "unit": "%",
+      "value": 0.3
+    },
+    {
       "benchmark_id": "bullshitbench_v1_accepted_rate_all_attempts",
       "configuration_id": "bb_gpt56_sol_low",
       "observation_ids": [
@@ -2983,6 +3016,182 @@
     },
     {
       "benchmark_id": "arc_agi_1_semi_private",
+      "configuration_id": "deepseek_v4_1_flash_arc_high",
+      "observation_ids": [
+        "o_arc_deepseek_v4_1_flash_high_arc_agi_1_semi_private"
+      ],
+      "series_id": "arc_agi_1_semi_private_verified",
+      "state": "selected",
+      "unit": "%",
+      "value": 88.5
+    },
+    {
+      "benchmark_id": "arc_agi_2_semi_private",
+      "configuration_id": "deepseek_v4_1_flash_arc_high",
+      "observation_ids": [
+        "o_arc_deepseek_v4_1_flash_high_arc_agi_2_semi_private"
+      ],
+      "series_id": "arc_agi_2_semi_private_verified",
+      "state": "selected",
+      "unit": "%",
+      "value": 67.5
+    },
+    {
+      "benchmark_id": "arc_agi_3_provider_adapter",
+      "configuration_id": "deepseek_v4_1_flash_arc_high",
+      "observation_ids": [
+        "o_arc_deepseek_v4_1_flash_high_arc_agi_3_provider_adapter"
+      ],
+      "series_id": "arc_agi_3_provider_adapter_verified",
+      "state": "selected",
+      "unit": "%",
+      "value": 3.2
+    },
+    {
+      "benchmark_id": "arc_agi_3_standard",
+      "configuration_id": "deepseek_v4_1_flash_arc_high",
+      "observation_ids": [
+        "o_arc_deepseek_v4_1_flash_high_arc_agi_3_standard"
+      ],
+      "series_id": "arc_agi_3_standard_verified",
+      "state": "selected",
+      "unit": "%",
+      "value": 0.5
+    },
+    {
+      "benchmark_id": "arc_agi_1_semi_private",
+      "configuration_id": "deepseek_v4_1_flash_arc_low",
+      "observation_ids": [
+        "o_arc_deepseek_v4_1_flash_low_arc_agi_1_semi_private"
+      ],
+      "series_id": "arc_agi_1_semi_private_verified",
+      "state": "selected",
+      "unit": "%",
+      "value": 90.5
+    },
+    {
+      "benchmark_id": "arc_agi_2_semi_private",
+      "configuration_id": "deepseek_v4_1_flash_arc_low",
+      "observation_ids": [
+        "o_arc_deepseek_v4_1_flash_low_arc_agi_2_semi_private"
+      ],
+      "series_id": "arc_agi_2_semi_private_verified",
+      "state": "selected",
+      "unit": "%",
+      "value": 60.6
+    },
+    {
+      "benchmark_id": "arc_agi_3_provider_adapter",
+      "configuration_id": "deepseek_v4_1_flash_arc_low",
+      "observation_ids": [
+        "o_arc_deepseek_v4_1_flash_low_arc_agi_3_provider_adapter"
+      ],
+      "series_id": "arc_agi_3_provider_adapter_verified",
+      "state": "selected",
+      "unit": "%",
+      "value": 3.3
+    },
+    {
+      "benchmark_id": "arc_agi_3_standard",
+      "configuration_id": "deepseek_v4_1_flash_arc_low",
+      "observation_ids": [
+        "o_arc_deepseek_v4_1_flash_low_arc_agi_3_standard"
+      ],
+      "series_id": "arc_agi_3_standard_verified",
+      "state": "selected",
+      "unit": "%",
+      "value": 0.3
+    },
+    {
+      "benchmark_id": "arc_agi_1_semi_private",
+      "configuration_id": "deepseek_v4_1_flash_arc_max",
+      "observation_ids": [
+        "o_arc_deepseek_v4_1_flash_max_arc_agi_1_semi_private"
+      ],
+      "series_id": "arc_agi_1_semi_private_verified",
+      "state": "selected",
+      "unit": "%",
+      "value": 94.5
+    },
+    {
+      "benchmark_id": "arc_agi_2_semi_private",
+      "configuration_id": "deepseek_v4_1_flash_arc_max",
+      "observation_ids": [
+        "o_arc_deepseek_v4_1_flash_max_arc_agi_2_semi_private"
+      ],
+      "series_id": "arc_agi_2_semi_private_verified",
+      "state": "selected",
+      "unit": "%",
+      "value": 72.9
+    },
+    {
+      "benchmark_id": "arc_agi_3_provider_adapter",
+      "configuration_id": "deepseek_v4_1_flash_arc_max",
+      "observation_ids": [
+        "o_arc_deepseek_v4_1_flash_max_arc_agi_3_provider_adapter"
+      ],
+      "series_id": "arc_agi_3_provider_adapter_verified",
+      "state": "selected",
+      "unit": "%",
+      "value": 2.7
+    },
+    {
+      "benchmark_id": "arc_agi_3_standard",
+      "configuration_id": "deepseek_v4_1_flash_arc_max",
+      "observation_ids": [
+        "o_arc_deepseek_v4_1_flash_max_arc_agi_3_standard"
+      ],
+      "series_id": "arc_agi_3_standard_verified",
+      "state": "selected",
+      "unit": "%",
+      "value": 0.9
+    },
+    {
+      "benchmark_id": "arc_agi_1_semi_private",
+      "configuration_id": "deepseek_v4_1_flash_arc_none",
+      "observation_ids": [
+        "o_arc_deepseek_v4_1_flash_none_arc_agi_1_semi_private"
+      ],
+      "series_id": "arc_agi_1_semi_private_verified",
+      "state": "selected",
+      "unit": "%",
+      "value": 7.8
+    },
+    {
+      "benchmark_id": "arc_agi_2_semi_private",
+      "configuration_id": "deepseek_v4_1_flash_arc_none",
+      "observation_ids": [
+        "o_arc_deepseek_v4_1_flash_none_arc_agi_2_semi_private"
+      ],
+      "series_id": "arc_agi_2_semi_private_verified",
+      "state": "selected",
+      "unit": "%",
+      "value": 1.3
+    },
+    {
+      "benchmark_id": "arc_agi_3_provider_adapter",
+      "configuration_id": "deepseek_v4_1_flash_arc_none",
+      "observation_ids": [
+        "o_arc_deepseek_v4_1_flash_none_arc_agi_3_provider_adapter"
+      ],
+      "series_id": "arc_agi_3_provider_adapter_verified",
+      "state": "selected",
+      "unit": "%",
+      "value": 0.5
+    },
+    {
+      "benchmark_id": "arc_agi_3_standard",
+      "configuration_id": "deepseek_v4_1_flash_arc_none",
+      "observation_ids": [
+        "o_arc_deepseek_v4_1_flash_none_arc_agi_3_standard"
+      ],
+      "series_id": "arc_agi_3_standard_verified",
+      "state": "selected",
+      "unit": "%",
+      "value": 0.3
+    },
+    {
+      "benchmark_id": "arc_agi_1_semi_private",
       "configuration_id": "deepseek_v4_pro_0813_arc_high",
       "observation_ids": [
         "o_arc_deepseek_v4_pro_0813_high_arc_agi_1_semi_private"
@@ -3123,6 +3332,17 @@
       "state": "selected",
       "unit": "%",
       "value": 74.1
+    },
+    {
+      "benchmark_id": "arc_agi_2_semi_private",
+      "configuration_id": "dots3_note_preview_arc_max",
+      "observation_ids": [
+        "o_arc_dots3_note_preview_max_arc_agi_2_semi_private"
+      ],
+      "series_id": "arc_agi_2_semi_private_verified",
+      "state": "selected",
+      "unit": "%",
+      "value": 76.8
     },
     {
       "benchmark_id": "hist_gemini10_humaneval_0_shot_post_trained_api_model",
@@ -3939,6 +4159,72 @@
       "value": 91.9
     },
     {
+      "benchmark_id": "arc_agi_1_semi_private",
+      "configuration_id": "glm53_flash_arc_high",
+      "observation_ids": [
+        "o_arc_glm53_flash_high_arc_agi_1_semi_private"
+      ],
+      "series_id": "arc_agi_1_semi_private_verified",
+      "state": "selected",
+      "unit": "%",
+      "value": 71.8
+    },
+    {
+      "benchmark_id": "arc_agi_2_semi_private",
+      "configuration_id": "glm53_flash_arc_high",
+      "observation_ids": [
+        "o_arc_glm53_flash_high_arc_agi_2_semi_private"
+      ],
+      "series_id": "arc_agi_2_semi_private_verified",
+      "state": "selected",
+      "unit": "%",
+      "value": 50.1
+    },
+    {
+      "benchmark_id": "arc_agi_1_semi_private",
+      "configuration_id": "glm53_flash_arc_low",
+      "observation_ids": [
+        "o_arc_glm53_flash_low_arc_agi_1_semi_private"
+      ],
+      "series_id": "arc_agi_1_semi_private_verified",
+      "state": "selected",
+      "unit": "%",
+      "value": 47.0
+    },
+    {
+      "benchmark_id": "arc_agi_2_semi_private",
+      "configuration_id": "glm53_flash_arc_low",
+      "observation_ids": [
+        "o_arc_glm53_flash_low_arc_agi_2_semi_private"
+      ],
+      "series_id": "arc_agi_2_semi_private_verified",
+      "state": "selected",
+      "unit": "%",
+      "value": 27.9
+    },
+    {
+      "benchmark_id": "arc_agi_1_semi_private",
+      "configuration_id": "glm53_flash_arc_max",
+      "observation_ids": [
+        "o_arc_glm53_flash_max_arc_agi_1_semi_private"
+      ],
+      "series_id": "arc_agi_1_semi_private_verified",
+      "state": "selected",
+      "unit": "%",
+      "value": 91.0
+    },
+    {
+      "benchmark_id": "arc_agi_2_semi_private",
+      "configuration_id": "glm53_flash_arc_max",
+      "observation_ids": [
+        "o_arc_glm53_flash_max_arc_agi_2_semi_private"
+      ],
+      "series_id": "arc_agi_2_semi_private_verified",
+      "state": "selected",
+      "unit": "%",
+      "value": 65.8
+    },
+    {
       "benchmark_id": "agents_last_exam_cli",
       "configuration_id": "glm53_zai_reported",
       "observation_ids": [
@@ -4025,6 +4311,138 @@
       "state": "selected",
       "unit": "%",
       "value": 86.4
+    },
+    {
+      "benchmark_id": "arc_agi_1_semi_private",
+      "configuration_id": "gpt56_sol_arc_high",
+      "observation_ids": [
+        "o_arc_gpt56_sol_high_arc_agi_1_semi_private"
+      ],
+      "series_id": "arc_agi_1_semi_private_verified",
+      "state": "selected",
+      "unit": "%",
+      "value": 97.0
+    },
+    {
+      "benchmark_id": "arc_agi_2_semi_private",
+      "configuration_id": "gpt56_sol_arc_high",
+      "observation_ids": [
+        "o_arc_gpt56_sol_high_arc_agi_2_semi_private"
+      ],
+      "series_id": "arc_agi_2_semi_private_verified",
+      "state": "selected",
+      "unit": "%",
+      "value": 85.4
+    },
+    {
+      "benchmark_id": "arc_agi_3_unspecified",
+      "configuration_id": "gpt56_sol_arc_high",
+      "observation_ids": [
+        "o_arc_gpt56_sol_high_arc_agi_3_unspecified"
+      ],
+      "series_id": "arc_agi_3_unspecified_verified",
+      "state": "selected",
+      "unit": "%",
+      "value": 2.1
+    },
+    {
+      "benchmark_id": "arc_agi_1_semi_private",
+      "configuration_id": "gpt56_sol_arc_medium",
+      "observation_ids": [
+        "o_arc_gpt56_sol_medium_arc_agi_1_semi_private"
+      ],
+      "series_id": "arc_agi_1_semi_private_verified",
+      "state": "selected",
+      "unit": "%",
+      "value": 92.5
+    },
+    {
+      "benchmark_id": "arc_agi_2_semi_private",
+      "configuration_id": "gpt56_sol_arc_medium",
+      "observation_ids": [
+        "o_arc_gpt56_sol_medium_arc_agi_2_semi_private"
+      ],
+      "series_id": "arc_agi_2_semi_private_verified",
+      "state": "selected",
+      "unit": "%",
+      "value": 67.1
+    },
+    {
+      "benchmark_id": "arc_agi_3_unspecified",
+      "configuration_id": "gpt56_sol_arc_medium",
+      "observation_ids": [
+        "o_arc_gpt56_sol_medium_arc_agi_3_unspecified"
+      ],
+      "series_id": "arc_agi_3_unspecified_verified",
+      "state": "selected",
+      "unit": "%",
+      "value": 1.1
+    },
+    {
+      "benchmark_id": "arc_agi_1_semi_private",
+      "configuration_id": "gpt56_sol_arc_xhigh",
+      "observation_ids": [
+        "o_arc_gpt56_sol_xhigh_arc_agi_1_semi_private"
+      ],
+      "series_id": "arc_agi_1_semi_private_verified",
+      "state": "selected",
+      "unit": "%",
+      "value": 97.5
+    },
+    {
+      "benchmark_id": "arc_agi_2_semi_private",
+      "configuration_id": "gpt56_sol_arc_xhigh",
+      "observation_ids": [
+        "o_arc_gpt56_sol_xhigh_arc_agi_2_semi_private"
+      ],
+      "series_id": "arc_agi_2_semi_private_verified",
+      "state": "selected",
+      "unit": "%",
+      "value": 90.0
+    },
+    {
+      "benchmark_id": "arc_agi_3_unspecified",
+      "configuration_id": "gpt56_sol_arc_xhigh",
+      "observation_ids": [
+        "o_arc_gpt56_sol_xhigh_arc_agi_3_unspecified"
+      ],
+      "series_id": "arc_agi_3_unspecified_verified",
+      "state": "selected",
+      "unit": "%",
+      "value": 7.0
+    },
+    {
+      "benchmark_id": "arc_agi_1_semi_private",
+      "configuration_id": "gpt56_sol_max",
+      "observation_ids": [
+        "o_arc_gpt56_sol_max_arc_agi_1_semi_private"
+      ],
+      "series_id": "arc_agi_1_semi_private_verified",
+      "state": "selected",
+      "unit": "%",
+      "value": 96.5
+    },
+    {
+      "benchmark_id": "arc_agi_2_semi_private",
+      "configuration_id": "gpt56_sol_max",
+      "observation_ids": [
+        "o_arc_gpt56_sol_max_arc_agi_2_semi_private"
+      ],
+      "series_id": "arc_agi_2_semi_private_verified",
+      "state": "selected",
+      "unit": "%",
+      "value": 92.5
+    },
+    {
+      "benchmark_id": "arc_agi_3_unspecified",
+      "configuration_id": "gpt56_sol_max",
+      "observation_ids": [
+        "o_arc_gpt56_sol_max_arc_agi_3_unspecified"
+      ],
+      "series_id": "arc_agi_3_unspecified_verified",
+      "state": "selected",
+      "unit": "%",
+      "value": 7.8
     },
     {
       "benchmark_id": "bullshitbench_v1_accepted_rate_all_attempts",
@@ -5862,6 +6280,105 @@
       "state": "selected",
       "unit": "fraction",
       "value": 0.69
+    },
+    {
+      "benchmark_id": "arc_agi_1_semi_private",
+      "configuration_id": "grok46_arc_low",
+      "observation_ids": [
+        "o_arc_grok46_low_arc_agi_1_semi_private"
+      ],
+      "series_id": "arc_agi_1_semi_private_verified",
+      "state": "selected",
+      "unit": "%",
+      "value": 74.8
+    },
+    {
+      "benchmark_id": "arc_agi_2_semi_private",
+      "configuration_id": "grok46_arc_low",
+      "observation_ids": [
+        "o_arc_grok46_low_arc_agi_2_semi_private"
+      ],
+      "series_id": "arc_agi_2_semi_private_verified",
+      "state": "selected",
+      "unit": "%",
+      "value": 27.6
+    },
+    {
+      "benchmark_id": "arc_agi_1_semi_private",
+      "configuration_id": "grok46_arc_medium",
+      "observation_ids": [
+        "o_arc_grok46_medium_arc_agi_1_semi_private"
+      ],
+      "series_id": "arc_agi_1_semi_private_verified",
+      "state": "selected",
+      "unit": "%",
+      "value": 87.5
+    },
+    {
+      "benchmark_id": "arc_agi_2_semi_private",
+      "configuration_id": "grok46_arc_medium",
+      "observation_ids": [
+        "o_arc_grok46_medium_arc_agi_2_semi_private"
+      ],
+      "series_id": "arc_agi_2_semi_private_verified",
+      "state": "selected",
+      "unit": "%",
+      "value": 61.3
+    },
+    {
+      "benchmark_id": "arc_agi_1_semi_private",
+      "configuration_id": "grok46_arc_xhigh",
+      "observation_ids": [
+        "o_arc_grok46_xhigh_arc_agi_1_semi_private"
+      ],
+      "series_id": "arc_agi_1_semi_private_verified",
+      "state": "selected",
+      "unit": "%",
+      "value": 87.0
+    },
+    {
+      "benchmark_id": "arc_agi_2_semi_private",
+      "configuration_id": "grok46_arc_xhigh",
+      "observation_ids": [
+        "o_arc_grok46_xhigh_arc_agi_2_semi_private"
+      ],
+      "series_id": "arc_agi_2_semi_private_verified",
+      "state": "selected",
+      "unit": "%",
+      "value": 67.1
+    },
+    {
+      "benchmark_id": "arc_agi_3_unspecified",
+      "configuration_id": "grok46_arc_xhigh",
+      "observation_ids": [
+        "o_arc_grok46_xhigh_arc_agi_3_unspecified"
+      ],
+      "series_id": "arc_agi_3_unspecified_verified",
+      "state": "selected",
+      "unit": "%",
+      "value": 2.1
+    },
+    {
+      "benchmark_id": "arc_agi_1_semi_private",
+      "configuration_id": "grok46_high",
+      "observation_ids": [
+        "o_arc_grok46_high_arc_agi_1_semi_private"
+      ],
+      "series_id": "arc_agi_1_semi_private_verified",
+      "state": "selected",
+      "unit": "%",
+      "value": 87.0
+    },
+    {
+      "benchmark_id": "arc_agi_2_semi_private",
+      "configuration_id": "grok46_high",
+      "observation_ids": [
+        "o_arc_grok46_high_arc_agi_2_semi_private"
+      ],
+      "series_id": "arc_agi_2_semi_private_verified",
+      "state": "selected",
+      "unit": "%",
+      "value": 65.1
     },
     {
       "benchmark_id": "cursorbench_4",
@@ -8084,6 +8601,94 @@
       "state": "selected",
       "unit": "%",
       "value": 75.1
+    },
+    {
+      "benchmark_id": "arc_agi_1_semi_private",
+      "configuration_id": "qwen38_27b_arc_low",
+      "observation_ids": [
+        "o_arc_qwen38_27b_low_arc_agi_1_semi_private"
+      ],
+      "series_id": "arc_agi_1_semi_private_verified",
+      "state": "selected",
+      "unit": "%",
+      "value": 69.2
+    },
+    {
+      "benchmark_id": "arc_agi_2_semi_private",
+      "configuration_id": "qwen38_27b_arc_low",
+      "observation_ids": [
+        "o_arc_qwen38_27b_low_arc_agi_2_semi_private"
+      ],
+      "series_id": "arc_agi_2_semi_private_verified",
+      "state": "selected",
+      "unit": "%",
+      "value": 22.8
+    },
+    {
+      "benchmark_id": "arc_agi_1_semi_private",
+      "configuration_id": "qwen38_27b_arc_medium",
+      "observation_ids": [
+        "o_arc_qwen38_27b_medium_arc_agi_1_semi_private"
+      ],
+      "series_id": "arc_agi_1_semi_private_verified",
+      "state": "selected",
+      "unit": "%",
+      "value": 68.7
+    },
+    {
+      "benchmark_id": "arc_agi_2_semi_private",
+      "configuration_id": "qwen38_27b_arc_medium",
+      "observation_ids": [
+        "o_arc_qwen38_27b_medium_arc_agi_2_semi_private"
+      ],
+      "series_id": "arc_agi_2_semi_private_verified",
+      "state": "selected",
+      "unit": "%",
+      "value": 13.2
+    },
+    {
+      "benchmark_id": "arc_agi_1_semi_private",
+      "configuration_id": "qwen38_27b_arc_none",
+      "observation_ids": [
+        "o_arc_qwen38_27b_none_arc_agi_1_semi_private"
+      ],
+      "series_id": "arc_agi_1_semi_private_verified",
+      "state": "selected",
+      "unit": "%",
+      "value": 34.0
+    },
+    {
+      "benchmark_id": "arc_agi_2_semi_private",
+      "configuration_id": "qwen38_27b_arc_none",
+      "observation_ids": [
+        "o_arc_qwen38_27b_none_arc_agi_2_semi_private"
+      ],
+      "series_id": "arc_agi_2_semi_private_verified",
+      "state": "selected",
+      "unit": "%",
+      "value": 1.5
+    },
+    {
+      "benchmark_id": "arc_agi_1_semi_private",
+      "configuration_id": "qwen38_27b_arc_xhigh",
+      "observation_ids": [
+        "o_arc_qwen38_27b_xhigh_arc_agi_1_semi_private"
+      ],
+      "series_id": "arc_agi_1_semi_private_verified",
+      "state": "selected",
+      "unit": "%",
+      "value": 87.5
+    },
+    {
+      "benchmark_id": "arc_agi_2_semi_private",
+      "configuration_id": "qwen38_27b_arc_xhigh",
+      "observation_ids": [
+        "o_arc_qwen38_27b_xhigh_arc_agi_2_semi_private"
+      ],
+      "series_id": "arc_agi_2_semi_private_verified",
+      "state": "selected",
+      "unit": "%",
+      "value": 42.4
     },
     {
       "benchmark_id": "agents_last_exam_cli",
@@ -28139,6 +28744,1326 @@
       "uncertainty": null,
       "unit": "%",
       "value": 30.2
+    },
+    {
+      "benchmark_id": "arc_agi_1_semi_private",
+      "configuration_id": "gpt56_sol_max",
+      "evaluated_at": null,
+      "evaluator": "ARC Prize Foundation",
+      "id": "o_arc_gpt56_sol_max_arc_agi_1_semi_private",
+      "locator": "Verified scores: Max row, ARC-AGI-1 column",
+      "reported_at": null,
+      "reporting_relationship": "evaluator_measurement",
+      "review_state": "reviewed",
+      "series_id": "arc_agi_1_semi_private_verified",
+      "setup": {
+        "harness": "static puzzle evaluation",
+        "policy_url": "https://arcprize.org/policy",
+        "reasoning_effort": "max",
+        "score_precision": "As displayed by the source; no extra precision inferred.",
+        "split": "semi-private"
+      },
+      "source_id": "arc_prize_gpt56_sol",
+      "supersedes": [],
+      "uncertainty": null,
+      "unit": "%",
+      "value": 96.5
+    },
+    {
+      "benchmark_id": "arc_agi_2_semi_private",
+      "configuration_id": "gpt56_sol_max",
+      "evaluated_at": null,
+      "evaluator": "ARC Prize Foundation",
+      "id": "o_arc_gpt56_sol_max_arc_agi_2_semi_private",
+      "locator": "Verified scores: Max row, ARC-AGI-2 column",
+      "reported_at": null,
+      "reporting_relationship": "evaluator_measurement",
+      "review_state": "reviewed",
+      "series_id": "arc_agi_2_semi_private_verified",
+      "setup": {
+        "harness": "static puzzle evaluation",
+        "policy_url": "https://arcprize.org/policy",
+        "reasoning_effort": "max",
+        "score_precision": "As displayed by the source; no extra precision inferred.",
+        "split": "semi-private"
+      },
+      "source_id": "arc_prize_gpt56_sol",
+      "supersedes": [],
+      "uncertainty": null,
+      "unit": "%",
+      "value": 92.5
+    },
+    {
+      "benchmark_id": "arc_agi_3_unspecified",
+      "configuration_id": "gpt56_sol_max",
+      "evaluated_at": null,
+      "evaluator": "ARC Prize Foundation",
+      "id": "o_arc_gpt56_sol_max_arc_agi_3_unspecified",
+      "locator": "Verified scores: Max row, ARC-AGI-3 column",
+      "reported_at": null,
+      "reporting_relationship": "evaluator_measurement",
+      "review_state": "reviewed",
+      "series_id": "arc_agi_3_unspecified_verified",
+      "setup": {
+        "harness": "Not specified in result table",
+        "policy_url": "https://arcprize.org/policy",
+        "reasoning_effort": "max",
+        "score_precision": "As displayed by the source; no extra precision inferred.",
+        "split": "semi-private"
+      },
+      "source_id": "arc_prize_gpt56_sol",
+      "supersedes": [],
+      "uncertainty": null,
+      "unit": "%",
+      "value": 7.8
+    },
+    {
+      "benchmark_id": "arc_agi_1_semi_private",
+      "configuration_id": "gpt56_sol_arc_xhigh",
+      "evaluated_at": null,
+      "evaluator": "ARC Prize Foundation",
+      "id": "o_arc_gpt56_sol_xhigh_arc_agi_1_semi_private",
+      "locator": "Verified scores: XHigh row, ARC-AGI-1 column",
+      "reported_at": null,
+      "reporting_relationship": "evaluator_measurement",
+      "review_state": "reviewed",
+      "series_id": "arc_agi_1_semi_private_verified",
+      "setup": {
+        "harness": "static puzzle evaluation",
+        "policy_url": "https://arcprize.org/policy",
+        "reasoning_effort": "xhigh",
+        "score_precision": "As displayed by the source; no extra precision inferred.",
+        "split": "semi-private"
+      },
+      "source_id": "arc_prize_gpt56_sol",
+      "supersedes": [],
+      "uncertainty": null,
+      "unit": "%",
+      "value": 97.5
+    },
+    {
+      "benchmark_id": "arc_agi_2_semi_private",
+      "configuration_id": "gpt56_sol_arc_xhigh",
+      "evaluated_at": null,
+      "evaluator": "ARC Prize Foundation",
+      "id": "o_arc_gpt56_sol_xhigh_arc_agi_2_semi_private",
+      "locator": "Verified scores: XHigh row, ARC-AGI-2 column",
+      "reported_at": null,
+      "reporting_relationship": "evaluator_measurement",
+      "review_state": "reviewed",
+      "series_id": "arc_agi_2_semi_private_verified",
+      "setup": {
+        "harness": "static puzzle evaluation",
+        "policy_url": "https://arcprize.org/policy",
+        "reasoning_effort": "xhigh",
+        "score_precision": "As displayed by the source; no extra precision inferred.",
+        "split": "semi-private"
+      },
+      "source_id": "arc_prize_gpt56_sol",
+      "supersedes": [],
+      "uncertainty": null,
+      "unit": "%",
+      "value": 90.0
+    },
+    {
+      "benchmark_id": "arc_agi_3_unspecified",
+      "configuration_id": "gpt56_sol_arc_xhigh",
+      "evaluated_at": null,
+      "evaluator": "ARC Prize Foundation",
+      "id": "o_arc_gpt56_sol_xhigh_arc_agi_3_unspecified",
+      "locator": "Verified scores: XHigh row, ARC-AGI-3 column",
+      "reported_at": null,
+      "reporting_relationship": "evaluator_measurement",
+      "review_state": "reviewed",
+      "series_id": "arc_agi_3_unspecified_verified",
+      "setup": {
+        "harness": "Not specified in result table",
+        "policy_url": "https://arcprize.org/policy",
+        "reasoning_effort": "xhigh",
+        "score_precision": "As displayed by the source; no extra precision inferred.",
+        "split": "semi-private"
+      },
+      "source_id": "arc_prize_gpt56_sol",
+      "supersedes": [],
+      "uncertainty": null,
+      "unit": "%",
+      "value": 7.0
+    },
+    {
+      "benchmark_id": "arc_agi_1_semi_private",
+      "configuration_id": "gpt56_sol_arc_high",
+      "evaluated_at": null,
+      "evaluator": "ARC Prize Foundation",
+      "id": "o_arc_gpt56_sol_high_arc_agi_1_semi_private",
+      "locator": "Verified scores: High row, ARC-AGI-1 column",
+      "reported_at": null,
+      "reporting_relationship": "evaluator_measurement",
+      "review_state": "reviewed",
+      "series_id": "arc_agi_1_semi_private_verified",
+      "setup": {
+        "harness": "static puzzle evaluation",
+        "policy_url": "https://arcprize.org/policy",
+        "reasoning_effort": "high",
+        "score_precision": "As displayed by the source; no extra precision inferred.",
+        "split": "semi-private"
+      },
+      "source_id": "arc_prize_gpt56_sol",
+      "supersedes": [],
+      "uncertainty": null,
+      "unit": "%",
+      "value": 97.0
+    },
+    {
+      "benchmark_id": "arc_agi_2_semi_private",
+      "configuration_id": "gpt56_sol_arc_high",
+      "evaluated_at": null,
+      "evaluator": "ARC Prize Foundation",
+      "id": "o_arc_gpt56_sol_high_arc_agi_2_semi_private",
+      "locator": "Verified scores: High row, ARC-AGI-2 column",
+      "reported_at": null,
+      "reporting_relationship": "evaluator_measurement",
+      "review_state": "reviewed",
+      "series_id": "arc_agi_2_semi_private_verified",
+      "setup": {
+        "harness": "static puzzle evaluation",
+        "policy_url": "https://arcprize.org/policy",
+        "reasoning_effort": "high",
+        "score_precision": "As displayed by the source; no extra precision inferred.",
+        "split": "semi-private"
+      },
+      "source_id": "arc_prize_gpt56_sol",
+      "supersedes": [],
+      "uncertainty": null,
+      "unit": "%",
+      "value": 85.4
+    },
+    {
+      "benchmark_id": "arc_agi_3_unspecified",
+      "configuration_id": "gpt56_sol_arc_high",
+      "evaluated_at": null,
+      "evaluator": "ARC Prize Foundation",
+      "id": "o_arc_gpt56_sol_high_arc_agi_3_unspecified",
+      "locator": "Verified scores: High row, ARC-AGI-3 column",
+      "reported_at": null,
+      "reporting_relationship": "evaluator_measurement",
+      "review_state": "reviewed",
+      "series_id": "arc_agi_3_unspecified_verified",
+      "setup": {
+        "harness": "Not specified in result table",
+        "policy_url": "https://arcprize.org/policy",
+        "reasoning_effort": "high",
+        "score_precision": "As displayed by the source; no extra precision inferred.",
+        "split": "semi-private"
+      },
+      "source_id": "arc_prize_gpt56_sol",
+      "supersedes": [],
+      "uncertainty": null,
+      "unit": "%",
+      "value": 2.1
+    },
+    {
+      "benchmark_id": "arc_agi_1_semi_private",
+      "configuration_id": "gpt56_sol_arc_medium",
+      "evaluated_at": null,
+      "evaluator": "ARC Prize Foundation",
+      "id": "o_arc_gpt56_sol_medium_arc_agi_1_semi_private",
+      "locator": "Verified scores: Medium row, ARC-AGI-1 column",
+      "reported_at": null,
+      "reporting_relationship": "evaluator_measurement",
+      "review_state": "reviewed",
+      "series_id": "arc_agi_1_semi_private_verified",
+      "setup": {
+        "harness": "static puzzle evaluation",
+        "policy_url": "https://arcprize.org/policy",
+        "reasoning_effort": "medium",
+        "score_precision": "As displayed by the source; no extra precision inferred.",
+        "split": "semi-private"
+      },
+      "source_id": "arc_prize_gpt56_sol",
+      "supersedes": [],
+      "uncertainty": null,
+      "unit": "%",
+      "value": 92.5
+    },
+    {
+      "benchmark_id": "arc_agi_2_semi_private",
+      "configuration_id": "gpt56_sol_arc_medium",
+      "evaluated_at": null,
+      "evaluator": "ARC Prize Foundation",
+      "id": "o_arc_gpt56_sol_medium_arc_agi_2_semi_private",
+      "locator": "Verified scores: Medium row, ARC-AGI-2 column",
+      "reported_at": null,
+      "reporting_relationship": "evaluator_measurement",
+      "review_state": "reviewed",
+      "series_id": "arc_agi_2_semi_private_verified",
+      "setup": {
+        "harness": "static puzzle evaluation",
+        "policy_url": "https://arcprize.org/policy",
+        "reasoning_effort": "medium",
+        "score_precision": "As displayed by the source; no extra precision inferred.",
+        "split": "semi-private"
+      },
+      "source_id": "arc_prize_gpt56_sol",
+      "supersedes": [],
+      "uncertainty": null,
+      "unit": "%",
+      "value": 67.1
+    },
+    {
+      "benchmark_id": "arc_agi_3_unspecified",
+      "configuration_id": "gpt56_sol_arc_medium",
+      "evaluated_at": null,
+      "evaluator": "ARC Prize Foundation",
+      "id": "o_arc_gpt56_sol_medium_arc_agi_3_unspecified",
+      "locator": "Verified scores: Medium row, ARC-AGI-3 column",
+      "reported_at": null,
+      "reporting_relationship": "evaluator_measurement",
+      "review_state": "reviewed",
+      "series_id": "arc_agi_3_unspecified_verified",
+      "setup": {
+        "harness": "Not specified in result table",
+        "policy_url": "https://arcprize.org/policy",
+        "reasoning_effort": "medium",
+        "score_precision": "As displayed by the source; no extra precision inferred.",
+        "split": "semi-private"
+      },
+      "source_id": "arc_prize_gpt56_sol",
+      "supersedes": [],
+      "uncertainty": null,
+      "unit": "%",
+      "value": 1.1
+    },
+    {
+      "benchmark_id": "arc_agi_1_semi_private",
+      "configuration_id": "bb_gpt56_sol_low",
+      "evaluated_at": null,
+      "evaluator": "ARC Prize Foundation",
+      "id": "o_arc_gpt56_sol_low_arc_agi_1_semi_private",
+      "locator": "Verified scores: Low row, ARC-AGI-1 column",
+      "reported_at": null,
+      "reporting_relationship": "evaluator_measurement",
+      "review_state": "reviewed",
+      "series_id": "arc_agi_1_semi_private_verified",
+      "setup": {
+        "harness": "static puzzle evaluation",
+        "policy_url": "https://arcprize.org/policy",
+        "reasoning_effort": "low",
+        "score_precision": "As displayed by the source; no extra precision inferred.",
+        "split": "semi-private"
+      },
+      "source_id": "arc_prize_gpt56_sol",
+      "supersedes": [],
+      "uncertainty": null,
+      "unit": "%",
+      "value": 74.5
+    },
+    {
+      "benchmark_id": "arc_agi_2_semi_private",
+      "configuration_id": "bb_gpt56_sol_low",
+      "evaluated_at": null,
+      "evaluator": "ARC Prize Foundation",
+      "id": "o_arc_gpt56_sol_low_arc_agi_2_semi_private",
+      "locator": "Verified scores: Low row, ARC-AGI-2 column",
+      "reported_at": null,
+      "reporting_relationship": "evaluator_measurement",
+      "review_state": "reviewed",
+      "series_id": "arc_agi_2_semi_private_verified",
+      "setup": {
+        "harness": "static puzzle evaluation",
+        "policy_url": "https://arcprize.org/policy",
+        "reasoning_effort": "low",
+        "score_precision": "As displayed by the source; no extra precision inferred.",
+        "split": "semi-private"
+      },
+      "source_id": "arc_prize_gpt56_sol",
+      "supersedes": [],
+      "uncertainty": null,
+      "unit": "%",
+      "value": 42.5
+    },
+    {
+      "benchmark_id": "arc_agi_3_unspecified",
+      "configuration_id": "bb_gpt56_sol_low",
+      "evaluated_at": null,
+      "evaluator": "ARC Prize Foundation",
+      "id": "o_arc_gpt56_sol_low_arc_agi_3_unspecified",
+      "locator": "Verified scores: Low row, ARC-AGI-3 column",
+      "reported_at": null,
+      "reporting_relationship": "evaluator_measurement",
+      "review_state": "reviewed",
+      "series_id": "arc_agi_3_unspecified_verified",
+      "setup": {
+        "harness": "Not specified in result table",
+        "policy_url": "https://arcprize.org/policy",
+        "reasoning_effort": "low",
+        "score_precision": "As displayed by the source; no extra precision inferred.",
+        "split": "semi-private"
+      },
+      "source_id": "arc_prize_gpt56_sol",
+      "supersedes": [],
+      "uncertainty": null,
+      "unit": "%",
+      "value": 0.3
+    },
+    {
+      "benchmark_id": "arc_agi_1_semi_private",
+      "configuration_id": "grok46_arc_xhigh",
+      "evaluated_at": null,
+      "evaluator": "ARC Prize Foundation",
+      "id": "o_arc_grok46_xhigh_arc_agi_1_semi_private",
+      "locator": "Verified scores: XHigh row, ARC-AGI-1 column",
+      "reported_at": null,
+      "reporting_relationship": "evaluator_measurement",
+      "review_state": "reviewed",
+      "series_id": "arc_agi_1_semi_private_verified",
+      "setup": {
+        "harness": "static puzzle evaluation",
+        "policy_url": "https://arcprize.org/policy",
+        "reasoning_effort": "xhigh",
+        "score_precision": "As displayed by the source; no extra precision inferred.",
+        "split": "semi-private"
+      },
+      "source_id": "arc_prize_grok46",
+      "supersedes": [],
+      "uncertainty": null,
+      "unit": "%",
+      "value": 87.0
+    },
+    {
+      "benchmark_id": "arc_agi_2_semi_private",
+      "configuration_id": "grok46_arc_xhigh",
+      "evaluated_at": null,
+      "evaluator": "ARC Prize Foundation",
+      "id": "o_arc_grok46_xhigh_arc_agi_2_semi_private",
+      "locator": "Verified scores: XHigh row, ARC-AGI-2 column",
+      "reported_at": null,
+      "reporting_relationship": "evaluator_measurement",
+      "review_state": "reviewed",
+      "series_id": "arc_agi_2_semi_private_verified",
+      "setup": {
+        "harness": "static puzzle evaluation",
+        "policy_url": "https://arcprize.org/policy",
+        "reasoning_effort": "xhigh",
+        "score_precision": "As displayed by the source; no extra precision inferred.",
+        "split": "semi-private"
+      },
+      "source_id": "arc_prize_grok46",
+      "supersedes": [],
+      "uncertainty": null,
+      "unit": "%",
+      "value": 67.1
+    },
+    {
+      "benchmark_id": "arc_agi_3_unspecified",
+      "configuration_id": "grok46_arc_xhigh",
+      "evaluated_at": null,
+      "evaluator": "ARC Prize Foundation",
+      "id": "o_arc_grok46_xhigh_arc_agi_3_unspecified",
+      "locator": "Verified scores: XHigh row, ARC-AGI-3 column",
+      "reported_at": null,
+      "reporting_relationship": "evaluator_measurement",
+      "review_state": "reviewed",
+      "series_id": "arc_agi_3_unspecified_verified",
+      "setup": {
+        "harness": "Not specified in result table",
+        "policy_url": "https://arcprize.org/policy",
+        "reasoning_effort": "xhigh",
+        "score_precision": "As displayed by the source; no extra precision inferred.",
+        "split": "semi-private"
+      },
+      "source_id": "arc_prize_grok46",
+      "supersedes": [],
+      "uncertainty": null,
+      "unit": "%",
+      "value": 2.1
+    },
+    {
+      "benchmark_id": "arc_agi_1_semi_private",
+      "configuration_id": "grok46_high",
+      "evaluated_at": null,
+      "evaluator": "ARC Prize Foundation",
+      "id": "o_arc_grok46_high_arc_agi_1_semi_private",
+      "locator": "Verified scores: High row, ARC-AGI-1 column",
+      "reported_at": null,
+      "reporting_relationship": "evaluator_measurement",
+      "review_state": "reviewed",
+      "series_id": "arc_agi_1_semi_private_verified",
+      "setup": {
+        "harness": "static puzzle evaluation",
+        "policy_url": "https://arcprize.org/policy",
+        "reasoning_effort": "high",
+        "score_precision": "As displayed by the source; no extra precision inferred.",
+        "split": "semi-private"
+      },
+      "source_id": "arc_prize_grok46",
+      "supersedes": [],
+      "uncertainty": null,
+      "unit": "%",
+      "value": 87.0
+    },
+    {
+      "benchmark_id": "arc_agi_2_semi_private",
+      "configuration_id": "grok46_high",
+      "evaluated_at": null,
+      "evaluator": "ARC Prize Foundation",
+      "id": "o_arc_grok46_high_arc_agi_2_semi_private",
+      "locator": "Verified scores: High row, ARC-AGI-2 column",
+      "reported_at": null,
+      "reporting_relationship": "evaluator_measurement",
+      "review_state": "reviewed",
+      "series_id": "arc_agi_2_semi_private_verified",
+      "setup": {
+        "harness": "static puzzle evaluation",
+        "policy_url": "https://arcprize.org/policy",
+        "reasoning_effort": "high",
+        "score_precision": "As displayed by the source; no extra precision inferred.",
+        "split": "semi-private"
+      },
+      "source_id": "arc_prize_grok46",
+      "supersedes": [],
+      "uncertainty": null,
+      "unit": "%",
+      "value": 65.1
+    },
+    {
+      "benchmark_id": "arc_agi_1_semi_private",
+      "configuration_id": "grok46_arc_medium",
+      "evaluated_at": null,
+      "evaluator": "ARC Prize Foundation",
+      "id": "o_arc_grok46_medium_arc_agi_1_semi_private",
+      "locator": "Verified scores: Medium row, ARC-AGI-1 column",
+      "reported_at": null,
+      "reporting_relationship": "evaluator_measurement",
+      "review_state": "reviewed",
+      "series_id": "arc_agi_1_semi_private_verified",
+      "setup": {
+        "harness": "static puzzle evaluation",
+        "policy_url": "https://arcprize.org/policy",
+        "reasoning_effort": "medium",
+        "score_precision": "As displayed by the source; no extra precision inferred.",
+        "split": "semi-private"
+      },
+      "source_id": "arc_prize_grok46",
+      "supersedes": [],
+      "uncertainty": null,
+      "unit": "%",
+      "value": 87.5
+    },
+    {
+      "benchmark_id": "arc_agi_2_semi_private",
+      "configuration_id": "grok46_arc_medium",
+      "evaluated_at": null,
+      "evaluator": "ARC Prize Foundation",
+      "id": "o_arc_grok46_medium_arc_agi_2_semi_private",
+      "locator": "Verified scores: Medium row, ARC-AGI-2 column",
+      "reported_at": null,
+      "reporting_relationship": "evaluator_measurement",
+      "review_state": "reviewed",
+      "series_id": "arc_agi_2_semi_private_verified",
+      "setup": {
+        "harness": "static puzzle evaluation",
+        "policy_url": "https://arcprize.org/policy",
+        "reasoning_effort": "medium",
+        "score_precision": "As displayed by the source; no extra precision inferred.",
+        "split": "semi-private"
+      },
+      "source_id": "arc_prize_grok46",
+      "supersedes": [],
+      "uncertainty": null,
+      "unit": "%",
+      "value": 61.3
+    },
+    {
+      "benchmark_id": "arc_agi_1_semi_private",
+      "configuration_id": "grok46_arc_low",
+      "evaluated_at": null,
+      "evaluator": "ARC Prize Foundation",
+      "id": "o_arc_grok46_low_arc_agi_1_semi_private",
+      "locator": "Verified scores: Low row, ARC-AGI-1 column",
+      "reported_at": null,
+      "reporting_relationship": "evaluator_measurement",
+      "review_state": "reviewed",
+      "series_id": "arc_agi_1_semi_private_verified",
+      "setup": {
+        "harness": "static puzzle evaluation",
+        "policy_url": "https://arcprize.org/policy",
+        "reasoning_effort": "low",
+        "score_precision": "As displayed by the source; no extra precision inferred.",
+        "split": "semi-private"
+      },
+      "source_id": "arc_prize_grok46",
+      "supersedes": [],
+      "uncertainty": null,
+      "unit": "%",
+      "value": 74.8
+    },
+    {
+      "benchmark_id": "arc_agi_2_semi_private",
+      "configuration_id": "grok46_arc_low",
+      "evaluated_at": null,
+      "evaluator": "ARC Prize Foundation",
+      "id": "o_arc_grok46_low_arc_agi_2_semi_private",
+      "locator": "Verified scores: Low row, ARC-AGI-2 column",
+      "reported_at": null,
+      "reporting_relationship": "evaluator_measurement",
+      "review_state": "reviewed",
+      "series_id": "arc_agi_2_semi_private_verified",
+      "setup": {
+        "harness": "static puzzle evaluation",
+        "policy_url": "https://arcprize.org/policy",
+        "reasoning_effort": "low",
+        "score_precision": "As displayed by the source; no extra precision inferred.",
+        "split": "semi-private"
+      },
+      "source_id": "arc_prize_grok46",
+      "supersedes": [],
+      "uncertainty": null,
+      "unit": "%",
+      "value": 27.6
+    },
+    {
+      "benchmark_id": "arc_agi_1_semi_private",
+      "configuration_id": "deepseek_v4_1_flash_arc_max",
+      "evaluated_at": null,
+      "evaluator": "ARC Prize Foundation",
+      "id": "o_arc_deepseek_v4_1_flash_max_arc_agi_1_semi_private",
+      "locator": "Verified scores: Max row, ARC-AGI-1 column",
+      "reported_at": null,
+      "reporting_relationship": "evaluator_measurement",
+      "review_state": "reviewed",
+      "series_id": "arc_agi_1_semi_private_verified",
+      "setup": {
+        "harness": "static puzzle evaluation",
+        "policy_url": "https://arcprize.org/policy",
+        "reasoning_effort": "max",
+        "score_precision": "As displayed by the source; no extra precision inferred.",
+        "split": "semi-private"
+      },
+      "source_id": "arc_prize_deepseek_v4_1_flash",
+      "supersedes": [],
+      "uncertainty": null,
+      "unit": "%",
+      "value": 94.5
+    },
+    {
+      "benchmark_id": "arc_agi_2_semi_private",
+      "configuration_id": "deepseek_v4_1_flash_arc_max",
+      "evaluated_at": null,
+      "evaluator": "ARC Prize Foundation",
+      "id": "o_arc_deepseek_v4_1_flash_max_arc_agi_2_semi_private",
+      "locator": "Verified scores: Max row, ARC-AGI-2 column",
+      "reported_at": null,
+      "reporting_relationship": "evaluator_measurement",
+      "review_state": "reviewed",
+      "series_id": "arc_agi_2_semi_private_verified",
+      "setup": {
+        "harness": "static puzzle evaluation",
+        "policy_url": "https://arcprize.org/policy",
+        "reasoning_effort": "max",
+        "score_precision": "As displayed by the source; no extra precision inferred.",
+        "split": "semi-private"
+      },
+      "source_id": "arc_prize_deepseek_v4_1_flash",
+      "supersedes": [],
+      "uncertainty": null,
+      "unit": "%",
+      "value": 72.9
+    },
+    {
+      "benchmark_id": "arc_agi_3_standard",
+      "configuration_id": "deepseek_v4_1_flash_arc_max",
+      "evaluated_at": null,
+      "evaluator": "ARC Prize Foundation",
+      "id": "o_arc_deepseek_v4_1_flash_max_arc_agi_3_standard",
+      "locator": "Verified scores: Max row, ARC-AGI-3 (Standard harness) column",
+      "reported_at": null,
+      "reporting_relationship": "evaluator_measurement",
+      "review_state": "reviewed",
+      "series_id": "arc_agi_3_standard_verified",
+      "setup": {
+        "harness": "Standard",
+        "policy_url": "https://arcprize.org/policy",
+        "reasoning_effort": "max",
+        "score_precision": "As displayed by the source; no extra precision inferred.",
+        "split": "semi-private"
+      },
+      "source_id": "arc_prize_deepseek_v4_1_flash",
+      "supersedes": [],
+      "uncertainty": null,
+      "unit": "%",
+      "value": 0.9
+    },
+    {
+      "benchmark_id": "arc_agi_3_provider_adapter",
+      "configuration_id": "deepseek_v4_1_flash_arc_max",
+      "evaluated_at": null,
+      "evaluator": "ARC Prize Foundation",
+      "id": "o_arc_deepseek_v4_1_flash_max_arc_agi_3_provider_adapter",
+      "locator": "Verified scores: Max row, ARC-AGI-3 (Provider Adapter harness) column",
+      "reported_at": null,
+      "reporting_relationship": "evaluator_measurement",
+      "review_state": "reviewed",
+      "series_id": "arc_agi_3_provider_adapter_verified",
+      "setup": {
+        "harness": "Provider Adapter",
+        "policy_url": "https://arcprize.org/policy",
+        "reasoning_effort": "max",
+        "score_precision": "As displayed by the source; no extra precision inferred.",
+        "split": "semi-private"
+      },
+      "source_id": "arc_prize_deepseek_v4_1_flash",
+      "supersedes": [],
+      "uncertainty": null,
+      "unit": "%",
+      "value": 2.7
+    },
+    {
+      "benchmark_id": "arc_agi_1_semi_private",
+      "configuration_id": "deepseek_v4_1_flash_arc_high",
+      "evaluated_at": null,
+      "evaluator": "ARC Prize Foundation",
+      "id": "o_arc_deepseek_v4_1_flash_high_arc_agi_1_semi_private",
+      "locator": "Verified scores: High row, ARC-AGI-1 column",
+      "reported_at": null,
+      "reporting_relationship": "evaluator_measurement",
+      "review_state": "reviewed",
+      "series_id": "arc_agi_1_semi_private_verified",
+      "setup": {
+        "harness": "static puzzle evaluation",
+        "policy_url": "https://arcprize.org/policy",
+        "reasoning_effort": "high",
+        "score_precision": "As displayed by the source; no extra precision inferred.",
+        "split": "semi-private"
+      },
+      "source_id": "arc_prize_deepseek_v4_1_flash",
+      "supersedes": [],
+      "uncertainty": null,
+      "unit": "%",
+      "value": 88.5
+    },
+    {
+      "benchmark_id": "arc_agi_2_semi_private",
+      "configuration_id": "deepseek_v4_1_flash_arc_high",
+      "evaluated_at": null,
+      "evaluator": "ARC Prize Foundation",
+      "id": "o_arc_deepseek_v4_1_flash_high_arc_agi_2_semi_private",
+      "locator": "Verified scores: High row, ARC-AGI-2 column",
+      "reported_at": null,
+      "reporting_relationship": "evaluator_measurement",
+      "review_state": "reviewed",
+      "series_id": "arc_agi_2_semi_private_verified",
+      "setup": {
+        "harness": "static puzzle evaluation",
+        "policy_url": "https://arcprize.org/policy",
+        "reasoning_effort": "high",
+        "score_precision": "As displayed by the source; no extra precision inferred.",
+        "split": "semi-private"
+      },
+      "source_id": "arc_prize_deepseek_v4_1_flash",
+      "supersedes": [],
+      "uncertainty": null,
+      "unit": "%",
+      "value": 67.5
+    },
+    {
+      "benchmark_id": "arc_agi_3_standard",
+      "configuration_id": "deepseek_v4_1_flash_arc_high",
+      "evaluated_at": null,
+      "evaluator": "ARC Prize Foundation",
+      "id": "o_arc_deepseek_v4_1_flash_high_arc_agi_3_standard",
+      "locator": "Verified scores: High row, ARC-AGI-3 (Standard harness) column",
+      "reported_at": null,
+      "reporting_relationship": "evaluator_measurement",
+      "review_state": "reviewed",
+      "series_id": "arc_agi_3_standard_verified",
+      "setup": {
+        "harness": "Standard",
+        "policy_url": "https://arcprize.org/policy",
+        "reasoning_effort": "high",
+        "score_precision": "As displayed by the source; no extra precision inferred.",
+        "split": "semi-private"
+      },
+      "source_id": "arc_prize_deepseek_v4_1_flash",
+      "supersedes": [],
+      "uncertainty": null,
+      "unit": "%",
+      "value": 0.5
+    },
+    {
+      "benchmark_id": "arc_agi_3_provider_adapter",
+      "configuration_id": "deepseek_v4_1_flash_arc_high",
+      "evaluated_at": null,
+      "evaluator": "ARC Prize Foundation",
+      "id": "o_arc_deepseek_v4_1_flash_high_arc_agi_3_provider_adapter",
+      "locator": "Verified scores: High row, ARC-AGI-3 (Provider Adapter harness) column",
+      "reported_at": null,
+      "reporting_relationship": "evaluator_measurement",
+      "review_state": "reviewed",
+      "series_id": "arc_agi_3_provider_adapter_verified",
+      "setup": {
+        "harness": "Provider Adapter",
+        "policy_url": "https://arcprize.org/policy",
+        "reasoning_effort": "high",
+        "score_precision": "As displayed by the source; no extra precision inferred.",
+        "split": "semi-private"
+      },
+      "source_id": "arc_prize_deepseek_v4_1_flash",
+      "supersedes": [],
+      "uncertainty": null,
+      "unit": "%",
+      "value": 3.2
+    },
+    {
+      "benchmark_id": "arc_agi_1_semi_private",
+      "configuration_id": "deepseek_v4_1_flash_arc_low",
+      "evaluated_at": null,
+      "evaluator": "ARC Prize Foundation",
+      "id": "o_arc_deepseek_v4_1_flash_low_arc_agi_1_semi_private",
+      "locator": "Verified scores: Low row, ARC-AGI-1 column",
+      "reported_at": null,
+      "reporting_relationship": "evaluator_measurement",
+      "review_state": "reviewed",
+      "series_id": "arc_agi_1_semi_private_verified",
+      "setup": {
+        "harness": "static puzzle evaluation",
+        "policy_url": "https://arcprize.org/policy",
+        "reasoning_effort": "low",
+        "score_precision": "As displayed by the source; no extra precision inferred.",
+        "split": "semi-private"
+      },
+      "source_id": "arc_prize_deepseek_v4_1_flash",
+      "supersedes": [],
+      "uncertainty": null,
+      "unit": "%",
+      "value": 90.5
+    },
+    {
+      "benchmark_id": "arc_agi_2_semi_private",
+      "configuration_id": "deepseek_v4_1_flash_arc_low",
+      "evaluated_at": null,
+      "evaluator": "ARC Prize Foundation",
+      "id": "o_arc_deepseek_v4_1_flash_low_arc_agi_2_semi_private",
+      "locator": "Verified scores: Low row, ARC-AGI-2 column",
+      "reported_at": null,
+      "reporting_relationship": "evaluator_measurement",
+      "review_state": "reviewed",
+      "series_id": "arc_agi_2_semi_private_verified",
+      "setup": {
+        "harness": "static puzzle evaluation",
+        "policy_url": "https://arcprize.org/policy",
+        "reasoning_effort": "low",
+        "score_precision": "As displayed by the source; no extra precision inferred.",
+        "split": "semi-private"
+      },
+      "source_id": "arc_prize_deepseek_v4_1_flash",
+      "supersedes": [],
+      "uncertainty": null,
+      "unit": "%",
+      "value": 60.6
+    },
+    {
+      "benchmark_id": "arc_agi_3_standard",
+      "configuration_id": "deepseek_v4_1_flash_arc_low",
+      "evaluated_at": null,
+      "evaluator": "ARC Prize Foundation",
+      "id": "o_arc_deepseek_v4_1_flash_low_arc_agi_3_standard",
+      "locator": "Verified scores: Low row, ARC-AGI-3 (Standard harness) column",
+      "reported_at": null,
+      "reporting_relationship": "evaluator_measurement",
+      "review_state": "reviewed",
+      "series_id": "arc_agi_3_standard_verified",
+      "setup": {
+        "harness": "Standard",
+        "policy_url": "https://arcprize.org/policy",
+        "reasoning_effort": "low",
+        "score_precision": "As displayed by the source; no extra precision inferred.",
+        "split": "semi-private"
+      },
+      "source_id": "arc_prize_deepseek_v4_1_flash",
+      "supersedes": [],
+      "uncertainty": null,
+      "unit": "%",
+      "value": 0.3
+    },
+    {
+      "benchmark_id": "arc_agi_3_provider_adapter",
+      "configuration_id": "deepseek_v4_1_flash_arc_low",
+      "evaluated_at": null,
+      "evaluator": "ARC Prize Foundation",
+      "id": "o_arc_deepseek_v4_1_flash_low_arc_agi_3_provider_adapter",
+      "locator": "Verified scores: Low row, ARC-AGI-3 (Provider Adapter harness) column",
+      "reported_at": null,
+      "reporting_relationship": "evaluator_measurement",
+      "review_state": "reviewed",
+      "series_id": "arc_agi_3_provider_adapter_verified",
+      "setup": {
+        "harness": "Provider Adapter",
+        "policy_url": "https://arcprize.org/policy",
+        "reasoning_effort": "low",
+        "score_precision": "As displayed by the source; no extra precision inferred.",
+        "split": "semi-private"
+      },
+      "source_id": "arc_prize_deepseek_v4_1_flash",
+      "supersedes": [],
+      "uncertainty": null,
+      "unit": "%",
+      "value": 3.3
+    },
+    {
+      "benchmark_id": "arc_agi_1_semi_private",
+      "configuration_id": "deepseek_v4_1_flash_arc_none",
+      "evaluated_at": null,
+      "evaluator": "ARC Prize Foundation",
+      "id": "o_arc_deepseek_v4_1_flash_none_arc_agi_1_semi_private",
+      "locator": "Verified scores: None row, ARC-AGI-1 column",
+      "reported_at": null,
+      "reporting_relationship": "evaluator_measurement",
+      "review_state": "reviewed",
+      "series_id": "arc_agi_1_semi_private_verified",
+      "setup": {
+        "harness": "static puzzle evaluation",
+        "policy_url": "https://arcprize.org/policy",
+        "reasoning_effort": "none",
+        "score_precision": "As displayed by the source; no extra precision inferred.",
+        "split": "semi-private"
+      },
+      "source_id": "arc_prize_deepseek_v4_1_flash",
+      "supersedes": [],
+      "uncertainty": null,
+      "unit": "%",
+      "value": 7.8
+    },
+    {
+      "benchmark_id": "arc_agi_2_semi_private",
+      "configuration_id": "deepseek_v4_1_flash_arc_none",
+      "evaluated_at": null,
+      "evaluator": "ARC Prize Foundation",
+      "id": "o_arc_deepseek_v4_1_flash_none_arc_agi_2_semi_private",
+      "locator": "Verified scores: None row, ARC-AGI-2 column",
+      "reported_at": null,
+      "reporting_relationship": "evaluator_measurement",
+      "review_state": "reviewed",
+      "series_id": "arc_agi_2_semi_private_verified",
+      "setup": {
+        "harness": "static puzzle evaluation",
+        "policy_url": "https://arcprize.org/policy",
+        "reasoning_effort": "none",
+        "score_precision": "As displayed by the source; no extra precision inferred.",
+        "split": "semi-private"
+      },
+      "source_id": "arc_prize_deepseek_v4_1_flash",
+      "supersedes": [],
+      "uncertainty": null,
+      "unit": "%",
+      "value": 1.3
+    },
+    {
+      "benchmark_id": "arc_agi_3_standard",
+      "configuration_id": "deepseek_v4_1_flash_arc_none",
+      "evaluated_at": null,
+      "evaluator": "ARC Prize Foundation",
+      "id": "o_arc_deepseek_v4_1_flash_none_arc_agi_3_standard",
+      "locator": "Verified scores: None row, ARC-AGI-3 (Standard harness) column",
+      "reported_at": null,
+      "reporting_relationship": "evaluator_measurement",
+      "review_state": "reviewed",
+      "series_id": "arc_agi_3_standard_verified",
+      "setup": {
+        "harness": "Standard",
+        "policy_url": "https://arcprize.org/policy",
+        "reasoning_effort": "none",
+        "score_precision": "As displayed by the source; no extra precision inferred.",
+        "split": "semi-private"
+      },
+      "source_id": "arc_prize_deepseek_v4_1_flash",
+      "supersedes": [],
+      "uncertainty": null,
+      "unit": "%",
+      "value": 0.3
+    },
+    {
+      "benchmark_id": "arc_agi_3_provider_adapter",
+      "configuration_id": "deepseek_v4_1_flash_arc_none",
+      "evaluated_at": null,
+      "evaluator": "ARC Prize Foundation",
+      "id": "o_arc_deepseek_v4_1_flash_none_arc_agi_3_provider_adapter",
+      "locator": "Verified scores: None row, ARC-AGI-3 (Provider Adapter harness) column",
+      "reported_at": null,
+      "reporting_relationship": "evaluator_measurement",
+      "review_state": "reviewed",
+      "series_id": "arc_agi_3_provider_adapter_verified",
+      "setup": {
+        "harness": "Provider Adapter",
+        "policy_url": "https://arcprize.org/policy",
+        "reasoning_effort": "none",
+        "score_precision": "As displayed by the source; no extra precision inferred.",
+        "split": "semi-private"
+      },
+      "source_id": "arc_prize_deepseek_v4_1_flash",
+      "supersedes": [],
+      "uncertainty": null,
+      "unit": "%",
+      "value": 0.5
+    },
+    {
+      "benchmark_id": "arc_agi_2_semi_private",
+      "configuration_id": "dots3_note_preview_arc_max",
+      "evaluated_at": null,
+      "evaluator": "ARC Prize Foundation",
+      "id": "o_arc_dots3_note_preview_max_arc_agi_2_semi_private",
+      "locator": "Verified scores: Max row, ARC-AGI-2 column",
+      "reported_at": null,
+      "reporting_relationship": "evaluator_measurement",
+      "review_state": "reviewed",
+      "series_id": "arc_agi_2_semi_private_verified",
+      "setup": {
+        "harness": "static puzzle evaluation",
+        "policy_url": "https://arcprize.org/policy",
+        "reasoning_effort": "max",
+        "score_precision": "As displayed by the source; no extra precision inferred.",
+        "split": "semi-private"
+      },
+      "source_id": "arc_prize_dots3_note_preview",
+      "supersedes": [],
+      "uncertainty": null,
+      "unit": "%",
+      "value": 76.8
+    },
+    {
+      "benchmark_id": "arc_agi_1_semi_private",
+      "configuration_id": "glm53_flash_arc_max",
+      "evaluated_at": null,
+      "evaluator": "ARC Prize Foundation",
+      "id": "o_arc_glm53_flash_max_arc_agi_1_semi_private",
+      "locator": "Verified scores: Max row, ARC-AGI-1 column",
+      "reported_at": null,
+      "reporting_relationship": "evaluator_measurement",
+      "review_state": "reviewed",
+      "series_id": "arc_agi_1_semi_private_verified",
+      "setup": {
+        "harness": "static puzzle evaluation",
+        "policy_url": "https://arcprize.org/policy",
+        "reasoning_effort": "max",
+        "score_precision": "As displayed by the source; no extra precision inferred.",
+        "split": "semi-private"
+      },
+      "source_id": "arc_prize_glm53_flash",
+      "supersedes": [],
+      "uncertainty": null,
+      "unit": "%",
+      "value": 91.0
+    },
+    {
+      "benchmark_id": "arc_agi_2_semi_private",
+      "configuration_id": "glm53_flash_arc_max",
+      "evaluated_at": null,
+      "evaluator": "ARC Prize Foundation",
+      "id": "o_arc_glm53_flash_max_arc_agi_2_semi_private",
+      "locator": "Verified scores: Max row, ARC-AGI-2 column",
+      "reported_at": null,
+      "reporting_relationship": "evaluator_measurement",
+      "review_state": "reviewed",
+      "series_id": "arc_agi_2_semi_private_verified",
+      "setup": {
+        "harness": "static puzzle evaluation",
+        "policy_url": "https://arcprize.org/policy",
+        "reasoning_effort": "max",
+        "score_precision": "As displayed by the source; no extra precision inferred.",
+        "split": "semi-private"
+      },
+      "source_id": "arc_prize_glm53_flash",
+      "supersedes": [],
+      "uncertainty": null,
+      "unit": "%",
+      "value": 65.8
+    },
+    {
+      "benchmark_id": "arc_agi_1_semi_private",
+      "configuration_id": "glm53_flash_arc_high",
+      "evaluated_at": null,
+      "evaluator": "ARC Prize Foundation",
+      "id": "o_arc_glm53_flash_high_arc_agi_1_semi_private",
+      "locator": "Verified scores: High row, ARC-AGI-1 column",
+      "reported_at": null,
+      "reporting_relationship": "evaluator_measurement",
+      "review_state": "reviewed",
+      "series_id": "arc_agi_1_semi_private_verified",
+      "setup": {
+        "harness": "static puzzle evaluation",
+        "policy_url": "https://arcprize.org/policy",
+        "reasoning_effort": "high",
+        "score_precision": "As displayed by the source; no extra precision inferred.",
+        "split": "semi-private"
+      },
+      "source_id": "arc_prize_glm53_flash",
+      "supersedes": [],
+      "uncertainty": null,
+      "unit": "%",
+      "value": 71.8
+    },
+    {
+      "benchmark_id": "arc_agi_2_semi_private",
+      "configuration_id": "glm53_flash_arc_high",
+      "evaluated_at": null,
+      "evaluator": "ARC Prize Foundation",
+      "id": "o_arc_glm53_flash_high_arc_agi_2_semi_private",
+      "locator": "Verified scores: High row, ARC-AGI-2 column",
+      "reported_at": null,
+      "reporting_relationship": "evaluator_measurement",
+      "review_state": "reviewed",
+      "series_id": "arc_agi_2_semi_private_verified",
+      "setup": {
+        "harness": "static puzzle evaluation",
+        "policy_url": "https://arcprize.org/policy",
+        "reasoning_effort": "high",
+        "score_precision": "As displayed by the source; no extra precision inferred.",
+        "split": "semi-private"
+      },
+      "source_id": "arc_prize_glm53_flash",
+      "supersedes": [],
+      "uncertainty": null,
+      "unit": "%",
+      "value": 50.1
+    },
+    {
+      "benchmark_id": "arc_agi_1_semi_private",
+      "configuration_id": "glm53_flash_arc_low",
+      "evaluated_at": null,
+      "evaluator": "ARC Prize Foundation",
+      "id": "o_arc_glm53_flash_low_arc_agi_1_semi_private",
+      "locator": "Verified scores: Low row, ARC-AGI-1 column",
+      "reported_at": null,
+      "reporting_relationship": "evaluator_measurement",
+      "review_state": "reviewed",
+      "series_id": "arc_agi_1_semi_private_verified",
+      "setup": {
+        "harness": "static puzzle evaluation",
+        "policy_url": "https://arcprize.org/policy",
+        "reasoning_effort": "low",
+        "score_precision": "As displayed by the source; no extra precision inferred.",
+        "split": "semi-private"
+      },
+      "source_id": "arc_prize_glm53_flash",
+      "supersedes": [],
+      "uncertainty": null,
+      "unit": "%",
+      "value": 47.0
+    },
+    {
+      "benchmark_id": "arc_agi_2_semi_private",
+      "configuration_id": "glm53_flash_arc_low",
+      "evaluated_at": null,
+      "evaluator": "ARC Prize Foundation",
+      "id": "o_arc_glm53_flash_low_arc_agi_2_semi_private",
+      "locator": "Verified scores: Low row, ARC-AGI-2 column",
+      "reported_at": null,
+      "reporting_relationship": "evaluator_measurement",
+      "review_state": "reviewed",
+      "series_id": "arc_agi_2_semi_private_verified",
+      "setup": {
+        "harness": "static puzzle evaluation",
+        "policy_url": "https://arcprize.org/policy",
+        "reasoning_effort": "low",
+        "score_precision": "As displayed by the source; no extra precision inferred.",
+        "split": "semi-private"
+      },
+      "source_id": "arc_prize_glm53_flash",
+      "supersedes": [],
+      "uncertainty": null,
+      "unit": "%",
+      "value": 27.9
+    },
+    {
+      "benchmark_id": "arc_agi_1_semi_private",
+      "configuration_id": "qwen38_27b_arc_xhigh",
+      "evaluated_at": null,
+      "evaluator": "ARC Prize Foundation",
+      "id": "o_arc_qwen38_27b_xhigh_arc_agi_1_semi_private",
+      "locator": "Verified scores: XHigh row, ARC-AGI-1 column",
+      "reported_at": null,
+      "reporting_relationship": "evaluator_measurement",
+      "review_state": "reviewed",
+      "series_id": "arc_agi_1_semi_private_verified",
+      "setup": {
+        "harness": "static puzzle evaluation",
+        "policy_url": "https://arcprize.org/policy",
+        "reasoning_effort": "xhigh",
+        "score_precision": "As displayed by the source; no extra precision inferred.",
+        "split": "semi-private"
+      },
+      "source_id": "arc_prize_qwen38_27b",
+      "supersedes": [],
+      "uncertainty": null,
+      "unit": "%",
+      "value": 87.5
+    },
+    {
+      "benchmark_id": "arc_agi_2_semi_private",
+      "configuration_id": "qwen38_27b_arc_xhigh",
+      "evaluated_at": null,
+      "evaluator": "ARC Prize Foundation",
+      "id": "o_arc_qwen38_27b_xhigh_arc_agi_2_semi_private",
+      "locator": "Verified scores: XHigh row, ARC-AGI-2 column",
+      "reported_at": null,
+      "reporting_relationship": "evaluator_measurement",
+      "review_state": "reviewed",
+      "series_id": "arc_agi_2_semi_private_verified",
+      "setup": {
+        "harness": "static puzzle evaluation",
+        "policy_url": "https://arcprize.org/policy",
+        "reasoning_effort": "xhigh",
+        "score_precision": "As displayed by the source; no extra precision inferred.",
+        "split": "semi-private"
+      },
+      "source_id": "arc_prize_qwen38_27b",
+      "supersedes": [],
+      "uncertainty": null,
+      "unit": "%",
+      "value": 42.4
+    },
+    {
+      "benchmark_id": "arc_agi_1_semi_private",
+      "configuration_id": "qwen38_27b_arc_medium",
+      "evaluated_at": null,
+      "evaluator": "ARC Prize Foundation",
+      "id": "o_arc_qwen38_27b_medium_arc_agi_1_semi_private",
+      "locator": "Verified scores: Medium row, ARC-AGI-1 column",
+      "reported_at": null,
+      "reporting_relationship": "evaluator_measurement",
+      "review_state": "reviewed",
+      "series_id": "arc_agi_1_semi_private_verified",
+      "setup": {
+        "harness": "static puzzle evaluation",
+        "policy_url": "https://arcprize.org/policy",
+        "reasoning_effort": "medium",
+        "score_precision": "As displayed by the source; no extra precision inferred.",
+        "split": "semi-private"
+      },
+      "source_id": "arc_prize_qwen38_27b",
+      "supersedes": [],
+      "uncertainty": null,
+      "unit": "%",
+      "value": 68.7
+    },
+    {
+      "benchmark_id": "arc_agi_2_semi_private",
+      "configuration_id": "qwen38_27b_arc_medium",
+      "evaluated_at": null,
+      "evaluator": "ARC Prize Foundation",
+      "id": "o_arc_qwen38_27b_medium_arc_agi_2_semi_private",
+      "locator": "Verified scores: Medium row, ARC-AGI-2 column",
+      "reported_at": null,
+      "reporting_relationship": "evaluator_measurement",
+      "review_state": "reviewed",
+      "series_id": "arc_agi_2_semi_private_verified",
+      "setup": {
+        "harness": "static puzzle evaluation",
+        "policy_url": "https://arcprize.org/policy",
+        "reasoning_effort": "medium",
+        "score_precision": "As displayed by the source; no extra precision inferred.",
+        "split": "semi-private"
+      },
+      "source_id": "arc_prize_qwen38_27b",
+      "supersedes": [],
+      "uncertainty": null,
+      "unit": "%",
+      "value": 13.2
+    },
+    {
+      "benchmark_id": "arc_agi_1_semi_private",
+      "configuration_id": "qwen38_27b_arc_low",
+      "evaluated_at": null,
+      "evaluator": "ARC Prize Foundation",
+      "id": "o_arc_qwen38_27b_low_arc_agi_1_semi_private",
+      "locator": "Verified scores: Low row, ARC-AGI-1 column",
+      "reported_at": null,
+      "reporting_relationship": "evaluator_measurement",
+      "review_state": "reviewed",
+      "series_id": "arc_agi_1_semi_private_verified",
+      "setup": {
+        "harness": "static puzzle evaluation",
+        "policy_url": "https://arcprize.org/policy",
+        "reasoning_effort": "low",
+        "score_precision": "As displayed by the source; no extra precision inferred.",
+        "split": "semi-private"
+      },
+      "source_id": "arc_prize_qwen38_27b",
+      "supersedes": [],
+      "uncertainty": null,
+      "unit": "%",
+      "value": 69.2
+    },
+    {
+      "benchmark_id": "arc_agi_2_semi_private",
+      "configuration_id": "qwen38_27b_arc_low",
+      "evaluated_at": null,
+      "evaluator": "ARC Prize Foundation",
+      "id": "o_arc_qwen38_27b_low_arc_agi_2_semi_private",
+      "locator": "Verified scores: Low row, ARC-AGI-2 column",
+      "reported_at": null,
+      "reporting_relationship": "evaluator_measurement",
+      "review_state": "reviewed",
+      "series_id": "arc_agi_2_semi_private_verified",
+      "setup": {
+        "harness": "static puzzle evaluation",
+        "policy_url": "https://arcprize.org/policy",
+        "reasoning_effort": "low",
+        "score_precision": "As displayed by the source; no extra precision inferred.",
+        "split": "semi-private"
+      },
+      "source_id": "arc_prize_qwen38_27b",
+      "supersedes": [],
+      "uncertainty": null,
+      "unit": "%",
+      "value": 22.8
+    },
+    {
+      "benchmark_id": "arc_agi_1_semi_private",
+      "configuration_id": "qwen38_27b_arc_none",
+      "evaluated_at": null,
+      "evaluator": "ARC Prize Foundation",
+      "id": "o_arc_qwen38_27b_none_arc_agi_1_semi_private",
+      "locator": "Verified scores: None row, ARC-AGI-1 column",
+      "reported_at": null,
+      "reporting_relationship": "evaluator_measurement",
+      "review_state": "reviewed",
+      "series_id": "arc_agi_1_semi_private_verified",
+      "setup": {
+        "harness": "static puzzle evaluation",
+        "policy_url": "https://arcprize.org/policy",
+        "reasoning_effort": "none",
+        "score_precision": "As displayed by the source; no extra precision inferred.",
+        "split": "semi-private"
+      },
+      "source_id": "arc_prize_qwen38_27b",
+      "supersedes": [],
+      "uncertainty": null,
+      "unit": "%",
+      "value": 34.0
+    },
+    {
+      "benchmark_id": "arc_agi_2_semi_private",
+      "configuration_id": "qwen38_27b_arc_none",
+      "evaluated_at": null,
+      "evaluator": "ARC Prize Foundation",
+      "id": "o_arc_qwen38_27b_none_arc_agi_2_semi_private",
+      "locator": "Verified scores: None row, ARC-AGI-2 column",
+      "reported_at": null,
+      "reporting_relationship": "evaluator_measurement",
+      "review_state": "reviewed",
+      "series_id": "arc_agi_2_semi_private_verified",
+      "setup": {
+        "harness": "static puzzle evaluation",
+        "policy_url": "https://arcprize.org/policy",
+        "reasoning_effort": "none",
+        "score_precision": "As displayed by the source; no extra precision inferred.",
+        "split": "semi-private"
+      },
+      "source_id": "arc_prize_qwen38_27b",
+      "supersedes": [],
+      "uncertainty": null,
+      "unit": "%",
+      "value": 1.5
     }
   ],
   "schema_version": "1.0.0"

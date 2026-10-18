@@ -9,7 +9,7 @@ import marketJson from '../public/data/market.json';
 import resultsJson from '../public/data/results.json';
 import App, { makeDefault } from './App';
 import type { AppData } from './data/snapshots';
-import { DEFAULT_VIEW, decodeViewState, encodeViewState } from './state/viewState';
+import { DEFAULT_VIEW, decodeViewState, encodeViewState, storageKey } from './state/viewState';
 
 const targetCell = resultsJson.cells.find(cell => cell.value !== null);
 const targetConfiguration = catalogJson.configurations.find(config => config.id === targetCell?.configuration_id);
@@ -41,6 +41,23 @@ beforeEach(() => {
 afterEach(() => { cleanup(); vi.unstubAllGlobals(); vi.restoreAllMocks(); });
 
 describe('curated preset switching', () => {
+  it('clears shared and saved filters, removes URL state and restores the same default on reload', async () => {
+    const filtered = { ...structuredClone(DEFAULT_VIEW), search: 'Mistral' };
+    localStorage.setItem(storageKey('/'), JSON.stringify(filtered));
+    history.replaceState({}, '', '/?v=' + encodeURIComponent(encodeViewState(filtered)));
+    const user = userEvent.setup();
+    render(<App/>);
+    await screen.findByDisplayValue('Mistral');
+    await user.click(screen.getAllByRole('button', { name: 'Clear filters' })[0]);
+    expect(location.search).toBe('');
+    expect(location.hash).toBe('');
+    expect(localStorage.getItem(storageKey('/'))).toBeNull();
+    expect((screen.getByRole('searchbox', { name: 'Search models' }) as HTMLInputElement).value).toBe('');
+    cleanup();
+    render(<App/>);
+    await screen.findByRole('button', { name: 'Frontier' });
+    expect((screen.getByRole('searchbox', { name: 'Search models' }) as HTMLInputElement).value).toBe('');
+  });
   it('keeps the full all-model benchmark selection within the shared-view URL bound', () => {
     const preset = fixture.catalog.presets.find(item => item.name.toLowerCase().includes('all models') && (item.benchmark_ids?.length ?? 0) >= 300);
     expect(preset).toBeTruthy();

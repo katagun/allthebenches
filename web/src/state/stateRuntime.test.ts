@@ -1,10 +1,16 @@
 import { afterEach, describe, expect, it } from 'vitest';
 import { DEFAULT_VIEW, encodeViewState } from './viewState';
-import { loadInitialState, routeHref, urlState, viewUrl, writeUrl } from './stateRuntime';
+import { clearUrlState, loadInitialState, routeHref, urlState, viewUrl, writeUrl } from './stateRuntime';
 import { parseEntityRoute } from '../Router';
 
 afterEach(() => { history.replaceState({}, '', '/'); localStorage.clear(); });
 describe('fragment shared URLs', () => {
+  it('removes legacy and fragment state while preserving the base path and unrelated query parameters', () => {
+    history.replaceState({}, '', '/project/?v=old&keep=yes#/?v=shared&mq=old');
+    clearUrlState();
+    expect(location.pathname + location.search + location.hash).toBe('/project/?keep=yes');
+    expect(urlState(location)).toBeNull();
+  });
   it('keeps large state out of HTTP requests and restores it exactly', () => {
     const view = { ...structuredClone(DEFAULT_VIEW), compare: true, selectedConfigurationIds: Array.from({ length: 100 }, (_, i) => `model-configuration-${i}`), visibleColumnIds: Array.from({ length: 300 }, (_, i) => `benchmark-variant-${i}`) };
     const url = viewUrl(view, 'https://example.com/project/?v=legacy&keep=yes');

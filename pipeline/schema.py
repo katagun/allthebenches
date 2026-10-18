@@ -141,6 +141,42 @@ class ServingRoute(StrictModel):
     source_ids: list[str] = Field(default_factory=list)
 
 
+class RoutePriceCharge(StrictModel):
+    """A separately billed item whose unit differs from per-token pricing."""
+    name: str
+    amount: Decimal = Field(ge=0)
+    unit: str
+
+
+class RoutePerformance(StrictModel):
+    """One percentile from a source-reported serving performance window."""
+    id: str
+    route_id: str
+    metric: Literal["latency", "throughput"]
+    percentile: Literal["p50", "p75", "p90", "p99"]
+    value: float = Field(ge=0, allow_inf_nan=False)
+    unit: Literal["source_reported", "tokens_per_second"]
+    workload: str | None = None
+    sample_window_seconds: int = Field(gt=0)
+    sample_count: int | None = Field(default=None, ge=0)
+    observed_at: datetime
+    source_id: str
+
+    @field_validator("observed_at")
+    @classmethod
+    def observed_at_is_aware(cls, value: datetime) -> datetime:
+        if value.tzinfo is None or value.utcoffset() is None:
+            raise ValueError("observed_at must include a timezone")
+        return value
+
+    @model_validator(mode="after")
+    def unit_matches_metric(self):
+        expected = "source_reported" if self.metric == "latency" else "tokens_per_second"
+        if self.unit != expected:
+            raise ValueError(f"{self.metric} requires unit {expected!r}")
+        return self
+
+
 class PriceObservation(StrictModel):
     id: str
     route_id: str | None = None
@@ -150,13 +186,15 @@ class PriceObservation(StrictModel):
     output_price: Decimal | None = None
     cache_read_price: Decimal | None = None
     cache_write_price: Decimal | None = None
+    cache_write_1h_price: Decimal | None = None
+    additional_charges: list[RoutePriceCharge] = Field(default_factory=list)
     price_unit: str
     context_tier: str | None = None
     observed_at: datetime
     source_id: str
     available: bool = True
     restrictions: list[str] = Field(default_factory=list)
-    @field_validator("input_price", "output_price", "cache_read_price", "cache_write_price")
+    @field_validator("input_price", "output_price", "cache_read_price", "cache_write_price", "cache_write_1h_price")
     @classmethod
     def nonnegative(cls, v):
         if v is not None and v < 0:
@@ -254,6 +292,7 @@ class Dataset(StrictModel):
     observations: list[Observation] = Field(default_factory=list)
     routes: list[ServingRoute] = Field(default_factory=list)
     prices: list[PriceObservation] = Field(default_factory=list)
+    performance: list[RoutePerformance] = Field(default_factory=list)
     usage: list[UsageObservation] = Field(default_factory=list)
     presets: list[Preset] = Field(default_factory=list)
     coverage_gaps: list[CoverageGap] = Field(default_factory=list)
@@ -263,7 +302,7 @@ class Dataset(StrictModel):
 
     @model_validator(mode="after")
     def references_and_uniqueness(self):
-        collections = {name: getattr(self, name) for name in ("sources", "labs", "models", "configurations", "benchmarks", "series", "observations", "routes", "prices", "usage", "presets", "coverage_gaps", "metadata_claims", "external_mappings", "missing_cells")}
+        collections = {name: getattr(self, name) for name in ("sources", "labs", "models", "configurations", "benchmarks", "series", "observations", "routes", "prices", "performance", "usage", "presets", "coverage_gaps", "metadata_claims", "external_mappings", "missing_cells")}
         indexes: dict[str, dict[str, Any]] = {}
         for name, items in collections.items():
             ids = [item.id for item in items]
@@ -298,6 +337,8 @@ class Dataset(StrictModel):
             for ref in route.source_ids: require(ref, "sources", route.id)
         for price in self.prices:
             require(price.route_id, "routes", price.id); require(price.source_id, "sources", price.id)
+        for item in self.performance:
+            require(item.route_id, "routes", item.id); require(item.source_id, "sources", item.id)
         for usage in self.usage: require(usage.source_id, "sources", usage.id)
         for preset in self.presets:
             for ref in preset.model_configuration_ids: require(ref, "configurations", preset.id)

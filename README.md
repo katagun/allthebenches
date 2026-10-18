@@ -2,7 +2,7 @@
 
 A static benchmark explorer covering frontier models and historical results. Compare exact model configurations, inspect evaluation evidence, and share a filtered view through its URL.
 
-Built with React, TypeScript, Vite, TanStack Table, shadcn/ui, and Tailwind CSS. Python validates curated evidence and generates static JSON. No runtime backend or API key is required to browse.
+Built with React, TypeScript, Vite, TanStack Table, shadcn/ui, and Tailwind CSS. Python validates curated evidence and generates static JSON and crawlable HTML reference pages. No runtime backend or API key is required to browse.
 
 ## Run locally
 
@@ -59,3 +59,9 @@ See [Architecture](docs/ARCHITECTURE.md) for system, data-flow and interaction d
 Code is MIT licensed. Source data and reports retain their upstream licenses and attribution requirements.
 
 For local commit guardrails, run `sh scripts/install-hooks.sh` after Git is initialized. The hook runs frontend performance/workflow tests, type checking, Python tests, and data validation. Run the same checks now with `sh scripts/check-precommit.sh`; see [Contributing](CONTRIBUTING.md).
+
+### Data maintenance and reference pages
+
+- [Static detail pages](docs/STATIC_PAGES.md): scores and sources available without JavaScript.
+- [Freshness policy](docs/FRESHNESS.md): scheduled checks for changing market data, without expiring historical evaluations.
+- [Route metrics](docs/ROUTE_METRICS.md): provider pricing and measured performance provenance.

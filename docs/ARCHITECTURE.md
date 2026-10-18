@@ -129,3 +129,5 @@ only observations referenced by published display cells, keep conflicting report
 separate, and expose their original source, locator, protocol, and setup. Rendering
 is bounded to 25 score cards per page. Unknown IDs and malformed routes show a
 recoverable not-found page. No runtime API or new hosting service is required.
+
+The Python build also generates `/models/<id>/` and `/benchmarks/<id>/` HTML pages, directory indexes, a sitemap, and robots.txt. These contain reviewed scores and original sources without requiring JavaScript; hash routes retain the interactive experience. See [Static pages](STATIC_PAGES.md) and [Freshness](FRESHNESS.md).

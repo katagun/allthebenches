@@ -88,11 +88,15 @@ def main():
     for item in data['presets']:
         if item['id'] in {'frontier_oct2026', 'all_models_oct2026'}:
             item['benchmark_ids'] = list(dict.fromkeys(item['benchmark_ids']+bids))
-            item['model_configuration_ids'] = list(dict.fromkeys(item['model_configuration_ids']+configuration_ids))
+            allowed = configuration_ids
+            if item['id'] == 'frontier_oct2026':
+                frontier_models = {c['model_id'] for c in data['configurations'] if c['id'] in item['model_configuration_ids']}
+                allowed = [c['id'] for c in data['configurations'] if c['id'] in configuration_ids and c['model_id'] in frontier_models]
+            item['model_configuration_ids'] = list(dict.fromkeys(item['model_configuration_ids']+allowed))
         if item['id'] in {'arc_agi', 'frontier_oct2026', 'all_models_oct2026'}:
             (ROOT / ('data/presets/'+item['id']+'.json')).write_text(json.dumps(item,indent=2,ensure_ascii=False)+'\n')
     upsert(data['coverage_gaps'], dict(id='arc_agi_coverage', scope='ARC-AGI benchmark series',
-        reason='All three current ARC-AGI versions are represented. This snapshot covers nine catalog models; other models, public splits, competition systems and the retired ARC-AGI-3 Preview are not yet imported. Unlabeled ARC-AGI-3 harness results remain separate.',
+        reason=f'All three current ARC-AGI versions are represented. This snapshot covers {len(snapshots)} catalog models; other models, public splits, competition systems and the retired ARC-AGI-3 Preview are not yet imported. Unlabeled ARC-AGI-3 harness results remain separate.',
         source_ids=['arc_prize_'+s['model_id'] for s in snapshots]))
     path.write_text(json.dumps(data,indent=2,ensure_ascii=False)+'\n')
 

@@ -118,3 +118,45 @@ test('picker limits selection and discards cancelled edits', async ({ page }) =>
   await expect(page.locator('.column-group').first()).toContainText('GraphWalks');
   await noOverflow(page);
 });
+
+for (const width of [390, 768, 1422]) {
+  test(`${width}px model and benchmark pages, evidence and matrix return`, async ({ page }) => {
+    await page.setViewportSize({ width, height: 844 });
+    await ready(page);
+    await page.getByRole('button', { name: 'All models', exact: true }).click();
+    const matrixUrl = page.url();
+    const modelName = await page.locator('.model-link').first().innerText();
+    await page.locator('.model-link').first().click();
+    await expect(page.getByRole('heading', { level: 1 })).toHaveText(modelName.trim());
+    await expect(page.locator('.entity-score').first()).toBeVisible();
+    await noOverflow(page);
+    await page.reload();
+    await expect(page.getByRole('heading', { level: 1 })).toHaveText(modelName.trim());
+    await page.locator('.entity-score summary').first().click();
+    await expect(page.locator('.entity-score details[open]')).toContainText('Source locator');
+    await expect(page.locator('.entity-source-link').first()).toHaveAttribute('href', /^https?:/);
+    await page.locator('.entity-score-title a').first().click();
+    await expect(page.locator('.entity-kind')).toHaveText('Benchmark variant');
+    await expect(page.locator('.entity-score').first()).toBeVisible();
+    await noOverflow(page);
+    await page.getByRole('searchbox', { name: 'Search scores' }).fill('zzzz-no-match');
+    await expect(page.getByText('No scores match your search.')).toBeVisible();
+    await page.locator('.entity-back').click();
+    await expect(page.locator('tbody tr').first()).toBeVisible();
+    expect(page.url().replace(/#$/, '')).toBe(matrixUrl.replace(/#$/, ''));
+    await page.locator('.benchmark-detail-link').first().click();
+    await expect(page.locator('.entity-kind')).toHaveText('Benchmark variant');
+    await page.locator('.entity-matrix-link').click();
+    await expect(page.locator('tbody tr')).toHaveCount(1);
+    await noOverflow(page);
+  });
+}
+
+test('invalid entity URLs are recoverable', async ({ page }) => {
+  await page.goto('./#/models/%E0%A4%A');
+  await expect(page.getByRole('heading', { name: 'Page not found' })).toBeVisible();
+  await page.locator('.entity-back').click();
+  await expect(page.locator('tbody tr').first()).toBeVisible();
+  await page.goto('./#/benchmarks/not-a-real-benchmark');
+  await expect(page.getByRole('heading', { name: 'Page not found' })).toBeVisible();
+});

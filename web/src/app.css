@@ -272,3 +272,60 @@
 @media(max-width:600px){
   .app-shell[data-dense="false"] .transposed-table .header-button>.sort-idle{display:none}
 }
+
+/* Standalone reference pages share the matrix typography and evidence model. */
+.entity-page{max-width:1100px;margin:0 auto;padding:28px 28px 40px;line-height:1.5}
+.entity-back{display:inline-flex;align-items:center;gap:8px;color:var(--muted-foreground);font-size:13px;margin-bottom:24px}
+.entity-heading{border-bottom:1px solid var(--border);padding-bottom:24px}
+.entity-kind{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted-foreground)}
+.entity-heading h1{display:flex;align-items:center;gap:12px;font-size:28px;font-weight:650;line-height:1.2;margin:8px 0;overflow-wrap:anywhere}
+.entity-heading .model-brand-icon{width:28px;height:28px}
+.entity-heading p{font-size:14px;color:var(--muted-foreground);overflow-wrap:anywhere}
+.entity-matrix-link{display:inline-block;margin-top:16px;border:1px solid var(--border);border-radius:6px;padding:8px 12px;font-size:13px;background:var(--background)}
+.entity-facts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px;padding:24px 0;font-size:13px}
+.entity-facts dt,.entity-score dt{color:var(--muted-foreground);font-size:11px}
+.entity-facts dd{margin-top:3px;overflow-wrap:anywhere}
+.entity-section-heading{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-top:24px}
+.entity-page h2{font-size:18px;font-weight:600}
+.entity-section-heading input{max-width:300px}
+.entity-note{font-size:12px;color:var(--muted-foreground);margin:10px 0 16px}
+.entity-scores{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;align-items:start}
+.entity-score{min-width:0;border:1px solid var(--border);border-radius:8px;padding:16px;background:var(--background);overflow-wrap:anywhere}
+.entity-score-title{display:flex;align-items:flex-start;justify-content:space-between;gap:16px}
+.entity-score-title>a{font-weight:600;font-size:14px}
+.entity-score-title strong{font-size:20px;white-space:nowrap;font-variant-numeric:tabular-nums}
+.entity-score-title strong small{font-size:11px;font-weight:400;color:var(--muted-foreground)}
+.entity-score>p{font-size:12px;margin:6px 0 10px;color:var(--muted-foreground)}
+.entity-source-link{font-size:12px}
+.entity-source-link svg,.entity-sources svg{display:inline;vertical-align:middle}
+.entity-score details{margin-top:14px;font-size:12px;border-top:1px solid var(--border);padding-top:10px}
+.entity-score summary{cursor:pointer;color:var(--muted-foreground);padding:4px 0}
+.entity-score dl>div{margin:10px 0}
+.entity-pagination{display:flex;align-items:center;justify-content:center;gap:16px;margin-top:20px;font-size:12px}
+.entity-sources{margin-top:32px}
+.entity-sources li{padding:12px 0;border-bottom:1px solid var(--border);overflow-wrap:anywhere;font-size:13px}
+.entity-sources small{display:block;color:var(--muted-foreground);margin-top:4px}
+.entity-documentation{display:inline-flex;align-items:center;gap:6px;font-size:13px}
+.entity-footer{margin-top:30px;font-size:11px;color:var(--muted-foreground);overflow-wrap:anywhere}
+.entity-page a:hover{text-decoration:underline;text-underline-offset:3px}
+.entity-page a:focus-visible{outline:2px solid var(--primary);outline-offset:3px}
+.benchmark-detail-link{display:inline-block;font-size:10px;color:var(--muted-foreground);margin-top:4px;text-decoration:underline;text-underline-offset:2px}
+@media(max-width:600px){
+  .entity-page{padding:16px}
+  .entity-heading h1{font-size:24px}
+  .entity-back{margin-bottom:20px;min-height:32px}
+  .entity-facts{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+  .entity-scores{grid-template-columns:minmax(0,1fr)}
+  .entity-section-heading{flex-wrap:wrap;gap:10px}
+  .entity-section-heading input{max-width:none;width:100%;font-size:16px}
+  .entity-score{padding:14px}
+  .entity-score-title strong{font-size:18px}
+  .entity-score summary{padding-block:8px}
+}
+.entity-score .entity-disputed{color:var(--foreground);font-weight:600}
+.entity-metadata{border:1px solid var(--border);border-radius:8px;padding:16px;margin-top:24px;font-size:13px;overflow-wrap:anywhere}
+.entity-metadata summary{cursor:pointer;font-weight:600}
+.entity-metadata h3{font-weight:600;margin-top:16px}
+.entity-metadata p,.entity-metadata>div{margin-top:8px}
+.entity-score-title strong{max-width:45%;white-space:normal;text-align:right;flex-shrink:0}
+.entity-score-title strong small{display:block;overflow-wrap:anywhere}

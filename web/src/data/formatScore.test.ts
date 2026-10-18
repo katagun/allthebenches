@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { compactScore } from './formatScore';
+import { compactScore, detailScore } from './formatScore';
 
 describe('compact matrix scores', () => {
   it('bounds rating precision and floating-point artifacts without changing signs or zero', () => {
@@ -12,4 +12,11 @@ describe('compact matrix scores', () => {
     expect(compactScore(.000001234567)).toBe('0.000001235');
     expect(compactScore(-.000001234567)).toBe('-0.000001235');
   });
+});
+
+it('rounds detail scores to two decimals without hiding tiny nonzero values', () => {
+  expect(detailScore(26.7676767676768)).toBe('26.77');
+  expect(detailScore(-0.174625)).toBe('-0.17');
+  expect(detailScore(0.105714)).toBe('0.11');
+  expect(Number(detailScore(0.000123))).toBeGreaterThan(0);
 });

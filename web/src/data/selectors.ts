@@ -292,3 +292,12 @@ export function numericScoreCount(row: DisplayRow, benchmarkIds?: readonly strin
   return count;
 }
 export function categoryLabels(benchmarks: AppData['catalog']['benchmarks']): string[] { return [...new Set(benchmarks.map(b => b.category))]; }
+
+/** Exact benchmark only; never substitute a different setup's number into a cell. */
+export function otherConfigurationResults(data: AppData, row: DisplayRow, benchmarkId: string): string[] {
+  const index = selectorIndexes(data);
+  return list(index.configurationsByModel.get(row.model.id)).filter(configuration => {
+    if (configuration.id === row.configuration.id) return false;
+    return !!index.cellsByConfiguration.get(configuration.id)?.get(benchmarkId)?.observation_ids.length;
+  }).map(configuration => configuration.id);
+}

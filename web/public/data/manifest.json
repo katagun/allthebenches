@@ -1,10 +1,10 @@
 {
   "coverage": {
     "benchmarked_models": 41,
-    "benchmarks": 313,
-    "display_cells": 683,
+    "benchmarks": 318,
+    "display_cells": 793,
     "models": 41,
-    "observations": 683
+    "observations": 793
   },
   "data_version": "0.3.0-dev",
   "feeds": [
@@ -41,23 +41,23 @@
   ],
   "files": {
     "catalog.json": {
-      "bytes": 692569,
-      "sha256": "cc8771a3d7029b7eb326794ad13eb8e56d742ca835877189b0404c1a5fbcf336"
+      "bytes": 724595,
+      "sha256": "a6e7839c1573287face3f9b36d6efb9e11ca9e4ed3246191092594892a135b37"
     },
     "details.json": {
-      "bytes": 976553,
-      "sha256": "4f7ee58d3dfd37969627e2ebb0d7bc01f23d43e0079f5b1c9eefc7fb4d7de3c2"
+      "bytes": 1083979,
+      "sha256": "20f57115e216e65fd11f888ec1aedfa8f1956109692f08ffce997ecb1dc90e8a"
     },
     "market.json": {
       "bytes": 57829,
       "sha256": "988c0af02987b9141a2b7bc90ab8800c7c9f3edc57995f9fe503753a16353dce"
     },
     "results.json": {
-      "bytes": 940619,
-      "sha256": "20664aa3033fb7b89d745668bc663f369c7fd074bbd9fe7cd0c8e9661ee2772b"
+      "bytes": 1074590,
+      "sha256": "0950c47c6f297cf71da11ea6fe65b421af97311ec5a01e671592ff3424b971d4"
     }
   },
   "generated_at": "2026-10-17T15:22:54.102772+00:00",
   "schema_version": "1.0.0",
-  "snapshot_id": "77417de4feb63e9e"
+  "snapshot_id": "0764a1ef0af9fe77"
 }

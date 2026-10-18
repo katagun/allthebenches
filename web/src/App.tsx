@@ -3,7 +3,7 @@ import { columnVisibilityFeature, flexRender, rowSortingFeature, tableFeatures, 
 import { ArrowDown, ArrowDownUp, ArrowUp, ChevronDown, ChevronRight, Download, ExternalLink, Filter, Search, Share2, SlidersHorizontal, X } from 'lucide-react';
 import type { AppData } from './data/snapshots';
 import { loadSnapshots } from './data/snapshots';
-import { categoryLabels, hasResultOnBenchmarks, numeric, numericScoreCount, orderColumnsByModelCoverage, type DisplayRow } from './data/selectors';
+import { categoryLabels, hasResultOnBenchmarks, numeric, numericScoreCount, orderColumnsByModelCoverage, presetIncludesAllModels, type DisplayRow } from './data/selectors';
 import { scoreRanges, scoreColor, isBestScore, type ScoreRange } from './data/heatmap';
 import { useViewRows } from './data/useViewRows';
 import { useColumnCapacity, MODEL_COLUMN_WIDTH, DATA_COLUMN_WIDTH } from './data/useColumnCapacity';
@@ -48,12 +48,6 @@ export function makeDefault(data: AppData): ViewState {
   const preset = data.catalog.presets.find(x => x.id === 'frontier_oct2026') ?? data.catalog.presets[0];
   const columns = arr(preset?.benchmark_ids).filter(id => data.catalog.benchmarks.some(b => b.id === id));
   return { ...structuredClone(DEFAULT_VIEW), presetId: preset?.id ?? 'frontier_oct2026', visibleColumnIds: columns };
-}
-function presetIncludesAllModels(data: AppData, presetId: string) {
-  const preset = data.catalog.presets.find(x => x.id === presetId);
-  if (!preset?.model_configuration_ids?.length) return false;
-  const included = new Set(preset.model_configuration_ids.map(id => data.catalog.configurations.find(c => c.id === id)?.model_id).filter((id): id is string => !!id));
-  return data.catalog.models.length > 0 && data.catalog.models.every(model => included.has(model.id));
 }
 function viewForPreset(data: AppData, view: ViewState, presetId: string): ViewState {
   const preset = data.catalog.presets.find(x => x.id === presetId);

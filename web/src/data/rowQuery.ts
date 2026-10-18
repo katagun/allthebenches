@@ -1,4 +1,4 @@
-import { numeric, rowsForView, type DisplayRow } from './selectors';
+import { numeric, presetIncludesAllModels, rowsForView, type DisplayRow } from './selectors';
 import type { AppData } from './snapshots';
 import type { ViewState } from '../state/viewState';
 
@@ -6,7 +6,14 @@ import type { ViewState } from '../state/viewState';
 export function queryRows(data: AppData, view: ViewState, expandedIds: Set<string>): DisplayRow[] {
   const rows = rowsForView(data, view, expandedIds);
   const sort = view.sort;
-  if (!sort) return rows.sort((a, b) => a.lab.name.localeCompare(b.lab.name) || a.model.name.localeCompare(b.model.name) || (a.configuration.reasoning_label ?? '').localeCompare(b.configuration.reasoning_label ?? ''));
+  if (!sort) {
+    const newestFirst = !view.compare && presetIncludesAllModels(data, view.presetId);
+    return rows.sort((a, b) => {
+      // ISO release dates sort chronologically; absent dates belong after known releases.
+      const releaseOrder = newestFirst ? (b.model.release_date ?? '').localeCompare(a.model.release_date ?? '') : 0;
+      return releaseOrder || a.lab.name.localeCompare(b.lab.name) || a.model.name.localeCompare(b.model.name) || (a.configuration.reasoning_label ?? '').localeCompare(b.configuration.reasoning_label ?? '');
+    });
+  }
   const valueFor = (row: DisplayRow): string | number | null => {
     if (sort.id === 'model') return `${row.lab.name} ${row.model.name}`;
     if (sort.id === 'price') return row.prices.length === 1 ? numeric(row.prices[0].input_price) : null;

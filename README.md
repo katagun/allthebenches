@@ -37,6 +37,8 @@ The publishable site is `web/dist/`. The Pages workflow targets **allthebenches.
 
 The committed curated dataset powers reproducible offline builds. Each score retains its source and evaluation setup; missing or conflicting evidence is not replaced with an invented score. Launch coverage is intentionally incomplete: see the [data audit](docs/DATA_AUDIT.md) and in-app evidence.
 
+`uv run benches build --offline` regenerates all snapshots together, preserving the feed metadata in the existing `manifest.json` and embedding that same manifest in `comparison.json`. It ignores local staging files, so rebuilding in a clean checkout produces the same output. To deliberately refresh feed health from local collection results, run `uv run benches build` without `--offline`. Stage the complete generated output together; do not restore or edit either manifest independently. Run `uv run python -m scripts.check-generated` before committing to verify the snapshots are in sync.
+
 ```sh
 uv run benches collect --source all
 ```

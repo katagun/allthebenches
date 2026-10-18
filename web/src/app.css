@@ -411,7 +411,7 @@
 .portrait-benchmark-sheet [data-slot="sheet-header"]{padding-bottom:8px}
 .portrait-benchmark-search{padding:0 16px 10px}
 .portrait-benchmark-options{overflow:auto;min-height:100px;padding:0 12px 12px}
-.portrait-benchmark-option{display:flex;width:100%;flex-direction:column;gap:2px;padding:10px 8px;border:0;border-bottom:1px solid var(--border);background:transparent;text-align:left;color:var(--foreground)}
+.portrait-benchmark-option{min-width:0;overflow-wrap:anywhere;display:flex;width:100%;flex-direction:column;gap:2px;padding:10px 8px;border:0;border-bottom:1px solid var(--border);background:transparent;text-align:left;color:var(--foreground)}
 .portrait-benchmark-option[aria-selected="true"]{background:var(--secondary)}
 .portrait-benchmark-option strong{font-size:13px}
 .portrait-benchmark-option span,.portrait-benchmark-option small{font-size:11px;color:var(--muted-foreground)}
@@ -548,4 +548,10 @@
 }
 @media(max-width:1100px) and (orientation:landscape){
   .app-shell[data-mobile-view="true"][data-portrait-matrix="true"]>.table-card{height:max(260px,calc(100dvh - 120px))}
+}
+
+/* Keep focused mobile fields at a readable size without iOS focus zoom.
+   Include portaled sheets, which live outside the app shell. */
+@media(max-width:1100px){
+  input:not([type="checkbox"]):not([type="radio"]),textarea,select{font-size:16px!important}
 }

@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { scoreColor, isBestScore } from './heatmap';
+import { scoreColor, scoreRangeMidpoint, isBestScore } from './heatmap';
 
 describe('benchmark heatmap', () => {
   it('identifies directional winners and ties without rounding scores', () => {
@@ -18,8 +18,11 @@ describe('benchmark heatmap', () => {
     expect(scoreColor(100, range, 'lower')).toBe(scoreColor(0, range, 'higher'));
     expect(scoreColor(50, range, 'lower')).toBe(scoreColor(50, range, 'higher'));
   });
-  it('leaves ties, solitary values and invalid numbers neutral', () => {
-    expect(scoreColor(42, { min: 42, max: 42 }, 'higher')).toBeUndefined();
+  it('tints ties and solitary values while leaving invalid numbers uncolored', () => {
+    expect(scoreColor(42, { min: 42, max: 42 }, 'higher')).toBe(scoreColor(50, { min: 0, max: 100 }, 'higher'));
+    expect(scoreRangeMidpoint([20, 30, 80])).toBe(50);
+    expect(scoreRangeMidpoint([0])).toBe(0);
+    expect(scoreRangeMidpoint([])).toBeNaN();
     expect(scoreColor(42, undefined, 'higher')).toBeUndefined();
     expect(scoreColor(NaN, { min: 0, max: 100 }, 'higher')).toBeUndefined();
   });

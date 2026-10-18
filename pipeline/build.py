@@ -164,6 +164,12 @@ def assess_saturation(dataset: Dataset) -> list[dict[str, Any]]:
 
 
 def build(dataset: Dataset, output: Path, feeds: list[dict[str, Any]] | None = None) -> dict[str, Any]:
+    # Rebuilding curated data must not discard collection-time metadata merely
+    # because ignored staging files are absent (for example in a fresh checkout).
+    # An explicit list, including [], deliberately replaces the recorded feeds.
+    if feeds is None:
+        manifest_path = output / "manifest.json"
+        feeds = json.loads(manifest_path.read_text(encoding="utf-8")).get("feeds", []) if manifest_path.exists() else []
     output.mkdir(parents=True, exist_ok=True)
     catalog = {"schema_version": dataset.schema_version, "data_version": dataset.data_version,
                "generated_at": dataset.generated_at, "labs": dataset.labs, "models": dataset.models,
@@ -195,9 +201,10 @@ def build(dataset: Dataset, output: Path, feeds: list[dict[str, Any]] | None = N
                              "observations": len(dataset.observations), "display_cells": len(select_observations(dataset)),
                              "benchmarks": len(dataset.benchmarks)},
                 "feeds": feeds or []}
-    (output / "manifest.json").write_bytes(canonical_json(manifest))
+    manifest_bytes = canonical_json(manifest)
+    (output / "manifest.json").write_bytes(manifest_bytes)
     from .runtime_snapshot import write_runtime_snapshot
-    write_runtime_snapshot(output, {name: json.loads(value) for name, value in encoded.items()}, json.loads(canonical_json(manifest)))
+    write_runtime_snapshot(output, {name: json.loads(value) for name, value in encoded.items()}, json.loads(manifest_bytes))
     from .static_pages import build_static_pages
     build_static_pages(dataset, output.parent)
     return manifest

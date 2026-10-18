@@ -52,3 +52,11 @@ export function validatedUrlView(location: Location, ctx: ValidationContext = {}
   const parsed = decodeViewState(value, ctx);
   return parsed.ok ? { view: parsed.value, unresolved: parsed.unresolved } : { view: structuredClone(DEFAULT_VIEW), unresolved: [] };
 }
+
+/** Return to the matrix without stale shared or catalog state. */
+export function clearUrlState(): void {
+  const url = new URL(location.href);
+  url.searchParams.delete(QUERY_KEY);
+  url.hash = '';
+  history.pushState({ viewVersion: 1 }, '', url);
+}

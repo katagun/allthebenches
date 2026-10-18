@@ -19,7 +19,7 @@ import { Input } from './components/ui/input';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from './components/ui/select';
 import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle } from './components/ui/sheet';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from './components/ui/table';
-import { loadInitialState, saveView, writeUrl, forgetView, viewUrl, routeHref } from './state/stateRuntime';
+import { loadInitialState, saveView, writeUrl, clearUrlState, forgetView, viewUrl, routeHref } from './state/stateRuntime';
 import { DEFAULT_VIEW, type ScoreCondition, type ViewState, type ValidationContext } from './state/viewState';
 
 type Panel = { kind: 'filters' | 'columns' | 'picker' } | { kind: 'model'; modelId: string } | { kind: 'score'; configurationId: string; benchmarkId: string } | null;
@@ -199,8 +199,14 @@ function App() {
   };
   const clearFilters = () => {
     if (!view || !data) return;
-    const next = { ...view, categoryId: null, search: '', compare: false, selectedConfigurationIds: [], filters: { ...DEFAULT_VIEW.filters } };
-    commitView(next);
+    const next = makeDefault(data);
+    setView(next); setExpanded(new Set()); setColumnPage(0); setConfigurationPage(0);
+    clearUrlState();
+    // A saved filter must not reappear after clearing the URL and reloading.
+    const storage = getStorage();
+    const ok = !storage || forgetView(storage, storageKeyValue);
+    setRemembered(false); setSource('default'); setSaveError(!ok);
+    setNotice(ok ? null : { kind: 'error', text: 'Filters cleared, but the saved view could not be removed from this browser.' });
   };
   const copyShare = async () => {
     if (!view) return;

@@ -1,0 +1,3562 @@
+{
+  "adapter_sha256": "33b47f886b04d528c76344218af833f4811af1e15021ef41bf134cedbe40a30a",
+  "candidate_observations": 1082,
+  "candidate_sha256": "4b729a09f67af3b69ec3389382ddb14c7a9f1d646b9c36c6236bfbe6506e55aa",
+  "conflicts": [
+    {
+      "changed_fields": [
+        "content_sha256",
+        "retrieved_at"
+      ],
+      "id": "aa_public_pages_20261018",
+      "table": "sources"
+    }
+  ],
+  "contract": {
+    "adapter": "aa",
+    "cadence": "daily",
+    "scope": "Public model-page serialization; reviewed metric fields; estimates excluded"
+  },
+  "coverage": {
+    "counts": {
+      "candidate_observations": 1082,
+      "source_models": 704
+    },
+    "decisions": [
+      {
+        "model_id": null,
+        "source_model": "glm-4-5v",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "gemini-3-5-flash",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "mimo-v2-5-pro",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "jt-35b-flash",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "gpt-6-sol-low",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "mercury-2",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "qwen3-5-omni-plus",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "nova-2-0-omni-reasoning-medium",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "gpt-5-2-codex",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "qwen3-5-122b-a10b-non-reasoning",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "gemma-4-12b-non-reasoning",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "gemini-3-5-flash-minimal",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "claude-3-5-haiku",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "gpt-35-turbo",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "gemini-2-0-flash-thinking-exp-0121",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "claude-sonnet-5-5-medium",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "qwen2-5-coder-32b-instruct",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "sonar-reasoning",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "gemma-3-270m",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "grok-4-20-0309",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "gpt-5-1-codex",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "muse-spark-1-2",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "gpt-5-6-luna-low",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": "claude_fable51",
+        "source_model": "claude-fable-5-1-low",
+        "status": "mapped"
+      },
+      {
+        "model_id": null,
+        "source_model": "mistral-medium-3-1",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "gpt-5-nano-minimal",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "gemini-2-5-pro-05-06",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "o3-mini-high",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "o1-preview",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "deepseek-v3-2-0925",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "apodex-1-1",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": "gpt56_sol",
+        "source_model": "gpt-5-6-sol-low",
+        "status": "mapped"
+      },
+      {
+        "model_id": "gpt61_sol",
+        "source_model": "gpt-6-1-sol-xhigh",
+        "status": "mapped"
+      },
+      {
+        "model_id": null,
+        "source_model": "qwen3-coder-480b-a35b-instruct",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "gemini-3-5-flash-lite",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "step-5",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "qwen3-5-2b-non-reasoning",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "devstral-2",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "claude-35-sonnet",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "deepseek-v3-1-terminus-reasoning",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "qwen3-omni-30b-a3b-instruct",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "grok-build-0-1-06-16",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "granite-4-2-3b",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "nova-2-0-pro-reasoning-medium",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "inkling",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "kimi-k2-6",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "deepseek-r1-0120",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "deepseek-r1-distill-llama-8b",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "qwen3-0.6b-instruct",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "qwen3-5-397b-a17b",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "lfm2-1-2b",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "kimi-k2-6-non-reasoning",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "magistral-small",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "granite-4-2-30b",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "k2-horizon-7b",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "mimo-v2-6-flash",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "lfm-40b",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "minimax-m2-5",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "mistral-small-4-non-reasoning",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": "claude_opus5",
+        "source_model": "claude-opus-5-xhigh",
+        "status": "mapped"
+      },
+      {
+        "model_id": null,
+        "source_model": "claude-3-7-sonnet-thinking",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "claude-sonnet-5-low",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "mimo-v2-0206",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "glm-5-turbo",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "ling-1t",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "solar-pro4",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "gpt-oss-20b-low",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "qwen3-5-27b",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "o3",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "gemini-1-5-pro-may-2024",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "k-exaone-2-0-0803",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "qwen3-4b-instruct-reasoning",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": "glm53_flash",
+        "source_model": "glm-5-3-flash",
+        "status": "mapped"
+      },
+      {
+        "model_id": null,
+        "source_model": "gpt-6-luna-xhigh",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "deepseek-v3-1-reasoning",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "llama-3-3-nemotron-super-49b-reasoning",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "step-3-5-flash",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "mistral-large-2407",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "dbrx",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "glm-4.5",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "qwen2.5-32b-instruct",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "gemini-2-5-flash-lite",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "hermes-3-llama-3-1-70b",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "north-mini-code",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "sonar-reasoning-pro",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "gpt-5-5",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "mistral-medium",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": "gpt6_astra",
+        "source_model": "gpt-6-astra-xhigh",
+        "status": "mapped"
+      },
+      {
+        "model_id": null,
+        "source_model": "nova-2-0-omni",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "granite-4-0-micro",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": "claude3_haiku",
+        "source_model": "claude-3-haiku",
+        "status": "mapped"
+      },
+      {
+        "model_id": null,
+        "source_model": "claude-haiku-5-5-high",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": "grok47",
+        "source_model": "grok-4-7-low",
+        "status": "mapped"
+      },
+      {
+        "model_id": "claude_opus5",
+        "source_model": "claude-opus-5-low",
+        "status": "mapped"
+      },
+      {
+        "model_id": null,
+        "source_model": "qwen3-5-9b-non-reasoning",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "mistral-7b-instruct",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "gemini-2-5-flash-reasoning",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "gemma-3-4b",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "qwen3-5-122b-a10b",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "mimo-v2-5-0424",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "grok-4-1-fast-reasoning",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "hermes-4-llama-3-1-70b",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "nvidia-nemotron-3-nano-30b-a3b",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "claude-sonnet-5",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "grok-3",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "glm-5v-turbo",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "mistral-small-3-1",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "mimo-v2-6-pro",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "claude-opus-4-5-thinking",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": "grok46",
+        "source_model": "grok-4-6-medium",
+        "status": "mapped"
+      },
+      {
+        "model_id": null,
+        "source_model": "claude-sonnet-5-5-high",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "qwen3-next-80b-a3b-instruct",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "llama-nemotron-super-49b-v1-5",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "gpt-5-6-terra-medium",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "gemini-2-5-pro",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": "grok47",
+        "source_model": "grok-4-7-high",
+        "status": "mapped"
+      },
+      {
+        "model_id": null,
+        "source_model": "minimax-m2-1",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "minimax-m3",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "grok-2-1212",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "mimo-v2-omni-0327",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "gpt-5-mini",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "nemotron-3-5-lightning",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "qwen3-4b-2507-instruct-reasoning",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "gemini-1-5-pro",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": "gemini10_ultra",
+        "source_model": "gemini-1-0-ultra",
+        "status": "mapped"
+      },
+      {
+        "model_id": null,
+        "source_model": "qwen3-1.7b-instruct",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "gemma-3-27b",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "glm-4-7-flash",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "phi-4-multimodal",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "granite-3-3-8b-instruct",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "deepseek-v2",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "qwen3-5-9b",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "o3-mini",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "grok-4-fast",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "claude-sonnet-4-6",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "ling-2-6-1t",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "gemma-3-12b",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "nvidia-nemotron-nano-9b-v2",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "command-a-plus",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": "gpt6_astra",
+        "source_model": "gpt-6-astra",
+        "status": "mapped"
+      },
+      {
+        "model_id": "claude_opus55",
+        "source_model": "claude-opus-5-5",
+        "status": "mapped"
+      },
+      {
+        "model_id": null,
+        "source_model": "exaone-4-0-32b",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "claude-opus-4-7-non-reasoning",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "g9v3-3b",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "glm-4-5v-reasoning",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "qwen3-5-4b-non-reasoning",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "qwen3-5-397b-a17b-non-reasoning",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "k2-horizon-3-7b",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "qwen3-235b-a22b-instruct-2507",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "olmo-3-7b-think",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "hyperclova-x-seed-think-32b",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "hypernova-60b",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "sonar-pro",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "nova-micro",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "sarvam-m-reasoning",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "qwen-turbo",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "exaone-4-5-33b-non-reasoning",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": "qwen38_27b",
+        "source_model": "qwen3-8-27b-non-reasoning",
+        "status": "mapped"
+      },
+      {
+        "model_id": null,
+        "source_model": "mistral-small-2402",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "muse-spark-open",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "gpt-6-luna-medium",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "intellect-3",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "gpt-oss-20b",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "minimax-m1-40k",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "gpt-5-4-mini-medium",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "olmo-3-1-32b-think",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "qwen3-6-27b-non-reasoning",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "nex-n2-pro",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "gpt-4-1",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": "claude_fable51",
+        "source_model": "claude-fable-5-1-medium",
+        "status": "mapped"
+      },
+      {
+        "model_id": "gpt61_sol",
+        "source_model": "gpt-6-1-sol-high",
+        "status": "mapped"
+      },
+      {
+        "model_id": null,
+        "source_model": "command-a",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "lfm2-5-vl-1-6b",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "qwen3-vl-8b-instruct",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "jt-mini",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "ling-mini-2-0",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "gemini-2-0-flash-lite-preview",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "qwen3-30b-a3b-instruct-reasoning",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": "claude_fable51",
+        "source_model": "claude-fable-5-1",
+        "status": "mapped"
+      },
+      {
+        "model_id": "mixtral_8x7b_instruct",
+        "source_model": "mixtral-8x7b-instruct",
+        "status": "mapped"
+      },
+      {
+        "model_id": null,
+        "source_model": "molmo2-8b",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "mistral-small-4",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "qwen3-5-0-8b-non-reasoning",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "glm-5",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "claude-opus-4-5",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "claude-haiku-5-5-xhigh",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "qwen-chat-72b",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "gemini-1-5-flash",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "gpt-5-6-luna",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "claude-haiku-5-5-low",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "glm-4-6v",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "solar-pro-2-preview",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "ling-3-0-flash-vl",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "minicpm-v4-6-1-3b",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "gpt-4o-mini-realtime-dec-2024",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "qwen3-235b-a22b-instruct",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "claude-opus-4-6",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "mistral-small-3-2",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "deepseek-v3",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": "claude_opus55",
+        "source_model": "claude-opus-5-5-low",
+        "status": "mapped"
+      },
+      {
+        "model_id": null,
+        "source_model": "kimi-k2",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "deepseek-r1-distill-qwen-1-5b",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "exaone-4-0-32b-reasoning",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "solar-pro-2",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "qwen3-14b-instruct-reasoning",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "sarvam-105b",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "llama-3-1-instruct-405b",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "llama-3-1-instruct-70b",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "qwen3-5-35b-a3b",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "jt-4-1-flash-236b-a21b",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "mimo-v2-5-pro-non-reasoning",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "ring-flash-2-0",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "lfm2-5-1-2b-instruct",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "gpt-5",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "mistral-large-3",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "gpt-5-4-non-reasoning",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "gpt-5-2",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "apertus-70b-instruct",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "grok-4-1-fast",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "deepseek-r1-distill-llama-70b",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "qwen3-0.6b-instruct-reasoning",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "minimax-m2-7",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "grok-1",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "doubao-seed-code",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "gpt-5-1",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "gemini-3-5-flash-medium",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "claude-4-opus",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "exaone-4-5-33b",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "qwen3-5-27b-non-reasoning",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "mistral-large-2",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": "kimi_k3",
+        "source_model": "kimi-k3-low",
+        "status": "mapped"
+      },
+      {
+        "model_id": null,
+        "source_model": "palm-2",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "qwen3-vl-30b-a3b-instruct",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "grok-4-20-0309-non-reasoning",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "deepseek-v3-2-speciale",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "gpt-6-sol-high",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "gemma-4-e4b-non-reasoning",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "gpt-5-4-low",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "k2-horizon-mova-36b-a4b",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "claude-opus-4-6-adaptive",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "jamba-1-5-mini",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "olmo-2-32b",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "nova-pro",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "granite-4-0-350m",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "gemini-2-5-flash-04-2025",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "grok-4-fast-reasoning",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "gpt-4o-chatgpt-03-25",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "muse-glimmer",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "gpt-5-6-luna-medium",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": "grok47",
+        "source_model": "grok-4-7",
+        "status": "mapped"
+      },
+      {
+        "model_id": null,
+        "source_model": "qwen3-1.7b-instruct-reasoning",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "gemini-3-1-flash-lite-preview",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "kimi-linear-48b-a3b-instruct",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "llama-2-chat-70b",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "solar-open-100b-reasoning",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "gpt-5-3-codex",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "mistral-medium-3",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "lfm2-5-1-2b-thinking",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "k2-think-v2",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "glm-5-1",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "o1",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "qwen3-max-preview",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "nvidia-nemotron-3-ultra-550b-a55b",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "gpt-5-4-pro",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "longcat-2-0",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "nova-lite",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "seed-oss-36b-instruct",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "gpt-4-5",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "gpt-5-codex",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "glm-4-5-air",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "qwen3-5-2b",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "mimo-v2-pro",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "tri-21b-think-v0-5",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "deepseek-v4-pro-0424-high",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "granite-4-0-h-small",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "qwen3-30b-a3b-2507-reasoning",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "mistral-large",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": "qwen38_max",
+        "source_model": "qwen3-8-max-0803",
+        "status": "mapped"
+      },
+      {
+        "model_id": null,
+        "source_model": "grok-4-3-medium",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "gpt-5-medium",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "grok-4",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "sonar",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "llama-3-2-instruct-11b-vision",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "deepseek-r1-qwen3-8b",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "qwen3-6-max",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "longcat-flash-lite",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "tri-21b-think-preview",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "nova-2-0-lite-reasoning",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "gemini-2-5-pro-03-25",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "solar-mini4",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "nvidia-nemotron-3-super-120b-a12b",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "gpt-6-luna-non-reasoning",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "minicpm5-2b",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "grok-4-20-non-reasoning",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "qwen3-5-4b",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "magistral-medium",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "kimi-k2-0905",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": "qwen38_27b",
+        "source_model": "qwen3-8-27b-medium",
+        "status": "mapped"
+      },
+      {
+        "model_id": null,
+        "source_model": "motif-2-12-7b",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "qwen3-6-35b-a3b-non-reasoning",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "ministral-3-3b",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "lfm2-8b-a1b",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "gemini-2-5-flash-reasoning-04-2025",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "reflection-beam",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "qwen3-7-max",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "glm-4-6-reasoning",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": "gpt4",
+        "source_model": "gpt-4",
+        "status": "mapped"
+      },
+      {
+        "model_id": null,
+        "source_model": "gemini-2-5-flash",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "llama-2-chat-13b",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "gpt-5-5-medium",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "hermes-4-llama-3-1-70b-reasoning",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "step-3-7-flash",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "ling-3-0-flash-fin",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "deepseek-v3-2",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "qwen3-vl-32b-instruct",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "gpt-5-2-non-reasoning",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "gemma-4-26b-a4b",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "deepseek-v4-pro-0424-non-reasoning",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "nvidia-nemotron-nano-12b-v2-vl-reasoning",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": "gpt56_sol",
+        "source_model": "gpt-5-6-sol-medium",
+        "status": "mapped"
+      },
+      {
+        "model_id": null,
+        "source_model": "gpt-5-5-non-reasoning",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "qwen3-5-omni-flash",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "gpt-6-luna",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "glm-4-7",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "nova-2-0-lite-reasoning-low",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "magistral-small-2509",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "gemma-4-26b-a4b-non-reasoning",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": "claude_opus5",
+        "source_model": "claude-opus-5-high",
+        "status": "mapped"
+      },
+      {
+        "model_id": null,
+        "source_model": "ministral-3-14b",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "k-exaone",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "llama-3-2-instruct-3b",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "gemini-2-5-flash-lite-preview-09-2025",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "inkling-small",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "gpt-4-1-nano",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "llama-3-1-nemotron-instruct-70b",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "llama-3-1-instruct-8b",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "lfm2-2-6b",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": "deepseek_v4_1_flash",
+        "source_model": "deepseek-v4-1-flash-non-reasoning",
+        "status": "mapped"
+      },
+      {
+        "model_id": null,
+        "source_model": "gemini-3-8-flash-medium",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "gemma-4-e2b-non-reasoning",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "deepseek-v3-0324",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "command-r-plus-04-2024",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "sarvam-30b",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "qwen2-72b-instruct",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "mercury-2-5",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "gpt-4-turbo",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "nova-2-0-lite",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "nvidia-nemotron-3-nano-30b-a3b-reasoning",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "deepseek-v4-flash-vision",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "deepseek-llm-67b-chat",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "minicpm5-1b",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "gpt-6-sol-medium",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": "claude3_opus",
+        "source_model": "claude-3-opus",
+        "status": "mapped"
+      },
+      {
+        "model_id": null,
+        "source_model": "gemini-3-6-flash",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "gemini-3-flash",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "jamba-1-7-large",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "grok-4-5",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "mistral-saba",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "qwen3-max",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "gemini-2-0-flash-lite-001",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "mistral-small",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": "gpt56_sol",
+        "source_model": "gpt-5-6-sol-non-reasoning",
+        "status": "mapped"
+      },
+      {
+        "model_id": null,
+        "source_model": "gemini-3-flash-reasoning",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "claude-haiku-5-5",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "gpt-6-luna-high",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "nemotron-3-5-bolt-74b-a9b",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "nanbeige4-1-3b",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": "qwen38_27b",
+        "source_model": "qwen3-8-27b-low",
+        "status": "mapped"
+      },
+      {
+        "model_id": null,
+        "source_model": "solar-open2-250b",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "ling-3-0-tiny",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "qwen3-30b-a3b-2507",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "gpt-5-low",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "celeris-1",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "qwen3-max-thinking",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "llama-3-2-instruct-1b",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "tiny-aya-global",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "gpt-5-6-terra-high",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "glm-4-7-non-reasoning",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "a-x-k2",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "exaone-4-0-1-2b",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "llama-3-instruct-8b",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "hermes-4-llama-3-1-405b-reasoning",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "mimo-v2-flash",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "granite-4-1-8b",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "deepseek-v4-pro",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "claude-instant",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "gemini-2-5-flash-lite-preview-09-2025-reasoning",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "o4-mini",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "gpt-5-2-medium",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "magistral-medium-2509",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "qwen3-6-35b-a3b",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "gpt-5-6-luna-xhigh",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "gemini-2-5-flash-preview-09-2025",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "QwQ-32B-Preview",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "ling-flash-2-0",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "gpt-5-4-nano-medium",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "apertus-8b-instruct",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "deepseek-v4-flash-0420-high",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "deepseek-v2-5-sep-2024",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "claude-4-opus-thinking",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "gemini-3-8-flash",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": "gpt56_sol",
+        "source_model": "gpt-5-6-sol-high",
+        "status": "mapped"
+      },
+      {
+        "model_id": null,
+        "source_model": "gpt-3-5-turbo-0613",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "gpt-4o-2024-08-06",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "qwen3-6-27b",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "nemotron-3-nano-omni-30b-a3b",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "hy3-preview",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "kimi-k2-7-code",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": "gemini10_pro",
+        "source_model": "gemini-1-0-pro",
+        "status": "mapped"
+      },
+      {
+        "model_id": null,
+        "source_model": "qwen3-8-2-4t-a95b",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "solar-pro-2-preview-reasoning",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "gpt-5-nano-medium",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "deepseek-coder-v2",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "olmo-3-7b-instruct",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "jt-4-1-flash-236b-a21b-non-reasoning",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "grok-4-3-non-reasoning",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "claude-4-5-sonnet-thinking",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "claude-4-5-sonnet",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "granite-4-1-3b",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "ling-2-6-flash",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "llama-4-maverick",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "jamba-1-6-large",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "glm-5-1-non-reasoning",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "gpt-6-sol-daybreak-blue",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "gemini-1-5-flash-8b",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "glm-4-6",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "grok-4-3",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "olmo-3-1-32b-instruct",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "mimo-v2-omni",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "ministral-3-8b",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "claude-sonnet-5-5-xhigh",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "llama-3-3-instruct-70b",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "nemotron-cascade-2-30b-a3b",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "r1-1776",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "claude-opus-4-8",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": "muse_spark13",
+        "source_model": "muse-spark-1-3",
+        "status": "mapped"
+      },
+      {
+        "model_id": null,
+        "source_model": "claude-sonnet-5-xhigh",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "qwen3-8-flash-next",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": "claude_fable51",
+        "source_model": "claude-fable-5-1-xhigh",
+        "status": "mapped"
+      },
+      {
+        "model_id": null,
+        "source_model": "gpt-5-6-terra-non-reasoning",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "minimax-m1-80k",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "llama-3-2-instruct-90b-vision",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "k-exaone-non-reasoning",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": "claude_fable51",
+        "source_model": "claude-fable-5-1-high",
+        "status": "mapped"
+      },
+      {
+        "model_id": null,
+        "source_model": "qwen3-8b-instruct-reasoning",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "claude-21",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "gpt-5-6-terra-xhigh",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "k2-horizon-0-9b",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "devstral-small",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "nvidia-nemotron-3-nano-4b",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "gpt-4-1-mini",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "phi-4-mini",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "grok-beta",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "grok-code-fast-1",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "nova-2-0-pro",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "ring-1t",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "granite-4-0-nano-1b",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": "gpt61_sol",
+        "source_model": "gpt-6-1-sol-medium",
+        "status": "mapped"
+      },
+      {
+        "model_id": null,
+        "source_model": "motif-0714",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "k2-v2",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": "gpt6_astra",
+        "source_model": "gpt-6-astra-low",
+        "status": "mapped"
+      },
+      {
+        "model_id": null,
+        "source_model": "gemini-3-deep-think",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "ernie-5-0-thinking-preview",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "kimi-k2-5",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "ling-3-1-flash",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "claude-4-5-haiku-reasoning",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "granite-4-0-h-350m",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "qwen3-5-0-8b",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "apriel-v1-6-15b-thinker",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "claude-4-sonnet-thinking",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "gemma-3n-e4b",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "qwen3-vl-235b-a22b-reasoning",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": "deepseek_r1",
+        "source_model": "deepseek-r1",
+        "status": "mapped"
+      },
+      {
+        "model_id": null,
+        "source_model": "qwen3-7-plus",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "gpt-5-4",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "gemma-3n-e2b",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "deephermes-3-mistral-24b-preview",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "reka-flash",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "gpt-5-6-luna-high",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "llama-3-instruct-70b",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "nvidia-nemotron-nano-12b-v2-vl",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "devstral-medium",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "command-r-03-2024",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "apriel-v1-5-15b-thinker",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "gemini-1-5-flash-may-2024",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "claude-35-sonnet-june-24",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "step-3-vl-10b",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "deepseek-v4-flash-0420-non-reasoning",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "llama-4-scout",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "granite-4-2-8b",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "gpt-5-4-mini-non-reasoning",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "ernie-4-5-300b-a47b",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "deepseek-v3-2-reasoning-0925",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "claude-haiku-5-5-medium",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "molmo-7b-d",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "qwen3-32b-instruct-reasoning",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": "qwen38_27b",
+        "source_model": "qwen3-8-27b",
+        "status": "mapped"
+      },
+      {
+        "model_id": null,
+        "source_model": "motif-3",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "qwen3-4b-2507-instruct",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "gemma-4-e2b",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": "qwen38_max",
+        "source_model": "qwen3-8-max",
+        "status": "mapped"
+      },
+      {
+        "model_id": null,
+        "source_model": "gpt-5-5-high",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "claude-sonnet-5-5",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "llama-3-1-nemotron-nano-4b-reasoning",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "gemini-3-7-flash",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "hy3",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": "gpt61_sol",
+        "source_model": "gpt-6-1-sol",
+        "status": "mapped"
+      },
+      {
+        "model_id": null,
+        "source_model": "deepseek-r1-distill-qwen-14b",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "qwen3-8b-instruct",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": "claude3_sonnet",
+        "source_model": "claude-3-sonnet",
+        "status": "mapped"
+      },
+      {
+        "model_id": null,
+        "source_model": "gemini-3-pro-low",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "nova-2-0-omni-reasoning-low",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "arctic-instruct",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "gpt-4o-chatgpt",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "jamba-1-5-large",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "jamba-1-7-mini",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": "qwen25_72b_instruct",
+        "source_model": "qwen2-5-72b-instruct",
+        "status": "mapped"
+      },
+      {
+        "model_id": null,
+        "source_model": "o1-mini",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "hy3-non-reasoning",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "gpt-4o-mini",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "trinity-large-thinking",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "deephermes-3-llama-3-1-8b-preview",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "solar-pro-3",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": "claude_opus5",
+        "source_model": "claude-opus-5",
+        "status": "mapped"
+      },
+      {
+        "model_id": null,
+        "source_model": "qwen3-omni-30b-a3b-reasoning",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "qwen-2-5-max",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "claude-sonnet-5-high",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "kimi-k2-5-non-reasoning",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "gpt-5-4-mini",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "k2-horizon-375b-a23b",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "claude-sonnet-5-5-low",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "gemini-3-1-pro-preview",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "qwen3-235b-a22b-instruct-reasoning",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "gpt-5-mini-minimal",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "deepseek-v2-5",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "gemini-2-0-flash",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "gpt-5-6-terra",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "gemma-3n-e4b-preview-0520",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "kimi-k2-thinking",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "mimo-v2-flash-reasoning",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "deepseek-v4-pro-0424",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "qwen3-32b-instruct",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "gpt-6-luna-low",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": "grok46",
+        "source_model": "grok-4-6-low",
+        "status": "mapped"
+      },
+      {
+        "model_id": null,
+        "source_model": "gpt-4o",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "g9v3-39a5b",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "gpt-5-4-nano-non-reasoning",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "claude-4-5-haiku",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "gpt-5-mini-medium",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "gpt-5-minimal",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "diffusiongemma-26b-a4b",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "gpt-5-5-instant-06-26",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "qwen-chat-14b",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "llama-3-3-nemotron-super-49b",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "gpt-6-sol",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "gemini-2-0-pro-experimental-02-05",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "grok-4-20",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "deepseek-coder-v2-lite",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "gemini-2-5-flash-preview-09-2025-reasoning",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "falcon-h1r-7b",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "gpt-5-5-low",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "step-3-5-flash-0202",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "glm-4-7-flash-non-reasoning",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "olmo-3-32b-think",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "qwen3-next-80b-a3b-reasoning",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": "grok46",
+        "source_model": "grok-4-6",
+        "status": "mapped"
+      },
+      {
+        "model_id": null,
+        "source_model": "gpt-oss-120b-low",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "o3-pro",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "mistral-8x22b-instruct",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "qwen3-max-thinking-preview",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": "glm53",
+        "source_model": "glm-5-3-low",
+        "status": "mapped"
+      },
+      {
+        "model_id": null,
+        "source_model": "devstral-small-2505",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "gpt-5-6-terra-low",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "claude-4-1-opus-thinking",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "gemma-4-31b",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "claude-fable-5",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": "glm53",
+        "source_model": "glm-5-3",
+        "status": "mapped"
+      },
+      {
+        "model_id": null,
+        "source_model": "qwen3-vl-30b-a3b-reasoning",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "devstral-small-2",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "qwq-32b",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "llama-3-1-nemotron-ultra-253b-v1-reasoning",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "claude-4-sonnet",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "gemma-4-31b-non-reasoning",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "gpt-5-1-non-reasoning",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "gemini-3-pro",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "gemma-3-1b",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "qwen1.5-110b-chat",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "glm-4-6v-reasoning",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "minicpm5-1b-non-reasoning",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": "gemini4_argon",
+        "source_model": "gemini-4-argon",
+        "status": "mapped"
+      },
+      {
+        "model_id": null,
+        "source_model": "qwen3-vl-32b-reasoning",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "hermes-4-llama-3-1-405b",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "gpt-6-sol-non-reasoning",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "granite-4-1-30b",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "deepseek-v4-pro-non-reasoning",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "gpt-5-4-nano",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": "muse_spark13",
+        "source_model": "muse-spark-1-3-xhigh",
+        "status": "mapped"
+      },
+      {
+        "model_id": null,
+        "source_model": "claude-sonnet-5-non-reasoning",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "qwen3-vl-235b-a22b-instruct",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "muse-spark-1-1",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "deepseek-v3-2-reasoning",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": "grok46",
+        "source_model": "grok-4-6-xhigh",
+        "status": "mapped"
+      },
+      {
+        "model_id": null,
+        "source_model": "exaone-4-0-1-2b-reasoning",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "gemma-4-e4b",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "deepseek-v4-flash-0420",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "claude-3-7-sonnet",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": "gpt56_sol",
+        "source_model": "gpt-5-6-sol",
+        "status": "mapped"
+      },
+      {
+        "model_id": null,
+        "source_model": "solar-mini",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": "gpt56_sol",
+        "source_model": "gpt-5-6-sol-xhigh",
+        "status": "mapped"
+      },
+      {
+        "model_id": null,
+        "source_model": "gpt-6-sol-xhigh",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "qwen3-coder-30b-a3b-instruct",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "k2-v2-low",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "granite-4-0-h-nano-1b",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "reka-flash-3",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": "deepseek_v4_1_flash",
+        "source_model": "deepseek-v4-1-flash",
+        "status": "mapped"
+      },
+      {
+        "model_id": null,
+        "source_model": "gpt-5-6-luna-non-reasoning",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "mistral-medium-3-5",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "k2-v2-medium",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "claude-2",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "gemini-3-7-flash-low",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "pixtral-large-2411",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "qwen3-vl-8b-reasoning",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "phi-3-mini",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "mi-dm-k-2-5-pro-dec28",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": "claude_opus55",
+        "source_model": "claude-opus-5-5-xhigh",
+        "status": "mapped"
+      },
+      {
+        "model_id": null,
+        "source_model": "claude-sonnet-4-6-adaptive",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": "deepseek_r1_distill_qwen_32b",
+        "source_model": "deepseek-r1-distill-qwen-32b",
+        "status": "mapped"
+      },
+      {
+        "model_id": null,
+        "source_model": "deepseek-v3-1-terminus",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "gemini-2-0-flash-thinking-exp-1219",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "midm-250-pro-rsnsft",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": "gpt6_astra",
+        "source_model": "gpt-6-astra-high",
+        "status": "mapped"
+      },
+      {
+        "model_id": null,
+        "source_model": "gpt-5-nano",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "lfm2-5-2-6b",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "llama-nemotron-super-49b-v1-5-reasoning",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "lfm2-5-8b-a1b",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "nemotron-3-5-super-vl",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "gpt-4o-realtime-dec-2024",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "gpt-5-5-pro",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "ling-3-0-flash",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "gpt-5-5-instant-05-26",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "qwen2-5-coder-7b-instruct",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "qwen3-4b-instruct",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "nova-premier",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "mistral-small-3",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": "gpt61_sol",
+        "source_model": "gpt-6-1-sol-low",
+        "status": "mapped"
+      },
+      {
+        "model_id": null,
+        "source_model": "glm-5-2-non-reasoning",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "o1-pro",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "jamba-1-6-mini",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": "gpt6_astra",
+        "source_model": "gpt-6-astra-medium",
+        "status": "mapped"
+      },
+      {
+        "model_id": null,
+        "source_model": "gpt-4o-2024-05-13",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": "muse_wonder_full",
+        "source_model": "muse-wonder-full",
+        "status": "mapped"
+      },
+      {
+        "model_id": null,
+        "source_model": "claude-opus-4-7",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "cogito-v2-1-reasoning",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": "claude_opus55",
+        "source_model": "claude-opus-5-5-medium",
+        "status": "mapped"
+      },
+      {
+        "model_id": null,
+        "source_model": "gpt-5-chatgpt",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "gemini-3-7-flash-medium",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "ring-2-6-1t",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "solar-pro-2-reasoning",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "muse-spark",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "grok-3-reasoning",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "openchat-35",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "qwen3-14b-instruct",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "phi-4",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "qwen3-5-35b-a3b-non-reasoning",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "claude-sonnet-5-medium",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "gpt-oss-120b",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "glm-5-non-reasoning",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "nvidia-nemotron-nano-9b-v2-reasoning",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "claude-sonnet-4-6-non-reasoning-low-effort",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "claude-4-1-opus",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": "claude_opus55",
+        "source_model": "claude-opus-5-5-high",
+        "status": "mapped"
+      },
+      {
+        "model_id": null,
+        "source_model": "qwen3-30b-a3b-instruct",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "qwen3-6-plus",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "agnes-2-5-pro-beta",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "nova-2-0-pro-reasoning-low",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "gemini-2-5-flash-lite-reasoning",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "qwen3-vl-4b-instruct",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "qwen3-235b-a22b-instruct-2507-reasoning",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "gemini-3-8-flash-low",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "tulu3-405b",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "minimax-m2",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "jamba-reasoning-3b",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "glm-5-2",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": "kimi_k3",
+        "source_model": "kimi-k3",
+        "status": "mapped"
+      },
+      {
+        "model_id": null,
+        "source_model": "olmo-2-7b",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "qwen3-vl-4b-reasoning",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "quasar-438b",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "kat-coder-pro-v1",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "deepseek-v3-1",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "lfm2-24b-a2b",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "nova-2-0-lite-reasoning-medium",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "kat-coder-pro-v2",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "qwen3-coder-next",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "gpt-5-1-codex-mini",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "gemini-2-0-flash-experimental",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "llama-65b",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "grok-4-3-low",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "deepseek-v4-flash",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "gemma-4-12b",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": "muse_wonder",
+        "source_model": "muse-wonder",
+        "status": "mapped"
+      },
+      {
+        "model_id": "claude_opus5",
+        "source_model": "claude-opus-5-medium",
+        "status": "mapped"
+      },
+      {
+        "model_id": null,
+        "source_model": "grok-3-mini-reasoning",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "llama-2-chat-7b",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": "mistral_large4",
+        "source_model": "mistral-large-4",
+        "status": "mapped"
+      }
+    ],
+    "scope": "Reviewed FIELD_MAP metrics only; estimated intelligence indices excluded. Embedded metrics outside that contract are not imported.",
+    "source": "Artificial Analysis"
+  },
+  "dataset_sha256": "c67d2ad2c4ebed0c1f19a24fcb18daba2d19146c2a63e614f4c158add5108a3c",
+  "dependency_lock_sha256": "2c008e6d463d37c7ab73c7a0d307ebf6392f238097fd450a61077c8e1e7d4c15",
+  "entities": {
+    "conflict": 1,
+    "new": 0,
+    "unchanged": 2164
+  },
+  "evidence_sha256": "f911b061cc2289cb9ea83eed8fe0e35dcea0b8a835d026d49ed1b39fce8db67c",
+  "latency_policy": "source_reported_only",
+  "mapping_contract_sha256": "96170c95a488663db1eb5213bd17a76489b081979593e0d7fbaa17f41ddd1304",
+  "publication": "review_required",
+  "source": "aa"
+}

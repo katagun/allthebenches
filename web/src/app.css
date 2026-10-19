@@ -196,7 +196,19 @@
 .workspace-nav nav{display:flex;gap:4px;align-self:stretch;align-items:center}
 .workspace-nav nav button{color:var(--muted-foreground);border-radius:0;height:100%;border-bottom:2px solid transparent}
 .workspace-nav nav button[aria-pressed="true"]{color:var(--foreground);border-bottom-color:var(--primary);font-weight:650}
-.workspace-nav .repository-link{margin-left:auto}
+.workspace-nav .header-actions{margin-left:auto;display:flex;align-items:center;gap:2px;flex:none}
+.workspace-nav .header-actions .repository-link{margin-left:0}
+.theme-toggle{position:relative;display:flex}
+.theme-toggle-button{display:flex;align-items:center;justify-content:center;width:32px;height:32px;flex:none;color:var(--muted-foreground);background:transparent;border:0;border-radius:6px;cursor:pointer}
+.theme-toggle-button:hover{background:var(--accent);color:var(--foreground)}
+.theme-toggle-button:focus-visible{outline:2px solid var(--ring);outline-offset:2px}
+.theme-menu{position:absolute;top:calc(100% + 6px);right:0;z-index:90;min-width:150px;padding:4px;border:1px solid var(--border);border-radius:8px;background:var(--popover);color:var(--popover-foreground);box-shadow:0 4px 16px #0002}
+.theme-menu-item{display:flex;align-items:center;gap:8px;width:100%;padding:8px 10px;border:0;border-radius:5px;background:transparent;color:var(--popover-foreground);font-size:12px;cursor:pointer;text-align:left}
+.theme-menu-item:hover{background:var(--accent);color:var(--accent-foreground)}
+.theme-menu-item:focus-visible{outline:2px solid var(--ring);outline-offset:-2px}
+.theme-menu-item[data-active]{font-weight:650}
+.theme-menu-check{margin-left:auto}
+.directory-nav .theme-toggle{margin-left:auto}
 .primary-controls{padding:12px 0 8px;border:0;gap:8px}
 .primary-controls .toolbar{flex:1;max-width:none}
 .primary-controls .search-box{max-width:280px}
@@ -480,6 +492,8 @@
 .app-shell[data-mobile-view="true"]>.workspace-nav .repository-link{display:none!important}
 .app-shell[data-mobile-view="true"] .workspace-nav .site-header{height:auto;flex:1}
 .app-shell[data-mobile-view="true"] .workspace-nav .mobile-options-toggle{position:static;height:44px;padding:0 12px;font-size:12px;margin-left:auto}
+.app-shell[data-mobile-view="true"] .workspace-nav .header-actions{margin-left:0}
+.app-shell[data-mobile-view="true"] .workspace-nav .theme-toggle-button{height:44px;width:44px}
 .app-shell[data-mobile-view="true"]>.mobile-search{display:block;position:relative;width:100%;max-width:none;flex:none;order:0;margin:0 0 12px}
 .mobile-search input{height:44px;font-size:16px;padding-left:36px}
 .app-shell[data-mobile-view="true"][data-portrait-matrix="false"]>.portrait-comparison{display:flex;flex-direction:column;flex:none;min-height:0;overflow:visible;border:0;border-radius:0;background:transparent}

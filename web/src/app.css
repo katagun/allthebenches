@@ -6,6 +6,7 @@
 .column-pagination{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:0 0 9px;color:var(--muted-foreground);font-size:11px}.column-pagination>div{display:flex;align-items:center;gap:8px}.column-pagination button{height:28px;padding-inline:10px;font-size:11px}.column-page-count{min-width:74px;text-align:center;font-variant-numeric:tabular-nums}.benchmark-table th:not(.sticky-model-head),.benchmark-table td:not(.sticky-model-cell){min-width:160px;width:180px;max-width:180px}.benchmark-table td:not(.sticky-model-cell){overflow:hidden;text-overflow:ellipsis}.benchmark-table td:not(.sticky-model-cell) .score-button{width:100%}
 @media(max-width:800px){.column-pagination{align-items:flex-start;flex-direction:column;gap:7px}.column-pagination>div{width:100%;justify-content:space-between}.benchmark-table th:not(.sticky-model-head),.benchmark-table td:not(.sticky-model-cell){min-width:160px}}
 .table-loading{padding:22px;text-align:center;color:var(--muted-foreground);font-size:12px}
+.table-card>.empty-state{margin:auto;align-self:center;width:100%;max-width:640px}
 
 /* Keep capacity calculations independent of intrinsic cell content. */
 .benchmark-table{table-layout:fixed}

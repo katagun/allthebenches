@@ -14004,6 +14004,22 @@
       "precision": null,
       "reasoning_budget_tokens": null,
       "reasoning_label": "xhigh"
+    },
+    {
+      "id": "gpt4o_traces_default",
+      "mode": "unknown",
+      "model_id": "gpt4o",
+      "precision": null,
+      "reasoning_budget_tokens": null,
+      "reasoning_label": "OpenRouter/model default; reasoning setting unreported"
+    },
+    {
+      "id": "grok3_traces_default",
+      "mode": "unknown",
+      "model_id": "grok3",
+      "precision": null,
+      "reasoning_budget_tokens": null,
+      "reasoning_label": "OpenRouter/model default; reasoning setting unreported"
     }
   ],
   "coverage_gaps": [
@@ -14194,8 +14210,8 @@
     },
     {
       "id": "gap_traces_unmapped_panel_rows",
-      "reason": "The TRACES full-panel-10x viewer publishes 30 OpenRouter-identified model rows over ten runs; 12 observations for three exact identities (GPT-5.6 Sol, DeepSeek-R1-Distill-Qwen-32B, Llama 3.1 8B Instruct) are curated. The other 27 rows are unmapped: most name releases with no canonical model record, and the two closest identities were checked and ruled out (deepseek-v4-pro resolves to the April 0423 checkpoint, not the catalogued 0813 release; mistral-large-2512 predates Mistral Large 4). Follow-up queue, not proven scores for catalogued releases.",
-      "scope": "TRACES full-panel-10x panel rows (27 of 30)",
+      "reason": "The TRACES full-panel-10x viewer publishes 30 OpenRouter-identified model rows over ten runs; 20 observations for five exact identities (GPT-5.6 Sol, DeepSeek-R1-Distill-Qwen-32B, Llama 3.1 8B Instruct, GPT-4o, Grok 3) are curated. The other 25 rows are unmapped: most name releases with no canonical model record, and the two closest identities were checked and ruled out (deepseek-v4-pro resolves to the April 0423 checkpoint, not the catalogued 0813 release; mistral-large-2512 predates Mistral Large 4). Follow-up queue, not proven scores for catalogued releases.",
+      "scope": "TRACES full-panel-10x panel rows (25 of 30)",
       "source_ids": [
         "intellicat_traces_technical",
         "intellicat_traces_methodology"
@@ -15755,6 +15771,56 @@
       "upstream_ids": {},
       "version": "Qwen3.8-27B",
       "weights_state": "unknown"
+    },
+    {
+      "access_state": "available",
+      "aliases": [],
+      "family_id": "gpt",
+      "first_seen_at": null,
+      "id": "gpt4o",
+      "lab_ids": [
+        "openai"
+      ],
+      "modalities": [
+        "text",
+        "image",
+        "audio"
+      ],
+      "name": "GPT-4o",
+      "release_date": "2024-05-13",
+      "release_date_precision": "day",
+      "source_ids": [
+        "openai_gpt4o_launch"
+      ],
+      "upstream_ids": {
+        "openrouter": "openai/gpt-4o"
+      },
+      "version": "4o",
+      "weights_state": "closed"
+    },
+    {
+      "access_state": "preview",
+      "aliases": [],
+      "family_id": "grok",
+      "first_seen_at": null,
+      "id": "grok3",
+      "lab_ids": [
+        "xai"
+      ],
+      "modalities": [
+        "text"
+      ],
+      "name": "Grok 3",
+      "release_date": "2025-02-19",
+      "release_date_precision": "day",
+      "source_ids": [
+        "xai_grok3_launch"
+      ],
+      "upstream_ids": {
+        "openrouter": "x-ai/grok-3"
+      },
+      "version": "3",
+      "weights_state": "closed"
     }
   ],
   "presets": [
@@ -16789,7 +16855,9 @@
         "vals_muse_spark13_vals_profile_meta_muse_spark_1_3_max_unverified",
         "vals_muse_wonder_full_vals_profile_meta_muse_wonder_full_unverified",
         "vals_qwen38_27b_vals_profile_alibaba_qwen3_8_27b_unverified",
-        "vals_qwen38_max_vals_profile_alibaba_qwen3_8_max_unverified"
+        "vals_qwen38_max_vals_profile_alibaba_qwen3_8_max_unverified",
+        "gpt4o_traces_default",
+        "grok3_traces_default"
       ],
       "name": "All models — October 2026",
       "reason": "Discovery and benchmarked releases, including explicitly unscored current rows and historical GPT-4. Includes all exact configurations and all curated benchmark variants, including BullshitBench V1/V2 and TRACES.",
@@ -17016,13 +17084,15 @@
       "model_configuration_ids": [
         "gpt56_sol_traces_default",
         "deepseek_r1_distill_qwen_32b_traces_default",
-        "llama31_8b_instruct_traces_default"
+        "llama31_8b_instruct_traces_default",
+        "gpt4o_traces_default",
+        "grok3_traces_default"
       ],
       "name": "TRACES — October 2026",
       "reason": "Intellicat TRACES full-panel-10x snapshot. Exact model identities and published metrics are retained; reasoning settings are unreported.",
-      "reviewed_at": "2026-10-17",
+      "reviewed_at": "2026-10-19",
       "saturation_policy_version": null,
-      "version": "1.0.0"
+      "version": "1.1.0"
     },
     {
       "benchmark_ids": [
@@ -40003,8 +40073,8 @@
     },
     {
       "benchmark_id": "traces_ifr_a",
-      "distinct_lab_count": 3,
-      "distinct_model_count": 3,
+      "distinct_lab_count": 4,
+      "distinct_model_count": 5,
       "eligible": false,
       "evidence": [
         {
@@ -40022,6 +40092,19 @@
         },
         {
           "configuration_ids": [
+            "gpt4o_traces_default"
+          ],
+          "conservative_value": 0.985714,
+          "lab_ids": [
+            "openai"
+          ],
+          "model_id": "gpt4o",
+          "observation_ids": [
+            "intellicat_gpt4o_ifr_a"
+          ]
+        },
+        {
+          "configuration_ids": [
             "gpt56_sol_traces_default"
           ],
           "conservative_value": 0.914286,
@@ -40031,6 +40114,19 @@
           "model_id": "gpt56_sol",
           "observation_ids": [
             "intellicat_gpt56_sol_ifr_a"
+          ]
+        },
+        {
+          "configuration_ids": [
+            "grok3_traces_default"
+          ],
+          "conservative_value": 0.995238,
+          "lab_ids": [
+            "xai"
+          ],
+          "model_id": "grok3",
+          "observation_ids": [
+            "intellicat_grok3_ifr_a"
           ]
         },
         {
@@ -40064,8 +40160,8 @@
     },
     {
       "benchmark_id": "traces_ifr_i",
-      "distinct_lab_count": 3,
-      "distinct_model_count": 3,
+      "distinct_lab_count": 4,
+      "distinct_model_count": 5,
       "eligible": false,
       "evidence": [
         {
@@ -40083,6 +40179,19 @@
         },
         {
           "configuration_ids": [
+            "gpt4o_traces_default"
+          ],
+          "conservative_value": 0.959524,
+          "lab_ids": [
+            "openai"
+          ],
+          "model_id": "gpt4o",
+          "observation_ids": [
+            "intellicat_gpt4o_ifr_i"
+          ]
+        },
+        {
+          "configuration_ids": [
             "gpt56_sol_traces_default"
           ],
           "conservative_value": 0.542857,
@@ -40092,6 +40201,19 @@
           "model_id": "gpt56_sol",
           "observation_ids": [
             "intellicat_gpt56_sol_ifr_i"
+          ]
+        },
+        {
+          "configuration_ids": [
+            "grok3_traces_default"
+          ],
+          "conservative_value": 0.835714,
+          "lab_ids": [
+            "xai"
+          ],
+          "model_id": "grok3",
+          "observation_ids": [
+            "intellicat_grok3_ifr_i"
           ]
         },
         {
@@ -40125,8 +40247,8 @@
     },
     {
       "benchmark_id": "traces_disclaimer_tax",
-      "distinct_lab_count": 3,
-      "distinct_model_count": 3,
+      "distinct_lab_count": 4,
+      "distinct_model_count": 5,
       "eligible": false,
       "evidence": [
         {
@@ -40144,6 +40266,19 @@
         },
         {
           "configuration_ids": [
+            "gpt4o_traces_default"
+          ],
+          "conservative_value": 0.02619,
+          "lab_ids": [
+            "openai"
+          ],
+          "model_id": "gpt4o",
+          "observation_ids": [
+            "intellicat_gpt4o_disclaimer_tax"
+          ]
+        },
+        {
+          "configuration_ids": [
             "gpt56_sol_traces_default"
           ],
           "conservative_value": 0.371429,
@@ -40153,6 +40288,19 @@
           "model_id": "gpt56_sol",
           "observation_ids": [
             "intellicat_gpt56_sol_disclaimer_tax"
+          ]
+        },
+        {
+          "configuration_ids": [
+            "grok3_traces_default"
+          ],
+          "conservative_value": 0.159524,
+          "lab_ids": [
+            "xai"
+          ],
+          "model_id": "grok3",
+          "observation_ids": [
+            "intellicat_grok3_disclaimer_tax"
           ]
         },
         {
@@ -40186,8 +40334,8 @@
     },
     {
       "benchmark_id": "traces_edi_mean",
-      "distinct_lab_count": 3,
-      "distinct_model_count": 3,
+      "distinct_lab_count": 4,
+      "distinct_model_count": 5,
       "eligible": false,
       "evidence": [
         {
@@ -40205,6 +40353,19 @@
         },
         {
           "configuration_ids": [
+            "gpt4o_traces_default"
+          ],
+          "conservative_value": 0.165317,
+          "lab_ids": [
+            "openai"
+          ],
+          "model_id": "gpt4o",
+          "observation_ids": [
+            "intellicat_gpt4o_edi_mean"
+          ]
+        },
+        {
+          "configuration_ids": [
             "gpt56_sol_traces_default"
           ],
           "conservative_value": 0.253486,
@@ -40214,6 +40375,19 @@
           "model_id": "gpt56_sol",
           "observation_ids": [
             "intellicat_gpt56_sol_edi_mean"
+          ]
+        },
+        {
+          "configuration_ids": [
+            "grok3_traces_default"
+          ],
+          "conservative_value": 0.286166,
+          "lab_ids": [
+            "xai"
+          ],
+          "model_id": "grok3",
+          "observation_ids": [
+            "intellicat_grok3_edi_mean"
           ]
         },
         {

@@ -48376,6 +48376,50 @@
       "value": 86.4
     },
     {
+      "benchmark_id": "traces_disclaimer_tax",
+      "configuration_id": "gpt4o_traces_default",
+      "observation_ids": [
+        "intellicat_gpt4o_disclaimer_tax"
+      ],
+      "series_id": "traces_disclaimer_tax_intellicat_full_panel_10x",
+      "state": "selected",
+      "unit": "fraction",
+      "value": 0.02619
+    },
+    {
+      "benchmark_id": "traces_edi_mean",
+      "configuration_id": "gpt4o_traces_default",
+      "observation_ids": [
+        "intellicat_gpt4o_edi_mean"
+      ],
+      "series_id": "traces_edi_mean_intellicat_full_panel_10x",
+      "state": "selected",
+      "unit": "index",
+      "value": 0.165317
+    },
+    {
+      "benchmark_id": "traces_ifr_a",
+      "configuration_id": "gpt4o_traces_default",
+      "observation_ids": [
+        "intellicat_gpt4o_ifr_a"
+      ],
+      "series_id": "traces_ifr_a_intellicat_full_panel_10x",
+      "state": "selected",
+      "unit": "fraction",
+      "value": 0.985714
+    },
+    {
+      "benchmark_id": "traces_ifr_i",
+      "configuration_id": "gpt4o_traces_default",
+      "observation_ids": [
+        "intellicat_gpt4o_ifr_i"
+      ],
+      "series_id": "traces_ifr_i_intellicat_full_panel_10x",
+      "state": "selected",
+      "unit": "fraction",
+      "value": 0.959524
+    },
+    {
       "benchmark_id": "arc_agi_1_semi_private",
       "configuration_id": "gpt56_sol_arc_high",
       "observation_ids": [
@@ -53533,6 +53577,50 @@
       "state": "selected",
       "unit": "%",
       "value": 85.2
+    },
+    {
+      "benchmark_id": "traces_disclaimer_tax",
+      "configuration_id": "grok3_traces_default",
+      "observation_ids": [
+        "intellicat_grok3_disclaimer_tax"
+      ],
+      "series_id": "traces_disclaimer_tax_intellicat_full_panel_10x",
+      "state": "selected",
+      "unit": "fraction",
+      "value": 0.159524
+    },
+    {
+      "benchmark_id": "traces_edi_mean",
+      "configuration_id": "grok3_traces_default",
+      "observation_ids": [
+        "intellicat_grok3_edi_mean"
+      ],
+      "series_id": "traces_edi_mean_intellicat_full_panel_10x",
+      "state": "selected",
+      "unit": "index",
+      "value": 0.286166
+    },
+    {
+      "benchmark_id": "traces_ifr_a",
+      "configuration_id": "grok3_traces_default",
+      "observation_ids": [
+        "intellicat_grok3_ifr_a"
+      ],
+      "series_id": "traces_ifr_a_intellicat_full_panel_10x",
+      "state": "selected",
+      "unit": "fraction",
+      "value": 0.995238
+    },
+    {
+      "benchmark_id": "traces_ifr_i",
+      "configuration_id": "grok3_traces_default",
+      "observation_ids": [
+        "intellicat_grok3_ifr_i"
+      ],
+      "series_id": "traces_ifr_i_intellicat_full_panel_10x",
+      "state": "selected",
+      "unit": "fraction",
+      "value": 0.835714
     },
     {
       "benchmark_id": "arc_agi_1_semi_private",
@@ -295112,6 +295200,266 @@
       "uncertainty": null,
       "unit": "%",
       "value": 83.9
+    },
+    {
+      "benchmark_id": "traces_ifr_a",
+      "configuration_id": "gpt4o_traces_default",
+      "evaluated_at": null,
+      "evaluator": "Intellicat",
+      "id": "intellicat_gpt4o_ifr_a",
+      "locator": "site.json models[] where model == openai/gpt-4o; field ifr_a",
+      "reported_at": null,
+      "reporting_relationship": "evaluator_measurement",
+      "review_state": "reviewed",
+      "series_id": "traces_ifr_a_intellicat_full_panel_10x",
+      "setup": {
+        "API": "OpenRouter OpenAI-compatible chat-completions",
+        "max_tokens": null,
+        "max_tokens_note": "Model-specific cap unreported in current site JSON.",
+        "model_identifier": "openai/gpt-4o",
+        "probe_count": 42,
+        "provider_endpoint": "not reported",
+        "reasoning_setting": "not reported",
+        "run_count": 10,
+        "single_turn": true,
+        "system_prompt": false,
+        "temperature": 1.0
+      },
+      "source_id": "intellicat_traces_technical",
+      "supersedes": [],
+      "uncertainty": {
+        "confidence_level": "not stated in viewer/paper text",
+        "lower": 0.97619,
+        "method": "bootstrap percentile interval over the ten full-panel runs",
+        "upper": 0.995238
+      },
+      "unit": "fraction",
+      "value": 0.985714
+    },
+    {
+      "benchmark_id": "traces_ifr_i",
+      "configuration_id": "gpt4o_traces_default",
+      "evaluated_at": null,
+      "evaluator": "Intellicat",
+      "id": "intellicat_gpt4o_ifr_i",
+      "locator": "site.json models[] where model == openai/gpt-4o; field ifr_i",
+      "reported_at": null,
+      "reporting_relationship": "evaluator_measurement",
+      "review_state": "reviewed",
+      "series_id": "traces_ifr_i_intellicat_full_panel_10x",
+      "setup": {
+        "API": "OpenRouter OpenAI-compatible chat-completions",
+        "max_tokens": null,
+        "max_tokens_note": "Model-specific cap unreported in current site JSON.",
+        "model_identifier": "openai/gpt-4o",
+        "probe_count": 42,
+        "provider_endpoint": "not reported",
+        "reasoning_setting": "not reported",
+        "run_count": 10,
+        "single_turn": true,
+        "system_prompt": false,
+        "temperature": 1.0
+      },
+      "source_id": "intellicat_traces_technical",
+      "supersedes": [],
+      "uncertainty": {
+        "confidence_level": "not stated in viewer/paper text",
+        "lower": 0.945238,
+        "method": "bootstrap percentile interval over the ten full-panel runs",
+        "upper": 0.97381
+      },
+      "unit": "fraction",
+      "value": 0.959524
+    },
+    {
+      "benchmark_id": "traces_disclaimer_tax",
+      "configuration_id": "gpt4o_traces_default",
+      "evaluated_at": null,
+      "evaluator": "Intellicat",
+      "id": "intellicat_gpt4o_disclaimer_tax",
+      "locator": "site.json models[] where model == openai/gpt-4o; field disclaimer_tax",
+      "reported_at": null,
+      "reporting_relationship": "evaluator_measurement",
+      "review_state": "reviewed",
+      "series_id": "traces_disclaimer_tax_intellicat_full_panel_10x",
+      "setup": {
+        "API": "OpenRouter OpenAI-compatible chat-completions",
+        "max_tokens": null,
+        "max_tokens_note": "Model-specific cap unreported in current site JSON.",
+        "model_identifier": "openai/gpt-4o",
+        "probe_count": 42,
+        "provider_endpoint": "not reported",
+        "reasoning_setting": "not reported",
+        "run_count": 10,
+        "single_turn": true,
+        "system_prompt": false,
+        "temperature": 1.0
+      },
+      "source_id": "intellicat_traces_technical",
+      "supersedes": [],
+      "uncertainty": null,
+      "unit": "fraction",
+      "value": 0.02619
+    },
+    {
+      "benchmark_id": "traces_edi_mean",
+      "configuration_id": "gpt4o_traces_default",
+      "evaluated_at": null,
+      "evaluator": "Intellicat",
+      "id": "intellicat_gpt4o_edi_mean",
+      "locator": "site.json models[] where model == openai/gpt-4o; field edi_mean",
+      "reported_at": null,
+      "reporting_relationship": "evaluator_measurement",
+      "review_state": "reviewed",
+      "series_id": "traces_edi_mean_intellicat_full_panel_10x",
+      "setup": {
+        "API": "OpenRouter OpenAI-compatible chat-completions",
+        "max_tokens": null,
+        "max_tokens_note": "Model-specific cap unreported in current site JSON.",
+        "model_identifier": "openai/gpt-4o",
+        "probe_count": 42,
+        "provider_endpoint": "not reported",
+        "reasoning_setting": "not reported",
+        "run_count": 10,
+        "single_turn": true,
+        "system_prompt": false,
+        "temperature": 1.0
+      },
+      "source_id": "intellicat_traces_technical",
+      "supersedes": [],
+      "uncertainty": null,
+      "unit": "index",
+      "value": 0.165317
+    },
+    {
+      "benchmark_id": "traces_ifr_a",
+      "configuration_id": "grok3_traces_default",
+      "evaluated_at": null,
+      "evaluator": "Intellicat",
+      "id": "intellicat_grok3_ifr_a",
+      "locator": "site.json models[] where model == x-ai/grok-3; field ifr_a",
+      "reported_at": null,
+      "reporting_relationship": "evaluator_measurement",
+      "review_state": "reviewed",
+      "series_id": "traces_ifr_a_intellicat_full_panel_10x",
+      "setup": {
+        "API": "OpenRouter OpenAI-compatible chat-completions",
+        "max_tokens": null,
+        "max_tokens_note": "Model-specific cap unreported in current site JSON.",
+        "model_identifier": "x-ai/grok-3",
+        "probe_count": 42,
+        "provider_endpoint": "not reported",
+        "reasoning_setting": "not reported",
+        "run_count": 10,
+        "single_turn": true,
+        "system_prompt": false,
+        "temperature": 1.0
+      },
+      "source_id": "intellicat_traces_technical",
+      "supersedes": [],
+      "uncertainty": {
+        "confidence_level": "not stated in viewer/paper text",
+        "lower": 0.988095,
+        "method": "bootstrap percentile interval over the ten full-panel runs",
+        "upper": 1.0
+      },
+      "unit": "fraction",
+      "value": 0.995238
+    },
+    {
+      "benchmark_id": "traces_ifr_i",
+      "configuration_id": "grok3_traces_default",
+      "evaluated_at": null,
+      "evaluator": "Intellicat",
+      "id": "intellicat_grok3_ifr_i",
+      "locator": "site.json models[] where model == x-ai/grok-3; field ifr_i",
+      "reported_at": null,
+      "reporting_relationship": "evaluator_measurement",
+      "review_state": "reviewed",
+      "series_id": "traces_ifr_i_intellicat_full_panel_10x",
+      "setup": {
+        "API": "OpenRouter OpenAI-compatible chat-completions",
+        "max_tokens": null,
+        "max_tokens_note": "Model-specific cap unreported in current site JSON.",
+        "model_identifier": "x-ai/grok-3",
+        "probe_count": 42,
+        "provider_endpoint": "not reported",
+        "reasoning_setting": "not reported",
+        "run_count": 10,
+        "single_turn": true,
+        "system_prompt": false,
+        "temperature": 1.0
+      },
+      "source_id": "intellicat_traces_technical",
+      "supersedes": [],
+      "uncertainty": {
+        "confidence_level": "not stated in viewer/paper text",
+        "lower": 0.811905,
+        "method": "bootstrap percentile interval over the ten full-panel runs",
+        "upper": 0.859524
+      },
+      "unit": "fraction",
+      "value": 0.835714
+    },
+    {
+      "benchmark_id": "traces_disclaimer_tax",
+      "configuration_id": "grok3_traces_default",
+      "evaluated_at": null,
+      "evaluator": "Intellicat",
+      "id": "intellicat_grok3_disclaimer_tax",
+      "locator": "site.json models[] where model == x-ai/grok-3; field disclaimer_tax",
+      "reported_at": null,
+      "reporting_relationship": "evaluator_measurement",
+      "review_state": "reviewed",
+      "series_id": "traces_disclaimer_tax_intellicat_full_panel_10x",
+      "setup": {
+        "API": "OpenRouter OpenAI-compatible chat-completions",
+        "max_tokens": null,
+        "max_tokens_note": "Model-specific cap unreported in current site JSON.",
+        "model_identifier": "x-ai/grok-3",
+        "probe_count": 42,
+        "provider_endpoint": "not reported",
+        "reasoning_setting": "not reported",
+        "run_count": 10,
+        "single_turn": true,
+        "system_prompt": false,
+        "temperature": 1.0
+      },
+      "source_id": "intellicat_traces_technical",
+      "supersedes": [],
+      "uncertainty": null,
+      "unit": "fraction",
+      "value": 0.159524
+    },
+    {
+      "benchmark_id": "traces_edi_mean",
+      "configuration_id": "grok3_traces_default",
+      "evaluated_at": null,
+      "evaluator": "Intellicat",
+      "id": "intellicat_grok3_edi_mean",
+      "locator": "site.json models[] where model == x-ai/grok-3; field edi_mean",
+      "reported_at": null,
+      "reporting_relationship": "evaluator_measurement",
+      "review_state": "reviewed",
+      "series_id": "traces_edi_mean_intellicat_full_panel_10x",
+      "setup": {
+        "API": "OpenRouter OpenAI-compatible chat-completions",
+        "max_tokens": null,
+        "max_tokens_note": "Model-specific cap unreported in current site JSON.",
+        "model_identifier": "x-ai/grok-3",
+        "probe_count": 42,
+        "provider_endpoint": "not reported",
+        "reasoning_setting": "not reported",
+        "run_count": 10,
+        "single_turn": true,
+        "system_prompt": false,
+        "temperature": 1.0
+      },
+      "source_id": "intellicat_traces_technical",
+      "supersedes": [],
+      "uncertainty": null,
+      "unit": "index",
+      "value": 0.286166
     }
   ],
   "schema_version": "1.0.0"

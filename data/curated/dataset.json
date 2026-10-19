@@ -12281,6 +12281,18 @@
       "model_id": "gpt61_sol",
       "reasoning_label": "xhigh",
       "mode": "enabled"
+    },
+    {
+      "id": "gpt4o_traces_default",
+      "model_id": "gpt4o",
+      "reasoning_label": "OpenRouter/model default; reasoning setting unreported",
+      "mode": "unknown"
+    },
+    {
+      "id": "grok3_traces_default",
+      "model_id": "grok3",
+      "reasoning_label": "OpenRouter/model default; reasoning setting unreported",
+      "mode": "unknown"
     }
   ],
   "coverage_gaps": [
@@ -12471,8 +12483,8 @@
     },
     {
       "id": "gap_traces_unmapped_panel_rows",
-      "scope": "TRACES full-panel-10x panel rows (27 of 30)",
-      "reason": "The TRACES full-panel-10x viewer publishes 30 OpenRouter-identified model rows over ten runs; 12 observations for three exact identities (GPT-5.6 Sol, DeepSeek-R1-Distill-Qwen-32B, Llama 3.1 8B Instruct) are curated. The other 27 rows are unmapped: most name releases with no canonical model record, and the two closest identities were checked and ruled out (deepseek-v4-pro resolves to the April 0423 checkpoint, not the catalogued 0813 release; mistral-large-2512 predates Mistral Large 4). Follow-up queue, not proven scores for catalogued releases.",
+      "scope": "TRACES full-panel-10x panel rows (25 of 30)",
+      "reason": "The TRACES full-panel-10x viewer publishes 30 OpenRouter-identified model rows over ten runs; 20 observations for five exact identities (GPT-5.6 Sol, DeepSeek-R1-Distill-Qwen-32B, Llama 3.1 8B Instruct, GPT-4o, Grok 3) are curated. The other 25 rows are unmapped: most name releases with no canonical model record, and the two closest identities were checked and ruled out (deepseek-v4-pro resolves to the April 0423 checkpoint, not the catalogued 0813 release; mistral-large-2512 predates Mistral Large 4). Follow-up queue, not proven scores for catalogued releases.",
       "source_ids": [
         "intellicat_traces_technical",
         "intellicat_traces_methodology"
@@ -17192,6 +17204,56 @@
       "upstream_ids": {},
       "source_ids": [
         "arc_prize_qwen38_27b"
+      ]
+    },
+    {
+      "id": "gpt4o",
+      "name": "GPT-4o",
+      "lab_ids": [
+        "openai"
+      ],
+      "family_id": "gpt",
+      "version": "4o",
+      "release_date": "2024-05-13",
+      "release_date_precision": "day",
+      "access_state": "available",
+      "weights_state": "closed",
+      "modalities": [
+        "text",
+        "image",
+        "audio"
+      ],
+      "first_seen_at": null,
+      "aliases": [],
+      "upstream_ids": {
+        "openrouter": "openai/gpt-4o"
+      },
+      "source_ids": [
+        "openai_gpt4o_launch"
+      ]
+    },
+    {
+      "id": "grok3",
+      "name": "Grok 3",
+      "lab_ids": [
+        "xai"
+      ],
+      "family_id": "grok",
+      "version": "3",
+      "release_date": "2025-02-19",
+      "release_date_precision": "day",
+      "access_state": "preview",
+      "weights_state": "closed",
+      "modalities": [
+        "text"
+      ],
+      "first_seen_at": null,
+      "aliases": [],
+      "upstream_ids": {
+        "openrouter": "x-ai/grok-3"
+      },
+      "source_ids": [
+        "xai_grok3_launch"
       ]
     }
   ],
@@ -230148,6 +230210,266 @@
         "metric_scope": "suite score; not an average of suite categories"
       },
       "review_state": "reviewed"
+    },
+    {
+      "benchmark_id": "traces_ifr_a",
+      "configuration_id": "gpt4o_traces_default",
+      "evaluated_at": null,
+      "evaluator": "Intellicat",
+      "id": "intellicat_gpt4o_ifr_a",
+      "locator": "site.json models[] where model == openai/gpt-4o; field ifr_a",
+      "reported_at": null,
+      "reporting_relationship": "evaluator_measurement",
+      "review_state": "reviewed",
+      "series_id": "traces_ifr_a_intellicat_full_panel_10x",
+      "setup": {
+        "API": "OpenRouter OpenAI-compatible chat-completions",
+        "max_tokens": null,
+        "max_tokens_note": "Model-specific cap unreported in current site JSON.",
+        "model_identifier": "openai/gpt-4o",
+        "probe_count": 42,
+        "provider_endpoint": "not reported",
+        "reasoning_setting": "not reported",
+        "run_count": 10,
+        "single_turn": true,
+        "system_prompt": false,
+        "temperature": 1.0
+      },
+      "source_id": "intellicat_traces_technical",
+      "supersedes": [],
+      "uncertainty": {
+        "confidence_level": "not stated in viewer/paper text",
+        "lower": 0.97619,
+        "method": "bootstrap percentile interval over the ten full-panel runs",
+        "upper": 0.995238
+      },
+      "unit": "fraction",
+      "value": 0.985714
+    },
+    {
+      "benchmark_id": "traces_ifr_i",
+      "configuration_id": "gpt4o_traces_default",
+      "evaluated_at": null,
+      "evaluator": "Intellicat",
+      "id": "intellicat_gpt4o_ifr_i",
+      "locator": "site.json models[] where model == openai/gpt-4o; field ifr_i",
+      "reported_at": null,
+      "reporting_relationship": "evaluator_measurement",
+      "review_state": "reviewed",
+      "series_id": "traces_ifr_i_intellicat_full_panel_10x",
+      "setup": {
+        "API": "OpenRouter OpenAI-compatible chat-completions",
+        "max_tokens": null,
+        "max_tokens_note": "Model-specific cap unreported in current site JSON.",
+        "model_identifier": "openai/gpt-4o",
+        "probe_count": 42,
+        "provider_endpoint": "not reported",
+        "reasoning_setting": "not reported",
+        "run_count": 10,
+        "single_turn": true,
+        "system_prompt": false,
+        "temperature": 1.0
+      },
+      "source_id": "intellicat_traces_technical",
+      "supersedes": [],
+      "uncertainty": {
+        "confidence_level": "not stated in viewer/paper text",
+        "lower": 0.945238,
+        "method": "bootstrap percentile interval over the ten full-panel runs",
+        "upper": 0.97381
+      },
+      "unit": "fraction",
+      "value": 0.959524
+    },
+    {
+      "benchmark_id": "traces_disclaimer_tax",
+      "configuration_id": "gpt4o_traces_default",
+      "evaluated_at": null,
+      "evaluator": "Intellicat",
+      "id": "intellicat_gpt4o_disclaimer_tax",
+      "locator": "site.json models[] where model == openai/gpt-4o; field disclaimer_tax",
+      "reported_at": null,
+      "reporting_relationship": "evaluator_measurement",
+      "review_state": "reviewed",
+      "series_id": "traces_disclaimer_tax_intellicat_full_panel_10x",
+      "setup": {
+        "API": "OpenRouter OpenAI-compatible chat-completions",
+        "max_tokens": null,
+        "max_tokens_note": "Model-specific cap unreported in current site JSON.",
+        "model_identifier": "openai/gpt-4o",
+        "probe_count": 42,
+        "provider_endpoint": "not reported",
+        "reasoning_setting": "not reported",
+        "run_count": 10,
+        "single_turn": true,
+        "system_prompt": false,
+        "temperature": 1.0
+      },
+      "source_id": "intellicat_traces_technical",
+      "supersedes": [],
+      "uncertainty": null,
+      "unit": "fraction",
+      "value": 0.02619
+    },
+    {
+      "benchmark_id": "traces_edi_mean",
+      "configuration_id": "gpt4o_traces_default",
+      "evaluated_at": null,
+      "evaluator": "Intellicat",
+      "id": "intellicat_gpt4o_edi_mean",
+      "locator": "site.json models[] where model == openai/gpt-4o; field edi_mean",
+      "reported_at": null,
+      "reporting_relationship": "evaluator_measurement",
+      "review_state": "reviewed",
+      "series_id": "traces_edi_mean_intellicat_full_panel_10x",
+      "setup": {
+        "API": "OpenRouter OpenAI-compatible chat-completions",
+        "max_tokens": null,
+        "max_tokens_note": "Model-specific cap unreported in current site JSON.",
+        "model_identifier": "openai/gpt-4o",
+        "probe_count": 42,
+        "provider_endpoint": "not reported",
+        "reasoning_setting": "not reported",
+        "run_count": 10,
+        "single_turn": true,
+        "system_prompt": false,
+        "temperature": 1.0
+      },
+      "source_id": "intellicat_traces_technical",
+      "supersedes": [],
+      "uncertainty": null,
+      "unit": "index",
+      "value": 0.165317
+    },
+    {
+      "benchmark_id": "traces_ifr_a",
+      "configuration_id": "grok3_traces_default",
+      "evaluated_at": null,
+      "evaluator": "Intellicat",
+      "id": "intellicat_grok3_ifr_a",
+      "locator": "site.json models[] where model == x-ai/grok-3; field ifr_a",
+      "reported_at": null,
+      "reporting_relationship": "evaluator_measurement",
+      "review_state": "reviewed",
+      "series_id": "traces_ifr_a_intellicat_full_panel_10x",
+      "setup": {
+        "API": "OpenRouter OpenAI-compatible chat-completions",
+        "max_tokens": null,
+        "max_tokens_note": "Model-specific cap unreported in current site JSON.",
+        "model_identifier": "x-ai/grok-3",
+        "probe_count": 42,
+        "provider_endpoint": "not reported",
+        "reasoning_setting": "not reported",
+        "run_count": 10,
+        "single_turn": true,
+        "system_prompt": false,
+        "temperature": 1.0
+      },
+      "source_id": "intellicat_traces_technical",
+      "supersedes": [],
+      "uncertainty": {
+        "confidence_level": "not stated in viewer/paper text",
+        "lower": 0.988095,
+        "method": "bootstrap percentile interval over the ten full-panel runs",
+        "upper": 1.0
+      },
+      "unit": "fraction",
+      "value": 0.995238
+    },
+    {
+      "benchmark_id": "traces_ifr_i",
+      "configuration_id": "grok3_traces_default",
+      "evaluated_at": null,
+      "evaluator": "Intellicat",
+      "id": "intellicat_grok3_ifr_i",
+      "locator": "site.json models[] where model == x-ai/grok-3; field ifr_i",
+      "reported_at": null,
+      "reporting_relationship": "evaluator_measurement",
+      "review_state": "reviewed",
+      "series_id": "traces_ifr_i_intellicat_full_panel_10x",
+      "setup": {
+        "API": "OpenRouter OpenAI-compatible chat-completions",
+        "max_tokens": null,
+        "max_tokens_note": "Model-specific cap unreported in current site JSON.",
+        "model_identifier": "x-ai/grok-3",
+        "probe_count": 42,
+        "provider_endpoint": "not reported",
+        "reasoning_setting": "not reported",
+        "run_count": 10,
+        "single_turn": true,
+        "system_prompt": false,
+        "temperature": 1.0
+      },
+      "source_id": "intellicat_traces_technical",
+      "supersedes": [],
+      "uncertainty": {
+        "confidence_level": "not stated in viewer/paper text",
+        "lower": 0.811905,
+        "method": "bootstrap percentile interval over the ten full-panel runs",
+        "upper": 0.859524
+      },
+      "unit": "fraction",
+      "value": 0.835714
+    },
+    {
+      "benchmark_id": "traces_disclaimer_tax",
+      "configuration_id": "grok3_traces_default",
+      "evaluated_at": null,
+      "evaluator": "Intellicat",
+      "id": "intellicat_grok3_disclaimer_tax",
+      "locator": "site.json models[] where model == x-ai/grok-3; field disclaimer_tax",
+      "reported_at": null,
+      "reporting_relationship": "evaluator_measurement",
+      "review_state": "reviewed",
+      "series_id": "traces_disclaimer_tax_intellicat_full_panel_10x",
+      "setup": {
+        "API": "OpenRouter OpenAI-compatible chat-completions",
+        "max_tokens": null,
+        "max_tokens_note": "Model-specific cap unreported in current site JSON.",
+        "model_identifier": "x-ai/grok-3",
+        "probe_count": 42,
+        "provider_endpoint": "not reported",
+        "reasoning_setting": "not reported",
+        "run_count": 10,
+        "single_turn": true,
+        "system_prompt": false,
+        "temperature": 1.0
+      },
+      "source_id": "intellicat_traces_technical",
+      "supersedes": [],
+      "uncertainty": null,
+      "unit": "fraction",
+      "value": 0.159524
+    },
+    {
+      "benchmark_id": "traces_edi_mean",
+      "configuration_id": "grok3_traces_default",
+      "evaluated_at": null,
+      "evaluator": "Intellicat",
+      "id": "intellicat_grok3_edi_mean",
+      "locator": "site.json models[] where model == x-ai/grok-3; field edi_mean",
+      "reported_at": null,
+      "reporting_relationship": "evaluator_measurement",
+      "review_state": "reviewed",
+      "series_id": "traces_edi_mean_intellicat_full_panel_10x",
+      "setup": {
+        "API": "OpenRouter OpenAI-compatible chat-completions",
+        "max_tokens": null,
+        "max_tokens_note": "Model-specific cap unreported in current site JSON.",
+        "model_identifier": "x-ai/grok-3",
+        "probe_count": 42,
+        "provider_endpoint": "not reported",
+        "reasoning_setting": "not reported",
+        "run_count": 10,
+        "single_turn": true,
+        "system_prompt": false,
+        "temperature": 1.0
+      },
+      "source_id": "intellicat_traces_technical",
+      "supersedes": [],
+      "uncertainty": null,
+      "unit": "index",
+      "value": 0.286166
     }
   ],
   "presets": [
@@ -231182,7 +231504,9 @@
         "vals_muse_spark13_vals_profile_meta_muse_spark_1_3_max_unverified",
         "vals_muse_wonder_full_vals_profile_meta_muse_wonder_full_unverified",
         "vals_qwen38_27b_vals_profile_alibaba_qwen3_8_27b_unverified",
-        "vals_qwen38_max_vals_profile_alibaba_qwen3_8_max_unverified"
+        "vals_qwen38_max_vals_profile_alibaba_qwen3_8_max_unverified",
+        "gpt4o_traces_default",
+        "grok3_traces_default"
       ],
       "name": "All models — October 2026",
       "reason": "Discovery and benchmarked releases, including explicitly unscored current rows and historical GPT-4. Includes all exact configurations and all curated benchmark variants, including BullshitBench V1/V2 and TRACES.",
@@ -231409,13 +231733,15 @@
       "model_configuration_ids": [
         "gpt56_sol_traces_default",
         "deepseek_r1_distill_qwen_32b_traces_default",
-        "llama31_8b_instruct_traces_default"
+        "llama31_8b_instruct_traces_default",
+        "gpt4o_traces_default",
+        "grok3_traces_default"
       ],
       "name": "TRACES — October 2026",
       "reason": "Intellicat TRACES full-panel-10x snapshot. Exact model identities and published metrics are retained; reasoning settings are unreported.",
-      "reviewed_at": "2026-10-17",
+      "reviewed_at": "2026-10-19",
       "saturation_policy_version": null,
-      "version": "1.0.0"
+      "version": "1.1.0"
     },
     {
       "id": "arc_agi",
@@ -266301,6 +266627,26 @@
       "attribution": "LiveBench; https://livebench.ai and https://github.com/LiveBench/LiveBench",
       "method": "Deterministic import of the official dated CSV; source values remain on the 0–100 scale.",
       "locator": "CSV header and all model rows; categories from https://livebench.ai/categories_2026_09_02.json"
+    },
+    {
+      "id": "openai_gpt4o_launch",
+      "url": "https://openai.com/index/hello-gpt-4o/",
+      "title": "Hello GPT-4o",
+      "publisher": "OpenAI",
+      "retrieved_at": "2026-10-19T00:00:00Z",
+      "published_at": "2024-05-13T00:00:00Z",
+      "method": "Manual extraction of announcement date and input/output modalities.",
+      "locator": "Dated May 13, 2024; flagship model reasoning across audio, vision, and text in real time."
+    },
+    {
+      "id": "xai_grok3_launch",
+      "url": "https://x.ai/news/grok-3",
+      "title": "Grok 3 Beta — The Age of Reasoning Agents",
+      "publisher": "xAI",
+      "retrieved_at": "2026-10-19T00:00:00Z",
+      "published_at": "2025-02-19T00:00:00Z",
+      "method": "Manual extraction of announcement date and release identity.",
+      "locator": "Dated Feb 19, 2025; early preview of Grok 3."
     }
   ],
   "usage": [],

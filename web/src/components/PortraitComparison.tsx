@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState, type ReactNode } from 'react';
 import type { BenchmarkVariant } from '../generated/dataset';
 import type { DisplayRow } from '../data/selectors';
-import { hasResultOnBenchmarks } from '../data/selectors';
+import { hasResultOnBenchmarks, singleReportedValue } from '../data/selectors';
 import { Button } from './ui/button';
 import { Input } from './ui/input';
 import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle } from './ui/sheet';
@@ -19,9 +19,10 @@ type Props = {
   error: string | null;
   renderModel: (id: string) => ReactNode;
   renderScore: (row: DisplayRow, benchmark: BenchmarkVariant) => ReactNode;
+  onScoreOpen: (row: DisplayRow, benchmark: BenchmarkVariant) => void;
 };
 
-export function PortraitComparison({ rows, benchmarks, selectedBenchmarkId, onBenchmarkChange, hideEmpty, busy, error, renderModel, renderScore }: Props) {
+export function PortraitComparison({ rows, benchmarks, selectedBenchmarkId, onBenchmarkChange, hideEmpty, busy, error, renderModel, renderScore, onScoreOpen }: Props) {
   const [pickerOpen, setPickerOpen] = useState(false);
   const [query, setQuery] = useState('');
   const [page, setPage] = useState(0);
@@ -29,15 +30,9 @@ export function PortraitComparison({ rows, benchmarks, selectedBenchmarkId, onBe
     const explicit = benchmarks.find(item => item.id === selectedBenchmarkId);
     if (explicit) return explicit;
     return benchmarks.reduce<BenchmarkVariant | undefined>((best, item) => {
-      const coverage = rows.reduce((count, row) => {
-        const cell = row.observations.get(item.id);
-        return count + Number(!!cell && cell.state !== 'disputed' && cell.observation_ids.length === 1 && cell.value !== null && Number.isFinite(Number(cell.value)));
-      }, 0);
+      const coverage = rows.reduce((count, row) => count + Number(singleReportedValue(row, item.id) !== null), 0);
       if (!best) return item;
-      const bestCoverage = rows.reduce((count, row) => {
-        const cell = row.observations.get(best.id);
-        return count + Number(!!cell && cell.state !== 'disputed' && cell.observation_ids.length === 1 && cell.value !== null && Number.isFinite(Number(cell.value)));
-      }, 0);
+      const bestCoverage = rows.reduce((count, row) => count + Number(singleReportedValue(row, best.id) !== null), 0);
       return coverage > bestCoverage ? item : best;
     }, undefined);
   }, [benchmarks, rows, selectedBenchmarkId]);
@@ -50,13 +45,9 @@ export function PortraitComparison({ rows, benchmarks, selectedBenchmarkId, onBe
   useEffect(() => setPage(0), [selected?.id, rows.length]);
   const candidates = useMemo(() => {
     if (!selected) return [];
-    const compareScore = (row: DisplayRow) => {
-      const cell = row.observations.get(selected.id);
-      return cell && cell.state !== 'disputed' && cell.observation_ids.length === 1 && cell.value !== null && Number.isFinite(Number(cell.value)) ? Number(cell.value) : null;
-    };
     return [...(hideEmpty ? rows.filter(row => hasResultOnBenchmarks(row, [selected.id])) : rows)].sort((a, b) => {
-      const left = compareScore(a);
-      const right = compareScore(b);
+      const left = singleReportedValue(a, selected.id);
+      const right = singleReportedValue(b, selected.id);
       if (left === null || right === null) return left === right ? a.model.name.localeCompare(b.model.name) : left === null ? 1 : -1;
       return selected.direction === 'higher' ? right - left || a.model.name.localeCompare(b.model.name) : left - right || a.model.name.localeCompare(b.model.name);
     });
@@ -66,16 +57,15 @@ export function PortraitComparison({ rows, benchmarks, selectedBenchmarkId, onBe
   const shownRows = candidates.slice(safePage * PAGE_SIZE, (safePage + 1) * PAGE_SIZE);
   // One shared scale across every page; missing and ambiguous reports have no bar.
   const values = candidates.flatMap(row => {
-    const cell = selected && row.observations.get(selected.id);
-    return cell && cell.state !== 'disputed' && cell.observation_ids.length === 1 && cell.value !== null && Number.isFinite(Number(cell.value)) ? [Number(cell.value)] : [];
+    const value = selected && singleReportedValue(row, selected.id);
+    return typeof value === 'number' ? [value] : [];
   });
   const scaleMin = Math.min(0, ...values);
   const scaleMax = selected?.unit === '%' ? Math.max(100, ...values) : Math.max(0, ...values);
   const colors = ['#2563eb', '#0d9488', '#9333ea', '#d97706', '#db2777', '#0891b2'];
   const bar = (row: DisplayRow) => {
-    const cell = selected && row.observations.get(selected.id);
-    if (!cell || cell.state === 'disputed' || cell.observation_ids.length !== 1 || cell.value === null || !Number.isFinite(Number(cell.value))) return null;
-    const value = Number(cell.value);
+    const value = selected && singleReportedValue(row, selected.id);
+    if (typeof value !== 'number') return null;
     const range = scaleMax - scaleMin;
     const zero = range ? -scaleMin / range * 100 : 0;
     const end = range ? (value - scaleMin) / range * 100 : 0;
@@ -101,7 +91,7 @@ export function PortraitComparison({ rows, benchmarks, selectedBenchmarkId, onBe
     <div className="portrait-model-list">
       {selected && shownRows.map(row => <article className="portrait-model-card" key={row.id}>
         <div className="portrait-model-identity">{renderModel(row.id)}</div>
-        <div className="portrait-model-score">{bar(row)}{renderScore(row, selected)}</div>
+        <div className="portrait-model-score">{bar(row)}{singleReportedValue(row, selected.id) !== null ? renderScore(row, selected) : <button type="button" className="score-button missing" aria-label={`${row.model.name}, ${selected.name}: No reported result; show evidence`} title="No reviewed score for this setup. Tap for sources and other configurations." onClick={() => onScoreOpen(row, selected)}>—</button>}</div>
       </article>)}
       {selected && !shownRows.length && <p className="portrait-empty">No configurations match these filters.</p>}
     </div>

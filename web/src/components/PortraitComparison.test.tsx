@@ -13,7 +13,7 @@ function row(id: string, value: number | null, state: 'selected' | 'agreed' | 'd
 }
 function renderComparison(rows: DisplayRow[], selected = benchmark()) {
   return render(<PortraitComparison rows={rows} benchmarks={[selected]} selectedBenchmarkId="bench" onBenchmarkChange={() => {}} hideEmpty={false} busy={false} error={null}
-    renderModel={id => <button className="model-link">{id}</button>} renderScore={item => <span>{item.id}</span>} />);
+    renderModel={id => <button className="model-link">{id}</button>} renderScore={item => <span>{item.id}</span>} onScoreOpen={() => {}} />);
 }
 
 it('ranks unambiguous scores by benchmark direction and leaves disputed, multiple, and missing scores last', () => {
@@ -21,7 +21,7 @@ it('ranks unambiguous scores by benchmark direction and leaves disputed, multipl
   const ids = () => [...container.querySelectorAll('.portrait-model-card .model-link')].map(item => item.textContent);
   expect(ids()).toEqual(['High', 'Low', 'Disputed', 'Missing', 'Multiple']);
 
-  rerender(<PortraitComparison rows={[row('Low', 20), row('Missing', null), row('High', 90)]} benchmarks={[benchmark('lower')]} selectedBenchmarkId="bench" onBenchmarkChange={() => {}} hideEmpty={false} busy={false} error={null} renderModel={id => <button className="model-link">{id}</button>} renderScore={item => <span>{item.id}</span>} />);
+  rerender(<PortraitComparison rows={[row('Low', 20), row('Missing', null), row('High', 90)]} benchmarks={[benchmark('lower')]} selectedBenchmarkId="bench" onBenchmarkChange={() => {}} hideEmpty={false} busy={false} error={null} renderModel={id => <button className="model-link">{id}</button>} renderScore={item => <span>{item.id}</span>} onScoreOpen={() => {}} />);
   expect(ids()).toEqual(['Low', 'High', 'Missing']);
 });
 
@@ -38,7 +38,7 @@ it('chooses the most covered visible benchmark by default but preserves an expli
   const sparse = { ...benchmark(), id: 'sparse', name: 'Sparse benchmark' };
   const covered = { ...benchmark(), id: 'covered', name: 'Covered benchmark' };
   const rows = [row('A', 10, 'selected', ['a'], 'sparse'), row('B', 20, 'selected', ['b'], 'covered'), row('C', 30, 'selected', ['c'], 'covered')];
-  const props = { rows, benchmarks: [sparse, covered], onBenchmarkChange: () => {}, hideEmpty: false, busy: false, error: null, renderModel: (id: string) => <button className="model-link">{id}</button>, renderScore: (item: DisplayRow) => <span>{item.id}</span> };
+  const props = { rows, benchmarks: [sparse, covered], onBenchmarkChange: () => {}, hideEmpty: false, busy: false, error: null, renderModel: (id: string) => <button className="model-link">{id}</button>, renderScore: (item: DisplayRow) => <span>{item.id}</span>, onScoreOpen: () => {} };
   const { rerender } = render(<PortraitComparison {...props} selectedBenchmarkId={null} />);
   expect(screen.getByRole('button', { name: 'Choose benchmark' }).textContent).toContain('Covered benchmark');
   rerender(<PortraitComparison {...props} selectedBenchmarkId="sparse" />);
@@ -49,6 +49,24 @@ it('uses a shared percentage scale and never draws missing or disputed scores as
   const { container } = renderComparison([row('High', 80), row('Low', 20), row('Zero', 0), row('Missing', null), row('Disputed', 90, 'disputed')]);
   const widths = [...container.querySelectorAll<HTMLElement>('.mobile-score-bar')].map(bar => bar.style.width);
   expect(widths).toEqual(['80%', '20%', '0%']);
+});
+
+it('shows a dash for rows without a score so they read as unranked, and still opens their evidence', () => {
+  const opened: Array<{ row: DisplayRow; benchmark: BenchmarkVariant }> = [];
+  const selected = benchmark();
+  // renderScore mimics the matrix score button, which previews other-setup scores.
+  const { container } = render(<PortraitComparison rows={[row('Scored', 56), row('Unscored', null), row('Top', 90)]} benchmarks={[selected]} selectedBenchmarkId="bench" onBenchmarkChange={() => {}} hideEmpty={false} busy={false} error={null}
+    renderModel={id => <button className="model-link">{id}</button>} renderScore={() => <span className="alt-preview">74.2%</span>} onScoreOpen={(item, bench) => { opened.push({ row: item, benchmark: bench }); }} />);
+  expect([...container.querySelectorAll('.portrait-model-card .model-link')].map(item => item.textContent)).toEqual(['Top', 'Scored', 'Unscored']);
+  const cards = [...container.querySelectorAll('.portrait-model-card')];
+  expect(cards[2].querySelector('.score-button.missing')?.textContent).toBe('—');
+  expect(cards[2].querySelector('.alt-preview')).toBeNull();
+  expect(cards[2].querySelector('.mobile-score-bar')).toBeNull();
+  expect(container.querySelectorAll('.mobile-score-bar')).toHaveLength(2);
+  fireEvent.click(cards[2].querySelector('.score-button.missing')!);
+  expect(opened).toHaveLength(1);
+  expect(opened[0].row.id).toBe('Unscored');
+  expect(opened[0].benchmark.id).toBe('bench');
 });
 
 it('preserves the bar scale across result pages', () => {

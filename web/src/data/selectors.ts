@@ -326,6 +326,12 @@ export function valueForCell(row: DisplayRow, benchmarkId: string): DisplayCell 
 export function hasResultOnBenchmarks(row: DisplayRow, benchmarkIds: readonly string[]): boolean {
   return benchmarkIds.some(id => { const cell = row.observations.get(id); return !!cell && (cell.state === 'disputed' || cell.value !== null && Number.isFinite(Number(cell.value))); });
 }
+/** The single unambiguous reported value behind portrait ranking and bars. Disputed, multi-report, and missing cells never qualify, so alternate-setup previews stay out of the order. */
+export function singleReportedValue(row: DisplayRow, benchmarkId: string): number | null {
+  const cell = row.observations.get(benchmarkId);
+  if (!cell || cell.state === 'disputed' || cell.observation_ids.length !== 1) return null;
+  return numeric(cell.value);
+}
 export function numericScoreCount(row: DisplayRow, benchmarkIds?: readonly string[]): number {
   const ids = benchmarkIds ? new Set(benchmarkIds) : null;
   let count = 0;

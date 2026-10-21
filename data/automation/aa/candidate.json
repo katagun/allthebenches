@@ -1,6 +1,23 @@
 {
   "benchmarks": [],
-  "configurations": [],
+  "configurations": [
+    {
+      "id": "aa_grok3_unknown",
+      "mode": "unknown",
+      "model_id": "grok3",
+      "precision": null,
+      "reasoning_budget_tokens": null,
+      "reasoning_label": null
+    },
+    {
+      "id": "aa_gpt4o_unknown",
+      "mode": "unknown",
+      "model_id": "gpt4o",
+      "precision": null,
+      "reasoning_budget_tokens": null,
+      "reasoning_label": null
+    }
+  ],
   "observations": [
     {
       "benchmark_id": "aa_intelligence_index_v432",
@@ -414,6 +431,34 @@
       "uncertainty": null,
       "unit": "%",
       "value": 38.9690721649485
+    },
+    {
+      "benchmark_id": "aa_mlcr_hard",
+      "configuration_id": "aa_claude_fable51_low",
+      "evaluated_at": null,
+      "evaluator": "Artificial Analysis",
+      "id": "o_aa_claude_fable51_aa-claude-fable51-low_claude-fable-5-1-low_aa_mlcr_hard_20261018",
+      "locator": "models[claude-fable-5-1-low].mlcrOverall",
+      "reported_at": null,
+      "reporting_relationship": "evaluator_measurement",
+      "review_state": "candidate",
+      "series_id": "series_aa_claude_fable51_aa-claude-fable51-low_claude-fable-5-1-low_aa_mlcr_hard",
+      "setup": {
+        "aa_effort_slug": "low",
+        "aa_model_id": "05776db7-f5c0-40f7-b824-079160f8cfa8",
+        "aa_release_slug": "claude-fable-5-1",
+        "normalization": {
+          "formula": "source fraction × 100",
+          "reason": "AA serializes this percentage metric as a 0–1 fraction."
+        },
+        "source_field_unit": "fraction",
+        "source_field_value": 0.183333333333333
+      },
+      "source_id": "aa_public_pages_20261018",
+      "supersedes": [],
+      "uncertainty": null,
+      "unit": "%",
+      "value": 18.3333333333333
     },
     {
       "benchmark_id": "aa_briefcase_v11",
@@ -990,13 +1035,13 @@
           "reason": "AA serializes this percentage metric as a 0–1 fraction."
         },
         "source_field_unit": "fraction",
-        "source_field_value": 0.127777777777778
+        "source_field_value": 0.233333333333333
       },
       "source_id": "aa_public_pages_20261018",
       "supersedes": [],
       "uncertainty": null,
       "unit": "%",
-      "value": 12.7777777777778
+      "value": 23.3333333333333
     },
     {
       "benchmark_id": "aa_briefcase_v11",
@@ -1384,6 +1429,34 @@
       "uncertainty": null,
       "unit": "%",
       "value": 66.57372141364344
+    },
+    {
+      "benchmark_id": "aa_mlcr_hard",
+      "configuration_id": "aa_gpt61_sol_xhigh",
+      "evaluated_at": null,
+      "evaluator": "Artificial Analysis",
+      "id": "o_aa_gpt61_sol_aa-gpt61-sol-xhigh_gpt-6-1-sol-xhigh_aa_mlcr_hard_20261018",
+      "locator": "models[gpt-6-1-sol-xhigh].mlcrOverall",
+      "reported_at": null,
+      "reporting_relationship": "evaluator_measurement",
+      "review_state": "candidate",
+      "series_id": "series_aa_gpt61_sol_aa-gpt61-sol-xhigh_gpt-6-1-sol-xhigh_aa_mlcr_hard",
+      "setup": {
+        "aa_effort_slug": "xhigh",
+        "aa_model_id": "092a3b0e-c5c8-45dc-bf1b-53673c8ff352",
+        "aa_release_slug": "gpt-6-1-sol",
+        "normalization": {
+          "formula": "source fraction × 100",
+          "reason": "AA serializes this percentage metric as a 0–1 fraction."
+        },
+        "source_field_unit": "fraction",
+        "source_field_value": 0.355555555555556
+      },
+      "source_id": "aa_public_pages_20261018",
+      "supersedes": [],
+      "uncertainty": null,
+      "unit": "%",
+      "value": 35.5555555555556
     },
     {
       "benchmark_id": "aa_briefcase_v11",
@@ -1876,13 +1949,13 @@
           "reason": "AA serializes this percentage metric as a 0–1 fraction."
         },
         "source_field_unit": "fraction",
-        "source_field_value": 0.583333333333333
+        "source_field_value": 0.1
       },
       "source_id": "aa_public_pages_20261018",
       "supersedes": [],
       "uncertainty": null,
       "unit": "%",
-      "value": 58.3333333333333
+      "value": 10.0
     },
     {
       "benchmark_id": "aa_briefcase_v11",
@@ -2515,13 +2588,13 @@
           "reason": "AA serializes this percentage metric as a 0–1 fraction."
         },
         "source_field_unit": "fraction",
-        "source_field_value": 0.511111111111111
+        "source_field_value": 0.116666666666667
       },
       "source_id": "aa_public_pages_20261018",
       "supersedes": [],
       "uncertainty": null,
       "unit": "%",
-      "value": 51.11111111111109
+      "value": 11.6666666666667
     },
     {
       "benchmark_id": "aa_briefcase_v11",
@@ -2993,6 +3066,34 @@
       "uncertainty": null,
       "unit": "%",
       "value": 43.0927835051546
+    },
+    {
+      "benchmark_id": "aa_mlcr_hard",
+      "configuration_id": "aa_gpt6_astra_xhigh",
+      "evaluated_at": null,
+      "evaluator": "Artificial Analysis",
+      "id": "o_aa_gpt6_astra_aa-gpt6-astra-xhigh_gpt-6-astra-xhigh_aa_mlcr_hard_20261018",
+      "locator": "models[gpt-6-astra-xhigh].mlcrOverall",
+      "reported_at": null,
+      "reporting_relationship": "evaluator_measurement",
+      "review_state": "candidate",
+      "series_id": "series_aa_gpt6_astra_aa-gpt6-astra-xhigh_gpt-6-astra-xhigh_aa_mlcr_hard",
+      "setup": {
+        "aa_effort_slug": "xhigh",
+        "aa_model_id": "1f541ef3-913f-4eb2-9d07-0e93c7a9a5e3",
+        "aa_release_slug": "gpt-6-astra",
+        "normalization": {
+          "formula": "source fraction × 100",
+          "reason": "AA serializes this percentage metric as a 0–1 fraction."
+        },
+        "source_field_unit": "fraction",
+        "source_field_value": 0.361111111111111
+      },
+      "source_id": "aa_public_pages_20261018",
+      "supersedes": [],
+      "uncertainty": null,
+      "unit": "%",
+      "value": 36.1111111111111
     },
     {
       "benchmark_id": "aa_briefcase_v11",
@@ -3770,6 +3871,34 @@
       "value": 56.738374074662836
     },
     {
+      "benchmark_id": "aa_mlcr_hard",
+      "configuration_id": "aa_grok47_low",
+      "evaluated_at": null,
+      "evaluator": "Artificial Analysis",
+      "id": "o_aa_grok47_aa-grok47-low_grok-4-7-low_aa_mlcr_hard_20261018",
+      "locator": "models[grok-4-7-low].mlcrOverall",
+      "reported_at": null,
+      "reporting_relationship": "evaluator_measurement",
+      "review_state": "candidate",
+      "series_id": "series_aa_grok47_aa-grok47-low_grok-4-7-low_aa_mlcr_hard",
+      "setup": {
+        "aa_effort_slug": "low",
+        "aa_model_id": "208c16f0-8c5b-4524-ac8a-ac74c02e80a9",
+        "aa_release_slug": "grok-4-7",
+        "normalization": {
+          "formula": "source fraction × 100",
+          "reason": "AA serializes this percentage metric as a 0–1 fraction."
+        },
+        "source_field_unit": "fraction",
+        "source_field_value": 0.211111111111111
+      },
+      "source_id": "aa_public_pages_20261018",
+      "supersedes": [],
+      "uncertainty": null,
+      "unit": "%",
+      "value": 21.1111111111111
+    },
+    {
       "benchmark_id": "aa_briefcase_v11",
       "configuration_id": "aa_grok47_low",
       "evaluated_at": null,
@@ -4260,13 +4389,13 @@
           "reason": "AA serializes this percentage metric as a 0–1 fraction."
         },
         "source_field_unit": "fraction",
-        "source_field_value": 0.538888888888889
+        "source_field_value": 0.138888888888889
       },
       "source_id": "aa_public_pages_20261018",
       "supersedes": [],
       "uncertainty": null,
       "unit": "%",
-      "value": 53.8888888888889
+      "value": 13.8888888888889
     },
     {
       "benchmark_id": "aa_briefcase_v11",
@@ -4297,6 +4426,338 @@
       },
       "unit": "Elo",
       "value": 1209.28
+    },
+    {
+      "benchmark_id": "aa_hle_text",
+      "configuration_id": "aa_grok3_unknown",
+      "evaluated_at": null,
+      "evaluator": "Artificial Analysis",
+      "id": "o_aa_grok3_aa-grok3-unknown_grok-3_aa_hle_text_20261018",
+      "locator": "models[grok-3].hle",
+      "reported_at": null,
+      "reporting_relationship": "evaluator_measurement",
+      "review_state": "candidate",
+      "series_id": "series_aa_grok3_aa-grok3-unknown_grok-3_aa_hle_text",
+      "setup": {
+        "aa_effort_slug": null,
+        "aa_model_id": "2443ac9e-a3db-423d-accb-8963f6fb0a53",
+        "aa_release_slug": "grok-3",
+        "normalization": {
+          "formula": "source fraction × 100",
+          "reason": "AA serializes this percentage metric as a 0–1 fraction."
+        },
+        "source_field_unit": "fraction",
+        "source_field_value": 0.0412
+      },
+      "source_id": "aa_public_pages_20261018",
+      "supersedes": [],
+      "uncertainty": null,
+      "unit": "%",
+      "value": 4.12
+    },
+    {
+      "benchmark_id": "aa_gpqa_diamond",
+      "configuration_id": "aa_grok3_unknown",
+      "evaluated_at": null,
+      "evaluator": "Artificial Analysis",
+      "id": "o_aa_grok3_aa-grok3-unknown_grok-3_aa_gpqa_diamond_20261018",
+      "locator": "models[grok-3].gpqa",
+      "reported_at": null,
+      "reporting_relationship": "evaluator_measurement",
+      "review_state": "candidate",
+      "series_id": "series_aa_grok3_aa-grok3-unknown_grok-3_aa_gpqa_diamond",
+      "setup": {
+        "aa_effort_slug": null,
+        "aa_model_id": "2443ac9e-a3db-423d-accb-8963f6fb0a53",
+        "aa_release_slug": "grok-3",
+        "normalization": {
+          "formula": "source fraction × 100",
+          "reason": "AA serializes this percentage metric as a 0–1 fraction."
+        },
+        "source_field_unit": "fraction",
+        "source_field_value": 0.692929292929293
+      },
+      "source_id": "aa_public_pages_20261018",
+      "supersedes": [],
+      "uncertainty": null,
+      "unit": "%",
+      "value": 69.2929292929293
+    },
+    {
+      "benchmark_id": "aa_critpt",
+      "configuration_id": "aa_grok3_unknown",
+      "evaluated_at": null,
+      "evaluator": "Artificial Analysis",
+      "id": "o_aa_grok3_aa-grok3-unknown_grok-3_aa_critpt_20261018",
+      "locator": "models[grok-3].critpt",
+      "reported_at": null,
+      "reporting_relationship": "evaluator_measurement",
+      "review_state": "candidate",
+      "series_id": "series_aa_grok3_aa-grok3-unknown_grok-3_aa_critpt",
+      "setup": {
+        "aa_effort_slug": null,
+        "aa_model_id": "2443ac9e-a3db-423d-accb-8963f6fb0a53",
+        "aa_release_slug": "grok-3",
+        "normalization": {
+          "formula": "source fraction × 100",
+          "reason": "AA serializes this percentage metric as a 0–1 fraction."
+        },
+        "source_field_unit": "fraction",
+        "source_field_value": 0.0
+      },
+      "source_id": "aa_public_pages_20261018",
+      "supersedes": [],
+      "uncertainty": null,
+      "unit": "%",
+      "value": 0.0
+    },
+    {
+      "benchmark_id": "aa_omniscience_index",
+      "configuration_id": "aa_grok3_unknown",
+      "evaluated_at": null,
+      "evaluator": "Artificial Analysis",
+      "id": "o_aa_grok3_aa-grok3-unknown_grok-3_aa_omniscience_index_20261018",
+      "locator": "models[grok-3].omniscience",
+      "reported_at": null,
+      "reporting_relationship": "evaluator_measurement",
+      "review_state": "candidate",
+      "series_id": "series_aa_grok3_aa-grok3-unknown_grok-3_aa_omniscience_index",
+      "setup": {
+        "aa_effort_slug": null,
+        "aa_model_id": "2443ac9e-a3db-423d-accb-8963f6fb0a53",
+        "aa_release_slug": "grok-3",
+        "source_field_unit": "points",
+        "source_field_value": -33.18333333333333
+      },
+      "source_id": "aa_public_pages_20261018",
+      "supersedes": [],
+      "uncertainty": null,
+      "unit": "points",
+      "value": -33.18333333333333
+    },
+    {
+      "benchmark_id": "aa_omniscience_accuracy",
+      "configuration_id": "aa_grok3_unknown",
+      "evaluated_at": null,
+      "evaluator": "Artificial Analysis",
+      "id": "o_aa_grok3_aa-grok3-unknown_grok-3_aa_omniscience_accuracy_20261018",
+      "locator": "models[grok-3].omniscienceAccuracy",
+      "reported_at": null,
+      "reporting_relationship": "evaluator_measurement",
+      "review_state": "candidate",
+      "series_id": "series_aa_grok3_aa-grok3-unknown_grok-3_aa_omniscience_accuracy",
+      "setup": {
+        "aa_effort_slug": null,
+        "aa_model_id": "2443ac9e-a3db-423d-accb-8963f6fb0a53",
+        "aa_release_slug": "grok-3",
+        "normalization": {
+          "formula": "source fraction × 100",
+          "reason": "AA serializes this percentage metric as a 0–1 fraction."
+        },
+        "source_field_unit": "fraction",
+        "source_field_value": 0.289
+      },
+      "source_id": "aa_public_pages_20261018",
+      "supersedes": [],
+      "uncertainty": null,
+      "unit": "%",
+      "value": 28.9
+    },
+    {
+      "benchmark_id": "aa_omniscience_hallucination",
+      "configuration_id": "aa_grok3_unknown",
+      "evaluated_at": null,
+      "evaluator": "Artificial Analysis",
+      "id": "o_aa_grok3_aa-grok3-unknown_grok-3_aa_omniscience_hallucination_20261018",
+      "locator": "models[grok-3].omniscienceHallucinationRate",
+      "reported_at": null,
+      "reporting_relationship": "evaluator_measurement",
+      "review_state": "candidate",
+      "series_id": "series_aa_grok3_aa-grok3-unknown_grok-3_aa_omniscience_hallucination",
+      "setup": {
+        "aa_effort_slug": null,
+        "aa_model_id": "2443ac9e-a3db-423d-accb-8963f6fb0a53",
+        "aa_release_slug": "grok-3",
+        "normalization": {
+          "formula": "source fraction × 100",
+          "reason": "AA serializes this percentage metric as a 0–1 fraction."
+        },
+        "source_field_unit": "fraction",
+        "source_field_value": 0.8731833098921706
+      },
+      "source_id": "aa_public_pages_20261018",
+      "supersedes": [],
+      "uncertainty": null,
+      "unit": "%",
+      "value": 87.31833098921706
+    },
+    {
+      "benchmark_id": "aa_lcr_v11",
+      "configuration_id": "aa_grok3_unknown",
+      "evaluated_at": null,
+      "evaluator": "Artificial Analysis",
+      "id": "o_aa_grok3_aa-grok3-unknown_grok-3_aa_lcr_v11_20261018",
+      "locator": "models[grok-3].lcr",
+      "reported_at": null,
+      "reporting_relationship": "evaluator_measurement",
+      "review_state": "candidate",
+      "series_id": "series_aa_grok3_aa-grok3-unknown_grok-3_aa_lcr_v11",
+      "setup": {
+        "aa_effort_slug": null,
+        "aa_model_id": "2443ac9e-a3db-423d-accb-8963f6fb0a53",
+        "aa_release_slug": "grok-3",
+        "normalization": {
+          "formula": "source fraction × 100",
+          "reason": "AA serializes this percentage metric as a 0–1 fraction."
+        },
+        "source_field_unit": "fraction",
+        "source_field_value": 0.58
+      },
+      "source_id": "aa_public_pages_20261018",
+      "supersedes": [],
+      "uncertainty": null,
+      "unit": "%",
+      "value": 57.99999999999999
+    },
+    {
+      "benchmark_id": "aa_ifbench",
+      "configuration_id": "aa_grok3_unknown",
+      "evaluated_at": null,
+      "evaluator": "Artificial Analysis",
+      "id": "o_aa_grok3_aa-grok3-unknown_grok-3_aa_ifbench_20261018",
+      "locator": "models[grok-3].ifbench",
+      "reported_at": null,
+      "reporting_relationship": "evaluator_measurement",
+      "review_state": "candidate",
+      "series_id": "series_aa_grok3_aa-grok3-unknown_grok-3_aa_ifbench",
+      "setup": {
+        "aa_effort_slug": null,
+        "aa_model_id": "2443ac9e-a3db-423d-accb-8963f6fb0a53",
+        "aa_release_slug": "grok-3",
+        "normalization": {
+          "formula": "source fraction × 100",
+          "reason": "AA serializes this percentage metric as a 0–1 fraction."
+        },
+        "source_field_unit": "fraction",
+        "source_field_value": 0.469387755102041
+      },
+      "source_id": "aa_public_pages_20261018",
+      "supersedes": [],
+      "uncertainty": null,
+      "unit": "%",
+      "value": 46.9387755102041
+    },
+    {
+      "benchmark_id": "aa_terminal_hard",
+      "configuration_id": "aa_grok3_unknown",
+      "evaluated_at": null,
+      "evaluator": "Artificial Analysis",
+      "id": "o_aa_grok3_aa-grok3-unknown_grok-3_aa_terminal_hard_20261018",
+      "locator": "models[grok-3].terminalbenchHard",
+      "reported_at": null,
+      "reporting_relationship": "evaluator_measurement",
+      "review_state": "candidate",
+      "series_id": "series_aa_grok3_aa-grok3-unknown_grok-3_aa_terminal_hard",
+      "setup": {
+        "aa_effort_slug": null,
+        "aa_model_id": "2443ac9e-a3db-423d-accb-8963f6fb0a53",
+        "aa_release_slug": "grok-3",
+        "normalization": {
+          "formula": "source fraction × 100",
+          "reason": "AA serializes this percentage metric as a 0–1 fraction."
+        },
+        "source_field_unit": "fraction",
+        "source_field_value": 0.113636363636364
+      },
+      "source_id": "aa_public_pages_20261018",
+      "supersedes": [],
+      "uncertainty": null,
+      "unit": "%",
+      "value": 11.363636363636399
+    },
+    {
+      "benchmark_id": "aa_aime_2025",
+      "configuration_id": "aa_grok3_unknown",
+      "evaluated_at": null,
+      "evaluator": "Artificial Analysis",
+      "id": "o_aa_grok3_aa-grok3-unknown_grok-3_aa_aime_2025_20261018",
+      "locator": "models[grok-3].aime25",
+      "reported_at": null,
+      "reporting_relationship": "evaluator_measurement",
+      "review_state": "candidate",
+      "series_id": "series_aa_grok3_aa-grok3-unknown_grok-3_aa_aime_2025",
+      "setup": {
+        "aa_effort_slug": null,
+        "aa_model_id": "2443ac9e-a3db-423d-accb-8963f6fb0a53",
+        "aa_release_slug": "grok-3",
+        "normalization": {
+          "formula": "source fraction × 100",
+          "reason": "AA serializes this percentage metric as a 0–1 fraction."
+        },
+        "source_field_unit": "fraction",
+        "source_field_value": 0.58
+      },
+      "source_id": "aa_public_pages_20261018",
+      "supersedes": [],
+      "uncertainty": null,
+      "unit": "%",
+      "value": 57.99999999999999
+    },
+    {
+      "benchmark_id": "aa_tau2_telecom",
+      "configuration_id": "aa_grok3_unknown",
+      "evaluated_at": null,
+      "evaluator": "Artificial Analysis",
+      "id": "o_aa_grok3_aa-grok3-unknown_grok-3_aa_tau2_telecom_20261018",
+      "locator": "models[grok-3].tau2",
+      "reported_at": null,
+      "reporting_relationship": "evaluator_measurement",
+      "review_state": "candidate",
+      "series_id": "series_aa_grok3_aa-grok3-unknown_grok-3_aa_tau2_telecom",
+      "setup": {
+        "aa_effort_slug": null,
+        "aa_model_id": "2443ac9e-a3db-423d-accb-8963f6fb0a53",
+        "aa_release_slug": "grok-3",
+        "normalization": {
+          "formula": "source fraction × 100",
+          "reason": "AA serializes this percentage metric as a 0–1 fraction."
+        },
+        "source_field_unit": "fraction",
+        "source_field_value": 0.488304093567252
+      },
+      "source_id": "aa_public_pages_20261018",
+      "supersedes": [],
+      "uncertainty": null,
+      "unit": "%",
+      "value": 48.8304093567252
+    },
+    {
+      "benchmark_id": "aa_livecodebench",
+      "configuration_id": "aa_grok3_unknown",
+      "evaluated_at": null,
+      "evaluator": "Artificial Analysis",
+      "id": "o_aa_grok3_aa-grok3-unknown_grok-3_aa_livecodebench_20261018",
+      "locator": "models[grok-3].livecodebench",
+      "reported_at": null,
+      "reporting_relationship": "evaluator_measurement",
+      "review_state": "candidate",
+      "series_id": "series_aa_grok3_aa-grok3-unknown_grok-3_aa_livecodebench",
+      "setup": {
+        "aa_effort_slug": null,
+        "aa_model_id": "2443ac9e-a3db-423d-accb-8963f6fb0a53",
+        "aa_release_slug": "grok-3",
+        "normalization": {
+          "formula": "source fraction × 100",
+          "reason": "AA serializes this percentage metric as a 0–1 fraction."
+        },
+        "source_field_unit": "fraction",
+        "source_field_value": 0.425396825396825
+      },
+      "source_id": "aa_public_pages_20261018",
+      "supersedes": [],
+      "uncertainty": null,
+      "unit": "%",
+      "value": 42.5396825396825
     },
     {
       "benchmark_id": "aa_intelligence_index_v432",
@@ -4710,6 +5171,34 @@
       "uncertainty": null,
       "unit": "%",
       "value": 44.3298969072165
+    },
+    {
+      "benchmark_id": "aa_mlcr_hard",
+      "configuration_id": "aa_grok46_medium",
+      "evaluated_at": null,
+      "evaluator": "Artificial Analysis",
+      "id": "o_aa_grok46_aa-grok46-medium_grok-4-6-medium_aa_mlcr_hard_20261018",
+      "locator": "models[grok-4-6-medium].mlcrOverall",
+      "reported_at": null,
+      "reporting_relationship": "evaluator_measurement",
+      "review_state": "candidate",
+      "series_id": "series_aa_grok46_aa-grok46-medium_grok-4-6-medium_aa_mlcr_hard",
+      "setup": {
+        "aa_effort_slug": "medium",
+        "aa_model_id": "26614164-6840-4e17-a65a-2deb2fe7e87b",
+        "aa_release_slug": "grok-4-6",
+        "normalization": {
+          "formula": "source fraction × 100",
+          "reason": "AA serializes this percentage metric as a 0–1 fraction."
+        },
+        "source_field_unit": "fraction",
+        "source_field_value": 0.183333333333333
+      },
+      "source_id": "aa_public_pages_20261018",
+      "supersedes": [],
+      "uncertainty": null,
+      "unit": "%",
+      "value": 18.3333333333333
     },
     {
       "benchmark_id": "aa_briefcase_v11",
@@ -5153,6 +5642,34 @@
       "uncertainty": null,
       "unit": "%",
       "value": 55.00000000000001
+    },
+    {
+      "benchmark_id": "aa_mlcr_hard",
+      "configuration_id": "aa_grok47_high",
+      "evaluated_at": null,
+      "evaluator": "Artificial Analysis",
+      "id": "o_aa_grok47_aa-grok47-high_grok-4-7-high_aa_mlcr_hard_20261018",
+      "locator": "models[grok-4-7-high].mlcrOverall",
+      "reported_at": null,
+      "reporting_relationship": "evaluator_measurement",
+      "review_state": "candidate",
+      "series_id": "series_aa_grok47_aa-grok47-high_grok-4-7-high_aa_mlcr_hard",
+      "setup": {
+        "aa_effort_slug": "high",
+        "aa_model_id": "272f5f03-aea9-4675-a244-2b753b618cdf",
+        "aa_release_slug": "grok-4-7",
+        "normalization": {
+          "formula": "source fraction × 100",
+          "reason": "AA serializes this percentage metric as a 0–1 fraction."
+        },
+        "source_field_unit": "fraction",
+        "source_field_value": 0.188888888888889
+      },
+      "source_id": "aa_public_pages_20261018",
+      "supersedes": [],
+      "uncertainty": null,
+      "unit": "%",
+      "value": 18.8888888888889
     },
     {
       "benchmark_id": "aa_briefcase_v11",
@@ -5785,13 +6302,13 @@
           "reason": "AA serializes this percentage metric as a 0–1 fraction."
         },
         "source_field_unit": "fraction",
-        "source_field_value": 0.35
+        "source_field_value": 0.416666666666667
       },
       "source_id": "aa_public_pages_20261018",
       "supersedes": [],
       "uncertainty": null,
       "unit": "%",
-      "value": 35.0
+      "value": 41.6666666666667
     },
     {
       "benchmark_id": "aa_briefcase_v11",
@@ -6340,13 +6857,13 @@
           "reason": "AA serializes this percentage metric as a 0–1 fraction."
         },
         "source_field_unit": "fraction",
-        "source_field_value": 0.666666666666667
+        "source_field_value": 0.277777777777778
       },
       "source_id": "aa_public_pages_20261018",
       "supersedes": [],
       "uncertainty": null,
       "unit": "%",
-      "value": 66.6666666666667
+      "value": 27.7777777777778
     },
     {
       "benchmark_id": "aa_briefcase_v11",
@@ -6876,6 +7393,34 @@
       "value": 20.0
     },
     {
+      "benchmark_id": "aa_mlcr_hard",
+      "configuration_id": "aa_qwen38_27b_non_reasoning",
+      "evaluated_at": null,
+      "evaluator": "Artificial Analysis",
+      "id": "o_aa_qwen38_27b_aa-qwen38-27b-non-reasoning_qwen3-8-27b-non-reasoning_aa_mlcr_hard_20261018",
+      "locator": "models[qwen3-8-27b-non-reasoning].mlcrOverall",
+      "reported_at": null,
+      "reporting_relationship": "evaluator_measurement",
+      "review_state": "candidate",
+      "series_id": "series_aa_qwen38_27b_aa-qwen38-27b-non-reasoning_qwen3-8-27b-non-reasoning_aa_mlcr_hard",
+      "setup": {
+        "aa_effort_slug": null,
+        "aa_model_id": "353c92f3-2148-4c2d-9231-aa7e1322a1fd",
+        "aa_release_slug": "qwen3-8-27b",
+        "normalization": {
+          "formula": "source fraction × 100",
+          "reason": "AA serializes this percentage metric as a 0–1 fraction."
+        },
+        "source_field_unit": "fraction",
+        "source_field_value": 0.1
+      },
+      "source_id": "aa_public_pages_20261018",
+      "supersedes": [],
+      "uncertainty": null,
+      "unit": "%",
+      "value": 10.0
+    },
+    {
       "benchmark_id": "aa_briefcase_v11",
       "configuration_id": "aa_qwen38_27b_non_reasoning",
       "evaluated_at": null,
@@ -7319,6 +7864,34 @@
       "value": 41.0309278350515
     },
     {
+      "benchmark_id": "aa_mlcr_hard",
+      "configuration_id": "aa_claude_fable51_medium",
+      "evaluated_at": null,
+      "evaluator": "Artificial Analysis",
+      "id": "o_aa_claude_fable51_aa-claude-fable51-medium_claude-fable-5-1-medium_aa_mlcr_hard_20261018",
+      "locator": "models[claude-fable-5-1-medium].mlcrOverall",
+      "reported_at": null,
+      "reporting_relationship": "evaluator_measurement",
+      "review_state": "candidate",
+      "series_id": "series_aa_claude_fable51_aa-claude-fable51-medium_claude-fable-5-1-medium_aa_mlcr_hard",
+      "setup": {
+        "aa_effort_slug": "medium",
+        "aa_model_id": "3b7de71c-e034-4591-8ca6-6b6be2fa471f",
+        "aa_release_slug": "claude-fable-5-1",
+        "normalization": {
+          "formula": "source fraction × 100",
+          "reason": "AA serializes this percentage metric as a 0–1 fraction."
+        },
+        "source_field_unit": "fraction",
+        "source_field_value": 0.0944444444444444
+      },
+      "source_id": "aa_public_pages_20261018",
+      "supersedes": [],
+      "uncertainty": null,
+      "unit": "%",
+      "value": 9.44444444444444
+    },
+    {
       "benchmark_id": "aa_briefcase_v11",
       "configuration_id": "aa_claude_fable51_medium",
       "evaluated_at": null,
@@ -7704,6 +8277,34 @@
       "uncertainty": null,
       "unit": "%",
       "value": 64.49523732184466
+    },
+    {
+      "benchmark_id": "aa_mlcr_hard",
+      "configuration_id": "aa_gpt61_sol_high",
+      "evaluated_at": null,
+      "evaluator": "Artificial Analysis",
+      "id": "o_aa_gpt61_sol_aa-gpt61-sol-high_gpt-6-1-sol-high_aa_mlcr_hard_20261018",
+      "locator": "models[gpt-6-1-sol-high].mlcrOverall",
+      "reported_at": null,
+      "reporting_relationship": "evaluator_measurement",
+      "review_state": "candidate",
+      "series_id": "series_aa_gpt61_sol_aa-gpt61-sol-high_gpt-6-1-sol-high_aa_mlcr_hard",
+      "setup": {
+        "aa_effort_slug": "high",
+        "aa_model_id": "3b84fee3-b70a-41bc-819e-5fbdef9a0042",
+        "aa_release_slug": "gpt-6-1-sol",
+        "normalization": {
+          "formula": "source fraction × 100",
+          "reason": "AA serializes this percentage metric as a 0–1 fraction."
+        },
+        "source_field_unit": "fraction",
+        "source_field_value": 0.316666666666667
+      },
+      "source_id": "aa_public_pages_20261018",
+      "supersedes": [],
+      "uncertainty": null,
+      "unit": "%",
+      "value": 31.6666666666667
     },
     {
       "benchmark_id": "aa_briefcase_v11",
@@ -8308,13 +8909,13 @@
           "reason": "AA serializes this percentage metric as a 0–1 fraction."
         },
         "source_field_unit": "fraction",
-        "source_field_value": 0.711111111111111
+        "source_field_value": 0.155555555555556
       },
       "source_id": "aa_public_pages_20261018",
       "supersedes": [],
       "uncertainty": null,
       "unit": "%",
-      "value": 71.1111111111111
+      "value": 15.5555555555556
     },
     {
       "benchmark_id": "aa_briefcase_v11",
@@ -8844,6 +9445,34 @@
       "value": 52.92537042934996
     },
     {
+      "benchmark_id": "aa_mlcr_hard",
+      "configuration_id": "aa_claude_opus55_low",
+      "evaluated_at": null,
+      "evaluator": "Artificial Analysis",
+      "id": "o_aa_claude_opus55_aa-claude-opus55-low_claude-opus-5-5-low_aa_mlcr_hard_20261018",
+      "locator": "models[claude-opus-5-5-low].mlcrOverall",
+      "reported_at": null,
+      "reporting_relationship": "evaluator_measurement",
+      "review_state": "candidate",
+      "series_id": "series_aa_claude_opus55_aa-claude-opus55-low_claude-opus-5-5-low_aa_mlcr_hard",
+      "setup": {
+        "aa_effort_slug": "low",
+        "aa_model_id": "4416ca93-fde6-4b7b-abbc-3a6be109cc3d",
+        "aa_release_slug": "claude-opus-5-5",
+        "normalization": {
+          "formula": "source fraction × 100",
+          "reason": "AA serializes this percentage metric as a 0–1 fraction."
+        },
+        "source_field_unit": "fraction",
+        "source_field_value": 0.194444444444444
+      },
+      "source_id": "aa_public_pages_20261018",
+      "supersedes": [],
+      "uncertainty": null,
+      "unit": "%",
+      "value": 19.4444444444444
+    },
+    {
       "benchmark_id": "aa_briefcase_v11",
       "configuration_id": "aa_claude_opus55_low",
       "evaluated_at": null,
@@ -9105,13 +9734,13 @@
         "aa_model_id": "512d17ef-13d2-4f65-bf9b-154b0dec7e8d",
         "aa_release_slug": "kimi-k3",
         "source_field_unit": "Elo",
-        "source_field_value": 1125.75
+        "source_field_value": 1126.79
       },
       "source_id": "aa_public_pages_20261018",
       "supersedes": [],
       "uncertainty": null,
       "unit": "Elo",
-      "value": 1125.75
+      "value": 1126.79
     },
     {
       "benchmark_id": "aa_mmmu_pro",
@@ -9231,6 +9860,34 @@
       "value": 12.6262626262626
     },
     {
+      "benchmark_id": "frontiercode_v11",
+      "configuration_id": "aa_kimi_k3_low",
+      "evaluated_at": null,
+      "evaluator": "Artificial Analysis",
+      "id": "o_aa_kimi_k3_aa-kimi-k3-low_kimi-k3-low_frontiercode_v11_20261018",
+      "locator": "models[kimi-k3-low].frontierCode",
+      "reported_at": null,
+      "reporting_relationship": "evaluator_measurement",
+      "review_state": "candidate",
+      "series_id": "series_aa_kimi_k3_aa-kimi-k3-low_kimi-k3-low_frontiercode_v11",
+      "setup": {
+        "aa_effort_slug": "low",
+        "aa_model_id": "512d17ef-13d2-4f65-bf9b-154b0dec7e8d",
+        "aa_release_slug": "kimi-k3",
+        "normalization": {
+          "formula": "source fraction × 100",
+          "reason": "AA serializes this percentage metric as a 0–1 fraction."
+        },
+        "source_field_unit": "fraction",
+        "source_field_value": 0.284774
+      },
+      "source_id": "aa_public_pages_20261018",
+      "supersedes": [],
+      "uncertainty": null,
+      "unit": "%",
+      "value": 28.477400000000003
+    },
+    {
       "benchmark_id": "terminal_bench_21",
       "configuration_id": "aa_kimi_k3_low",
       "evaluated_at": null,
@@ -9315,6 +9972,34 @@
       "value": 41.6494845360825
     },
     {
+      "benchmark_id": "aa_mlcr_hard",
+      "configuration_id": "aa_kimi_k3_low",
+      "evaluated_at": null,
+      "evaluator": "Artificial Analysis",
+      "id": "o_aa_kimi_k3_aa-kimi-k3-low_kimi-k3-low_aa_mlcr_hard_20261018",
+      "locator": "models[kimi-k3-low].mlcrOverall",
+      "reported_at": null,
+      "reporting_relationship": "evaluator_measurement",
+      "review_state": "candidate",
+      "series_id": "series_aa_kimi_k3_aa-kimi-k3-low_kimi-k3-low_aa_mlcr_hard",
+      "setup": {
+        "aa_effort_slug": "low",
+        "aa_model_id": "512d17ef-13d2-4f65-bf9b-154b0dec7e8d",
+        "aa_release_slug": "kimi-k3",
+        "normalization": {
+          "formula": "source fraction × 100",
+          "reason": "AA serializes this percentage metric as a 0–1 fraction."
+        },
+        "source_field_unit": "fraction",
+        "source_field_value": 0.105555555555556
+      },
+      "source_id": "aa_public_pages_20261018",
+      "supersedes": [],
+      "uncertainty": null,
+      "unit": "%",
+      "value": 10.5555555555556
+    },
+    {
       "benchmark_id": "aa_briefcase_v11",
       "configuration_id": "aa_kimi_k3_low",
       "evaluated_at": null,
@@ -9330,19 +10015,19 @@
         "aa_model_id": "512d17ef-13d2-4f65-bf9b-154b0dec7e8d",
         "aa_release_slug": "kimi-k3",
         "source_field_unit": "Elo",
-        "source_field_value": 985.76
+        "source_field_value": 984.53
       },
       "source_id": "aa_public_pages_20261018",
       "supersedes": [],
       "uncertainty": {
         "confidence_level": 0.95,
-        "lower": 977.17,
+        "lower": 976.48,
         "type": "confidence_interval",
         "unit": "Elo",
-        "upper": 994.11
+        "upper": 992.1
       },
       "unit": "Elo",
-      "value": 985.76
+      "value": 984.53
     },
     {
       "benchmark_id": "aa_intelligence_index_v432",
@@ -9833,13 +10518,13 @@
           "reason": "AA serializes this percentage metric as a 0–1 fraction."
         },
         "source_field_unit": "fraction",
-        "source_field_value": 0.15
+        "source_field_value": 0.2
       },
       "source_id": "aa_public_pages_20261018",
       "supersedes": [],
       "uncertainty": null,
       "unit": "%",
-      "value": 15.0
+      "value": 20.0
     },
     {
       "benchmark_id": "aa_briefcase_v11",
@@ -10332,13 +11017,13 @@
           "reason": "AA serializes this percentage metric as a 0–1 fraction."
         },
         "source_field_unit": "fraction",
-        "source_field_value": 0.194444444444444
+        "source_field_value": 0.261111111111111
       },
       "source_id": "aa_public_pages_20261018",
       "supersedes": [],
       "uncertainty": null,
       "unit": "%",
-      "value": 19.4444444444444
+      "value": 26.1111111111111
     },
     {
       "benchmark_id": "aa_briefcase_v11",
@@ -10866,6 +11551,34 @@
       "uncertainty": null,
       "unit": "%",
       "value": 47.4226804123711
+    },
+    {
+      "benchmark_id": "aa_mlcr_hard",
+      "configuration_id": "aa_qwen38_27b_medium",
+      "evaluated_at": null,
+      "evaluator": "Artificial Analysis",
+      "id": "o_aa_qwen38_27b_aa-qwen38-27b-medium_qwen3-8-27b-medium_aa_mlcr_hard_20261018",
+      "locator": "models[qwen3-8-27b-medium].mlcrOverall",
+      "reported_at": null,
+      "reporting_relationship": "evaluator_measurement",
+      "review_state": "candidate",
+      "series_id": "series_aa_qwen38_27b_aa-qwen38-27b-medium_qwen3-8-27b-medium_aa_mlcr_hard",
+      "setup": {
+        "aa_effort_slug": "medium",
+        "aa_model_id": "6657d7de-a2a9-40bc-a32f-86e80ad63698",
+        "aa_release_slug": "qwen3-8-27b",
+        "normalization": {
+          "formula": "source fraction × 100",
+          "reason": "AA serializes this percentage metric as a 0–1 fraction."
+        },
+        "source_field_unit": "fraction",
+        "source_field_value": 0.0388888888888889
+      },
+      "source_id": "aa_public_pages_20261018",
+      "supersedes": [],
+      "uncertainty": null,
+      "unit": "%",
+      "value": 3.88888888888889
     },
     {
       "benchmark_id": "aa_briefcase_v11",
@@ -11602,13 +12315,13 @@
           "reason": "AA serializes this percentage metric as a 0–1 fraction."
         },
         "source_field_unit": "fraction",
-        "source_field_value": 0.15
+        "source_field_value": 0.261111111111111
       },
       "source_id": "aa_public_pages_20261018",
       "supersedes": [],
       "uncertainty": null,
       "unit": "%",
-      "value": 15.0
+      "value": 26.1111111111111
     },
     {
       "benchmark_id": "aa_briefcase_v11",
@@ -12101,13 +12814,13 @@
           "reason": "AA serializes this percentage metric as a 0–1 fraction."
         },
         "source_field_unit": "fraction",
-        "source_field_value": 0.594444444444444
+        "source_field_value": 0.116666666666667
       },
       "source_id": "aa_public_pages_20261018",
       "supersedes": [],
       "uncertainty": null,
       "unit": "%",
-      "value": 59.4444444444444
+      "value": 11.6666666666667
     },
     {
       "benchmark_id": "aa_briefcase_v11",
@@ -13497,6 +14210,34 @@
       "value": 32.1649484536082
     },
     {
+      "benchmark_id": "aa_mlcr_hard",
+      "configuration_id": "aa_qwen38_27b_low",
+      "evaluated_at": null,
+      "evaluator": "Artificial Analysis",
+      "id": "o_aa_qwen38_27b_aa-qwen38-27b-low_qwen3-8-27b-low_aa_mlcr_hard_20261018",
+      "locator": "models[qwen3-8-27b-low].mlcrOverall",
+      "reported_at": null,
+      "reporting_relationship": "evaluator_measurement",
+      "review_state": "candidate",
+      "series_id": "series_aa_qwen38_27b_aa-qwen38-27b-low_qwen3-8-27b-low_aa_mlcr_hard",
+      "setup": {
+        "aa_effort_slug": "low",
+        "aa_model_id": "7e30585f-fad7-40df-a8cb-03c1d96df38a",
+        "aa_release_slug": "qwen3-8-27b",
+        "normalization": {
+          "formula": "source fraction × 100",
+          "reason": "AA serializes this percentage metric as a 0–1 fraction."
+        },
+        "source_field_unit": "fraction",
+        "source_field_value": 0.0777777777777778
+      },
+      "source_id": "aa_public_pages_20261018",
+      "supersedes": [],
+      "uncertainty": null,
+      "unit": "%",
+      "value": 7.77777777777778
+    },
+    {
       "benchmark_id": "aa_briefcase_v11",
       "configuration_id": "aa_qwen38_27b_low",
       "evaluated_at": null,
@@ -14071,13 +14812,13 @@
           "reason": "AA serializes this percentage metric as a 0–1 fraction."
         },
         "source_field_unit": "fraction",
-        "source_field_value": 0.172222222222222
+        "source_field_value": 0.244444444444444
       },
       "source_id": "aa_public_pages_20261018",
       "supersedes": [],
       "uncertainty": null,
       "unit": "%",
-      "value": 17.2222222222222
+      "value": 24.4444444444444
     },
     {
       "benchmark_id": "aa_briefcase_v11",
@@ -14766,13 +15507,13 @@
           "reason": "AA serializes this percentage metric as a 0–1 fraction."
         },
         "source_field_unit": "fraction",
-        "source_field_value": 0.433333333333333
+        "source_field_value": 0.138888888888889
       },
       "source_id": "aa_public_pages_20261018",
       "supersedes": [],
       "uncertainty": null,
       "unit": "%",
-      "value": 43.3333333333333
+      "value": 13.8888888888889
     },
     {
       "benchmark_id": "aa_briefcase_v11",
@@ -15218,6 +15959,34 @@
       "value": 45.7731958762887
     },
     {
+      "benchmark_id": "aa_mlcr_hard",
+      "configuration_id": "aa_claude_fable51_xhigh",
+      "evaluated_at": null,
+      "evaluator": "Artificial Analysis",
+      "id": "o_aa_claude_fable51_aa-claude-fable51-xhigh_claude-fable-5-1-xhigh_aa_mlcr_hard_20261018",
+      "locator": "models[claude-fable-5-1-xhigh].mlcrOverall",
+      "reported_at": null,
+      "reporting_relationship": "evaluator_measurement",
+      "review_state": "candidate",
+      "series_id": "series_aa_claude_fable51_aa-claude-fable51-xhigh_claude-fable-5-1-xhigh_aa_mlcr_hard",
+      "setup": {
+        "aa_effort_slug": "xhigh",
+        "aa_model_id": "9b166bf3-42db-4f63-8338-1c4a1244ffe8",
+        "aa_release_slug": "claude-fable-5-1",
+        "normalization": {
+          "formula": "source fraction × 100",
+          "reason": "AA serializes this percentage metric as a 0–1 fraction."
+        },
+        "source_field_unit": "fraction",
+        "source_field_value": 0.133333333333333
+      },
+      "source_id": "aa_public_pages_20261018",
+      "supersedes": [],
+      "uncertainty": null,
+      "unit": "%",
+      "value": 13.3333333333333
+    },
+    {
       "benchmark_id": "aa_briefcase_v11",
       "configuration_id": "aa_claude_fable51_xhigh",
       "evaluated_at": null,
@@ -15661,6 +16430,34 @@
       "value": 43.0927835051546
     },
     {
+      "benchmark_id": "aa_mlcr_hard",
+      "configuration_id": "aa_claude_fable51_high",
+      "evaluated_at": null,
+      "evaluator": "Artificial Analysis",
+      "id": "o_aa_claude_fable51_aa-claude-fable51-high_claude-fable-5-1-high_aa_mlcr_hard_20261018",
+      "locator": "models[claude-fable-5-1-high].mlcrOverall",
+      "reported_at": null,
+      "reporting_relationship": "evaluator_measurement",
+      "review_state": "candidate",
+      "series_id": "series_aa_claude_fable51_aa-claude-fable51-high_claude-fable-5-1-high_aa_mlcr_hard",
+      "setup": {
+        "aa_effort_slug": "high",
+        "aa_model_id": "9d7d72cd-d95d-45a0-b109-4ad292c9aabd",
+        "aa_release_slug": "claude-fable-5-1",
+        "normalization": {
+          "formula": "source fraction × 100",
+          "reason": "AA serializes this percentage metric as a 0–1 fraction."
+        },
+        "source_field_unit": "fraction",
+        "source_field_value": 0.155555555555556
+      },
+      "source_id": "aa_public_pages_20261018",
+      "supersedes": [],
+      "uncertainty": null,
+      "unit": "%",
+      "value": 15.5555555555556
+    },
+    {
       "benchmark_id": "aa_briefcase_v11",
       "configuration_id": "aa_claude_fable51_high",
       "evaluated_at": null,
@@ -16046,6 +16843,34 @@
       "uncertainty": null,
       "unit": "%",
       "value": 62.573509704356866
+    },
+    {
+      "benchmark_id": "aa_mlcr_hard",
+      "configuration_id": "aa_gpt61_sol_medium",
+      "evaluated_at": null,
+      "evaluator": "Artificial Analysis",
+      "id": "o_aa_gpt61_sol_aa-gpt61-sol-medium_gpt-6-1-sol-medium_aa_mlcr_hard_20261018",
+      "locator": "models[gpt-6-1-sol-medium].mlcrOverall",
+      "reported_at": null,
+      "reporting_relationship": "evaluator_measurement",
+      "review_state": "candidate",
+      "series_id": "series_aa_gpt61_sol_aa-gpt61-sol-medium_gpt-6-1-sol-medium_aa_mlcr_hard",
+      "setup": {
+        "aa_effort_slug": "medium",
+        "aa_model_id": "a2e51d62-ea4e-4f15-8be0-be9dc1fb489d",
+        "aa_release_slug": "gpt-6-1-sol",
+        "normalization": {
+          "formula": "source fraction × 100",
+          "reason": "AA serializes this percentage metric as a 0–1 fraction."
+        },
+        "source_field_unit": "fraction",
+        "source_field_value": 0.322222222222222
+      },
+      "source_id": "aa_public_pages_20261018",
+      "supersedes": [],
+      "uncertainty": null,
+      "unit": "%",
+      "value": 32.2222222222222
     },
     {
       "benchmark_id": "aa_briefcase_v11",
@@ -16517,6 +17342,34 @@
       "uncertainty": null,
       "unit": "%",
       "value": 31.958762886597903
+    },
+    {
+      "benchmark_id": "aa_mlcr_hard",
+      "configuration_id": "aa_gpt6_astra_low",
+      "evaluated_at": null,
+      "evaluator": "Artificial Analysis",
+      "id": "o_aa_gpt6_astra_aa-gpt6-astra-low_gpt-6-astra-low_aa_mlcr_hard_20261018",
+      "locator": "models[gpt-6-astra-low].mlcrOverall",
+      "reported_at": null,
+      "reporting_relationship": "evaluator_measurement",
+      "review_state": "candidate",
+      "series_id": "series_aa_gpt6_astra_aa-gpt6-astra-low_gpt-6-astra-low_aa_mlcr_hard",
+      "setup": {
+        "aa_effort_slug": "low",
+        "aa_model_id": "a3f8100d-e38f-408b-b0fa-0085dae18dc1",
+        "aa_release_slug": "gpt-6-astra",
+        "normalization": {
+          "formula": "source fraction × 100",
+          "reason": "AA serializes this percentage metric as a 0–1 fraction."
+        },
+        "source_field_unit": "fraction",
+        "source_field_value": 0.338888888888889
+      },
+      "source_id": "aa_public_pages_20261018",
+      "supersedes": [],
+      "uncertainty": null,
+      "unit": "%",
+      "value": 33.8888888888889
     },
     {
       "benchmark_id": "aa_briefcase_v11",
@@ -17112,13 +17965,13 @@
         "aa_model_id": "b01dee41-c62b-48ed-8d16-984adc405e5c",
         "aa_release_slug": "qwen3-8-27b",
         "source_field_unit": "Elo",
-        "source_field_value": 1419.88
+        "source_field_value": 1416.92
       },
       "source_id": "aa_public_pages_20261018",
       "supersedes": [],
       "uncertainty": null,
       "unit": "Elo",
-      "value": 1419.88
+      "value": 1416.92
     },
     {
       "benchmark_id": "aa_mmmu_pro",
@@ -17425,13 +18278,13 @@
           "reason": "AA serializes this percentage metric as a 0–1 fraction."
         },
         "source_field_unit": "fraction",
-        "source_field_value": 0.216666666666667
+        "source_field_value": 0.227777777777778
       },
       "source_id": "aa_public_pages_20261018",
       "supersedes": [],
       "uncertainty": null,
       "unit": "%",
-      "value": 21.6666666666667
+      "value": 22.7777777777778
     },
     {
       "benchmark_id": "aa_briefcase_v11",
@@ -17449,19 +18302,19 @@
         "aa_model_id": "b01dee41-c62b-48ed-8d16-984adc405e5c",
         "aa_release_slug": "qwen3-8-27b",
         "source_field_unit": "Elo",
-        "source_field_value": 1395.27
+        "source_field_value": 1394.92
       },
       "source_id": "aa_public_pages_20261018",
       "supersedes": [],
       "uncertainty": {
         "confidence_level": 0.95,
-        "lower": 1388.09,
+        "lower": 1387.8,
         "type": "confidence_interval",
         "unit": "Elo",
-        "upper": 1402.99
+        "upper": 1402.51
       },
       "unit": "Elo",
-      "value": 1395.27
+      "value": 1394.92
     },
     {
       "benchmark_id": "aa_intelligence_index_v432",
@@ -17695,13 +18548,13 @@
         "aa_model_id": "b112af07-3bd5-4647-b09f-b23204361bb2",
         "aa_release_slug": "qwen3-8-max-0902",
         "source_field_unit": "Elo",
-        "source_field_value": 1665.58
+        "source_field_value": 1664.63
       },
       "source_id": "aa_public_pages_20261018",
       "supersedes": [],
       "uncertainty": null,
       "unit": "Elo",
-      "value": 1665.58
+      "value": 1664.63
     },
     {
       "benchmark_id": "aa_mmmu_pro",
@@ -18116,19 +18969,19 @@
         "aa_model_id": "b112af07-3bd5-4647-b09f-b23204361bb2",
         "aa_release_slug": "qwen3-8-max-0902",
         "source_field_unit": "Elo",
-        "source_field_value": 1612.8
+        "source_field_value": 1612.62
       },
       "source_id": "aa_public_pages_20261018",
       "supersedes": [],
       "uncertainty": {
         "confidence_level": 0.95,
-        "lower": 1603.43,
+        "lower": 1603.61,
         "type": "confidence_interval",
         "unit": "Elo",
-        "upper": 1624.1
+        "upper": 1621.93
       },
       "unit": "Elo",
-      "value": 1612.8
+      "value": 1612.62
     },
     {
       "benchmark_id": "aa_intelligence_index_v432",
@@ -18619,13 +19472,13 @@
           "reason": "AA serializes this percentage metric as a 0–1 fraction."
         },
         "source_field_unit": "fraction",
-        "source_field_value": 0.338888888888889
+        "source_field_value": 0.383333333333333
       },
       "source_id": "aa_public_pages_20261018",
       "supersedes": [],
       "uncertainty": null,
       "unit": "%",
-      "value": 33.8888888888889
+      "value": 38.3333333333333
     },
     {
       "benchmark_id": "aa_briefcase_v11",
@@ -19590,13 +20443,13 @@
           "reason": "AA serializes this percentage metric as a 0–1 fraction."
         },
         "source_field_unit": "fraction",
-        "source_field_value": 0.555555555555556
+        "source_field_value": 0.111111111111111
       },
       "source_id": "aa_public_pages_20261018",
       "supersedes": [],
       "uncertainty": null,
       "unit": "%",
-      "value": 55.5555555555556
+      "value": 11.1111111111111
     },
     {
       "benchmark_id": "aa_briefcase_v11",
@@ -20042,6 +20895,34 @@
       "value": 38.144329896907195
     },
     {
+      "benchmark_id": "aa_mlcr_hard",
+      "configuration_id": "aa_grok46_low",
+      "evaluated_at": null,
+      "evaluator": "Artificial Analysis",
+      "id": "o_aa_grok46_aa-grok46-low_grok-4-6-low_aa_mlcr_hard_20261018",
+      "locator": "models[grok-4-6-low].mlcrOverall",
+      "reported_at": null,
+      "reporting_relationship": "evaluator_measurement",
+      "review_state": "candidate",
+      "series_id": "series_aa_grok46_aa-grok46-low_grok-4-6-low_aa_mlcr_hard",
+      "setup": {
+        "aa_effort_slug": "low",
+        "aa_model_id": "c07e65e6-32fc-451e-938d-7477a1c3ffcc",
+        "aa_release_slug": "grok-4-6",
+        "normalization": {
+          "formula": "source fraction × 100",
+          "reason": "AA serializes this percentage metric as a 0–1 fraction."
+        },
+        "source_field_unit": "fraction",
+        "source_field_value": 0.15
+      },
+      "source_id": "aa_public_pages_20261018",
+      "supersedes": [],
+      "uncertainty": null,
+      "unit": "%",
+      "value": 15.0
+    },
+    {
       "benchmark_id": "aa_briefcase_v11",
       "configuration_id": "aa_grok46_low",
       "evaluated_at": null,
@@ -20070,6 +20951,362 @@
       },
       "unit": "Elo",
       "value": 1287.61
+    },
+    {
+      "benchmark_id": "aa_hle_text",
+      "configuration_id": "aa_gpt4o_unknown",
+      "evaluated_at": null,
+      "evaluator": "Artificial Analysis",
+      "id": "o_aa_gpt4o_aa-gpt4o-unknown_gpt-4o_aa_hle_text_20261018",
+      "locator": "models[gpt-4o].hle",
+      "reported_at": null,
+      "reporting_relationship": "evaluator_measurement",
+      "review_state": "candidate",
+      "series_id": "series_aa_gpt4o_aa-gpt4o-unknown_gpt-4o_aa_hle_text",
+      "setup": {
+        "aa_effort_slug": null,
+        "aa_model_id": "c1045dc0-4fd3-4adb-9548-18763e0d051f",
+        "aa_release_slug": "gpt-4o",
+        "normalization": {
+          "formula": "source fraction × 100",
+          "reason": "AA serializes this percentage metric as a 0–1 fraction."
+        },
+        "source_field_unit": "fraction",
+        "source_field_value": 0.0242
+      },
+      "source_id": "aa_public_pages_20261018",
+      "supersedes": [],
+      "uncertainty": null,
+      "unit": "%",
+      "value": 2.42
+    },
+    {
+      "benchmark_id": "aa_gpqa_diamond",
+      "configuration_id": "aa_gpt4o_unknown",
+      "evaluated_at": null,
+      "evaluator": "Artificial Analysis",
+      "id": "o_aa_gpt4o_aa-gpt4o-unknown_gpt-4o_aa_gpqa_diamond_20261018",
+      "locator": "models[gpt-4o].gpqa",
+      "reported_at": null,
+      "reporting_relationship": "evaluator_measurement",
+      "review_state": "candidate",
+      "series_id": "series_aa_gpt4o_aa-gpt4o-unknown_gpt-4o_aa_gpqa_diamond",
+      "setup": {
+        "aa_effort_slug": null,
+        "aa_model_id": "c1045dc0-4fd3-4adb-9548-18763e0d051f",
+        "aa_release_slug": "gpt-4o",
+        "normalization": {
+          "formula": "source fraction × 100",
+          "reason": "AA serializes this percentage metric as a 0–1 fraction."
+        },
+        "source_field_unit": "fraction",
+        "source_field_value": 0.543434343434343
+      },
+      "source_id": "aa_public_pages_20261018",
+      "supersedes": [],
+      "uncertainty": null,
+      "unit": "%",
+      "value": 54.3434343434343
+    },
+    {
+      "benchmark_id": "aa_critpt",
+      "configuration_id": "aa_gpt4o_unknown",
+      "evaluated_at": null,
+      "evaluator": "Artificial Analysis",
+      "id": "o_aa_gpt4o_aa-gpt4o-unknown_gpt-4o_aa_critpt_20261018",
+      "locator": "models[gpt-4o].critpt",
+      "reported_at": null,
+      "reporting_relationship": "evaluator_measurement",
+      "review_state": "candidate",
+      "series_id": "series_aa_gpt4o_aa-gpt4o-unknown_gpt-4o_aa_critpt",
+      "setup": {
+        "aa_effort_slug": null,
+        "aa_model_id": "c1045dc0-4fd3-4adb-9548-18763e0d051f",
+        "aa_release_slug": "gpt-4o",
+        "normalization": {
+          "formula": "source fraction × 100",
+          "reason": "AA serializes this percentage metric as a 0–1 fraction."
+        },
+        "source_field_unit": "fraction",
+        "source_field_value": 0.0
+      },
+      "source_id": "aa_public_pages_20261018",
+      "supersedes": [],
+      "uncertainty": null,
+      "unit": "%",
+      "value": 0.0
+    },
+    {
+      "benchmark_id": "aa_omniscience_index",
+      "configuration_id": "aa_gpt4o_unknown",
+      "evaluated_at": null,
+      "evaluator": "Artificial Analysis",
+      "id": "o_aa_gpt4o_aa-gpt4o-unknown_gpt-4o_aa_omniscience_index_20261018",
+      "locator": "models[gpt-4o].omniscience",
+      "reported_at": null,
+      "reporting_relationship": "evaluator_measurement",
+      "review_state": "candidate",
+      "series_id": "series_aa_gpt4o_aa-gpt4o-unknown_gpt-4o_aa_omniscience_index",
+      "setup": {
+        "aa_effort_slug": null,
+        "aa_model_id": "c1045dc0-4fd3-4adb-9548-18763e0d051f",
+        "aa_release_slug": "gpt-4o",
+        "source_field_unit": "points",
+        "source_field_value": -10.516666666666667
+      },
+      "source_id": "aa_public_pages_20261018",
+      "supersedes": [],
+      "uncertainty": null,
+      "unit": "points",
+      "value": -10.516666666666667
+    },
+    {
+      "benchmark_id": "aa_omniscience_accuracy",
+      "configuration_id": "aa_gpt4o_unknown",
+      "evaluated_at": null,
+      "evaluator": "Artificial Analysis",
+      "id": "o_aa_gpt4o_aa-gpt4o-unknown_gpt-4o_aa_omniscience_accuracy_20261018",
+      "locator": "models[gpt-4o].omniscienceAccuracy",
+      "reported_at": null,
+      "reporting_relationship": "evaluator_measurement",
+      "review_state": "candidate",
+      "series_id": "series_aa_gpt4o_aa-gpt4o-unknown_gpt-4o_aa_omniscience_accuracy",
+      "setup": {
+        "aa_effort_slug": null,
+        "aa_model_id": "c1045dc0-4fd3-4adb-9548-18763e0d051f",
+        "aa_release_slug": "gpt-4o",
+        "normalization": {
+          "formula": "source fraction × 100",
+          "reason": "AA serializes this percentage metric as a 0–1 fraction."
+        },
+        "source_field_unit": "fraction",
+        "source_field_value": 0.19866666666666666
+      },
+      "source_id": "aa_public_pages_20261018",
+      "supersedes": [],
+      "uncertainty": null,
+      "unit": "%",
+      "value": 19.866666666666667
+    },
+    {
+      "benchmark_id": "aa_omniscience_hallucination",
+      "configuration_id": "aa_gpt4o_unknown",
+      "evaluated_at": null,
+      "evaluator": "Artificial Analysis",
+      "id": "o_aa_gpt4o_aa-gpt4o-unknown_gpt-4o_aa_omniscience_hallucination_20261018",
+      "locator": "models[gpt-4o].omniscienceHallucinationRate",
+      "reported_at": null,
+      "reporting_relationship": "evaluator_measurement",
+      "review_state": "candidate",
+      "series_id": "series_aa_gpt4o_aa-gpt4o-unknown_gpt-4o_aa_omniscience_hallucination",
+      "setup": {
+        "aa_effort_slug": null,
+        "aa_model_id": "c1045dc0-4fd3-4adb-9548-18763e0d051f",
+        "aa_release_slug": "gpt-4o",
+        "normalization": {
+          "formula": "source fraction × 100",
+          "reason": "AA serializes this percentage metric as a 0–1 fraction."
+        },
+        "source_field_unit": "fraction",
+        "source_field_value": 0.37915973377703827
+      },
+      "source_id": "aa_public_pages_20261018",
+      "supersedes": [],
+      "uncertainty": null,
+      "unit": "%",
+      "value": 37.91597337770383
+    },
+    {
+      "benchmark_id": "aa_lcr_v11",
+      "configuration_id": "aa_gpt4o_unknown",
+      "evaluated_at": null,
+      "evaluator": "Artificial Analysis",
+      "id": "o_aa_gpt4o_aa-gpt4o-unknown_gpt-4o_aa_lcr_v11_20261018",
+      "locator": "models[gpt-4o].lcr",
+      "reported_at": null,
+      "reporting_relationship": "evaluator_measurement",
+      "review_state": "candidate",
+      "series_id": "series_aa_gpt4o_aa-gpt4o-unknown_gpt-4o_aa_lcr_v11",
+      "setup": {
+        "aa_effort_slug": null,
+        "aa_model_id": "c1045dc0-4fd3-4adb-9548-18763e0d051f",
+        "aa_release_slug": "gpt-4o",
+        "normalization": {
+          "formula": "source fraction × 100",
+          "reason": "AA serializes this percentage metric as a 0–1 fraction."
+        },
+        "source_field_unit": "fraction",
+        "source_field_value": 0.493333333333333
+      },
+      "source_id": "aa_public_pages_20261018",
+      "supersedes": [],
+      "uncertainty": null,
+      "unit": "%",
+      "value": 49.3333333333333
+    },
+    {
+      "benchmark_id": "aa_ifbench",
+      "configuration_id": "aa_gpt4o_unknown",
+      "evaluated_at": null,
+      "evaluator": "Artificial Analysis",
+      "id": "o_aa_gpt4o_aa-gpt4o-unknown_gpt-4o_aa_ifbench_20261018",
+      "locator": "models[gpt-4o].ifbench",
+      "reported_at": null,
+      "reporting_relationship": "evaluator_measurement",
+      "review_state": "candidate",
+      "series_id": "series_aa_gpt4o_aa-gpt4o-unknown_gpt-4o_aa_ifbench",
+      "setup": {
+        "aa_effort_slug": null,
+        "aa_model_id": "c1045dc0-4fd3-4adb-9548-18763e0d051f",
+        "aa_release_slug": "gpt-4o",
+        "normalization": {
+          "formula": "source fraction × 100",
+          "reason": "AA serializes this percentage metric as a 0–1 fraction."
+        },
+        "source_field_unit": "fraction",
+        "source_field_value": 0.342857142857143
+      },
+      "source_id": "aa_public_pages_20261018",
+      "supersedes": [],
+      "uncertainty": null,
+      "unit": "%",
+      "value": 34.285714285714306
+    },
+    {
+      "benchmark_id": "aa_terminal_hard",
+      "configuration_id": "aa_gpt4o_unknown",
+      "evaluated_at": null,
+      "evaluator": "Artificial Analysis",
+      "id": "o_aa_gpt4o_aa-gpt4o-unknown_gpt-4o_aa_terminal_hard_20261018",
+      "locator": "models[gpt-4o].terminalbenchHard",
+      "reported_at": null,
+      "reporting_relationship": "evaluator_measurement",
+      "review_state": "candidate",
+      "series_id": "series_aa_gpt4o_aa-gpt4o-unknown_gpt-4o_aa_terminal_hard",
+      "setup": {
+        "aa_effort_slug": null,
+        "aa_model_id": "c1045dc0-4fd3-4adb-9548-18763e0d051f",
+        "aa_release_slug": "gpt-4o",
+        "normalization": {
+          "formula": "source fraction × 100",
+          "reason": "AA serializes this percentage metric as a 0–1 fraction."
+        },
+        "source_field_unit": "fraction",
+        "source_field_value": 0.0833333333333333
+      },
+      "source_id": "aa_public_pages_20261018",
+      "supersedes": [],
+      "uncertainty": null,
+      "unit": "%",
+      "value": 8.33333333333333
+    },
+    {
+      "benchmark_id": "aa_gdpval_v21",
+      "configuration_id": "aa_gpt4o_unknown",
+      "evaluated_at": null,
+      "evaluator": "Artificial Analysis",
+      "id": "o_aa_gpt4o_aa-gpt4o-unknown_gpt-4o_aa_gdpval_v21_20261018",
+      "locator": "models[gpt-4o].gdpval",
+      "reported_at": null,
+      "reporting_relationship": "evaluator_measurement",
+      "review_state": "candidate",
+      "series_id": "series_aa_gpt4o_aa-gpt4o-unknown_gpt-4o_aa_gdpval_v21",
+      "setup": {
+        "aa_effort_slug": null,
+        "aa_model_id": "c1045dc0-4fd3-4adb-9548-18763e0d051f",
+        "aa_release_slug": "gpt-4o",
+        "source_field_unit": "Elo",
+        "source_field_value": -16.24
+      },
+      "source_id": "aa_public_pages_20261018",
+      "supersedes": [],
+      "uncertainty": null,
+      "unit": "Elo",
+      "value": -16.24
+    },
+    {
+      "benchmark_id": "aa_aime_2025",
+      "configuration_id": "aa_gpt4o_unknown",
+      "evaluated_at": null,
+      "evaluator": "Artificial Analysis",
+      "id": "o_aa_gpt4o_aa-gpt4o-unknown_gpt-4o_aa_aime_2025_20261018",
+      "locator": "models[gpt-4o].aime25",
+      "reported_at": null,
+      "reporting_relationship": "evaluator_measurement",
+      "review_state": "candidate",
+      "series_id": "series_aa_gpt4o_aa-gpt4o-unknown_gpt-4o_aa_aime_2025",
+      "setup": {
+        "aa_effort_slug": null,
+        "aa_model_id": "c1045dc0-4fd3-4adb-9548-18763e0d051f",
+        "aa_release_slug": "gpt-4o",
+        "normalization": {
+          "formula": "source fraction × 100",
+          "reason": "AA serializes this percentage metric as a 0–1 fraction."
+        },
+        "source_field_unit": "fraction",
+        "source_field_value": 0.06
+      },
+      "source_id": "aa_public_pages_20261018",
+      "supersedes": [],
+      "uncertainty": null,
+      "unit": "%",
+      "value": 6.0
+    },
+    {
+      "benchmark_id": "aa_tau2_telecom",
+      "configuration_id": "aa_gpt4o_unknown",
+      "evaluated_at": null,
+      "evaluator": "Artificial Analysis",
+      "id": "o_aa_gpt4o_aa-gpt4o-unknown_gpt-4o_aa_tau2_telecom_20261018",
+      "locator": "models[gpt-4o].tau2",
+      "reported_at": null,
+      "reporting_relationship": "evaluator_measurement",
+      "review_state": "candidate",
+      "series_id": "series_aa_gpt4o_aa-gpt4o-unknown_gpt-4o_aa_tau2_telecom",
+      "setup": {
+        "aa_effort_slug": null,
+        "aa_model_id": "c1045dc0-4fd3-4adb-9548-18763e0d051f",
+        "aa_release_slug": "gpt-4o",
+        "normalization": {
+          "formula": "source fraction × 100",
+          "reason": "AA serializes this percentage metric as a 0–1 fraction."
+        },
+        "source_field_unit": "fraction",
+        "source_field_value": 0.251461988304094
+      },
+      "source_id": "aa_public_pages_20261018",
+      "supersedes": [],
+      "uncertainty": null,
+      "unit": "%",
+      "value": 25.1461988304094
+    },
+    {
+      "benchmark_id": "aa_livecodebench",
+      "configuration_id": "aa_gpt4o_unknown",
+      "evaluated_at": null,
+      "evaluator": "Artificial Analysis",
+      "id": "o_aa_gpt4o_aa-gpt4o-unknown_gpt-4o_aa_livecodebench_20261018",
+      "locator": "models[gpt-4o].livecodebench",
+      "reported_at": null,
+      "reporting_relationship": "evaluator_measurement",
+      "review_state": "candidate",
+      "series_id": "series_aa_gpt4o_aa-gpt4o-unknown_gpt-4o_aa_livecodebench",
+      "setup": {
+        "aa_effort_slug": null,
+        "aa_model_id": "c1045dc0-4fd3-4adb-9548-18763e0d051f",
+        "aa_release_slug": "gpt-4o",
+        "normalization": {
+          "formula": "source fraction × 100",
+          "reason": "AA serializes this percentage metric as a 0–1 fraction."
+        },
+        "source_field_unit": "fraction",
+        "source_field_value": 0.308994708994709
+      },
+      "source_id": "aa_public_pages_20261018",
+      "supersedes": [],
+      "uncertainty": null,
+      "unit": "%",
+      "value": 30.8994708994709
     },
     {
       "benchmark_id": "aa_intelligence_index_v432",
@@ -20588,13 +21825,13 @@
           "reason": "AA serializes this percentage metric as a 0–1 fraction."
         },
         "source_field_unit": "fraction",
-        "source_field_value": 0.122222222222222
+        "source_field_value": 0.155555555555556
       },
       "source_id": "aa_public_pages_20261018",
       "supersedes": [],
       "uncertainty": null,
       "unit": "%",
-      "value": 12.2222222222222
+      "value": 15.5555555555556
     },
     {
       "benchmark_id": "aa_briefcase_v11",
@@ -20954,6 +22191,34 @@
       "uncertainty": null,
       "unit": "%",
       "value": 51.979098375134605
+    },
+    {
+      "benchmark_id": "aa_mlcr_hard",
+      "configuration_id": "aa_glm53_low",
+      "evaluated_at": null,
+      "evaluator": "Artificial Analysis",
+      "id": "o_aa_glm53_aa-glm53-low_glm-5-3-low_aa_mlcr_hard_20261018",
+      "locator": "models[glm-5-3-low].mlcrOverall",
+      "reported_at": null,
+      "reporting_relationship": "evaluator_measurement",
+      "review_state": "candidate",
+      "series_id": "series_aa_glm53_aa-glm53-low_glm-5-3-low_aa_mlcr_hard",
+      "setup": {
+        "aa_effort_slug": "low",
+        "aa_model_id": "cc1e488b-8ba4-464d-875d-690166b15ad3",
+        "aa_release_slug": "glm-5-3",
+        "normalization": {
+          "formula": "source fraction × 100",
+          "reason": "AA serializes this percentage metric as a 0–1 fraction."
+        },
+        "source_field_unit": "fraction",
+        "source_field_value": 0.111111111111111
+      },
+      "source_id": "aa_public_pages_20261018",
+      "supersedes": [],
+      "uncertainty": null,
+      "unit": "%",
+      "value": 11.1111111111111
     },
     {
       "benchmark_id": "aa_briefcase_v11",
@@ -21586,13 +22851,13 @@
           "reason": "AA serializes this percentage metric as a 0–1 fraction."
         },
         "source_field_unit": "fraction",
-        "source_field_value": 0.483333333333333
+        "source_field_value": 0.172222222222222
       },
       "source_id": "aa_public_pages_20261018",
       "supersedes": [],
       "uncertainty": null,
       "unit": "%",
-      "value": 48.3333333333333
+      "value": 17.2222222222222
     },
     {
       "benchmark_id": "aa_briefcase_v11",
@@ -21828,13 +23093,13 @@
         "aa_model_id": "d366dfa1-d940-4788-aa73-d298c45699b3",
         "aa_release_slug": "gemini-4-argon",
         "source_field_unit": "Elo",
-        "source_field_value": 1623.99
+        "source_field_value": 1623.11
       },
       "source_id": "aa_public_pages_20261018",
       "supersedes": [],
       "uncertainty": null,
       "unit": "Elo",
-      "value": 1623.99
+      "value": 1623.11
     },
     {
       "benchmark_id": "aa_scicode",
@@ -22038,6 +23303,62 @@
       "value": 48.75
     },
     {
+      "benchmark_id": "harvey_lab_aa_v11",
+      "configuration_id": "aa_gemini4_argon_high",
+      "evaluated_at": null,
+      "evaluator": "Artificial Analysis",
+      "id": "o_aa_gemini4_argon_aa-gemini4-argon-high_gemini-4-argon_harvey_lab_aa_v11_20261018",
+      "locator": "models[gemini-4-argon].harveyLab",
+      "reported_at": null,
+      "reporting_relationship": "evaluator_measurement",
+      "review_state": "candidate",
+      "series_id": "series_aa_gemini4_argon_aa-gemini4-argon-high_gemini-4-argon_harvey_lab_aa_v11",
+      "setup": {
+        "aa_effort_slug": "high",
+        "aa_model_id": "d366dfa1-d940-4788-aa73-d298c45699b3",
+        "aa_release_slug": "gemini-4-argon",
+        "normalization": {
+          "formula": "source fraction × 100",
+          "reason": "AA serializes this percentage metric as a 0–1 fraction."
+        },
+        "source_field_unit": "fraction",
+        "source_field_value": 0.03888888888888888
+      },
+      "source_id": "aa_public_pages_20261018",
+      "supersedes": [],
+      "uncertainty": null,
+      "unit": "%",
+      "value": 3.8888888888888884
+    },
+    {
+      "benchmark_id": "aa_mlcr_hard",
+      "configuration_id": "aa_gemini4_argon_high",
+      "evaluated_at": null,
+      "evaluator": "Artificial Analysis",
+      "id": "o_aa_gemini4_argon_aa-gemini4-argon-high_gemini-4-argon_aa_mlcr_hard_20261018",
+      "locator": "models[gemini-4-argon].mlcrOverall",
+      "reported_at": null,
+      "reporting_relationship": "evaluator_measurement",
+      "review_state": "candidate",
+      "series_id": "series_aa_gemini4_argon_aa-gemini4-argon-high_gemini-4-argon_aa_mlcr_hard",
+      "setup": {
+        "aa_effort_slug": "high",
+        "aa_model_id": "d366dfa1-d940-4788-aa73-d298c45699b3",
+        "aa_release_slug": "gemini-4-argon",
+        "normalization": {
+          "formula": "source fraction × 100",
+          "reason": "AA serializes this percentage metric as a 0–1 fraction."
+        },
+        "source_field_unit": "fraction",
+        "source_field_value": 0.138888888888889
+      },
+      "source_id": "aa_public_pages_20261018",
+      "supersedes": [],
+      "uncertainty": null,
+      "unit": "%",
+      "value": 13.8888888888889
+    },
+    {
       "benchmark_id": "aa_briefcase_v11",
       "configuration_id": "aa_gemini4_argon_high",
       "evaluated_at": null,
@@ -22053,19 +23374,19 @@
         "aa_model_id": "d366dfa1-d940-4788-aa73-d298c45699b3",
         "aa_release_slug": "gemini-4-argon",
         "source_field_unit": "Elo",
-        "source_field_value": 1486.44
+        "source_field_value": 1485.76
       },
       "source_id": "aa_public_pages_20261018",
       "supersedes": [],
       "uncertainty": {
         "confidence_level": 0.95,
-        "lower": 1476.51,
+        "lower": 1475.63,
         "type": "confidence_interval",
         "unit": "Elo",
-        "upper": 1497.11
+        "upper": 1495.84
       },
       "unit": "Elo",
-      "value": 1486.44
+      "value": 1485.76
     },
     {
       "benchmark_id": "aa_intelligence_index_v432",
@@ -22299,13 +23620,13 @@
         "aa_model_id": "d5170215-69be-4129-849b-26d8d8825bfc",
         "aa_release_slug": "muse-spark-1-3",
         "source_field_unit": "Elo",
-        "source_field_value": 1627.25
+        "source_field_value": 1626.61
       },
       "source_id": "aa_public_pages_20261018",
       "supersedes": [],
       "uncertainty": null,
       "unit": "Elo",
-      "value": 1627.25
+      "value": 1626.61
     },
     {
       "benchmark_id": "aa_mmmu_pro",
@@ -22509,6 +23830,34 @@
       "value": 47.2164948453608
     },
     {
+      "benchmark_id": "aa_mlcr_hard",
+      "configuration_id": "aa_muse_spark13_xhigh",
+      "evaluated_at": null,
+      "evaluator": "Artificial Analysis",
+      "id": "o_aa_muse_spark13_aa-muse-spark13-xhigh_muse-spark-1-3-xhigh_aa_mlcr_hard_20261018",
+      "locator": "models[muse-spark-1-3-xhigh].mlcrOverall",
+      "reported_at": null,
+      "reporting_relationship": "evaluator_measurement",
+      "review_state": "candidate",
+      "series_id": "series_aa_muse_spark13_aa-muse-spark13-xhigh_muse-spark-1-3-xhigh_aa_mlcr_hard",
+      "setup": {
+        "aa_effort_slug": "xhigh",
+        "aa_model_id": "d5170215-69be-4129-849b-26d8d8825bfc",
+        "aa_release_slug": "muse-spark-1-3",
+        "normalization": {
+          "formula": "source fraction × 100",
+          "reason": "AA serializes this percentage metric as a 0–1 fraction."
+        },
+        "source_field_unit": "fraction",
+        "source_field_value": 0.155555555555556
+      },
+      "source_id": "aa_public_pages_20261018",
+      "supersedes": [],
+      "uncertainty": null,
+      "unit": "%",
+      "value": 15.5555555555556
+    },
+    {
       "benchmark_id": "aa_briefcase_v11",
       "configuration_id": "aa_muse_spark13_xhigh",
       "evaluated_at": null,
@@ -22524,19 +23873,19 @@
         "aa_model_id": "d5170215-69be-4129-849b-26d8d8825bfc",
         "aa_release_slug": "muse-spark-1-3",
         "source_field_unit": "Elo",
-        "source_field_value": 1485.51
+        "source_field_value": 1483.46
       },
       "source_id": "aa_public_pages_20261018",
       "supersedes": [],
       "uncertainty": {
         "confidence_level": 0.95,
-        "lower": 1477.48,
+        "lower": 1474.56,
         "type": "confidence_interval",
         "unit": "Elo",
-        "upper": 1494.68
+        "upper": 1492.7
       },
       "unit": "Elo",
-      "value": 1485.51
+      "value": 1483.46
     },
     {
       "benchmark_id": "aa_intelligence_index_v432",
@@ -22950,6 +24299,34 @@
       "uncertainty": null,
       "unit": "%",
       "value": 43.298969072165
+    },
+    {
+      "benchmark_id": "aa_mlcr_hard",
+      "configuration_id": "aa_grok46_xhigh",
+      "evaluated_at": null,
+      "evaluator": "Artificial Analysis",
+      "id": "o_aa_grok46_aa-grok46-xhigh_grok-4-6-xhigh_aa_mlcr_hard_20261018",
+      "locator": "models[grok-4-6-xhigh].mlcrOverall",
+      "reported_at": null,
+      "reporting_relationship": "evaluator_measurement",
+      "review_state": "candidate",
+      "series_id": "series_aa_grok46_aa-grok46-xhigh_grok-4-6-xhigh_aa_mlcr_hard",
+      "setup": {
+        "aa_effort_slug": "xhigh",
+        "aa_model_id": "d6f43d0a-e8c4-447c-9ff7-5cf0a9d59aa3",
+        "aa_release_slug": "grok-4-6",
+        "normalization": {
+          "formula": "source fraction × 100",
+          "reason": "AA serializes this percentage metric as a 0–1 fraction."
+        },
+        "source_field_unit": "fraction",
+        "source_field_value": 0.172222222222222
+      },
+      "source_id": "aa_public_pages_20261018",
+      "supersedes": [],
+      "uncertainty": null,
+      "unit": "%",
+      "value": 17.2222222222222
     },
     {
       "benchmark_id": "aa_briefcase_v11",
@@ -23638,13 +25015,13 @@
           "reason": "AA serializes this percentage metric as a 0–1 fraction."
         },
         "source_field_unit": "fraction",
-        "source_field_value": 0.261111111111111
+        "source_field_value": 0.3
       },
       "source_id": "aa_public_pages_20261018",
       "supersedes": [],
       "uncertainty": null,
       "unit": "%",
-      "value": 26.1111111111111
+      "value": 30.0
     },
     {
       "benchmark_id": "aa_briefcase_v11",
@@ -24221,13 +25598,13 @@
           "reason": "AA serializes this percentage metric as a 0–1 fraction."
         },
         "source_field_unit": "fraction",
-        "source_field_value": 0.183333333333333
+        "source_field_value": 0.277777777777778
       },
       "source_id": "aa_public_pages_20261018",
       "supersedes": [],
       "uncertainty": null,
       "unit": "%",
-      "value": 18.3333333333333
+      "value": 27.7777777777778
     },
     {
       "benchmark_id": "aa_briefcase_v11",
@@ -24776,13 +26153,13 @@
           "reason": "AA serializes this percentage metric as a 0–1 fraction."
         },
         "source_field_unit": "fraction",
-        "source_field_value": 0.227777777777778
+        "source_field_value": 0.238888888888889
       },
       "source_id": "aa_public_pages_20261018",
       "supersedes": [],
       "uncertainty": null,
       "unit": "%",
-      "value": 22.7777777777778
+      "value": 23.8888888888889
     },
     {
       "benchmark_id": "aa_briefcase_v11",
@@ -24800,19 +26177,19 @@
         "aa_model_id": "dbe7c625-3100-4463-b479-a228c41f75dd",
         "aa_release_slug": "deepseek-v4-1-flash",
         "source_field_unit": "Elo",
-        "source_field_value": 1420.2
+        "source_field_value": 1419.38
       },
       "source_id": "aa_public_pages_20261018",
       "supersedes": [],
       "uncertainty": {
         "confidence_level": 0.95,
-        "lower": 1411.28,
+        "lower": 1410.45,
         "type": "confidence_interval",
         "unit": "Elo",
-        "upper": 1430.09
+        "upper": 1428.06
       },
       "unit": "Elo",
-      "value": 1420.2
+      "value": 1419.38
     },
     {
       "benchmark_id": "aa_intelligence_index_v432",
@@ -25226,6 +26603,34 @@
       "uncertainty": null,
       "unit": "%",
       "value": 64.95283516401527
+    },
+    {
+      "benchmark_id": "aa_mlcr_hard",
+      "configuration_id": "aa_claude_opus55_xhigh",
+      "evaluated_at": null,
+      "evaluator": "Artificial Analysis",
+      "id": "o_aa_claude_opus55_aa-claude-opus55-xhigh_claude-opus-5-5-xhigh_aa_mlcr_hard_20261018",
+      "locator": "models[claude-opus-5-5-xhigh].mlcrOverall",
+      "reported_at": null,
+      "reporting_relationship": "evaluator_measurement",
+      "review_state": "candidate",
+      "series_id": "series_aa_claude_opus55_aa-claude-opus55-xhigh_claude-opus-5-5-xhigh_aa_mlcr_hard",
+      "setup": {
+        "aa_effort_slug": "xhigh",
+        "aa_model_id": "df5bf99d-d228-4715-b41b-19ca86118777",
+        "aa_release_slug": "claude-opus-5-5",
+        "normalization": {
+          "formula": "source fraction × 100",
+          "reason": "AA serializes this percentage metric as a 0–1 fraction."
+        },
+        "source_field_unit": "fraction",
+        "source_field_value": 0.25
+      },
+      "source_id": "aa_public_pages_20261018",
+      "supersedes": [],
+      "uncertainty": null,
+      "unit": "%",
+      "value": 25.0
     },
     {
       "benchmark_id": "aa_briefcase_v11",
@@ -25867,6 +27272,34 @@
       "value": 40.0
     },
     {
+      "benchmark_id": "aa_mlcr_hard",
+      "configuration_id": "aa_gpt6_astra_high",
+      "evaluated_at": null,
+      "evaluator": "Artificial Analysis",
+      "id": "o_aa_gpt6_astra_aa-gpt6-astra-high_gpt-6-astra-high_aa_mlcr_hard_20261018",
+      "locator": "models[gpt-6-astra-high].mlcrOverall",
+      "reported_at": null,
+      "reporting_relationship": "evaluator_measurement",
+      "review_state": "candidate",
+      "series_id": "series_aa_gpt6_astra_aa-gpt6-astra-high_gpt-6-astra-high_aa_mlcr_hard",
+      "setup": {
+        "aa_effort_slug": "high",
+        "aa_model_id": "e05a4828-0536-4876-870d-a235023f992b",
+        "aa_release_slug": "gpt-6-astra",
+        "normalization": {
+          "formula": "source fraction × 100",
+          "reason": "AA serializes this percentage metric as a 0–1 fraction."
+        },
+        "source_field_unit": "fraction",
+        "source_field_value": 0.327777777777778
+      },
+      "source_id": "aa_public_pages_20261018",
+      "supersedes": [],
+      "uncertainty": null,
+      "unit": "%",
+      "value": 32.7777777777778
+    },
+    {
       "benchmark_id": "aa_briefcase_v11",
       "configuration_id": "aa_gpt6_astra_high",
       "evaluated_at": null,
@@ -26252,6 +27685,34 @@
       "uncertainty": null,
       "unit": "%",
       "value": 52.57088964747538
+    },
+    {
+      "benchmark_id": "aa_mlcr_hard",
+      "configuration_id": "aa_gpt61_sol_low",
+      "evaluated_at": null,
+      "evaluator": "Artificial Analysis",
+      "id": "o_aa_gpt61_sol_aa-gpt61-sol-low_gpt-6-1-sol-low_aa_mlcr_hard_20261018",
+      "locator": "models[gpt-6-1-sol-low].mlcrOverall",
+      "reported_at": null,
+      "reporting_relationship": "evaluator_measurement",
+      "review_state": "candidate",
+      "series_id": "series_aa_gpt61_sol_aa-gpt61-sol-low_gpt-6-1-sol-low_aa_mlcr_hard",
+      "setup": {
+        "aa_effort_slug": "low",
+        "aa_model_id": "e76e0fe5-93ca-4272-9359-2eb1740467d1",
+        "aa_release_slug": "gpt-6-1-sol",
+        "normalization": {
+          "formula": "source fraction × 100",
+          "reason": "AA serializes this percentage metric as a 0–1 fraction."
+        },
+        "source_field_unit": "fraction",
+        "source_field_value": 0.266666666666667
+      },
+      "source_id": "aa_public_pages_20261018",
+      "supersedes": [],
+      "uncertainty": null,
+      "unit": "%",
+      "value": 26.6666666666667
     },
     {
       "benchmark_id": "aa_briefcase_v11",
@@ -26725,6 +28186,34 @@
       "value": 35.4639175257732
     },
     {
+      "benchmark_id": "aa_mlcr_hard",
+      "configuration_id": "aa_gpt6_astra_medium",
+      "evaluated_at": null,
+      "evaluator": "Artificial Analysis",
+      "id": "o_aa_gpt6_astra_aa-gpt6-astra-medium_gpt-6-astra-medium_aa_mlcr_hard_20261018",
+      "locator": "models[gpt-6-astra-medium].mlcrOverall",
+      "reported_at": null,
+      "reporting_relationship": "evaluator_measurement",
+      "review_state": "candidate",
+      "series_id": "series_aa_gpt6_astra_aa-gpt6-astra-medium_gpt-6-astra-medium_aa_mlcr_hard",
+      "setup": {
+        "aa_effort_slug": "medium",
+        "aa_model_id": "e97a4ef5-e817-480e-9595-12f81dc4974f",
+        "aa_release_slug": "gpt-6-astra",
+        "normalization": {
+          "formula": "source fraction × 100",
+          "reason": "AA serializes this percentage metric as a 0–1 fraction."
+        },
+        "source_field_unit": "fraction",
+        "source_field_value": 0.383333333333333
+      },
+      "source_id": "aa_public_pages_20261018",
+      "supersedes": [],
+      "uncertainty": null,
+      "unit": "%",
+      "value": 38.3333333333333
+    },
+    {
       "benchmark_id": "aa_briefcase_v11",
       "configuration_id": "aa_gpt6_astra_medium",
       "evaluated_at": null,
@@ -27054,6 +28543,34 @@
       "uncertainty": null,
       "unit": "%",
       "value": 57.07070707070711
+    },
+    {
+      "benchmark_id": "frontiercode_v11",
+      "configuration_id": "aa_muse_wonder_full_max",
+      "evaluated_at": null,
+      "evaluator": "Artificial Analysis",
+      "id": "o_aa_muse_wonder_full_aa-muse-wonder-full-max_muse-wonder-full_frontiercode_v11_20261018",
+      "locator": "models[muse-wonder-full].frontierCode",
+      "reported_at": null,
+      "reporting_relationship": "evaluator_measurement",
+      "review_state": "candidate",
+      "series_id": "series_aa_muse_wonder_full_aa-muse-wonder-full-max_muse-wonder-full_frontiercode_v11",
+      "setup": {
+        "aa_effort_slug": "max",
+        "aa_model_id": "e994a6e0-d36b-4dab-8ae1-c1b469e4d9e2",
+        "aa_release_slug": "muse-wonder-full",
+        "normalization": {
+          "formula": "source fraction × 100",
+          "reason": "AA serializes this percentage metric as a 0–1 fraction."
+        },
+        "source_field_unit": "fraction",
+        "source_field_value": 0.448865666666667
+      },
+      "source_id": "aa_public_pages_20261018",
+      "supersedes": [],
+      "uncertainty": null,
+      "unit": "%",
+      "value": 44.8865666666667
     },
     {
       "benchmark_id": "aa_automationbench_657",
@@ -27555,6 +29072,34 @@
       "value": 61.21742919892179
     },
     {
+      "benchmark_id": "aa_mlcr_hard",
+      "configuration_id": "aa_claude_opus55_medium",
+      "evaluated_at": null,
+      "evaluator": "Artificial Analysis",
+      "id": "o_aa_claude_opus55_aa-claude-opus55-medium_claude-opus-5-5-medium_aa_mlcr_hard_20261018",
+      "locator": "models[claude-opus-5-5-medium].mlcrOverall",
+      "reported_at": null,
+      "reporting_relationship": "evaluator_measurement",
+      "review_state": "candidate",
+      "series_id": "series_aa_claude_opus55_aa-claude-opus55-medium_claude-opus-5-5-medium_aa_mlcr_hard",
+      "setup": {
+        "aa_effort_slug": "medium",
+        "aa_model_id": "ea9e0da6-169f-43c6-92f5-730a10d6ff8d",
+        "aa_release_slug": "claude-opus-5-5",
+        "normalization": {
+          "formula": "source fraction × 100",
+          "reason": "AA serializes this percentage metric as a 0–1 fraction."
+        },
+        "source_field_unit": "fraction",
+        "source_field_value": 0.222222222222222
+      },
+      "source_id": "aa_public_pages_20261018",
+      "supersedes": [],
+      "uncertainty": null,
+      "unit": "%",
+      "value": 22.2222222222222
+    },
+    {
       "benchmark_id": "aa_briefcase_v11",
       "configuration_id": "aa_claude_opus55_medium",
       "evaluated_at": null,
@@ -27996,6 +29541,34 @@
       "uncertainty": null,
       "unit": "%",
       "value": 63.206774831862134
+    },
+    {
+      "benchmark_id": "aa_mlcr_hard",
+      "configuration_id": "aa_claude_opus55_high",
+      "evaluated_at": null,
+      "evaluator": "Artificial Analysis",
+      "id": "o_aa_claude_opus55_aa-claude-opus55-high_claude-opus-5-5-high_aa_mlcr_hard_20261018",
+      "locator": "models[claude-opus-5-5-high].mlcrOverall",
+      "reported_at": null,
+      "reporting_relationship": "evaluator_measurement",
+      "review_state": "candidate",
+      "series_id": "series_aa_claude_opus55_aa-claude-opus55-high_claude-opus-5-5-high_aa_mlcr_hard",
+      "setup": {
+        "aa_effort_slug": "high",
+        "aa_model_id": "f314eade-2232-44bf-a3ab-9b326bc67de6",
+        "aa_release_slug": "claude-opus-5-5",
+        "normalization": {
+          "formula": "source fraction × 100",
+          "reason": "AA serializes this percentage metric as a 0–1 fraction."
+        },
+        "source_field_unit": "fraction",
+        "source_field_value": 0.15
+      },
+      "source_id": "aa_public_pages_20261018",
+      "supersedes": [],
+      "uncertainty": null,
+      "unit": "%",
+      "value": 15.0
     },
     {
       "benchmark_id": "aa_briefcase_v11",
@@ -28656,13 +30229,13 @@
           "reason": "AA serializes this percentage metric as a 0–1 fraction."
         },
         "source_field_unit": "fraction",
-        "source_field_value": 0.383333333333333
+        "source_field_value": 0.216666666666667
       },
       "source_id": "aa_public_pages_20261018",
       "supersedes": [],
       "uncertainty": null,
       "unit": "%",
-      "value": 38.3333333333333
+      "value": 21.6666666666667
     },
     {
       "benchmark_id": "aa_briefcase_v11",
@@ -29542,13 +31115,13 @@
           "reason": "AA serializes this percentage metric as a 0–1 fraction."
         },
         "source_field_unit": "fraction",
-        "source_field_value": 0.561111111111111
+        "source_field_value": 0.138888888888889
       },
       "source_id": "aa_public_pages_20261018",
       "supersedes": [],
       "uncertainty": null,
       "unit": "%",
-      "value": 56.1111111111111
+      "value": 13.8888888888889
     },
     {
       "benchmark_id": "aa_briefcase_v11",
@@ -29784,13 +31357,13 @@
         "aa_model_id": "34fc646a-0174-470e-9e62-d8df452210b3",
         "aa_release_slug": "mistral-large-4",
         "source_field_unit": "Elo",
-        "source_field_value": 1422.17
+        "source_field_value": 1420.33
       },
       "source_id": "aa_public_pages_20261018",
       "supersedes": [],
       "uncertainty": null,
       "unit": "Elo",
-      "value": 1422.17
+      "value": 1420.33
     },
     {
       "benchmark_id": "aa_mmmu_pro",
@@ -29910,6 +31483,62 @@
       "value": 26.7676767676768
     },
     {
+      "benchmark_id": "frontiercode_v11",
+      "configuration_id": "aa_mistral_large4_unknown",
+      "evaluated_at": null,
+      "evaluator": "Artificial Analysis",
+      "id": "o_aa_mistral_large4_aa-mistral-large4-unknown_mistral-large-4_frontiercode_v11_20261018",
+      "locator": "models[mistral-large-4].frontierCode",
+      "reported_at": null,
+      "reporting_relationship": "evaluator_measurement",
+      "review_state": "candidate",
+      "series_id": "series_aa_mistral_large4_aa-mistral-large4-unknown_mistral-large-4_frontiercode_v11",
+      "setup": {
+        "aa_effort_slug": null,
+        "aa_model_id": "34fc646a-0174-470e-9e62-d8df452210b3",
+        "aa_release_slug": "mistral-large-4",
+        "normalization": {
+          "formula": "source fraction × 100",
+          "reason": "AA serializes this percentage metric as a 0–1 fraction."
+        },
+        "source_field_unit": "fraction",
+        "source_field_value": 0.415277666666667
+      },
+      "source_id": "aa_public_pages_20261018",
+      "supersedes": [],
+      "uncertainty": null,
+      "unit": "%",
+      "value": 41.5277666666667
+    },
+    {
+      "benchmark_id": "terminal_science_01",
+      "configuration_id": "aa_mistral_large4_unknown",
+      "evaluated_at": null,
+      "evaluator": "Artificial Analysis",
+      "id": "o_aa_mistral_large4_aa-mistral-large4-unknown_mistral-large-4_terminal_science_01_20261018",
+      "locator": "models[mistral-large-4].terminalBenchScience",
+      "reported_at": null,
+      "reporting_relationship": "evaluator_measurement",
+      "review_state": "candidate",
+      "series_id": "series_aa_mistral_large4_aa-mistral-large4-unknown_mistral-large-4_terminal_science_01",
+      "setup": {
+        "aa_effort_slug": null,
+        "aa_model_id": "34fc646a-0174-470e-9e62-d8df452210b3",
+        "aa_release_slug": "mistral-large-4",
+        "normalization": {
+          "formula": "source fraction × 100",
+          "reason": "AA serializes this percentage metric as a 0–1 fraction."
+        },
+        "source_field_unit": "fraction",
+        "source_field_value": 0.0476190476190476
+      },
+      "source_id": "aa_public_pages_20261018",
+      "supersedes": [],
+      "uncertainty": null,
+      "unit": "%",
+      "value": 4.76190476190476
+    },
+    {
       "benchmark_id": "aa_automationbench_657",
       "configuration_id": "aa_mistral_large4_unknown",
       "evaluated_at": null,
@@ -29966,6 +31595,34 @@
       "value": 3.0555555555555554
     },
     {
+      "benchmark_id": "aa_mlcr_hard",
+      "configuration_id": "aa_mistral_large4_unknown",
+      "evaluated_at": null,
+      "evaluator": "Artificial Analysis",
+      "id": "o_aa_mistral_large4_aa-mistral-large4-unknown_mistral-large-4_aa_mlcr_hard_20261018",
+      "locator": "models[mistral-large-4].mlcrOverall",
+      "reported_at": null,
+      "reporting_relationship": "evaluator_measurement",
+      "review_state": "candidate",
+      "series_id": "series_aa_mistral_large4_aa-mistral-large4-unknown_mistral-large-4_aa_mlcr_hard",
+      "setup": {
+        "aa_effort_slug": null,
+        "aa_model_id": "34fc646a-0174-470e-9e62-d8df452210b3",
+        "aa_release_slug": "mistral-large-4",
+        "normalization": {
+          "formula": "source fraction × 100",
+          "reason": "AA serializes this percentage metric as a 0–1 fraction."
+        },
+        "source_field_unit": "fraction",
+        "source_field_value": 0.0777777777777778
+      },
+      "source_id": "aa_public_pages_20261018",
+      "supersedes": [],
+      "uncertainty": null,
+      "unit": "%",
+      "value": 7.77777777777778
+    },
+    {
       "benchmark_id": "aa_briefcase_v11",
       "configuration_id": "aa_mistral_large4_unknown",
       "evaluated_at": null,
@@ -29981,19 +31638,19 @@
         "aa_model_id": "34fc646a-0174-470e-9e62-d8df452210b3",
         "aa_release_slug": "mistral-large-4",
         "source_field_unit": "Elo",
-        "source_field_value": 1391.97
+        "source_field_value": 1391.14
       },
       "source_id": "aa_public_pages_20261018",
       "supersedes": [],
       "uncertainty": {
         "confidence_level": 0.95,
-        "lower": 1381.46,
+        "lower": 1380.31,
         "type": "confidence_interval",
         "unit": "Elo",
-        "upper": 1402.29
+        "upper": 1401.91
       },
       "unit": "Elo",
-      "value": 1391.97
+      "value": 1391.14
     }
   ],
   "series": [
@@ -30203,6 +31860,20 @@
       "judge": null,
       "protocol": "Artificial Analysis public model-page result",
       "protocol_version": "v1.0.1",
+      "sampling": null,
+      "setup_fingerprint": null,
+      "tools": null
+    },
+    {
+      "benchmark_id": "aa_mlcr_hard",
+      "budget": null,
+      "comparability": "AA identifies the benchmark and headline metric; detailed prompt, tool, sampling and serving settings are not all exposed in the captured model record.",
+      "comparability_status": "unknown",
+      "evaluator": "Artificial Analysis",
+      "id": "series_aa_claude_fable51_aa-claude-fable51-low_claude-fable-5-1-low_aa_mlcr_hard",
+      "judge": null,
+      "protocol": "Artificial Analysis public model-page result",
+      "protocol_version": "unversioned-as-reported",
       "sampling": null,
       "setup_fingerprint": null,
       "tools": null
@@ -30690,6 +32361,20 @@
       "comparability_status": "unknown",
       "evaluator": "Artificial Analysis",
       "id": "series_aa_gpt61_sol_aa-gpt61-sol-xhigh_gpt-6-1-sol-xhigh_aa_automationbench_657",
+      "judge": null,
+      "protocol": "Artificial Analysis public model-page result",
+      "protocol_version": "unversioned-as-reported",
+      "sampling": null,
+      "setup_fingerprint": null,
+      "tools": null
+    },
+    {
+      "benchmark_id": "aa_mlcr_hard",
+      "budget": null,
+      "comparability": "AA identifies the benchmark and headline metric; detailed prompt, tool, sampling and serving settings are not all exposed in the captured model record.",
+      "comparability_status": "unknown",
+      "evaluator": "Artificial Analysis",
+      "id": "series_aa_gpt61_sol_aa-gpt61-sol-xhigh_gpt-6-1-sol-xhigh_aa_mlcr_hard",
       "judge": null,
       "protocol": "Artificial Analysis public model-page result",
       "protocol_version": "unversioned-as-reported",
@@ -31510,6 +33195,20 @@
       "tools": null
     },
     {
+      "benchmark_id": "aa_mlcr_hard",
+      "budget": null,
+      "comparability": "AA identifies the benchmark and headline metric; detailed prompt, tool, sampling and serving settings are not all exposed in the captured model record.",
+      "comparability_status": "unknown",
+      "evaluator": "Artificial Analysis",
+      "id": "series_aa_gpt6_astra_aa-gpt6-astra-xhigh_gpt-6-astra-xhigh_aa_mlcr_hard",
+      "judge": null,
+      "protocol": "Artificial Analysis public model-page result",
+      "protocol_version": "unversioned-as-reported",
+      "sampling": null,
+      "setup_fingerprint": null,
+      "tools": null
+    },
+    {
       "benchmark_id": "aa_briefcase_v11",
       "budget": null,
       "comparability": "AA identifies the benchmark and headline metric; detailed prompt, tool, sampling and serving settings are not all exposed in the captured model record.",
@@ -31902,6 +33601,20 @@
       "tools": null
     },
     {
+      "benchmark_id": "aa_mlcr_hard",
+      "budget": null,
+      "comparability": "AA identifies the benchmark and headline metric; detailed prompt, tool, sampling and serving settings are not all exposed in the captured model record.",
+      "comparability_status": "unknown",
+      "evaluator": "Artificial Analysis",
+      "id": "series_aa_grok47_aa-grok47-low_grok-4-7-low_aa_mlcr_hard",
+      "judge": null,
+      "protocol": "Artificial Analysis public model-page result",
+      "protocol_version": "unversioned-as-reported",
+      "sampling": null,
+      "setup_fingerprint": null,
+      "tools": null
+    },
+    {
       "benchmark_id": "aa_briefcase_v11",
       "budget": null,
       "comparability": "AA identifies the benchmark and headline metric; detailed prompt, tool, sampling and serving settings are not all exposed in the captured model record.",
@@ -32168,6 +33881,174 @@
       "tools": null
     },
     {
+      "benchmark_id": "aa_hle_text",
+      "budget": null,
+      "comparability": "AA identifies the benchmark and headline metric; detailed prompt, tool, sampling and serving settings are not all exposed in the captured model record.",
+      "comparability_status": "unknown",
+      "evaluator": "Artificial Analysis",
+      "id": "series_aa_grok3_aa-grok3-unknown_grok-3_aa_hle_text",
+      "judge": null,
+      "protocol": "Artificial Analysis public model-page result",
+      "protocol_version": "2025-05 revision",
+      "sampling": null,
+      "setup_fingerprint": null,
+      "tools": null
+    },
+    {
+      "benchmark_id": "aa_gpqa_diamond",
+      "budget": null,
+      "comparability": "AA identifies the benchmark and headline metric; detailed prompt, tool, sampling and serving settings are not all exposed in the captured model record.",
+      "comparability_status": "unknown",
+      "evaluator": "Artificial Analysis",
+      "id": "series_aa_grok3_aa-grok3-unknown_grok-3_aa_gpqa_diamond",
+      "judge": null,
+      "protocol": "Artificial Analysis public model-page result",
+      "protocol_version": "unversioned-as-reported",
+      "sampling": null,
+      "setup_fingerprint": null,
+      "tools": null
+    },
+    {
+      "benchmark_id": "aa_critpt",
+      "budget": null,
+      "comparability": "AA identifies the benchmark and headline metric; detailed prompt, tool, sampling and serving settings are not all exposed in the captured model record.",
+      "comparability_status": "unknown",
+      "evaluator": "Artificial Analysis",
+      "id": "series_aa_grok3_aa-grok3-unknown_grok-3_aa_critpt",
+      "judge": null,
+      "protocol": "Artificial Analysis public model-page result",
+      "protocol_version": "unversioned-as-reported",
+      "sampling": null,
+      "setup_fingerprint": null,
+      "tools": null
+    },
+    {
+      "benchmark_id": "aa_omniscience_index",
+      "budget": null,
+      "comparability": "AA identifies the benchmark and headline metric; detailed prompt, tool, sampling and serving settings are not all exposed in the captured model record.",
+      "comparability_status": "unknown",
+      "evaluator": "Artificial Analysis",
+      "id": "series_aa_grok3_aa-grok3-unknown_grok-3_aa_omniscience_index",
+      "judge": null,
+      "protocol": "Artificial Analysis public model-page result",
+      "protocol_version": "unversioned-as-reported",
+      "sampling": null,
+      "setup_fingerprint": null,
+      "tools": null
+    },
+    {
+      "benchmark_id": "aa_omniscience_accuracy",
+      "budget": null,
+      "comparability": "AA identifies the benchmark and headline metric; detailed prompt, tool, sampling and serving settings are not all exposed in the captured model record.",
+      "comparability_status": "unknown",
+      "evaluator": "Artificial Analysis",
+      "id": "series_aa_grok3_aa-grok3-unknown_grok-3_aa_omniscience_accuracy",
+      "judge": null,
+      "protocol": "Artificial Analysis public model-page result",
+      "protocol_version": "unversioned-as-reported",
+      "sampling": null,
+      "setup_fingerprint": null,
+      "tools": null
+    },
+    {
+      "benchmark_id": "aa_omniscience_hallucination",
+      "budget": null,
+      "comparability": "AA identifies the benchmark and headline metric; detailed prompt, tool, sampling and serving settings are not all exposed in the captured model record.",
+      "comparability_status": "unknown",
+      "evaluator": "Artificial Analysis",
+      "id": "series_aa_grok3_aa-grok3-unknown_grok-3_aa_omniscience_hallucination",
+      "judge": null,
+      "protocol": "Artificial Analysis public model-page result",
+      "protocol_version": "unversioned-as-reported",
+      "sampling": null,
+      "setup_fingerprint": null,
+      "tools": null
+    },
+    {
+      "benchmark_id": "aa_lcr_v11",
+      "budget": null,
+      "comparability": "AA identifies the benchmark and headline metric; detailed prompt, tool, sampling and serving settings are not all exposed in the captured model record.",
+      "comparability_status": "unknown",
+      "evaluator": "Artificial Analysis",
+      "id": "series_aa_grok3_aa-grok3-unknown_grok-3_aa_lcr_v11",
+      "judge": null,
+      "protocol": "Artificial Analysis public model-page result",
+      "protocol_version": "1.1",
+      "sampling": null,
+      "setup_fingerprint": null,
+      "tools": null
+    },
+    {
+      "benchmark_id": "aa_ifbench",
+      "budget": null,
+      "comparability": "AA identifies the benchmark and headline metric; detailed prompt, tool, sampling and serving settings are not all exposed in the captured model record.",
+      "comparability_status": "unknown",
+      "evaluator": "Artificial Analysis",
+      "id": "series_aa_grok3_aa-grok3-unknown_grok-3_aa_ifbench",
+      "judge": null,
+      "protocol": "Artificial Analysis public model-page result",
+      "protocol_version": "unversioned-as-reported",
+      "sampling": null,
+      "setup_fingerprint": null,
+      "tools": null
+    },
+    {
+      "benchmark_id": "aa_terminal_hard",
+      "budget": null,
+      "comparability": "AA identifies the benchmark and headline metric; detailed prompt, tool, sampling and serving settings are not all exposed in the captured model record.",
+      "comparability_status": "unknown",
+      "evaluator": "Artificial Analysis",
+      "id": "series_aa_grok3_aa-grok3-unknown_grok-3_aa_terminal_hard",
+      "judge": null,
+      "protocol": "Artificial Analysis public model-page result",
+      "protocol_version": "unversioned-as-reported",
+      "sampling": null,
+      "setup_fingerprint": null,
+      "tools": null
+    },
+    {
+      "benchmark_id": "aa_aime_2025",
+      "budget": null,
+      "comparability": "AA identifies the benchmark and headline metric; detailed prompt, tool, sampling and serving settings are not all exposed in the captured model record.",
+      "comparability_status": "unknown",
+      "evaluator": "Artificial Analysis",
+      "id": "series_aa_grok3_aa-grok3-unknown_grok-3_aa_aime_2025",
+      "judge": null,
+      "protocol": "Artificial Analysis public model-page result",
+      "protocol_version": "2025",
+      "sampling": null,
+      "setup_fingerprint": null,
+      "tools": null
+    },
+    {
+      "benchmark_id": "aa_tau2_telecom",
+      "budget": null,
+      "comparability": "AA identifies the benchmark and headline metric; detailed prompt, tool, sampling and serving settings are not all exposed in the captured model record.",
+      "comparability_status": "unknown",
+      "evaluator": "Artificial Analysis",
+      "id": "series_aa_grok3_aa-grok3-unknown_grok-3_aa_tau2_telecom",
+      "judge": null,
+      "protocol": "Artificial Analysis public model-page result",
+      "protocol_version": "unversioned-as-reported",
+      "sampling": null,
+      "setup_fingerprint": null,
+      "tools": null
+    },
+    {
+      "benchmark_id": "aa_livecodebench",
+      "budget": null,
+      "comparability": "AA identifies the benchmark and headline metric; detailed prompt, tool, sampling and serving settings are not all exposed in the captured model record.",
+      "comparability_status": "unknown",
+      "evaluator": "Artificial Analysis",
+      "id": "series_aa_grok3_aa-grok3-unknown_grok-3_aa_livecodebench",
+      "judge": null,
+      "protocol": "Artificial Analysis public model-page result",
+      "protocol_version": "unversioned-as-reported",
+      "sampling": null,
+      "setup_fingerprint": null,
+      "tools": null
+    },
+    {
       "benchmark_id": "aa_intelligence_index_v432",
       "budget": null,
       "comparability": "AA identifies the benchmark and headline metric; detailed prompt, tool, sampling and serving settings are not all exposed in the captured model record.",
@@ -32373,6 +34254,20 @@
       "judge": null,
       "protocol": "Artificial Analysis public model-page result",
       "protocol_version": "v1.0.1",
+      "sampling": null,
+      "setup_fingerprint": null,
+      "tools": null
+    },
+    {
+      "benchmark_id": "aa_mlcr_hard",
+      "budget": null,
+      "comparability": "AA identifies the benchmark and headline metric; detailed prompt, tool, sampling and serving settings are not all exposed in the captured model record.",
+      "comparability_status": "unknown",
+      "evaluator": "Artificial Analysis",
+      "id": "series_aa_grok46_aa-grok46-medium_grok-4-6-medium_aa_mlcr_hard",
+      "judge": null,
+      "protocol": "Artificial Analysis public model-page result",
+      "protocol_version": "unversioned-as-reported",
       "sampling": null,
       "setup_fingerprint": null,
       "tools": null
@@ -32594,6 +34489,20 @@
       "comparability_status": "unknown",
       "evaluator": "Artificial Analysis",
       "id": "series_aa_grok47_aa-grok47-high_grok-4-7-high_aa_analyst_agent",
+      "judge": null,
+      "protocol": "Artificial Analysis public model-page result",
+      "protocol_version": "unversioned-as-reported",
+      "sampling": null,
+      "setup_fingerprint": null,
+      "tools": null
+    },
+    {
+      "benchmark_id": "aa_mlcr_hard",
+      "budget": null,
+      "comparability": "AA identifies the benchmark and headline metric; detailed prompt, tool, sampling and serving settings are not all exposed in the captured model record.",
+      "comparability_status": "unknown",
+      "evaluator": "Artificial Analysis",
+      "id": "series_aa_grok47_aa-grok47-high_grok-4-7-high_aa_mlcr_hard",
       "judge": null,
       "protocol": "Artificial Analysis public model-page result",
       "protocol_version": "unversioned-as-reported",
@@ -33470,6 +35379,20 @@
       "tools": null
     },
     {
+      "benchmark_id": "aa_mlcr_hard",
+      "budget": null,
+      "comparability": "AA identifies the benchmark and headline metric; detailed prompt, tool, sampling and serving settings are not all exposed in the captured model record.",
+      "comparability_status": "unknown",
+      "evaluator": "Artificial Analysis",
+      "id": "series_aa_qwen38_27b_aa-qwen38-27b-non-reasoning_qwen3-8-27b-non-reasoning_aa_mlcr_hard",
+      "judge": null,
+      "protocol": "Artificial Analysis public model-page result",
+      "protocol_version": "unversioned-as-reported",
+      "sampling": null,
+      "setup_fingerprint": null,
+      "tools": null
+    },
+    {
       "benchmark_id": "aa_briefcase_v11",
       "budget": null,
       "comparability": "AA identifies the benchmark and headline metric; detailed prompt, tool, sampling and serving settings are not all exposed in the captured model record.",
@@ -33694,6 +35617,20 @@
       "tools": null
     },
     {
+      "benchmark_id": "aa_mlcr_hard",
+      "budget": null,
+      "comparability": "AA identifies the benchmark and headline metric; detailed prompt, tool, sampling and serving settings are not all exposed in the captured model record.",
+      "comparability_status": "unknown",
+      "evaluator": "Artificial Analysis",
+      "id": "series_aa_claude_fable51_aa-claude-fable51-medium_claude-fable-5-1-medium_aa_mlcr_hard",
+      "judge": null,
+      "protocol": "Artificial Analysis public model-page result",
+      "protocol_version": "unversioned-as-reported",
+      "sampling": null,
+      "setup_fingerprint": null,
+      "tools": null
+    },
+    {
       "benchmark_id": "aa_briefcase_v11",
       "budget": null,
       "comparability": "AA identifies the benchmark and headline metric; detailed prompt, tool, sampling and serving settings are not all exposed in the captured model record.",
@@ -33882,6 +35819,20 @@
       "comparability_status": "unknown",
       "evaluator": "Artificial Analysis",
       "id": "series_aa_gpt61_sol_aa-gpt61-sol-high_gpt-6-1-sol-high_aa_automationbench_657",
+      "judge": null,
+      "protocol": "Artificial Analysis public model-page result",
+      "protocol_version": "unversioned-as-reported",
+      "sampling": null,
+      "setup_fingerprint": null,
+      "tools": null
+    },
+    {
+      "benchmark_id": "aa_mlcr_hard",
+      "budget": null,
+      "comparability": "AA identifies the benchmark and headline metric; detailed prompt, tool, sampling and serving settings are not all exposed in the captured model record.",
+      "comparability_status": "unknown",
+      "evaluator": "Artificial Analysis",
+      "id": "series_aa_gpt61_sol_aa-gpt61-sol-high_gpt-6-1-sol-high_aa_mlcr_hard",
       "judge": null,
       "protocol": "Artificial Analysis public model-page result",
       "protocol_version": "unversioned-as-reported",
@@ -34464,6 +36415,20 @@
       "tools": null
     },
     {
+      "benchmark_id": "aa_mlcr_hard",
+      "budget": null,
+      "comparability": "AA identifies the benchmark and headline metric; detailed prompt, tool, sampling and serving settings are not all exposed in the captured model record.",
+      "comparability_status": "unknown",
+      "evaluator": "Artificial Analysis",
+      "id": "series_aa_claude_opus55_aa-claude-opus55-low_claude-opus-5-5-low_aa_mlcr_hard",
+      "judge": null,
+      "protocol": "Artificial Analysis public model-page result",
+      "protocol_version": "unversioned-as-reported",
+      "sampling": null,
+      "setup_fingerprint": null,
+      "tools": null
+    },
+    {
       "benchmark_id": "aa_briefcase_v11",
       "budget": null,
       "comparability": "AA identifies the benchmark and headline metric; detailed prompt, tool, sampling and serving settings are not all exposed in the captured model record.",
@@ -34660,6 +36625,20 @@
       "tools": null
     },
     {
+      "benchmark_id": "frontiercode_v11",
+      "budget": null,
+      "comparability": "AA identifies the benchmark and headline metric; detailed prompt, tool, sampling and serving settings are not all exposed in the captured model record.",
+      "comparability_status": "unknown",
+      "evaluator": "Artificial Analysis",
+      "id": "series_aa_kimi_k3_aa-kimi-k3-low_kimi-k3-low_frontiercode_v11",
+      "judge": null,
+      "protocol": "Artificial Analysis public model-page result",
+      "protocol_version": "v1.1-main",
+      "sampling": null,
+      "setup_fingerprint": null,
+      "tools": null
+    },
+    {
       "benchmark_id": "terminal_bench_21",
       "budget": null,
       "comparability": "AA identifies the benchmark and headline metric; detailed prompt, tool, sampling and serving settings are not all exposed in the captured model record.",
@@ -34697,6 +36676,20 @@
       "judge": null,
       "protocol": "Artificial Analysis public model-page result",
       "protocol_version": "v1.0.1",
+      "sampling": null,
+      "setup_fingerprint": null,
+      "tools": null
+    },
+    {
+      "benchmark_id": "aa_mlcr_hard",
+      "budget": null,
+      "comparability": "AA identifies the benchmark and headline metric; detailed prompt, tool, sampling and serving settings are not all exposed in the captured model record.",
+      "comparability_status": "unknown",
+      "evaluator": "Artificial Analysis",
+      "id": "series_aa_kimi_k3_aa-kimi-k3-low_kimi-k3-low_aa_mlcr_hard",
+      "judge": null,
+      "protocol": "Artificial Analysis public model-page result",
+      "protocol_version": "unversioned-as-reported",
       "sampling": null,
       "setup_fingerprint": null,
       "tools": null
@@ -35481,6 +37474,20 @@
       "judge": null,
       "protocol": "Artificial Analysis public model-page result",
       "protocol_version": "v1.0.1",
+      "sampling": null,
+      "setup_fingerprint": null,
+      "tools": null
+    },
+    {
+      "benchmark_id": "aa_mlcr_hard",
+      "budget": null,
+      "comparability": "AA identifies the benchmark and headline metric; detailed prompt, tool, sampling and serving settings are not all exposed in the captured model record.",
+      "comparability_status": "unknown",
+      "evaluator": "Artificial Analysis",
+      "id": "series_aa_qwen38_27b_aa-qwen38-27b-medium_qwen3-8-27b-medium_aa_mlcr_hard",
+      "judge": null,
+      "protocol": "Artificial Analysis public model-page result",
+      "protocol_version": "unversioned-as-reported",
       "sampling": null,
       "setup_fingerprint": null,
       "tools": null
@@ -36816,6 +38823,20 @@
       "tools": null
     },
     {
+      "benchmark_id": "aa_mlcr_hard",
+      "budget": null,
+      "comparability": "AA identifies the benchmark and headline metric; detailed prompt, tool, sampling and serving settings are not all exposed in the captured model record.",
+      "comparability_status": "unknown",
+      "evaluator": "Artificial Analysis",
+      "id": "series_aa_qwen38_27b_aa-qwen38-27b-low_qwen3-8-27b-low_aa_mlcr_hard",
+      "judge": null,
+      "protocol": "Artificial Analysis public model-page result",
+      "protocol_version": "unversioned-as-reported",
+      "sampling": null,
+      "setup_fingerprint": null,
+      "tools": null
+    },
+    {
       "benchmark_id": "aa_briefcase_v11",
       "budget": null,
       "comparability": "AA identifies the benchmark and headline metric; detailed prompt, tool, sampling and serving settings are not all exposed in the captured model record.",
@@ -37684,6 +39705,20 @@
       "tools": null
     },
     {
+      "benchmark_id": "aa_mlcr_hard",
+      "budget": null,
+      "comparability": "AA identifies the benchmark and headline metric; detailed prompt, tool, sampling and serving settings are not all exposed in the captured model record.",
+      "comparability_status": "unknown",
+      "evaluator": "Artificial Analysis",
+      "id": "series_aa_claude_fable51_aa-claude-fable51-xhigh_claude-fable-5-1-xhigh_aa_mlcr_hard",
+      "judge": null,
+      "protocol": "Artificial Analysis public model-page result",
+      "protocol_version": "unversioned-as-reported",
+      "sampling": null,
+      "setup_fingerprint": null,
+      "tools": null
+    },
+    {
       "benchmark_id": "aa_briefcase_v11",
       "budget": null,
       "comparability": "AA identifies the benchmark and headline metric; detailed prompt, tool, sampling and serving settings are not all exposed in the captured model record.",
@@ -37908,6 +39943,20 @@
       "tools": null
     },
     {
+      "benchmark_id": "aa_mlcr_hard",
+      "budget": null,
+      "comparability": "AA identifies the benchmark and headline metric; detailed prompt, tool, sampling and serving settings are not all exposed in the captured model record.",
+      "comparability_status": "unknown",
+      "evaluator": "Artificial Analysis",
+      "id": "series_aa_claude_fable51_aa-claude-fable51-high_claude-fable-5-1-high_aa_mlcr_hard",
+      "judge": null,
+      "protocol": "Artificial Analysis public model-page result",
+      "protocol_version": "unversioned-as-reported",
+      "sampling": null,
+      "setup_fingerprint": null,
+      "tools": null
+    },
+    {
       "benchmark_id": "aa_briefcase_v11",
       "budget": null,
       "comparability": "AA identifies the benchmark and headline metric; detailed prompt, tool, sampling and serving settings are not all exposed in the captured model record.",
@@ -38096,6 +40145,20 @@
       "comparability_status": "unknown",
       "evaluator": "Artificial Analysis",
       "id": "series_aa_gpt61_sol_aa-gpt61-sol-medium_gpt-6-1-sol-medium_aa_automationbench_657",
+      "judge": null,
+      "protocol": "Artificial Analysis public model-page result",
+      "protocol_version": "unversioned-as-reported",
+      "sampling": null,
+      "setup_fingerprint": null,
+      "tools": null
+    },
+    {
+      "benchmark_id": "aa_mlcr_hard",
+      "budget": null,
+      "comparability": "AA identifies the benchmark and headline metric; detailed prompt, tool, sampling and serving settings are not all exposed in the captured model record.",
+      "comparability_status": "unknown",
+      "evaluator": "Artificial Analysis",
+      "id": "series_aa_gpt61_sol_aa-gpt61-sol-medium_gpt-6-1-sol-medium_aa_mlcr_hard",
       "judge": null,
       "protocol": "Artificial Analysis public model-page result",
       "protocol_version": "unversioned-as-reported",
@@ -38337,6 +40400,20 @@
       "judge": null,
       "protocol": "Artificial Analysis public model-page result",
       "protocol_version": "v1.0.1",
+      "sampling": null,
+      "setup_fingerprint": null,
+      "tools": null
+    },
+    {
+      "benchmark_id": "aa_mlcr_hard",
+      "budget": null,
+      "comparability": "AA identifies the benchmark and headline metric; detailed prompt, tool, sampling and serving settings are not all exposed in the captured model record.",
+      "comparability_status": "unknown",
+      "evaluator": "Artificial Analysis",
+      "id": "series_aa_gpt6_astra_aa-gpt6-astra-low_gpt-6-astra-low_aa_mlcr_hard",
+      "judge": null,
+      "protocol": "Artificial Analysis public model-page result",
+      "protocol_version": "unversioned-as-reported",
       "sampling": null,
       "setup_fingerprint": null,
       "tools": null
@@ -40120,6 +42197,20 @@
       "tools": null
     },
     {
+      "benchmark_id": "aa_mlcr_hard",
+      "budget": null,
+      "comparability": "AA identifies the benchmark and headline metric; detailed prompt, tool, sampling and serving settings are not all exposed in the captured model record.",
+      "comparability_status": "unknown",
+      "evaluator": "Artificial Analysis",
+      "id": "series_aa_grok46_aa-grok46-low_grok-4-6-low_aa_mlcr_hard",
+      "judge": null,
+      "protocol": "Artificial Analysis public model-page result",
+      "protocol_version": "unversioned-as-reported",
+      "sampling": null,
+      "setup_fingerprint": null,
+      "tools": null
+    },
+    {
       "benchmark_id": "aa_briefcase_v11",
       "budget": null,
       "comparability": "AA identifies the benchmark and headline metric; detailed prompt, tool, sampling and serving settings are not all exposed in the captured model record.",
@@ -40129,6 +42220,188 @@
       "judge": null,
       "protocol": "Artificial Analysis public model-page result",
       "protocol_version": "1.1",
+      "sampling": null,
+      "setup_fingerprint": null,
+      "tools": null
+    },
+    {
+      "benchmark_id": "aa_hle_text",
+      "budget": null,
+      "comparability": "AA identifies the benchmark and headline metric; detailed prompt, tool, sampling and serving settings are not all exposed in the captured model record.",
+      "comparability_status": "unknown",
+      "evaluator": "Artificial Analysis",
+      "id": "series_aa_gpt4o_aa-gpt4o-unknown_gpt-4o_aa_hle_text",
+      "judge": null,
+      "protocol": "Artificial Analysis public model-page result",
+      "protocol_version": "2025-05 revision",
+      "sampling": null,
+      "setup_fingerprint": null,
+      "tools": null
+    },
+    {
+      "benchmark_id": "aa_gpqa_diamond",
+      "budget": null,
+      "comparability": "AA identifies the benchmark and headline metric; detailed prompt, tool, sampling and serving settings are not all exposed in the captured model record.",
+      "comparability_status": "unknown",
+      "evaluator": "Artificial Analysis",
+      "id": "series_aa_gpt4o_aa-gpt4o-unknown_gpt-4o_aa_gpqa_diamond",
+      "judge": null,
+      "protocol": "Artificial Analysis public model-page result",
+      "protocol_version": "unversioned-as-reported",
+      "sampling": null,
+      "setup_fingerprint": null,
+      "tools": null
+    },
+    {
+      "benchmark_id": "aa_critpt",
+      "budget": null,
+      "comparability": "AA identifies the benchmark and headline metric; detailed prompt, tool, sampling and serving settings are not all exposed in the captured model record.",
+      "comparability_status": "unknown",
+      "evaluator": "Artificial Analysis",
+      "id": "series_aa_gpt4o_aa-gpt4o-unknown_gpt-4o_aa_critpt",
+      "judge": null,
+      "protocol": "Artificial Analysis public model-page result",
+      "protocol_version": "unversioned-as-reported",
+      "sampling": null,
+      "setup_fingerprint": null,
+      "tools": null
+    },
+    {
+      "benchmark_id": "aa_omniscience_index",
+      "budget": null,
+      "comparability": "AA identifies the benchmark and headline metric; detailed prompt, tool, sampling and serving settings are not all exposed in the captured model record.",
+      "comparability_status": "unknown",
+      "evaluator": "Artificial Analysis",
+      "id": "series_aa_gpt4o_aa-gpt4o-unknown_gpt-4o_aa_omniscience_index",
+      "judge": null,
+      "protocol": "Artificial Analysis public model-page result",
+      "protocol_version": "unversioned-as-reported",
+      "sampling": null,
+      "setup_fingerprint": null,
+      "tools": null
+    },
+    {
+      "benchmark_id": "aa_omniscience_accuracy",
+      "budget": null,
+      "comparability": "AA identifies the benchmark and headline metric; detailed prompt, tool, sampling and serving settings are not all exposed in the captured model record.",
+      "comparability_status": "unknown",
+      "evaluator": "Artificial Analysis",
+      "id": "series_aa_gpt4o_aa-gpt4o-unknown_gpt-4o_aa_omniscience_accuracy",
+      "judge": null,
+      "protocol": "Artificial Analysis public model-page result",
+      "protocol_version": "unversioned-as-reported",
+      "sampling": null,
+      "setup_fingerprint": null,
+      "tools": null
+    },
+    {
+      "benchmark_id": "aa_omniscience_hallucination",
+      "budget": null,
+      "comparability": "AA identifies the benchmark and headline metric; detailed prompt, tool, sampling and serving settings are not all exposed in the captured model record.",
+      "comparability_status": "unknown",
+      "evaluator": "Artificial Analysis",
+      "id": "series_aa_gpt4o_aa-gpt4o-unknown_gpt-4o_aa_omniscience_hallucination",
+      "judge": null,
+      "protocol": "Artificial Analysis public model-page result",
+      "protocol_version": "unversioned-as-reported",
+      "sampling": null,
+      "setup_fingerprint": null,
+      "tools": null
+    },
+    {
+      "benchmark_id": "aa_lcr_v11",
+      "budget": null,
+      "comparability": "AA identifies the benchmark and headline metric; detailed prompt, tool, sampling and serving settings are not all exposed in the captured model record.",
+      "comparability_status": "unknown",
+      "evaluator": "Artificial Analysis",
+      "id": "series_aa_gpt4o_aa-gpt4o-unknown_gpt-4o_aa_lcr_v11",
+      "judge": null,
+      "protocol": "Artificial Analysis public model-page result",
+      "protocol_version": "1.1",
+      "sampling": null,
+      "setup_fingerprint": null,
+      "tools": null
+    },
+    {
+      "benchmark_id": "aa_ifbench",
+      "budget": null,
+      "comparability": "AA identifies the benchmark and headline metric; detailed prompt, tool, sampling and serving settings are not all exposed in the captured model record.",
+      "comparability_status": "unknown",
+      "evaluator": "Artificial Analysis",
+      "id": "series_aa_gpt4o_aa-gpt4o-unknown_gpt-4o_aa_ifbench",
+      "judge": null,
+      "protocol": "Artificial Analysis public model-page result",
+      "protocol_version": "unversioned-as-reported",
+      "sampling": null,
+      "setup_fingerprint": null,
+      "tools": null
+    },
+    {
+      "benchmark_id": "aa_terminal_hard",
+      "budget": null,
+      "comparability": "AA identifies the benchmark and headline metric; detailed prompt, tool, sampling and serving settings are not all exposed in the captured model record.",
+      "comparability_status": "unknown",
+      "evaluator": "Artificial Analysis",
+      "id": "series_aa_gpt4o_aa-gpt4o-unknown_gpt-4o_aa_terminal_hard",
+      "judge": null,
+      "protocol": "Artificial Analysis public model-page result",
+      "protocol_version": "unversioned-as-reported",
+      "sampling": null,
+      "setup_fingerprint": null,
+      "tools": null
+    },
+    {
+      "benchmark_id": "aa_gdpval_v21",
+      "budget": null,
+      "comparability": "AA identifies the benchmark and headline metric; detailed prompt, tool, sampling and serving settings are not all exposed in the captured model record.",
+      "comparability_status": "unknown",
+      "evaluator": "Artificial Analysis",
+      "id": "series_aa_gpt4o_aa-gpt4o-unknown_gpt-4o_aa_gdpval_v21",
+      "judge": null,
+      "protocol": "Artificial Analysis public model-page result",
+      "protocol_version": "2.1",
+      "sampling": null,
+      "setup_fingerprint": null,
+      "tools": null
+    },
+    {
+      "benchmark_id": "aa_aime_2025",
+      "budget": null,
+      "comparability": "AA identifies the benchmark and headline metric; detailed prompt, tool, sampling and serving settings are not all exposed in the captured model record.",
+      "comparability_status": "unknown",
+      "evaluator": "Artificial Analysis",
+      "id": "series_aa_gpt4o_aa-gpt4o-unknown_gpt-4o_aa_aime_2025",
+      "judge": null,
+      "protocol": "Artificial Analysis public model-page result",
+      "protocol_version": "2025",
+      "sampling": null,
+      "setup_fingerprint": null,
+      "tools": null
+    },
+    {
+      "benchmark_id": "aa_tau2_telecom",
+      "budget": null,
+      "comparability": "AA identifies the benchmark and headline metric; detailed prompt, tool, sampling and serving settings are not all exposed in the captured model record.",
+      "comparability_status": "unknown",
+      "evaluator": "Artificial Analysis",
+      "id": "series_aa_gpt4o_aa-gpt4o-unknown_gpt-4o_aa_tau2_telecom",
+      "judge": null,
+      "protocol": "Artificial Analysis public model-page result",
+      "protocol_version": "unversioned-as-reported",
+      "sampling": null,
+      "setup_fingerprint": null,
+      "tools": null
+    },
+    {
+      "benchmark_id": "aa_livecodebench",
+      "budget": null,
+      "comparability": "AA identifies the benchmark and headline metric; detailed prompt, tool, sampling and serving settings are not all exposed in the captured model record.",
+      "comparability_status": "unknown",
+      "evaluator": "Artificial Analysis",
+      "id": "series_aa_gpt4o_aa-gpt4o-unknown_gpt-4o_aa_livecodebench",
+      "judge": null,
+      "protocol": "Artificial Analysis public model-page result",
+      "protocol_version": "unversioned-as-reported",
       "sampling": null,
       "setup_fingerprint": null,
       "tools": null
@@ -40574,6 +42847,20 @@
       "comparability_status": "unknown",
       "evaluator": "Artificial Analysis",
       "id": "series_aa_glm53_aa-glm53-low_glm-5-3-low_aa_automationbench_657",
+      "judge": null,
+      "protocol": "Artificial Analysis public model-page result",
+      "protocol_version": "unversioned-as-reported",
+      "sampling": null,
+      "setup_fingerprint": null,
+      "tools": null
+    },
+    {
+      "benchmark_id": "aa_mlcr_hard",
+      "budget": null,
+      "comparability": "AA identifies the benchmark and headline metric; detailed prompt, tool, sampling and serving settings are not all exposed in the captured model record.",
+      "comparability_status": "unknown",
+      "evaluator": "Artificial Analysis",
+      "id": "series_aa_glm53_aa-glm53-low_glm-5-3-low_aa_mlcr_hard",
       "judge": null,
       "protocol": "Artificial Analysis public model-page result",
       "protocol_version": "unversioned-as-reported",
@@ -41128,6 +43415,34 @@
       "tools": null
     },
     {
+      "benchmark_id": "harvey_lab_aa_v11",
+      "budget": null,
+      "comparability": "AA identifies the benchmark and headline metric; detailed prompt, tool, sampling and serving settings are not all exposed in the captured model record.",
+      "comparability_status": "unknown",
+      "evaluator": "Artificial Analysis",
+      "id": "series_aa_gemini4_argon_aa-gemini4-argon-high_gemini-4-argon_harvey_lab_aa_v11",
+      "judge": null,
+      "protocol": "Artificial Analysis public model-page result",
+      "protocol_version": "1.1",
+      "sampling": null,
+      "setup_fingerprint": null,
+      "tools": null
+    },
+    {
+      "benchmark_id": "aa_mlcr_hard",
+      "budget": null,
+      "comparability": "AA identifies the benchmark and headline metric; detailed prompt, tool, sampling and serving settings are not all exposed in the captured model record.",
+      "comparability_status": "unknown",
+      "evaluator": "Artificial Analysis",
+      "id": "series_aa_gemini4_argon_aa-gemini4-argon-high_gemini-4-argon_aa_mlcr_hard",
+      "judge": null,
+      "protocol": "Artificial Analysis public model-page result",
+      "protocol_version": "unversioned-as-reported",
+      "sampling": null,
+      "setup_fingerprint": null,
+      "tools": null
+    },
+    {
       "benchmark_id": "aa_briefcase_v11",
       "budget": null,
       "comparability": "AA identifies the benchmark and headline metric; detailed prompt, tool, sampling and serving settings are not all exposed in the captured model record.",
@@ -41366,6 +43681,20 @@
       "tools": null
     },
     {
+      "benchmark_id": "aa_mlcr_hard",
+      "budget": null,
+      "comparability": "AA identifies the benchmark and headline metric; detailed prompt, tool, sampling and serving settings are not all exposed in the captured model record.",
+      "comparability_status": "unknown",
+      "evaluator": "Artificial Analysis",
+      "id": "series_aa_muse_spark13_aa-muse-spark13-xhigh_muse-spark-1-3-xhigh_aa_mlcr_hard",
+      "judge": null,
+      "protocol": "Artificial Analysis public model-page result",
+      "protocol_version": "unversioned-as-reported",
+      "sampling": null,
+      "setup_fingerprint": null,
+      "tools": null
+    },
+    {
       "benchmark_id": "aa_briefcase_v11",
       "budget": null,
       "comparability": "AA identifies the benchmark and headline metric; detailed prompt, tool, sampling and serving settings are not all exposed in the captured model record.",
@@ -41585,6 +43914,20 @@
       "judge": null,
       "protocol": "Artificial Analysis public model-page result",
       "protocol_version": "v1.0.1",
+      "sampling": null,
+      "setup_fingerprint": null,
+      "tools": null
+    },
+    {
+      "benchmark_id": "aa_mlcr_hard",
+      "budget": null,
+      "comparability": "AA identifies the benchmark and headline metric; detailed prompt, tool, sampling and serving settings are not all exposed in the captured model record.",
+      "comparability_status": "unknown",
+      "evaluator": "Artificial Analysis",
+      "id": "series_aa_grok46_aa-grok46-xhigh_grok-4-6-xhigh_aa_mlcr_hard",
+      "judge": null,
+      "protocol": "Artificial Analysis public model-page result",
+      "protocol_version": "unversioned-as-reported",
       "sampling": null,
       "setup_fingerprint": null,
       "tools": null
@@ -42738,6 +45081,20 @@
       "tools": null
     },
     {
+      "benchmark_id": "aa_mlcr_hard",
+      "budget": null,
+      "comparability": "AA identifies the benchmark and headline metric; detailed prompt, tool, sampling and serving settings are not all exposed in the captured model record.",
+      "comparability_status": "unknown",
+      "evaluator": "Artificial Analysis",
+      "id": "series_aa_claude_opus55_aa-claude-opus55-xhigh_claude-opus-5-5-xhigh_aa_mlcr_hard",
+      "judge": null,
+      "protocol": "Artificial Analysis public model-page result",
+      "protocol_version": "unversioned-as-reported",
+      "sampling": null,
+      "setup_fingerprint": null,
+      "tools": null
+    },
+    {
       "benchmark_id": "aa_briefcase_v11",
       "budget": null,
       "comparability": "AA identifies the benchmark and headline metric; detailed prompt, tool, sampling and serving settings are not all exposed in the captured model record.",
@@ -43060,6 +45417,20 @@
       "tools": null
     },
     {
+      "benchmark_id": "aa_mlcr_hard",
+      "budget": null,
+      "comparability": "AA identifies the benchmark and headline metric; detailed prompt, tool, sampling and serving settings are not all exposed in the captured model record.",
+      "comparability_status": "unknown",
+      "evaluator": "Artificial Analysis",
+      "id": "series_aa_gpt6_astra_aa-gpt6-astra-high_gpt-6-astra-high_aa_mlcr_hard",
+      "judge": null,
+      "protocol": "Artificial Analysis public model-page result",
+      "protocol_version": "unversioned-as-reported",
+      "sampling": null,
+      "setup_fingerprint": null,
+      "tools": null
+    },
+    {
       "benchmark_id": "aa_briefcase_v11",
       "budget": null,
       "comparability": "AA identifies the benchmark and headline metric; detailed prompt, tool, sampling and serving settings are not all exposed in the captured model record.",
@@ -43248,6 +45619,20 @@
       "comparability_status": "unknown",
       "evaluator": "Artificial Analysis",
       "id": "series_aa_gpt61_sol_aa-gpt61-sol-low_gpt-6-1-sol-low_aa_automationbench_657",
+      "judge": null,
+      "protocol": "Artificial Analysis public model-page result",
+      "protocol_version": "unversioned-as-reported",
+      "sampling": null,
+      "setup_fingerprint": null,
+      "tools": null
+    },
+    {
+      "benchmark_id": "aa_mlcr_hard",
+      "budget": null,
+      "comparability": "AA identifies the benchmark and headline metric; detailed prompt, tool, sampling and serving settings are not all exposed in the captured model record.",
+      "comparability_status": "unknown",
+      "evaluator": "Artificial Analysis",
+      "id": "series_aa_gpt61_sol_aa-gpt61-sol-low_gpt-6-1-sol-low_aa_mlcr_hard",
       "judge": null,
       "protocol": "Artificial Analysis public model-page result",
       "protocol_version": "unversioned-as-reported",
@@ -43494,6 +45879,20 @@
       "tools": null
     },
     {
+      "benchmark_id": "aa_mlcr_hard",
+      "budget": null,
+      "comparability": "AA identifies the benchmark and headline metric; detailed prompt, tool, sampling and serving settings are not all exposed in the captured model record.",
+      "comparability_status": "unknown",
+      "evaluator": "Artificial Analysis",
+      "id": "series_aa_gpt6_astra_aa-gpt6-astra-medium_gpt-6-astra-medium_aa_mlcr_hard",
+      "judge": null,
+      "protocol": "Artificial Analysis public model-page result",
+      "protocol_version": "unversioned-as-reported",
+      "sampling": null,
+      "setup_fingerprint": null,
+      "tools": null
+    },
+    {
       "benchmark_id": "aa_briefcase_v11",
       "budget": null,
       "comparability": "AA identifies the benchmark and headline metric; detailed prompt, tool, sampling and serving settings are not all exposed in the captured model record.",
@@ -43657,6 +46056,20 @@
       "judge": null,
       "protocol": "Artificial Analysis public model-page result",
       "protocol_version": "4.0",
+      "sampling": null,
+      "setup_fingerprint": null,
+      "tools": null
+    },
+    {
+      "benchmark_id": "frontiercode_v11",
+      "budget": null,
+      "comparability": "AA identifies the benchmark and headline metric; detailed prompt, tool, sampling and serving settings are not all exposed in the captured model record.",
+      "comparability_status": "unknown",
+      "evaluator": "Artificial Analysis",
+      "id": "series_aa_muse_wonder_full_aa-muse-wonder-full-max_muse-wonder-full_frontiercode_v11",
+      "judge": null,
+      "protocol": "Artificial Analysis public model-page result",
+      "protocol_version": "v1.1-main",
       "sampling": null,
       "setup_fingerprint": null,
       "tools": null
@@ -43914,6 +46327,20 @@
       "tools": null
     },
     {
+      "benchmark_id": "aa_mlcr_hard",
+      "budget": null,
+      "comparability": "AA identifies the benchmark and headline metric; detailed prompt, tool, sampling and serving settings are not all exposed in the captured model record.",
+      "comparability_status": "unknown",
+      "evaluator": "Artificial Analysis",
+      "id": "series_aa_claude_opus55_aa-claude-opus55-medium_claude-opus-5-5-medium_aa_mlcr_hard",
+      "judge": null,
+      "protocol": "Artificial Analysis public model-page result",
+      "protocol_version": "unversioned-as-reported",
+      "sampling": null,
+      "setup_fingerprint": null,
+      "tools": null
+    },
+    {
       "benchmark_id": "aa_briefcase_v11",
       "budget": null,
       "comparability": "AA identifies the benchmark and headline metric; detailed prompt, tool, sampling and serving settings are not all exposed in the captured model record.",
@@ -44130,6 +46557,20 @@
       "comparability_status": "unknown",
       "evaluator": "Artificial Analysis",
       "id": "series_aa_claude_opus55_aa-claude-opus55-high_claude-opus-5-5-high_aa_automationbench_657",
+      "judge": null,
+      "protocol": "Artificial Analysis public model-page result",
+      "protocol_version": "unversioned-as-reported",
+      "sampling": null,
+      "setup_fingerprint": null,
+      "tools": null
+    },
+    {
+      "benchmark_id": "aa_mlcr_hard",
+      "budget": null,
+      "comparability": "AA identifies the benchmark and headline metric; detailed prompt, tool, sampling and serving settings are not all exposed in the captured model record.",
+      "comparability_status": "unknown",
+      "evaluator": "Artificial Analysis",
+      "id": "series_aa_claude_opus55_aa-claude-opus55-high_claude-opus-5-5-high_aa_mlcr_hard",
       "judge": null,
       "protocol": "Artificial Analysis public model-page result",
       "protocol_version": "unversioned-as-reported",
@@ -45104,6 +47545,34 @@
       "tools": null
     },
     {
+      "benchmark_id": "frontiercode_v11",
+      "budget": null,
+      "comparability": "AA identifies the benchmark and headline metric; detailed prompt, tool, sampling and serving settings are not all exposed in the captured model record.",
+      "comparability_status": "unknown",
+      "evaluator": "Artificial Analysis",
+      "id": "series_aa_mistral_large4_aa-mistral-large4-unknown_mistral-large-4_frontiercode_v11",
+      "judge": null,
+      "protocol": "Artificial Analysis public model-page result",
+      "protocol_version": "v1.1-main",
+      "sampling": null,
+      "setup_fingerprint": null,
+      "tools": null
+    },
+    {
+      "benchmark_id": "terminal_science_01",
+      "budget": null,
+      "comparability": "AA identifies the benchmark and headline metric; detailed prompt, tool, sampling and serving settings are not all exposed in the captured model record.",
+      "comparability_status": "unknown",
+      "evaluator": "Artificial Analysis",
+      "id": "series_aa_mistral_large4_aa-mistral-large4-unknown_mistral-large-4_terminal_science_01",
+      "judge": null,
+      "protocol": "Artificial Analysis public model-page result",
+      "protocol_version": "0.1",
+      "sampling": null,
+      "setup_fingerprint": null,
+      "tools": null
+    },
+    {
       "benchmark_id": "aa_automationbench_657",
       "budget": null,
       "comparability": "AA identifies the benchmark and headline metric; detailed prompt, tool, sampling and serving settings are not all exposed in the captured model record.",
@@ -45132,6 +47601,20 @@
       "tools": null
     },
     {
+      "benchmark_id": "aa_mlcr_hard",
+      "budget": null,
+      "comparability": "AA identifies the benchmark and headline metric; detailed prompt, tool, sampling and serving settings are not all exposed in the captured model record.",
+      "comparability_status": "unknown",
+      "evaluator": "Artificial Analysis",
+      "id": "series_aa_mistral_large4_aa-mistral-large4-unknown_mistral-large-4_aa_mlcr_hard",
+      "judge": null,
+      "protocol": "Artificial Analysis public model-page result",
+      "protocol_version": "unversioned-as-reported",
+      "sampling": null,
+      "setup_fingerprint": null,
+      "tools": null
+    },
+    {
       "benchmark_id": "aa_briefcase_v11",
       "budget": null,
       "comparability": "AA identifies the benchmark and headline metric; detailed prompt, tool, sampling and serving settings are not all exposed in the captured model record.",
@@ -45149,7 +47632,7 @@
   "sources": [
     {
       "attribution": "Artificial Analysis; source page and documented API reference linked in the AA coverage audit.",
-      "content_sha256": "026cbfe13d5a8bd64a53a11e41529d80908d67b2e6e386a6cf2838606d95cd15",
+      "content_sha256": "0ebd908f4a2606e4dd00d5d69d3cacb6026180b52b5595ec2b38e0044e5b8fef",
       "excerpt": null,
       "id": "aa_public_pages_20261018",
       "license": null,
@@ -45158,7 +47641,7 @@
       "original_evaluator": "Artificial Analysis",
       "published_at": null,
       "publisher": "Artificial Analysis",
-      "retrieved_at": "2026-10-18T16:20:51.870862+00:00",
+      "retrieved_at": "2026-10-21T12:58:50.553809+00:00",
       "title": "Artificial Analysis public model-page serialization (18 October 2026)",
       "url": "https://artificialanalysis.ai/models/mistral-large-4",
       "version": "Public model-page serialization captured 2026-10-18"

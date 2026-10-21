@@ -2,8 +2,8 @@
   "https://huggingface.co/api/datasets/lmarena-ai/leaderboard-dataset": {
     "bytes": 23603,
     "content_type": "application/json; charset=utf-8",
-    "retrieved_at": "2026-10-18T16:20:54.374363+00:00",
-    "sha256": "b44abe87641407514cdccda4c6d47f295b732aab72137ccbdf85a815731ba9b2",
+    "retrieved_at": "2026-10-21T12:58:55.497460+00:00",
+    "sha256": "074b79e5381d87586077cc1a146bd60f14c0aaab7b339beb35a53018448e1150",
     "url": "https://huggingface.co/api/datasets/lmarena-ai/leaderboard-dataset"
   },
   "https://huggingface.co/api/datasets/lmarena-ai/leaderboard-dataset/tree/0ebb411abf001fa30ad48fc7e49c5cd5891d5f8a?recursive=true&expand=false": {
@@ -12,6 +12,27 @@
     "retrieved_at": "2026-10-18T16:20:54.437183+00:00",
     "sha256": "44861a9fdc14f5efed8dcc6cad1c154cf200d4bbaf1a7668901f52f57efd0fae",
     "url": "https://huggingface.co/api/datasets/lmarena-ai/leaderboard-dataset/tree/0ebb411abf001fa30ad48fc7e49c5cd5891d5f8a?recursive=true&expand=false"
+  },
+  "https://huggingface.co/api/datasets/lmarena-ai/leaderboard-dataset/tree/8b599a3c759427b568b742e7ceeca9a516933e25?recursive=true&expand=false": {
+    "bytes": 18158,
+    "content_type": "application/json; charset=utf-8",
+    "retrieved_at": "2026-10-20T12:46:11.259494+00:00",
+    "sha256": "efee10861bf5d50d718025328df6b9cba05601ac1ecffcd0a34bc35aa79c1c6a",
+    "url": "https://huggingface.co/api/datasets/lmarena-ai/leaderboard-dataset/tree/8b599a3c759427b568b742e7ceeca9a516933e25?recursive=true&expand=false"
+  },
+  "https://huggingface.co/api/datasets/lmarena-ai/leaderboard-dataset/tree/9041150e8a502da9f0e75c89824d34ad7dba7072?recursive=true&expand=false": {
+    "bytes": 18158,
+    "content_type": "application/json; charset=utf-8",
+    "retrieved_at": "2026-10-21T12:58:55.578583+00:00",
+    "sha256": "65dc68110a745da4378b7b0042b1e96f3bab08ee7a07a54f85e479d3aa1b2530",
+    "url": "https://huggingface.co/api/datasets/lmarena-ai/leaderboard-dataset/tree/9041150e8a502da9f0e75c89824d34ad7dba7072?recursive=true&expand=false"
+  },
+  "https://huggingface.co/api/datasets/lmarena-ai/leaderboard-dataset/tree/a64ca3b12b6e6fcb9e7747cd56131d8a8047d822?recursive=true&expand=false": {
+    "bytes": 18158,
+    "content_type": "application/json; charset=utf-8",
+    "retrieved_at": "2026-10-19T14:43:58.572892+00:00",
+    "sha256": "3c7803c0043ef8a29f1ffcbe54d734ad70283855c7040eb5c0361514c0ada963",
+    "url": "https://huggingface.co/api/datasets/lmarena-ai/leaderboard-dataset/tree/a64ca3b12b6e6fcb9e7747cd56131d8a8047d822?recursive=true&expand=false"
   },
   "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset/resolve/0ebb411abf001fa30ad48fc7e49c5cd5891d5f8a/agent/latest-00000-of-00001.parquet": {
     "bytes": 8224,
@@ -180,5 +201,509 @@
     "retrieved_at": "2026-10-18T16:20:59.133712+00:00",
     "sha256": "27543c495f1d48668ceebc821bca7d5bf0470ce7f6126a7dcc2c2c93fe5c33e6",
     "url": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset/resolve/0ebb411abf001fa30ad48fc7e49c5cd5891d5f8a/webdev/latest-00000-of-00001.parquet"
+  },
+  "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset/resolve/8b599a3c759427b568b742e7ceeca9a516933e25/agent/latest-00000-of-00001.parquet": {
+    "bytes": 8303,
+    "content_type": "application/octet-stream",
+    "retrieved_at": "2026-10-20T12:46:11.544950+00:00",
+    "sha256": "707d67a68a24171d5179f48994fcfe873ca23e28f458a289b05e98a565ba7aaa",
+    "url": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset/resolve/8b599a3c759427b568b742e7ceeca9a516933e25/agent/latest-00000-of-00001.parquet"
+  },
+  "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset/resolve/8b599a3c759427b568b742e7ceeca9a516933e25/agent_bash_recovery_steps/latest-00000-of-00001.parquet": {
+    "bytes": 7712,
+    "content_type": "application/octet-stream",
+    "retrieved_at": "2026-10-20T12:46:11.708049+00:00",
+    "sha256": "07fa4c2c648f685e4f8bf93a54b34fff4cbdacfc12c2d34f77abd9cde3c0191d",
+    "url": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset/resolve/8b599a3c759427b568b742e7ceeca9a516933e25/agent_bash_recovery_steps/latest-00000-of-00001.parquet"
+  },
+  "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset/resolve/8b599a3c759427b568b742e7ceeca9a516933e25/agent_bash_reliability/latest-00000-of-00001.parquet": {
+    "bytes": 7795,
+    "content_type": "application/octet-stream",
+    "retrieved_at": "2026-10-20T12:46:11.914566+00:00",
+    "sha256": "887a4a349e85bcdf6c8530024cbe0c6c895504c56349c322f324e3e2e4bf655c",
+    "url": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset/resolve/8b599a3c759427b568b742e7ceeca9a516933e25/agent_bash_reliability/latest-00000-of-00001.parquet"
+  },
+  "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset/resolve/8b599a3c759427b568b742e7ceeca9a516933e25/agent_bash_reliability_no_prereq/latest-00000-of-00001.parquet": {
+    "bytes": 7801,
+    "content_type": "application/octet-stream",
+    "retrieved_at": "2026-10-20T12:46:12.098305+00:00",
+    "sha256": "fca62fb498b6b53fc82c30524a1c790dfd60c89f4154eae2cd4c6e6ba2df7807",
+    "url": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset/resolve/8b599a3c759427b568b742e7ceeca9a516933e25/agent_bash_reliability_no_prereq/latest-00000-of-00001.parquet"
+  },
+  "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset/resolve/8b599a3c759427b568b742e7ceeca9a516933e25/agent_praise_complaint/latest-00000-of-00001.parquet": {
+    "bytes": 7809,
+    "content_type": "application/octet-stream",
+    "retrieved_at": "2026-10-20T12:46:12.274280+00:00",
+    "sha256": "e706b3731f60c6e68c1f153a1387f21a994b62ed62f19309484ea770298b5551",
+    "url": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset/resolve/8b599a3c759427b568b742e7ceeca9a516933e25/agent_praise_complaint/latest-00000-of-00001.parquet"
+  },
+  "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset/resolve/8b599a3c759427b568b742e7ceeca9a516933e25/agent_steerability/latest-00000-of-00001.parquet": {
+    "bytes": 7838,
+    "content_type": "application/octet-stream",
+    "retrieved_at": "2026-10-20T12:46:12.456854+00:00",
+    "sha256": "915d5f733b421e94c9d1dc4ddcdd33a30798f636362beb95babb2234d881ce6e",
+    "url": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset/resolve/8b599a3c759427b568b742e7ceeca9a516933e25/agent_steerability/latest-00000-of-00001.parquet"
+  },
+  "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset/resolve/8b599a3c759427b568b742e7ceeca9a516933e25/agent_task_outcome_explicit/latest-00000-of-00001.parquet": {
+    "bytes": 7819,
+    "content_type": "application/octet-stream",
+    "retrieved_at": "2026-10-20T12:46:12.628559+00:00",
+    "sha256": "674a4c256de570b9d8c8a9ad30548f78cc28fc6020580221ee0ccb49716eea12",
+    "url": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset/resolve/8b599a3c759427b568b742e7ceeca9a516933e25/agent_task_outcome_explicit/latest-00000-of-00001.parquet"
+  },
+  "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset/resolve/8b599a3c759427b568b742e7ceeca9a516933e25/agent_tool_hallucination/latest-00000-of-00001.parquet": {
+    "bytes": 7868,
+    "content_type": "application/octet-stream",
+    "retrieved_at": "2026-10-20T12:46:12.849818+00:00",
+    "sha256": "f5031862c6b05b7c4fc9bad9d73edc8ac02c4c02b5c2b4d05bb3e246c8e0152b",
+    "url": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset/resolve/8b599a3c759427b568b742e7ceeca9a516933e25/agent_tool_hallucination/latest-00000-of-00001.parquet"
+  },
+  "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset/resolve/8b599a3c759427b568b742e7ceeca9a516933e25/document/latest-00000-of-00001.parquet": {
+    "bytes": 7503,
+    "content_type": "application/octet-stream",
+    "retrieved_at": "2026-10-20T12:46:13.012526+00:00",
+    "sha256": "5fddd9f56aa810f58b49a4463d2d400129c814bd7d76e908120956f86ae5540d",
+    "url": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset/resolve/8b599a3c759427b568b742e7ceeca9a516933e25/document/latest-00000-of-00001.parquet"
+  },
+  "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset/resolve/8b599a3c759427b568b742e7ceeca9a516933e25/document_style_control/latest-00000-of-00001.parquet": {
+    "bytes": 7490,
+    "content_type": "application/octet-stream",
+    "retrieved_at": "2026-10-20T12:46:13.190825+00:00",
+    "sha256": "c3e72313c0436cb60e3619ad805805f55b333fab36047355a81d6e3e624502c1",
+    "url": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset/resolve/8b599a3c759427b568b742e7ceeca9a516933e25/document_style_control/latest-00000-of-00001.parquet"
+  },
+  "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset/resolve/8b599a3c759427b568b742e7ceeca9a516933e25/image_edit/latest-00000-of-00001.parquet": {
+    "bytes": 10685,
+    "content_type": "application/octet-stream",
+    "retrieved_at": "2026-10-20T12:46:13.339041+00:00",
+    "sha256": "2d9aa678049fda03a84d8cc6834d2babf968abf60463572341ad7e8760627929",
+    "url": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset/resolve/8b599a3c759427b568b742e7ceeca9a516933e25/image_edit/latest-00000-of-00001.parquet"
+  },
+  "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset/resolve/8b599a3c759427b568b742e7ceeca9a516933e25/image_to_video/latest-00000-of-00001.parquet": {
+    "bytes": 7877,
+    "content_type": "application/octet-stream",
+    "retrieved_at": "2026-10-20T12:46:13.592126+00:00",
+    "sha256": "55fd7438208d72ff4838978c4dc626060750918edda5c2a6f91fce193241090d",
+    "url": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset/resolve/8b599a3c759427b568b742e7ceeca9a516933e25/image_to_video/latest-00000-of-00001.parquet"
+  },
+  "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset/resolve/8b599a3c759427b568b742e7ceeca9a516933e25/search/latest-00000-of-00001.parquet": {
+    "bytes": 7383,
+    "content_type": "application/octet-stream",
+    "retrieved_at": "2026-10-20T12:46:13.773939+00:00",
+    "sha256": "f9e7c88f49068ca10834991ba1017e9f92d52399541deeb7d79f87acdedfa5d8",
+    "url": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset/resolve/8b599a3c759427b568b742e7ceeca9a516933e25/search/latest-00000-of-00001.parquet"
+  },
+  "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset/resolve/8b599a3c759427b568b742e7ceeca9a516933e25/search_factuality/latest-00000-of-00001.parquet": {
+    "bytes": 7174,
+    "content_type": "application/octet-stream",
+    "retrieved_at": "2026-10-20T12:46:14.003221+00:00",
+    "sha256": "c4588e6f78f5a65444d1fde2bb0733e8ccdabb46db2af7e6345c631eefe90e5a",
+    "url": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset/resolve/8b599a3c759427b568b742e7ceeca9a516933e25/search_factuality/latest-00000-of-00001.parquet"
+  },
+  "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset/resolve/8b599a3c759427b568b742e7ceeca9a516933e25/search_style_control/latest-00000-of-00001.parquet": {
+    "bytes": 7344,
+    "content_type": "application/octet-stream",
+    "retrieved_at": "2026-10-20T12:46:14.176253+00:00",
+    "sha256": "2ac3d9a63ca97bc5d8feecdd100b5de42e16a1d5d219d82e96c7d637eb69556f",
+    "url": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset/resolve/8b599a3c759427b568b742e7ceeca9a516933e25/search_style_control/latest-00000-of-00001.parquet"
+  },
+  "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset/resolve/8b599a3c759427b568b742e7ceeca9a516933e25/text/latest-00000-of-00001.parquet": {
+    "bytes": 613695,
+    "content_type": "application/octet-stream",
+    "retrieved_at": "2026-10-20T12:46:14.445369+00:00",
+    "sha256": "1735d8b7e31781eae4433c4ab32c642868dde6bb755d3367f37e51e1094d7a95",
+    "url": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset/resolve/8b599a3c759427b568b742e7ceeca9a516933e25/text/latest-00000-of-00001.parquet"
+  },
+  "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset/resolve/8b599a3c759427b568b742e7ceeca9a516933e25/text_factuality/latest-00000-of-00001.parquet": {
+    "bytes": 200756,
+    "content_type": "application/octet-stream",
+    "retrieved_at": "2026-10-20T12:46:14.719045+00:00",
+    "sha256": "4fb35b098bf3482487ec8d2ce0f49c2d6f51e12967f57547ba500abe9ed82f5e",
+    "url": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset/resolve/8b599a3c759427b568b742e7ceeca9a516933e25/text_factuality/latest-00000-of-00001.parquet"
+  },
+  "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset/resolve/8b599a3c759427b568b742e7ceeca9a516933e25/text_style_control/latest-00000-of-00001.parquet": {
+    "bytes": 614020,
+    "content_type": "application/octet-stream",
+    "retrieved_at": "2026-10-20T12:46:14.902584+00:00",
+    "sha256": "ddc12ff6cf1e8e40c2e296a2ea2d81aba17b8841404524ef4e13f7a844730a08",
+    "url": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset/resolve/8b599a3c759427b568b742e7ceeca9a516933e25/text_style_control/latest-00000-of-00001.parquet"
+  },
+  "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset/resolve/8b599a3c759427b568b742e7ceeca9a516933e25/text_to_image/latest-00000-of-00001.parquet": {
+    "bytes": 37561,
+    "content_type": "application/octet-stream",
+    "retrieved_at": "2026-10-20T12:46:15.038936+00:00",
+    "sha256": "0c6f2048fa524b5cd3f11104916db0e0b3ef3a428e788c006156e92460074ae0",
+    "url": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset/resolve/8b599a3c759427b568b742e7ceeca9a516933e25/text_to_image/latest-00000-of-00001.parquet"
+  },
+  "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset/resolve/8b599a3c759427b568b742e7ceeca9a516933e25/text_to_video/latest-00000-of-00001.parquet": {
+    "bytes": 7889,
+    "content_type": "application/octet-stream",
+    "retrieved_at": "2026-10-20T12:46:15.186748+00:00",
+    "sha256": "4cbc25e6f3099699723dfb739bb7561978335d2cbf2cc8038d7c091259bb5fc4",
+    "url": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset/resolve/8b599a3c759427b568b742e7ceeca9a516933e25/text_to_video/latest-00000-of-00001.parquet"
+  },
+  "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset/resolve/8b599a3c759427b568b742e7ceeca9a516933e25/video_edit/latest-00000-of-00001.parquet": {
+    "bytes": 5583,
+    "content_type": "application/octet-stream",
+    "retrieved_at": "2026-10-20T12:46:15.364038+00:00",
+    "sha256": "bb11fb01061cbb81214ac0e82182aa88b8764381f332eb133ebea780fdc5eb1c",
+    "url": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset/resolve/8b599a3c759427b568b742e7ceeca9a516933e25/video_edit/latest-00000-of-00001.parquet"
+  },
+  "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset/resolve/8b599a3c759427b568b742e7ceeca9a516933e25/vision/latest-00000-of-00001.parquet": {
+    "bytes": 63791,
+    "content_type": "application/octet-stream",
+    "retrieved_at": "2026-10-20T12:46:15.551839+00:00",
+    "sha256": "56ebfafa4d6b52a016f797340f9437e3b1c3ac8377d7c4ea2160f356fdc8b96e",
+    "url": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset/resolve/8b599a3c759427b568b742e7ceeca9a516933e25/vision/latest-00000-of-00001.parquet"
+  },
+  "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset/resolve/8b599a3c759427b568b742e7ceeca9a516933e25/vision_style_control/latest-00000-of-00001.parquet": {
+    "bytes": 63765,
+    "content_type": "application/octet-stream",
+    "retrieved_at": "2026-10-20T12:46:15.763280+00:00",
+    "sha256": "ceae74f1bc8a0d6c529cbb601e70835bfcd536232244fd60cb599229ecc2d378",
+    "url": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset/resolve/8b599a3c759427b568b742e7ceeca9a516933e25/vision_style_control/latest-00000-of-00001.parquet"
+  },
+  "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset/resolve/8b599a3c759427b568b742e7ceeca9a516933e25/webdev/latest-00000-of-00001.parquet": {
+    "bytes": 30322,
+    "content_type": "application/octet-stream",
+    "retrieved_at": "2026-10-20T12:46:15.965256+00:00",
+    "sha256": "8815e15de7fc6fa315bd6d2de0562fc4ec923deb5b76eed31e914990ab81ec2f",
+    "url": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset/resolve/8b599a3c759427b568b742e7ceeca9a516933e25/webdev/latest-00000-of-00001.parquet"
+  },
+  "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset/resolve/9041150e8a502da9f0e75c89824d34ad7dba7072/agent/latest-00000-of-00001.parquet": {
+    "bytes": 8289,
+    "content_type": "application/octet-stream",
+    "retrieved_at": "2026-10-21T12:58:55.966298+00:00",
+    "sha256": "de4e63c7916a035bb0523727b07e30faa7762b9e9116ca7018b467b188833af8",
+    "url": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset/resolve/9041150e8a502da9f0e75c89824d34ad7dba7072/agent/latest-00000-of-00001.parquet"
+  },
+  "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset/resolve/9041150e8a502da9f0e75c89824d34ad7dba7072/agent_bash_recovery_steps/latest-00000-of-00001.parquet": {
+    "bytes": 7712,
+    "content_type": "application/octet-stream",
+    "retrieved_at": "2026-10-21T12:58:56.299118+00:00",
+    "sha256": "07fa4c2c648f685e4f8bf93a54b34fff4cbdacfc12c2d34f77abd9cde3c0191d",
+    "url": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset/resolve/9041150e8a502da9f0e75c89824d34ad7dba7072/agent_bash_recovery_steps/latest-00000-of-00001.parquet"
+  },
+  "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset/resolve/9041150e8a502da9f0e75c89824d34ad7dba7072/agent_bash_reliability/latest-00000-of-00001.parquet": {
+    "bytes": 7802,
+    "content_type": "application/octet-stream",
+    "retrieved_at": "2026-10-21T12:58:56.592952+00:00",
+    "sha256": "f8476a513a5d2451d616aa26a5f7146ff5e59b3dddd1bcee5a9423417296f0e1",
+    "url": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset/resolve/9041150e8a502da9f0e75c89824d34ad7dba7072/agent_bash_reliability/latest-00000-of-00001.parquet"
+  },
+  "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset/resolve/9041150e8a502da9f0e75c89824d34ad7dba7072/agent_bash_reliability_no_prereq/latest-00000-of-00001.parquet": {
+    "bytes": 7801,
+    "content_type": "application/octet-stream",
+    "retrieved_at": "2026-10-21T12:58:56.976109+00:00",
+    "sha256": "fca62fb498b6b53fc82c30524a1c790dfd60c89f4154eae2cd4c6e6ba2df7807",
+    "url": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset/resolve/9041150e8a502da9f0e75c89824d34ad7dba7072/agent_bash_reliability_no_prereq/latest-00000-of-00001.parquet"
+  },
+  "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset/resolve/9041150e8a502da9f0e75c89824d34ad7dba7072/agent_praise_complaint/latest-00000-of-00001.parquet": {
+    "bytes": 7803,
+    "content_type": "application/octet-stream",
+    "retrieved_at": "2026-10-21T12:58:57.325917+00:00",
+    "sha256": "074621ab192a16e3c80a312864edd7c6f37a29f7484252d4ff627315be3859e2",
+    "url": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset/resolve/9041150e8a502da9f0e75c89824d34ad7dba7072/agent_praise_complaint/latest-00000-of-00001.parquet"
+  },
+  "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset/resolve/9041150e8a502da9f0e75c89824d34ad7dba7072/agent_steerability/latest-00000-of-00001.parquet": {
+    "bytes": 7835,
+    "content_type": "application/octet-stream",
+    "retrieved_at": "2026-10-21T12:58:57.672621+00:00",
+    "sha256": "569ceef82b64c3ac83f3c6da14c330782d123b734afae0811a948b3ec83ebda9",
+    "url": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset/resolve/9041150e8a502da9f0e75c89824d34ad7dba7072/agent_steerability/latest-00000-of-00001.parquet"
+  },
+  "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset/resolve/9041150e8a502da9f0e75c89824d34ad7dba7072/agent_task_outcome_explicit/latest-00000-of-00001.parquet": {
+    "bytes": 7821,
+    "content_type": "application/octet-stream",
+    "retrieved_at": "2026-10-21T12:58:57.965329+00:00",
+    "sha256": "1eaa0bc1864f58a1444e7aa7646046c11bccc0c3c92c83e8ffbd919923fd0058",
+    "url": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset/resolve/9041150e8a502da9f0e75c89824d34ad7dba7072/agent_task_outcome_explicit/latest-00000-of-00001.parquet"
+  },
+  "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset/resolve/9041150e8a502da9f0e75c89824d34ad7dba7072/agent_tool_hallucination/latest-00000-of-00001.parquet": {
+    "bytes": 7867,
+    "content_type": "application/octet-stream",
+    "retrieved_at": "2026-10-21T12:58:58.368191+00:00",
+    "sha256": "54aea424b54ed4af42d086483e7e3a54eb47d7804797062b7f220b6fbcc659e0",
+    "url": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset/resolve/9041150e8a502da9f0e75c89824d34ad7dba7072/agent_tool_hallucination/latest-00000-of-00001.parquet"
+  },
+  "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset/resolve/9041150e8a502da9f0e75c89824d34ad7dba7072/document/latest-00000-of-00001.parquet": {
+    "bytes": 7503,
+    "content_type": "application/octet-stream",
+    "retrieved_at": "2026-10-21T12:58:58.683241+00:00",
+    "sha256": "5fddd9f56aa810f58b49a4463d2d400129c814bd7d76e908120956f86ae5540d",
+    "url": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset/resolve/9041150e8a502da9f0e75c89824d34ad7dba7072/document/latest-00000-of-00001.parquet"
+  },
+  "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset/resolve/9041150e8a502da9f0e75c89824d34ad7dba7072/document_style_control/latest-00000-of-00001.parquet": {
+    "bytes": 7490,
+    "content_type": "application/octet-stream",
+    "retrieved_at": "2026-10-21T12:58:58.987458+00:00",
+    "sha256": "c3e72313c0436cb60e3619ad805805f55b333fab36047355a81d6e3e624502c1",
+    "url": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset/resolve/9041150e8a502da9f0e75c89824d34ad7dba7072/document_style_control/latest-00000-of-00001.parquet"
+  },
+  "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset/resolve/9041150e8a502da9f0e75c89824d34ad7dba7072/image_edit/latest-00000-of-00001.parquet": {
+    "bytes": 10821,
+    "content_type": "application/octet-stream",
+    "retrieved_at": "2026-10-21T12:58:59.358826+00:00",
+    "sha256": "f2c989046ce467b756343850f6323dd755d7700a1ed7d188470c97cbd3ec5c87",
+    "url": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset/resolve/9041150e8a502da9f0e75c89824d34ad7dba7072/image_edit/latest-00000-of-00001.parquet"
+  },
+  "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset/resolve/9041150e8a502da9f0e75c89824d34ad7dba7072/image_to_video/latest-00000-of-00001.parquet": {
+    "bytes": 7877,
+    "content_type": "application/octet-stream",
+    "retrieved_at": "2026-10-21T12:58:59.655781+00:00",
+    "sha256": "55fd7438208d72ff4838978c4dc626060750918edda5c2a6f91fce193241090d",
+    "url": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset/resolve/9041150e8a502da9f0e75c89824d34ad7dba7072/image_to_video/latest-00000-of-00001.parquet"
+  },
+  "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset/resolve/9041150e8a502da9f0e75c89824d34ad7dba7072/search/latest-00000-of-00001.parquet": {
+    "bytes": 7383,
+    "content_type": "application/octet-stream",
+    "retrieved_at": "2026-10-21T12:58:59.989336+00:00",
+    "sha256": "f9e7c88f49068ca10834991ba1017e9f92d52399541deeb7d79f87acdedfa5d8",
+    "url": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset/resolve/9041150e8a502da9f0e75c89824d34ad7dba7072/search/latest-00000-of-00001.parquet"
+  },
+  "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset/resolve/9041150e8a502da9f0e75c89824d34ad7dba7072/search_factuality/latest-00000-of-00001.parquet": {
+    "bytes": 7174,
+    "content_type": "application/octet-stream",
+    "retrieved_at": "2026-10-21T12:59:00.387523+00:00",
+    "sha256": "c4588e6f78f5a65444d1fde2bb0733e8ccdabb46db2af7e6345c631eefe90e5a",
+    "url": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset/resolve/9041150e8a502da9f0e75c89824d34ad7dba7072/search_factuality/latest-00000-of-00001.parquet"
+  },
+  "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset/resolve/9041150e8a502da9f0e75c89824d34ad7dba7072/search_style_control/latest-00000-of-00001.parquet": {
+    "bytes": 7344,
+    "content_type": "application/octet-stream",
+    "retrieved_at": "2026-10-21T12:59:00.702142+00:00",
+    "sha256": "2ac3d9a63ca97bc5d8feecdd100b5de42e16a1d5d219d82e96c7d637eb69556f",
+    "url": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset/resolve/9041150e8a502da9f0e75c89824d34ad7dba7072/search_style_control/latest-00000-of-00001.parquet"
+  },
+  "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset/resolve/9041150e8a502da9f0e75c89824d34ad7dba7072/text/latest-00000-of-00001.parquet": {
+    "bytes": 619273,
+    "content_type": "application/octet-stream",
+    "retrieved_at": "2026-10-21T12:59:01.092932+00:00",
+    "sha256": "0fe4c3ed1770e257140b1ff69b8e493d5404aa09cabdc58575b9ef4348e9a69b",
+    "url": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset/resolve/9041150e8a502da9f0e75c89824d34ad7dba7072/text/latest-00000-of-00001.parquet"
+  },
+  "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset/resolve/9041150e8a502da9f0e75c89824d34ad7dba7072/text_factuality/latest-00000-of-00001.parquet": {
+    "bytes": 202952,
+    "content_type": "application/octet-stream",
+    "retrieved_at": "2026-10-21T12:59:01.608313+00:00",
+    "sha256": "78fc8fd4b6c0081346b216eff489374d3cb8b6a270d7e56660daadb98f004a03",
+    "url": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset/resolve/9041150e8a502da9f0e75c89824d34ad7dba7072/text_factuality/latest-00000-of-00001.parquet"
+  },
+  "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset/resolve/9041150e8a502da9f0e75c89824d34ad7dba7072/text_style_control/latest-00000-of-00001.parquet": {
+    "bytes": 619871,
+    "content_type": "application/octet-stream",
+    "retrieved_at": "2026-10-21T12:59:01.942162+00:00",
+    "sha256": "4a223be224719e17fb4328621b67436eb8dcf4f7795c655a98e4e11fce885cc7",
+    "url": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset/resolve/9041150e8a502da9f0e75c89824d34ad7dba7072/text_style_control/latest-00000-of-00001.parquet"
+  },
+  "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset/resolve/9041150e8a502da9f0e75c89824d34ad7dba7072/text_to_image/latest-00000-of-00001.parquet": {
+    "bytes": 37561,
+    "content_type": "application/octet-stream",
+    "retrieved_at": "2026-10-21T12:59:02.264899+00:00",
+    "sha256": "0c6f2048fa524b5cd3f11104916db0e0b3ef3a428e788c006156e92460074ae0",
+    "url": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset/resolve/9041150e8a502da9f0e75c89824d34ad7dba7072/text_to_image/latest-00000-of-00001.parquet"
+  },
+  "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset/resolve/9041150e8a502da9f0e75c89824d34ad7dba7072/text_to_video/latest-00000-of-00001.parquet": {
+    "bytes": 7889,
+    "content_type": "application/octet-stream",
+    "retrieved_at": "2026-10-21T12:59:02.577719+00:00",
+    "sha256": "4cbc25e6f3099699723dfb739bb7561978335d2cbf2cc8038d7c091259bb5fc4",
+    "url": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset/resolve/9041150e8a502da9f0e75c89824d34ad7dba7072/text_to_video/latest-00000-of-00001.parquet"
+  },
+  "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset/resolve/9041150e8a502da9f0e75c89824d34ad7dba7072/video_edit/latest-00000-of-00001.parquet": {
+    "bytes": 5583,
+    "content_type": "application/octet-stream",
+    "retrieved_at": "2026-10-21T12:59:02.872887+00:00",
+    "sha256": "bb11fb01061cbb81214ac0e82182aa88b8764381f332eb133ebea780fdc5eb1c",
+    "url": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset/resolve/9041150e8a502da9f0e75c89824d34ad7dba7072/video_edit/latest-00000-of-00001.parquet"
+  },
+  "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset/resolve/9041150e8a502da9f0e75c89824d34ad7dba7072/vision/latest-00000-of-00001.parquet": {
+    "bytes": 63791,
+    "content_type": "application/octet-stream",
+    "retrieved_at": "2026-10-21T12:59:03.174164+00:00",
+    "sha256": "56ebfafa4d6b52a016f797340f9437e3b1c3ac8377d7c4ea2160f356fdc8b96e",
+    "url": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset/resolve/9041150e8a502da9f0e75c89824d34ad7dba7072/vision/latest-00000-of-00001.parquet"
+  },
+  "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset/resolve/9041150e8a502da9f0e75c89824d34ad7dba7072/vision_style_control/latest-00000-of-00001.parquet": {
+    "bytes": 63765,
+    "content_type": "application/octet-stream",
+    "retrieved_at": "2026-10-21T12:59:03.485712+00:00",
+    "sha256": "ceae74f1bc8a0d6c529cbb601e70835bfcd536232244fd60cb599229ecc2d378",
+    "url": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset/resolve/9041150e8a502da9f0e75c89824d34ad7dba7072/vision_style_control/latest-00000-of-00001.parquet"
+  },
+  "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset/resolve/9041150e8a502da9f0e75c89824d34ad7dba7072/webdev/latest-00000-of-00001.parquet": {
+    "bytes": 30322,
+    "content_type": "application/octet-stream",
+    "retrieved_at": "2026-10-21T12:59:03.788477+00:00",
+    "sha256": "8815e15de7fc6fa315bd6d2de0562fc4ec923deb5b76eed31e914990ab81ec2f",
+    "url": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset/resolve/9041150e8a502da9f0e75c89824d34ad7dba7072/webdev/latest-00000-of-00001.parquet"
+  },
+  "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset/resolve/a64ca3b12b6e6fcb9e7747cd56131d8a8047d822/agent/latest-00000-of-00001.parquet": {
+    "bytes": 8224,
+    "content_type": "application/octet-stream",
+    "retrieved_at": "2026-10-19T14:43:58.811061+00:00",
+    "sha256": "0c2ee615601922f55c5c02da4b805144569a47277cc3b8339b1743eb68841c4f",
+    "url": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset/resolve/a64ca3b12b6e6fcb9e7747cd56131d8a8047d822/agent/latest-00000-of-00001.parquet"
+  },
+  "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset/resolve/a64ca3b12b6e6fcb9e7747cd56131d8a8047d822/agent_bash_recovery_steps/latest-00000-of-00001.parquet": {
+    "bytes": 7712,
+    "content_type": "application/octet-stream",
+    "retrieved_at": "2026-10-19T14:43:58.992734+00:00",
+    "sha256": "07fa4c2c648f685e4f8bf93a54b34fff4cbdacfc12c2d34f77abd9cde3c0191d",
+    "url": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset/resolve/a64ca3b12b6e6fcb9e7747cd56131d8a8047d822/agent_bash_recovery_steps/latest-00000-of-00001.parquet"
+  },
+  "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset/resolve/a64ca3b12b6e6fcb9e7747cd56131d8a8047d822/agent_bash_reliability/latest-00000-of-00001.parquet": {
+    "bytes": 7750,
+    "content_type": "application/octet-stream",
+    "retrieved_at": "2026-10-19T14:43:59.174076+00:00",
+    "sha256": "4bfa74dc062dfbc65e6c35983d71e0cac553a9f607090dc3552470433e48bf1a",
+    "url": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset/resolve/a64ca3b12b6e6fcb9e7747cd56131d8a8047d822/agent_bash_reliability/latest-00000-of-00001.parquet"
+  },
+  "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset/resolve/a64ca3b12b6e6fcb9e7747cd56131d8a8047d822/agent_bash_reliability_no_prereq/latest-00000-of-00001.parquet": {
+    "bytes": 7801,
+    "content_type": "application/octet-stream",
+    "retrieved_at": "2026-10-19T14:43:59.344622+00:00",
+    "sha256": "fca62fb498b6b53fc82c30524a1c790dfd60c89f4154eae2cd4c6e6ba2df7807",
+    "url": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset/resolve/a64ca3b12b6e6fcb9e7747cd56131d8a8047d822/agent_bash_reliability_no_prereq/latest-00000-of-00001.parquet"
+  },
+  "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset/resolve/a64ca3b12b6e6fcb9e7747cd56131d8a8047d822/agent_praise_complaint/latest-00000-of-00001.parquet": {
+    "bytes": 7777,
+    "content_type": "application/octet-stream",
+    "retrieved_at": "2026-10-19T14:43:59.537142+00:00",
+    "sha256": "62138fa8f364e935be95c205a05c80979c455d13974d5659fde1a1ce0b490e53",
+    "url": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset/resolve/a64ca3b12b6e6fcb9e7747cd56131d8a8047d822/agent_praise_complaint/latest-00000-of-00001.parquet"
+  },
+  "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset/resolve/a64ca3b12b6e6fcb9e7747cd56131d8a8047d822/agent_steerability/latest-00000-of-00001.parquet": {
+    "bytes": 7774,
+    "content_type": "application/octet-stream",
+    "retrieved_at": "2026-10-19T14:43:59.715291+00:00",
+    "sha256": "9afc441857cfc11db03abd51f9f3987fdbccab3f4f280e8bde51a97b0f821e69",
+    "url": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset/resolve/a64ca3b12b6e6fcb9e7747cd56131d8a8047d822/agent_steerability/latest-00000-of-00001.parquet"
+  },
+  "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset/resolve/a64ca3b12b6e6fcb9e7747cd56131d8a8047d822/agent_task_outcome_explicit/latest-00000-of-00001.parquet": {
+    "bytes": 7764,
+    "content_type": "application/octet-stream",
+    "retrieved_at": "2026-10-19T14:43:59.888273+00:00",
+    "sha256": "4779100f5524530edd5cb67b047144e64e4780be67881818dfc1e3f22cd2e9d7",
+    "url": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset/resolve/a64ca3b12b6e6fcb9e7747cd56131d8a8047d822/agent_task_outcome_explicit/latest-00000-of-00001.parquet"
+  },
+  "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset/resolve/a64ca3b12b6e6fcb9e7747cd56131d8a8047d822/agent_tool_hallucination/latest-00000-of-00001.parquet": {
+    "bytes": 7814,
+    "content_type": "application/octet-stream",
+    "retrieved_at": "2026-10-19T14:44:00.105106+00:00",
+    "sha256": "1737fdc54cdc0711502a0d7268ec7bc0af6e2f6eff0ffaf8c8c5fadcfefc4d88",
+    "url": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset/resolve/a64ca3b12b6e6fcb9e7747cd56131d8a8047d822/agent_tool_hallucination/latest-00000-of-00001.parquet"
+  },
+  "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset/resolve/a64ca3b12b6e6fcb9e7747cd56131d8a8047d822/document/latest-00000-of-00001.parquet": {
+    "bytes": 7503,
+    "content_type": "application/octet-stream",
+    "retrieved_at": "2026-10-19T14:44:00.280726+00:00",
+    "sha256": "5fddd9f56aa810f58b49a4463d2d400129c814bd7d76e908120956f86ae5540d",
+    "url": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset/resolve/a64ca3b12b6e6fcb9e7747cd56131d8a8047d822/document/latest-00000-of-00001.parquet"
+  },
+  "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset/resolve/a64ca3b12b6e6fcb9e7747cd56131d8a8047d822/document_style_control/latest-00000-of-00001.parquet": {
+    "bytes": 7490,
+    "content_type": "application/octet-stream",
+    "retrieved_at": "2026-10-19T14:44:00.459319+00:00",
+    "sha256": "c3e72313c0436cb60e3619ad805805f55b333fab36047355a81d6e3e624502c1",
+    "url": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset/resolve/a64ca3b12b6e6fcb9e7747cd56131d8a8047d822/document_style_control/latest-00000-of-00001.parquet"
+  },
+  "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset/resolve/a64ca3b12b6e6fcb9e7747cd56131d8a8047d822/image_edit/latest-00000-of-00001.parquet": {
+    "bytes": 10685,
+    "content_type": "application/octet-stream",
+    "retrieved_at": "2026-10-19T14:44:00.648268+00:00",
+    "sha256": "2d9aa678049fda03a84d8cc6834d2babf968abf60463572341ad7e8760627929",
+    "url": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset/resolve/a64ca3b12b6e6fcb9e7747cd56131d8a8047d822/image_edit/latest-00000-of-00001.parquet"
+  },
+  "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset/resolve/a64ca3b12b6e6fcb9e7747cd56131d8a8047d822/image_to_video/latest-00000-of-00001.parquet": {
+    "bytes": 7877,
+    "content_type": "application/octet-stream",
+    "retrieved_at": "2026-10-19T14:44:00.828530+00:00",
+    "sha256": "55fd7438208d72ff4838978c4dc626060750918edda5c2a6f91fce193241090d",
+    "url": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset/resolve/a64ca3b12b6e6fcb9e7747cd56131d8a8047d822/image_to_video/latest-00000-of-00001.parquet"
+  },
+  "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset/resolve/a64ca3b12b6e6fcb9e7747cd56131d8a8047d822/search/latest-00000-of-00001.parquet": {
+    "bytes": 7383,
+    "content_type": "application/octet-stream",
+    "retrieved_at": "2026-10-19T14:44:01.004683+00:00",
+    "sha256": "f9e7c88f49068ca10834991ba1017e9f92d52399541deeb7d79f87acdedfa5d8",
+    "url": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset/resolve/a64ca3b12b6e6fcb9e7747cd56131d8a8047d822/search/latest-00000-of-00001.parquet"
+  },
+  "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset/resolve/a64ca3b12b6e6fcb9e7747cd56131d8a8047d822/search_factuality/latest-00000-of-00001.parquet": {
+    "bytes": 7174,
+    "content_type": "application/octet-stream",
+    "retrieved_at": "2026-10-19T14:44:01.176170+00:00",
+    "sha256": "c4588e6f78f5a65444d1fde2bb0733e8ccdabb46db2af7e6345c631eefe90e5a",
+    "url": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset/resolve/a64ca3b12b6e6fcb9e7747cd56131d8a8047d822/search_factuality/latest-00000-of-00001.parquet"
+  },
+  "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset/resolve/a64ca3b12b6e6fcb9e7747cd56131d8a8047d822/search_style_control/latest-00000-of-00001.parquet": {
+    "bytes": 7344,
+    "content_type": "application/octet-stream",
+    "retrieved_at": "2026-10-19T14:44:01.362296+00:00",
+    "sha256": "2ac3d9a63ca97bc5d8feecdd100b5de42e16a1d5d219d82e96c7d637eb69556f",
+    "url": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset/resolve/a64ca3b12b6e6fcb9e7747cd56131d8a8047d822/search_style_control/latest-00000-of-00001.parquet"
+  },
+  "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset/resolve/a64ca3b12b6e6fcb9e7747cd56131d8a8047d822/text/latest-00000-of-00001.parquet": {
+    "bytes": 613695,
+    "content_type": "application/octet-stream",
+    "retrieved_at": "2026-10-19T14:44:01.712648+00:00",
+    "sha256": "1735d8b7e31781eae4433c4ab32c642868dde6bb755d3367f37e51e1094d7a95",
+    "url": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset/resolve/a64ca3b12b6e6fcb9e7747cd56131d8a8047d822/text/latest-00000-of-00001.parquet"
+  },
+  "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset/resolve/a64ca3b12b6e6fcb9e7747cd56131d8a8047d822/text_factuality/latest-00000-of-00001.parquet": {
+    "bytes": 200756,
+    "content_type": "application/octet-stream",
+    "retrieved_at": "2026-10-19T14:44:01.875194+00:00",
+    "sha256": "4fb35b098bf3482487ec8d2ce0f49c2d6f51e12967f57547ba500abe9ed82f5e",
+    "url": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset/resolve/a64ca3b12b6e6fcb9e7747cd56131d8a8047d822/text_factuality/latest-00000-of-00001.parquet"
+  },
+  "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset/resolve/a64ca3b12b6e6fcb9e7747cd56131d8a8047d822/text_style_control/latest-00000-of-00001.parquet": {
+    "bytes": 614020,
+    "content_type": "application/octet-stream",
+    "retrieved_at": "2026-10-19T14:44:02.074530+00:00",
+    "sha256": "ddc12ff6cf1e8e40c2e296a2ea2d81aba17b8841404524ef4e13f7a844730a08",
+    "url": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset/resolve/a64ca3b12b6e6fcb9e7747cd56131d8a8047d822/text_style_control/latest-00000-of-00001.parquet"
+  },
+  "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset/resolve/a64ca3b12b6e6fcb9e7747cd56131d8a8047d822/text_to_image/latest-00000-of-00001.parquet": {
+    "bytes": 37561,
+    "content_type": "application/octet-stream",
+    "retrieved_at": "2026-10-19T14:44:02.295343+00:00",
+    "sha256": "0c6f2048fa524b5cd3f11104916db0e0b3ef3a428e788c006156e92460074ae0",
+    "url": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset/resolve/a64ca3b12b6e6fcb9e7747cd56131d8a8047d822/text_to_image/latest-00000-of-00001.parquet"
+  },
+  "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset/resolve/a64ca3b12b6e6fcb9e7747cd56131d8a8047d822/text_to_video/latest-00000-of-00001.parquet": {
+    "bytes": 7889,
+    "content_type": "application/octet-stream",
+    "retrieved_at": "2026-10-19T14:44:02.467335+00:00",
+    "sha256": "4cbc25e6f3099699723dfb739bb7561978335d2cbf2cc8038d7c091259bb5fc4",
+    "url": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset/resolve/a64ca3b12b6e6fcb9e7747cd56131d8a8047d822/text_to_video/latest-00000-of-00001.parquet"
+  },
+  "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset/resolve/a64ca3b12b6e6fcb9e7747cd56131d8a8047d822/video_edit/latest-00000-of-00001.parquet": {
+    "bytes": 5583,
+    "content_type": "application/octet-stream",
+    "retrieved_at": "2026-10-19T14:44:02.676758+00:00",
+    "sha256": "bb11fb01061cbb81214ac0e82182aa88b8764381f332eb133ebea780fdc5eb1c",
+    "url": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset/resolve/a64ca3b12b6e6fcb9e7747cd56131d8a8047d822/video_edit/latest-00000-of-00001.parquet"
+  },
+  "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset/resolve/a64ca3b12b6e6fcb9e7747cd56131d8a8047d822/vision/latest-00000-of-00001.parquet": {
+    "bytes": 61957,
+    "content_type": "application/octet-stream",
+    "retrieved_at": "2026-10-19T14:44:02.862627+00:00",
+    "sha256": "70294b682bb5319f1fb661cb23b7a51c3798232790ee7482e1a950b9c2e868f7",
+    "url": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset/resolve/a64ca3b12b6e6fcb9e7747cd56131d8a8047d822/vision/latest-00000-of-00001.parquet"
+  },
+  "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset/resolve/a64ca3b12b6e6fcb9e7747cd56131d8a8047d822/vision_style_control/latest-00000-of-00001.parquet": {
+    "bytes": 61937,
+    "content_type": "application/octet-stream",
+    "retrieved_at": "2026-10-19T14:44:03.044561+00:00",
+    "sha256": "66c056a058c8dbc1d484688ecf5d101b72176c32d29d16d70ea99bbc12c5a67c",
+    "url": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset/resolve/a64ca3b12b6e6fcb9e7747cd56131d8a8047d822/vision_style_control/latest-00000-of-00001.parquet"
+  },
+  "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset/resolve/a64ca3b12b6e6fcb9e7747cd56131d8a8047d822/webdev/latest-00000-of-00001.parquet": {
+    "bytes": 29592,
+    "content_type": "application/octet-stream",
+    "retrieved_at": "2026-10-19T14:44:03.218198+00:00",
+    "sha256": "5d0b64ea5515fa31c6e1e3282745f8dc14536d0e183729f17340d8311f77db5e",
+    "url": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset/resolve/a64ca3b12b6e6fcb9e7747cd56131d8a8047d822/webdev/latest-00000-of-00001.parquet"
   }
 }

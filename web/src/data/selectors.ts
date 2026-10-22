@@ -349,13 +349,16 @@ export function previewScore(data: AppData, row: DisplayRow, benchmarkId: string
     const alts = otherConfigurationScores(data, row, benchmarkId);
     return alts.length ? { low: alts[0]!, high: alts[alts.length - 1]! } : null;
   }
-  if (cell.state === 'disputed' || isSaturationExcluded(data, benchmarkId, cell, saturationStates)) return null;
-  const direct = singleReportedValue(row, benchmarkId);
-  if (direct !== null) return { low: direct, high: direct };
+  if (isSaturationExcluded(data, benchmarkId, cell, saturationStates)) return null;
   if (cell.observation_ids.length > 1) {
+    // Multi-report cells rank by their span even when the duplicate merge flagged them disputed,
+    // mirroring the matrix score button, which reports the range in that case.
     const values = reportedCellScores(data, cell, data.catalog.benchmarks.find(b => b.id === benchmarkId)?.unit ?? cell.unit ?? '');
     return values.length ? { low: values[0]!, high: values[values.length - 1]! } : null;
   }
+  if (cell.state === 'disputed') return null;
+  const direct = singleReportedValue(row, benchmarkId);
+  if (direct !== null) return { low: direct, high: direct };
   return null;
 }
 /** Compact configuration label shared by the desktop badge and portrait cards. */

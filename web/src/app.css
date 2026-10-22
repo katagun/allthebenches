@@ -507,13 +507,13 @@
 .app-shell[data-mobile-view="true"] .portrait-results-toolbar>div{width:100%;justify-content:space-between}
 .app-shell[data-mobile-view="true"] .portrait-results-toolbar button{height:44px}
 .app-shell[data-mobile-view="true"] .portrait-model-list{overflow:visible;flex:none}
-.app-shell[data-mobile-view="true"] .portrait-model-card{grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:10px;padding:0;min-height:44px}
+.app-shell[data-mobile-view="true"] .portrait-model-card{grid-template-columns:minmax(0,1fr) minmax(0,1.4fr);gap:10px;padding:0;min-height:44px}
 .app-shell[data-mobile-view="true"] .portrait-model-identity .model-link{font-size:12px;white-space:nowrap;display:flex;align-items:center;min-height:44px}
 .mobile-model-setup{display:block;color:var(--muted-foreground);font-size:10px;margin-top:3px}
 .app-shell[data-mobile-view="true"] .portrait-model-score{display:flex;align-items:center;gap:12px;min-width:0}
 .mobile-score-track{position:relative;display:block;flex:1;height:10px;background:var(--muted);border-radius:3px;overflow:hidden}
 .mobile-score-bar{position:absolute;top:0;height:100%;border-radius:3px}
-.app-shell[data-mobile-view="true"] .portrait-model-score .score-button{margin-left:auto;flex:0 0 auto;min-width:44px;width:104px;max-width:104px;white-space:normal;overflow-wrap:anywhere;min-height:44px;padding:4px 0;background:transparent;border:0;font-size:15px}
+.app-shell[data-mobile-view="true"] .portrait-model-score .score-button{margin-left:auto;flex:0 0 auto;min-width:44px;width:120px;max-width:120px;white-space:normal;overflow-wrap:anywhere;min-height:44px;padding:4px 0;background:transparent;border:0;font-size:15px}
 .app-shell[data-mobile-view="true"] .portrait-model-score .score-button::before{display:none}
 .app-shell[data-mobile-view="true"] .portrait-evidence-hint{padding:16px 0;line-height:1.5}
 .mobile-settings{gap:0;max-height:100dvh}

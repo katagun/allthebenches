@@ -197,7 +197,7 @@ describe('alternate setup numeric previews', () => {
 });
 
 describe('portrait preview scores', () => {
-  it('prefers the single reported value, then the multi-report midpoint, never disputed cells', () => {
+  it('prefers the single reported value, then the multi-report span, never single disputed cells', () => {
     const single = dataset({ c1: { b1: 90 }, c2: { b1: 70 } });
     expect(previewScore(single, rowsForView(single, structuredClone(DEFAULT_VIEW), new Set())[0], 'b1', [])).toEqual({ low: 90, high: 90 });
 
@@ -206,9 +206,10 @@ describe('portrait preview scores', () => {
     multi.details.observations = [80, 100].map((value, i) => ({ id: `r${i}`, configuration_id: 'c1', benchmark_id: 'b1', value, unit: '%', review_state: 'reviewed', reporting_relationship: 'self_report', series_id: null }));
     expect(previewScore(multi, rowsForView(multi, structuredClone(DEFAULT_VIEW), new Set())[0], 'b1', [])).toEqual({ low: 80, high: 100 });
 
-    multi.results.cells[0].state = 'disputed';
-    const disputedRow = rowsForView(multi, structuredClone(DEFAULT_VIEW), new Set(['model'])).find(r => r.configuration.id === 'c1')!;
-    expect(previewScore(multi, disputedRow, 'b1', [])).toBeNull();
+    const contested = dataset({ c1: { b1: 90 }, c2: { b1: 70 } });
+    contested.results.cells[0].state = 'disputed';
+    const disputedRow = rowsForView(contested, structuredClone(DEFAULT_VIEW), new Set(['model'])).find(r => r.configuration.id === 'c1')!;
+    expect(previewScore(contested, disputedRow, 'b1', [])).toBeNull();
   });
   it('previews other-setup scores only when this configuration has no cell', () => {
     const data = dataset({ c1: { b2: 10 }, c2: { b1: 60 }, c3: { b1: 80 } });
@@ -216,6 +217,14 @@ describe('portrait preview scores', () => {
     expect(row.configuration.id).toBe('c1');
     expect(previewScore(data, row, 'b1', [])).toEqual({ low: 60, high: 80 });
     expect(previewScore(data, row, 'missing', [])).toBeNull();
+  });
+  it('ranks duplicate merged cells by their reported span', () => {
+    const data = dataset({ c1: { b1: 90 } });
+    data.results.cells.push({ configuration_id: 'c1', benchmark_id: 'b1', observation_ids: ['o-c1-b1b'], state: 'selected', value: 70, unit: '%', series_id: null });
+    data.details.observations = [90, 70].map((value, i) => ({ id: i ? 'o-c1-b1b' : 'o-c1-b1', configuration_id: 'c1', benchmark_id: 'b1', value, unit: '%', review_state: 'reviewed', reporting_relationship: 'self_report', series_id: null }));
+    const row = rowsForView(data, structuredClone(DEFAULT_VIEW), new Set())[0];
+    expect(row.observations.get('b1')!.state).toBe('disputed');
+    expect(previewScore(data, row, 'b1', [])).toEqual({ low: 70, high: 90 });
   });
   it('treats saturation-excluded cells as missing', () => {
     const data = dataset({ c1: { b1: 90 } });

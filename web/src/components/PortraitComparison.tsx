@@ -20,15 +20,17 @@ type Props = {
   renderModel: (id: string) => ReactNode;
   renderScore: (row: DisplayRow, benchmark: BenchmarkVariant) => ReactNode;
   onScoreOpen: (row: DisplayRow, benchmark: BenchmarkVariant) => void;
+  rankValue?: (row: DisplayRow, benchmark: BenchmarkVariant) => number | null;
 };
 
-export function PortraitComparison({ rows, benchmarks, selectedBenchmarkId, onBenchmarkChange, hideEmpty, busy, error, renderModel, renderScore, onScoreOpen }: Props) {
+export function PortraitComparison({ rows, benchmarks, selectedBenchmarkId, onBenchmarkChange, hideEmpty, busy, error, renderModel, renderScore, onScoreOpen, rankValue = (row, benchmark) => singleReportedValue(row, benchmark.id) }: Props) {
   const [pickerOpen, setPickerOpen] = useState(false);
   const [query, setQuery] = useState('');
   const [page, setPage] = useState(0);
   const selected = useMemo(() => {
     const explicit = benchmarks.find(item => item.id === selectedBenchmarkId);
     if (explicit) return explicit;
+    // Default to the benchmark with the most exact-configuration scores; previews must not move the default.
     return benchmarks.reduce<BenchmarkVariant | undefined>((best, item) => {
       const coverage = rows.reduce((count, row) => count + Number(singleReportedValue(row, item.id) !== null), 0);
       if (!best) return item;
@@ -46,12 +48,12 @@ export function PortraitComparison({ rows, benchmarks, selectedBenchmarkId, onBe
   const candidates = useMemo(() => {
     if (!selected) return [];
     return [...(hideEmpty ? rows.filter(row => hasResultOnBenchmarks(row, [selected.id])) : rows)].sort((a, b) => {
-      const left = singleReportedValue(a, selected.id);
-      const right = singleReportedValue(b, selected.id);
+      const left = rankValue(a, selected);
+      const right = rankValue(b, selected);
       if (left === null || right === null) return left === right ? a.model.name.localeCompare(b.model.name) : left === null ? 1 : -1;
       return selected.direction === 'higher' ? right - left || a.model.name.localeCompare(b.model.name) : left - right || a.model.name.localeCompare(b.model.name);
     });
-  }, [rows, selected, hideEmpty]);
+  }, [rows, selected, hideEmpty, rankValue]);
   const pageCount = Math.max(1, Math.ceil(candidates.length / PAGE_SIZE));
   const safePage = Math.min(page, pageCount - 1);
   const shownRows = candidates.slice(safePage * PAGE_SIZE, (safePage + 1) * PAGE_SIZE);
@@ -61,16 +63,16 @@ export function PortraitComparison({ rows, benchmarks, selectedBenchmarkId, onBe
     for (const row of candidates) counts.set(row.model.id, (counts.get(row.model.id) ?? 0) + 1);
     return new Set([...counts].filter(([, count]) => count > 1).map(([id]) => id));
   }, [candidates]);
-  // One shared scale across every page; missing and ambiguous reports have no bar.
+  // One shared scale across every page; only rows without a shown number have no bar.
   const values = candidates.flatMap(row => {
-    const value = selected && singleReportedValue(row, selected.id);
+    const value = selected && rankValue(row, selected);
     return typeof value === 'number' ? [value] : [];
   });
   const scaleMin = Math.min(0, ...values);
   const scaleMax = selected?.unit === '%' ? Math.max(100, ...values) : Math.max(0, ...values);
   const colors = ['#2563eb', '#0d9488', '#9333ea', '#d97706', '#db2777', '#0891b2'];
   const bar = (row: DisplayRow) => {
-    const value = selected && singleReportedValue(row, selected.id);
+    const value = selected && rankValue(row, selected);
     if (typeof value !== 'number') return null;
     const range = scaleMax - scaleMin;
     const zero = range ? -scaleMin / range * 100 : 0;
@@ -95,10 +97,15 @@ export function PortraitComparison({ rows, benchmarks, selectedBenchmarkId, onBe
     {busy && <p className="portrait-status" role="status">Updating comparison…</p>}
     {error && <p className="portrait-status portrait-error" role="alert">{error}</p>}
     <div className="portrait-model-list">
-      {selected && shownRows.map(row => <article className="portrait-model-card" key={row.id}>
+      {selected && shownRows.map(row => {
+        const cell = row.observations.get(selected.id);
+        const value = rankValue(row, selected);
+        // Provenance lives in the score button's accessible label and the evidence sheet, as in the matrix,
+        // so preview rows keep the compact one-line card budget.
+        return <article className="portrait-model-card" key={row.id}>
         <div className="portrait-model-identity">{renderModel(row.id)}{sharedModelIds.has(row.model.id) && <span className="mobile-model-setup">Reasoning: {shortReasoning(row)}</span>}</div>
-        <div className="portrait-model-score">{bar(row)}{singleReportedValue(row, selected.id) !== null ? renderScore(row, selected) : <button type="button" className="score-button missing" aria-label={`${row.model.name}, ${selected.name}: No reported result; show evidence`} title="No reviewed score for this setup. Tap for sources and other configurations." onClick={() => onScoreOpen(row, selected)}>—</button>}</div>
-      </article>)}
+        <div className="portrait-model-score">{bar(row)}{value !== null || cell?.state === 'disputed' ? renderScore(row, selected) : <button type="button" className="score-button missing" aria-label={`${row.model.name}, ${selected.name}: No reported result; show evidence`} title="No reviewed score for this setup. Tap for sources and other configurations." onClick={() => onScoreOpen(row, selected)}>—</button>}</div>
+      </article>; })}
       {selected && !shownRows.length && <p className="portrait-empty">No configurations match these filters.</p>}
     </div>
     <p className="portrait-evidence-hint">Tap a score for sources. Bars share one scale; colors identify models. A dash means no reviewed score.</p>

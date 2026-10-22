@@ -1,7 +1,7 @@
 {
-  "adapter_sha256": "33b47f886b04d528c76344218af833f4811af1e15021ef41bf134cedbe40a30a",
-  "candidate_observations": 1082,
-  "candidate_sha256": "4b729a09f67af3b69ec3389382ddb14c7a9f1d646b9c36c6236bfbe6506e55aa",
+  "adapter_sha256": "68a1f94c6b2b979cd76bafe6cc8c269901309cf3f222c0028eb3c06d2cf74a9f",
+  "candidate_observations": 1141,
+  "candidate_sha256": "fd10afdbfb1432a2e252f68a727e21b1ddca21fce3b75e94361148cf8a3c80dc",
   "conflicts": [
     {
       "changed_fields": [
@@ -10,6 +10,301 @@
       ],
       "id": "aa_public_pages_20261018",
       "table": "sources"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_gpt56_sol_aa-gpt56-sol-low_gpt-5-6-sol-low_aa_mlcr_hard_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_claude_opus5_aa-claude-opus5-xhigh_claude-opus-5-xhigh_aa_mlcr_hard_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_glm53_flash_aa-glm53-flash-max_glm-5-3-flash_aa_mlcr_hard_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_claude_opus5_aa-claude-opus5-low_claude-opus-5-low_aa_mlcr_hard_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_gpt6_astra_aa-gpt6-astra-max_gpt-6-astra_aa_mlcr_hard_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_claude_opus55_aa-claude-opus55-max_claude-opus-5-5_aa_mlcr_hard_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_claude_fable51_aa-claude-fable51-max_claude-fable-5-1_aa_mlcr_hard_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_kimi_k3_aa-kimi-k3-low_kimi-k3-low_aa_gdpval_v21_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "uncertainty",
+        "value"
+      ],
+      "id": "o_aa_kimi_k3_aa-kimi-k3-low_kimi-k3-low_aa_briefcase_v11_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_grok47_aa-grok47-xhigh_grok-4-7_aa_mlcr_hard_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_qwen38_max_aa-qwen38-max-unknown_qwen3-8-max-0803_aa_mlcr_hard_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_gpt56_sol_aa-gpt56-sol-medium_gpt-5-6-sol-medium_aa_mlcr_hard_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_claude_opus5_aa-claude-opus5-high_claude-opus-5-high_aa_mlcr_hard_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_gpt56_sol_aa-gpt56-sol-high_gpt-5-6-sol-high_aa_mlcr_hard_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_muse_spark13_aa-muse-spark13-max_muse-spark-1-3_aa_mlcr_hard_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_qwen38_27b_aa-qwen38-27b-xhigh_qwen3-8-27b_aa_gdpval_v21_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_qwen38_27b_aa-qwen38-27b-xhigh_qwen3-8-27b_aa_mlcr_hard_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "uncertainty",
+        "value"
+      ],
+      "id": "o_aa_qwen38_27b_aa-qwen38-27b-xhigh_qwen3-8-27b_aa_briefcase_v11_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_qwen38_max_aa-qwen38-max-unknown_qwen3-8-max_aa_gdpval_v21_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "uncertainty",
+        "value"
+      ],
+      "id": "o_aa_qwen38_max_aa-qwen38-max-unknown_qwen3-8-max_aa_briefcase_v11_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_gpt61_sol_aa-gpt61-sol-max_gpt-6-1-sol_aa_mlcr_hard_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_claude_opus5_aa-claude-opus5-max_claude-opus-5_aa_mlcr_hard_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_grok46_aa-grok46-high_grok-4-6_aa_mlcr_hard_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_glm53_aa-glm53-max_glm-5-3_aa_mlcr_hard_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_gemini4_argon_aa-gemini4-argon-high_gemini-4-argon_aa_gdpval_v21_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "uncertainty",
+        "value"
+      ],
+      "id": "o_aa_gemini4_argon_aa-gemini4-argon-high_gemini-4-argon_aa_briefcase_v11_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_muse_spark13_aa-muse-spark13-xhigh_muse-spark-1-3-xhigh_aa_gdpval_v21_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "uncertainty",
+        "value"
+      ],
+      "id": "o_aa_muse_spark13_aa-muse-spark13-xhigh_muse-spark-1-3-xhigh_aa_briefcase_v11_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_gpt56_sol_aa-gpt56-sol-max_gpt-5-6-sol_aa_mlcr_hard_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_gpt56_sol_aa-gpt56-sol-xhigh_gpt-5-6-sol-xhigh_aa_mlcr_hard_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_deepseek_v4_1_flash_aa-deepseek-v4-1-flash-max_deepseek-v4-1-flash_aa_mlcr_hard_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "uncertainty",
+        "value"
+      ],
+      "id": "o_aa_deepseek_v4_1_flash_aa-deepseek-v4-1-flash-max_deepseek-v4-1-flash_aa_briefcase_v11_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_kimi_k3_aa-kimi-k3-max_kimi-k3_aa_mlcr_hard_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_claude_opus5_aa-claude-opus5-medium_claude-opus-5-medium_aa_mlcr_hard_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_mistral_large4_aa-mistral-large4-unknown_mistral-large-4_aa_gdpval_v21_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "uncertainty",
+        "value"
+      ],
+      "id": "o_aa_mistral_large4_aa-mistral-large4-unknown_mistral-large-4_aa_briefcase_v11_20261018",
+      "table": "observations"
     }
   ],
   "contract": {
@@ -19,8 +314,8 @@
   },
   "coverage": {
     "counts": {
-      "candidate_observations": 1082,
-      "source_models": 704
+      "candidate_observations": 1141,
+      "source_models": 706
     },
     "decisions": [
       {
@@ -544,9 +839,9 @@
         "status": "unresolved_identity_or_configuration"
       },
       {
-        "model_id": null,
+        "model_id": "grok3",
         "source_model": "grok-3",
-        "status": "unresolved_identity_or_configuration"
+        "status": "mapped"
       },
       {
         "model_id": null,
@@ -2744,9 +3039,9 @@
         "status": "mapped"
       },
       {
-        "model_id": null,
+        "model_id": "gpt4o",
         "source_model": "gpt-4o",
-        "status": "unresolved_identity_or_configuration"
+        "status": "mapped"
       },
       {
         "model_id": null,
@@ -2986,6 +3281,11 @@
       {
         "model_id": null,
         "source_model": "gpt-6-sol-non-reasoning",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "minimax-m3-1-flash",
         "status": "unresolved_identity_or_configuration"
       },
       {
@@ -3355,6 +3655,11 @@
       },
       {
         "model_id": null,
+        "source_model": "deepseek-v4-1-flash-1017",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
         "source_model": "glm-5-non-reasoning",
         "status": "unresolved_identity_or_configuration"
       },
@@ -3547,14 +3852,14 @@
     "scope": "Reviewed FIELD_MAP metrics only; estimated intelligence indices excluded. Embedded metrics outside that contract are not imported.",
     "source": "Artificial Analysis"
   },
-  "dataset_sha256": "c67d2ad2c4ebed0c1f19a24fcb18daba2d19146c2a63e614f4c158add5108a3c",
+  "dataset_sha256": "237578a7a7b232d977af54827042fd7d3566f018f920244cee096b8e392b9237",
   "dependency_lock_sha256": "2c008e6d463d37c7ab73c7a0d307ebf6392f238097fd450a61077c8e1e7d4c15",
   "entities": {
-    "conflict": 1,
-    "new": 0,
-    "unchanged": 2164
+    "conflict": 37,
+    "new": 120,
+    "unchanged": 2128
   },
-  "evidence_sha256": "f911b061cc2289cb9ea83eed8fe0e35dcea0b8a835d026d49ed1b39fce8db67c",
+  "evidence_sha256": "fea6a53d077d98745013beedaa5fa3ee9db482bfb9f607ed22d78f4d97ed663a",
   "latency_policy": "source_reported_only",
   "mapping_contract_sha256": "96170c95a488663db1eb5213bd17a76489b081979593e0d7fbaa17f41ddd1304",
   "publication": "review_required",

@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState, type ReactNode } from 'react';
 import type { BenchmarkVariant } from '../generated/dataset';
 import type { DisplayRow } from '../data/selectors';
-import { hasResultOnBenchmarks, singleReportedValue } from '../data/selectors';
+import { hasResultOnBenchmarks, shortReasoning, singleReportedValue } from '../data/selectors';
 import { Button } from './ui/button';
 import { Input } from './ui/input';
 import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle } from './ui/sheet';
@@ -55,6 +55,12 @@ export function PortraitComparison({ rows, benchmarks, selectedBenchmarkId, onBe
   const pageCount = Math.max(1, Math.ceil(candidates.length / PAGE_SIZE));
   const safePage = Math.min(page, pageCount - 1);
   const shownRows = candidates.slice(safePage * PAGE_SIZE, (safePage + 1) * PAGE_SIZE);
+  // Configurations of one model share a name; label the setup only then so single-model cards stay compact.
+  const sharedModelIds = useMemo(() => {
+    const counts = new Map<string, number>();
+    for (const row of candidates) counts.set(row.model.id, (counts.get(row.model.id) ?? 0) + 1);
+    return new Set([...counts].filter(([, count]) => count > 1).map(([id]) => id));
+  }, [candidates]);
   // One shared scale across every page; missing and ambiguous reports have no bar.
   const values = candidates.flatMap(row => {
     const value = selected && singleReportedValue(row, selected.id);
@@ -90,7 +96,7 @@ export function PortraitComparison({ rows, benchmarks, selectedBenchmarkId, onBe
     {error && <p className="portrait-status portrait-error" role="alert">{error}</p>}
     <div className="portrait-model-list">
       {selected && shownRows.map(row => <article className="portrait-model-card" key={row.id}>
-        <div className="portrait-model-identity">{renderModel(row.id)}</div>
+        <div className="portrait-model-identity">{renderModel(row.id)}{sharedModelIds.has(row.model.id) && <span className="mobile-model-setup">Reasoning: {shortReasoning(row)}</span>}</div>
         <div className="portrait-model-score">{bar(row)}{singleReportedValue(row, selected.id) !== null ? renderScore(row, selected) : <button type="button" className="score-button missing" aria-label={`${row.model.name}, ${selected.name}: No reported result; show evidence`} title="No reviewed score for this setup. Tap for sources and other configurations." onClick={() => onScoreOpen(row, selected)}>—</button>}</div>
       </article>)}
       {selected && !shownRows.length && <p className="portrait-empty">No configurations match these filters.</p>}

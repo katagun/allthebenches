@@ -326,11 +326,38 @@ export function valueForCell(row: DisplayRow, benchmarkId: string): DisplayCell 
 export function hasResultOnBenchmarks(row: DisplayRow, benchmarkIds: readonly string[]): boolean {
   return benchmarkIds.some(id => { const cell = row.observations.get(id); return !!cell && (cell.state === 'disputed' || cell.value !== null && Number.isFinite(Number(cell.value))); });
 }
-/** The single unambiguous reported value behind portrait ranking and bars. Disputed, multi-report, and missing cells never qualify, so alternate-setup previews stay out of the order. */
+/** The single unambiguous reported value on one exact configuration. Disputed, multi-report, and missing cells never qualify. */
 export function singleReportedValue(row: DisplayRow, benchmarkId: string): number | null {
   const cell = row.observations.get(benchmarkId);
   if (!cell || cell.state === 'disputed' || cell.observation_ids.length !== 1) return null;
   return numeric(cell.value);
+}
+/** Whether this cell is hidden by the selected saturation filter (shown as missing). Mirrors the matrix score button. */
+export function isSaturationExcluded(data: AppData, benchmarkId: string, cell: DisplayCell, saturationStates: string[]): boolean {
+  return saturationStates.length > 0 && !cell.observation_ids.some(id => {
+    const observation = data.details.observations.find(o => o.id === id);
+    return data.catalog.saturation.some(a => a.benchmark_id === benchmarkId && a.series_id === (observation?.series_id ?? null) && saturationStates.includes(a.state));
+  });
+}
+/** The number a portrait card shows and ranks by: the single reported value, else the midpoint of a multi-report range or of other-configuration previews, else null. Only portrait cards rank by this preview value so the displayed order matches; matrix and table sorting stay on the exact configuration. */
+export function previewScore(data: AppData, row: DisplayRow, benchmarkId: string, saturationStates: string[]): number | null {
+  // Midpoints mirror scoreRangeMidpoint in heatmap.ts (kept separate to avoid a module cycle); inputs below are pre-sorted.
+  const midpoint = (values: number[]) => values.length ? (values[0]! + values[values.length - 1]!) / 2 : NaN;
+  const cell = row.observations.get(benchmarkId);
+  // Alternate setups preview only when this configuration has no cell at all, mirroring the matrix score button.
+  if (!cell) {
+    // Midpoints mirror scoreRangeMidpoint in heatmap.ts (kept separate to avoid a module cycle); inputs below are pre-sorted.
+    const mid = midpoint(otherConfigurationScores(data, row, benchmarkId));
+    return Number.isFinite(mid) ? mid : null;
+  }
+  if (cell.state === 'disputed' || isSaturationExcluded(data, benchmarkId, cell, saturationStates)) return null;
+  const direct = singleReportedValue(row, benchmarkId);
+  if (direct !== null) return direct;
+  if (cell.observation_ids.length > 1) {
+    const mid = midpoint(reportedCellScores(data, cell, data.catalog.benchmarks.find(b => b.id === benchmarkId)?.unit ?? cell.unit ?? ''));
+    return Number.isFinite(mid) ? mid : null;
+  }
+  return null;
 }
 /** Compact configuration label shared by the desktop badge and portrait cards. */
 export function shortReasoning(row: DisplayRow): string {
@@ -354,7 +381,7 @@ export function otherConfigurationResults(data: AppData, row: DisplayRow, benchm
   }).map(configuration => configuration.id);
 }
 
-/** Numeric preview only; never use alternate setups for sorting or winner highlighting. */
+/** Numeric preview only; matrix and table sorting and winner highlighting stay on the exact configuration. Portrait cards are the deliberate exception: they rank by previewScore so the displayed order matches what is shown. */
 export function otherConfigurationScores(data: AppData, row: DisplayRow, benchmarkId: string): number[] {
   const ids = otherConfigurationResults(data, row, benchmarkId);
   const index = selectorIndexes(data);

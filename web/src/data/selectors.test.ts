@@ -199,12 +199,12 @@ describe('alternate setup numeric previews', () => {
 describe('portrait preview scores', () => {
   it('prefers the single reported value, then the multi-report midpoint, never disputed cells', () => {
     const single = dataset({ c1: { b1: 90 }, c2: { b1: 70 } });
-    expect(previewScore(single, rowsForView(single, structuredClone(DEFAULT_VIEW), new Set())[0], 'b1', [])).toBe(90);
+    expect(previewScore(single, rowsForView(single, structuredClone(DEFAULT_VIEW), new Set())[0], 'b1', [])).toEqual({ low: 90, high: 90 });
 
     const multi = dataset({ c1: { b1: 90 }, c2: { b1: 70 } });
     multi.results.cells[0].observation_ids = ['r0', 'r1'];
     multi.details.observations = [80, 100].map((value, i) => ({ id: `r${i}`, configuration_id: 'c1', benchmark_id: 'b1', value, unit: '%', review_state: 'reviewed', reporting_relationship: 'self_report', series_id: null }));
-    expect(previewScore(multi, rowsForView(multi, structuredClone(DEFAULT_VIEW), new Set())[0], 'b1', [])).toBe(90);
+    expect(previewScore(multi, rowsForView(multi, structuredClone(DEFAULT_VIEW), new Set())[0], 'b1', [])).toEqual({ low: 80, high: 100 });
 
     multi.results.cells[0].state = 'disputed';
     const disputedRow = rowsForView(multi, structuredClone(DEFAULT_VIEW), new Set(['model'])).find(r => r.configuration.id === 'c1')!;
@@ -214,7 +214,7 @@ describe('portrait preview scores', () => {
     const data = dataset({ c1: { b2: 10 }, c2: { b1: 60 }, c3: { b1: 80 } });
     const row = rowsForView(data, structuredClone(DEFAULT_VIEW), new Set())[0];
     expect(row.configuration.id).toBe('c1');
-    expect(previewScore(data, row, 'b1', [])).toBe(70);
+    expect(previewScore(data, row, 'b1', [])).toEqual({ low: 60, high: 80 });
     expect(previewScore(data, row, 'missing', [])).toBeNull();
   });
   it('treats saturation-excluded cells as missing', () => {
@@ -222,8 +222,8 @@ describe('portrait preview scores', () => {
     const row = rowsForView(data, structuredClone(DEFAULT_VIEW), new Set())[0];
     data.details.observations = [{ id: 'o-c1-b1', configuration_id: 'c1', benchmark_id: 'b1', value: 90, unit: '%', reporting_relationship: 'self_report', series_id: 's1' }];
     data.catalog.saturation = [{ benchmark_id: 'b1', series_id: 's1', state: 'stale' } as never];
-    expect(previewScore(data, row, 'b1', [])).toBe(90);
-    expect(previewScore(data, row, 'b1', ['stale'])).toBe(90);
+    expect(previewScore(data, row, 'b1', [])).toEqual({ low: 90, high: 90 });
+    expect(previewScore(data, row, 'b1', ['stale'])).toEqual({ low: 90, high: 90 });
     expect(previewScore(data, row, 'b1', ['other'])).toBeNull();
   });
 });

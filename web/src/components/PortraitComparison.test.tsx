@@ -9,7 +9,7 @@ afterEach(cleanup);
 const benchmark = (direction: 'higher' | 'lower' = 'higher') => ({ id: 'bench', name: 'Test benchmark', version: 'v1', category: 'text', metric_name: 'Accuracy', unit: '%', direction } as BenchmarkVariant);
 function row(id: string, value: number | null, state: 'selected' | 'agreed' | 'disputed' = 'selected', observationIds = ['observation'], benchmarkId = 'bench'): DisplayRow {
   const observations = value === null && state !== 'disputed' ? new Map() : new Map([[benchmarkId, { configuration_id: id, benchmark_id: benchmarkId, state, value, unit: '%', observation_ids: observationIds }]]);
-  return { id, model: { name: id }, lab: { name: 'Lab' }, observations } as unknown as DisplayRow;
+  return { id, model: { id, name: id }, lab: { name: 'Lab' }, configuration: { id, reasoning_label: 'default' }, observations } as unknown as DisplayRow;
 }
 function renderComparison(rows: DisplayRow[], selected = benchmark()) {
   return render(<PortraitComparison rows={rows} benchmarks={[selected]} selectedBenchmarkId="bench" onBenchmarkChange={() => {}} hideEmpty={false} busy={false} error={null}
@@ -67,6 +67,20 @@ it('shows a dash for rows without a score so they read as unranked, and still op
   expect(opened).toHaveLength(1);
   expect(opened[0].row.id).toBe('Unscored');
   expect(opened[0].benchmark.id).toBe('bench');
+});
+
+it('labels the setup only when several cards share one model', () => {
+  const shared = (id: string, reasoning: string, value: number): DisplayRow => ({
+    id, model: { id: 'same', name: 'Same Model' }, lab: { name: 'Lab' }, configuration: { id, reasoning_label: reasoning },
+    observations: new Map([['bench', { configuration_id: id, benchmark_id: 'bench', state: 'selected', value, unit: '%', observation_ids: ['o'] }]]),
+  } as unknown as DisplayRow);
+  const { container } = render(<PortraitComparison rows={[shared('a', 'low', 70), row('Solo', 10), shared('b', 'high', 80)]} benchmarks={[benchmark()]} selectedBenchmarkId="bench" onBenchmarkChange={() => {}} hideEmpty={false} busy={false} error={null}
+    renderModel={id => <button className="model-link">{id}</button>} renderScore={item => <span>{item.id}</span>} onScoreOpen={() => {}} />);
+  const cards = [...container.querySelectorAll('.portrait-model-card')];
+  expect(cards).toHaveLength(3);
+  expect(cards[0].querySelector('.mobile-model-setup')?.textContent).toBe('Reasoning: high');
+  expect(cards[1].querySelector('.mobile-model-setup')?.textContent).toBe('Reasoning: low');
+  expect(cards[2].querySelector('.mobile-model-setup')).toBeNull();
 });
 
 it('preserves the bar scale across result pages', () => {

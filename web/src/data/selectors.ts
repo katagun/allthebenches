@@ -332,6 +332,11 @@ export function singleReportedValue(row: DisplayRow, benchmarkId: string): numbe
   if (!cell || cell.state === 'disputed' || cell.observation_ids.length !== 1) return null;
   return numeric(cell.value);
 }
+/** Compact configuration label shared by the desktop badge and portrait cards. */
+export function shortReasoning(row: DisplayRow): string {
+  const label = row.configuration.reasoning_label;
+  return label && /^(none|off|on|low|medium|high|xhigh|max|minimal|default|auto)$/i.test(label) ? label : row.configuration.mode === 'not_applicable' ? 'n/a' : row.configuration.mode ?? 'unknown';
+}
 export function numericScoreCount(row: DisplayRow, benchmarkIds?: readonly string[]): number {
   const ids = benchmarkIds ? new Set(benchmarkIds) : null;
   let count = 0;

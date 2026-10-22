@@ -5,7 +5,7 @@ import { columnVisibilityFeature, flexRender, rowSortingFeature, tableFeatures, 
 import { ArrowDown, ArrowDownUp, ArrowUp, ChevronDown, ChevronRight, Download, ExternalLink, Filter, Search, Share2, SlidersHorizontal, X } from 'lucide-react';
 import type { AppData } from './data/snapshots';
 import { loadSnapshots, loadEvidence, type FullAppData } from './data/snapshots';
-import { benchmarkMatchesOutsideView, benchmarkSearchForView, otherConfigurationResults, otherConfigurationScores, reportedCellScores, categoryLabels, hasResultOnBenchmarks, numeric, numericScoreCount, orderColumnsByModelCoverage, presetIncludesAllModels, type DisplayRow } from './data/selectors';
+import { benchmarkMatchesOutsideView, benchmarkSearchForView, otherConfigurationResults, otherConfigurationScores, reportedCellScores, categoryLabels, hasResultOnBenchmarks, numeric, numericScoreCount, orderColumnsByModelCoverage, presetIncludesAllModels, shortReasoning, type DisplayRow } from './data/selectors';
 import { scoreRanges, displayedScoreRanges, scoreRangeMidpoint, scoreColor, isBestScore, type ScoreRange } from './data/heatmap';
 import { useViewRows } from './data/useViewRows';
 import { useColumnCapacity, MODEL_COLUMN_WIDTH, DATA_COLUMN_WIDTH } from './data/useColumnCapacity';
@@ -39,7 +39,6 @@ function priceRange(prices: PriceObservation[], field: 'input_price' | 'output_p
 const cleanBenchmarkName = (benchmark: BenchmarkVariant) => benchmark.version && benchmark.name.toLowerCase().endsWith(` ${benchmark.version.toLowerCase()}`) ? benchmark.name.slice(0, -benchmark.version.length).trim().replace(/[–-]$/, '').trim() : benchmark.name;
 const displayVersion = (version: string) => version === 'unversioned-as-reported' ? 'version not specified' : version;
 const modelDescription = (item: DisplayRow) => `${item.model.name}\n${item.lab.name}${item.model.release_date ? ` · Released ${item.model.release_date}` : ''}\n${accessLabel(item.model)}\nConfiguration: ${item.configuration.id}\nSetup: ${item.configuration.reasoning_label ?? 'Not reported'}\nReasoning mode: ${item.configuration.mode ?? 'unknown'}${item.configuration.reasoning_budget_tokens != null ? ` · Budget: ${item.configuration.reasoning_budget_tokens} tokens` : ''}${item.configuration.precision ? `\nPrecision: ${item.configuration.precision}` : ''}`;
-const shortReasoning = (row: DisplayRow) => { const label = row.configuration.reasoning_label; return label && /^(none|off|on|low|medium|high|xhigh|max|minimal|default|auto)$/i.test(label) ? label : row.configuration.mode === 'not_applicable' ? 'n/a' : row.configuration.mode ?? 'unknown'; };
 const accessLabel = (model: ModelRelease) => `${model.access_state ?? 'unknown'} access · weights ${model.weights_state ?? 'unknown'}`;
 const setupText = (setup: Record<string, unknown> | undefined) => setup ? Object.entries(setup).map(([k, v]) => `${k}: ${typeof v === 'string' ? v : JSON.stringify(v)}`).join(' · ') : 'Setup not reported';
 

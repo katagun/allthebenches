@@ -83,16 +83,17 @@ it('labels the setup only when several cards share one model', () => {
   expect(cards[2].querySelector('.mobile-model-setup')).toBeNull();
 });
 
-it('ranks by the provided rank value with bars for previews and dashes for gaps', () => {
-  const rows = [row('Low', 20), row('Missing', null), row('Multi', 99, 'selected', ['a', 'b'])];
-  const rank = (item: DisplayRow) => item.id === 'Low' ? 20 : item.id === 'Multi' ? 99 : null;
+it('ranks ranges by the low end and draws the shown span', () => {
+  const rows = [row('Low', 20), row('Missing', null), row('Wide', 99, 'selected', ['a', 'b'])];
+  const show = (item: DisplayRow) => item.id === 'Low' ? { low: 20, high: 20 } : item.id === 'Wide' ? { low: 10, high: 99 } : null;
   const { container } = render(<PortraitComparison rows={rows} benchmarks={[benchmark()]} selectedBenchmarkId="bench" onBenchmarkChange={() => {}} hideEmpty={false} busy={false} error={null}
-    renderModel={id => <button className="model-link">{id}</button>} renderScore={item => <span className="preview">{item.id}</span>} onScoreOpen={() => {}} rankValue={rank} />);
+    renderModel={id => <button className="model-link">{id}</button>} renderScore={item => <span className="preview">{item.id}</span>} onScoreOpen={() => {}} preview={show} />);
   const cards = [...container.querySelectorAll('.portrait-model-card')];
-  expect(cards.map(card => card.querySelector('.model-link')?.textContent)).toEqual(['Multi', 'Low', 'Missing']);
-  expect(cards[0].querySelector('.preview')).not.toBeNull();
-  expect(cards[0].querySelector('.mobile-score-bar')).not.toBeNull();
-  expect(cards[0].querySelector('.mobile-model-setup')).toBeNull();
+  expect(cards.map(card => card.querySelector('.model-link')?.textContent)).toEqual(['Low', 'Wide', 'Missing']);
+  const bar = cards[1].querySelector<HTMLElement>('.mobile-score-bar')!;
+  expect(bar.style.left).toBe('10%');
+  expect(bar.style.width).toBe('89%');
+  expect(cards[1].querySelector('.preview')).not.toBeNull();
   expect(cards[2].querySelector('.score-button.missing')?.textContent).toBe('—');
   expect(cards[2].querySelector('.mobile-score-bar')).toBeNull();
 });

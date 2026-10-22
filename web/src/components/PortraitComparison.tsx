@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState, type ReactNode } from 'react';
 import type { BenchmarkVariant } from '../generated/dataset';
 import type { DisplayRow } from '../data/selectors';
-import { hasResultOnBenchmarks, shortReasoning, singleReportedValue } from '../data/selectors';
+import { hasResultOnBenchmarks, shortReasoning, singleReportedValue, type PreviewRange } from '../data/selectors';
 import { Button } from './ui/button';
 import { Input } from './ui/input';
 import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle } from './ui/sheet';
@@ -20,10 +20,10 @@ type Props = {
   renderModel: (id: string) => ReactNode;
   renderScore: (row: DisplayRow, benchmark: BenchmarkVariant) => ReactNode;
   onScoreOpen: (row: DisplayRow, benchmark: BenchmarkVariant) => void;
-  rankValue?: (row: DisplayRow, benchmark: BenchmarkVariant) => number | null;
+  preview?: (row: DisplayRow, benchmark: BenchmarkVariant) => PreviewRange | null;
 };
 
-export function PortraitComparison({ rows, benchmarks, selectedBenchmarkId, onBenchmarkChange, hideEmpty, busy, error, renderModel, renderScore, onScoreOpen, rankValue = (row, benchmark) => singleReportedValue(row, benchmark.id) }: Props) {
+export function PortraitComparison({ rows, benchmarks, selectedBenchmarkId, onBenchmarkChange, hideEmpty, busy, error, renderModel, renderScore, onScoreOpen, preview = (row, benchmark) => { const value = singleReportedValue(row, benchmark.id); return value === null ? null : { low: value, high: value }; } }: Props) {
   const [pickerOpen, setPickerOpen] = useState(false);
   const [query, setQuery] = useState('');
   const [page, setPage] = useState(0);
@@ -48,12 +48,16 @@ export function PortraitComparison({ rows, benchmarks, selectedBenchmarkId, onBe
   const candidates = useMemo(() => {
     if (!selected) return [];
     return [...(hideEmpty ? rows.filter(row => hasResultOnBenchmarks(row, [selected.id])) : rows)].sort((a, b) => {
-      const left = rankValue(a, selected);
-      const right = rankValue(b, selected);
+      // Rank by the low end so the displayed leading numbers stay ordered; ties break on the high end, then name.
+      const left = preview(a, selected);
+      const right = preview(b, selected);
       if (left === null || right === null) return left === right ? a.model.name.localeCompare(b.model.name) : left === null ? 1 : -1;
-      return selected.direction === 'higher' ? right - left || a.model.name.localeCompare(b.model.name) : left - right || a.model.name.localeCompare(b.model.name);
+      const ordered = selected.direction === 'higher'
+        ? right.low - left.low || right.high - left.high
+        : left.low - right.low || left.high - right.high;
+      return ordered || a.model.name.localeCompare(b.model.name);
     });
-  }, [rows, selected, hideEmpty, rankValue]);
+  }, [rows, selected, hideEmpty, preview]);
   const pageCount = Math.max(1, Math.ceil(candidates.length / PAGE_SIZE));
   const safePage = Math.min(page, pageCount - 1);
   const shownRows = candidates.slice(safePage * PAGE_SIZE, (safePage + 1) * PAGE_SIZE);
@@ -65,20 +69,24 @@ export function PortraitComparison({ rows, benchmarks, selectedBenchmarkId, onBe
   }, [candidates]);
   // One shared scale across every page; only rows without a shown number have no bar.
   const values = candidates.flatMap(row => {
-    const value = selected && rankValue(row, selected);
-    return typeof value === 'number' ? [value] : [];
+    const value = selected && preview(row, selected);
+    return value ? [value.low, value.high] : [];
   });
   const scaleMin = Math.min(0, ...values);
   const scaleMax = selected?.unit === '%' ? Math.max(100, ...values) : Math.max(0, ...values);
   const colors = ['#2563eb', '#0d9488', '#9333ea', '#d97706', '#db2777', '#0891b2'];
   const bar = (row: DisplayRow) => {
-    const value = selected && rankValue(row, selected);
-    if (typeof value !== 'number') return null;
+    const value = selected && preview(row, selected);
+    if (!value) return null;
     const range = scaleMax - scaleMin;
-    const zero = range ? -scaleMin / range * 100 : 0;
-    const end = range ? (value - scaleMin) / range * 100 : 0;
+    const position = (score: number) => range ? (score - scaleMin) / range * 100 : 0;
     const colorIndex = [...row.model.name].reduce((hash, char) => (hash * 31 + char.charCodeAt(0)) >>> 0, 0) % colors.length;
-    return <span className="mobile-score-track" aria-hidden="true"><span className="mobile-score-bar" style={{ left: `${Math.min(zero, end)}%`, width: `${Math.abs(end - zero)}%`, backgroundColor: colors[colorIndex] }}/></span>;
+    // Singles draw from zero; ranges draw the shown span so the bar matches the text, with a
+    // visibility floor so sub-pixel spans still read as a tick at the right position.
+    const [start, end] = value.low === value.high
+      ? [Math.min(position(0), position(value.low)), Math.max(position(0), position(value.low))]
+      : [position(value.low), Math.max(position(value.high), position(value.low) + 1.5)];
+    return <span className="mobile-score-track" aria-hidden="true"><span className="mobile-score-bar" style={{ left: `${start}%`, width: `${Math.max(0, end - start)}%`, backgroundColor: colors[colorIndex] }}/></span>;
   };
   const metricLabel = (item: BenchmarkVariant) => `${item.metric_name} · ${item.unit}`;
 
@@ -99,7 +107,7 @@ export function PortraitComparison({ rows, benchmarks, selectedBenchmarkId, onBe
     <div className="portrait-model-list">
       {selected && shownRows.map(row => {
         const cell = row.observations.get(selected.id);
-        const value = rankValue(row, selected);
+        const value = preview(row, selected);
         // Provenance lives in the score button's accessible label and the evidence sheet, as in the matrix,
         // so preview rows keep the compact one-line card budget.
         return <article className="portrait-model-card" key={row.id}>

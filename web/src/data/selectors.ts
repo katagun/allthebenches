@@ -339,23 +339,22 @@ export function isSaturationExcluded(data: AppData, benchmarkId: string, cell: D
     return data.catalog.saturation.some(a => a.benchmark_id === benchmarkId && a.series_id === (observation?.series_id ?? null) && saturationStates.includes(a.state));
   });
 }
-/** The number a portrait card shows and ranks by: the single reported value, else the midpoint of a multi-report range or of other-configuration previews, else null. Only portrait cards rank by this preview value so the displayed order matches; matrix and table sorting stay on the exact configuration. */
-export function previewScore(data: AppData, row: DisplayRow, benchmarkId: string, saturationStates: string[]): number | null {
-  // Midpoints mirror scoreRangeMidpoint in heatmap.ts (kept separate to avoid a module cycle); inputs below are pre-sorted.
-  const midpoint = (values: number[]) => values.length ? (values[0]! + values[values.length - 1]!) / 2 : NaN;
+/** The interval a portrait card shows: the single reported value, else the span of a multi-report range or of other-configuration previews, else null. Cards rank by the low end so the displayed leading numbers stay ordered, and bars draw the shown span. Only portrait cards rank by previews; matrix and table sorting stay on the exact configuration. */
+export type PreviewRange = { low: number; high: number };
+export function previewScore(data: AppData, row: DisplayRow, benchmarkId: string, saturationStates: string[]): PreviewRange | null {
   const cell = row.observations.get(benchmarkId);
   // Alternate setups preview only when this configuration has no cell at all, mirroring the matrix score button.
+  // Inputs below are pre-sorted ascending.
   if (!cell) {
-    // Midpoints mirror scoreRangeMidpoint in heatmap.ts (kept separate to avoid a module cycle); inputs below are pre-sorted.
-    const mid = midpoint(otherConfigurationScores(data, row, benchmarkId));
-    return Number.isFinite(mid) ? mid : null;
+    const alts = otherConfigurationScores(data, row, benchmarkId);
+    return alts.length ? { low: alts[0]!, high: alts[alts.length - 1]! } : null;
   }
   if (cell.state === 'disputed' || isSaturationExcluded(data, benchmarkId, cell, saturationStates)) return null;
   const direct = singleReportedValue(row, benchmarkId);
-  if (direct !== null) return direct;
+  if (direct !== null) return { low: direct, high: direct };
   if (cell.observation_ids.length > 1) {
-    const mid = midpoint(reportedCellScores(data, cell, data.catalog.benchmarks.find(b => b.id === benchmarkId)?.unit ?? cell.unit ?? ''));
-    return Number.isFinite(mid) ? mid : null;
+    const values = reportedCellScores(data, cell, data.catalog.benchmarks.find(b => b.id === benchmarkId)?.unit ?? cell.unit ?? '');
+    return values.length ? { low: values[0]!, high: values[values.length - 1]! } : null;
   }
   return null;
 }

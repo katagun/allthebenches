@@ -18,6 +18,7 @@ The worker and fallback receive the same explicit `asOf` timestamp. Both the que
 - Multiple-report and disputed cells remain available as labeled evidence buttons and sort after numeric scores. Multiple reports are conservatively unranked even if values agree.
 - Zero remains a valid score. Higher/lower direction, tied winners, and a shared mobile bar scale remain supported.
 - The evidence drawer still exposes each report and source, and the alternative-setup chooser opens the actual reporting configuration.
+- Mobile evidence labels use 12px text inside the existing 44px touch targets, keeping “Other setups (n)” and “Multiple reports” compact across system fonts while numeric scores remain 15px.
 - CSV preserves raw observation `value` and adds `comparison_value` and `comparison_eligible`, making evidence values distinguishable from eligible comparison values. Alternate setups are not substituted into exported rows.
 
 This removes the earlier mobile-only policy of ranking source ranges and alternate setups by their low endpoint. It does not introduce a reported-results mode or adjudicate incompatible evaluation series.
@@ -45,7 +46,7 @@ The committed snapshot's price observations are from 18 October, so current-pric
 | Full desktop/mobile browser suite (`pnpm --dir web test:layout`) | 69 passed |
 | Production build | Passed; existing main-chunk size advisory remains |
 | TypeScript and ESLint | Passed, including the final test-harness edit |
-| Bundle budgets | Passed: 170,464 bytes gzip JS / 204,800 budget; 14,612 bytes gzip CSS / 16,384 budget |
+| Bundle budgets | Passed after the font correction: 170,494 bytes gzip JS / 204,800 budget; 14,622 bytes gzip CSS / 16,384 budget (deployment base path) |
 | Whitespace validation | `git diff --check` passed |
 
 An earlier unrestricted unit run timed out under host load. Limiting concurrency and correcting the resize-observer test harness produced a complete passing run without changing production behavior, test assertions, or timeouts. The first browser run passed 67/69 checks; the new regression fixture and persistent mobile historical-price notice were corrected, all five focused regressions then passed, and the final complete browser run passed all 69 checks.
@@ -61,6 +62,10 @@ New regression coverage includes:
 - Existing layout checks across phone, tablet, landscape, desktop, picker, evidence, theme contrast, and lazy evidence loading. The resize test mock now targets the table observer explicitly; Radix checkbox observers previously overwrote its callback depending on mount timing. No assertion or timeout was relaxed.
 
 The in-app browser tool rejected access to the open local preview under its URL policy. Interactive inspection through that tool was therefore unavailable. UI verification uses the repository's production-build Playwright suite; generated desktop and phone test screenshots were also inspected. This does not substitute for physical-device Safari or screen-reader testing. Saved mobile captures: [320px](review-assets/2026-10-23/exact-scores-320.png), [390px](review-assets/2026-10-23/exact-scores-390.png), with [capture notes](review-assets/2026-10-23/README.md).
+
+### CI follow-up
+
+The first PR CI run passed 63/69 browser checks but found six mobile geometry failures: Linux system-font metrics wrapped “Other setups (1)” onto two lines, increasing rows to 53px. Evidence labels now use a smaller font while preserving the touch target and numeric score size. The bar-geometry regression also forces a wider monospace fallback to exercise font variation on local machines; row-height, alignment, and overflow assertions remain unchanged. The stronger regression reproduced the 53px rows at both phone widths on the previous build, then all six affected cases passed after the correction. CI must pass on the updated commit before merging.
 
 ## Remaining work and limitations
 

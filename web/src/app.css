@@ -514,6 +514,7 @@
 .mobile-score-track{position:relative;display:block;flex:1;height:10px;background:var(--muted);border-radius:3px;overflow:hidden}
 .mobile-score-bar{position:absolute;top:0;height:100%;border-radius:3px}
 .app-shell[data-mobile-view="true"] .portrait-model-score .score-button{margin-left:auto;flex:0 0 auto;min-width:44px;width:120px;max-width:120px;white-space:normal;overflow-wrap:anywhere;min-height:44px;padding:4px 0;background:transparent;border:0;font-size:15px}
+.app-shell[data-mobile-view="true"] .portrait-model-score .score-button.missing{font-size:12px}
 .app-shell[data-mobile-view="true"] .portrait-model-score .score-button::before{display:none}
 .app-shell[data-mobile-view="true"] .portrait-evidence-hint{padding:16px 0;line-height:1.5}
 .mobile-settings{gap:0;max-height:100dvh}

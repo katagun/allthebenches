@@ -39,7 +39,7 @@ Acceptance:
 
 **Review:** R02, R06, R08; export/coverage architecture. **Size:** medium, split into policy and presentation PRs. **Files:** selectors, heatmaps, row queries, `App.tsx`, `PortraitComparison.tsx`, CSV, coverage.
 
-Recommended product default: **exact configuration**. A missing result remains missing; alternate setups are visibly available as “Other setups” with a count. A separate **reported results** mode may show source ranges, but must state its grouping and ordering rule. Do not silently change the model configuration or aggregate multiple setups to make the matrix denser.
+Recommended matrix default: **exact configuration**. A missing result remains missing; alternate setups are visibly available as “Other setups” with a count. **User clarification on 23 October supersedes this recommendation for mobile bar view:** show each model's reported score for the active benchmark, with setup details behind the score tap. Resolve the actual reporting row instead of copying scores onto the matrix's primary configuration. [Implemented selection and verification policy](MOBILE_REPORTED_SCORES_2026-10-23.md). Do not aggregate multiple setups to make the matrix denser.
 
 Introduce a shared result type, for example:
 
@@ -70,7 +70,7 @@ Acceptance:
 
 - Claude Opus 5.5's selected max setup does not display 74.2% as its own DeepSWE score; the actual reporting setup is visible before opening evidence.
 - Every value eligible for sorting, filtering, bars, heatmaps, or bold highlighting comes from the same resolver. Disputed/missing/excluded cells have no ranking value.
-- Desktop and mobile agree on numeric eligibility for the same query/policy. Viewport size changes layout only.
+- Desktop and mobile agree on numeric eligibility for the same configuration. Mobile bar view may resolve a different reporting configuration per active benchmark, as explicitly requested by the user; the evidence target must match its displayed score.
 - Saturation exclusions cannot produce a bar beside a dash. Alternative setups obey the same explicit evidence policy.
 - Evidence opens the records represented by the selected value or opens an explicitly labeled alternative-setup chooser.
 - CSV distinguishes exact selected records, excluded/missing records, and optional alternative reports. The default export describes the visible comparison policy; an all-evidence export is a separately named operation.

@@ -5,6 +5,8 @@ Options drawer, the model picker, filters, evidence sheets, and the catalog and
 entity pages at 320–1024px widths. No page-level horizontal overflow was found
 anywhere; all measurements of `document.scrollWidth - innerWidth` were zero.
 
+**23 October follow-up:** setup-count evidence links in mobile score positions were a product regression, despite passing the initial tests. The corrected bar view shows each model's reported score for the chosen benchmark and opens that reporting configuration directly. See [mobile reported-score correction](MOBILE_REPORTED_SCORES_2026-10-23.md); this supersedes the mobile policy in row 1 below.
+
 | # | Finding | Status |
 | --- | --- | --- |
 | 1 | Other-configuration scores and multi-report ranges were displayed and ranked inconsistently. | Superseded on 23 October 2026: cards and desktop now use exact-setup eligibility. Alternate setups show a labeled evidence link, while missing, disputed, and multiple-report cells remain unranked without bars or heat coloring. Exact scores retain a shared scale and zero-based bars. The previous preview-range ranking policy has been removed. |

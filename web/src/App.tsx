@@ -6,7 +6,7 @@ import { columnVisibilityFeature, flexRender, rowSortingFeature, tableFeatures, 
 import { ArrowDown, ArrowDownUp, ArrowUp, ChevronDown, ChevronRight, Download, ExternalLink, Filter, Search, Share2, SlidersHorizontal, X } from 'lucide-react';
 import type { AppData } from './data/snapshots';
 import { loadSnapshots, loadEvidence, type FullAppData } from './data/snapshots';
-import { benchmarkMatchesOutsideView, benchmarkSearchForView, isSaturationExcluded, otherConfigurationResults, exactScore, categoryLabels, hasResultOnBenchmarks, numeric, numericScoreCount, orderColumnsByModelCoverage, presetIncludesAllModels, shortReasoning, type DisplayRow } from './data/selectors';
+import { rowsForView, benchmarkMatchesOutsideView, benchmarkSearchForView, isSaturationExcluded, otherConfigurationResults, exactScore, categoryLabels, hasResultOnBenchmarks, numeric, numericScoreCount, orderColumnsByModelCoverage, presetIncludesAllModels, shortReasoning, type DisplayRow } from './data/selectors';
 import { displayedScoreRanges, scoreColor, isBestScore, type ScoreRange } from './data/heatmap';
 import { useViewRows } from './data/useViewRows';
 import { useColumnCapacity, MODEL_COLUMN_WIDTH, DATA_COLUMN_WIDTH } from './data/useColumnCapacity';
@@ -131,6 +131,8 @@ function App() {
 
   const context = useMemo(() => { const base = data ? getValidationContext(data) : {}; return { ...base, knownColumnIds: new Set([...(base.knownColumnIds ?? []), 'market:price', 'market:usage']) }; }, [data]);
   const { rows, busy: rowsBusy, error: rowsError, asOf } = useViewRows(data, view, expanded);
+
+  const mobileRowsForBenchmark = useCallback((benchmarkId: string) => data && view ? rowsForView(data, view, new Set(), asOf, benchmarkId) : [], [data, view, asOf]);
 
   const heatRanges = useMemo(() => data && view ? displayedScoreRanges(data, rows, view.visibleColumnIds, view.filters.saturationStates) : new Map<string, ScoreRange>(), [data, rows, view]);
   const rowPageResetKey = JSON.stringify({ search: view?.search, presetId: view?.presetId, categoryId: view?.categoryId, compare: view?.compare, includeUnbenchmarked: view?.includeUnbenchmarked, hideEmptyPageRows: view?.hideEmptyPageRows, columnPage, pageCapacity, sort: view?.sort, filters: view?.filters, expanded: [...expanded].sort() });
@@ -280,10 +282,10 @@ function App() {
     {mobileView && view.filters.includeStalePrices && <p className="portrait-status" role="status">Historical price quotes included (48+ hours old).</p>}
     {mobileView && !portraitMatrix && <PortraitComparison rows={sortedRows.map(row => row.original)} benchmarks={visibleBenchmarks}
       selectedBenchmarkId={view.portraitBenchmarkId ?? null} hideEmpty={view.hideEmptyPageRows}
-      busy={rowsBusy} error={rowsError}
+      busy={rowsBusy} error={rowsError} rowsForBenchmark={mobileRowsForBenchmark}
       onBenchmarkChange={id => commitView({ ...view, portraitBenchmarkId: id })}
-      renderModel={id => { const row = rows.find(item => item.id === id); return row ? <div><a className="model-link" title={`${row.model.name} · ${shortReasoning(row)} reasoning`} href={routeHref(`/models/${encodeURIComponent(row.model.id)}`)}><ModelIdentity name={row.model.name} labId={row.lab.id} labName={row.lab.name}/></a></div> : null; }}
-      renderScore={(row, benchmark) => <ScoreButton heatRange={heatRanges.get(benchmark.id)} bestRange={heatRanges.get(benchmark.id)} data={data} row={row} benchmark={benchmark} saturationStates={view.filters.saturationStates} onOpen={() => setPanel({ kind: 'score', configurationId: row.configuration.id, benchmarkId: benchmark.id })}/>}
+      renderModel={row => <div><a className="model-link" title={`${row.model.name} · ${shortReasoning(row)} reasoning`} href={routeHref(`/models/${encodeURIComponent(row.model.id)}`)}><ModelIdentity name={row.model.name} labId={row.lab.id} labName={row.lab.name}/></a></div>}
+      renderScore={(row, benchmark, range) => <ScoreButton showAlternateSetups={false} heatRange={range} bestRange={range} data={data} row={row} benchmark={benchmark} saturationStates={view.filters.saturationStates} onOpen={() => setPanel({ kind: 'score', configurationId: row.configuration.id, benchmarkId: benchmark.id })}/>}
       score={(row, benchmark) => exactScore(data, row, benchmark.id, view.filters.saturationStates)}
     />}
     <div className="mobile-table-hint">Swipe table to compare · Tap a score for sources <Button className="portrait-card-toggle" variant="outline" size="sm" onClick={() => setPortraitMatrix(false)}>Bar view</Button></div>
@@ -298,14 +300,14 @@ function App() {
   </main>;
 }
 
-function ScoreButton({ data, row, benchmark, saturationStates, onOpen, heatRange, bestRange }: { heatRange?: ScoreRange; bestRange?: ScoreRange; data: AppData; row: DisplayRow; benchmark: BenchmarkVariant; saturationStates: string[]; onOpen: () => void }) {
+function ScoreButton({ data, row, benchmark, saturationStates, onOpen, heatRange, bestRange, showAlternateSetups = true }: { showAlternateSetups?: boolean; heatRange?: ScoreRange; bestRange?: ScoreRange; data: AppData; row: DisplayRow; benchmark: BenchmarkVariant; saturationStates: string[]; onOpen: () => void }) {
   const cell = row.observations.get(benchmark.id);
   const excludedBySaturation = !!cell && isSaturationExcluded(data, benchmark.id, cell, saturationStates);
   const missing = data.catalog.missing_cells.find(x => x.configuration_id === row.configuration.id && x.benchmark_id === benchmark.id);
   const percentSuffix = ['%', 'percent'].includes(benchmark.unit) ? '%' : '';
   const multipleReports = !!cell && cell.observation_ids.length > 1;
   const value = exactScore(data, row, benchmark.id, saturationStates);
-  const alternatives = !cell && !saturationStates.length ? otherConfigurationResults(data, row, benchmark.id) : [];
+  const alternatives = showAlternateSetups && !cell && !saturationStates.length ? otherConfigurationResults(data, row, benchmark.id) : [];
   const label = excludedBySaturation ? 'Outside the selected saturation state' : !cell ? missing?.reason?.replaceAll('_', ' ') ?? 'No reported result' : cell.state === 'disputed' ? 'Disputed result' : multipleReports ? 'Multiple reports' : value === null ? 'No eligible score' : `${value} ${benchmark.unit}`;
   const fill = scoreColor(value ?? NaN, heatRange, benchmark.direction);
   const best = isBestScore(value ?? NaN, bestRange, benchmark.direction);

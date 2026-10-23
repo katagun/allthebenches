@@ -271,7 +271,7 @@ function applyFilters(data: AppData, indexes: SelectorIndexes, row: DisplayRow, 
   }
   return true;
 }
-export function rowsForView(data: AppData, view: ViewState, expandedIds: Set<string>, asOf = Date.now()): DisplayRow[] {
+export function rowsForView(data: AppData, view: ViewState, expandedIds: Set<string>, asOf = Date.now(), resultBenchmarkId?: string): DisplayRow[] {
   const indexes = selectorIndexes(data);
   const preset = indexes.presetsById.get(view.presetId);
   if (!preset) return [];
@@ -308,6 +308,17 @@ export function rowsForView(data: AppData, view: ViewState, expandedIds: Set<str
       })[0]
       : matchedOptions.find(row => presetConfigIds.has(row.configuration.id)) ?? [...matchedOptions].sort((a,b) => b.reviewedCount - a.reviewedCount || (a.configuration.reasoning_label ?? '').localeCompare(b.configuration.reasoning_label ?? ''))[0];
     if (!primary) continue;
+    if (resultBenchmarkId) {
+      // A single-benchmark model card represents the configuration that reported
+      // its score. Prefer the normal primary if eligible, then catalog order;
+      // never choose a configuration because its score is larger.
+      const eligible = (row: DisplayRow) => exactScore(data, row, resultBenchmarkId, view.filters.saturationStates) !== null;
+      const reporting = eligible(primary) ? primary : matchedOptions.find(eligible)
+        ?? (primary.observations.has(resultBenchmarkId) ? primary : matchedOptions.find(row => row.observations.has(resultBenchmarkId)))
+        ?? primary;
+      output.push(reporting);
+      continue;
+    }
     output.push(primary);
     if (expandedIds.has(modelId)) output.push(...matchedOptions.filter(row => row.id !== primary.id));
   }

@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState, type ReactNode } from 'react';
 import type { BenchmarkVariant } from '../generated/dataset';
 import type { DisplayRow } from '../data/selectors';
 import { hasResultOnBenchmarks, shortReasoning, singleReportedValue } from '../data/selectors';
+import type { ScoreRange } from '../data/heatmap';
 import { Button } from './ui/button';
 import { Input } from './ui/input';
 import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle } from './ui/sheet';
@@ -17,12 +18,13 @@ type Props = {
   hideEmpty: boolean;
   busy: boolean;
   error: string | null;
-  renderModel: (id: string) => ReactNode;
-  renderScore: (row: DisplayRow, benchmark: BenchmarkVariant) => ReactNode;
+  rowsForBenchmark?: (benchmarkId: string) => DisplayRow[];
+  renderModel: (row: DisplayRow) => ReactNode;
+  renderScore: (row: DisplayRow, benchmark: BenchmarkVariant, range: ScoreRange | undefined) => ReactNode;
   score?: (row: DisplayRow, benchmark: BenchmarkVariant) => number | null;
 };
 
-export function PortraitComparison({ rows, benchmarks, selectedBenchmarkId, onBenchmarkChange, hideEmpty, busy, error, renderModel, renderScore, score = (row, benchmark) => singleReportedValue(row, benchmark.id) }: Props) {
+export function PortraitComparison({ rows, benchmarks, selectedBenchmarkId, onBenchmarkChange, hideEmpty, busy, error, rowsForBenchmark, renderModel, renderScore, score = (row, benchmark) => singleReportedValue(row, benchmark.id) }: Props) {
   const [pickerOpen, setPickerOpen] = useState(false);
   const [query, setQuery] = useState('');
   const [page, setPage] = useState(0);
@@ -43,10 +45,12 @@ export function PortraitComparison({ rows, benchmarks, selectedBenchmarkId, onBe
     return benchmarks.filter(item => `${item.name} ${item.version} ${item.metric_name} ${item.unit} ${item.category}`.toLocaleLowerCase().includes(normalized));
   }, [benchmarks, query]);
 
-  useEffect(() => setPage(0), [selected?.id, rows.length]);
+  const reportedRows = useMemo(() => !busy && selected && rowsForBenchmark ? rowsForBenchmark(selected.id) : null, [busy, selected, rowsForBenchmark]);
+  const resultRows = useMemo(() => busy ? [] : reportedRows ?? rows, [busy, reportedRows, rows]);
+  useEffect(() => setPage(0), [selected?.id, resultRows.length]);
   const candidates = useMemo(() => {
     if (!selected) return [];
-    return [...(hideEmpty ? rows.filter(row => hasResultOnBenchmarks(row, [selected.id])) : rows)].sort((a, b) => {
+    return [...(hideEmpty ? resultRows.filter(row => hasResultOnBenchmarks(row, [selected.id])) : resultRows)].sort((a, b) => {
       // Exact eligible scores rank by direction; unranked evidence follows numeric results.
       const left = score(a, selected);
       const right = score(b, selected);
@@ -56,7 +60,7 @@ export function PortraitComparison({ rows, benchmarks, selectedBenchmarkId, onBe
         : left - right;
       return ordered || a.model.name.localeCompare(b.model.name);
     });
-  }, [rows, selected, hideEmpty, score]);
+  }, [resultRows, selected, hideEmpty, score]);
   const pageCount = Math.max(1, Math.ceil(candidates.length / PAGE_SIZE));
   const safePage = Math.min(page, pageCount - 1);
   const shownRows = candidates.slice(safePage * PAGE_SIZE, (safePage + 1) * PAGE_SIZE);
@@ -72,6 +76,7 @@ export function PortraitComparison({ rows, benchmarks, selectedBenchmarkId, onBe
     return value === null ? [] : [value];
   });
   const scaleMin = Math.min(0, ...values);
+  const scoreRange = values.length ? { min: Math.min(...values), max: Math.max(...values) } : undefined;
   const scaleMax = selected?.unit === '%' ? Math.max(100, ...values) : Math.max(0, ...values);
   const colors = ['#2563eb', '#0d9488', '#9333ea', '#d97706', '#db2777', '#0891b2'];
   const bar = (row: DisplayRow) => {
@@ -102,12 +107,12 @@ export function PortraitComparison({ rows, benchmarks, selectedBenchmarkId, onBe
     <div className="portrait-model-list">
       {selected && shownRows.map(row => {
         return <article className="portrait-model-card" key={row.id}>
-        <div className="portrait-model-identity">{renderModel(row.id)}{sharedModelIds.has(row.model.id) && <span className="mobile-model-setup">Reasoning: {shortReasoning(row)}</span>}</div>
-        <div className="portrait-model-score">{bar(row)}{renderScore(row, selected)}</div>
+        <div className="portrait-model-identity">{renderModel(row)}{sharedModelIds.has(row.model.id) && <span className="mobile-model-setup">Reasoning: {shortReasoning(row)}</span>}</div>
+        <div className="portrait-model-score">{bar(row)}{renderScore(row, selected, scoreRange)}</div>
       </article>; })}
-      {selected && !shownRows.length && <p className="portrait-empty">No configurations match these filters.</p>}
+      {selected && !busy && !shownRows.length && <p className="portrait-empty">No configurations match these filters.</p>}
     </div>
-    <p className="portrait-evidence-hint">Tap a score for sources. Bars share one scale; colors identify models. A dash means no reviewed score.</p>
+    <p className="portrait-evidence-hint">Tap a score for sources and evaluation setup. Bars share one scale; colors identify models. A dash means no reviewed score.</p>
     <Sheet open={pickerOpen} onOpenChange={setPickerOpen}>
       <SheetContent side="bottom" className="portrait-benchmark-sheet">
         <SheetHeader><SheetTitle>Choose a benchmark</SheetTitle><SheetDescription>Search by benchmark, version, metric, unit, or category.</SheetDescription></SheetHeader>

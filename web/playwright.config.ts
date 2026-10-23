@@ -1,6 +1,7 @@
 import { defineConfig } from '@playwright/test';
 
 const port = Number(process.env.LAYOUT_PORT ?? 4187);
+const liveBaseURL = process.env.LAYOUT_BASE_URL;
 
 export default defineConfig({
   testDir: './e2e',
@@ -9,12 +10,12 @@ export default defineConfig({
   workers: 2,
   reporter: 'list',
   use: {
-    baseURL: `http://127.0.0.1:${port}${process.env.LAYOUT_BASE_PATH ?? '/'}`,
+    baseURL: liveBaseURL ?? `http://127.0.0.1:${port}${process.env.LAYOUT_BASE_PATH ?? '/'}`,
     browserName: 'chromium',
     screenshot: 'only-on-failure',
     trace: 'retain-on-failure',
   },
-  webServer: {
+  webServer: liveBaseURL ? undefined : {
     command: `pnpm exec vite preview --host 127.0.0.1 --port ${port} --strictPort`,
     url: `http://127.0.0.1:${port}${process.env.LAYOUT_BASE_PATH ?? '/'}`,
     reuseExistingServer: false,

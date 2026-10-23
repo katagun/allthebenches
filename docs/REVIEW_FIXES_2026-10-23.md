@@ -12,6 +12,8 @@ The worker and fallback receive the same explicit `asOf` timestamp. Both the que
 
 ### Exact-setup scores on desktop and mobile
 
+**Mobile correction:** the initial setup-count behavior described below was rejected by the user after deployment. Mobile bar view now selects the actual reporting configuration for its active benchmark and displays its score directly. See [the correction and verification record](MOBILE_REPORTED_SCORES_2026-10-23.md). The original description remains here as implementation history; matrix semantics are unchanged.
+
 `exactScore` supplies a number only for a single finite report on the selected configuration and benchmark, with the correct unit and selected saturation state. It is used for desktop score values/accessors/sorting, mobile ranking/bars, heat scales, winner highlighting, numeric threshold filters, and primary-configuration coverage.
 
 - A missing cell shows **Other setups (n)** when sibling configurations have evidence; it does not display their numbers or use them for ranking, color, or bars.

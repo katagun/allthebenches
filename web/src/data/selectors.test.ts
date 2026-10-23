@@ -26,6 +26,39 @@ function dataset(values: Record<string, Record<string, number | null>>, routes: 
 }
 
 describe('table row selectors', () => {
+  it('selects the reporting configuration per mobile benchmark without choosing the highest score', () => {
+    const data = dataset({ c1: { b1: 50 }, c2: { b2: 0 }, c3: { b2: 99 } });
+    const view = { ...structuredClone(DEFAULT_VIEW), visibleColumnIds: ['b1', 'b2'] };
+    const select = (id: string) => rowsForView(data, view, new Set(['model']), 0, id);
+    expect(select('b1').map(row => row.id)).toEqual(['c1']);
+    const second = select('b2');
+    expect(second.map(row => row.id)).toEqual(['c2']);
+    expect(exactScore(data, second[0], 'b2')).toBe(0);
+    expect(second[0].observations.get('b2')?.configuration_id).toBe('c2');
+    expect(select('b1').map(row => row.id)).toEqual(['c1']);
+    expect(rowsForView(data, view, new Set())[0].id).toBe('c1');
+  });
+  it('keeps an eligible preset configuration and respects filters and explicitly compared configurations on mobile', () => {
+    const data = dataset({ c1: { b1: 20 }, c2: { b1: 90, b2: 80 } });
+    data.catalog.models.push({ ...data.catalog.models[0], id: 'outside', name: 'Outside preset' });
+    const view = { ...structuredClone(DEFAULT_VIEW), visibleColumnIds: ['b1', 'b2'] };
+    expect(rowsForView(data, view, new Set(), 0, 'b1')[0].id).toBe('c1');
+    expect(rowsForView(data, view, new Set(), 0, 'b2')[0].id).toBe('c2');
+    const filtered = { ...view, filters: { ...view.filters, reasoningModes: ['c1'] } };
+    const fixed = rowsForView(data, filtered, new Set(), 0, 'b2');
+    expect(fixed.map(row => row.id)).toEqual(['c1']);
+    expect(exactScore(data, fixed[0], 'b2')).toBeNull();
+    const comparison = { ...view, compare: true, selectedConfigurationIds: ['c1'] };
+    expect(rowsForView(data, comparison, new Set(), 0, 'b2').map(row => row.id)).toEqual(['c1']);
+  });
+  it('keeps ambiguous mobile evidence unranked instead of inventing a score', () => {
+    const data = dataset({ c1: { b1: 50 }, c2: { b2: 70 } });
+    data.results.cells[1].state = 'disputed';
+    const view = { ...structuredClone(DEFAULT_VIEW), visibleColumnIds: ['b1', 'b2'] };
+    const rows = rowsForView(data, view, new Set(), 0, 'b2');
+    expect(rows[0].id).toBe('c2');
+    expect(exactScore(data, rows[0], 'b2')).toBeNull();
+  });
   it('searches benchmarks without filtering out models and preserves the selected benchmark set', () => {
     const data = dataset({ c1: { b1: 90, b2: 80 } });
     const view = { ...structuredClone(DEFAULT_VIEW), search: '  BENCHMARK 2  ', visibleColumnIds: ['b1', 'b2'] };

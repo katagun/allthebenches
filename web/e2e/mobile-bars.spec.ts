@@ -34,7 +34,7 @@ for (const width of [320, 390]) {
     // Wider fallback glyphs reproduce evidence-label wrapping seen on Linux CI,
     // even when the host's default system font fits the same label on one line.
     await page.addStyleTag({ content: '.portrait-model-score .score-button { font-family: monospace; }' });
-    await expect(page.locator('.portrait-model-score [data-other-setups]').first()).toBeVisible();
+    await expect(page.locator('.portrait-model-score [data-other-setups]')).toHaveCount(0);
     await expectAlignedBars(page, `fallback font ${width}px`);
     // Exercise alternate-setup and disputed/multiple-report labels as well.
     for (const bench of ['Vals Index', 'Terminal-Bench 4.0']) {

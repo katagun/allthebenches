@@ -55,7 +55,7 @@ Normalize published prices to USD per million tokens when the upstream unit is d
 
 Compare input and output constraints against the same currently available route and context tier. Do not combine one provider's cheapest input price with another's cheapest output price. Prefer endpoint quotes; catalog quotes lacking route details must be labeled as such and excluded from route-specific guarantees.
 
-Default displayed prices are uncached text input/output quotes. Cache, batch, long-context, tools, images, and regional charges remain separate details. “From” pricing must say which eligible routes were considered. Retrieval date and source date appear in the drawer; quotes older than 48 hours receive a stale label and fail “current price” filters unless the viewer includes stale quotes.
+Default displayed prices are uncached text input/output quotes. Cache, batch, long-context, tools, images, and regional charges remain separate details. “From” pricing must say which eligible routes were considered. Retrieval date and source date appear in the drawer; quotes aged 48 hours or more receive a stale label and fail “current price” filters unless the viewer includes stale quotes.
 
 Token price is not benchmark execution cost. Do not label price divided by benchmark score as efficiency. A later scenario calculator may combine an explicit input/output mix on one route; it must explain that reasoning tokens and actual workloads vary.
 
@@ -109,3 +109,11 @@ Load, parse, migration, validation, and writes must handle errors without breaki
 14. Foreign-key, unit, range, duplicate, provenance, and source-status errors block publication.
 
 Use synthetic fixtures for tests and label them; never ship them as real scores.
+
+## Comparison implementation update — 23 October 2026
+
+The client now uses exact selected-configuration scores consistently for numeric display, sorting, mobile bars, and winner coloring. A single report must be finite, in the benchmark unit, non-disputed, and admitted by the saturation filter. Multiple reports are conservatively unranked even if their values agree; adjudicating compatible-series agreement remains future work. “Other setups (n)” opens evidence without attributing those scores to the selected setup.
+
+Current price filtering admits USD-per-million-token quotes observed less than 48 hours before the explicit query clock, with `available: true` on an available/listed route. Future/invalid dates, missing routes, unavailable routes, and unsupported currency/units fail closed. The saved `includeStalePrices` flag defaults to false for both new and older version-1 views. Historical mode includes older quotes and labels them; it does not convert currencies or override availability. Input and output limits are compared as decimals against the same quote. No source records or generated dataset schemas were changed.
+
+CSV remains an evidence export: `value` contains the reported observation, including disputed reports; `comparison_value` is blank and `comparison_eligible` is false whenever that evidence cannot supply the displayed numeric comparison. Alternate setups are never substituted into the selected configuration's export rows.

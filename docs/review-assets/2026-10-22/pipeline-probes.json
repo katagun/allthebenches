@@ -1,0 +1,123 @@
+{
+  "as_of": "2026-10-22T14:30:00Z",
+  "correction_cell": {
+    "benchmark_id": "vals_index_reported",
+    "configuration_id": "gemini4_argon_max",
+    "observation_ids": [
+      "o_gemini4_argon_vals_index_reported_001",
+      "review_correction"
+    ],
+    "series_id": "series_vals_index_reported_google_card",
+    "state": "disputed",
+    "unit": null,
+    "value": null
+  },
+  "counts": {
+    "benchmarks": 593,
+    "configurations": 344,
+    "coverage_gaps": 21,
+    "external_mappings": 386,
+    "labs": 11,
+    "metadata_claims": 16,
+    "missing_cells": 3,
+    "models": 47,
+    "observations": 6546,
+    "performance": 460,
+    "presets": 16,
+    "prices": 86,
+    "routes": 86,
+    "series": 2172,
+    "sources": 256,
+    "usage": 0
+  },
+  "display": {
+    "cells": 6516,
+    "configuration_benchmark_pairs": 6480,
+    "multi_series_all_individually_undisputed": 36,
+    "multi_series_pairs": 36,
+    "states": {
+      "agreed": 3,
+      "disputed": 17,
+      "selected": 6496
+    }
+  },
+  "empty_feed_refresh": {
+    "row_counts": [
+      0,
+      0
+    ],
+    "status": "ok"
+  },
+  "explicit_disputed_is_published": false,
+  "freshness": {
+    "performance": {
+      "stale": 460,
+      "total": 460
+    },
+    "prices": {
+      "stale": 86,
+      "total": 86
+    },
+    "usage": {
+      "stale": 0,
+      "total": 0
+    }
+  },
+  "observation_states": {
+    "reviewed": 6546
+  },
+  "observations_with_field": {
+    "evaluated_at": 235,
+    "reported_at": 3818,
+    "supersedes": 0,
+    "uncertainty": 2920
+  },
+  "payloads": {
+    "catalog.json": {
+      "bytes": 4272605,
+      "gzip_bytes": 202599
+    },
+    "comparison.json": {
+      "bytes": 9064473,
+      "gzip_bytes": 453413
+    },
+    "details.json": {
+      "bytes": 11396562,
+      "gzip_bytes": 631328
+    },
+    "evidence-aa29fc82c5fc4700.json": {
+      "bytes": 9137508,
+      "gzip_bytes": 593834
+    },
+    "manifest.json": {
+      "bytes": 1548,
+      "gzip_bytes": 623
+    },
+    "market.json": {
+      "bytes": 410606,
+      "gzip_bytes": 22181
+    },
+    "results.json": {
+      "bytes": 12315788,
+      "gzip_bytes": 723934
+    }
+  },
+  "series_status": {
+    "comparable": 357,
+    "heterogeneous": 23,
+    "unknown": 1792
+  },
+  "sources_with_field": {
+    "content_sha256": 214,
+    "license": 103,
+    "method": 256,
+    "published_at": 49,
+    "retrieved_at": 190
+  },
+  "validation_probes": {
+    "blank_reviewed_provenance": "accepted",
+    "mismatched_mapping": "accepted",
+    "non_http_source": "accepted",
+    "self_supersession": "accepted"
+  }
+}

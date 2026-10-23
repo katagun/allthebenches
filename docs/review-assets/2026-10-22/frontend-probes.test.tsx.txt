@@ -1,0 +1,49 @@
+// Temporary review probes; removed after recording results.
+import { afterEach, expect, it, vi } from 'vitest';
+import { cleanup, renderHook, waitFor } from '@testing-library/react';
+import catalog from '../public/data/catalog.json';
+import details from '../public/data/details.json';
+import manifest from '../public/data/manifest.json';
+import market from '../public/data/market.json';
+import results from '../public/data/results.json';
+import { rowsForView, previewScore } from './data/selectors';
+import { useViewRows } from './data/useViewRows';
+import { DEFAULT_VIEW, encodeViewState, parseViewState } from './state/viewState';
+import type { AppData } from './data/snapshots';
+const data = { catalog, details, manifest, market, results } as unknown as AppData;
+afterEach(() => { cleanup(); vi.unstubAllGlobals(); });
+it('records all-model selection size and changed primary configurations', async () => {
+  vi.stubGlobal('Worker', undefined);
+  const preset = catalog.presets.find(p => p.id === 'all_models_oct2026')!;
+  const before = {...structuredClone(DEFAULT_VIEW), presetId:preset.id, visibleColumnIds:preset.benchmark_ids};
+  console.log('all-model-state-bytes',new TextEncoder().encode(JSON.stringify(before)).length,'encoded',encodeViewState(before).length);
+  const original = rowsForView(data,before,new Set());
+  const target = catalog.benchmarks.map(b=>({b, next:rowsForView(data,{...before,visibleColumnIds:[b.id]},new Set())})).find(({next})=>next.some(r=>original.find(x=>x.model.id===r.model.id)?.id!==r.id))!;
+  const after = {...before,visibleColumnIds:[target.b.id]};
+  const expected=target.next.map(r=>r.id);
+  const expanded = new Set<string>();
+  const hook=renderHook(({view})=>useViewRows(data,view,expanded),{initialProps:{view:before}});
+  await waitFor(()=>expect(hook.result.current.busy).toBe(false));
+  hook.rerender({view:after});
+  await new Promise(r=>setTimeout(r,30));
+  console.log('cache-reproduction',JSON.stringify({benchmark:target.b.id,changes:target.next.filter(r=>original.find(x=>x.model.id===r.model.id)?.id!==r.id).slice(0,3).map(r=>({model:r.model.id,before:original.find(x=>x.model.id===r.model.id)?.id,expected:r.id,actual:hook.result.current.rows.find(x=>x.model.id===r.model.id)?.id})),stale:JSON.stringify(hook.result.current.rows.map(r=>r.id))!==JSON.stringify(expected)}));
+  expect(hook.result.current.rows.map(r=>r.id)).not.toEqual(expected);
+});
+it('records stale quote eligibility and currency/unit handling',()=>{
+  const base={...structuredClone(DEFAULT_VIEW),presetId:'all_models_oct2026'};
+  const priced={...base,filters:{...base.filters,maxInputPricePerMillion:100000}};
+  console.log('stale-prices-accepted',rowsForView(data,priced,new Set()).length);
+  const modified=structuredClone(data);
+  modified.market.prices=modified.market.prices.slice(0,1).map(p=>({...p,currency:'EUR',price_unit:'EUR per token',input_price:'0.5',observed_at:'2000-01-01T00:00:00Z'}));
+  modified.market.routes=modified.market.routes.map(r=>({...r,availability:'unavailable'}));
+  console.log('wrong-unit-unavailable-stale-accepted',rowsForView(modified,{...base,filters:{...base.filters,maxInputPricePerMillion:1}},new Set()).map(r=>r.model.id));
+});
+it('records mobile preview from a configuration excluded by saturation and short reasoning',()=>{
+  const rows=rowsForView(data,DEFAULT_VIEW,new Set());
+  const found=rows.flatMap(row=>catalog.benchmarks.map(b=>({row,b,cell:row.observations.get(b.id),preview:previewScore(data,row,b.id,['not_saturated'])}))).find(x=>!x.cell&&x.preview);
+  console.log('saturation-preview',found&&{model:found.row.model.id,configuration:found.row.id,benchmark:found.b.id,preview:found.preview});
+});
+it('records missing preset and duplicate column acceptance',()=>{
+  console.log('unknown-preset',parseViewState({...DEFAULT_VIEW,presetId:'removed-preset'},{knownPresetIds:new Set(['frontier_oct2026'])}));
+  console.log('duplicate-columns-accepted',parseViewState({...DEFAULT_VIEW,visibleColumnIds:['same','same']}).ok);
+});

@@ -30,23 +30,29 @@ flowchart TD
   URL[Versioned URL state] --> State[Validated view state]
   Saved[Opt-in local storage] --> State
   Defaults[Default frontier preset] --> State
-  JSON[Five static JSON snapshots] --> Loader[Parallel fetch and parse]
+  JSON[Manifest + compact comparison snapshot] --> Loader[Fetch and validate]
   Loader --> Client[RowWorkerClient]
   State --> Client
   Client --> Worker[Module worker: queryRows]
   Worker --> Selection[Filter, choose configurations, sort]
   Selection --> Client
   Client --> UI[React table: bounded rows and columns]
-  UI --> Evidence[Result evidence sheet and source links]
+  UI --> Evidence[Lazy evidence snapshot + result sheet]
   UI --> Share[Base64url shared view]
   UI --> CSV[CSV download]
 ```
 
 URL state takes precedence over saved state and defaults. `#/?v=b1.` stores state in the fragment so large comparisons never reach the static host’s request-line limit. Detail routes carry the same fragment parameter; legacy query-string links remain readable. `b1.` encodes UTF-8 JSON as base64url; legacy JSON links remain readable. Encoding is not encryption. State is size-limited and allowlist-validated. Local storage is opt-in; shared links do not silently replace the saved view.
 
-`loadSnapshots` currently fetches catalog, results, details, market, and manifest together. Evidence panels are opened on demand, but their data is already loaded; this is not lazy data fetching.
+`loadSnapshots` fetches the manifest and its versioned compact comparison snapshot. Full source and observation evidence is loaded separately by `loadEvidence` when a detail sheet or CSV export needs it. Score eligibility works with the compact snapshot, so ordinary rendering does not require the evidence download.
 
 The worker receives the immutable snapshot once. Its client allows one active query and one replaceable queued query, rejects stale responses, and caches five result sets. If worker creation or execution fails, queries fall back to a deferred main-thread calculation. That fallback preserves functionality but cannot guarantee responsiveness on larger datasets.
+
+The row-query key includes visible benchmark IDs even when search is empty: benchmark coverage determines the primary configuration in broad presets. Ordinary checkbox selection does not invalidate rows until compare mode uses it. The clock snapshot is also part of the query/cache contract. Price observations expire at 48 hours; scheduled boundary updates and focus/visibility events refresh rows in an open page. Worker and fallback use the same explicit `asOf` value.
+
+`exactScore` defines the numeric comparison policy: one finite, non-disputed report for the selected configuration and benchmark, with the benchmark unit and selected saturation state. Missing, multiple-report, and disputed cells do not acquire values from sibling setups. Desktop sorting, mobile ranking and bars, heat scales, winners, score thresholds, and primary-configuration coverage share this resolver. Evidence remains available through labeled buttons. This is an exact-configuration policy, not a new compatible-series adjudication policy.
+
+`prices.ts` admits only available quotes on available/listed routes, in supported USD-per-million units. Current quotes must be younger than 48 hours and not future-dated. Historical inclusion is explicit view state and never bypasses unit, date-validity, or route-availability checks. Both caps must pass on the same quote, using decimal comparison. Rows carry eligible quotes for price rendering/sorting/export; model evidence retains historical source records.
 
 ## Interaction sequence
 

@@ -39,9 +39,14 @@ describe('wide table rendering', () => {
     let resized: () => void = () => undefined;
     vi.spyOn(Element.prototype, 'clientWidth', 'get').mockImplementation(() => width);
     vi.stubGlobal('ResizeObserver', class {
-      constructor(callback: () => void) { resized = callback; }
-      observe() {}
-      disconnect() {}
+      private callback: () => void;
+      constructor(callback: () => void) { this.callback = callback; }
+      observe(element: Element) {
+        // Radix controls also observe size. Only resize the comparison container;
+        // whichever observer happened to mount last is not necessarily the table.
+        if (element.classList.contains('table-card')) resized = this.callback;
+      }
+      disconnect() { if (resized === this.callback) resized = () => undefined; }
     });
     let commits = 0;
     const { container } = render(<StrictMode><Profiler id="responsive" onRender={() => { commits++; }}><App/></Profiler></StrictMode>);

@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState, type ReactNode } from 'react';
 import type { BenchmarkVariant } from '../generated/dataset';
 import type { DisplayRow } from '../data/selectors';
-import { hasResultOnBenchmarks, shortReasoning, singleReportedValue, type PreviewRange } from '../data/selectors';
+import { hasResultOnBenchmarks, shortReasoning, singleReportedValue } from '../data/selectors';
 import { Button } from './ui/button';
 import { Input } from './ui/input';
 import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle } from './ui/sheet';
@@ -19,11 +19,10 @@ type Props = {
   error: string | null;
   renderModel: (id: string) => ReactNode;
   renderScore: (row: DisplayRow, benchmark: BenchmarkVariant) => ReactNode;
-  onScoreOpen: (row: DisplayRow, benchmark: BenchmarkVariant) => void;
-  preview?: (row: DisplayRow, benchmark: BenchmarkVariant) => PreviewRange | null;
+  score?: (row: DisplayRow, benchmark: BenchmarkVariant) => number | null;
 };
 
-export function PortraitComparison({ rows, benchmarks, selectedBenchmarkId, onBenchmarkChange, hideEmpty, busy, error, renderModel, renderScore, onScoreOpen, preview = (row, benchmark) => { const value = singleReportedValue(row, benchmark.id); return value === null ? null : { low: value, high: value }; } }: Props) {
+export function PortraitComparison({ rows, benchmarks, selectedBenchmarkId, onBenchmarkChange, hideEmpty, busy, error, renderModel, renderScore, score = (row, benchmark) => singleReportedValue(row, benchmark.id) }: Props) {
   const [pickerOpen, setPickerOpen] = useState(false);
   const [query, setQuery] = useState('');
   const [page, setPage] = useState(0);
@@ -48,16 +47,16 @@ export function PortraitComparison({ rows, benchmarks, selectedBenchmarkId, onBe
   const candidates = useMemo(() => {
     if (!selected) return [];
     return [...(hideEmpty ? rows.filter(row => hasResultOnBenchmarks(row, [selected.id])) : rows)].sort((a, b) => {
-      // Rank by the low end so the displayed leading numbers stay ordered; ties break on the high end, then name.
-      const left = preview(a, selected);
-      const right = preview(b, selected);
+      // Exact eligible scores rank by direction; unranked evidence follows numeric results.
+      const left = score(a, selected);
+      const right = score(b, selected);
       if (left === null || right === null) return left === right ? a.model.name.localeCompare(b.model.name) : left === null ? 1 : -1;
       const ordered = selected.direction === 'higher'
-        ? right.low - left.low || right.high - left.high
-        : left.low - right.low || left.high - right.high;
+        ? right - left
+        : left - right;
       return ordered || a.model.name.localeCompare(b.model.name);
     });
-  }, [rows, selected, hideEmpty, preview]);
+  }, [rows, selected, hideEmpty, score]);
   const pageCount = Math.max(1, Math.ceil(candidates.length / PAGE_SIZE));
   const safePage = Math.min(page, pageCount - 1);
   const shownRows = candidates.slice(safePage * PAGE_SIZE, (safePage + 1) * PAGE_SIZE);
@@ -69,23 +68,19 @@ export function PortraitComparison({ rows, benchmarks, selectedBenchmarkId, onBe
   }, [candidates]);
   // One shared scale across every page; only rows without a shown number have no bar.
   const values = candidates.flatMap(row => {
-    const value = selected && preview(row, selected);
-    return value ? [value.low, value.high] : [];
+    const value = selected ? score(row, selected) : null;
+    return value === null ? [] : [value];
   });
   const scaleMin = Math.min(0, ...values);
   const scaleMax = selected?.unit === '%' ? Math.max(100, ...values) : Math.max(0, ...values);
   const colors = ['#2563eb', '#0d9488', '#9333ea', '#d97706', '#db2777', '#0891b2'];
   const bar = (row: DisplayRow) => {
-    const value = selected && preview(row, selected);
-    if (!value) return null;
+    const value = selected ? score(row, selected) : null;
+    if (value === null) return null;
     const range = scaleMax - scaleMin;
     const position = (score: number) => range ? (score - scaleMin) / range * 100 : 0;
     const colorIndex = [...row.model.name].reduce((hash, char) => (hash * 31 + char.charCodeAt(0)) >>> 0, 0) % colors.length;
-    // Singles draw from zero; ranges draw the shown span so the bar matches the text, with a
-    // visibility floor so sub-pixel spans still read as a tick at the right position.
-    const [start, end] = value.low === value.high
-      ? [Math.min(position(0), position(value.low)), Math.max(position(0), position(value.low))]
-      : [position(value.low), Math.max(position(value.high), position(value.low) + 1.5)];
+    const [start, end] = [Math.min(position(0), position(value)), Math.max(position(0), position(value))];
     return <span className="mobile-score-track" aria-hidden="true"><span className="mobile-score-bar" style={{ left: `${start}%`, width: `${Math.max(0, end - start)}%`, backgroundColor: colors[colorIndex] }}/></span>;
   };
   const metricLabel = (item: BenchmarkVariant) => `${item.metric_name} · ${item.unit}`;
@@ -106,13 +101,9 @@ export function PortraitComparison({ rows, benchmarks, selectedBenchmarkId, onBe
     {error && <p className="portrait-status portrait-error" role="alert">{error}</p>}
     <div className="portrait-model-list">
       {selected && shownRows.map(row => {
-        const cell = row.observations.get(selected.id);
-        const value = preview(row, selected);
-        // Provenance lives in the score button's accessible label and the evidence sheet, as in the matrix,
-        // so preview rows keep the compact one-line card budget.
         return <article className="portrait-model-card" key={row.id}>
         <div className="portrait-model-identity">{renderModel(row.id)}{sharedModelIds.has(row.model.id) && <span className="mobile-model-setup">Reasoning: {shortReasoning(row)}</span>}</div>
-        <div className="portrait-model-score">{bar(row)}{value !== null || cell?.state === 'disputed' ? renderScore(row, selected) : <button type="button" className="score-button missing" aria-label={`${row.model.name}, ${selected.name}: No reported result; show evidence`} title="No reviewed score for this setup. Tap for sources and other configurations." onClick={() => onScoreOpen(row, selected)}>—</button>}</div>
+        <div className="portrait-model-score">{bar(row)}{renderScore(row, selected)}</div>
       </article>; })}
       {selected && !shownRows.length && <p className="portrait-empty">No configurations match these filters.</p>}
     </div>

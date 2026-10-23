@@ -1,3 +1,4 @@
+import { eligiblePrices, priceAtMost, priceFiltersActive } from './prices';
 import type { AppData, ObservationIndex } from './snapshots';
 import type { Configuration, DisplayCell, Lab, ModelRelease, Observation, PriceObservation, ServingRoute, UsageObservation } from '../generated/dataset';
 import type { ViewState } from '../state/viewState';
@@ -7,6 +8,7 @@ const isComparable = (status?: string | null) => status === 'comparable';
 const number = (x: unknown) => { const parsed = typeof x === 'number' ? x : typeof x === 'string' && x.trim() !== '' ? Number(x) : NaN; return Number.isFinite(parsed) ? parsed : null; };
 type ParameterField = 'total_parameters' | 'active_parameters';
 type SelectorIndexes = {
+  benchmarkUnits: Map<string, string>;
   presetsById: Map<string, AppData['catalog']['presets'][number]>;
   configurationsById: Map<string, Configuration>;
   configurationsByModel: Map<string, Configuration[]>;
@@ -54,6 +56,7 @@ function selectorIndexes(data: AppData): SelectorIndexes {
 
   const { catalog, results, details, market } = data;
   const indexes: SelectorIndexes = {
+    benchmarkUnits: new Map(catalog.benchmarks.map(benchmark => [benchmark.id, benchmark.unit])),
     presetsById: new Map(list(catalog.presets).map(preset => [preset.id, preset])),
     configurationsById: new Map(list(catalog.configurations).map(configuration => [configuration.id, configuration])),
     configurationsByModel: new Map(),
@@ -227,7 +230,7 @@ export function benchmarkSearchForView(data: AppData, view: ViewState) {
   return { benchmarks: matches.length ? matches : benchmarks, matchesBenchmark: matches.length > 0 };
 }
 
-function applyFilters(indexes: SelectorIndexes, row: DisplayRow, view: ViewState, matchesBenchmark: boolean): boolean {
+function applyFilters(data: AppData, indexes: SelectorIndexes, row: DisplayRow, view: ViewState, matchesBenchmark: boolean): boolean {
   const f = view.filters;
   if (view.compare && !view.selectedConfigurationIds.includes(row.configuration.id)) return false;
   if (view.search.trim() && !matchesBenchmark && !`${row.model.name} ${row.model.version ?? ''} ${row.labs.map(lab => lab.name).join(' ')} ${row.configuration.reasoning_label ?? ''}`.toLowerCase().includes(view.search.trim().toLowerCase())) return false;
@@ -241,7 +244,7 @@ function applyFilters(indexes: SelectorIndexes, row: DisplayRow, view: ViewState
   if (f.reasoningModes.length && !f.reasoningModes.includes(row.configuration.reasoning_label ?? row.configuration.mode ?? 'unknown')) return false;
   if (f.benchmarkIds.length && !f.benchmarkIds.some(id => { const cell = row.observations.get(id); return cell && cell.state !== 'disputed' && cell.value !== null; })) return false;
   if (view.categoryId && !list(indexes.categoryBenchmarkIds.get(view.categoryId)).some(id => row.observations.get(id)?.value != null && row.observations.get(id)?.state !== 'disputed')) return false;
-  for (const condition of f.scoreConditions) { const cell = row.observations.get(condition.benchmarkId); if (!cell || cell.value === null || cell.state === 'disputed') return false; const v = cell.value; const c = condition.value; if (!(condition.operator === '>=' ? v >= c : condition.operator === '<=' ? v <= c : condition.operator === '>' ? v > c : condition.operator === '<' ? v < c : v === c)) return false; }
+  for (const condition of f.scoreConditions) { const v = exactScore(data, row, condition.benchmarkId, f.saturationStates); if (v === null) return false; const c = condition.value; if (!(condition.operator === '>=' ? v >= c : condition.operator === '<=' ? v <= c : condition.operator === '>' ? v > c : condition.operator === '<' ? v < c : v === c)) return false; }
   if (f.comparableOnly) {
     const comparable = [...row.observations.values()].some(cell => cell.state !== 'disputed' && cell.observation_ids.some(id => isComparable(indexes.observationSeriesStatus.get(id))));
     if (!comparable) return false;
@@ -259,18 +262,16 @@ function applyFilters(indexes: SelectorIndexes, row: DisplayRow, view: ViewState
     if (f.maxActiveParametersB !== null && (!active || active[1] > f.maxActiveParametersB)) return false;
     if (f.minActiveParametersB !== null && (!active || active[0] < f.minActiveParametersB)) return false;
   }
-  if (f.maxInputPricePerMillion !== null || f.maxOutputPricePerMillion !== null || f.routeIds.length) {
-    const candidates = row.prices.filter(p => (!f.routeIds.length || f.routeIds.includes(p.route_id ?? '')) && p.available !== false && (f.includeFreeRoutes || !(number(p.input_price) === 0 && number(p.output_price) === 0)));
-    if (!candidates.some(p => (f.maxInputPricePerMillion === null || number(p.input_price) !== null && number(p.input_price)! <= f.maxInputPricePerMillion) && (f.maxOutputPricePerMillion === null || number(p.output_price) !== null && number(p.output_price)! <= f.maxOutputPricePerMillion))) return false;
-  }
-  if (!f.includeFreeRoutes && row.prices.length && !row.prices.some(p => !(number(p.input_price) === 0 && number(p.output_price) === 0))) return false;
+  if (priceFiltersActive(f) && !row.prices.some(price =>
+    (f.maxInputPricePerMillion === null || priceAtMost(price.input_price, f.maxInputPricePerMillion))
+    && (f.maxOutputPricePerMillion === null || priceAtMost(price.output_price, f.maxOutputPricePerMillion)))) return false;
   if (f.openRouterUsageAvailable !== null) {
     const available = row.usage.some(u => u.platform.toLowerCase() === 'openrouter' && u.total !== null && u.total !== undefined);
     if (available !== f.openRouterUsageAvailable) return false;
   }
   return true;
 }
-export function rowsForView(data: AppData, view: ViewState, expandedIds: Set<string>): DisplayRow[] {
+export function rowsForView(data: AppData, view: ViewState, expandedIds: Set<string>, asOf = Date.now()): DisplayRow[] {
   const indexes = selectorIndexes(data);
   const preset = indexes.presetsById.get(view.presetId);
   if (!preset) return [];
@@ -290,8 +291,8 @@ export function rowsForView(data: AppData, view: ViewState, expandedIds: Set<str
   const candidates: DisplayRow[] = configurations.map(configuration => {
     const model = indexes.modelsById.get(configuration.model_id)!; const labs = model.lab_ids.map(id => indexes.labsById.get(id)).filter((x): x is Lab => !!x); const lab = labs[0]!;
     const routes = list(indexes.routesByModel.get(model.id));
-    return { id: configuration.id, configuration, model, lab, labs, expanded: expandedIds.has(model.id), observations: indexes.cellsByConfiguration.get(configuration.id) ?? new Map(), prices: list(indexes.pricesByModel.get(model.id)), routes, usage: list(indexes.usageByModel.get(model.id)), reviewedCount: indexes.reviewedCountByConfiguration.get(configuration.id) ?? 0 };
-  }).filter(row => !!row.model && !!row.lab && applyFilters(indexes, row, view, benchmarkSearch.matchesBenchmark));
+    return { id: configuration.id, configuration, model, lab, labs, expanded: expandedIds.has(model.id), observations: indexes.cellsByConfiguration.get(configuration.id) ?? new Map(), prices: eligiblePrices(list(indexes.pricesByModel.get(model.id)), routes, view.filters, asOf), routes, usage: list(indexes.usageByModel.get(model.id)), reviewedCount: indexes.reviewedCountByConfiguration.get(configuration.id) ?? 0 };
+  }).filter(row => !!row.model && !!row.lab && applyFilters(data, indexes, row, view, benchmarkSearch.matchesBenchmark));
   const byModel = new Map<string, DisplayRow[]>();
   for (const row of candidates) { const group = byModel.get(row.model.id); if (group) group.push(row); else byModel.set(row.model.id, [row]); }
   const output: DisplayRow[] = [];
@@ -302,7 +303,7 @@ export function rowsForView(data: AppData, view: ViewState, expandedIds: Set<str
     const matchedOptions = matched.filter(row => allConfigIds.has(row.configuration.id));
     const primary = allModelPreset
       ? [...matchedOptions].sort((a, b) => {
-        const coverage = (row: DisplayRow) => selectedBenchmarks.reduce((count, id) => { const cell = row.observations.get(id); return count + Number(!!cell && cell.state !== 'disputed' && cell.value !== null && Number.isFinite(Number(cell.value))); }, 0);
+        const coverage = (row: DisplayRow) => selectedBenchmarks.reduce((count, id) => count + Number(exactScore(data, row, id, view.filters.saturationStates) !== null), 0);
         return coverage(b) - coverage(a) || (indexes.configurationOrder.get(a.configuration.id) ?? 0) - (indexes.configurationOrder.get(b.configuration.id) ?? 0);
       })[0]
       : matchedOptions.find(row => presetConfigIds.has(row.configuration.id)) ?? [...matchedOptions].sort((a,b) => b.reviewedCount - a.reviewedCount || (a.configuration.reasoning_label ?? '').localeCompare(b.configuration.reasoning_label ?? ''))[0];
@@ -329,7 +330,7 @@ export function hasResultOnBenchmarks(row: DisplayRow, benchmarkIds: readonly st
 /** The single unambiguous reported value on one exact configuration. Disputed, multi-report, and missing cells never qualify. */
 export function singleReportedValue(row: DisplayRow, benchmarkId: string): number | null {
   const cell = row.observations.get(benchmarkId);
-  if (!cell || cell.state === 'disputed' || cell.observation_ids.length !== 1) return null;
+  if (!cell || !['selected', 'agreed'].includes(cell.state) || cell.observation_ids.length !== 1) return null;
   return numeric(cell.value);
 }
 /** Whether this cell is hidden by the selected saturation filter (shown as missing). Mirrors the matrix score button. */
@@ -339,27 +340,13 @@ export function isSaturationExcluded(data: AppData, benchmarkId: string, cell: D
     return data.catalog.saturation.some(a => a.benchmark_id === benchmarkId && a.series_id === (observation?.series_id ?? null) && saturationStates.includes(a.state));
   });
 }
-/** The interval a portrait card shows: the single reported value, else the span of a multi-report range or of other-configuration previews, else null. Cards rank by the low end so the displayed leading numbers stay ordered, and bars draw the shown span. Only portrait cards rank by previews; matrix and table sorting stay on the exact configuration. */
-export type PreviewRange = { low: number; high: number };
-export function previewScore(data: AppData, row: DisplayRow, benchmarkId: string, saturationStates: string[]): PreviewRange | null {
+/** One exact, unambiguous score drives display, sorting, colors, and mobile bars. */
+export function exactScore(data: AppData, row: DisplayRow, benchmarkId: string, saturationStates: string[] = []): number | null {
   const cell = row.observations.get(benchmarkId);
-  // Alternate setups preview only when this configuration has no cell at all, mirroring the matrix score button.
-  // Inputs below are pre-sorted ascending.
-  if (!cell) {
-    const alts = otherConfigurationScores(data, row, benchmarkId);
-    return alts.length ? { low: alts[0]!, high: alts[alts.length - 1]! } : null;
-  }
-  if (isSaturationExcluded(data, benchmarkId, cell, saturationStates)) return null;
-  if (cell.observation_ids.length > 1) {
-    // Multi-report cells rank by their span even when the duplicate merge flagged them disputed,
-    // mirroring the matrix score button, which reports the range in that case.
-    const values = reportedCellScores(data, cell, data.catalog.benchmarks.find(b => b.id === benchmarkId)?.unit ?? cell.unit ?? '');
-    return values.length ? { low: values[0]!, high: values[values.length - 1]! } : null;
-  }
-  if (cell.state === 'disputed') return null;
-  const direct = singleReportedValue(row, benchmarkId);
-  if (direct !== null) return { low: direct, high: direct };
-  return null;
+  if (!cell || isSaturationExcluded(data, benchmarkId, cell, saturationStates)) return null;
+  const unit = selectorIndexes(data).benchmarkUnits.get(benchmarkId);
+  if (cell.unit !== unit) return null;
+  return singleReportedValue(row, benchmarkId);
 }
 /** Compact configuration label shared by the desktop badge and portrait cards. */
 export function shortReasoning(row: DisplayRow): string {
@@ -383,11 +370,11 @@ export function otherConfigurationResults(data: AppData, row: DisplayRow, benchm
   }).map(configuration => configuration.id);
 }
 
-/** Numeric preview only; matrix and table sorting and winner highlighting stay on the exact configuration. Portrait cards are the deliberate exception: they rank by previewScore so the displayed order matches what is shown. */
+/** Evidence-only summary of alternative setups; never used for ranking or cell display. */
 export function otherConfigurationScores(data: AppData, row: DisplayRow, benchmarkId: string): number[] {
   const ids = otherConfigurationResults(data, row, benchmarkId);
   const index = selectorIndexes(data);
-  const unit = data.catalog.benchmarks.find(benchmark => benchmark.id === benchmarkId)?.unit;
+  const unit = selectorIndexes(data).benchmarkUnits.get(benchmarkId);
   return [...new Set(ids.flatMap(id => {
     const cell = index.cellsByConfiguration.get(id)?.get(benchmarkId);
     return cell ? [cell] : [];

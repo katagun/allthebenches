@@ -1,5 +1,7 @@
+import { queryRows } from './rowQuery';
+import { displayedScoreRanges } from './heatmap';
 import { describe, expect, it } from 'vitest';
-import { benchmarkMatchesOutsideView, benchmarkSearchForView, otherConfigurationScores, previewScore, reportedCellScores, hasResultOnBenchmarks, numericScoreCount, orderColumnsByModelCoverage, rowsForView } from './selectors';
+import { benchmarkMatchesOutsideView, benchmarkSearchForView, otherConfigurationScores, exactScore, reportedCellScores, hasResultOnBenchmarks, numericScoreCount, orderColumnsByModelCoverage, rowsForView } from './selectors';
 import type { AppData } from './snapshots';
 import { DEFAULT_VIEW } from '../state/viewState';
 
@@ -81,17 +83,17 @@ describe('table row selectors', () => {
     expect(rowsForView(data, view, new Set()).map(row => row.configuration.id)).toEqual(['c2']);
   });
   it('applies input and output limits to the same route', () => {
-    const routes = [{ id: 'route-a', model_id: 'model', provider: 'A' }, { id: 'route-b', model_id: 'model', provider: 'B' }];
-    const prices = [{ id: 'p-a', route_id: 'route-a', currency: 'USD', input_price: '1', output_price: '100', price_unit: 'USD / 1M tokens', observed_at: '2026-10-01', source_id: 's' }, { id: 'p-b', route_id: 'route-b', currency: 'USD', input_price: '10', output_price: '10', price_unit: 'USD / 1M tokens', observed_at: '2026-10-01', source_id: 's' }];
+    const routes = [{ id: 'route-a', model_id: 'model', provider: 'A', availability: 'listed' }, { id: 'route-b', model_id: 'model', provider: 'B', availability: 'listed' }];
+    const prices = [{ id: 'p-a', available: true, route_id: 'route-a', currency: 'USD', input_price: '1', output_price: '100', price_unit: 'USD / 1M tokens', observed_at: '2026-10-01', source_id: 's' }, { id: 'p-b', available: true, route_id: 'route-b', currency: 'USD', input_price: '10', output_price: '10', price_unit: 'USD / 1M tokens', observed_at: '2026-10-01', source_id: 's' }];
     const data = dataset({ c1: { b1: 90 } }, routes, prices);
     const view = { ...structuredClone(DEFAULT_VIEW), filters: { ...DEFAULT_VIEW.filters, maxInputPricePerMillion: 5, maxOutputPricePerMillion: 20 } };
-    expect(rowsForView(data, view, new Set())).toEqual([]);
+    expect(rowsForView(data, view, new Set(), Date.parse('2026-10-02T00:00:00Z'))).toEqual([]);
     const updated = { ...data, market: {
       ...data.market,
       prices: [...data.market.prices, { ...prices[0], id: 'p-c', route_id: 'route-c', input_price: '4', output_price: '15' }],
-      routes: [...data.market.routes, { id: 'route-c', model_id: 'model', provider: 'C' } as never],
+      routes: [...data.market.routes, { id: 'route-c', model_id: 'model', provider: 'C', availability: 'listed' } as never],
     } } as AppData;
-    expect(rowsForView(updated, view, new Set()).map(row => row.configuration.id)).toEqual(['c1']);
+    expect(rowsForView(updated, view, new Set(), Date.parse('2026-10-02T00:00:00Z')).map(row => row.configuration.id)).toEqual(['c1']);
   });
   it('fails closed on an obsolete preset', () => {
     const data = dataset({ c1: { b1: 90 } });
@@ -196,44 +198,44 @@ describe('alternate setup numeric previews', () => {
   });
 });
 
-describe('portrait preview scores', () => {
-  it('prefers the single reported value, then the multi-report span, never single disputed cells', () => {
+describe('exact score eligibility', () => {
+  it('allows a single report but leaves multiple and disputed reports unranked', () => {
     const single = dataset({ c1: { b1: 90 }, c2: { b1: 70 } });
-    expect(previewScore(single, rowsForView(single, structuredClone(DEFAULT_VIEW), new Set())[0], 'b1', [])).toEqual({ low: 90, high: 90 });
+    expect(exactScore(single, rowsForView(single, structuredClone(DEFAULT_VIEW), new Set())[0], 'b1', [])).toBe(90);
 
     const multi = dataset({ c1: { b1: 90 }, c2: { b1: 70 } });
     multi.results.cells[0].observation_ids = ['r0', 'r1'];
     multi.details.observations = [80, 100].map((value, i) => ({ id: `r${i}`, configuration_id: 'c1', benchmark_id: 'b1', value, unit: '%', review_state: 'reviewed', reporting_relationship: 'self_report', series_id: null }));
-    expect(previewScore(multi, rowsForView(multi, structuredClone(DEFAULT_VIEW), new Set())[0], 'b1', [])).toEqual({ low: 80, high: 100 });
+    expect(exactScore(multi, rowsForView(multi, structuredClone(DEFAULT_VIEW), new Set(['model'])).find(row => row.id === 'c1')!, 'b1', [])).toBeNull();
 
     const contested = dataset({ c1: { b1: 90 }, c2: { b1: 70 } });
     contested.results.cells[0].state = 'disputed';
     const disputedRow = rowsForView(contested, structuredClone(DEFAULT_VIEW), new Set(['model'])).find(r => r.configuration.id === 'c1')!;
-    expect(previewScore(contested, disputedRow, 'b1', [])).toBeNull();
+    expect(exactScore(contested, disputedRow, 'b1', [])).toBeNull();
   });
-  it('previews other-setup scores only when this configuration has no cell', () => {
+  it('never substitutes another setup when this configuration has no cell', () => {
     const data = dataset({ c1: { b2: 10 }, c2: { b1: 60 }, c3: { b1: 80 } });
     const row = rowsForView(data, structuredClone(DEFAULT_VIEW), new Set())[0];
     expect(row.configuration.id).toBe('c1');
-    expect(previewScore(data, row, 'b1', [])).toEqual({ low: 60, high: 80 });
-    expect(previewScore(data, row, 'missing', [])).toBeNull();
+    expect(exactScore(data, row, 'b1', [])).toBeNull();
+    expect(exactScore(data, row, 'missing', [])).toBeNull();
   });
-  it('ranks duplicate merged cells by their reported span', () => {
+  it('leaves duplicate merged cells unranked', () => {
     const data = dataset({ c1: { b1: 90 } });
     data.results.cells.push({ configuration_id: 'c1', benchmark_id: 'b1', observation_ids: ['o-c1-b1b'], state: 'selected', value: 70, unit: '%', series_id: null });
     data.details.observations = [90, 70].map((value, i) => ({ id: i ? 'o-c1-b1b' : 'o-c1-b1', configuration_id: 'c1', benchmark_id: 'b1', value, unit: '%', review_state: 'reviewed', reporting_relationship: 'self_report', series_id: null }));
     const row = rowsForView(data, structuredClone(DEFAULT_VIEW), new Set())[0];
     expect(row.observations.get('b1')!.state).toBe('disputed');
-    expect(previewScore(data, row, 'b1', [])).toEqual({ low: 70, high: 90 });
+    expect(exactScore(data, row, 'b1', [])).toBeNull();
   });
   it('treats saturation-excluded cells as missing', () => {
     const data = dataset({ c1: { b1: 90 } });
     const row = rowsForView(data, structuredClone(DEFAULT_VIEW), new Set())[0];
     data.details.observations = [{ id: 'o-c1-b1', configuration_id: 'c1', benchmark_id: 'b1', value: 90, unit: '%', reporting_relationship: 'self_report', series_id: 's1' }];
     data.catalog.saturation = [{ benchmark_id: 'b1', series_id: 's1', state: 'stale' } as never];
-    expect(previewScore(data, row, 'b1', [])).toEqual({ low: 90, high: 90 });
-    expect(previewScore(data, row, 'b1', ['stale'])).toEqual({ low: 90, high: 90 });
-    expect(previewScore(data, row, 'b1', ['other'])).toBeNull();
+    expect(exactScore(data, row, 'b1', [])).toBe(90);
+    expect(exactScore(data, row, 'b1', ['stale'])).toBe(90);
+    expect(exactScore(data, row, 'b1', ['other'])).toBeNull();
   });
 });
 
@@ -266,5 +268,29 @@ describe('multiple-report score summaries', () => {
     if (kind === 'benchmark') record.benchmark_id = 'b2';
     if (kind === 'nonfinite') record.value = NaN;
     expect(reportedCellScores(data, cell, '%')).toEqual([]);
+  });
+});
+
+
+describe('shared score policy across sorting, filters, and heat scales', () => {
+  it('never lets multiple reports or another setup win or satisfy a score threshold', () => {
+    const data = dataset({ c1: { b1: 99 }, c2: { b1: 20 }, c3: { b2: 100 } });
+    data.results.cells[0].observation_ids = ['first', 'second'];
+    const view = { ...structuredClone(DEFAULT_VIEW), sort: { id: 'b1', direction: 'desc' as const } };
+    const rows = queryRows(data, view, new Set(['model']));
+    expect(rows[0].id).toBe('c2');
+    expect(rows.filter(row => exactScore(data, row, 'b1') === null).map(row => row.id).sort()).toEqual(['c1', 'c3']);
+    expect(displayedScoreRanges(data, rows, ['b1']).get('b1')).toEqual({ min: 20, max: 20 });
+    expect(rowsForView(data, { ...view, filters: { ...view.filters, scoreConditions: [{ benchmarkId: 'b1', operator: '>=', value: 50 }] } }, new Set(['model']))).toEqual([]);
+  });
+  it('excludes saturation-hidden scores from sorting, thresholds, and winner scales', () => {
+    const data = dataset({ c1: { b1: 99 }, c2: { b1: 0 } });
+    data.details.observations = [99, 0].map((value, index) => ({ id: `o-c${index + 1}-b1`, configuration_id: `c${index + 1}`, benchmark_id: 'b1', value, unit: '%', reporting_relationship: 'self_report', series_id: `s${index}` }));
+    data.catalog.saturation = [{ benchmark_id: 'b1', series_id: 's1', state: 'not_saturated' } as never];
+    const view = { ...structuredClone(DEFAULT_VIEW), filters: { ...DEFAULT_VIEW.filters, saturationStates: ['not_saturated'] }, sort: { id: 'b1', direction: 'desc' as const } };
+    const rows = queryRows(data, view, new Set(['model']));
+    expect(rows.map(row => row.id)).toEqual(['c2', 'c1']);
+    expect(displayedScoreRanges(data, rows, ['b1'], view.filters.saturationStates).get('b1')).toEqual({ min: 0, max: 0 });
+    expect(rowsForView(data, { ...view, filters: { ...view.filters, scoreConditions: [{ benchmarkId: 'b1', operator: '>', value: 0 }] } }, new Set(['model']))).toEqual([]);
   });
 });

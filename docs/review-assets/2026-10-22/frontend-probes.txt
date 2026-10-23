@@ -1,0 +1,34 @@
+
+ RUN  v5.0.5 /Users/shamil/projects/github/katagun/allthebenches/web
+
+stdout | src/review.probes.test.tsx > records all-model selection size and changed primary configurations
+all-model-state-bytes 21231 encoded 28311
+
+stdout | src/review.probes.test.tsx > records all-model selection size and changed primary configurations
+cache-reproduction {"benchmark":"terminal_bench_4","changes":[{"model":"gpt6_astra","before":"gpt6_astra_max","expected":"gpt6_astra_high","actual":"gpt6_astra_max"},{"model":"gpt61_sol","before":"gpt61_sol_max","expected":"vals_gpt61_sol_gpt61_sol_unverified","actual":"gpt61_sol_max"},{"model":"gpt56_sol","before":"arena_hf_gpt56_sol_xhigh","expected":"vals_gpt56_sol_gpt56_sol_unverified","actual":"arena_hf_gpt56_sol_xhigh"}],"stale":true}
+
+stdout | src/review.probes.test.tsx > records stale quote eligibility and currency/unit handling
+stale-prices-accepted 9
+wrong-unit-unavailable-stale-accepted [ 'deepseek_v4_pro_0813' ]
+
+ ✓ src/review.probes.test.tsx > records all-model selection size and changed primary configurations 358ms
+stdout | src/review.probes.test.tsx > records mobile preview from a configuration excluded by saturation and short reasoning
+saturation-preview {
+  model: 'gpt6_astra',
+  configuration: 'gpt6_astra_high',
+  benchmark: 'deepswe_v11',
+  preview: { low: 74.1, high: 74.1 }
+}
+
+stdout | src/review.probes.test.tsx > records missing preset and duplicate column acceptance
+unknown-preset { ok: false, reason: 'Unknown preset: removed-preset' }
+duplicate-columns-accepted true
+
+ ✓ src/review.probes.test.tsx > records stale quote eligibility and currency/unit handling 81ms
+ ✓ src/review.probes.test.tsx > records mobile preview from a configuration excluded by saturation and short reasoning 72ms
+ ✓ src/review.probes.test.tsx > records missing preset and duplicate column acceptance 0ms
+
+ Test Files  1 passed (1)
+      Tests  4 passed (4)
+   Start at  08:28:43
+   Duration  2.75s (import 44%, tests 19%, environment 19%, transform 18%)

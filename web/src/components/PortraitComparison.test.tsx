@@ -13,7 +13,7 @@ function row(id: string, value: number | null, state: 'selected' | 'agreed' | 'd
 }
 function renderComparison(rows: DisplayRow[], selected = benchmark()) {
   return render(<PortraitComparison rows={rows} benchmarks={[selected]} selectedBenchmarkId="bench" onBenchmarkChange={() => {}} hideEmpty={false} busy={false} error={null}
-    renderModel={id => <button className="model-link">{id}</button>} renderScore={item => <span>{item.id}</span>} onScoreOpen={() => {}} />);
+    renderModel={id => <button className="model-link">{id}</button>} renderScore={item => <span>{item.id}</span>} />);
 }
 
 it('ranks unambiguous scores by benchmark direction and leaves disputed, multiple, and missing scores last', () => {
@@ -21,7 +21,7 @@ it('ranks unambiguous scores by benchmark direction and leaves disputed, multipl
   const ids = () => [...container.querySelectorAll('.portrait-model-card .model-link')].map(item => item.textContent);
   expect(ids()).toEqual(['High', 'Low', 'Disputed', 'Missing', 'Multiple']);
 
-  rerender(<PortraitComparison rows={[row('Low', 20), row('Missing', null), row('High', 90)]} benchmarks={[benchmark('lower')]} selectedBenchmarkId="bench" onBenchmarkChange={() => {}} hideEmpty={false} busy={false} error={null} renderModel={id => <button className="model-link">{id}</button>} renderScore={item => <span>{item.id}</span>} onScoreOpen={() => {}} />);
+  rerender(<PortraitComparison rows={[row('Low', 20), row('Missing', null), row('High', 90)]} benchmarks={[benchmark('lower')]} selectedBenchmarkId="bench" onBenchmarkChange={() => {}} hideEmpty={false} busy={false} error={null} renderModel={id => <button className="model-link">{id}</button>} renderScore={item => <span>{item.id}</span>} />);
   expect(ids()).toEqual(['Low', 'High', 'Missing']);
 });
 
@@ -51,19 +51,19 @@ it('uses a shared percentage scale and never draws missing or disputed scores as
   expect(widths).toEqual(['80%', '20%', '0%']);
 });
 
-it('shows a dash for rows without a score so they read as unranked, and still opens their evidence', () => {
+it('keeps alternate-setup evidence links unranked and without bars', () => {
   const opened: Array<{ row: DisplayRow; benchmark: BenchmarkVariant }> = [];
   const selected = benchmark();
-  // renderScore mimics the matrix score button, which previews other-setup scores.
+  // The shared renderer labels alternate setups without substituting their scores.
   const { container } = render(<PortraitComparison rows={[row('Scored', 56), row('Unscored', null), row('Top', 90)]} benchmarks={[selected]} selectedBenchmarkId="bench" onBenchmarkChange={() => {}} hideEmpty={false} busy={false} error={null}
-    renderModel={id => <button className="model-link">{id}</button>} renderScore={() => <span className="alt-preview">74.2%</span>} onScoreOpen={(item, bench) => { opened.push({ row: item, benchmark: bench }); }} />);
+    renderModel={id => <button className="model-link">{id}</button>} renderScore={(item, bench) => <button className="score-button" onClick={() => opened.push({ row: item, benchmark: bench })}>Other setups (1)</button>} />);
   expect([...container.querySelectorAll('.portrait-model-card .model-link')].map(item => item.textContent)).toEqual(['Top', 'Scored', 'Unscored']);
   const cards = [...container.querySelectorAll('.portrait-model-card')];
-  expect(cards[2].querySelector('.score-button.missing')?.textContent).toBe('—');
+  expect(cards[2].querySelector('.score-button')?.textContent).toBe('Other setups (1)');
   expect(cards[2].querySelector('.alt-preview')).toBeNull();
   expect(cards[2].querySelector('.mobile-score-bar')).toBeNull();
   expect(container.querySelectorAll('.mobile-score-bar')).toHaveLength(2);
-  fireEvent.click(cards[2].querySelector('.score-button.missing')!);
+  fireEvent.click(cards[2].querySelector('.score-button')!);
   expect(opened).toHaveLength(1);
   expect(opened[0].row.id).toBe('Unscored');
   expect(opened[0].benchmark.id).toBe('bench');
@@ -75,7 +75,7 @@ it('labels the setup only when several cards share one model', () => {
     observations: new Map([['bench', { configuration_id: id, benchmark_id: 'bench', state: 'selected', value, unit: '%', observation_ids: ['o'] }]]),
   } as unknown as DisplayRow);
   const { container } = render(<PortraitComparison rows={[shared('a', 'low', 70), row('Solo', 10), shared('b', 'high', 80)]} benchmarks={[benchmark()]} selectedBenchmarkId="bench" onBenchmarkChange={() => {}} hideEmpty={false} busy={false} error={null}
-    renderModel={id => <button className="model-link">{id}</button>} renderScore={item => <span>{item.id}</span>} onScoreOpen={() => {}} />);
+    renderModel={id => <button className="model-link">{id}</button>} renderScore={item => <span>{item.id}</span>} />);
   const cards = [...container.querySelectorAll('.portrait-model-card')];
   expect(cards).toHaveLength(3);
   expect(cards[0].querySelector('.mobile-model-setup')?.textContent).toBe('Reasoning: high');
@@ -83,24 +83,17 @@ it('labels the setup only when several cards share one model', () => {
   expect(cards[2].querySelector('.mobile-model-setup')).toBeNull();
 });
 
-it('ranks ranges by the low end and draws the shown span', () => {
-  const rows = [row('Low', 20), row('Missing', null), row('Wide', 99, 'selected', ['a', 'b'])];
-  const show = (item: DisplayRow) => item.id === 'Low' ? { low: 20, high: 20 } : item.id === 'Wide' ? { low: 10, high: 99 } : null;
-  const { container } = render(<PortraitComparison rows={rows} benchmarks={[benchmark()]} selectedBenchmarkId="bench" onBenchmarkChange={() => {}} hideEmpty={false} busy={false} error={null}
-    renderModel={id => <button className="model-link">{id}</button>} renderScore={item => <span className="preview">{item.id}</span>} onScoreOpen={() => {}} preview={show} />);
+it('uses the eligibility resolver for bars and ranking when a score is excluded by filters', () => {
+  const { container } = render(<PortraitComparison rows={[row('Eligible', 20), row('Excluded', 99)]} benchmarks={[benchmark()]} selectedBenchmarkId="bench" onBenchmarkChange={() => {}} hideEmpty={false} busy={false} error={null}
+    renderModel={id => <button className="model-link">{id}</button>} renderScore={item => <span>{item.id}</span>} score={item => item.id === 'Eligible' ? 20 : null} />);
   const cards = [...container.querySelectorAll('.portrait-model-card')];
-  expect(cards.map(card => card.querySelector('.model-link')?.textContent)).toEqual(['Low', 'Wide', 'Missing']);
-  const bar = cards[1].querySelector<HTMLElement>('.mobile-score-bar')!;
-  expect(bar.style.left).toBe('10%');
-  expect(bar.style.width).toBe('89%');
-  expect(cards[1].querySelector('.preview')).not.toBeNull();
-  expect(cards[2].querySelector('.score-button.missing')?.textContent).toBe('—');
-  expect(cards[2].querySelector('.mobile-score-bar')).toBeNull();
+  expect(cards.map(card => card.querySelector('.model-link')?.textContent)).toEqual(['Eligible', 'Excluded']);
+  expect(cards[1].querySelector('.mobile-score-bar')).toBeNull();
 });
 
 it('keeps disputed scores visible as disputed while sorting them last without bars', () => {
   const { container } = render(<PortraitComparison rows={[row('Scored', 10), row('Contested', null, 'disputed', ['a', 'b'])]} benchmarks={[benchmark()]} selectedBenchmarkId="bench" onBenchmarkChange={() => {}} hideEmpty={false} busy={false} error={null}
-    renderModel={id => <button className="model-link">{id}</button>} renderScore={item => <span className="preview">{item.id}</span>} onScoreOpen={() => {}} />);
+    renderModel={id => <button className="model-link">{id}</button>} renderScore={item => <span className="preview">{item.id}</span>} />);
   const cards = [...container.querySelectorAll('.portrait-model-card')];
   expect(cards.map(card => card.querySelector('.model-link')?.textContent)).toEqual(['Scored', 'Contested']);
   expect(cards[1].querySelector('.preview')).not.toBeNull();

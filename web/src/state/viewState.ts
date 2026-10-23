@@ -26,7 +26,7 @@ export type ViewState = {
     comparableOnly: boolean; providerReportedAllowed: boolean; independentOnly: boolean;
     incompleteSetupAllowed: boolean;
     maxInputPricePerMillion: number | null; maxOutputPricePerMillion: number | null;
-    routeIds: string[]; includeFreeRoutes: boolean; openRouterUsageAvailable: boolean | null;
+    routeIds: string[]; includeFreeRoutes: boolean; includeStalePrices: boolean; openRouterUsageAvailable: boolean | null;
   };
 };
 export type SavedEnvelope = { format_version: 1; saved_at: string; view: ViewState };
@@ -41,7 +41,7 @@ export const DEFAULT_VIEW: ViewState = {
     includeEstimates: false, benchmarkIds: [], saturationStates: [], scoreConditions: [],
     comparableOnly: false, providerReportedAllowed: true, independentOnly: false,
     incompleteSetupAllowed: true, maxInputPricePerMillion: null, maxOutputPricePerMillion: null,
-    routeIds: [], includeFreeRoutes: true, openRouterUsageAvailable: null,
+    routeIds: [], includeFreeRoutes: true, includeStalePrices: false, openRouterUsageAvailable: null,
   },
 };
 
@@ -67,6 +67,7 @@ export function parseViewState(raw: unknown, ctx: ValidationContext = {}): Parse
   for (const k of numberKeys) if (!nullableNumber(f[k]) || (f[k] !== null && f[k] < 0)) return { ok: false, reason: `Invalid ${k}` };
   const boolKeys = ['includeEstimates','comparableOnly','providerReportedAllowed','independentOnly','incompleteSetupAllowed','includeFreeRoutes'] as const;
   for (const k of boolKeys) if (!bool(f[k])) return { ok: false, reason: `Invalid ${k}` };
+  if (f.includeStalePrices !== undefined && !bool(f.includeStalePrices)) return { ok: false, reason: 'Invalid includeStalePrices' };
   if (f.weightsAvailable !== null && !bool(f.weightsAvailable)) return { ok: false, reason: 'Invalid weightsAvailable' };
   if (f.openRouterUsageAvailable !== null && !bool(f.openRouterUsageAvailable)) return { ok: false, reason: 'Invalid openRouterUsageAvailable' };
   if (!Array.isArray(f.scoreConditions) || f.scoreConditions.length > 100 || !f.scoreConditions.every(x => object(x) && str(x.benchmarkId) && ['>=','<=','>','<','='].includes(String(x.operator)) && typeof x.value === 'number' && Number.isFinite(x.value))) return { ok: false, reason: 'Invalid score conditions' };
@@ -79,7 +80,7 @@ export function parseViewState(raw: unknown, ctx: ValidationContext = {}): Parse
     minTotalParametersB: f.minTotalParametersB as number | null, maxTotalParametersB: f.maxTotalParametersB as number | null, minActiveParametersB: f.minActiveParametersB as number | null, maxActiveParametersB: f.maxActiveParametersB as number | null, includeEstimates: f.includeEstimates as boolean,
     benchmarkIds: [...f.benchmarkIds as string[]], saturationStates: [...f.saturationStates as string[]], scoreConditions: (f.scoreConditions as ScoreCondition[]).map(x => ({ benchmarkId: x.benchmarkId, operator: x.operator, value: x.value })),
     comparableOnly: f.comparableOnly as boolean, providerReportedAllowed: f.providerReportedAllowed as boolean, independentOnly: f.independentOnly as boolean, incompleteSetupAllowed: f.incompleteSetupAllowed as boolean,
-    maxInputPricePerMillion: f.maxInputPricePerMillion as number | null, maxOutputPricePerMillion: f.maxOutputPricePerMillion as number | null, routeIds: [...f.routeIds as string[]], includeFreeRoutes: f.includeFreeRoutes as boolean, openRouterUsageAvailable: f.openRouterUsageAvailable as boolean | null,
+    maxInputPricePerMillion: f.maxInputPricePerMillion as number | null, maxOutputPricePerMillion: f.maxOutputPricePerMillion as number | null, routeIds: [...f.routeIds as string[]], includeFreeRoutes: f.includeFreeRoutes as boolean, includeStalePrices: f.includeStalePrices === true, openRouterUsageAvailable: f.openRouterUsageAvailable as boolean | null,
   };
   const value: ViewState = { version: VIEW_VERSION, presetId: raw.presetId, categoryId: raw.categoryId as string | null, search: raw.search, visibleColumnIds: [...raw.visibleColumnIds as string[]], sort: sort === null ? null : { id: (sort as {id:string}).id, direction: (sort as {direction:SortDirection}).direction }, selectedConfigurationIds: [...raw.selectedConfigurationIds as string[]], compare: raw.compare, includeUnbenchmarked: raw.includeUnbenchmarked, hideEmptyPageRows: raw.hideEmptyPageRows === true, orientation: raw.orientation === 'models-rows' ? 'models-rows' : 'benchmarks-rows', portraitBenchmarkId: typeof raw.portraitBenchmarkId === 'string' ? raw.portraitBenchmarkId : null, filters: cleanFilters };
   const unresolved: string[] = [];

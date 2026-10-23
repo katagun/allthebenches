@@ -5,14 +5,14 @@ import type { ViewState } from '../state/viewState';
 
 export type RowRequestResult = { id: number; key: string; rows: DisplayRow[] } | { id: number; key: string; error: string };
 type WorkerMessage = { type: 'ready' } | { type: 'rows'; id: number; key: string; rows: DisplayRow[] } | { type: 'error'; id: number; key: string; error: string };
-type WorkerRequest = { type: 'initialize'; data: AppData } | { type: 'rows'; id: number; key: string; view: ViewState; expandedIds: string[] };
+type WorkerRequest = { type: 'initialize'; data: AppData } | { type: 'rows'; id: number; key: string; view: ViewState; expandedIds: string[]; asOf: number };
 export interface WorkerTransport {
   onmessage: ((event: MessageEvent<WorkerMessage>) => void) | null;
   onerror: ((event: ErrorEvent) => void) | null;
   postMessage(message: WorkerRequest): void;
   terminate(): void;
 }
-type QueuedRequest = { id: number; key: string; view: ViewState; expandedIds: string[]; resolve: (result: RowRequestResult | null) => void };
+type QueuedRequest = { id: number; key: string; view: ViewState; expandedIds: string[]; asOf: number; resolve: (result: RowRequestResult | null) => void };
 
 function createModuleWorker(): WorkerTransport | null {
   if (typeof Worker === 'undefined') return null;
@@ -42,21 +42,21 @@ export class RowWorkerClient {
     }
   }
 
-  request(view: ViewState, expandedIds: string[], key: string): Promise<RowRequestResult | null> {
+  request(view: ViewState, expandedIds: string[], key: string, asOf = Date.now()): Promise<RowRequestResult | null> {
     if (this.closed) return Promise.resolve(null);
     const id = ++this.nextId;
     this.latestId = id;
-    const cached = this.cache.get(key);
+    const cached = this.cache.get(JSON.stringify([key, asOf]));
     if (cached) {
       this.queued?.resolve(null);
       this.queued = null;
-      this.touchCache(key, cached);
+      this.touchCache(key, asOf, cached);
       return Promise.resolve({ id, key, rows: cached });
     }
     return new Promise(resolve => {
       if (this.closed) { resolve(null); return; }
       if (this.queued) this.queued.resolve(null);
-      this.queued = { id, key, view, expandedIds: [...expandedIds], resolve };
+      this.queued = { id, key, view, expandedIds: [...expandedIds], asOf, resolve };
       this.drain();
     });
   }
@@ -79,7 +79,7 @@ export class RowWorkerClient {
     this.active = null;
     if (completed.id === this.latestId) {
       if (message.type === 'rows') {
-        this.touchCache(message.key, message.rows);
+        this.touchCache(message.key, completed.asOf, message.rows);
         completed.resolve({ id: message.id, key: message.key, rows: message.rows });
       } else {
         // Retry worker-side computation failures through the bounded fallback.
@@ -97,15 +97,15 @@ export class RowWorkerClient {
     this.queued = null;
     this.active = next;
     if (this.worker) {
-      try { this.worker.postMessage({ type: 'rows', id: next.id, key: next.key, view: next.view, expandedIds: next.expandedIds }); }
+      try { this.worker.postMessage({ type: 'rows', id: next.id, key: next.key, view: next.view, expandedIds: next.expandedIds, asOf: next.asOf }); }
       catch { this.recoverToFallback(); }
       return;
     }
     window.setTimeout(() => {
       if (this.active !== next || this.closed) return;
       try {
-        const rows = queryRows(this.data, next.view, new Set(next.expandedIds));
-        this.touchCache(next.key, rows);
+        const rows = queryRows(this.data, next.view, new Set(next.expandedIds), next.asOf);
+        this.touchCache(next.key, next.asOf, rows);
         if (next.id === this.latestId) next.resolve({ id: next.id, key: next.key, rows });
         else next.resolve(null);
       } catch (error) {
@@ -127,7 +127,8 @@ export class RowWorkerClient {
     this.drain();
   }
 
-  private touchCache(key: string, rows: DisplayRow[]): void {
+  private touchCache(key: string, asOf: number, rows: DisplayRow[]): void {
+    key = JSON.stringify([key, asOf]);
     this.cache.delete(key);
     this.cache.set(key, rows);
     while (this.cache.size > 5) this.cache.delete(this.cache.keys().next().value!);

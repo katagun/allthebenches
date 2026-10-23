@@ -31,7 +31,7 @@ describe('worker row ordering', () => {
     const data = structuredClone(base);
     const benchmarkId = data.catalog.benchmarks[0].id;
     data.catalog.presets = [{ id: DEFAULT_VIEW.presetId, version: 'test', name: 'Test', model_configuration_ids: selected.map(row => row.id), benchmark_ids: [benchmarkId] }];
-    data.results.cells = selected.map((row, index) => ({ configuration_id: row.id, benchmark_id: benchmarkId, series_id: null, state: 'selected', value: [0, null, 3][index], unit: '%', observation_ids: [] }));
+    data.results.cells = selected.map((row, index) => ({ configuration_id: row.id, benchmark_id: benchmarkId, series_id: null, state: 'selected', value: [0, null, 3][index], unit: data.catalog.benchmarks[0].unit, observation_ids: [`test-${index}`] }));
     const ascending = { ...DEFAULT_VIEW, includeUnbenchmarked: true, sort: { id: benchmarkId, direction: 'asc' as const } };
     expect(queryRows(data, ascending, new Set()).map(row => row.id)).toEqual([selected[0].id, selected[2].id, selected[1].id]);
     expect(queryRows(data, { ...ascending, sort: { id: benchmarkId, direction: 'desc' } }, new Set()).map(row => row.id)).toEqual([selected[2].id, selected[0].id, selected[1].id]);

@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 
 // Bar tracks must measure identically across cards so percentages compare;
-// score buttons keep a fixed width so long ranges cannot steal track space
+// score buttons keep a fixed width so evidence labels cannot steal track space
 // or wrap onto a second line.
 async function expectAlignedBars(page, label: string) {
   const geometry = await page.evaluate(() => {
@@ -31,7 +31,12 @@ for (const width of [320, 390]) {
     await expect(page.locator('.portrait-model-card').first()).toBeVisible();
     await page.waitForTimeout(300);
     await expectAlignedBars(page, `default ${width}px`);
-    // Vals Index is range-heavy; Terminal-Bench 4.0 has the longest wraps seen.
+    // Wider fallback glyphs reproduce evidence-label wrapping seen on Linux CI,
+    // even when the host's default system font fits the same label on one line.
+    await page.addStyleTag({ content: '.portrait-model-score .score-button { font-family: monospace; }' });
+    await expect(page.locator('.portrait-model-score [data-other-setups]').first()).toBeVisible();
+    await expectAlignedBars(page, `fallback font ${width}px`);
+    // Exercise alternate-setup and disputed/multiple-report labels as well.
     for (const bench of ['Vals Index', 'Terminal-Bench 4.0']) {
       await selectBenchmark(page, bench);
       await expectAlignedBars(page, `${bench} ${width}px`);

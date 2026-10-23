@@ -1,10 +1,10 @@
-import { numeric, presetIncludesAllModels, rowsForView, type DisplayRow } from './selectors';
+import { exactScore, numeric, presetIncludesAllModels, rowsForView, type DisplayRow } from './selectors';
 import type { AppData } from './snapshots';
 import type { ViewState } from '../state/viewState';
 
 /** Applies the full view on the worker, including TanStack-equivalent null-last sorting. */
-export function queryRows(data: AppData, view: ViewState, expandedIds: Set<string>): DisplayRow[] {
-  const rows = rowsForView(data, view, expandedIds);
+export function queryRows(data: AppData, view: ViewState, expandedIds: Set<string>, asOf = Date.now()): DisplayRow[] {
+  const rows = rowsForView(data, view, expandedIds, asOf);
   const sort = view.sort;
   if (!sort) {
     const newestFirst = !view.compare && presetIncludesAllModels(data, view.presetId);
@@ -18,8 +18,7 @@ export function queryRows(data: AppData, view: ViewState, expandedIds: Set<strin
     if (sort.id === 'model') return `${row.lab.name} ${row.model.name}`;
     if (sort.id === 'price') return row.prices.length === 1 ? numeric(row.prices[0].input_price) : null;
     if (sort.id === 'usage') return row.usage[0]?.total ?? null;
-    const cell = row.observations.get(sort.id);
-    return !cell || cell.state === 'disputed' ? null : cell.value;
+    return exactScore(data, row, sort.id, view.filters.saturationStates);
   };
   const direction = sort.direction === 'desc' ? -1 : 1;
   return rows.sort((left, right) => {

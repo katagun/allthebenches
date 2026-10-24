@@ -38,3 +38,7 @@ Performance rows now travel with the content-addressed evidence payload loaded o
 - GitHub may evict the staging cache. Without previous data, a failed response is reported as an error rather than fabricated retained coverage.
 - Provider status and quoted prices are observations, not guarantees of route availability or final billed cost; conditional override limitations remain recorded on quotes.
 - Mobile bar-view CSV exports still follow matrix selection semantics, as documented in the prior mobile fix report.
+
+## Follow-up coverage audit
+
+The [price coverage and mobile UI follow-up](PRICE_COVERAGE_MOBILE_2026-10-24.md) investigated all 39 gaps, added verified pricing for 17 releases, and made price summaries accessible directly from mobile comparison. The counts above describe this earlier snapshot.

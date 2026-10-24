@@ -114,3 +114,11 @@ def test_review_rejects_empty_healthy_endpoint_before_import():
     snapshot['endpoints']['deepseek/deepseek-r1']['data']['data']['endpoints'] = []
     with pytest.raises(ValueError, match='empty'):
         reviewer.review(dataset, snapshot, catalog, 'catalog')
+
+
+def test_review_accepts_independent_explicitly_mapped_endpoint_batch():
+    dataset, snapshot, catalog = load_inputs('openrouter-price-coverage-endpoints-2026-10-24.json')
+    additions, _, rows = reviewer.review(dataset, snapshot, catalog, 'catalog', refresh_existing=True)
+    assert additions == []
+    assert len(rows) == 195
+    assert {r['model_id'] for r in rows} == {r['model_id'] for r in json.loads((ROOT / 'data/expansion/price-coverage-reviewed-mappings-2026-10-24.json').read_text())}

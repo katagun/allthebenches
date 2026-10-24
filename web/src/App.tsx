@@ -1,3 +1,4 @@
+import { MobilePriceSummary, ModelPrices } from './components/ModelPrices';
 import { FeedHealth } from './components/FeedHealth';
 import { priceFreshness } from './data/prices';
 import { compactScore } from './data/formatScore';
@@ -28,7 +29,7 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '.
 import { loadInitialState, saveView, writeUrl, clearUrlState, forgetView, viewUrl, routeHref } from './state/stateRuntime';
 import { DEFAULT_VIEW, type ScoreCondition, type ViewState, type ValidationContext } from './state/viewState';
 
-type Panel = { kind: 'filters' | 'columns' | 'picker' } | { kind: 'model'; modelId: string } | { kind: 'score'; configurationId: string; benchmarkId: string } | null;
+type Panel = { kind: 'filters' | 'columns' | 'picker' } | { kind: 'model' | 'prices'; modelId: string } | { kind: 'score'; configurationId: string; benchmarkId: string } | null;
 type Notice = { kind: 'error' | 'info'; text: string } | null;
 const CATEGORY_LABELS: Record<string, string> = { text: 'Text', reasoning: 'Reasoning', math: 'Math', coding: 'Coding', agent: 'Agent', safety: 'Safety', search: 'Search', vision: 'Vision', 'long-context': 'Long context', multimodal: 'Multimodal', cybersecurity: 'Cybersecurity', reliability: 'Reliability', finance: 'Finance', legal: 'Legal', medical: 'Medical' };
 const CONFIGURATIONS_PER_PAGE = 50;
@@ -285,6 +286,9 @@ function App() {
       selectedBenchmarkId={view.portraitBenchmarkId ?? null} hideEmpty={view.hideEmptyPageRows}
       busy={rowsBusy} error={rowsError} rowsForBenchmark={mobileRowsForBenchmark}
       onBenchmarkChange={id => commitView({ ...view, portraitBenchmarkId: id })}
+      showPrices={view.visibleColumnIds.includes('market:price')}
+      onTogglePrices={view.visibleColumnIds.length === 1 && view.visibleColumnIds[0] === 'market:price' ? undefined : () => commitView({ ...view, visibleColumnIds: view.visibleColumnIds.includes('market:price') && view.visibleColumnIds.length > 1 ? view.visibleColumnIds.filter(id => id !== 'market:price') : [...new Set([...view.visibleColumnIds, 'market:price'])] })}
+      renderPrices={row => <MobilePriceSummary row={row} asOf={asOf} onOpen={() => setPanel({ kind: 'prices', modelId: row.model.id })}/>}
       renderModel={row => <div><a className="model-link" title={`${row.model.name} · ${shortReasoning(row)} reasoning`} href={routeHref(`/models/${encodeURIComponent(row.model.id)}`)}><ModelIdentity name={row.model.name} labId={row.lab.id} labName={row.lab.name}/></a></div>}
       renderScore={(row, benchmark, range) => <ScoreButton showAlternateSetups={false} heatRange={range} bestRange={range} data={data} row={row} benchmark={benchmark} saturationStates={view.filters.saturationStates} onOpen={() => setPanel({ kind: 'score', configurationId: row.configuration.id, benchmarkId: benchmark.id })}/>}
       score={(row, benchmark) => exactScore(data, row, benchmark.id, view.filters.saturationStates)}
@@ -297,6 +301,7 @@ function App() {
     <Sheet open={panel?.kind === 'filters'} onOpenChange={open => { if (!open) setPanel(null); }}><SheetContent side="right" aria-describedby="filter-description"><FilterPanel data={data} view={view} remembered={remembered} shared={source === 'url'} onCancel={() => setPanel(null)} onApply={applyFilters} onForget={doForget}/></SheetContent></Sheet>
     <Sheet open={panel?.kind === 'columns'} onOpenChange={open => { if (!open) setPanel(null); }}><SheetContent side="right"><SheetHeader><SheetTitle>Choose benchmarks and metrics</SheetTitle><SheetDescription>Each entry is one exact benchmark version and metric, shown on the selected table axis.</SheetDescription></SheetHeader><ColumnPanel data={data} presetId={view.presetId} selected={allColumnIds} onChange={ids => commitView({ ...view, visibleColumnIds: ids })} onClose={() => setPanel(null)}/></SheetContent></Sheet>
     <Sheet open={panel?.kind === 'model'} onOpenChange={open => { if (!open) setPanel(null); }}><SheetContent side="right">{panel?.kind === 'model' && <LazyEvidence data={data}>{full => <ModelPanel data={full} modelId={panel.modelId}/>}</LazyEvidence>}</SheetContent></Sheet>
+    <Sheet open={panel?.kind === 'prices'} onOpenChange={open => { if (!open) setPanel(null); }}><SheetContent side="right">{panel?.kind === 'prices' && <LazyEvidence data={data}>{full => <ModelPrices data={full} modelId={panel.modelId} filters={view.filters} asOf={asOf}/>}</LazyEvidence>}</SheetContent></Sheet>
     <Sheet open={panel?.kind === 'score'} onOpenChange={open => { if (!open) setPanel(null); }}><SheetContent side="right">{panel?.kind === 'score' && <LazyEvidence data={data}>{full => <EvidencePanel data={full} configurationId={panel.configurationId} benchmarkId={panel.benchmarkId} onConfigurationChange={configurationId => setPanel({ kind: 'score', configurationId, benchmarkId: panel.benchmarkId })}/>}</LazyEvidence>}</SheetContent></Sheet>
   </main>;
 }

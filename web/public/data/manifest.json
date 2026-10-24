@@ -169,27 +169,171 @@
       "source_id": "openrouter-endpoints",
       "status": "ok",
       "url": "https://openrouter.ai/api/v1/models/openai/gpt-6.1-sol/endpoints"
+    },
+    {
+      "as_of": "2026-10-24T17:33:40.768672+00:00",
+      "attempted_at": "2026-10-24T17:33:40.768698+00:00",
+      "error": null,
+      "record_count": 4,
+      "source_id": "openrouter-endpoints",
+      "status": "ok",
+      "url": "https://openrouter.ai/api/v1/models/anthropic/claude-fable-5.1/endpoints"
+    },
+    {
+      "as_of": "2026-10-24T17:33:40.817208+00:00",
+      "attempted_at": "2026-10-24T17:33:40.817252+00:00",
+      "error": null,
+      "record_count": 11,
+      "source_id": "openrouter-endpoints",
+      "status": "ok",
+      "url": "https://openrouter.ai/api/v1/models/anthropic/claude-opus-5.5/endpoints"
+    },
+    {
+      "as_of": "2026-10-24T17:33:40.860337+00:00",
+      "attempted_at": "2026-10-24T17:33:40.860407+00:00",
+      "error": null,
+      "record_count": 41,
+      "source_id": "openrouter-endpoints",
+      "status": "ok",
+      "url": "https://openrouter.ai/api/v1/models/deepseek/deepseek-v4.1-flash/endpoints"
+    },
+    {
+      "as_of": "2026-10-24T17:33:40.902336+00:00",
+      "attempted_at": "2026-10-24T17:33:40.902367+00:00",
+      "error": null,
+      "record_count": 1,
+      "source_id": "openrouter-endpoints",
+      "status": "ok",
+      "url": "https://openrouter.ai/api/v1/models/dots-studio/dots-3-note-preview:free/endpoints"
+    },
+    {
+      "as_of": "2026-10-24T17:33:41.140072+00:00",
+      "attempted_at": "2026-10-24T17:33:41.140162+00:00",
+      "error": null,
+      "record_count": 6,
+      "source_id": "openrouter-endpoints",
+      "status": "ok",
+      "url": "https://openrouter.ai/api/v1/models/google/gemini-4-argon/endpoints"
+    },
+    {
+      "as_of": "2026-10-24T17:33:41.182948+00:00",
+      "attempted_at": "2026-10-24T17:33:41.183023+00:00",
+      "error": null,
+      "record_count": 2,
+      "source_id": "openrouter-endpoints",
+      "status": "ok",
+      "url": "https://openrouter.ai/api/v1/models/meta-llama/llama-3.1-70b-instruct/endpoints"
+    },
+    {
+      "as_of": "2026-10-24T17:33:41.238501+00:00",
+      "attempted_at": "2026-10-24T17:33:41.238685+00:00",
+      "error": null,
+      "record_count": 5,
+      "source_id": "openrouter-endpoints",
+      "status": "ok",
+      "url": "https://openrouter.ai/api/v1/models/meta-llama/llama-3.1-8b-instruct/endpoints"
+    },
+    {
+      "as_of": "2026-10-24T17:33:41.293347+00:00",
+      "attempted_at": "2026-10-24T17:33:41.293411+00:00",
+      "error": null,
+      "record_count": 1,
+      "source_id": "openrouter-endpoints",
+      "status": "ok",
+      "url": "https://openrouter.ai/api/v1/models/meta/muse-wonder/endpoints"
+    },
+    {
+      "as_of": "2026-10-24T17:33:41.343130+00:00",
+      "attempted_at": "2026-10-24T17:33:41.343184+00:00",
+      "error": null,
+      "record_count": 3,
+      "source_id": "openrouter-endpoints",
+      "status": "ok",
+      "url": "https://openrouter.ai/api/v1/models/mistralai/mistral-large-4-0/endpoints"
+    },
+    {
+      "as_of": "2026-10-24T17:33:41.385247+00:00",
+      "attempted_at": "2026-10-24T17:33:41.385282+00:00",
+      "error": null,
+      "record_count": 2,
+      "source_id": "openrouter-endpoints",
+      "status": "ok",
+      "url": "https://openrouter.ai/api/v1/models/openai/gpt-4o-2024-05-13/endpoints"
+    },
+    {
+      "as_of": "2026-10-24T17:33:41.449649+00:00",
+      "attempted_at": "2026-10-24T17:33:41.449682+00:00",
+      "error": null,
+      "record_count": 1,
+      "source_id": "openrouter-endpoints",
+      "status": "ok",
+      "url": "https://openrouter.ai/api/v1/models/qwen/qwen-2.5-72b-instruct/endpoints"
+    },
+    {
+      "as_of": "2026-10-24T17:33:41.593089+00:00",
+      "attempted_at": "2026-10-24T17:33:41.593255+00:00",
+      "error": null,
+      "record_count": 21,
+      "source_id": "openrouter-endpoints",
+      "status": "ok",
+      "url": "https://openrouter.ai/api/v1/models/qwen/qwen3.8-27b/endpoints"
+    },
+    {
+      "as_of": "2026-10-24T17:33:41.631722+00:00",
+      "attempted_at": "2026-10-24T17:33:41.631805+00:00",
+      "error": null,
+      "record_count": 6,
+      "source_id": "openrouter-endpoints",
+      "status": "ok",
+      "url": "https://openrouter.ai/api/v1/models/x-ai/grok-4.6/endpoints"
+    },
+    {
+      "as_of": "2026-10-24T17:33:41.682954+00:00",
+      "attempted_at": "2026-10-24T17:33:41.683025+00:00",
+      "error": null,
+      "record_count": 5,
+      "source_id": "openrouter-endpoints",
+      "status": "ok",
+      "url": "https://openrouter.ai/api/v1/models/x-ai/grok-4.7/endpoints"
+    },
+    {
+      "as_of": "2026-10-24T17:33:41.739618+00:00",
+      "attempted_at": "2026-10-24T17:33:41.739872+00:00",
+      "error": null,
+      "record_count": 48,
+      "source_id": "openrouter-endpoints",
+      "status": "ok",
+      "url": "https://openrouter.ai/api/v1/models/z-ai/glm-5.3/endpoints"
+    },
+    {
+      "as_of": "2026-10-24T17:33:41.791899+00:00",
+      "attempted_at": "2026-10-24T17:33:41.792109+00:00",
+      "error": null,
+      "record_count": 38,
+      "source_id": "openrouter-endpoints",
+      "status": "ok",
+      "url": "https://openrouter.ai/api/v1/models/z-ai/glm-5.3-flash/endpoints"
     }
   ],
   "files": {
     "catalog.json": {
-      "bytes": 4272946,
-      "sha256": "372d0fb08cb10c7a53deb86beb73021353fb5b3c3066eb59776e5acd43bfffbe"
+      "bytes": 4272890,
+      "sha256": "e28187d3f33e39e0268ca3030b8402fd10755f4cdf75d40d0eff371722f54d36"
     },
     "details.json": {
-      "bytes": 11395722,
-      "sha256": "6e5dbbfbc6f0a488831aa4bdb77b8b06c6bee6906ae76f8d1a5047eba4f8d3b8"
+      "bytes": 11418084,
+      "sha256": "abd15dabd916045949acd2543fe47a420747e85760fc4a7fc8cdc56900a2803b"
     },
     "market.json": {
-      "bytes": 904389,
-      "sha256": "f73a9087f23695b2a04b92665aa0edcf1ff81d2941439eadac8c23cf35f857a8"
+      "bytes": 2991313,
+      "sha256": "1f413645e1f195908d639c42a770ebbeab2c8d2e3de70428035b01a096d6aeb9"
     },
     "results.json": {
       "bytes": 12315788,
       "sha256": "461ca8c9a7f8aa3287edaf6400be3cf2131956e955d3d098efe0efb0de8d58f7"
     }
   },
-  "generated_at": "2026-10-24T17:01:20.612545+00:00",
+  "generated_at": "2026-10-24T17:38:49.118977+00:00",
   "schema_version": "1.0.0",
-  "snapshot_id": "29e203f5074fc58c"
+  "snapshot_id": "db942599427b6be4"
 }

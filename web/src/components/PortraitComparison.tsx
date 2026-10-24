@@ -19,12 +19,15 @@ type Props = {
   busy: boolean;
   error: string | null;
   rowsForBenchmark?: (benchmarkId: string) => DisplayRow[];
+  renderPrices?: (row: DisplayRow) => ReactNode;
+  onTogglePrices?: () => void;
+  showPrices?: boolean;
   renderModel: (row: DisplayRow) => ReactNode;
   renderScore: (row: DisplayRow, benchmark: BenchmarkVariant, range: ScoreRange | undefined) => ReactNode;
   score?: (row: DisplayRow, benchmark: BenchmarkVariant) => number | null;
 };
 
-export function PortraitComparison({ rows, benchmarks, selectedBenchmarkId, onBenchmarkChange, hideEmpty, busy, error, rowsForBenchmark, renderModel, renderScore, score = (row, benchmark) => singleReportedValue(row, benchmark.id) }: Props) {
+export function PortraitComparison({ rows, benchmarks, selectedBenchmarkId, onBenchmarkChange, hideEmpty, busy, error, rowsForBenchmark, renderModel, renderScore, renderPrices, showPrices, onTogglePrices, score = (row, benchmark) => singleReportedValue(row, benchmark.id) }: Props) {
   const [pickerOpen, setPickerOpen] = useState(false);
   const [query, setQuery] = useState('');
   const [page, setPage] = useState(0);
@@ -49,7 +52,7 @@ export function PortraitComparison({ rows, benchmarks, selectedBenchmarkId, onBe
   const resultRows = useMemo(() => busy ? [] : reportedRows ?? rows, [busy, reportedRows, rows]);
   useEffect(() => setPage(0), [selected?.id, resultRows.length]);
   const candidates = useMemo(() => {
-    if (!selected) return [];
+    if (!selected) return showPrices ? [...resultRows].sort((a, b) => a.model.name.localeCompare(b.model.name)) : [];
     return [...(hideEmpty ? resultRows.filter(row => hasResultOnBenchmarks(row, [selected.id])) : resultRows)].sort((a, b) => {
       // Exact eligible scores rank by direction; unranked evidence follows numeric results.
       const left = score(a, selected);
@@ -60,7 +63,7 @@ export function PortraitComparison({ rows, benchmarks, selectedBenchmarkId, onBe
         : left - right;
       return ordered || a.model.name.localeCompare(b.model.name);
     });
-  }, [resultRows, selected, hideEmpty, score]);
+  }, [resultRows, selected, hideEmpty, score, showPrices]);
   const pageCount = Math.max(1, Math.ceil(candidates.length / PAGE_SIZE));
   const safePage = Math.min(page, pageCount - 1);
   const shownRows = candidates.slice(safePage * PAGE_SIZE, (safePage + 1) * PAGE_SIZE);
@@ -93,9 +96,10 @@ export function PortraitComparison({ rows, benchmarks, selectedBenchmarkId, onBe
   return <section className="portrait-comparison" aria-label="Mobile benchmark comparison">
     <div className="portrait-comparison-head">
       <Button className="portrait-benchmark-picker" variant="outline" aria-label="Choose benchmark" onClick={() => { setQuery(''); setPickerOpen(true); }} disabled={!benchmarks.length}>
-        <span className="portrait-benchmark-picker-copy"><strong>{selected?.name ?? 'No benchmark available'}</strong><small>{selected ? `${versionLabel(selected.version) ? `${versionLabel(selected.version)} · ` : ''}${metricLabel(selected)}` : 'Change filters to show benchmarks'}</small></span>
+        <span className="portrait-benchmark-picker-copy"><strong>{selected?.name ?? (showPrices ? 'API prices' : 'No benchmark available')}</strong><small>{selected ? `${versionLabel(selected.version) ? `${versionLabel(selected.version)} · ` : ''}${metricLabel(selected)}` : showPrices ? 'USD per 1 million tokens · by provider route' : 'Change filters to show benchmarks'}</small></span>
         <span aria-hidden="true">⌄</span>
       </Button>
+    {onTogglePrices && <Button className="mobile-prices-toggle" variant="outline" size="sm" aria-pressed={!!showPrices} onClick={onTogglePrices}>{showPrices ? 'Hide prices' : 'Show prices'}</Button>}
     </div>
     {selected && <div className="portrait-benchmark-summary"><span>{selected.category}</span><span>{selected.direction === 'higher' ? 'Higher' : 'Lower'} is better</span></div>}
     <div className="portrait-results-toolbar" aria-live="polite">
@@ -105,14 +109,15 @@ export function PortraitComparison({ rows, benchmarks, selectedBenchmarkId, onBe
     {busy && <p className="portrait-status" role="status">Updating comparison…</p>}
     {error && <p className="portrait-status portrait-error" role="alert">{error}</p>}
     <div className="portrait-model-list">
-      {selected && shownRows.map(row => {
+      {(selected || showPrices) && shownRows.map(row => {
         return <article className="portrait-model-card" key={row.id}>
         <div className="portrait-model-identity">{renderModel(row)}{sharedModelIds.has(row.model.id) && <span className="mobile-model-setup">Reasoning: {shortReasoning(row)}</span>}</div>
-        <div className="portrait-model-score">{bar(row)}{renderScore(row, selected, scoreRange)}</div>
+        <div className="portrait-model-score">{selected && <>{bar(row)}{renderScore(row, selected, scoreRange)}</>}</div>
+        {showPrices && renderPrices?.(row)}
       </article>; })}
-      {selected && !busy && !shownRows.length && <p className="portrait-empty">No configurations match these filters.</p>}
+      {(selected || showPrices) && !busy && !shownRows.length && <p className="portrait-empty">No configurations match these filters.</p>}
     </div>
-    <p className="portrait-evidence-hint">Tap a score for sources and evaluation setup. Bars share one scale; colors identify models. A dash means no reviewed score.</p>
+    <p className="portrait-evidence-hint">{selected ? 'Tap a score for sources and evaluation setup. Bars share one scale; colors identify models. A dash means no reviewed score.' : 'Tap a price summary for provider routes, observation times and pricing sources.'}</p>
     <Sheet open={pickerOpen} onOpenChange={setPickerOpen}>
       <SheetContent side="bottom" className="portrait-benchmark-sheet">
         <SheetHeader><SheetTitle>Choose a benchmark</SheetTitle><SheetDescription>Search by benchmark, version, metric, unit, or category.</SheetDescription></SheetHeader>

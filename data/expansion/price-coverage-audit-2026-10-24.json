@@ -1,0 +1,403 @@
+{
+  "reviewed_at": "2026-10-24T17:38:49.118399+00:00",
+  "scope": "39 releases without fresh available prices before this change; a bounded primary-source audit, not a claim that no provider anywhere serves unresolved releases.",
+  "releases": [
+    {
+      "model_id": "claude_opus55",
+      "model_name": "Claude Opus 5.5",
+      "decision": "filled",
+      "reason": "Exact release name and upstream ID reviewed against the curated release; publisher namespace agrees. Base, instruct, parameter size, preview, and Flash variants remain distinct.",
+      "sources": [
+        "https://openrouter.ai/api/v1/models",
+        "https://openrouter.ai/api/v1/models/anthropic/claude-opus-5.5/endpoints"
+      ]
+    },
+    {
+      "model_id": "claude_fable51",
+      "model_name": "Claude Fable 5.1",
+      "decision": "filled",
+      "reason": "Exact release name and upstream ID reviewed against the curated release; publisher namespace agrees. Base, instruct, parameter size, preview, and Flash variants remain distinct.",
+      "sources": [
+        "https://openrouter.ai/api/v1/models",
+        "https://openrouter.ai/api/v1/models/anthropic/claude-fable-5.1/endpoints"
+      ]
+    },
+    {
+      "model_id": "gemini4_argon",
+      "model_name": "Gemini 4 Argon",
+      "decision": "filled",
+      "reason": "Exact release name and upstream ID reviewed against the curated release; publisher namespace agrees. Base, instruct, parameter size, preview, and Flash variants remain distinct.",
+      "sources": [
+        "https://openrouter.ai/api/v1/models",
+        "https://openrouter.ai/api/v1/models/google/gemini-4-argon/endpoints"
+      ]
+    },
+    {
+      "model_id": "muse_wonder",
+      "model_name": "Muse Wonder",
+      "decision": "filled",
+      "reason": "Exact release name and upstream ID reviewed against the curated release; publisher namespace agrees. Base, instruct, parameter size, preview, and Flash variants remain distinct.",
+      "sources": [
+        "https://openrouter.ai/api/v1/models",
+        "https://openrouter.ai/api/v1/models/meta/muse-wonder/endpoints"
+      ]
+    },
+    {
+      "model_id": "muse_wonder_full",
+      "model_name": "Muse Wonder Full",
+      "decision": "subscription_only",
+      "reason": "Meta lists Muse Wonder Full only in Muse Code subscriptions, with no per-token Model API price. Muse Wonder rates do not apply.",
+      "sources": [
+        "https://dev.meta.ai/models/muse-wonder"
+      ]
+    },
+    {
+      "model_id": "mistral_large4",
+      "model_name": "Mistral Large 4",
+      "decision": "filled",
+      "reason": "Exact release name and upstream ID reviewed against the curated release; publisher namespace agrees. Base, instruct, parameter size, preview, and Flash variants remain distinct.",
+      "sources": [
+        "https://openrouter.ai/api/v1/models",
+        "https://openrouter.ai/api/v1/models/mistralai/mistral-large-4-0/endpoints"
+      ]
+    },
+    {
+      "model_id": "grok47",
+      "model_name": "Grok 4.7",
+      "decision": "filled",
+      "reason": "Exact release name and upstream ID reviewed against the curated release; publisher namespace agrees. Base, instruct, parameter size, preview, and Flash variants remain distinct.",
+      "sources": [
+        "https://openrouter.ai/api/v1/models",
+        "https://openrouter.ai/api/v1/models/x-ai/grok-4.7/endpoints"
+      ]
+    },
+    {
+      "model_id": "grok46",
+      "model_name": "Grok 4.6",
+      "decision": "filled",
+      "reason": "Exact release name and upstream ID reviewed against the curated release; publisher namespace agrees. Base, instruct, parameter size, preview, and Flash variants remain distinct.",
+      "sources": [
+        "https://openrouter.ai/api/v1/models",
+        "https://openrouter.ai/api/v1/models/x-ai/grok-4.6/endpoints"
+      ]
+    },
+    {
+      "model_id": "qwen_agentworld_35b_a3b",
+      "model_name": "Qwen-AgentWorld-35B-A3B",
+      "decision": "unverified_route",
+      "reason": "No exact current hosted price in the reviewed OpenRouter, DeepInfra, or Together sources. Do not substitute Qwen3.5-35B-A3B or treat downloadable weights as free API access.",
+      "sources": [
+        "https://openrouter.ai/api/v1/models",
+        "https://api.deepinfra.com/models/list",
+        "https://www.together.ai/pricing"
+      ]
+    },
+    {
+      "model_id": "qwen3_30b_a3b_base",
+      "model_name": "Qwen3-30B-A3B-Base",
+      "decision": "base_variant_mismatch",
+      "reason": "Curated record is the base/pretrained release. Hosted instruct, chat, reasoning or fine-tuned variants are distinct; no verified base-model API quote found in reviewed catalogs.",
+      "sources": [
+        "https://openrouter.ai/api/v1/models",
+        "https://api.deepinfra.com/models/list",
+        "https://www.together.ai/pricing"
+      ]
+    },
+    {
+      "model_id": "qwen3_14b_base",
+      "model_name": "Qwen3-14B-Base",
+      "decision": "base_variant_mismatch",
+      "reason": "Curated record is the base/pretrained release. Hosted instruct, chat, reasoning or fine-tuned variants are distinct; no verified base-model API quote found in reviewed catalogs.",
+      "sources": [
+        "https://openrouter.ai/api/v1/models",
+        "https://api.deepinfra.com/models/list",
+        "https://www.together.ai/pricing"
+      ]
+    },
+    {
+      "model_id": "qwen3_8b_base",
+      "model_name": "Qwen3-8B-Base",
+      "decision": "base_variant_mismatch",
+      "reason": "Curated record is the base/pretrained release. Hosted instruct, chat, reasoning or fine-tuned variants are distinct; no verified base-model API quote found in reviewed catalogs.",
+      "sources": [
+        "https://openrouter.ai/api/v1/models",
+        "https://api.deepinfra.com/models/list",
+        "https://www.together.ai/pricing"
+      ]
+    },
+    {
+      "model_id": "qwen25_72b_instruct",
+      "model_name": "Qwen2.5-72B-Instruct",
+      "decision": "filled",
+      "reason": "Exact release name and upstream ID reviewed against the curated release; publisher namespace agrees. Base, instruct, parameter size, preview, and Flash variants remain distinct.",
+      "sources": [
+        "https://openrouter.ai/api/v1/models",
+        "https://openrouter.ai/api/v1/models/qwen/qwen-2.5-72b-instruct/endpoints"
+      ]
+    },
+    {
+      "model_id": "deepseek_v3_base",
+      "model_name": "DeepSeek-V3-Base",
+      "decision": "base_variant_mismatch",
+      "reason": "Curated record is the base/pretrained release. Hosted instruct, chat, reasoning or fine-tuned variants are distinct; no verified base-model API quote found in reviewed catalogs.",
+      "sources": [
+        "https://openrouter.ai/api/v1/models",
+        "https://api.deepinfra.com/models/list",
+        "https://www.together.ai/pricing"
+      ]
+    },
+    {
+      "model_id": "deepseek_r1",
+      "model_name": "DeepSeek-R1",
+      "decision": "retained_historical",
+      "reason": "OpenRouter returned an empty collection in the preceding refresh. DeepInfra marks original R1 deprecated and replaced by R1-0528. Preserve the old quote; do not transfer replacement prices.",
+      "sources": [
+        "https://openrouter.ai/api/v1/models",
+        "https://api.deepinfra.com/models/list"
+      ]
+    },
+    {
+      "model_id": "deepseek_r1_distill_qwen_7b",
+      "model_name": "DeepSeek-R1-Distill-Qwen-7B",
+      "decision": "unverified_route",
+      "reason": "No exact current hosted quote in reviewed catalogs; 1.5B, 14B, 32B and Llama distill variants are not substitutes.",
+      "sources": [
+        "https://openrouter.ai/api/v1/models",
+        "https://api.deepinfra.com/models/list",
+        "https://www.together.ai/pricing"
+      ]
+    },
+    {
+      "model_id": "deepseek_r1_distill_qwen_32b",
+      "model_name": "DeepSeek-R1-Distill-Qwen-32B",
+      "decision": "deprecated_route",
+      "reason": "DeepInfra catalog retains a price but marks this endpoint deprecated with a different replacement. Not promoted as an available route; absent from current OpenRouter catalog.",
+      "sources": [
+        "https://openrouter.ai/api/v1/models",
+        "https://api.deepinfra.com/models/list"
+      ]
+    },
+    {
+      "model_id": "claude3_opus",
+      "model_name": "Claude 3 Opus",
+      "decision": "retired_release",
+      "reason": "Anthropic retirement documentation and current catalog do not establish a current route for this exact historical release. Retain benchmark evidence without borrowing newer-model prices.",
+      "sources": [
+        "https://platform.claude.com/docs/en/about-claude/model-deprecations",
+        "https://openrouter.ai/api/v1/models"
+      ]
+    },
+    {
+      "model_id": "claude3_sonnet",
+      "model_name": "Claude 3 Sonnet",
+      "decision": "retired_release",
+      "reason": "Anthropic retirement documentation and current catalog do not establish a current route for this exact historical release. Retain benchmark evidence without borrowing newer-model prices.",
+      "sources": [
+        "https://platform.claude.com/docs/en/about-claude/model-deprecations",
+        "https://openrouter.ai/api/v1/models"
+      ]
+    },
+    {
+      "model_id": "claude3_haiku",
+      "model_name": "Claude 3 Haiku",
+      "decision": "retired_release",
+      "reason": "Anthropic retirement documentation and current catalog do not establish a current route for this exact historical release. Retain benchmark evidence without borrowing newer-model prices.",
+      "sources": [
+        "https://platform.claude.com/docs/en/about-claude/model-deprecations",
+        "https://openrouter.ai/api/v1/models"
+      ]
+    },
+    {
+      "model_id": "claude35_sonnet_june",
+      "model_name": "Claude 3.5 Sonnet (June 2024)",
+      "decision": "retired_release",
+      "reason": "Anthropic retirement documentation and current catalog do not establish a current route for this exact historical release. Retain benchmark evidence without borrowing newer-model prices.",
+      "sources": [
+        "https://platform.claude.com/docs/en/about-claude/model-deprecations",
+        "https://openrouter.ai/api/v1/models"
+      ]
+    },
+    {
+      "model_id": "gemini10_ultra",
+      "model_name": "Gemini 1.0 Ultra",
+      "decision": "unverified_route",
+      "reason": "Historical release; no exact current per-token route in reviewed catalogs. Do not use current Gemini or subscription prices.",
+      "sources": [
+        "https://openrouter.ai/api/v1/models",
+        "https://ai.google.dev/gemini-api/docs/changelog"
+      ]
+    },
+    {
+      "model_id": "gemini10_pro",
+      "model_name": "Gemini 1.0 Pro",
+      "decision": "unverified_route",
+      "reason": "Historical release; no exact current route or price verified. Do not substitute later Gemini releases.",
+      "sources": [
+        "https://openrouter.ai/api/v1/models",
+        "https://ai.google.dev/gemini-api/docs/changelog"
+      ]
+    },
+    {
+      "model_id": "gemini15_pro_may",
+      "model_name": "Gemini 1.5 Pro (May 2024 report checkpoint)",
+      "decision": "retired_release",
+      "reason": "Google release notes say Gemini 1.5 models shut down September 29, 2025; the curated record is specifically the May 2024 report checkpoint.",
+      "sources": [
+        "https://ai.google.dev/gemini-api/docs/changelog",
+        "https://openrouter.ai/api/v1/models"
+      ]
+    },
+    {
+      "model_id": "gemini15_flash_may",
+      "model_name": "Gemini 1.5 Flash (May 2024 report checkpoint)",
+      "decision": "retired_release",
+      "reason": "Google release notes say Gemini 1.5 models shut down September 29, 2025; the curated record is specifically the May 2024 report checkpoint.",
+      "sources": [
+        "https://ai.google.dev/gemini-api/docs/changelog",
+        "https://openrouter.ai/api/v1/models"
+      ]
+    },
+    {
+      "model_id": "llama31_8b_instruct",
+      "model_name": "Llama 3.1 8B Instruct",
+      "decision": "filled",
+      "reason": "Exact release name and upstream ID reviewed against the curated release; publisher namespace agrees. Base, instruct, parameter size, preview, and Flash variants remain distinct.",
+      "sources": [
+        "https://openrouter.ai/api/v1/models",
+        "https://openrouter.ai/api/v1/models/meta-llama/llama-3.1-8b-instruct/endpoints"
+      ]
+    },
+    {
+      "model_id": "llama31_70b_instruct",
+      "model_name": "Llama 3.1 70B Instruct",
+      "decision": "filled",
+      "reason": "Exact release name and upstream ID reviewed against the curated release; publisher namespace agrees. Base, instruct, parameter size, preview, and Flash variants remain distinct.",
+      "sources": [
+        "https://openrouter.ai/api/v1/models",
+        "https://openrouter.ai/api/v1/models/meta-llama/llama-3.1-70b-instruct/endpoints"
+      ]
+    },
+    {
+      "model_id": "llama31_405b_instruct",
+      "model_name": "Llama 3.1 405B Instruct",
+      "decision": "deprecated_route",
+      "reason": "Exact DeepInfra endpoint is deprecated and replaced by Hermes 3, a distinct fine-tune. No exact current OpenRouter route.",
+      "sources": [
+        "https://openrouter.ai/api/v1/models",
+        "https://api.deepinfra.com/models/list"
+      ]
+    },
+    {
+      "model_id": "mistral_7b",
+      "model_name": "Mistral 7B",
+      "decision": "base_variant_mismatch",
+      "reason": "Curated record is the base/pretrained release. Hosted instruct, chat, reasoning or fine-tuned variants are distinct; no verified base-model API quote found in reviewed catalogs.",
+      "sources": [
+        "https://openrouter.ai/api/v1/models",
+        "https://api.deepinfra.com/models/list",
+        "https://www.together.ai/pricing"
+      ]
+    },
+    {
+      "model_id": "mixtral_8x7b",
+      "model_name": "Mixtral 8x7B",
+      "decision": "base_variant_mismatch",
+      "reason": "Curated record is the base/pretrained release. Hosted instruct, chat, reasoning or fine-tuned variants are distinct; no verified base-model API quote found in reviewed catalogs.",
+      "sources": [
+        "https://openrouter.ai/api/v1/models",
+        "https://api.deepinfra.com/models/list",
+        "https://www.together.ai/pricing"
+      ]
+    },
+    {
+      "model_id": "mixtral_8x7b_instruct",
+      "model_name": "Mixtral 8x7B Instruct",
+      "decision": "deprecated_route",
+      "reason": "DeepInfra marks the exact instruct endpoint deprecated. Together lists training/dedicated-related prices rather than a current serverless per-token quote in the reviewed table.",
+      "sources": [
+        "https://openrouter.ai/api/v1/models",
+        "https://api.deepinfra.com/models/list",
+        "https://www.together.ai/pricing"
+      ]
+    },
+    {
+      "model_id": "glm53",
+      "model_name": "GLM-5.3",
+      "decision": "filled",
+      "reason": "Exact release name and upstream ID reviewed against the curated release; publisher namespace agrees. Base, instruct, parameter size, preview, and Flash variants remain distinct.",
+      "sources": [
+        "https://openrouter.ai/api/v1/models",
+        "https://openrouter.ai/api/v1/models/z-ai/glm-5.3/endpoints"
+      ]
+    },
+    {
+      "model_id": "qwen38_max",
+      "model_name": "Qwen3.8-Max",
+      "decision": "filled",
+      "reason": "Official qwen3.8-max model-specific Singapore International price; kept distinct from the OpenRouter September 2 snapshot and Prime.",
+      "sources": [
+        "https://www.alibabacloud.com/help/en/model-studio/qwen3-8-max"
+      ]
+    },
+    {
+      "model_id": "deepseek_v4_1_flash",
+      "model_name": "DeepSeek V4.1 Flash",
+      "decision": "filled",
+      "reason": "The canonical slug identifies the September 10 release matching curated release_date; exclude the separate October 17 snapshot.",
+      "sources": [
+        "https://openrouter.ai/api/v1/models",
+        "https://openrouter.ai/api/v1/models/deepseek/deepseek-v4.1-flash/endpoints"
+      ]
+    },
+    {
+      "model_id": "dots3_note_preview",
+      "model_name": "Dots3-Note Preview",
+      "decision": "filled",
+      "reason": "Exact Dots3-Note Preview release name and canonical slug; :free is the serving tier, not a different model. Zero prices require an available endpoint with explicit zero charges.",
+      "sources": [
+        "https://openrouter.ai/api/v1/models",
+        "https://openrouter.ai/api/v1/models/dots-studio/dots-3-note-preview:free/endpoints"
+      ]
+    },
+    {
+      "model_id": "glm53_flash",
+      "model_name": "GLM-5.3-Flash",
+      "decision": "filled",
+      "reason": "Exact release name and upstream ID reviewed against the curated release; publisher namespace agrees. Base, instruct, parameter size, preview, and Flash variants remain distinct.",
+      "sources": [
+        "https://openrouter.ai/api/v1/models",
+        "https://openrouter.ai/api/v1/models/z-ai/glm-5.3-flash/endpoints"
+      ]
+    },
+    {
+      "model_id": "qwen38_27b",
+      "model_name": "Qwen3.8-27B",
+      "decision": "filled",
+      "reason": "Exact release name and upstream ID reviewed against the curated release; publisher namespace agrees. Base, instruct, parameter size, preview, and Flash variants remain distinct.",
+      "sources": [
+        "https://openrouter.ai/api/v1/models",
+        "https://openrouter.ai/api/v1/models/qwen/qwen3.8-27b/endpoints"
+      ]
+    },
+    {
+      "model_id": "gpt4o",
+      "model_name": "GPT-4o",
+      "decision": "filled",
+      "reason": "The curated release date is 2024-05-13. Use the explicit May 13 endpoint, not the floating GPT-4o alias or August/November checkpoints.",
+      "sources": [
+        "https://openrouter.ai/api/v1/models",
+        "https://openrouter.ai/api/v1/models/openai/gpt-4o-2024-05-13/endpoints"
+      ]
+    },
+    {
+      "model_id": "grok3",
+      "model_name": "Grok 3",
+      "decision": "retired_redirect",
+      "reason": "xAI documents retirement and automatic redirection to Grok 4.3. A resolving Grok 3 slug no longer establishes Grok 3 serving or pricing.",
+      "sources": [
+        "https://docs.x.ai/developers/migration/may-15-retirement",
+        "https://openrouter.ai/api/v1/models"
+      ]
+    }
+  ]
+}

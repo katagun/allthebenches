@@ -18,6 +18,7 @@ from typing import Any
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
+from pipeline.collectors import validate_payload  # noqa: E402
 from pipeline.schema import ServingRoute, Source  # noqa: E402
 
 
@@ -71,6 +72,7 @@ def validate_endpoint_snapshot(snapshot: dict[str, Any], verify_raw_bodies: bool
         expected_url = f"https://openrouter.ai/api/v1/models/{upstream}/endpoints"
         if envelope.get("url") != expected_url:
             raise ValueError(f"Unexpected endpoint URL for {upstream}: {envelope.get('url')!r}")
+        validate_payload(expected_url, envelope.get("data"))
         encoded = envelope.get("body_base64")
         if encoded is None:
             if verify_raw_bodies:
@@ -247,6 +249,13 @@ def review(dataset: dict[str, Any], snapshot: dict[str, Any], catalog_rows: dict
             additions.append(route)
             audit_rows.append({**identity, "route_id": rid, "classification": "added_exact_match",
                                "identity_evidence": identity_evidence[upstream]})
+    if refresh_existing:
+        accepted = {upstream for upstream, envelope in snapshot.get("endpoints", {}).items() if envelope.get("status") == "ok"}
+        for route in dataset["routes"]:
+            if route.get("upstream_model_id") in accepted and route["id"] not in seen_snapshot_routes:
+                # Absence from an accepted snapshot is unknown availability,
+                # not confirmation that yesterday's route still serves requests.
+                route["availability"] = "unknown"
     return additions, list(sources.values()), audit_rows
 
 

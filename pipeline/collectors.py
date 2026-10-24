@@ -1,6 +1,7 @@
 """Discovery collectors. They stage raw source data and never modify curated data."""
 from __future__ import annotations
 
+import base64
 from datetime import datetime, timezone
 import hashlib
 import json
@@ -22,6 +23,60 @@ SOURCES = {
 }
 
 
+def validate_payload(url: str, body: Any, previous: Any = None) -> int:
+    """Reject errors, identity mismatches, empty and implausibly collapsed feeds.
+
+    A drop below half the last accepted count requires manual review. Never
+    silently turn upstream deletion or an outage into new curated evidence.
+    """
+    if not isinstance(body, dict) or any(key in body for key in ("error", "errors")):
+        raise ValueError("invalid feed envelope")
+    if url.endswith("/endpoints"):
+        model_id = url.split("/models/", 1)[1].removesuffix("/endpoints")
+        data = body.get("data")
+        if not isinstance(data, dict) or data.get("id") != model_id:
+            raise ValueError("endpoint model identity mismatch")
+        rows = data.get("endpoints")
+        identity = lambda row: row.get("model_id") == model_id and bool(row.get("provider_name"))
+    elif "openrouter.ai" in url:
+        rows = body.get("data")
+        key = "model_permaslug" if "rankings-daily" in url else "id"
+        identity = lambda row: isinstance(row.get(key), str) and bool(row[key])
+    elif url.endswith("taxonomy.json"):
+        rows = body.get("architectures")
+        identity = lambda row: bool(row.get("id"))
+    elif "peacefulcoexistance.com" in url:
+        wrapper = "labs" if url.endswith("labs.json") else "entries" if url.endswith("license-evidence.json") else "models"
+        rows = body.get(wrapper)
+        key = "project_id" if wrapper == "entries" else "id"
+        identity = lambda row: bool(row.get(key))
+    else:  # models.dev keyed model/provider catalogs
+        rows = list(body.values())
+        identity = lambda row: bool(row.get("id"))
+    if not isinstance(rows, list) or not rows:
+        raise ValueError("empty or invalid feed collection")
+    if not all(isinstance(row, dict) and identity(row) for row in rows):
+        raise ValueError("feed record identity missing or mismatched")
+    if previous is not None:
+        try:
+            old_count = validate_payload(url, previous)
+        except ValueError:
+            old_count = 0
+        if len(rows) * 2 < old_count:
+            raise ValueError(f"suspicious feed collapse: {len(rows)} records, previously {old_count}")
+    return len(rows)
+
+
+def response_payload(response: httpx.Response, url: str, previous: Any = None) -> tuple[Any, int]:
+    response.raise_for_status()
+    if len(response.content) > 50_000_000:
+        raise ValueError("feed exceeds 50 MB limit")
+    if "json" not in response.headers.get("content-type", "").lower():
+        raise ValueError("feed content type is not JSON")
+    body = response.json()
+    return body, validate_payload(url, body, previous)
+
+
 def collect(source: str, staging: Path, client: httpx.Client | None = None) -> dict[str, Any]:
     if source not in SOURCES:
         raise ValueError(f"unknown source {source}; choose {', '.join(SOURCES)}")
@@ -33,31 +88,27 @@ def collect(source: str, staging: Path, client: httpx.Client | None = None) -> d
     old_path = staging / f"{source}.json"
     previous = json.loads(old_path.read_text()) if old_path.exists() else None
     results = []
+    old_feeds = {f.get("url"): f for f in (previous or {}).get("feeds", [])}
+    now = datetime.now(timezone.utc).isoformat()
     try:
         for url in SOURCES[source]:
+            old = old_feeds.get(url, {})
             try:
                 response = client.get(url)
-                response.raise_for_status()
-                body = response.json()
-                raw = response.content
-                results.append({"url": url, "status": "ok", "sha256": hashlib.sha256(raw).hexdigest(), "data": body})
+                body, count = response_payload(response, url, old.get("data"))
+                result = {"url": url, "status": "ok", "sha256": hashlib.sha256(response.content).hexdigest(),
+                          "data": body, "record_count": count, "retrieved_at": now}
             except (httpx.HTTPError, ValueError) as exc:
-                results.append({"url": url, "status": "error", "error": f"{type(exc).__name__}: {exc}"})
-        now = datetime.now(timezone.utc).isoformat()
-        if all(r["status"] != "ok" for r in results) and previous:
-            envelope = previous
-            envelope["last_attempt_at"] = now
-            envelope["last_attempt"] = results
-            envelope["status"] = "stale"
-        else:
-            old_feeds = {f.get("url"): f for f in (previous or {}).get("feeds", [])}
-            for i, result in enumerate(results):
-                old = old_feeds.get(result.get("url"))
-                if result["status"] == "error" and old and old.get("status") in ("ok", "stale"):
-                    results[i] = {**old, "status": "stale", "refresh_error": result["error"]}
-                elif result["status"] == "ok":
-                    result["retrieved_at"] = now
-            envelope = {"source": source, "retrieved_at": now, "status": "ok" if all(r["status"] == "ok" for r in results) else "partial", "feeds": results}
+                # Publish only fixed error categories; response bodies/credentials
+                # from exception messages never belong in the public manifest.
+                error = str(exc) if isinstance(exc, ValueError) else type(exc).__name__
+                result = {**old, "url": url, "status": "stale" if old.get("data") else "error", "refresh_error": error}
+                if old.get("data") and not result.get("retrieved_at"):
+                    result["retrieved_at"] = (previous or {}).get("retrieved_at")
+            result["attempted_at"] = now
+            results.append(result)
+        status = "ok" if all(r["status"] == "ok" for r in results) else "partial" if any(r["status"] == "ok" for r in results) else "stale" if any(r["status"] == "stale" for r in results) else "error"
+        envelope = {"source": source, "attempted_at": now, "status": status, "feeds": results}
         old_path.write_text(json.dumps(envelope, ensure_ascii=False, sort_keys=True, indent=2) + "\n")
         queue = mapping_queue_rows(source, envelope)
         queue_path = staging / f"{source}-mapping-queue.json"
@@ -84,6 +135,8 @@ def mapping_queue_rows(source: str, envelope: dict[str, Any]) -> list[dict[str, 
 
 def collect_openrouter_endpoints(model_ids: list[str], staging: Path, client: httpx.Client | None = None) -> dict[str, Any]:
     """Fetch endpoint-level routes for explicitly reviewed OpenRouter model IDs."""
+    if not model_ids:
+        raise ValueError("no reviewed endpoint IDs supplied")
     staging.mkdir(parents=True, exist_ok=True)
     owns_client = client is None
     headers = {"User-Agent": "allthebenches/0.1 (metadata collector)"}
@@ -99,20 +152,22 @@ def collect_openrouter_endpoints(model_ids: list[str], staging: Path, client: ht
             url = f"https://openrouter.ai/api/v1/models/{model_id}/endpoints"
             try:
                 response = client.get(url)
-                response.raise_for_status()
+                body, count = response_payload(response, url, endpoints.get(model_id, {}).get("data"))
                 raw = response.content
                 endpoints[model_id] = {"status":"ok", "url":str(response.url),
                                        "retrieved_at":datetime.now(timezone.utc).isoformat(),
-                                       "sha256":hashlib.sha256(raw).hexdigest(), "data":response.json()}
+                                       "sha256":hashlib.sha256(raw).hexdigest(), "data":body, "record_count":count,
+                                       "body_base64":base64.b64encode(raw).decode("ascii")}
                 results.append({"model_id":model_id, "status":"ok"})
             except (httpx.HTTPError, ValueError) as exc:
                 old = endpoints.get(model_id)
                 if old and old.get("data"):
-                    old.update({"status":"stale", "refresh_error":f"{type(exc).__name__}: {exc}"})
+                    old.update({"status":"stale", "refresh_error":str(exc) if isinstance(exc, ValueError) else type(exc).__name__})
                 else:
                     endpoints[model_id] = {"status":"error", "url":url,
-                                           "error":f"{type(exc).__name__}: {exc}"}
+                                           "error":str(exc) if isinstance(exc, ValueError) else type(exc).__name__}
                 results.append({"model_id":model_id, "status":endpoints[model_id]["status"]})
+            endpoints[model_id]["attempted_at"] = datetime.now(timezone.utc).isoformat()
         envelope = {"source":"openrouter-endpoints", "attempted_at":datetime.now(timezone.utc).isoformat(),
                     "status":"ok" if all(r["status"] == "ok" for r in results) else "partial",
                     "endpoints":endpoints, "attempts":results}

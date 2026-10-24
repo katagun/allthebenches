@@ -28,7 +28,7 @@ def test_success_stages_raw_and_unresolved_queue(tmp_path):
     class SuccessClient:
         headers = {}
         def get(self, url):
-            return httpx.Response(200, request=httpx.Request("GET", url), json={"data":[{"id":"x/model", "name":"Model"}]})
+            return httpx.Response(200, request=httpx.Request("GET", url), json={"data":[{"id":"x/model", "name":"Model", "model_permaslug":"x/model"}]})
     result = collect("openrouter", tmp_path, SuccessClient())
     assert result["status"] == "ok"
     queue = json.loads((tmp_path / "openrouter-mapping-queue.json").read_text())
@@ -98,3 +98,84 @@ def test_reconciliation_requires_exact_id_and_excludes_benchmark_metadata(tmp_pa
     assert "benchmarks" not in model["models_dev"]["metadata"]
     assert "benchmarks" not in model["atlas"]["source_metadata"]
     assert model["openrouter"]["endpoints"][0]["pricing"]["effective_usd_per_million_tokens"]["input"] == "3.000000"
+
+
+def test_empty_error_and_collapsed_feeds_never_replace_last_good(tmp_path):
+    from pipeline.collectors import SOURCES
+    url = SOURCES['openrouter'][0]
+    good = {'data': [{'id': f'x/{i}'} for i in range(10)]}
+    path = tmp_path / 'openrouter.json'
+    path.write_text(json.dumps({'source': 'openrouter', 'feeds': [
+        {'url': url, 'status': 'ok', 'data': good, 'retrieved_at': '2026-01-01T00:00:00Z'}]}))
+    for body in ({'data': []}, {'error': {'message': 'unavailable'}}, {'data': [{'id': 'x/1'}]}, {'data': [{'name': 'missing ID'}]}):
+        client = httpx.Client(transport=httpx.MockTransport(lambda request, body=body: httpx.Response(200, json=body)))
+        with client:
+            result = collect('openrouter', tmp_path, client)
+        retained = result['feeds'][0]
+        assert retained['data'] == good
+        assert retained['status'] == 'stale'
+        assert retained['retrieved_at'] == '2026-01-01T00:00:00Z'
+        assert retained['attempted_at'] != retained['retrieved_at']
+        assert len(mapping_queue_rows('openrouter', result)) == 10
+
+
+def test_endpoint_empty_and_mismatched_responses_preserve_only_failed_models(tmp_path):
+    from pipeline.collectors import collect_openrouter_endpoints
+    def payload(mid):
+        return {'data': {'id': mid, 'endpoints': [{'model_id': mid, 'provider_name': 'Provider'}]}}
+    previous = {'endpoints': {mid: {'status': 'ok', 'retrieved_at': '2026-01-01T00:00:00Z', 'data': payload(mid)} for mid in ['x/a', 'x/b', 'x/c']}}
+    (tmp_path / 'openrouter-endpoints.json').write_text(json.dumps(previous))
+    def respond(request):
+        mid = request.url.path.split('/models/')[1].removesuffix('/endpoints')
+        body = {'data': {'id': mid, 'endpoints': []}} if mid == 'x/a' else payload('wrong/model') if mid == 'x/b' else payload(mid)
+        return httpx.Response(200, json=body)
+    with httpx.Client(transport=httpx.MockTransport(respond)) as client:
+        result = collect_openrouter_endpoints(['x/a', 'x/b', 'x/c'], tmp_path, client)
+    assert result['status'] == 'partial'
+    for mid in ['x/a', 'x/b']:
+        assert result['endpoints'][mid]['status'] == 'stale'
+        assert result['endpoints'][mid]['retrieved_at'] == '2026-01-01T00:00:00Z'
+        assert result['endpoints'][mid]['data'] == payload(mid)
+    assert result['endpoints']['x/c']['status'] == 'ok'
+    assert result['endpoints']['x/c']['record_count'] == 1
+    assert result['endpoints']['x/c']['body_base64']
+
+
+def test_first_empty_collection_is_error_not_success(tmp_path):
+    from pipeline.collectors import collect_openrouter_endpoints
+    import pytest
+    with httpx.Client(transport=httpx.MockTransport(lambda request: httpx.Response(200, json={'data': []}))) as client:
+        result = collect('openrouter', tmp_path, client)
+        assert result['status'] == 'error'
+        assert mapping_queue_rows('openrouter', result) == []
+        with pytest.raises(ValueError, match='no reviewed'):
+            collect_openrouter_endpoints([], tmp_path, client)
+
+
+def test_public_health_excludes_payloads_and_unrelated_files(tmp_path):
+    from pipeline.feed_health import feed_health
+    (tmp_path / 'reconciliation-proposal.json').write_text('{}')
+    (tmp_path / 'openrouter.json').write_text(json.dumps({'status': 'stale', 'retrieved_at': '2026-01-01T00:00:00Z', 'last_attempt_at': '2026-01-02T00:00:00Z', 'feeds': [
+        {'url': 'https://openrouter.ai/api/v1/models', 'status': 'ok', 'data': {'secret': 'never publish'}, 'error': 'private body'}]}))
+    rows = feed_health(tmp_path)
+    row = next(r for r in rows if r['source_id'] == 'openrouter')
+    assert row['status'] == 'stale'
+    assert row['as_of'] == '2026-01-01T00:00:00Z'
+    assert row['attempted_at'] == '2026-01-02T00:00:00Z'
+    assert 'private' not in json.dumps(rows) and 'secret' not in json.dumps(rows)
+    assert len(rows) == 4
+
+
+def test_cli_reports_partial_collection_as_failure(tmp_path, monkeypatch):
+    from pipeline import cli
+    monkeypatch.setattr(cli, 'collect', lambda source, staging: {'status': 'partial' if source == 'openrouter' else 'ok'})
+    assert cli.main(['collect', '--source', 'all', '--staging', str(tmp_path)]) == 1
+
+
+def test_non_json_response_does_not_replace_valid_payload(tmp_path):
+    from pipeline.collectors import response_payload
+    import pytest
+    response = httpx.Response(200, request=httpx.Request('GET', 'https://openrouter.ai/api/v1/models'),
+                              headers={'content-type': 'text/html'}, content=b'<html>unavailable</html>')
+    with pytest.raises(ValueError, match='content type'):
+        response_payload(response, str(response.url))

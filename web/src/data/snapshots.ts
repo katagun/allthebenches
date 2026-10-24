@@ -1,4 +1,4 @@
-import type { CatalogSnapshot, DetailsSnapshot, ManifestSnapshot, MarketSnapshot, Observation, ResultsSnapshot } from '../generated/dataset';
+import type { CatalogSnapshot, DetailsSnapshot, ManifestSnapshot, MarketSnapshot, RoutePerformance, Observation, ResultsSnapshot } from '../generated/dataset';
 export type ObservationIndex = Pick<Observation, 'id' | 'configuration_id' | 'benchmark_id' | 'series_id' | 'review_state' | 'reporting_relationship' | 'setup' | 'value' | 'unit'>;
 export type AppData = { catalog: CatalogSnapshot; results: Omit<ResultsSnapshot, 'observations'> & { observations: ObservationIndex[] }; details: Omit<DetailsSnapshot, 'observations'> & { observations: ObservationIndex[] }; market: MarketSnapshot; manifest: ManifestSnapshot };
 export type FullAppData = Omit<AppData, 'details' | 'results'> & { details: DetailsSnapshot; results: ResultsSnapshot };
@@ -33,7 +33,8 @@ export function loadEvidence(data: AppData): Promise<FullAppData> {
   if (!url) return Promise.reject(new Error('Evidence location is unavailable. Reload the snapshot.'));
   const cached = fullPending.get(data);
   if (cached) return cached;
-  const request = readJson<DetailsSnapshot>(url).then(details => ({ ...data, details,
+  const request = readJson<DetailsSnapshot & { route_performance?: RoutePerformance[] }>(url).then(({ route_performance, ...details }) => ({ ...data, details,
+    market: { ...data.market, performance: route_performance ?? data.market.performance },
     results: { ...data.results, observations: details.observations.filter(record => record.review_state === 'reviewed') },
   })).catch(error => { fullPending.delete(data); throw error; });
   fullPending.set(data, request);

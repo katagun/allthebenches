@@ -48,4 +48,4 @@ export type DetailsSnapshot = { schema_version: string; sources: Source[]; serie
 
 export type MarketSnapshot = { schema_version: string; routes: ServingRoute[]; prices: PriceObservation[]; performance: RoutePerformance[]; usage: UsageObservation[] };
 
-export type ManifestSnapshot = { schema_version: string; data_version: string; snapshot_id: string; generated_at: string | null; files: Record<string, { sha256: string; bytes: number }>; coverage: { models: number; benchmarked_models: number; observations: number; display_cells: number; benchmarks: number }; feeds: Array<{ source_id: string; status: string; as_of?: string | null; error?: unknown }>; };
+export type ManifestSnapshot = { schema_version: string; data_version: string; snapshot_id: string; generated_at: string | null; files: Record<string, { sha256: string; bytes: number }>; coverage: { models: number; benchmarked_models: number; observations: number; display_cells: number; benchmarks: number }; feeds: Array<{ source_id: string; status: string; as_of?: string | null; attempted_at?: string | null; url?: string | null; record_count?: number | null; error?: unknown }>; };

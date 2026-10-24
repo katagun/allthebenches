@@ -1,0 +1,146 @@
+[
+  {
+    "model_id": "claude_opus55",
+    "curated_name": "Claude Opus 5.5",
+    "external_id": "anthropic/claude-opus-5.5",
+    "catalog_name": "Anthropic: Claude Opus 5.5",
+    "canonical_slug": "anthropic/claude-opus-5.5-20260921",
+    "hugging_face_id": null,
+    "evidence": "Exact release name and upstream ID reviewed against the curated release; publisher namespace agrees. Base, instruct, parameter size, preview, and Flash variants remain distinct."
+  },
+  {
+    "model_id": "claude_fable51",
+    "curated_name": "Claude Fable 5.1",
+    "external_id": "anthropic/claude-fable-5.1",
+    "catalog_name": "Anthropic: Claude Fable 5.1",
+    "canonical_slug": "anthropic/claude-fable-5.1-20260831",
+    "hugging_face_id": null,
+    "evidence": "Exact release name and upstream ID reviewed against the curated release; publisher namespace agrees. Base, instruct, parameter size, preview, and Flash variants remain distinct."
+  },
+  {
+    "model_id": "gemini4_argon",
+    "curated_name": "Gemini 4 Argon",
+    "external_id": "google/gemini-4-argon",
+    "catalog_name": "Google: Gemini 4 Argon",
+    "canonical_slug": "google/gemini-4-argon-20261013",
+    "hugging_face_id": null,
+    "evidence": "Exact release name and upstream ID reviewed against the curated release; publisher namespace agrees. Base, instruct, parameter size, preview, and Flash variants remain distinct."
+  },
+  {
+    "model_id": "muse_wonder",
+    "curated_name": "Muse Wonder",
+    "external_id": "meta/muse-wonder",
+    "catalog_name": "Meta: Muse Wonder",
+    "canonical_slug": "meta/muse-wonder-20261012",
+    "hugging_face_id": null,
+    "evidence": "Exact release name and upstream ID reviewed against the curated release; publisher namespace agrees. Base, instruct, parameter size, preview, and Flash variants remain distinct."
+  },
+  {
+    "model_id": "mistral_large4",
+    "curated_name": "Mistral Large 4",
+    "external_id": "mistralai/mistral-large-4-0",
+    "catalog_name": "Mistral: Mistral Large 4",
+    "canonical_slug": "mistralai/mistral-large-4-0-20261006",
+    "hugging_face_id": null,
+    "evidence": "Exact release name and upstream ID reviewed against the curated release; publisher namespace agrees. Base, instruct, parameter size, preview, and Flash variants remain distinct."
+  },
+  {
+    "model_id": "grok47",
+    "curated_name": "Grok 4.7",
+    "external_id": "x-ai/grok-4.7",
+    "catalog_name": "SpaceXAI: Grok 4.7",
+    "canonical_slug": "x-ai/grok-4.7-20260916",
+    "hugging_face_id": null,
+    "evidence": "Exact release name and upstream ID reviewed against the curated release; publisher namespace agrees. Base, instruct, parameter size, preview, and Flash variants remain distinct."
+  },
+  {
+    "model_id": "grok46",
+    "curated_name": "Grok 4.6",
+    "external_id": "x-ai/grok-4.6",
+    "catalog_name": "SpaceXAI: Grok 4.6",
+    "canonical_slug": "x-ai/grok-4.6-20260810",
+    "hugging_face_id": null,
+    "evidence": "Exact release name and upstream ID reviewed against the curated release; publisher namespace agrees. Base, instruct, parameter size, preview, and Flash variants remain distinct."
+  },
+  {
+    "model_id": "qwen25_72b_instruct",
+    "curated_name": "Qwen2.5-72B-Instruct",
+    "external_id": "qwen/qwen-2.5-72b-instruct",
+    "catalog_name": "Qwen2.5 72B Instruct",
+    "canonical_slug": "qwen/qwen-2.5-72b-instruct",
+    "hugging_face_id": "Qwen/Qwen2.5-72B-Instruct",
+    "evidence": "Exact release name and upstream ID reviewed against the curated release; publisher namespace agrees. Base, instruct, parameter size, preview, and Flash variants remain distinct."
+  },
+  {
+    "model_id": "llama31_8b_instruct",
+    "curated_name": "Llama 3.1 8B Instruct",
+    "external_id": "meta-llama/llama-3.1-8b-instruct",
+    "catalog_name": "Meta: Llama 3.1 8B Instruct",
+    "canonical_slug": "meta-llama/llama-3.1-8b-instruct",
+    "hugging_face_id": "meta-llama/Meta-Llama-3.1-8B-Instruct",
+    "evidence": "Exact release name and upstream ID reviewed against the curated release; publisher namespace agrees. Base, instruct, parameter size, preview, and Flash variants remain distinct."
+  },
+  {
+    "model_id": "llama31_70b_instruct",
+    "curated_name": "Llama 3.1 70B Instruct",
+    "external_id": "meta-llama/llama-3.1-70b-instruct",
+    "catalog_name": "Meta: Llama 3.1 70B Instruct",
+    "canonical_slug": "meta-llama/llama-3.1-70b-instruct",
+    "hugging_face_id": "meta-llama/Meta-Llama-3.1-70B-Instruct",
+    "evidence": "Exact release name and upstream ID reviewed against the curated release; publisher namespace agrees. Base, instruct, parameter size, preview, and Flash variants remain distinct."
+  },
+  {
+    "model_id": "glm53",
+    "curated_name": "GLM-5.3",
+    "external_id": "z-ai/glm-5.3",
+    "catalog_name": "Z.ai: GLM 5.3",
+    "canonical_slug": "z-ai/glm-5.3-20260816",
+    "hugging_face_id": "zai-org/GLM-5.3",
+    "evidence": "Exact release name and upstream ID reviewed against the curated release; publisher namespace agrees. Base, instruct, parameter size, preview, and Flash variants remain distinct."
+  },
+  {
+    "model_id": "deepseek_v4_1_flash",
+    "curated_name": "DeepSeek V4.1 Flash",
+    "external_id": "deepseek/deepseek-v4.1-flash",
+    "catalog_name": "DeepSeek: DeepSeek V4.1 Flash",
+    "canonical_slug": "deepseek/deepseek-v4.1-flash-20260910",
+    "hugging_face_id": "deepseek-ai/DeepSeek-V4.1-Flash",
+    "evidence": "The canonical slug identifies the September 10 release matching curated release_date; exclude the separate October 17 snapshot."
+  },
+  {
+    "model_id": "dots3_note_preview",
+    "curated_name": "Dots3-Note Preview",
+    "external_id": "dots-studio/dots-3-note-preview:free",
+    "catalog_name": "Dots Studio: Dots3-Note Preview (free)",
+    "canonical_slug": "dots-studio/dots-3-note-preview-20260813",
+    "hugging_face_id": null,
+    "evidence": "Exact Dots3-Note Preview release name and canonical slug; :free is the serving tier, not a different model. Zero prices require an available endpoint with explicit zero charges."
+  },
+  {
+    "model_id": "glm53_flash",
+    "curated_name": "GLM-5.3-Flash",
+    "external_id": "z-ai/glm-5.3-flash",
+    "catalog_name": "Z.ai: GLM 5.3 Flash",
+    "canonical_slug": "z-ai/glm-5.3-flash-20260826",
+    "hugging_face_id": "zai-org/GLM-5.3-Flash",
+    "evidence": "Exact release name and upstream ID reviewed against the curated release; publisher namespace agrees. Base, instruct, parameter size, preview, and Flash variants remain distinct."
+  },
+  {
+    "model_id": "qwen38_27b",
+    "curated_name": "Qwen3.8-27B",
+    "external_id": "qwen/qwen3.8-27b",
+    "catalog_name": "Qwen: Qwen3.8 27B",
+    "canonical_slug": "qwen/qwen3.8-27b-20260814",
+    "hugging_face_id": "Qwen/Qwen3.8-27B",
+    "evidence": "Exact release name and upstream ID reviewed against the curated release; publisher namespace agrees. Base, instruct, parameter size, preview, and Flash variants remain distinct."
+  },
+  {
+    "model_id": "gpt4o",
+    "curated_name": "GPT-4o",
+    "external_id": "openai/gpt-4o-2024-05-13",
+    "catalog_name": "OpenAI: GPT-4o (2024-05-13)",
+    "canonical_slug": "openai/gpt-4o-2024-05-13",
+    "hugging_face_id": null,
+    "evidence": "The curated release date is 2024-05-13. Use the explicit May 13 endpoint, not the floating GPT-4o alias or August/November checkpoints."
+  }
+]

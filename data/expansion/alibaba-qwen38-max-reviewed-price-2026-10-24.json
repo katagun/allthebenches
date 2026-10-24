@@ -1,0 +1,43 @@
+{
+  "source": {
+    "id": "alibaba_qwen38_max_pricing_2026_10_24",
+    "url": "https://www.alibabacloud.com/help/en/model-studio/qwen3-8-max",
+    "title": "Qwen3.8-Max Model Studio pricing: Singapore / International",
+    "publisher": "Alibaba Cloud",
+    "retrieved_at": "2026-10-24T17:35:15.624139+00:00",
+    "content_sha256": "4ed97796d9db62a5fcb7627bbfae6038422e4560cd503e148df405f990fcec4e",
+    "method": "Manual review of the official model-specific pricing table; standard Singapore International input/output and implicit-cache rates.",
+    "locator": "Model ID qwen3.8-max; Pricing > Singapore > Scope: International; rates USD per 1M tokens"
+  },
+  "route": {
+    "id": "alibaba:qwen3.8-max:singapore:international",
+    "model_id": "qwen38_max",
+    "provider": "Alibaba Cloud",
+    "upstream_model_id": "qwen3.8-max",
+    "routing_variant": "Singapore \u00b7 International \u00b7 standard",
+    "availability": "listed",
+    "context_tokens": 1000000,
+    "source_ids": [
+      "alibaba_qwen38_max_pricing_2026_10_24"
+    ]
+  },
+  "price": {
+    "id": "price_alibaba_qwen38_max_singapore_international",
+    "route_id": "alibaba:qwen3.8-max:singapore:international",
+    "quote_scope": "Alibaba Cloud Model Studio Singapore International standard API pricing",
+    "currency": "USD",
+    "input_price": "2",
+    "output_price": "6",
+    "cache_read_price": "0.25",
+    "price_unit": "USD per 1M tokens",
+    "context_tier": "up to 1M tokens",
+    "observed_at": "2026-10-24T17:35:15.624139+00:00",
+    "source_id": "alibaba_qwen38_max_pricing_2026_10_24",
+    "available": true,
+    "restrictions": [
+      "Singapore International deployment; standard API rate, excluding promotional offers and batch pricing.",
+      "Cache-read value is implicit caching only; explicit cache creation/read have separate rates not modeled here.",
+      "Provider model ID qwen3.8-max; this route is not the distinct OpenRouter September 2 snapshot or Prime variant. API prices do not represent the cost of the benchmark evaluation setup."
+    ]
+  }
+}

@@ -113,6 +113,8 @@ def _map_models(dataset: dict[str, Any], snapshot: dict[str, Any], catalog_rows:
             evidence[extid] = f"Reviewed exact external mapping {row['id']} ({row['source_id']})."
 
     for upstream, record in VERIFIED_CROSSWALK.items():
+        if upstream not in snapshot.get("endpoints", {}):
+            continue
         mid = record["model_id"]
         if mid not in models:
             raise ValueError(f"Curated model {mid} is missing")
@@ -276,7 +278,7 @@ def write_audit(path: Path, snapshot_path: Path, snapshot: dict[str, Any], rows:
         "",
         f"Reviewed {len(rows)} endpoint records: {decision_summary} Added routes cite the endpoint API response hashes recorded in their source records.",
         "",
-        "The three model identities without pre-existing route bridges were checked against exact OpenRouter response IDs and base names, then matched to existing curated names/aliases: DeepSeek R1, DeepSeek V4 Pro 0813, and Kimi K3. A separate exact catalog ID distinguishes original `deepseek/deepseek-r1` (created 1737381095) from `deepseek/deepseek-r1-0528` (`DeepSeek: R1 0528`, created 1748455170; explicitly described as an update to the original). The catalog response SHA-256 is recorded in the curated source `openrouter_model_catalog_2026_10_18`.",
+        "Model identities use existing exact route IDs, reviewed external mappings, or the explicit legacy crosswalk. Each decision below records its identity evidence; mapping sources remain in the curated external_mappings table.",
         "No endpoint prices or performance metrics were imported by this review.",
         "",
         "## Endpoint decisions",

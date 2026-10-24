@@ -14057,11 +14057,13 @@
     },
     {
       "id": "gap_usage_prices",
-      "reason": "As of 2026-10-24, eight exact OpenRouter model IDs have 88 refreshed endpoint quotes (86 available), covering eight of 47 curated releases. Four exact provider routes were added. DeepSeek R1 returned an empty endpoint list: its October 18 quote remains historical and excluded from fresh-price filtering. One previously listed Kimi K3 route is absent from the accepted response; its old quote is retained and route availability is unknown. The other 38 releases have no reconciled price in this snapshot. No usage rows are promoted because mapped IDs did not appear in the captured top-50 daily ranking feed; absence is censored/unknown, never zero.",
+      "reason": "At the October 24 coverage audit, fresh available prices cover 25 of 47 releases across 275 provider routes. Seventeen releases gained verified pricing; 22 remain unpriced because current exact routes are unverified, retired/deprecated, base-model variants, or subscription-only. See the per-release audit in docs/PRICE_COVERAGE_MOBILE_2026-10-24.md. Historical and unavailable quotes remain dated and excluded by default. Missing prices and censored top-50 usage are unknown, never zero.",
       "scope": "prices and popularity",
       "source_ids": [
         "openrouter_catalog",
-        "openrouter_rankings_daily"
+        "openrouter_rankings_daily",
+        "openrouter_price_coverage_catalog_2026_10_24",
+        "alibaba_qwen38_max_pricing_2026_10_24"
       ]
     },
     {
@@ -14219,7 +14221,7 @@
     }
   ],
   "data_version": "0.3.0-dev",
-  "generated_at": "2026-10-24T17:01:20.612545+00:00",
+  "generated_at": "2026-10-24T17:38:49.118977+00:00",
   "labs": [
     {
       "aliases": [

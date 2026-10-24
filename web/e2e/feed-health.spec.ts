@@ -8,7 +8,7 @@ for (const width of [1440, 390]) {
     const summary = page.locator('.feed-health summary');
     await summary.scrollIntoViewIfNeeded();
     await summary.click();
-    await expect(page.getByText(/Fresh available prices: 8 of 47 releases · 86 routes/)).toBeVisible();
+    await expect(page.getByText(/Fresh available prices: 25 of 47 releases · 275 routes/)).toBeVisible();
     await expect(page.getByText('Refresh failed · retained data', { exact: true })).toBeVisible();
     await expect(page.getByText(/not a live monitor/)).toBeVisible();
     const failed = page.locator('.feed-health li').filter({ hasText: 'deepseek/deepseek-r1/endpoints' });

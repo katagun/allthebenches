@@ -17,7 +17,8 @@ def write_runtime_snapshot(output: Path, payloads: dict, manifest: dict) -> None
                            for key, value in observation.get('setup', {}).items()}
         return record
 
-    evidence = compact(details)
+    # Performance is used only on model detail pages, which already load evidence.
+    evidence = compact({**details, "route_performance": payloads["market.json"]["performance"]})
     filename = f"evidence-{hashlib.sha256(evidence).hexdigest()[:16]}.json"
     for old in output.glob('evidence-*.json'):
         if old.name != filename:
@@ -28,6 +29,6 @@ def write_runtime_snapshot(output: Path, payloads: dict, manifest: dict) -> None
     catalog['saturation'] = [{**assessment, 'evidence': []} for assessment in catalog['saturation']]
     runtime = {'catalog': catalog, 'cells': payloads['results.json']['cells'],
                'observations': [summary(record) for record in details['observations']],
-               'series': details['series'], 'market': payloads['market.json'],
+               'series': details['series'], 'market': {**payloads['market.json'], 'performance': []},
                'manifest': manifest, 'evidence_file': filename}
     (output / 'comparison.json').write_bytes(compact(runtime))

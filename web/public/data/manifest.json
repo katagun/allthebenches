@@ -9,55 +9,187 @@
   "data_version": "0.3.0-dev",
   "feeds": [
     {
-      "as_of": "2026-10-17T14:35:34.269287+00:00",
+      "as_of": "2026-10-24T17:00:11.092396+00:00",
+      "attempted_at": "2026-10-24T17:00:11.092396+00:00",
       "error": null,
-      "source_id": "models.dev",
-      "status": "ok"
-    },
-    {
-      "as_of": null,
-      "error": null,
-      "source_id": "openrouter-endpoints",
-      "status": "ok"
-    },
-    {
-      "as_of": "2026-10-17T14:35:36.561048+00:00",
-      "error": null,
-      "source_id": "openrouter",
-      "status": "ok"
-    },
-    {
-      "as_of": "2026-10-17T14:35:33.613772+00:00",
-      "error": null,
+      "record_count": 75,
       "source_id": "peacefulcoexistance",
-      "status": "ok"
+      "status": "ok",
+      "url": "https://peacefulcoexistance.com/labs.json"
     },
     {
-      "as_of": null,
+      "as_of": "2026-10-24T17:00:11.092396+00:00",
+      "attempted_at": "2026-10-24T17:00:11.092396+00:00",
       "error": null,
-      "source_id": "reconciliation-proposal",
-      "status": "unknown"
+      "record_count": 383,
+      "source_id": "peacefulcoexistance",
+      "status": "ok",
+      "url": "https://peacefulcoexistance.com/models.json"
+    },
+    {
+      "as_of": "2026-10-24T17:00:11.092396+00:00",
+      "attempted_at": "2026-10-24T17:00:11.092396+00:00",
+      "error": null,
+      "record_count": 550,
+      "source_id": "peacefulcoexistance",
+      "status": "ok",
+      "url": "https://peacefulcoexistance.com/models-dev.json"
+    },
+    {
+      "as_of": "2026-10-24T17:00:11.092396+00:00",
+      "attempted_at": "2026-10-24T17:00:11.092396+00:00",
+      "error": null,
+      "record_count": 10,
+      "source_id": "peacefulcoexistance",
+      "status": "ok",
+      "url": "https://peacefulcoexistance.com/taxonomy.json"
+    },
+    {
+      "as_of": "2026-10-24T17:00:11.092396+00:00",
+      "attempted_at": "2026-10-24T17:00:11.092396+00:00",
+      "error": null,
+      "record_count": 283,
+      "source_id": "peacefulcoexistance",
+      "status": "ok",
+      "url": "https://peacefulcoexistance.com/license-evidence.json"
+    },
+    {
+      "as_of": "2026-10-24T17:00:12.055227+00:00",
+      "attempted_at": "2026-10-24T17:00:12.055227+00:00",
+      "error": null,
+      "record_count": 612,
+      "source_id": "models.dev",
+      "status": "ok",
+      "url": "https://models.dev/models.json?type=all"
+    },
+    {
+      "as_of": "2026-10-24T17:00:12.055227+00:00",
+      "attempted_at": "2026-10-24T17:00:12.055227+00:00",
+      "error": null,
+      "record_count": 230,
+      "source_id": "models.dev",
+      "status": "ok",
+      "url": "https://models.dev/api.json?type=all"
+    },
+    {
+      "as_of": "2026-10-24T17:00:13.329798+00:00",
+      "attempted_at": "2026-10-24T17:00:13.329798+00:00",
+      "error": null,
+      "record_count": 469,
+      "source_id": "openrouter",
+      "status": "ok",
+      "url": "https://openrouter.ai/api/v1/models"
+    },
+    {
+      "as_of": "2026-10-24T17:00:13.329798+00:00",
+      "attempted_at": "2026-10-24T17:00:13.329798+00:00",
+      "error": null,
+      "record_count": 1530,
+      "source_id": "openrouter",
+      "status": "ok",
+      "url": "https://openrouter.ai/api/v1/datasets/rankings-daily"
+    },
+    {
+      "as_of": "2026-10-24T17:01:20.286190+00:00",
+      "attempted_at": "2026-10-24T17:01:20.286238+00:00",
+      "error": null,
+      "record_count": 11,
+      "source_id": "openrouter-endpoints",
+      "status": "ok",
+      "url": "https://openrouter.ai/api/v1/models/anthropic/claude-opus-5/endpoints"
+    },
+    {
+      "as_of": "2026-10-18T13:33:26.807044+00:00",
+      "attempted_at": "2026-10-24T17:01:20.322896+00:00",
+      "error": "Refresh rejected or failed; last accepted data retained.",
+      "record_count": null,
+      "source_id": "openrouter-endpoints",
+      "status": "stale",
+      "url": "https://openrouter.ai/api/v1/models/deepseek/deepseek-r1/endpoints"
+    },
+    {
+      "as_of": "2026-10-24T17:01:20.355722+00:00",
+      "attempted_at": "2026-10-24T17:01:20.355884+00:00",
+      "error": null,
+      "record_count": 23,
+      "source_id": "openrouter-endpoints",
+      "status": "ok",
+      "url": "https://openrouter.ai/api/v1/models/deepseek/deepseek-v4-pro-0813/endpoints"
+    },
+    {
+      "as_of": "2026-10-24T17:01:20.390321+00:00",
+      "attempted_at": "2026-10-24T17:01:20.390353+00:00",
+      "error": null,
+      "record_count": 1,
+      "source_id": "openrouter-endpoints",
+      "status": "ok",
+      "url": "https://openrouter.ai/api/v1/models/meta/muse-spark-1.3/endpoints"
+    },
+    {
+      "as_of": "2026-10-24T17:01:20.434956+00:00",
+      "attempted_at": "2026-10-24T17:01:20.435119+00:00",
+      "error": null,
+      "record_count": 29,
+      "source_id": "openrouter-endpoints",
+      "status": "ok",
+      "url": "https://openrouter.ai/api/v1/models/moonshotai/kimi-k3/endpoints"
+    },
+    {
+      "as_of": "2026-10-24T17:01:20.477738+00:00",
+      "attempted_at": "2026-10-24T17:01:20.477788+00:00",
+      "error": null,
+      "record_count": 2,
+      "source_id": "openrouter-endpoints",
+      "status": "ok",
+      "url": "https://openrouter.ai/api/v1/models/openai/gpt-4/endpoints"
+    },
+    {
+      "as_of": "2026-10-24T17:01:20.527713+00:00",
+      "attempted_at": "2026-10-24T17:01:20.527773+00:00",
+      "error": null,
+      "record_count": 7,
+      "source_id": "openrouter-endpoints",
+      "status": "ok",
+      "url": "https://openrouter.ai/api/v1/models/openai/gpt-5.6-sol/endpoints"
+    },
+    {
+      "as_of": "2026-10-24T17:01:20.573412+00:00",
+      "attempted_at": "2026-10-24T17:01:20.573498+00:00",
+      "error": null,
+      "record_count": 7,
+      "source_id": "openrouter-endpoints",
+      "status": "ok",
+      "url": "https://openrouter.ai/api/v1/models/openai/gpt-6-astra/endpoints"
+    },
+    {
+      "as_of": "2026-10-24T17:01:20.612379+00:00",
+      "attempted_at": "2026-10-24T17:01:20.612526+00:00",
+      "error": null,
+      "record_count": 8,
+      "source_id": "openrouter-endpoints",
+      "status": "ok",
+      "url": "https://openrouter.ai/api/v1/models/openai/gpt-6.1-sol/endpoints"
     }
   ],
   "files": {
     "catalog.json": {
-      "bytes": 4272605,
-      "sha256": "11aa39bab127709d892f1aca0355508e066d1a088f59ef405150d2357bd0fff0"
+      "bytes": 4272946,
+      "sha256": "372d0fb08cb10c7a53deb86beb73021353fb5b3c3066eb59776e5acd43bfffbe"
     },
     "details.json": {
-      "bytes": 11396562,
-      "sha256": "b6faac4279e8cb25816f07d3878a0f1018e1c450482a3aa19a9d506287af49f9"
+      "bytes": 11395722,
+      "sha256": "6e5dbbfbc6f0a488831aa4bdb77b8b06c6bee6906ae76f8d1a5047eba4f8d3b8"
     },
     "market.json": {
-      "bytes": 410606,
-      "sha256": "496feef55f2782630a80a93571e0123df606e6d02f5a6f4a16d6eaf110af53de"
+      "bytes": 904389,
+      "sha256": "f73a9087f23695b2a04b92665aa0edcf1ff81d2941439eadac8c23cf35f857a8"
     },
     "results.json": {
       "bytes": 12315788,
       "sha256": "461ca8c9a7f8aa3287edaf6400be3cf2131956e955d3d098efe0efb0de8d58f7"
     }
   },
-  "generated_at": "2026-10-18T16:31:54.358528+00:00",
+  "generated_at": "2026-10-24T17:01:20.612545+00:00",
   "schema_version": "1.0.0",
-  "snapshot_id": "0a3a095154671058"
+  "snapshot_id": "29e203f5074fc58c"
 }

@@ -57,7 +57,7 @@ def test_offline_cli_rebuild_is_identical_with_or_without_staging(tmp_path, monk
     if with_staging:
         staging = tmp_path / "data/staging"
         staging.mkdir(parents=True)
-        (staging / "test.json").write_text(json.dumps({"source": "test", "status": "stale"}))
+        (staging / "peacefulcoexistance.json").write_text(json.dumps({"source": "peacefulcoexistance", "status": "stale", "feeds": [{"status": "stale"}]}))
     assert main(["build", "--offline", "--input", str(source)]) == 0
     assert {p.name: p.read_bytes() for p in output.iterdir() if p.is_file()} == before
     if with_staging:
@@ -156,3 +156,17 @@ def test_saturation_unknown_without_matched_series_and_excludes_zero_width():
     assessment = assess_saturation(Dataset.model_validate(raw))[0]
     assert assessment["state"] == "ineligible"
     assert "metric bounds have no positive range" in assessment["ineligible_reasons"]
+
+
+def test_performance_is_preserved_in_lazy_evidence_not_comparison(tmp_path):
+    from pipeline.runtime_snapshot import write_runtime_snapshot
+    performance = [{"id": "performance-proof"}]
+    payloads = {"details.json": {"observations": [], "series": []}, "catalog.json": {"saturation": []},
+                "results.json": {"cells": []}, "market.json": {"performance": performance, "prices": [{"id": "price-proof"}]}}
+    write_runtime_snapshot(tmp_path, payloads, {})
+    comparison = json.loads((tmp_path / 'comparison.json').read_text())
+    assert comparison['market']['performance'] == []
+    assert comparison['market']['prices'] == [{"id": "price-proof"}]
+    evidence = json.loads((tmp_path / comparison['evidence_file']).read_text())
+    assert evidence['route_performance'] == performance
+    assert payloads['market.json']['performance'] == performance

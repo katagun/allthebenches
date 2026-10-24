@@ -1,12 +1,12 @@
 from __future__ import annotations
 
 import argparse
-import json
 from pathlib import Path
 import sys
 
 from .build import build, export_schema, load_dataset
 from .collectors import SOURCES, collect, collect_openrouter_endpoints
+from .feed_health import feed_health
 from .reconcile import candidate_openrouter_ids, write_reconciliation_proposal
 
 
@@ -41,20 +41,7 @@ def main(argv: list[str] | None = None) -> int:
             feeds = None
             staging = Path("data/staging")
             if not args.offline and staging.exists():
-                feeds = []
-                for feed_path in sorted(staging.glob("*.json")):
-                    if feed_path.name.endswith("-mapping-queue.json"):
-                        continue
-                    try:
-                        envelope = json.loads(feed_path.read_text(encoding="utf-8"))
-                        if not isinstance(envelope, dict):
-                            raise ValueError("staging envelope must be an object")
-                        feeds.append({"source_id": envelope.get("source", feed_path.stem),
-                                      "status": envelope.get("status", "unknown"),
-                                      "as_of": envelope.get("retrieved_at"),
-                                      "error": envelope.get("last_attempt") if envelope.get("status") == "stale" else [f for f in envelope.get("feeds", []) if f.get("status") in ("stale", "error")] or None})
-                    except (OSError, ValueError):
-                        feeds.append({"source_id": feed_path.stem, "status": "error", "error": "invalid staging envelope"})
+                feeds = feed_health(staging)
             manifest = build(dataset, args.output, feeds)
             export_schema(Path.cwd())
             print(manifest["snapshot_id"])
@@ -68,12 +55,12 @@ def main(argv: list[str] | None = None) -> int:
                 result = collect(source, args.staging)
                 print(f"{source}: {result['status']}")
                 failures += result["status"] != "ok"
-            return 1 if failures == len(sources) else 0
+            return 1 if failures else 0
         elif args.command == "collect-endpoints":
             ids = candidate_openrouter_ids(args.input, args.staging)
             if not ids:
                 print("No exact curated-name Atlas IDs exist in the staged OpenRouter catalog.")
-                return 0
+                return 1
             result = collect_openrouter_endpoints(ids, args.staging)
             print(f"{result['status']}: {len(result['endpoints'])} endpoint detail records")
             return 0 if result["status"] == "ok" else 1

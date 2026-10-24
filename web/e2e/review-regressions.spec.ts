@@ -28,7 +28,7 @@ test('real worker reselects the primary setup after choosing benchmarks, across 
 
 for (const width of [1440, 390]) {
   test(`stale prices require an explicit saved opt-in at ${width}px`, async ({ page }) => {
-    await page.clock.setFixedTime(new Date('2026-10-22T12:00:00Z'));
+    await page.clock.setFixedTime(new Date('2026-10-28T12:00:00Z'));
     await page.setViewportSize({ width, height: 844 });
     const view = { ...structuredClone(DEFAULT_VIEW), presetId: 'all_models_oct2026', visibleColumnIds: ['terminal_bench_4', 'market:price'], filters: { ...DEFAULT_VIEW.filters, maxInputPricePerMillion: 1000 } };
     await page.goto(url(view));

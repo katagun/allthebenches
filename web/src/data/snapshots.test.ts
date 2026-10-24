@@ -56,3 +56,17 @@ it('includes exact published report values and units before downloading evidence
     expect(records.get(report.id)).toMatchObject({ value: report.value, unit: report.unit });
   }
 });
+
+
+it('loads route performance only with content-addressed evidence and keeps startup immutable', async () => {
+  const fetcher = vi.fn(async (url: string) => response(url.endsWith('comparison.json') ? comparison : { ...details, route_performance: market.performance }));
+  vi.stubGlobal('fetch', fetcher);
+  const data = await loadSnapshots('/performance/');
+  expect(data.market.performance).toEqual([]);
+  expect(fetcher).toHaveBeenCalledTimes(1);
+  const full = await loadEvidence(data);
+  expect(full.market.performance).toEqual(market.performance);
+  expect(full.market.performance.length).toBeGreaterThan(0);
+  expect(data.market.performance).toEqual([]);
+  expect(full.details).toEqual(details);
+});

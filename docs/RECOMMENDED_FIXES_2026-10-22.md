@@ -174,6 +174,8 @@ Acceptance:
 
 ## F09 — Preserve last-good feed data on invalid successful responses
 
+Implemented 2026-10-24; see [feed health and price refresh](FEED_HEALTH_PRICE_REFRESH_2026-10-24.md) for validation policy, coverage, and remaining limitations.
+
 **Review:** R10. **Size:** small/medium. **Files:** `pipeline/collectors.py`, collector tests and health reporting.
 
 Validate source-specific response envelopes, content type/size where useful, and expected identity fields. Separate the last valid payload from collection attempts. An unexpected empty/collapsed feed needs a warning/review path rather than automatic replacement; legitimate emptiness requires an explicit source policy.

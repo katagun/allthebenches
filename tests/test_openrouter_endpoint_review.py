@@ -33,7 +33,7 @@ def test_review_rejects_changed_crosswalk_model_name_and_response_id():
     dataset, snapshot, catalog_rows = load_inputs()
     snapshot = copy.deepcopy(snapshot)
     snapshot["endpoints"]["deepseek/deepseek-r1"]["data"]["data"]["id"] = "deepseek/deepseek-r1-0528"
-    with pytest.raises(ValueError, match="identity is incomplete"):
+    with pytest.raises(ValueError, match="identity mismatch"):
         reviewer.review(dataset, snapshot, catalog_rows, "catalog")
 
 
@@ -97,3 +97,20 @@ def test_check_mode_does_not_write_dataset_or_audit(tmp_path, monkeypatch):
     assert reviewer.main() == 0
     assert dataset_path.read_bytes() == original
     assert not audit_path.exists()
+
+
+def test_refresh_marks_missing_route_unknown_but_retains_failed_model():
+    dataset, snapshot, catalog = load_inputs('openrouter-endpoints-current-2026-10-24.json')
+    missing = {'id': 'openrouter:moonshotai/kimi-k3:Removed:removed:default', 'upstream_model_id': 'moonshotai/kimi-k3', 'model_id': 'kimi_k3', 'provider': 'Removed', 'availability': 'listed', 'source_ids': []}
+    dataset['routes'].append(missing)
+    failed_routes = [r.copy() for r in dataset['routes'] if r.get('upstream_model_id') == 'deepseek/deepseek-r1']
+    reviewer.review(dataset, snapshot, catalog, 'catalog', refresh_existing=True)
+    assert missing['availability'] == 'unknown'
+    assert [r for r in dataset['routes'] if r.get('upstream_model_id') == 'deepseek/deepseek-r1'] == failed_routes
+
+
+def test_review_rejects_empty_healthy_endpoint_before_import():
+    dataset, snapshot, catalog = load_inputs()
+    snapshot['endpoints']['deepseek/deepseek-r1']['data']['data']['endpoints'] = []
+    with pytest.raises(ValueError, match='empty'):
+        reviewer.review(dataset, snapshot, catalog, 'catalog')

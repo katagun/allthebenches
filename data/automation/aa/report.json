@@ -1,7 +1,7 @@
 {
   "adapter_sha256": "68a1f94c6b2b979cd76bafe6cc8c269901309cf3f222c0028eb3c06d2cf74a9f",
-  "candidate_observations": 1141,
-  "candidate_sha256": "fd10afdbfb1432a2e252f68a727e21b1ddca21fce3b75e94361148cf8a3c80dc",
+  "candidate_observations": 1161,
+  "candidate_sha256": "edadbf294bb5582cdb892464593ff633e513ca03fb17077580aa8e579ddfa059",
   "conflicts": [
     {
       "changed_fields": [
@@ -16,7 +16,66 @@
         "setup",
         "value"
       ],
+      "id": "o_aa_claude_fable51_aa-claude-fable51-low_claude-fable-5-1-low_aa_gdpval_v21_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "uncertainty",
+        "value"
+      ],
+      "id": "o_aa_claude_fable51_aa-claude-fable51-low_claude-fable-5-1-low_aa_briefcase_v11_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_gpt56_sol_aa-gpt56-sol-low_gpt-5-6-sol-low_aa_gdpval_v21_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
       "id": "o_aa_gpt56_sol_aa-gpt56-sol-low_gpt-5-6-sol-low_aa_mlcr_hard_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "uncertainty",
+        "value"
+      ],
+      "id": "o_aa_gpt56_sol_aa-gpt56-sol-low_gpt-5-6-sol-low_aa_briefcase_v11_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_gpt61_sol_aa-gpt61-sol-xhigh_gpt-6-1-sol-xhigh_aa_gdpval_v21_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "uncertainty",
+        "value"
+      ],
+      "id": "o_aa_gpt61_sol_aa-gpt61-sol-xhigh_gpt-6-1-sol-xhigh_aa_briefcase_v11_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_claude_opus5_aa-claude-opus5-xhigh_claude-opus-5-xhigh_aa_gdpval_v21_20261018",
       "table": "observations"
     },
     {
@@ -25,6 +84,15 @@
         "value"
       ],
       "id": "o_aa_claude_opus5_aa-claude-opus5-xhigh_claude-opus-5-xhigh_aa_mlcr_hard_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "uncertainty",
+        "value"
+      ],
+      "id": "o_aa_claude_opus5_aa-claude-opus5-xhigh_claude-opus-5-xhigh_aa_briefcase_v11_20261018",
       "table": "observations"
     },
     {
@@ -40,7 +108,100 @@
         "setup",
         "value"
       ],
+      "id": "o_aa_gpt6_astra_aa-gpt6-astra-xhigh_gpt-6-astra-xhigh_aa_gdpval_v21_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "uncertainty",
+        "value"
+      ],
+      "id": "o_aa_gpt6_astra_aa-gpt6-astra-xhigh_gpt-6-astra-xhigh_aa_briefcase_v11_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_grok47_aa-grok47-low_grok-4-7-low_aa_gdpval_v21_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "uncertainty",
+        "value"
+      ],
+      "id": "o_aa_grok47_aa-grok47-low_grok-4-7-low_aa_briefcase_v11_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_claude_opus5_aa-claude-opus5-low_claude-opus-5-low_aa_gdpval_v21_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
       "id": "o_aa_claude_opus5_aa-claude-opus5-low_claude-opus-5-low_aa_mlcr_hard_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "uncertainty",
+        "value"
+      ],
+      "id": "o_aa_claude_opus5_aa-claude-opus5-low_claude-opus-5-low_aa_briefcase_v11_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_grok46_aa-grok46-medium_grok-4-6-medium_aa_gdpval_v21_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "uncertainty",
+        "value"
+      ],
+      "id": "o_aa_grok46_aa-grok46-medium_grok-4-6-medium_aa_briefcase_v11_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_grok47_aa-grok47-high_grok-4-7-high_aa_gdpval_v21_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "uncertainty",
+        "value"
+      ],
+      "id": "o_aa_grok47_aa-grok47-high_grok-4-7-high_aa_briefcase_v11_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_gpt6_astra_aa-gpt6-astra-max_gpt-6-astra_aa_gdpval_v21_20261018",
       "table": "observations"
     },
     {
@@ -54,6 +215,15 @@
     {
       "changed_fields": [
         "setup",
+        "uncertainty",
+        "value"
+      ],
+      "id": "o_aa_gpt6_astra_aa-gpt6-astra-max_gpt-6-astra_aa_briefcase_v11_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
         "value"
       ],
       "id": "o_aa_claude_opus55_aa-claude-opus55-max_claude-opus-5-5_aa_mlcr_hard_20261018",
@@ -62,9 +232,103 @@
     {
       "changed_fields": [
         "setup",
+        "uncertainty",
+        "value"
+      ],
+      "id": "o_aa_claude_opus55_aa-claude-opus55-max_claude-opus-5-5_aa_briefcase_v11_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_qwen38_27b_aa-qwen38-27b-non-reasoning_qwen3-8-27b-non-reasoning_aa_gdpval_v21_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "uncertainty",
+        "value"
+      ],
+      "id": "o_aa_qwen38_27b_aa-qwen38-27b-non-reasoning_qwen3-8-27b-non-reasoning_aa_briefcase_v11_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_claude_fable51_aa-claude-fable51-medium_claude-fable-5-1-medium_aa_gdpval_v21_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "uncertainty",
+        "value"
+      ],
+      "id": "o_aa_claude_fable51_aa-claude-fable51-medium_claude-fable-5-1-medium_aa_briefcase_v11_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_gpt61_sol_aa-gpt61-sol-high_gpt-6-1-sol-high_aa_gdpval_v21_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "uncertainty",
+        "value"
+      ],
+      "id": "o_aa_gpt61_sol_aa-gpt61-sol-high_gpt-6-1-sol-high_aa_briefcase_v11_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_claude_fable51_aa-claude-fable51-max_claude-fable-5-1_aa_gdpval_v21_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
         "value"
       ],
       "id": "o_aa_claude_fable51_aa-claude-fable51-max_claude-fable-5-1_aa_mlcr_hard_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "uncertainty",
+        "value"
+      ],
+      "id": "o_aa_claude_fable51_aa-claude-fable51-max_claude-fable-5-1_aa_briefcase_v11_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_claude_opus55_aa-claude-opus55-low_claude-opus-5-5-low_aa_gdpval_v21_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "uncertainty",
+        "value"
+      ],
+      "id": "o_aa_claude_opus55_aa-claude-opus55-low_claude-opus-5-5-low_aa_briefcase_v11_20261018",
       "table": "observations"
     },
     {
@@ -89,7 +353,32 @@
         "setup",
         "value"
       ],
+      "id": "o_aa_grok47_aa-grok47-xhigh_grok-4-7_aa_gdpval_v21_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
       "id": "o_aa_grok47_aa-grok47-xhigh_grok-4-7_aa_mlcr_hard_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "uncertainty",
+        "value"
+      ],
+      "id": "o_aa_grok47_aa-grok47-xhigh_grok-4-7_aa_briefcase_v11_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_qwen38_max_aa-qwen38-max-unknown_qwen3-8-max-0803_aa_gdpval_v21_20261018",
       "table": "observations"
     },
     {
@@ -103,9 +392,68 @@
     {
       "changed_fields": [
         "setup",
+        "uncertainty",
+        "value"
+      ],
+      "id": "o_aa_qwen38_max_aa-qwen38-max-unknown_qwen3-8-max-0803_aa_briefcase_v11_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_qwen38_27b_aa-qwen38-27b-medium_qwen3-8-27b-medium_aa_gdpval_v21_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "uncertainty",
+        "value"
+      ],
+      "id": "o_aa_qwen38_27b_aa-qwen38-27b-medium_qwen3-8-27b-medium_aa_briefcase_v11_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_gpt4_aa-gpt4-unknown_gpt-4_aa_gdpval_v21_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_gpt56_sol_aa-gpt56-sol-medium_gpt-5-6-sol-medium_aa_gdpval_v21_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
         "value"
       ],
       "id": "o_aa_gpt56_sol_aa-gpt56-sol-medium_gpt-5-6-sol-medium_aa_mlcr_hard_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "uncertainty",
+        "value"
+      ],
+      "id": "o_aa_gpt56_sol_aa-gpt56-sol-medium_gpt-5-6-sol-medium_aa_briefcase_v11_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_claude_opus5_aa-claude-opus5-high_claude-opus-5-high_aa_gdpval_v21_20261018",
       "table": "observations"
     },
     {
@@ -119,6 +467,65 @@
     {
       "changed_fields": [
         "setup",
+        "uncertainty",
+        "value"
+      ],
+      "id": "o_aa_claude_opus5_aa-claude-opus5-high_claude-opus-5-high_aa_briefcase_v11_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_deepseek_v4_1_flash_aa-deepseek-v4-1-flash-non-reasoning_deepseek-v4-1-flash-non-reasoning_aa_gdpval_v21_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "uncertainty",
+        "value"
+      ],
+      "id": "o_aa_deepseek_v4_1_flash_aa-deepseek-v4-1-flash-non-reasoning_deepseek-v4-1-flash-non-reasoning_aa_briefcase_v11_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_gpt56_sol_aa-gpt56-sol-non-reasoning_gpt-5-6-sol-non-reasoning_aa_gdpval_v21_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_qwen38_27b_aa-qwen38-27b-low_qwen3-8-27b-low_aa_gdpval_v21_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "uncertainty",
+        "value"
+      ],
+      "id": "o_aa_qwen38_27b_aa-qwen38-27b-low_qwen3-8-27b-low_aa_briefcase_v11_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_gpt56_sol_aa-gpt56-sol-high_gpt-5-6-sol-high_aa_gdpval_v21_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
         "value"
       ],
       "id": "o_aa_gpt56_sol_aa-gpt56-sol-high_gpt-5-6-sol-high_aa_mlcr_hard_20261018",
@@ -127,9 +534,86 @@
     {
       "changed_fields": [
         "setup",
+        "uncertainty",
+        "value"
+      ],
+      "id": "o_aa_gpt56_sol_aa-gpt56-sol-high_gpt-5-6-sol-high_aa_briefcase_v11_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
         "value"
       ],
       "id": "o_aa_muse_spark13_aa-muse-spark13-max_muse-spark-1-3_aa_mlcr_hard_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_claude_fable51_aa-claude-fable51-xhigh_claude-fable-5-1-xhigh_aa_gdpval_v21_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "uncertainty",
+        "value"
+      ],
+      "id": "o_aa_claude_fable51_aa-claude-fable51-xhigh_claude-fable-5-1-xhigh_aa_briefcase_v11_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_claude_fable51_aa-claude-fable51-high_claude-fable-5-1-high_aa_gdpval_v21_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "uncertainty",
+        "value"
+      ],
+      "id": "o_aa_claude_fable51_aa-claude-fable51-high_claude-fable-5-1-high_aa_briefcase_v11_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_gpt61_sol_aa-gpt61-sol-medium_gpt-6-1-sol-medium_aa_gdpval_v21_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "uncertainty",
+        "value"
+      ],
+      "id": "o_aa_gpt61_sol_aa-gpt61-sol-medium_gpt-6-1-sol-medium_aa_briefcase_v11_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_gpt6_astra_aa-gpt6-astra-low_gpt-6-astra-low_aa_gdpval_v21_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "uncertainty",
+        "value"
+      ],
+      "id": "o_aa_gpt6_astra_aa-gpt6-astra-low_gpt-6-astra-low_aa_briefcase_v11_20261018",
       "table": "observations"
     },
     {
@@ -179,7 +663,32 @@
         "setup",
         "value"
       ],
+      "id": "o_aa_gpt61_sol_aa-gpt61-sol-max_gpt-6-1-sol_aa_gdpval_v21_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
       "id": "o_aa_gpt61_sol_aa-gpt61-sol-max_gpt-6-1-sol_aa_mlcr_hard_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "uncertainty",
+        "value"
+      ],
+      "id": "o_aa_gpt61_sol_aa-gpt61-sol-max_gpt-6-1-sol_aa_briefcase_v11_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_claude_opus5_aa-claude-opus5-max_claude-opus-5_aa_gdpval_v21_20261018",
       "table": "observations"
     },
     {
@@ -193,6 +702,40 @@
     {
       "changed_fields": [
         "setup",
+        "uncertainty",
+        "value"
+      ],
+      "id": "o_aa_claude_opus5_aa-claude-opus5-max_claude-opus-5_aa_briefcase_v11_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_grok46_aa-grok46-low_grok-4-6-low_aa_gdpval_v21_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "uncertainty",
+        "value"
+      ],
+      "id": "o_aa_grok46_aa-grok46-low_grok-4-6-low_aa_briefcase_v11_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_grok46_aa-grok46-high_grok-4-6_aa_gdpval_v21_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
         "value"
       ],
       "id": "o_aa_grok46_aa-grok46-high_grok-4-6_aa_mlcr_hard_20261018",
@@ -201,9 +744,52 @@
     {
       "changed_fields": [
         "setup",
+        "uncertainty",
+        "value"
+      ],
+      "id": "o_aa_grok46_aa-grok46-high_grok-4-6_aa_briefcase_v11_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_glm53_aa-glm53-low_glm-5-3-low_aa_gdpval_v21_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "uncertainty",
+        "value"
+      ],
+      "id": "o_aa_glm53_aa-glm53-low_glm-5-3-low_aa_briefcase_v11_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_glm53_aa-glm53-max_glm-5-3_aa_gdpval_v21_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
         "value"
       ],
       "id": "o_aa_glm53_aa-glm53-max_glm-5-3_aa_mlcr_hard_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "uncertainty",
+        "value"
+      ],
+      "id": "o_aa_glm53_aa-glm53-max_glm-5-3_aa_briefcase_v11_20261018",
       "table": "observations"
     },
     {
@@ -245,7 +831,49 @@
         "setup",
         "value"
       ],
+      "id": "o_aa_grok46_aa-grok46-xhigh_grok-4-6-xhigh_aa_gdpval_v21_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "uncertainty",
+        "value"
+      ],
+      "id": "o_aa_grok46_aa-grok46-xhigh_grok-4-6-xhigh_aa_briefcase_v11_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_gpt56_sol_aa-gpt56-sol-max_gpt-5-6-sol_aa_gdpval_v21_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
       "id": "o_aa_gpt56_sol_aa-gpt56-sol-max_gpt-5-6-sol_aa_mlcr_hard_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "uncertainty",
+        "value"
+      ],
+      "id": "o_aa_gpt56_sol_aa-gpt56-sol-max_gpt-5-6-sol_aa_briefcase_v11_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_gpt56_sol_aa-gpt56-sol-xhigh_gpt-5-6-sol-xhigh_aa_gdpval_v21_20261018",
       "table": "observations"
     },
     {
@@ -254,6 +882,15 @@
         "value"
       ],
       "id": "o_aa_gpt56_sol_aa-gpt56-sol-xhigh_gpt-5-6-sol-xhigh_aa_mlcr_hard_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "uncertainty",
+        "value"
+      ],
+      "id": "o_aa_gpt56_sol_aa-gpt56-sol-xhigh_gpt-5-6-sol-xhigh_aa_briefcase_v11_20261018",
       "table": "observations"
     },
     {
@@ -278,7 +915,134 @@
         "setup",
         "value"
       ],
+      "id": "o_aa_claude_opus55_aa-claude-opus55-xhigh_claude-opus-5-5-xhigh_aa_gdpval_v21_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "uncertainty",
+        "value"
+      ],
+      "id": "o_aa_claude_opus55_aa-claude-opus55-xhigh_claude-opus-5-5-xhigh_aa_briefcase_v11_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_gpt6_astra_aa-gpt6-astra-high_gpt-6-astra-high_aa_gdpval_v21_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "uncertainty",
+        "value"
+      ],
+      "id": "o_aa_gpt6_astra_aa-gpt6-astra-high_gpt-6-astra-high_aa_briefcase_v11_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_gpt61_sol_aa-gpt61-sol-low_gpt-6-1-sol-low_aa_gdpval_v21_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "uncertainty",
+        "value"
+      ],
+      "id": "o_aa_gpt61_sol_aa-gpt61-sol-low_gpt-6-1-sol-low_aa_briefcase_v11_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_gpt6_astra_aa-gpt6-astra-medium_gpt-6-astra-medium_aa_gdpval_v21_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "uncertainty",
+        "value"
+      ],
+      "id": "o_aa_gpt6_astra_aa-gpt6-astra-medium_gpt-6-astra-medium_aa_briefcase_v11_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_claude_opus55_aa-claude-opus55-medium_claude-opus-5-5-medium_aa_gdpval_v21_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "uncertainty",
+        "value"
+      ],
+      "id": "o_aa_claude_opus55_aa-claude-opus55-medium_claude-opus-5-5-medium_aa_briefcase_v11_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_claude_opus55_aa-claude-opus55-high_claude-opus-5-5-high_aa_gdpval_v21_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "uncertainty",
+        "value"
+      ],
+      "id": "o_aa_claude_opus55_aa-claude-opus55-high_claude-opus-5-5-high_aa_briefcase_v11_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_kimi_k3_aa-kimi-k3-max_kimi-k3_aa_gdpval_v21_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
       "id": "o_aa_kimi_k3_aa-kimi-k3-max_kimi-k3_aa_mlcr_hard_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "uncertainty",
+        "value"
+      ],
+      "id": "o_aa_kimi_k3_aa-kimi-k3-max_kimi-k3_aa_briefcase_v11_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_claude_opus5_aa-claude-opus5-medium_claude-opus-5-medium_aa_gdpval_v21_20261018",
       "table": "observations"
     },
     {
@@ -287,6 +1051,15 @@
         "value"
       ],
       "id": "o_aa_claude_opus5_aa-claude-opus5-medium_claude-opus-5-medium_aa_mlcr_hard_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "uncertainty",
+        "value"
+      ],
+      "id": "o_aa_claude_opus5_aa-claude-opus5-medium_claude-opus-5-medium_aa_briefcase_v11_20261018",
       "table": "observations"
     },
     {
@@ -314,8 +1087,8 @@
   },
   "coverage": {
     "counts": {
-      "candidate_observations": 1141,
-      "source_models": 706
+      "candidate_observations": 1161,
+      "source_models": 709
     },
     "decisions": [
       {
@@ -1510,6 +2283,11 @@
       },
       {
         "model_id": null,
+        "source_model": "ling-3-1-flash-1019",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
         "source_model": "k2-horizon-mova-36b-a4b",
         "status": "unresolved_identity_or_configuration"
       },
@@ -1755,6 +2533,11 @@
       },
       {
         "model_id": null,
+        "source_model": "nemotron-3-5-bolt-e4b-4gb",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
         "source_model": "nova-2-0-lite-reasoning",
         "status": "unresolved_identity_or_configuration"
       },
@@ -1807,6 +2590,11 @@
         "model_id": "qwen38_27b",
         "source_model": "qwen3-8-27b-medium",
         "status": "mapped"
+      },
+      {
+        "model_id": null,
+        "source_model": "kimi-k3-1-pro",
+        "status": "unresolved_identity_or_configuration"
       },
       {
         "model_id": null,
@@ -3853,13 +4641,13 @@
     "source": "Artificial Analysis"
   },
   "dataset_sha256": "237578a7a7b232d977af54827042fd7d3566f018f920244cee096b8e392b9237",
-  "dependency_lock_sha256": "2c008e6d463d37c7ab73c7a0d307ebf6392f238097fd450a61077c8e1e7d4c15",
+  "dependency_lock_sha256": "550da0955a3970e06d43dc496cf79a12957b0e67c70cfbd80c4bb83b849a21ea",
   "entities": {
-    "conflict": 37,
-    "new": 120,
-    "unchanged": 2128
+    "conflict": 128,
+    "new": 160,
+    "unchanged": 2037
   },
-  "evidence_sha256": "fea6a53d077d98745013beedaa5fa3ee9db482bfb9f607ed22d78f4d97ed663a",
+  "evidence_sha256": "40dbb4bb031bb61719c258157def44fd16fbb29f8f7b181a484f1b4558a61804",
   "latency_policy": "source_reported_only",
   "mapping_contract_sha256": "96170c95a488663db1eb5213bd17a76489b081979593e0d7fbaa17f41ddd1304",
   "publication": "review_required",

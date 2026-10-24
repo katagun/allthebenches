@@ -251,13 +251,13 @@
         "aa_model_id": "05776db7-f5c0-40f7-b824-079160f8cfa8",
         "aa_release_slug": "claude-fable-5-1",
         "source_field_unit": "Elo",
-        "source_field_value": 1468.77
+        "source_field_value": 1468.53
       },
       "source_id": "aa_public_pages_20261018",
       "supersedes": [],
       "uncertainty": null,
       "unit": "Elo",
-      "value": 1468.77
+      "value": 1468.53
     },
     {
       "benchmark_id": "aa_scicode",
@@ -476,19 +476,19 @@
         "aa_model_id": "05776db7-f5c0-40f7-b824-079160f8cfa8",
         "aa_release_slug": "claude-fable-5-1",
         "source_field_unit": "Elo",
-        "source_field_value": 1481.82
+        "source_field_value": 1479.34
       },
       "source_id": "aa_public_pages_20261018",
       "supersedes": [],
       "uncertainty": {
         "confidence_level": 0.95,
-        "lower": 1474.14,
+        "lower": 1472.32,
         "type": "confidence_interval",
         "unit": "Elo",
-        "upper": 1489.66
+        "upper": 1486.86
       },
       "unit": "Elo",
-      "value": 1481.82
+      "value": 1479.34
     },
     {
       "benchmark_id": "aa_intelligence_index_v432",
@@ -778,13 +778,13 @@
         "aa_model_id": "0904b596-8932-43bd-9b21-324f128e1723",
         "aa_release_slug": "gpt-5-6-sol",
         "source_field_unit": "Elo",
-        "source_field_value": 1303.39
+        "source_field_value": 1303.95
       },
       "source_id": "aa_public_pages_20261018",
       "supersedes": [],
       "uncertainty": null,
       "unit": "Elo",
-      "value": 1303.39
+      "value": 1303.95
     },
     {
       "benchmark_id": "aa_mmmu_pro",
@@ -1059,19 +1059,19 @@
         "aa_model_id": "0904b596-8932-43bd-9b21-324f128e1723",
         "aa_release_slug": "gpt-5-6-sol",
         "source_field_unit": "Elo",
-        "source_field_value": 1043.52
+        "source_field_value": 1042.55
       },
       "source_id": "aa_public_pages_20261018",
       "supersedes": [],
       "uncertainty": {
         "confidence_level": 0.95,
-        "lower": 1035.75,
+        "lower": 1035.01,
         "type": "confidence_interval",
         "unit": "Elo",
-        "upper": 1051.62
+        "upper": 1050.55
       },
       "unit": "Elo",
-      "value": 1043.52
+      "value": 1042.55
     },
     {
       "benchmark_id": "aa_intelligence_index_v432",
@@ -1277,13 +1277,13 @@
         "aa_model_id": "092a3b0e-c5c8-45dc-bf1b-53673c8ff352",
         "aa_release_slug": "gpt-6-1-sol",
         "source_field_unit": "Elo",
-        "source_field_value": 1538.05
+        "source_field_value": 1539.11
       },
       "source_id": "aa_public_pages_20261018",
       "supersedes": [],
       "uncertainty": null,
       "unit": "Elo",
-      "value": 1538.05
+      "value": 1539.11
     },
     {
       "benchmark_id": "aa_mmmu_pro",
@@ -1403,6 +1403,62 @@
       "value": 54.040404040404
     },
     {
+      "benchmark_id": "frontiercode_v11",
+      "configuration_id": "aa_gpt61_sol_xhigh",
+      "evaluated_at": null,
+      "evaluator": "Artificial Analysis",
+      "id": "o_aa_gpt61_sol_aa-gpt61-sol-xhigh_gpt-6-1-sol-xhigh_frontiercode_v11_20261018",
+      "locator": "models[gpt-6-1-sol-xhigh].frontierCode",
+      "reported_at": null,
+      "reporting_relationship": "evaluator_measurement",
+      "review_state": "candidate",
+      "series_id": "series_aa_gpt61_sol_aa-gpt61-sol-xhigh_gpt-6-1-sol-xhigh_frontiercode_v11",
+      "setup": {
+        "aa_effort_slug": "xhigh",
+        "aa_model_id": "092a3b0e-c5c8-45dc-bf1b-53673c8ff352",
+        "aa_release_slug": "gpt-6-1-sol",
+        "normalization": {
+          "formula": "source fraction × 100",
+          "reason": "AA serializes this percentage metric as a 0–1 fraction."
+        },
+        "source_field_unit": "fraction",
+        "source_field_value": 0.462918
+      },
+      "source_id": "aa_public_pages_20261018",
+      "supersedes": [],
+      "uncertainty": null,
+      "unit": "%",
+      "value": 46.2918
+    },
+    {
+      "benchmark_id": "terminal_science_01",
+      "configuration_id": "aa_gpt61_sol_xhigh",
+      "evaluated_at": null,
+      "evaluator": "Artificial Analysis",
+      "id": "o_aa_gpt61_sol_aa-gpt61-sol-xhigh_gpt-6-1-sol-xhigh_terminal_science_01_20261018",
+      "locator": "models[gpt-6-1-sol-xhigh].terminalBenchScience",
+      "reported_at": null,
+      "reporting_relationship": "evaluator_measurement",
+      "review_state": "candidate",
+      "series_id": "series_aa_gpt61_sol_aa-gpt61-sol-xhigh_gpt-6-1-sol-xhigh_terminal_science_01",
+      "setup": {
+        "aa_effort_slug": "xhigh",
+        "aa_model_id": "092a3b0e-c5c8-45dc-bf1b-53673c8ff352",
+        "aa_release_slug": "gpt-6-1-sol",
+        "normalization": {
+          "formula": "source fraction × 100",
+          "reason": "AA serializes this percentage metric as a 0–1 fraction."
+        },
+        "source_field_unit": "fraction",
+        "source_field_value": 0.504761904761905
+      },
+      "source_id": "aa_public_pages_20261018",
+      "supersedes": [],
+      "uncertainty": null,
+      "unit": "%",
+      "value": 50.476190476190496
+    },
+    {
       "benchmark_id": "aa_automationbench_657",
       "configuration_id": "aa_gpt61_sol_xhigh",
       "evaluated_at": null,
@@ -1474,19 +1530,19 @@
         "aa_model_id": "092a3b0e-c5c8-45dc-bf1b-53673c8ff352",
         "aa_release_slug": "gpt-6-1-sol",
         "source_field_unit": "Elo",
-        "source_field_value": 1503.6
+        "source_field_value": 1501.6
       },
       "source_id": "aa_public_pages_20261018",
       "supersedes": [],
       "uncertainty": {
         "confidence_level": 0.95,
-        "lower": 1492.1,
+        "lower": 1491.49,
         "type": "confidence_interval",
         "unit": "Elo",
-        "upper": 1514.32
+        "upper": 1512.18
       },
       "unit": "Elo",
-      "value": 1503.6
+      "value": 1501.6
     },
     {
       "benchmark_id": "aa_intelligence_index_v432",
@@ -1720,13 +1776,13 @@
         "aa_model_id": "1305c921-7aaa-4d6d-99b5-99b3acf15e19",
         "aa_release_slug": "claude-opus-5",
         "source_field_unit": "Elo",
-        "source_field_value": 1690.67
+        "source_field_value": 1689.32
       },
       "source_id": "aa_public_pages_20261018",
       "supersedes": [],
       "uncertainty": null,
       "unit": "Elo",
-      "value": 1690.67
+      "value": 1689.32
     },
     {
       "benchmark_id": "aa_mmmu_pro",
@@ -1973,19 +2029,19 @@
         "aa_model_id": "1305c921-7aaa-4d6d-99b5-99b3acf15e19",
         "aa_release_slug": "claude-opus-5",
         "source_field_unit": "Elo",
-        "source_field_value": 1633.85
+        "source_field_value": 1629.58
       },
       "source_id": "aa_public_pages_20261018",
       "supersedes": [],
       "uncertainty": {
         "confidence_level": 0.95,
-        "lower": 1626.59,
+        "lower": 1621.71,
         "type": "confidence_interval",
         "unit": "Elo",
-        "upper": 1642.92
+        "upper": 1637.82
       },
       "unit": "Elo",
-      "value": 1633.85
+      "value": 1629.58
     },
     {
       "benchmark_id": "aa_intelligence_index_v432",
@@ -2858,13 +2914,13 @@
         "aa_model_id": "1f541ef3-913f-4eb2-9d07-0e93c7a9a5e3",
         "aa_release_slug": "gpt-6-astra",
         "source_field_unit": "Elo",
-        "source_field_value": 1555.91
+        "source_field_value": 1556.94
       },
       "source_id": "aa_public_pages_20261018",
       "supersedes": [],
       "uncertainty": null,
       "unit": "Elo",
-      "value": 1555.91
+      "value": 1556.94
     },
     {
       "benchmark_id": "aa_mmmu_pro",
@@ -3111,19 +3167,19 @@
         "aa_model_id": "1f541ef3-913f-4eb2-9d07-0e93c7a9a5e3",
         "aa_release_slug": "gpt-6-astra",
         "source_field_unit": "Elo",
-        "source_field_value": 1546.7
+        "source_field_value": 1543.09
       },
       "source_id": "aa_public_pages_20261018",
       "supersedes": [],
       "uncertainty": {
         "confidence_level": 0.95,
-        "lower": 1537.86,
+        "lower": 1534.59,
         "type": "confidence_interval",
         "unit": "Elo",
-        "upper": 1556.11
+        "upper": 1551.28
       },
       "unit": "Elo",
-      "value": 1546.7
+      "value": 1543.09
     },
     {
       "benchmark_id": "aa_hle_text",
@@ -3661,13 +3717,13 @@
         "aa_model_id": "208c16f0-8c5b-4524-ac8a-ac74c02e80a9",
         "aa_release_slug": "grok-4-7",
         "source_field_unit": "Elo",
-        "source_field_value": 1588.11
+        "source_field_value": 1582.58
       },
       "source_id": "aa_public_pages_20261018",
       "supersedes": [],
       "uncertainty": null,
       "unit": "Elo",
-      "value": 1588.11
+      "value": 1582.58
     },
     {
       "benchmark_id": "aa_mmmu_pro",
@@ -3914,19 +3970,19 @@
         "aa_model_id": "208c16f0-8c5b-4524-ac8a-ac74c02e80a9",
         "aa_release_slug": "grok-4-7",
         "source_field_unit": "Elo",
-        "source_field_value": 1498.6
+        "source_field_value": 1495.61
       },
       "source_id": "aa_public_pages_20261018",
       "supersedes": [],
       "uncertainty": {
         "confidence_level": 0.95,
-        "lower": 1487.82,
+        "lower": 1485.84,
         "type": "confidence_interval",
         "unit": "Elo",
-        "upper": 1509.76
+        "upper": 1506.18
       },
       "unit": "Elo",
-      "value": 1498.6
+      "value": 1495.61
     },
     {
       "benchmark_id": "aa_intelligence_index_v432",
@@ -4160,13 +4216,13 @@
         "aa_model_id": "20928ba9-3a3f-415f-9519-b84ff64ecf34",
         "aa_release_slug": "claude-opus-5",
         "source_field_unit": "Elo",
-        "source_field_value": 1302.46
+        "source_field_value": 1302.62
       },
       "source_id": "aa_public_pages_20261018",
       "supersedes": [],
       "uncertainty": null,
       "unit": "Elo",
-      "value": 1302.46
+      "value": 1302.62
     },
     {
       "benchmark_id": "aa_mmmu_pro",
@@ -4413,19 +4469,19 @@
         "aa_model_id": "20928ba9-3a3f-415f-9519-b84ff64ecf34",
         "aa_release_slug": "claude-opus-5",
         "source_field_unit": "Elo",
-        "source_field_value": 1209.28
+        "source_field_value": 1208.18
       },
       "source_id": "aa_public_pages_20261018",
       "supersedes": [],
       "uncertainty": {
         "confidence_level": 0.95,
-        "lower": 1202.1,
+        "lower": 1200.73,
         "type": "confidence_interval",
         "unit": "Elo",
-        "upper": 1217.14
+        "upper": 1216.0
       },
       "unit": "Elo",
-      "value": 1209.28
+      "value": 1208.18
     },
     {
       "benchmark_id": "aa_hle_text",
@@ -4991,13 +5047,13 @@
         "aa_model_id": "26614164-6840-4e17-a65a-2deb2fe7e87b",
         "aa_release_slug": "grok-4-6",
         "source_field_unit": "Elo",
-        "source_field_value": 1612.18
+        "source_field_value": 1613.09
       },
       "source_id": "aa_public_pages_20261018",
       "supersedes": [],
       "uncertainty": null,
       "unit": "Elo",
-      "value": 1612.18
+      "value": 1613.09
     },
     {
       "benchmark_id": "aa_scicode",
@@ -5216,19 +5272,19 @@
         "aa_model_id": "26614164-6840-4e17-a65a-2deb2fe7e87b",
         "aa_release_slug": "grok-4-6",
         "source_field_unit": "Elo",
-        "source_field_value": 1483.19
+        "source_field_value": 1480.08
       },
       "source_id": "aa_public_pages_20261018",
       "supersedes": [],
       "uncertainty": {
         "confidence_level": 0.95,
-        "lower": 1475.9,
+        "lower": 1472.64,
         "type": "confidence_interval",
         "unit": "Elo",
-        "upper": 1491.57
+        "upper": 1487.97
       },
       "unit": "Elo",
-      "value": 1483.19
+      "value": 1480.08
     },
     {
       "benchmark_id": "aa_intelligence_index_v432",
@@ -5434,13 +5490,13 @@
         "aa_model_id": "272f5f03-aea9-4675-a244-2b753b618cdf",
         "aa_release_slug": "grok-4-7",
         "source_field_unit": "Elo",
-        "source_field_value": 1706.28
+        "source_field_value": 1707.02
       },
       "source_id": "aa_public_pages_20261018",
       "supersedes": [],
       "uncertainty": null,
       "unit": "Elo",
-      "value": 1706.28
+      "value": 1707.02
     },
     {
       "benchmark_id": "aa_scicode",
@@ -5687,19 +5743,19 @@
         "aa_model_id": "272f5f03-aea9-4675-a244-2b753b618cdf",
         "aa_release_slug": "grok-4-7",
         "source_field_unit": "Elo",
-        "source_field_value": 1632.79
+        "source_field_value": 1630.47
       },
       "source_id": "aa_public_pages_20261018",
       "supersedes": [],
       "uncertainty": {
         "confidence_level": 0.95,
-        "lower": 1624.09,
+        "lower": 1621.19,
         "type": "confidence_interval",
         "unit": "Elo",
-        "upper": 1642.22
+        "upper": 1639.19
       },
       "unit": "Elo",
-      "value": 1632.79
+      "value": 1630.47
     },
     {
       "benchmark_id": "aa_intelligence_index_v432",
@@ -5933,13 +5989,13 @@
         "aa_model_id": "2f339a97-9a0d-499a-9cb5-e0db665bfa25",
         "aa_release_slug": "gpt-6-astra",
         "source_field_unit": "Elo",
-        "source_field_value": 1572.84
+        "source_field_value": 1574.46
       },
       "source_id": "aa_public_pages_20261018",
       "supersedes": [],
       "uncertainty": null,
       "unit": "Elo",
-      "value": 1572.84
+      "value": 1574.46
     },
     {
       "benchmark_id": "aa_mmmu_pro",
@@ -6326,19 +6382,19 @@
         "aa_model_id": "2f339a97-9a0d-499a-9cb5-e0db665bfa25",
         "aa_release_slug": "gpt-6-astra",
         "source_field_unit": "Elo",
-        "source_field_value": 1568.99
+        "source_field_value": 1567.97
       },
       "source_id": "aa_public_pages_20261018",
       "supersedes": [],
       "uncertainty": {
         "confidence_level": 0.95,
-        "lower": 1560.5,
+        "lower": 1559.28,
         "type": "confidence_interval",
         "unit": "Elo",
-        "upper": 1578.01
+        "upper": 1576.98
       },
       "unit": "Elo",
-      "value": 1568.99
+      "value": 1567.97
     },
     {
       "benchmark_id": "aa_intelligence_index_v432",
@@ -6881,19 +6937,19 @@
         "aa_model_id": "2f3c4dc9-a450-4303-8697-0237257cf08f",
         "aa_release_slug": "claude-opus-5-5",
         "source_field_unit": "Elo",
-        "source_field_value": 1802.99
+        "source_field_value": 1801.02
       },
       "source_id": "aa_public_pages_20261018",
       "supersedes": [],
       "uncertainty": {
         "confidence_level": 0.95,
-        "lower": 1791.77,
+        "lower": 1789.81,
         "type": "confidence_interval",
         "unit": "Elo",
-        "upper": 1815.11
+        "upper": 1812.92
       },
       "unit": "Elo",
-      "value": 1802.99
+      "value": 1801.02
     },
     {
       "benchmark_id": "aa_intelligence_index_v432",
@@ -7127,13 +7183,13 @@
         "aa_model_id": "353c92f3-2148-4c2d-9231-aa7e1322a1fd",
         "aa_release_slug": "qwen3-8-27b",
         "source_field_unit": "Elo",
-        "source_field_value": 1072.36
+        "source_field_value": 1073.99
       },
       "source_id": "aa_public_pages_20261018",
       "supersedes": [],
       "uncertainty": null,
       "unit": "Elo",
-      "value": 1072.36
+      "value": 1073.99
     },
     {
       "benchmark_id": "aa_mmmu_pro",
@@ -7436,19 +7492,19 @@
         "aa_model_id": "353c92f3-2148-4c2d-9231-aa7e1322a1fd",
         "aa_release_slug": "qwen3-8-27b",
         "source_field_unit": "Elo",
-        "source_field_value": 897.66
+        "source_field_value": 897.74
       },
       "source_id": "aa_public_pages_20261018",
       "supersedes": [],
       "uncertainty": {
         "confidence_level": 0.95,
-        "lower": 886.93,
+        "lower": 887.59,
         "type": "confidence_interval",
         "unit": "Elo",
-        "upper": 907.36
+        "upper": 907.75
       },
       "unit": "Elo",
-      "value": 897.66
+      "value": 897.74
     },
     {
       "benchmark_id": "aa_intelligence_index_v432",
@@ -7682,13 +7738,13 @@
         "aa_model_id": "3b7de71c-e034-4591-8ca6-6b6be2fa471f",
         "aa_release_slug": "claude-fable-5-1",
         "source_field_unit": "Elo",
-        "source_field_value": 1545.43
+        "source_field_value": 1544.85
       },
       "source_id": "aa_public_pages_20261018",
       "supersedes": [],
       "uncertainty": null,
       "unit": "Elo",
-      "value": 1545.43
+      "value": 1544.85
     },
     {
       "benchmark_id": "aa_scicode",
@@ -7907,19 +7963,19 @@
         "aa_model_id": "3b7de71c-e034-4591-8ca6-6b6be2fa471f",
         "aa_release_slug": "claude-fable-5-1",
         "source_field_unit": "Elo",
-        "source_field_value": 1527.66
+        "source_field_value": 1525.22
       },
       "source_id": "aa_public_pages_20261018",
       "supersedes": [],
       "uncertainty": {
         "confidence_level": 0.95,
-        "lower": 1519.87,
+        "lower": 1517.48,
         "type": "confidence_interval",
         "unit": "Elo",
-        "upper": 1535.57
+        "upper": 1533.38
       },
       "unit": "Elo",
-      "value": 1527.66
+      "value": 1525.22
     },
     {
       "benchmark_id": "aa_intelligence_index_v432",
@@ -8125,13 +8181,13 @@
         "aa_model_id": "3b84fee3-b70a-41bc-819e-5fbdef9a0042",
         "aa_release_slug": "gpt-6-1-sol",
         "source_field_unit": "Elo",
-        "source_field_value": 1511.35
+        "source_field_value": 1512.41
       },
       "source_id": "aa_public_pages_20261018",
       "supersedes": [],
       "uncertainty": null,
       "unit": "Elo",
-      "value": 1511.35
+      "value": 1512.41
     },
     {
       "benchmark_id": "aa_mmmu_pro",
@@ -8251,6 +8307,62 @@
       "value": 51.5151515151515
     },
     {
+      "benchmark_id": "frontiercode_v11",
+      "configuration_id": "aa_gpt61_sol_high",
+      "evaluated_at": null,
+      "evaluator": "Artificial Analysis",
+      "id": "o_aa_gpt61_sol_aa-gpt61-sol-high_gpt-6-1-sol-high_frontiercode_v11_20261018",
+      "locator": "models[gpt-6-1-sol-high].frontierCode",
+      "reported_at": null,
+      "reporting_relationship": "evaluator_measurement",
+      "review_state": "candidate",
+      "series_id": "series_aa_gpt61_sol_aa-gpt61-sol-high_gpt-6-1-sol-high_frontiercode_v11",
+      "setup": {
+        "aa_effort_slug": "high",
+        "aa_model_id": "3b84fee3-b70a-41bc-819e-5fbdef9a0042",
+        "aa_release_slug": "gpt-6-1-sol",
+        "normalization": {
+          "formula": "source fraction × 100",
+          "reason": "AA serializes this percentage metric as a 0–1 fraction."
+        },
+        "source_field_unit": "fraction",
+        "source_field_value": 0.466056333333333
+      },
+      "source_id": "aa_public_pages_20261018",
+      "supersedes": [],
+      "uncertainty": null,
+      "unit": "%",
+      "value": 46.6056333333333
+    },
+    {
+      "benchmark_id": "terminal_science_01",
+      "configuration_id": "aa_gpt61_sol_high",
+      "evaluated_at": null,
+      "evaluator": "Artificial Analysis",
+      "id": "o_aa_gpt61_sol_aa-gpt61-sol-high_gpt-6-1-sol-high_terminal_science_01_20261018",
+      "locator": "models[gpt-6-1-sol-high].terminalBenchScience",
+      "reported_at": null,
+      "reporting_relationship": "evaluator_measurement",
+      "review_state": "candidate",
+      "series_id": "series_aa_gpt61_sol_aa-gpt61-sol-high_gpt-6-1-sol-high_terminal_science_01",
+      "setup": {
+        "aa_effort_slug": "high",
+        "aa_model_id": "3b84fee3-b70a-41bc-819e-5fbdef9a0042",
+        "aa_release_slug": "gpt-6-1-sol",
+        "normalization": {
+          "formula": "source fraction × 100",
+          "reason": "AA serializes this percentage metric as a 0–1 fraction."
+        },
+        "source_field_unit": "fraction",
+        "source_field_value": 0.461904761904762
+      },
+      "source_id": "aa_public_pages_20261018",
+      "supersedes": [],
+      "uncertainty": null,
+      "unit": "%",
+      "value": 46.1904761904762
+    },
+    {
       "benchmark_id": "aa_automationbench_657",
       "configuration_id": "aa_gpt61_sol_high",
       "evaluated_at": null,
@@ -8322,19 +8434,19 @@
         "aa_model_id": "3b84fee3-b70a-41bc-819e-5fbdef9a0042",
         "aa_release_slug": "gpt-6-1-sol",
         "source_field_unit": "Elo",
-        "source_field_value": 1465.25
+        "source_field_value": 1464.98
       },
       "source_id": "aa_public_pages_20261018",
       "supersedes": [],
       "uncertainty": {
         "confidence_level": 0.95,
-        "lower": 1455.09,
+        "lower": 1455.19,
         "type": "confidence_interval",
         "unit": "Elo",
-        "upper": 1476.51
+        "upper": 1475.53
       },
       "unit": "Elo",
-      "value": 1465.25
+      "value": 1464.98
     },
     {
       "benchmark_id": "aa_intelligence_index_v432",
@@ -8568,13 +8680,13 @@
         "aa_model_id": "3e87c73e-a257-495e-9730-367a66229811",
         "aa_release_slug": "claude-fable-5-1",
         "source_field_unit": "Elo",
-        "source_field_value": 1754.07
+        "source_field_value": 1754.56
       },
       "source_id": "aa_public_pages_20261018",
       "supersedes": [],
       "uncertainty": null,
       "unit": "Elo",
-      "value": 1754.07
+      "value": 1754.56
     },
     {
       "benchmark_id": "aa_scicode",
@@ -8933,19 +9045,19 @@
         "aa_model_id": "3e87c73e-a257-495e-9730-367a66229811",
         "aa_release_slug": "claude-fable-5-1",
         "source_field_unit": "Elo",
-        "source_field_value": 1672.26
+        "source_field_value": 1670.7
       },
       "source_id": "aa_public_pages_20261018",
       "supersedes": [],
       "uncertainty": {
         "confidence_level": 0.95,
-        "lower": 1664.49,
+        "lower": 1662.73,
         "type": "confidence_interval",
         "unit": "Elo",
-        "upper": 1681.12
+        "upper": 1679.02
       },
       "unit": "Elo",
-      "value": 1672.26
+      "value": 1670.7
     },
     {
       "benchmark_id": "aa_hle_text",
@@ -9235,13 +9347,13 @@
         "aa_model_id": "4416ca93-fde6-4b7b-abbc-3a6be109cc3d",
         "aa_release_slug": "claude-opus-5-5",
         "source_field_unit": "Elo",
-        "source_field_value": 1235.23
+        "source_field_value": 1233.91
       },
       "source_id": "aa_public_pages_20261018",
       "supersedes": [],
       "uncertainty": null,
       "unit": "Elo",
-      "value": 1235.23
+      "value": 1233.91
     },
     {
       "benchmark_id": "aa_mmmu_pro",
@@ -9488,19 +9600,19 @@
         "aa_model_id": "4416ca93-fde6-4b7b-abbc-3a6be109cc3d",
         "aa_release_slug": "claude-opus-5-5",
         "source_field_unit": "Elo",
-        "source_field_value": 1279.79
+        "source_field_value": 1276.4
       },
       "source_id": "aa_public_pages_20261018",
       "supersedes": [],
       "uncertainty": {
         "confidence_level": 0.95,
-        "lower": 1270.23,
+        "lower": 1267.6,
         "type": "confidence_interval",
         "unit": "Elo",
-        "upper": 1289.66
+        "upper": 1285.43
       },
       "unit": "Elo",
-      "value": 1279.79
+      "value": 1276.4
     },
     {
       "benchmark_id": "aa_intelligence_index_v432",
@@ -9734,13 +9846,13 @@
         "aa_model_id": "512d17ef-13d2-4f65-bf9b-154b0dec7e8d",
         "aa_release_slug": "kimi-k3",
         "source_field_unit": "Elo",
-        "source_field_value": 1126.79
+        "source_field_value": 1129.55
       },
       "source_id": "aa_public_pages_20261018",
       "supersedes": [],
       "uncertainty": null,
       "unit": "Elo",
-      "value": 1126.79
+      "value": 1129.55
     },
     {
       "benchmark_id": "aa_mmmu_pro",
@@ -9888,6 +10000,34 @@
       "value": 28.477400000000003
     },
     {
+      "benchmark_id": "terminal_science_01",
+      "configuration_id": "aa_kimi_k3_low",
+      "evaluated_at": null,
+      "evaluator": "Artificial Analysis",
+      "id": "o_aa_kimi_k3_aa-kimi-k3-low_kimi-k3-low_terminal_science_01_20261018",
+      "locator": "models[kimi-k3-low].terminalBenchScience",
+      "reported_at": null,
+      "reporting_relationship": "evaluator_measurement",
+      "review_state": "candidate",
+      "series_id": "series_aa_kimi_k3_aa-kimi-k3-low_kimi-k3-low_terminal_science_01",
+      "setup": {
+        "aa_effort_slug": "low",
+        "aa_model_id": "512d17ef-13d2-4f65-bf9b-154b0dec7e8d",
+        "aa_release_slug": "kimi-k3",
+        "normalization": {
+          "formula": "source fraction × 100",
+          "reason": "AA serializes this percentage metric as a 0–1 fraction."
+        },
+        "source_field_unit": "fraction",
+        "source_field_value": 0.00952380952380952
+      },
+      "source_id": "aa_public_pages_20261018",
+      "supersedes": [],
+      "uncertainty": null,
+      "unit": "%",
+      "value": 0.952380952380952
+    },
+    {
       "benchmark_id": "terminal_bench_21",
       "configuration_id": "aa_kimi_k3_low",
       "evaluated_at": null,
@@ -10015,19 +10155,19 @@
         "aa_model_id": "512d17ef-13d2-4f65-bf9b-154b0dec7e8d",
         "aa_release_slug": "kimi-k3",
         "source_field_unit": "Elo",
-        "source_field_value": 984.53
+        "source_field_value": 984.38
       },
       "source_id": "aa_public_pages_20261018",
       "supersedes": [],
       "uncertainty": {
         "confidence_level": 0.95,
-        "lower": 976.48,
+        "lower": 976.06,
         "type": "confidence_interval",
         "unit": "Elo",
-        "upper": 992.1
+        "upper": 991.62
       },
       "unit": "Elo",
-      "value": 984.53
+      "value": 984.38
     },
     {
       "benchmark_id": "aa_intelligence_index_v432",
@@ -10233,13 +10373,13 @@
         "aa_model_id": "59627802-1546-422c-9a65-65b61c022d36",
         "aa_release_slug": "grok-4-7",
         "source_field_unit": "Elo",
-        "source_field_value": 1711.07
+        "source_field_value": 1713.96
       },
       "source_id": "aa_public_pages_20261018",
       "supersedes": [],
       "uncertainty": null,
       "unit": "Elo",
-      "value": 1711.07
+      "value": 1713.96
     },
     {
       "benchmark_id": "aa_scicode",
@@ -10542,19 +10682,19 @@
         "aa_model_id": "59627802-1546-422c-9a65-65b61c022d36",
         "aa_release_slug": "grok-4-7",
         "source_field_unit": "Elo",
-        "source_field_value": 1641.75
+        "source_field_value": 1639.16
       },
       "source_id": "aa_public_pages_20261018",
       "supersedes": [],
       "uncertainty": {
         "confidence_level": 0.95,
-        "lower": 1632.5,
+        "lower": 1630.27,
         "type": "confidence_interval",
         "unit": "Elo",
-        "upper": 1651.51
+        "upper": 1649.34
       },
       "unit": "Elo",
-      "value": 1641.75
+      "value": 1639.16
     },
     {
       "benchmark_id": "aa_intelligence_index_v432",
@@ -10788,13 +10928,13 @@
         "aa_model_id": "5e5b4ce7-bc54-47b2-b911-21b9cad8394c",
         "aa_release_slug": "qwen3-8-max",
         "source_field_unit": "Elo",
-        "source_field_value": 1604.43
+        "source_field_value": 1603.91
       },
       "source_id": "aa_public_pages_20261018",
       "supersedes": [],
       "uncertainty": null,
       "unit": "Elo",
-      "value": 1604.43
+      "value": 1603.91
     },
     {
       "benchmark_id": "aa_mmmu_pro",
@@ -11041,19 +11181,19 @@
         "aa_model_id": "5e5b4ce7-bc54-47b2-b911-21b9cad8394c",
         "aa_release_slug": "qwen3-8-max",
         "source_field_unit": "Elo",
-        "source_field_value": 1384.6
+        "source_field_value": 1382.88
       },
       "source_id": "aa_public_pages_20261018",
       "supersedes": [],
       "uncertainty": {
         "confidence_level": 0.95,
-        "lower": 1377.27,
+        "lower": 1376.14,
         "type": "confidence_interval",
         "unit": "Elo",
-        "upper": 1392.81
+        "upper": 1390.21
       },
       "unit": "Elo",
-      "value": 1384.6
+      "value": 1382.88
     },
     {
       "benchmark_id": "aa_intelligence_index_v432",
@@ -11287,13 +11427,13 @@
         "aa_model_id": "6657d7de-a2a9-40bc-a32f-86e80ad63698",
         "aa_release_slug": "qwen3-8-27b",
         "source_field_unit": "Elo",
-        "source_field_value": 1382.16
+        "source_field_value": 1380.39
       },
       "source_id": "aa_public_pages_20261018",
       "supersedes": [],
       "uncertainty": null,
       "unit": "Elo",
-      "value": 1382.16
+      "value": 1380.39
     },
     {
       "benchmark_id": "aa_mmmu_pro",
@@ -11596,19 +11736,19 @@
         "aa_model_id": "6657d7de-a2a9-40bc-a32f-86e80ad63698",
         "aa_release_slug": "qwen3-8-27b",
         "source_field_unit": "Elo",
-        "source_field_value": 1375.49
+        "source_field_value": 1374.14
       },
       "source_id": "aa_public_pages_20261018",
       "supersedes": [],
       "uncertainty": {
         "confidence_level": 0.95,
-        "lower": 1367.07,
+        "lower": 1365.75,
         "type": "confidence_interval",
         "unit": "Elo",
-        "upper": 1383.85
+        "upper": 1383.02
       },
       "unit": "Elo",
-      "value": 1375.49
+      "value": 1374.14
     },
     {
       "benchmark_id": "aa_gpqa_diamond",
@@ -11762,13 +11902,13 @@
         "aa_model_id": "6a7c0e25-1dcb-4b15-8495-a8536a9da051",
         "aa_release_slug": "gpt-4",
         "source_field_unit": "Elo",
-        "source_field_value": -19.88
+        "source_field_value": -20.75
       },
       "source_id": "aa_public_pages_20261018",
       "supersedes": [],
       "uncertainty": null,
       "unit": "Elo",
-      "value": -19.88
+      "value": -20.75
     },
     {
       "benchmark_id": "aa_intelligence_index_v432",
@@ -12058,13 +12198,13 @@
         "aa_model_id": "6f174934-5b7d-4333-86cb-f5ebf4a862e3",
         "aa_release_slug": "gpt-5-6-sol",
         "source_field_unit": "Elo",
-        "source_field_value": 1421.47
+        "source_field_value": 1422.33
       },
       "source_id": "aa_public_pages_20261018",
       "supersedes": [],
       "uncertainty": null,
       "unit": "Elo",
-      "value": 1421.47
+      "value": 1422.33
     },
     {
       "benchmark_id": "aa_mmmu_pro",
@@ -12339,19 +12479,19 @@
         "aa_model_id": "6f174934-5b7d-4333-86cb-f5ebf4a862e3",
         "aa_release_slug": "gpt-5-6-sol",
         "source_field_unit": "Elo",
-        "source_field_value": 1241.93
+        "source_field_value": 1240.1
       },
       "source_id": "aa_public_pages_20261018",
       "supersedes": [],
       "uncertainty": {
         "confidence_level": 0.95,
-        "lower": 1233.38,
+        "lower": 1231.58,
         "type": "confidence_interval",
         "unit": "Elo",
-        "upper": 1250.19
+        "upper": 1248.63
       },
       "unit": "Elo",
-      "value": 1241.93
+      "value": 1240.1
     },
     {
       "benchmark_id": "aa_intelligence_index_v432",
@@ -12585,13 +12725,13 @@
         "aa_model_id": "712be54a-77ae-41b2-9a58-21181479d6ee",
         "aa_release_slug": "claude-opus-5",
         "source_field_unit": "Elo",
-        "source_field_value": 1594.93
+        "source_field_value": 1594.98
       },
       "source_id": "aa_public_pages_20261018",
       "supersedes": [],
       "uncertainty": null,
       "unit": "Elo",
-      "value": 1594.93
+      "value": 1594.98
     },
     {
       "benchmark_id": "aa_mmmu_pro",
@@ -12838,19 +12978,19 @@
         "aa_model_id": "712be54a-77ae-41b2-9a58-21181479d6ee",
         "aa_release_slug": "claude-opus-5",
         "source_field_unit": "Elo",
-        "source_field_value": 1560.7
+        "source_field_value": 1558.12
       },
       "source_id": "aa_public_pages_20261018",
       "supersedes": [],
       "uncertainty": {
         "confidence_level": 0.95,
-        "lower": 1553.39,
+        "lower": 1551.18,
         "type": "confidence_interval",
         "unit": "Elo",
-        "upper": 1568.52
+        "upper": 1565.69
       },
       "unit": "Elo",
-      "value": 1560.7
+      "value": 1558.12
     },
     {
       "benchmark_id": "aa_intelligence_index_v432",
@@ -13056,13 +13196,13 @@
         "aa_model_id": "73c96f99-0de3-4668-a4bd-b106a0fe18f2",
         "aa_release_slug": "deepseek-v4-1-flash",
         "source_field_unit": "Elo",
-        "source_field_value": 1341.23
+        "source_field_value": 1340.15
       },
       "source_id": "aa_public_pages_20261018",
       "supersedes": [],
       "uncertainty": null,
       "unit": "Elo",
-      "value": 1341.23
+      "value": 1340.15
     },
     {
       "benchmark_id": "aa_mmmu_pro",
@@ -13182,6 +13322,62 @@
       "value": 5.55555555555556
     },
     {
+      "benchmark_id": "frontiercode_v11",
+      "configuration_id": "aa_deepseek_v4_1_flash_non_reasoning",
+      "evaluated_at": null,
+      "evaluator": "Artificial Analysis",
+      "id": "o_aa_deepseek_v4_1_flash_aa-deepseek-v4-1-flash-non-reasoning_deepseek-v4-1-flash-non-reasoning_frontiercode_v11_20261018",
+      "locator": "models[deepseek-v4-1-flash-non-reasoning].frontierCode",
+      "reported_at": null,
+      "reporting_relationship": "evaluator_measurement",
+      "review_state": "candidate",
+      "series_id": "series_aa_deepseek_v4_1_flash_aa-deepseek-v4-1-flash-non-reasoning_deepseek-v4-1-flash-non-reasoning_frontiercode_v11",
+      "setup": {
+        "aa_effort_slug": null,
+        "aa_model_id": "73c96f99-0de3-4668-a4bd-b106a0fe18f2",
+        "aa_release_slug": "deepseek-v4-1-flash",
+        "normalization": {
+          "formula": "source fraction × 100",
+          "reason": "AA serializes this percentage metric as a 0–1 fraction."
+        },
+        "source_field_unit": "fraction",
+        "source_field_value": 0.407759666666667
+      },
+      "source_id": "aa_public_pages_20261018",
+      "supersedes": [],
+      "uncertainty": null,
+      "unit": "%",
+      "value": 40.775966666666704
+    },
+    {
+      "benchmark_id": "terminal_science_01",
+      "configuration_id": "aa_deepseek_v4_1_flash_non_reasoning",
+      "evaluated_at": null,
+      "evaluator": "Artificial Analysis",
+      "id": "o_aa_deepseek_v4_1_flash_aa-deepseek-v4-1-flash-non-reasoning_deepseek-v4-1-flash-non-reasoning_terminal_science_01_20261018",
+      "locator": "models[deepseek-v4-1-flash-non-reasoning].terminalBenchScience",
+      "reported_at": null,
+      "reporting_relationship": "evaluator_measurement",
+      "review_state": "candidate",
+      "series_id": "series_aa_deepseek_v4_1_flash_aa-deepseek-v4-1-flash-non-reasoning_deepseek-v4-1-flash-non-reasoning_terminal_science_01",
+      "setup": {
+        "aa_effort_slug": null,
+        "aa_model_id": "73c96f99-0de3-4668-a4bd-b106a0fe18f2",
+        "aa_release_slug": "deepseek-v4-1-flash",
+        "normalization": {
+          "formula": "source fraction × 100",
+          "reason": "AA serializes this percentage metric as a 0–1 fraction."
+        },
+        "source_field_unit": "fraction",
+        "source_field_value": 0.0
+      },
+      "source_id": "aa_public_pages_20261018",
+      "supersedes": [],
+      "uncertainty": null,
+      "unit": "%",
+      "value": 0.0
+    },
+    {
       "benchmark_id": "aa_automationbench_657",
       "configuration_id": "aa_deepseek_v4_1_flash_non_reasoning",
       "evaluated_at": null,
@@ -13225,19 +13421,19 @@
         "aa_model_id": "73c96f99-0de3-4668-a4bd-b106a0fe18f2",
         "aa_release_slug": "deepseek-v4-1-flash",
         "source_field_unit": "Elo",
-        "source_field_value": 1117.62
+        "source_field_value": 1118.29
       },
       "source_id": "aa_public_pages_20261018",
       "supersedes": [],
       "uncertainty": {
         "confidence_level": 0.95,
-        "lower": 1108.06,
+        "lower": 1108.42,
         "type": "confidence_interval",
         "unit": "Elo",
-        "upper": 1127.33
+        "upper": 1127.96
       },
       "unit": "Elo",
-      "value": 1117.62
+      "value": 1118.29
     },
     {
       "benchmark_id": "aa_hle_text",
@@ -13531,13 +13727,13 @@
         "aa_model_id": "7c4d1e30-6ecb-46cf-880c-41446d7b51f1",
         "aa_release_slug": "gpt-5-6-sol",
         "source_field_unit": "Elo",
-        "source_field_value": 1241.59
+        "source_field_value": 1242.98
       },
       "source_id": "aa_public_pages_20261018",
       "supersedes": [],
       "uncertainty": null,
       "unit": "Elo",
-      "value": 1241.59
+      "value": 1242.98
     },
     {
       "benchmark_id": "aa_mmmu_pro",
@@ -13944,13 +14140,13 @@
         "aa_model_id": "7e30585f-fad7-40df-a8cb-03c1d96df38a",
         "aa_release_slug": "qwen3-8-27b",
         "source_field_unit": "Elo",
-        "source_field_value": 1362.53
+        "source_field_value": 1363.36
       },
       "source_id": "aa_public_pages_20261018",
       "supersedes": [],
       "uncertainty": null,
       "unit": "Elo",
-      "value": 1362.53
+      "value": 1363.36
     },
     {
       "benchmark_id": "aa_mmmu_pro",
@@ -14253,19 +14449,19 @@
         "aa_model_id": "7e30585f-fad7-40df-a8cb-03c1d96df38a",
         "aa_release_slug": "qwen3-8-27b",
         "source_field_unit": "Elo",
-        "source_field_value": 1271.57
+        "source_field_value": 1270.9
       },
       "source_id": "aa_public_pages_20261018",
       "supersedes": [],
       "uncertainty": {
         "confidence_level": 0.95,
-        "lower": 1262.93,
+        "lower": 1262.41,
         "type": "confidence_interval",
         "unit": "Elo",
-        "upper": 1281.57
+        "upper": 1280.57
       },
       "unit": "Elo",
-      "value": 1271.57
+      "value": 1270.9
     },
     {
       "benchmark_id": "aa_intelligence_index_v432",
@@ -14555,13 +14751,13 @@
         "aa_model_id": "8afc250d-b538-45a2-812a-4605f4ffd87e",
         "aa_release_slug": "gpt-5-6-sol",
         "source_field_unit": "Elo",
-        "source_field_value": 1503.99
+        "source_field_value": 1504.48
       },
       "source_id": "aa_public_pages_20261018",
       "supersedes": [],
       "uncertainty": null,
       "unit": "Elo",
-      "value": 1503.99
+      "value": 1504.48
     },
     {
       "benchmark_id": "aa_mmmu_pro",
@@ -14836,19 +15032,19 @@
         "aa_model_id": "8afc250d-b538-45a2-812a-4605f4ffd87e",
         "aa_release_slug": "gpt-5-6-sol",
         "source_field_unit": "Elo",
-        "source_field_value": 1368.7
+        "source_field_value": 1368.12
       },
       "source_id": "aa_public_pages_20261018",
       "supersedes": [],
       "uncertainty": {
         "confidence_level": 0.95,
-        "lower": 1360.71,
+        "lower": 1359.41,
         "type": "confidence_interval",
         "unit": "Elo",
-        "upper": 1377.78
+        "upper": 1376.78
       },
       "unit": "Elo",
-      "value": 1368.7
+      "value": 1368.12
     },
     {
       "benchmark_id": "aa_hle_text",
@@ -15777,13 +15973,13 @@
         "aa_model_id": "9b166bf3-42db-4f63-8338-1c4a1244ffe8",
         "aa_release_slug": "claude-fable-5-1",
         "source_field_unit": "Elo",
-        "source_field_value": 1732.14
+        "source_field_value": 1732.77
       },
       "source_id": "aa_public_pages_20261018",
       "supersedes": [],
       "uncertainty": null,
       "unit": "Elo",
-      "value": 1732.14
+      "value": 1732.77
     },
     {
       "benchmark_id": "aa_scicode",
@@ -16002,19 +16198,19 @@
         "aa_model_id": "9b166bf3-42db-4f63-8338-1c4a1244ffe8",
         "aa_release_slug": "claude-fable-5-1",
         "source_field_unit": "Elo",
-        "source_field_value": 1654.53
+        "source_field_value": 1650.97
       },
       "source_id": "aa_public_pages_20261018",
       "supersedes": [],
       "uncertainty": {
         "confidence_level": 0.95,
-        "lower": 1646.4,
+        "lower": 1642.86,
         "type": "confidence_interval",
         "unit": "Elo",
-        "upper": 1663.68
+        "upper": 1659.6
       },
       "unit": "Elo",
-      "value": 1654.53
+      "value": 1650.97
     },
     {
       "benchmark_id": "aa_intelligence_index_v432",
@@ -16248,13 +16444,13 @@
         "aa_model_id": "9d7d72cd-d95d-45a0-b109-4ad292c9aabd",
         "aa_release_slug": "claude-fable-5-1",
         "source_field_unit": "Elo",
-        "source_field_value": 1634.67
+        "source_field_value": 1636.12
       },
       "source_id": "aa_public_pages_20261018",
       "supersedes": [],
       "uncertainty": null,
       "unit": "Elo",
-      "value": 1634.67
+      "value": 1636.12
     },
     {
       "benchmark_id": "aa_scicode",
@@ -16473,19 +16669,19 @@
         "aa_model_id": "9d7d72cd-d95d-45a0-b109-4ad292c9aabd",
         "aa_release_slug": "claude-fable-5-1",
         "source_field_unit": "Elo",
-        "source_field_value": 1580.33
+        "source_field_value": 1577.4
       },
       "source_id": "aa_public_pages_20261018",
       "supersedes": [],
       "uncertainty": {
         "confidence_level": 0.95,
-        "lower": 1572.7,
+        "lower": 1569.88,
         "type": "confidence_interval",
         "unit": "Elo",
-        "upper": 1588.44
+        "upper": 1585.53
       },
       "unit": "Elo",
-      "value": 1580.33
+      "value": 1577.4
     },
     {
       "benchmark_id": "aa_intelligence_index_v432",
@@ -16691,13 +16887,13 @@
         "aa_model_id": "a2e51d62-ea4e-4f15-8be0-be9dc1fb489d",
         "aa_release_slug": "gpt-6-1-sol",
         "source_field_unit": "Elo",
-        "source_field_value": 1450.1
+        "source_field_value": 1450.23
       },
       "source_id": "aa_public_pages_20261018",
       "supersedes": [],
       "uncertainty": null,
       "unit": "Elo",
-      "value": 1450.1
+      "value": 1450.23
     },
     {
       "benchmark_id": "aa_mmmu_pro",
@@ -16817,6 +17013,62 @@
       "value": 47.979797979798
     },
     {
+      "benchmark_id": "frontiercode_v11",
+      "configuration_id": "aa_gpt61_sol_medium",
+      "evaluated_at": null,
+      "evaluator": "Artificial Analysis",
+      "id": "o_aa_gpt61_sol_aa-gpt61-sol-medium_gpt-6-1-sol-medium_frontiercode_v11_20261018",
+      "locator": "models[gpt-6-1-sol-medium].frontierCode",
+      "reported_at": null,
+      "reporting_relationship": "evaluator_measurement",
+      "review_state": "candidate",
+      "series_id": "series_aa_gpt61_sol_aa-gpt61-sol-medium_gpt-6-1-sol-medium_frontiercode_v11",
+      "setup": {
+        "aa_effort_slug": "medium",
+        "aa_model_id": "a2e51d62-ea4e-4f15-8be0-be9dc1fb489d",
+        "aa_release_slug": "gpt-6-1-sol",
+        "normalization": {
+          "formula": "source fraction × 100",
+          "reason": "AA serializes this percentage metric as a 0–1 fraction."
+        },
+        "source_field_unit": "fraction",
+        "source_field_value": 0.433330666666667
+      },
+      "source_id": "aa_public_pages_20261018",
+      "supersedes": [],
+      "uncertainty": null,
+      "unit": "%",
+      "value": 43.333066666666696
+    },
+    {
+      "benchmark_id": "terminal_science_01",
+      "configuration_id": "aa_gpt61_sol_medium",
+      "evaluated_at": null,
+      "evaluator": "Artificial Analysis",
+      "id": "o_aa_gpt61_sol_aa-gpt61-sol-medium_gpt-6-1-sol-medium_terminal_science_01_20261018",
+      "locator": "models[gpt-6-1-sol-medium].terminalBenchScience",
+      "reported_at": null,
+      "reporting_relationship": "evaluator_measurement",
+      "review_state": "candidate",
+      "series_id": "series_aa_gpt61_sol_aa-gpt61-sol-medium_gpt-6-1-sol-medium_terminal_science_01",
+      "setup": {
+        "aa_effort_slug": "medium",
+        "aa_model_id": "a2e51d62-ea4e-4f15-8be0-be9dc1fb489d",
+        "aa_release_slug": "gpt-6-1-sol",
+        "normalization": {
+          "formula": "source fraction × 100",
+          "reason": "AA serializes this percentage metric as a 0–1 fraction."
+        },
+        "source_field_unit": "fraction",
+        "source_field_value": 0.371428571428571
+      },
+      "source_id": "aa_public_pages_20261018",
+      "supersedes": [],
+      "uncertainty": null,
+      "unit": "%",
+      "value": 37.142857142857096
+    },
+    {
       "benchmark_id": "aa_automationbench_657",
       "configuration_id": "aa_gpt61_sol_medium",
       "evaluated_at": null,
@@ -16888,19 +17140,19 @@
         "aa_model_id": "a2e51d62-ea4e-4f15-8be0-be9dc1fb489d",
         "aa_release_slug": "gpt-6-1-sol",
         "source_field_unit": "Elo",
-        "source_field_value": 1361.16
+        "source_field_value": 1358.64
       },
       "source_id": "aa_public_pages_20261018",
       "supersedes": [],
       "uncertainty": {
         "confidence_level": 0.95,
-        "lower": 1350.57,
+        "lower": 1348.85,
         "type": "confidence_interval",
         "unit": "Elo",
-        "upper": 1371.73
+        "upper": 1368.22
       },
       "unit": "Elo",
-      "value": 1361.16
+      "value": 1358.64
     },
     {
       "benchmark_id": "aa_intelligence_index_v432",
@@ -17134,13 +17386,13 @@
         "aa_model_id": "a3f8100d-e38f-408b-b0fa-0085dae18dc1",
         "aa_release_slug": "gpt-6-astra",
         "source_field_unit": "Elo",
-        "source_field_value": 1389.25
+        "source_field_value": 1390.65
       },
       "source_id": "aa_public_pages_20261018",
       "supersedes": [],
       "uncertainty": null,
       "unit": "Elo",
-      "value": 1389.25
+      "value": 1390.65
     },
     {
       "benchmark_id": "aa_mmmu_pro",
@@ -17387,19 +17639,19 @@
         "aa_model_id": "a3f8100d-e38f-408b-b0fa-0085dae18dc1",
         "aa_release_slug": "gpt-6-astra",
         "source_field_unit": "Elo",
-        "source_field_value": 1257.01
+        "source_field_value": 1254.64
       },
       "source_id": "aa_public_pages_20261018",
       "supersedes": [],
       "uncertainty": {
         "confidence_level": 0.95,
-        "lower": 1248.03,
+        "lower": 1245.95,
         "type": "confidence_interval",
         "unit": "Elo",
-        "upper": 1266.07
+        "upper": 1262.69
       },
       "unit": "Elo",
-      "value": 1257.01
+      "value": 1254.64
     },
     {
       "benchmark_id": "aa_hle_text",
@@ -17965,13 +18217,13 @@
         "aa_model_id": "b01dee41-c62b-48ed-8d16-984adc405e5c",
         "aa_release_slug": "qwen3-8-27b",
         "source_field_unit": "Elo",
-        "source_field_value": 1416.92
+        "source_field_value": 1418.98
       },
       "source_id": "aa_public_pages_20261018",
       "supersedes": [],
       "uncertainty": null,
       "unit": "Elo",
-      "value": 1416.92
+      "value": 1418.98
     },
     {
       "benchmark_id": "aa_mmmu_pro",
@@ -18302,19 +18554,19 @@
         "aa_model_id": "b01dee41-c62b-48ed-8d16-984adc405e5c",
         "aa_release_slug": "qwen3-8-27b",
         "source_field_unit": "Elo",
-        "source_field_value": 1394.92
+        "source_field_value": 1394.03
       },
       "source_id": "aa_public_pages_20261018",
       "supersedes": [],
       "uncertainty": {
         "confidence_level": 0.95,
-        "lower": 1387.8,
+        "lower": 1386.61,
         "type": "confidence_interval",
         "unit": "Elo",
-        "upper": 1402.51
+        "upper": 1401.16
       },
       "unit": "Elo",
-      "value": 1394.92
+      "value": 1394.03
     },
     {
       "benchmark_id": "aa_intelligence_index_v432",
@@ -18548,13 +18800,13 @@
         "aa_model_id": "b112af07-3bd5-4647-b09f-b23204361bb2",
         "aa_release_slug": "qwen3-8-max-0902",
         "source_field_unit": "Elo",
-        "source_field_value": 1664.63
+        "source_field_value": 1666.26
       },
       "source_id": "aa_public_pages_20261018",
       "supersedes": [],
       "uncertainty": null,
       "unit": "Elo",
-      "value": 1664.63
+      "value": 1666.26
     },
     {
       "benchmark_id": "aa_mmmu_pro",
@@ -18969,19 +19221,19 @@
         "aa_model_id": "b112af07-3bd5-4647-b09f-b23204361bb2",
         "aa_release_slug": "qwen3-8-max-0902",
         "source_field_unit": "Elo",
-        "source_field_value": 1612.62
+        "source_field_value": 1610.71
       },
       "source_id": "aa_public_pages_20261018",
       "supersedes": [],
       "uncertainty": {
         "confidence_level": 0.95,
-        "lower": 1603.61,
+        "lower": 1601.24,
         "type": "confidence_interval",
         "unit": "Elo",
-        "upper": 1621.93
+        "upper": 1620.84
       },
       "unit": "Elo",
-      "value": 1612.62
+      "value": 1610.71
     },
     {
       "benchmark_id": "aa_intelligence_index_v432",
@@ -19187,13 +19439,13 @@
         "aa_model_id": "b25ac058-1e33-4c31-bbc9-a20c3ad0717a",
         "aa_release_slug": "gpt-6-1-sol",
         "source_field_unit": "Elo",
-        "source_field_value": 1593.85
+        "source_field_value": 1596.2
       },
       "source_id": "aa_public_pages_20261018",
       "supersedes": [],
       "uncertainty": null,
       "unit": "Elo",
-      "value": 1593.85
+      "value": 1596.2
     },
     {
       "benchmark_id": "aa_mmmu_pro",
@@ -19496,19 +19748,19 @@
         "aa_model_id": "b25ac058-1e33-4c31-bbc9-a20c3ad0717a",
         "aa_release_slug": "gpt-6-1-sol",
         "source_field_unit": "Elo",
-        "source_field_value": 1557.0
+        "source_field_value": 1554.98
       },
       "source_id": "aa_public_pages_20261018",
       "supersedes": [],
       "uncertainty": {
         "confidence_level": 0.95,
-        "lower": 1547.21,
+        "lower": 1544.9,
         "type": "confidence_interval",
         "unit": "Elo",
-        "upper": 1567.33
+        "upper": 1564.36
       },
       "unit": "Elo",
-      "value": 1557.0
+      "value": 1554.98
     },
     {
       "benchmark_id": "aa_hle_text",
@@ -20130,13 +20382,13 @@
         "aa_model_id": "b8fc61f7-5e9a-49e6-8547-6ac56db24627",
         "aa_release_slug": "claude-opus-5",
         "source_field_unit": "Elo",
-        "source_field_value": 1721.15
+        "source_field_value": 1721.67
       },
       "source_id": "aa_public_pages_20261018",
       "supersedes": [],
       "uncertainty": null,
       "unit": "Elo",
-      "value": 1721.15
+      "value": 1721.67
     },
     {
       "benchmark_id": "aa_mmmu_pro",
@@ -20467,19 +20719,19 @@
         "aa_model_id": "b8fc61f7-5e9a-49e6-8547-6ac56db24627",
         "aa_release_slug": "claude-opus-5",
         "source_field_unit": "Elo",
-        "source_field_value": 1659.48
+        "source_field_value": 1656.53
       },
       "source_id": "aa_public_pages_20261018",
       "supersedes": [],
       "uncertainty": {
         "confidence_level": 0.95,
-        "lower": 1651.19,
+        "lower": 1648.4,
         "type": "confidence_interval",
         "unit": "Elo",
-        "upper": 1668.16
+        "upper": 1664.24
       },
       "unit": "Elo",
-      "value": 1659.48
+      "value": 1656.53
     },
     {
       "benchmark_id": "aa_intelligence_index_v432",
@@ -20713,13 +20965,13 @@
         "aa_model_id": "c07e65e6-32fc-451e-938d-7477a1c3ffcc",
         "aa_release_slug": "grok-4-6",
         "source_field_unit": "Elo",
-        "source_field_value": 1410.2
+        "source_field_value": 1409.34
       },
       "source_id": "aa_public_pages_20261018",
       "supersedes": [],
       "uncertainty": null,
       "unit": "Elo",
-      "value": 1410.2
+      "value": 1409.34
     },
     {
       "benchmark_id": "aa_scicode",
@@ -20938,19 +21190,19 @@
         "aa_model_id": "c07e65e6-32fc-451e-938d-7477a1c3ffcc",
         "aa_release_slug": "grok-4-6",
         "source_field_unit": "Elo",
-        "source_field_value": 1287.61
+        "source_field_value": 1285.96
       },
       "source_id": "aa_public_pages_20261018",
       "supersedes": [],
       "uncertainty": {
         "confidence_level": 0.95,
-        "lower": 1280.5,
+        "lower": 1278.44,
         "type": "confidence_interval",
         "unit": "Elo",
-        "upper": 1295.6
+        "upper": 1293.84
       },
       "unit": "Elo",
-      "value": 1287.61
+      "value": 1285.96
     },
     {
       "benchmark_id": "aa_hle_text",
@@ -21216,13 +21468,13 @@
         "aa_model_id": "c1045dc0-4fd3-4adb-9548-18763e0d051f",
         "aa_release_slug": "gpt-4o",
         "source_field_unit": "Elo",
-        "source_field_value": -16.24
+        "source_field_value": -17.11
       },
       "source_id": "aa_public_pages_20261018",
       "supersedes": [],
       "uncertainty": null,
       "unit": "Elo",
-      "value": -16.24
+      "value": -17.11
     },
     {
       "benchmark_id": "aa_aime_2025",
@@ -21540,13 +21792,13 @@
         "aa_model_id": "c8adc5cf-fd5a-407b-af51-dc3bede3e49c",
         "aa_release_slug": "grok-4-6",
         "source_field_unit": "Elo",
-        "source_field_value": 1618.11
+        "source_field_value": 1618.44
       },
       "source_id": "aa_public_pages_20261018",
       "supersedes": [],
       "uncertainty": null,
       "unit": "Elo",
-      "value": 1618.11
+      "value": 1618.44
     },
     {
       "benchmark_id": "aa_scicode",
@@ -21849,19 +22101,19 @@
         "aa_model_id": "c8adc5cf-fd5a-407b-af51-dc3bede3e49c",
         "aa_release_slug": "grok-4-6",
         "source_field_unit": "Elo",
-        "source_field_value": 1534.25
+        "source_field_value": 1530.65
       },
       "source_id": "aa_public_pages_20261018",
       "supersedes": [],
       "uncertainty": {
         "confidence_level": 0.95,
-        "lower": 1526.41,
+        "lower": 1523.01,
         "type": "confidence_interval",
         "unit": "Elo",
-        "upper": 1542.89
+        "upper": 1538.73
       },
       "unit": "Elo",
-      "value": 1534.25
+      "value": 1530.65
     },
     {
       "benchmark_id": "aa_intelligence_index_v432",
@@ -22067,13 +22319,13 @@
         "aa_model_id": "cc1e488b-8ba4-464d-875d-690166b15ad3",
         "aa_release_slug": "glm-5-3",
         "source_field_unit": "Elo",
-        "source_field_value": 1322.45
+        "source_field_value": 1323.14
       },
       "source_id": "aa_public_pages_20261018",
       "supersedes": [],
       "uncertainty": null,
       "unit": "Elo",
-      "value": 1322.45
+      "value": 1323.14
     },
     {
       "benchmark_id": "aa_scicode",
@@ -22165,6 +22417,62 @@
       "value": 34.8484848484849
     },
     {
+      "benchmark_id": "frontiercode_v11",
+      "configuration_id": "aa_glm53_low",
+      "evaluated_at": null,
+      "evaluator": "Artificial Analysis",
+      "id": "o_aa_glm53_aa-glm53-low_glm-5-3-low_frontiercode_v11_20261018",
+      "locator": "models[glm-5-3-low].frontierCode",
+      "reported_at": null,
+      "reporting_relationship": "evaluator_measurement",
+      "review_state": "candidate",
+      "series_id": "series_aa_glm53_aa-glm53-low_glm-5-3-low_frontiercode_v11",
+      "setup": {
+        "aa_effort_slug": "low",
+        "aa_model_id": "cc1e488b-8ba4-464d-875d-690166b15ad3",
+        "aa_release_slug": "glm-5-3",
+        "normalization": {
+          "formula": "source fraction × 100",
+          "reason": "AA serializes this percentage metric as a 0–1 fraction."
+        },
+        "source_field_unit": "fraction",
+        "source_field_value": 0.349198666666667
+      },
+      "source_id": "aa_public_pages_20261018",
+      "supersedes": [],
+      "uncertainty": null,
+      "unit": "%",
+      "value": 34.9198666666667
+    },
+    {
+      "benchmark_id": "terminal_science_01",
+      "configuration_id": "aa_glm53_low",
+      "evaluated_at": null,
+      "evaluator": "Artificial Analysis",
+      "id": "o_aa_glm53_aa-glm53-low_glm-5-3-low_terminal_science_01_20261018",
+      "locator": "models[glm-5-3-low].terminalBenchScience",
+      "reported_at": null,
+      "reporting_relationship": "evaluator_measurement",
+      "review_state": "candidate",
+      "series_id": "series_aa_glm53_aa-glm53-low_glm-5-3-low_terminal_science_01",
+      "setup": {
+        "aa_effort_slug": "low",
+        "aa_model_id": "cc1e488b-8ba4-464d-875d-690166b15ad3",
+        "aa_release_slug": "glm-5-3",
+        "normalization": {
+          "formula": "source fraction × 100",
+          "reason": "AA serializes this percentage metric as a 0–1 fraction."
+        },
+        "source_field_unit": "fraction",
+        "source_field_value": 0.0380952380952381
+      },
+      "source_id": "aa_public_pages_20261018",
+      "supersedes": [],
+      "uncertainty": null,
+      "unit": "%",
+      "value": 3.8095238095238098
+    },
+    {
       "benchmark_id": "aa_automationbench_657",
       "configuration_id": "aa_glm53_low",
       "evaluated_at": null,
@@ -22236,19 +22544,19 @@
         "aa_model_id": "cc1e488b-8ba4-464d-875d-690166b15ad3",
         "aa_release_slug": "glm-5-3",
         "source_field_unit": "Elo",
-        "source_field_value": 1186.83
+        "source_field_value": 1185.42
       },
       "source_id": "aa_public_pages_20261018",
       "supersedes": [],
       "uncertainty": {
         "confidence_level": 0.95,
-        "lower": 1176.92,
+        "lower": 1175.72,
         "type": "confidence_interval",
         "unit": "Elo",
-        "upper": 1196.7
+        "upper": 1193.91
       },
       "unit": "Elo",
-      "value": 1186.83
+      "value": 1185.42
     },
     {
       "benchmark_id": "aa_intelligence_index_v432",
@@ -22482,13 +22790,13 @@
         "aa_model_id": "cd684ea4-b475-4269-b001-d469d06d8a7a",
         "aa_release_slug": "glm-5-3",
         "source_field_unit": "Elo",
-        "source_field_value": 1650.31
+        "source_field_value": 1649.45
       },
       "source_id": "aa_public_pages_20261018",
       "supersedes": [],
       "uncertainty": null,
       "unit": "Elo",
-      "value": 1650.31
+      "value": 1649.45
     },
     {
       "benchmark_id": "aa_scicode",
@@ -22875,19 +23183,19 @@
         "aa_model_id": "cd684ea4-b475-4269-b001-d469d06d8a7a",
         "aa_release_slug": "glm-5-3",
         "source_field_unit": "Elo",
-        "source_field_value": 1506.86
+        "source_field_value": 1505.1
       },
       "source_id": "aa_public_pages_20261018",
       "supersedes": [],
       "uncertainty": {
         "confidence_level": 0.95,
-        "lower": 1499.02,
+        "lower": 1496.88,
         "type": "confidence_interval",
         "unit": "Elo",
-        "upper": 1515.66
+        "upper": 1513.34
       },
       "unit": "Elo",
-      "value": 1506.86
+      "value": 1505.1
     },
     {
       "benchmark_id": "aa_intelligence_index_v432",
@@ -23093,13 +23401,13 @@
         "aa_model_id": "d366dfa1-d940-4788-aa73-d298c45699b3",
         "aa_release_slug": "gemini-4-argon",
         "source_field_unit": "Elo",
-        "source_field_value": 1623.11
+        "source_field_value": 1624.1
       },
       "source_id": "aa_public_pages_20261018",
       "supersedes": [],
       "uncertainty": null,
       "unit": "Elo",
-      "value": 1623.11
+      "value": 1624.1
     },
     {
       "benchmark_id": "aa_scicode",
@@ -23374,19 +23682,19 @@
         "aa_model_id": "d366dfa1-d940-4788-aa73-d298c45699b3",
         "aa_release_slug": "gemini-4-argon",
         "source_field_unit": "Elo",
-        "source_field_value": 1485.76
+        "source_field_value": 1485.61
       },
       "source_id": "aa_public_pages_20261018",
       "supersedes": [],
       "uncertainty": {
         "confidence_level": 0.95,
-        "lower": 1475.63,
+        "lower": 1475.27,
         "type": "confidence_interval",
         "unit": "Elo",
-        "upper": 1495.84
+        "upper": 1496.29
       },
       "unit": "Elo",
-      "value": 1485.76
+      "value": 1485.61
     },
     {
       "benchmark_id": "aa_intelligence_index_v432",
@@ -23620,13 +23928,13 @@
         "aa_model_id": "d5170215-69be-4129-849b-26d8d8825bfc",
         "aa_release_slug": "muse-spark-1-3",
         "source_field_unit": "Elo",
-        "source_field_value": 1626.61
+        "source_field_value": 1626.65
       },
       "source_id": "aa_public_pages_20261018",
       "supersedes": [],
       "uncertainty": null,
       "unit": "Elo",
-      "value": 1626.61
+      "value": 1626.65
     },
     {
       "benchmark_id": "aa_mmmu_pro",
@@ -23744,6 +24052,62 @@
       "uncertainty": null,
       "unit": "%",
       "value": 16.6666666666667
+    },
+    {
+      "benchmark_id": "frontiercode_v11",
+      "configuration_id": "aa_muse_spark13_xhigh",
+      "evaluated_at": null,
+      "evaluator": "Artificial Analysis",
+      "id": "o_aa_muse_spark13_aa-muse-spark13-xhigh_muse-spark-1-3-xhigh_frontiercode_v11_20261018",
+      "locator": "models[muse-spark-1-3-xhigh].frontierCode",
+      "reported_at": null,
+      "reporting_relationship": "evaluator_measurement",
+      "review_state": "candidate",
+      "series_id": "series_aa_muse_spark13_aa-muse-spark13-xhigh_muse-spark-1-3-xhigh_frontiercode_v11",
+      "setup": {
+        "aa_effort_slug": "xhigh",
+        "aa_model_id": "d5170215-69be-4129-849b-26d8d8825bfc",
+        "aa_release_slug": "muse-spark-1-3",
+        "normalization": {
+          "formula": "source fraction × 100",
+          "reason": "AA serializes this percentage metric as a 0–1 fraction."
+        },
+        "source_field_unit": "fraction",
+        "source_field_value": 0.386337666666667
+      },
+      "source_id": "aa_public_pages_20261018",
+      "supersedes": [],
+      "uncertainty": null,
+      "unit": "%",
+      "value": 38.6337666666667
+    },
+    {
+      "benchmark_id": "terminal_science_01",
+      "configuration_id": "aa_muse_spark13_xhigh",
+      "evaluated_at": null,
+      "evaluator": "Artificial Analysis",
+      "id": "o_aa_muse_spark13_aa-muse-spark13-xhigh_muse-spark-1-3-xhigh_terminal_science_01_20261018",
+      "locator": "models[muse-spark-1-3-xhigh].terminalBenchScience",
+      "reported_at": null,
+      "reporting_relationship": "evaluator_measurement",
+      "review_state": "candidate",
+      "series_id": "series_aa_muse_spark13_aa-muse-spark13-xhigh_muse-spark-1-3-xhigh_terminal_science_01",
+      "setup": {
+        "aa_effort_slug": "xhigh",
+        "aa_model_id": "d5170215-69be-4129-849b-26d8d8825bfc",
+        "aa_release_slug": "muse-spark-1-3",
+        "normalization": {
+          "formula": "source fraction × 100",
+          "reason": "AA serializes this percentage metric as a 0–1 fraction."
+        },
+        "source_field_unit": "fraction",
+        "source_field_value": 0.0380952380952381
+      },
+      "source_id": "aa_public_pages_20261018",
+      "supersedes": [],
+      "uncertainty": null,
+      "unit": "%",
+      "value": 3.8095238095238098
     },
     {
       "benchmark_id": "terminal_bench_21",
@@ -23873,19 +24237,19 @@
         "aa_model_id": "d5170215-69be-4129-849b-26d8d8825bfc",
         "aa_release_slug": "muse-spark-1-3",
         "source_field_unit": "Elo",
-        "source_field_value": 1483.46
+        "source_field_value": 1483.15
       },
       "source_id": "aa_public_pages_20261018",
       "supersedes": [],
       "uncertainty": {
         "confidence_level": 0.95,
-        "lower": 1474.56,
+        "lower": 1474.45,
         "type": "confidence_interval",
         "unit": "Elo",
-        "upper": 1492.7
+        "upper": 1491.64
       },
       "unit": "Elo",
-      "value": 1483.46
+      "value": 1483.15
     },
     {
       "benchmark_id": "aa_intelligence_index_v432",
@@ -24119,13 +24483,13 @@
         "aa_model_id": "d6f43d0a-e8c4-447c-9ff7-5cf0a9d59aa3",
         "aa_release_slug": "grok-4-6",
         "source_field_unit": "Elo",
-        "source_field_value": 1645.38
+        "source_field_value": 1646.96
       },
       "source_id": "aa_public_pages_20261018",
       "supersedes": [],
       "uncertainty": null,
       "unit": "Elo",
-      "value": 1645.38
+      "value": 1646.96
     },
     {
       "benchmark_id": "aa_scicode",
@@ -24344,19 +24708,19 @@
         "aa_model_id": "d6f43d0a-e8c4-447c-9ff7-5cf0a9d59aa3",
         "aa_release_slug": "grok-4-6",
         "source_field_unit": "Elo",
-        "source_field_value": 1544.92
+        "source_field_value": 1542.89
       },
       "source_id": "aa_public_pages_20261018",
       "supersedes": [],
       "uncertainty": {
         "confidence_level": 0.95,
-        "lower": 1537.39,
+        "lower": 1535.26,
         "type": "confidence_interval",
         "unit": "Elo",
-        "upper": 1553.21
+        "upper": 1550.57
       },
       "unit": "Elo",
-      "value": 1544.92
+      "value": 1542.89
     },
     {
       "benchmark_id": "aa_intelligence_index_v432",
@@ -24646,13 +25010,13 @@
         "aa_model_id": "d93edfe8-bf35-49ad-b56e-b18116142a1c",
         "aa_release_slug": "gpt-5-6-sol",
         "source_field_unit": "Elo",
-        "source_field_value": 1608.63
+        "source_field_value": 1609.27
       },
       "source_id": "aa_public_pages_20261018",
       "supersedes": [],
       "uncertainty": null,
       "unit": "Elo",
-      "value": 1608.63
+      "value": 1609.27
     },
     {
       "benchmark_id": "aa_mmmu_pro",
@@ -25039,19 +25403,19 @@
         "aa_model_id": "d93edfe8-bf35-49ad-b56e-b18116142a1c",
         "aa_release_slug": "gpt-5-6-sol",
         "source_field_unit": "Elo",
-        "source_field_value": 1480.04
+        "source_field_value": 1478.85
       },
       "source_id": "aa_public_pages_20261018",
       "supersedes": [],
       "uncertainty": {
         "confidence_level": 0.95,
-        "lower": 1472.33,
+        "lower": 1470.68,
         "type": "confidence_interval",
         "unit": "Elo",
-        "upper": 1488.36
+        "upper": 1486.98
       },
       "unit": "Elo",
-      "value": 1480.04
+      "value": 1478.85
     },
     {
       "benchmark_id": "aa_intelligence_index_v432",
@@ -25341,13 +25705,13 @@
         "aa_model_id": "d998db47-9b67-4727-a2bb-2e1261020ac0",
         "aa_release_slug": "gpt-5-6-sol",
         "source_field_unit": "Elo",
-        "source_field_value": 1568.48
+        "source_field_value": 1568.5
       },
       "source_id": "aa_public_pages_20261018",
       "supersedes": [],
       "uncertainty": null,
       "unit": "Elo",
-      "value": 1568.48
+      "value": 1568.5
     },
     {
       "benchmark_id": "aa_mmmu_pro",
@@ -25622,19 +25986,19 @@
         "aa_model_id": "d998db47-9b67-4727-a2bb-2e1261020ac0",
         "aa_release_slug": "gpt-5-6-sol",
         "source_field_unit": "Elo",
-        "source_field_value": 1437.45
+        "source_field_value": 1435.48
       },
       "source_id": "aa_public_pages_20261018",
       "supersedes": [],
       "uncertainty": {
         "confidence_level": 0.95,
-        "lower": 1428.53,
+        "lower": 1427.71,
         "type": "confidence_interval",
         "unit": "Elo",
-        "upper": 1446.3
+        "upper": 1444.7
       },
       "unit": "Elo",
-      "value": 1437.45
+      "value": 1435.48
     },
     {
       "benchmark_id": "aa_intelligence_index_v432",
@@ -26177,7 +26541,7 @@
         "aa_model_id": "dbe7c625-3100-4463-b479-a228c41f75dd",
         "aa_release_slug": "deepseek-v4-1-flash",
         "source_field_unit": "Elo",
-        "source_field_value": 1419.38
+        "source_field_value": 1418.83
       },
       "source_id": "aa_public_pages_20261018",
       "supersedes": [],
@@ -26186,10 +26550,10 @@
         "lower": 1410.45,
         "type": "confidence_interval",
         "unit": "Elo",
-        "upper": 1428.06
+        "upper": 1427.17
       },
       "unit": "Elo",
-      "value": 1419.38
+      "value": 1418.83
     },
     {
       "benchmark_id": "aa_intelligence_index_v432",
@@ -26395,13 +26759,13 @@
         "aa_model_id": "df5bf99d-d228-4715-b41b-19ca86118777",
         "aa_release_slug": "claude-opus-5-5",
         "source_field_unit": "Elo",
-        "source_field_value": 1831.09
+        "source_field_value": 1829.46
       },
       "source_id": "aa_public_pages_20261018",
       "supersedes": [],
       "uncertainty": null,
       "unit": "Elo",
-      "value": 1831.09
+      "value": 1829.46
     },
     {
       "benchmark_id": "aa_mmmu_pro",
@@ -26648,19 +27012,19 @@
         "aa_model_id": "df5bf99d-d228-4715-b41b-19ca86118777",
         "aa_release_slug": "claude-opus-5-5",
         "source_field_unit": "Elo",
-        "source_field_value": 1763.85
+        "source_field_value": 1761.16
       },
       "source_id": "aa_public_pages_20261018",
       "supersedes": [],
       "uncertainty": {
         "confidence_level": 0.95,
-        "lower": 1753.18,
+        "lower": 1750.87,
         "type": "confidence_interval",
         "unit": "Elo",
-        "upper": 1775.08
+        "upper": 1771.76
       },
       "unit": "Elo",
-      "value": 1763.85
+      "value": 1761.16
     },
     {
       "benchmark_id": "aa_hle_text",
@@ -27062,13 +27426,13 @@
         "aa_model_id": "e05a4828-0536-4876-870d-a235023f992b",
         "aa_release_slug": "gpt-6-astra",
         "source_field_unit": "Elo",
-        "source_field_value": 1522.92
+        "source_field_value": 1524.88
       },
       "source_id": "aa_public_pages_20261018",
       "supersedes": [],
       "uncertainty": null,
       "unit": "Elo",
-      "value": 1522.92
+      "value": 1524.88
     },
     {
       "benchmark_id": "aa_mmmu_pro",
@@ -27315,19 +27679,19 @@
         "aa_model_id": "e05a4828-0536-4876-870d-a235023f992b",
         "aa_release_slug": "gpt-6-astra",
         "source_field_unit": "Elo",
-        "source_field_value": 1505.91
+        "source_field_value": 1504.78
       },
       "source_id": "aa_public_pages_20261018",
       "supersedes": [],
       "uncertainty": {
         "confidence_level": 0.95,
-        "lower": 1497.16,
+        "lower": 1495.88,
         "type": "confidence_interval",
         "unit": "Elo",
-        "upper": 1515.02
+        "upper": 1513.97
       },
       "unit": "Elo",
-      "value": 1505.91
+      "value": 1504.78
     },
     {
       "benchmark_id": "aa_intelligence_index_v432",
@@ -27533,13 +27897,13 @@
         "aa_model_id": "e76e0fe5-93ca-4272-9359-2eb1740467d1",
         "aa_release_slug": "gpt-6-1-sol",
         "source_field_unit": "Elo",
-        "source_field_value": 1314.67
+        "source_field_value": 1316.07
       },
       "source_id": "aa_public_pages_20261018",
       "supersedes": [],
       "uncertainty": null,
       "unit": "Elo",
-      "value": 1314.67
+      "value": 1316.07
     },
     {
       "benchmark_id": "aa_mmmu_pro",
@@ -27659,6 +28023,62 @@
       "value": 30.808080808080803
     },
     {
+      "benchmark_id": "frontiercode_v11",
+      "configuration_id": "aa_gpt61_sol_low",
+      "evaluated_at": null,
+      "evaluator": "Artificial Analysis",
+      "id": "o_aa_gpt61_sol_aa-gpt61-sol-low_gpt-6-1-sol-low_frontiercode_v11_20261018",
+      "locator": "models[gpt-6-1-sol-low].frontierCode",
+      "reported_at": null,
+      "reporting_relationship": "evaluator_measurement",
+      "review_state": "candidate",
+      "series_id": "series_aa_gpt61_sol_aa-gpt61-sol-low_gpt-6-1-sol-low_frontiercode_v11",
+      "setup": {
+        "aa_effort_slug": "low",
+        "aa_model_id": "e76e0fe5-93ca-4272-9359-2eb1740467d1",
+        "aa_release_slug": "gpt-6-1-sol",
+        "normalization": {
+          "formula": "source fraction × 100",
+          "reason": "AA serializes this percentage metric as a 0–1 fraction."
+        },
+        "source_field_unit": "fraction",
+        "source_field_value": 0.366827666666667
+      },
+      "source_id": "aa_public_pages_20261018",
+      "supersedes": [],
+      "uncertainty": null,
+      "unit": "%",
+      "value": 36.6827666666667
+    },
+    {
+      "benchmark_id": "terminal_science_01",
+      "configuration_id": "aa_gpt61_sol_low",
+      "evaluated_at": null,
+      "evaluator": "Artificial Analysis",
+      "id": "o_aa_gpt61_sol_aa-gpt61-sol-low_gpt-6-1-sol-low_terminal_science_01_20261018",
+      "locator": "models[gpt-6-1-sol-low].terminalBenchScience",
+      "reported_at": null,
+      "reporting_relationship": "evaluator_measurement",
+      "review_state": "candidate",
+      "series_id": "series_aa_gpt61_sol_aa-gpt61-sol-low_gpt-6-1-sol-low_terminal_science_01",
+      "setup": {
+        "aa_effort_slug": "low",
+        "aa_model_id": "e76e0fe5-93ca-4272-9359-2eb1740467d1",
+        "aa_release_slug": "gpt-6-1-sol",
+        "normalization": {
+          "formula": "source fraction × 100",
+          "reason": "AA serializes this percentage metric as a 0–1 fraction."
+        },
+        "source_field_unit": "fraction",
+        "source_field_value": 0.10952380952381
+      },
+      "source_id": "aa_public_pages_20261018",
+      "supersedes": [],
+      "uncertainty": null,
+      "unit": "%",
+      "value": 10.952380952380999
+    },
+    {
       "benchmark_id": "aa_automationbench_657",
       "configuration_id": "aa_gpt61_sol_low",
       "evaluated_at": null,
@@ -27730,19 +28150,19 @@
         "aa_model_id": "e76e0fe5-93ca-4272-9359-2eb1740467d1",
         "aa_release_slug": "gpt-6-1-sol",
         "source_field_unit": "Elo",
-        "source_field_value": 1116.74
+        "source_field_value": 1114.37
       },
       "source_id": "aa_public_pages_20261018",
       "supersedes": [],
       "uncertainty": {
         "confidence_level": 0.95,
-        "lower": 1107.5,
+        "lower": 1104.25,
         "type": "confidence_interval",
         "unit": "Elo",
-        "upper": 1127.25
+        "upper": 1124.81
       },
       "unit": "Elo",
-      "value": 1116.74
+      "value": 1114.37
     },
     {
       "benchmark_id": "aa_intelligence_index_v432",
@@ -27976,13 +28396,13 @@
         "aa_model_id": "e97a4ef5-e817-480e-9595-12f81dc4974f",
         "aa_release_slug": "gpt-6-astra",
         "source_field_unit": "Elo",
-        "source_field_value": 1486.4
+        "source_field_value": 1486.8
       },
       "source_id": "aa_public_pages_20261018",
       "supersedes": [],
       "uncertainty": null,
       "unit": "Elo",
-      "value": 1486.4
+      "value": 1486.8
     },
     {
       "benchmark_id": "aa_mmmu_pro",
@@ -28229,19 +28649,19 @@
         "aa_model_id": "e97a4ef5-e817-480e-9595-12f81dc4974f",
         "aa_release_slug": "gpt-6-astra",
         "source_field_unit": "Elo",
-        "source_field_value": 1460.92
+        "source_field_value": 1459.72
       },
       "source_id": "aa_public_pages_20261018",
       "supersedes": [],
       "uncertainty": {
         "confidence_level": 0.95,
-        "lower": 1451.74,
+        "lower": 1451.14,
         "type": "confidence_interval",
         "unit": "Elo",
-        "upper": 1470.17
+        "upper": 1467.94
       },
       "unit": "Elo",
-      "value": 1460.92
+      "value": 1459.72
     },
     {
       "benchmark_id": "aa_intelligence_index_v432",
@@ -28573,6 +28993,34 @@
       "value": 44.8865666666667
     },
     {
+      "benchmark_id": "terminal_science_01",
+      "configuration_id": "aa_muse_wonder_full_max",
+      "evaluated_at": null,
+      "evaluator": "Artificial Analysis",
+      "id": "o_aa_muse_wonder_full_aa-muse-wonder-full-max_muse-wonder-full_terminal_science_01_20261018",
+      "locator": "models[muse-wonder-full].terminalBenchScience",
+      "reported_at": null,
+      "reporting_relationship": "evaluator_measurement",
+      "review_state": "candidate",
+      "series_id": "series_aa_muse_wonder_full_aa-muse-wonder-full-max_muse-wonder-full_terminal_science_01",
+      "setup": {
+        "aa_effort_slug": "max",
+        "aa_model_id": "e994a6e0-d36b-4dab-8ae1-c1b469e4d9e2",
+        "aa_release_slug": "muse-wonder-full",
+        "normalization": {
+          "formula": "source fraction × 100",
+          "reason": "AA serializes this percentage metric as a 0–1 fraction."
+        },
+        "source_field_unit": "fraction",
+        "source_field_value": 0.371428571428571
+      },
+      "source_id": "aa_public_pages_20261018",
+      "supersedes": [],
+      "uncertainty": null,
+      "unit": "%",
+      "value": 37.142857142857096
+    },
+    {
       "benchmark_id": "aa_automationbench_657",
       "configuration_id": "aa_muse_wonder_full_max",
       "evaluated_at": null,
@@ -28862,13 +29310,13 @@
         "aa_model_id": "ea9e0da6-169f-43c6-92f5-730a10d6ff8d",
         "aa_release_slug": "claude-opus-5-5",
         "source_field_unit": "Elo",
-        "source_field_value": 1583.6
+        "source_field_value": 1585.07
       },
       "source_id": "aa_public_pages_20261018",
       "supersedes": [],
       "uncertainty": null,
       "unit": "Elo",
-      "value": 1583.6
+      "value": 1585.07
     },
     {
       "benchmark_id": "aa_mmmu_pro",
@@ -29115,19 +29563,19 @@
         "aa_model_id": "ea9e0da6-169f-43c6-92f5-730a10d6ff8d",
         "aa_release_slug": "claude-opus-5-5",
         "source_field_unit": "Elo",
-        "source_field_value": 1625.06
+        "source_field_value": 1621.59
       },
       "source_id": "aa_public_pages_20261018",
       "supersedes": [],
       "uncertainty": {
         "confidence_level": 0.95,
-        "lower": 1615.02,
+        "lower": 1612.33,
         "type": "confidence_interval",
         "unit": "Elo",
-        "upper": 1635.74
+        "upper": 1631.15
       },
       "unit": "Elo",
-      "value": 1625.06
+      "value": 1621.59
     },
     {
       "benchmark_id": "aa_intelligence_index_v432",
@@ -29333,13 +29781,13 @@
         "aa_model_id": "f314eade-2232-44bf-a3ab-9b326bc67de6",
         "aa_release_slug": "claude-opus-5-5",
         "source_field_unit": "Elo",
-        "source_field_value": 1704.37
+        "source_field_value": 1703.59
       },
       "source_id": "aa_public_pages_20261018",
       "supersedes": [],
       "uncertainty": null,
       "unit": "Elo",
-      "value": 1704.37
+      "value": 1703.59
     },
     {
       "benchmark_id": "aa_mmmu_pro",
@@ -29586,19 +30034,19 @@
         "aa_model_id": "f314eade-2232-44bf-a3ab-9b326bc67de6",
         "aa_release_slug": "claude-opus-5-5",
         "source_field_unit": "Elo",
-        "source_field_value": 1685.66
+        "source_field_value": 1683.28
       },
       "source_id": "aa_public_pages_20261018",
       "supersedes": [],
       "uncertainty": {
         "confidence_level": 0.95,
-        "lower": 1675.94,
+        "lower": 1673.6,
         "type": "confidence_interval",
         "unit": "Elo",
-        "upper": 1697.05
+        "upper": 1693.61
       },
       "unit": "Elo",
-      "value": 1685.66
+      "value": 1683.28
     },
     {
       "benchmark_id": "aa_intelligence_index_v432",
@@ -29832,13 +30280,13 @@
         "aa_model_id": "f7d2fc3e-1f7b-405f-818c-07952a4af78f",
         "aa_release_slug": "kimi-k3",
         "source_field_unit": "Elo",
-        "source_field_value": 1532.59
+        "source_field_value": 1534.14
       },
       "source_id": "aa_public_pages_20261018",
       "supersedes": [],
       "uncertainty": null,
       "unit": "Elo",
-      "value": 1532.59
+      "value": 1534.14
     },
     {
       "benchmark_id": "aa_mmmu_pro",
@@ -29984,6 +30432,34 @@
       "uncertainty": null,
       "unit": "%",
       "value": 43.6099333333333
+    },
+    {
+      "benchmark_id": "terminal_science_01",
+      "configuration_id": "aa_kimi_k3_max",
+      "evaluated_at": null,
+      "evaluator": "Artificial Analysis",
+      "id": "o_aa_kimi_k3_aa-kimi-k3-max_kimi-k3_terminal_science_01_20261018",
+      "locator": "models[kimi-k3].terminalBenchScience",
+      "reported_at": null,
+      "reporting_relationship": "evaluator_measurement",
+      "review_state": "candidate",
+      "series_id": "series_aa_kimi_k3_aa-kimi-k3-max_kimi-k3_terminal_science_01",
+      "setup": {
+        "aa_effort_slug": "max",
+        "aa_model_id": "f7d2fc3e-1f7b-405f-818c-07952a4af78f",
+        "aa_release_slug": "kimi-k3",
+        "normalization": {
+          "formula": "source fraction × 100",
+          "reason": "AA serializes this percentage metric as a 0–1 fraction."
+        },
+        "source_field_unit": "fraction",
+        "source_field_value": 0.080952380952381
+      },
+      "source_id": "aa_public_pages_20261018",
+      "supersedes": [],
+      "uncertainty": null,
+      "unit": "%",
+      "value": 8.0952380952381
     },
     {
       "benchmark_id": "terminal_bench_21",
@@ -30253,19 +30729,19 @@
         "aa_model_id": "f7d2fc3e-1f7b-405f-818c-07952a4af78f",
         "aa_release_slug": "kimi-k3",
         "source_field_unit": "Elo",
-        "source_field_value": 1499.38
+        "source_field_value": 1498.75
       },
       "source_id": "aa_public_pages_20261018",
       "supersedes": [],
       "uncertainty": {
         "confidence_level": 0.95,
-        "lower": 1491.8,
+        "lower": 1491.3,
         "type": "confidence_interval",
         "unit": "Elo",
-        "upper": 1506.62
+        "upper": 1505.32
       },
       "unit": "Elo",
-      "value": 1499.38
+      "value": 1498.75
     },
     {
       "benchmark_id": "aa_intelligence_index_v432",
@@ -30569,6 +31045,62 @@
       "value": 52.020202020202
     },
     {
+      "benchmark_id": "frontiercode_v11",
+      "configuration_id": "aa_muse_wonder_max",
+      "evaluated_at": null,
+      "evaluator": "Artificial Analysis",
+      "id": "o_aa_muse_wonder_aa-muse-wonder-max_muse-wonder_frontiercode_v11_20261018",
+      "locator": "models[muse-wonder].frontierCode",
+      "reported_at": null,
+      "reporting_relationship": "evaluator_measurement",
+      "review_state": "candidate",
+      "series_id": "series_aa_muse_wonder_aa-muse-wonder-max_muse-wonder_frontiercode_v11",
+      "setup": {
+        "aa_effort_slug": "max",
+        "aa_model_id": "ff2f3f3d-783f-4e27-8a39-47237501a313",
+        "aa_release_slug": "muse-wonder",
+        "normalization": {
+          "formula": "source fraction × 100",
+          "reason": "AA serializes this percentage metric as a 0–1 fraction."
+        },
+        "source_field_unit": "fraction",
+        "source_field_value": 0.464713333333333
+      },
+      "source_id": "aa_public_pages_20261018",
+      "supersedes": [],
+      "uncertainty": null,
+      "unit": "%",
+      "value": 46.4713333333333
+    },
+    {
+      "benchmark_id": "terminal_science_01",
+      "configuration_id": "aa_muse_wonder_max",
+      "evaluated_at": null,
+      "evaluator": "Artificial Analysis",
+      "id": "o_aa_muse_wonder_aa-muse-wonder-max_muse-wonder_terminal_science_01_20261018",
+      "locator": "models[muse-wonder].terminalBenchScience",
+      "reported_at": null,
+      "reporting_relationship": "evaluator_measurement",
+      "review_state": "candidate",
+      "series_id": "series_aa_muse_wonder_aa-muse-wonder-max_muse-wonder_terminal_science_01",
+      "setup": {
+        "aa_effort_slug": "max",
+        "aa_model_id": "ff2f3f3d-783f-4e27-8a39-47237501a313",
+        "aa_release_slug": "muse-wonder",
+        "normalization": {
+          "formula": "source fraction × 100",
+          "reason": "AA serializes this percentage metric as a 0–1 fraction."
+        },
+        "source_field_unit": "fraction",
+        "source_field_value": 0.257142857142857
+      },
+      "source_id": "aa_public_pages_20261018",
+      "supersedes": [],
+      "uncertainty": null,
+      "unit": "%",
+      "value": 25.7142857142857
+    },
+    {
       "benchmark_id": "aa_automationbench_657",
       "configuration_id": "aa_muse_wonder_max",
       "evaluated_at": null,
@@ -30623,6 +31155,34 @@
       "uncertainty": null,
       "unit": "%",
       "value": 10.0
+    },
+    {
+      "benchmark_id": "aa_mlcr_hard",
+      "configuration_id": "aa_muse_wonder_max",
+      "evaluated_at": null,
+      "evaluator": "Artificial Analysis",
+      "id": "o_aa_muse_wonder_aa-muse-wonder-max_muse-wonder_aa_mlcr_hard_20261018",
+      "locator": "models[muse-wonder].mlcrOverall",
+      "reported_at": null,
+      "reporting_relationship": "evaluator_measurement",
+      "review_state": "candidate",
+      "series_id": "series_aa_muse_wonder_aa-muse-wonder-max_muse-wonder_aa_mlcr_hard",
+      "setup": {
+        "aa_effort_slug": "max",
+        "aa_model_id": "ff2f3f3d-783f-4e27-8a39-47237501a313",
+        "aa_release_slug": "muse-wonder",
+        "normalization": {
+          "formula": "source fraction × 100",
+          "reason": "AA serializes this percentage metric as a 0–1 fraction."
+        },
+        "source_field_unit": "fraction",
+        "source_field_value": 0.222222222222222
+      },
+      "source_id": "aa_public_pages_20261018",
+      "supersedes": [],
+      "uncertainty": null,
+      "unit": "%",
+      "value": 22.2222222222222
     },
     {
       "benchmark_id": "aa_briefcase_v11",
@@ -30886,13 +31446,13 @@
         "aa_model_id": "ff51be8f-e362-4a7e-9043-687ba15de207",
         "aa_release_slug": "claude-opus-5",
         "source_field_unit": "Elo",
-        "source_field_value": 1492.08
+        "source_field_value": 1491.15
       },
       "source_id": "aa_public_pages_20261018",
       "supersedes": [],
       "uncertainty": null,
       "unit": "Elo",
-      "value": 1492.08
+      "value": 1491.15
     },
     {
       "benchmark_id": "aa_mmmu_pro",
@@ -31139,19 +31699,19 @@
         "aa_model_id": "ff51be8f-e362-4a7e-9043-687ba15de207",
         "aa_release_slug": "claude-opus-5",
         "source_field_unit": "Elo",
-        "source_field_value": 1434.89
+        "source_field_value": 1432.7
       },
       "source_id": "aa_public_pages_20261018",
       "supersedes": [],
       "uncertainty": {
         "confidence_level": 0.95,
-        "lower": 1427.89,
+        "lower": 1424.85,
         "type": "confidence_interval",
         "unit": "Elo",
-        "upper": 1442.65
+        "upper": 1440.42
       },
       "unit": "Elo",
-      "value": 1434.89
+      "value": 1432.7
     },
     {
       "benchmark_id": "aa_intelligence_index_v432",
@@ -31357,13 +31917,13 @@
         "aa_model_id": "34fc646a-0174-470e-9e62-d8df452210b3",
         "aa_release_slug": "mistral-large-4",
         "source_field_unit": "Elo",
-        "source_field_value": 1420.33
+        "source_field_value": 1421.88
       },
       "source_id": "aa_public_pages_20261018",
       "supersedes": [],
       "uncertainty": null,
       "unit": "Elo",
-      "value": 1420.33
+      "value": 1421.88
     },
     {
       "benchmark_id": "aa_mmmu_pro",
@@ -31638,19 +32198,19 @@
         "aa_model_id": "34fc646a-0174-470e-9e62-d8df452210b3",
         "aa_release_slug": "mistral-large-4",
         "source_field_unit": "Elo",
-        "source_field_value": 1391.14
+        "source_field_value": 1391.08
       },
       "source_id": "aa_public_pages_20261018",
       "supersedes": [],
       "uncertainty": {
         "confidence_level": 0.95,
-        "lower": 1380.31,
+        "lower": 1379.76,
         "type": "confidence_interval",
         "unit": "Elo",
-        "upper": 1401.91
+        "upper": 1401.5
       },
       "unit": "Elo",
-      "value": 1391.14
+      "value": 1391.08
     }
   ],
   "series": [
@@ -32350,6 +32910,34 @@
       "judge": null,
       "protocol": "Artificial Analysis public model-page result",
       "protocol_version": "4.0",
+      "sampling": null,
+      "setup_fingerprint": null,
+      "tools": null
+    },
+    {
+      "benchmark_id": "frontiercode_v11",
+      "budget": null,
+      "comparability": "AA identifies the benchmark and headline metric; detailed prompt, tool, sampling and serving settings are not all exposed in the captured model record.",
+      "comparability_status": "unknown",
+      "evaluator": "Artificial Analysis",
+      "id": "series_aa_gpt61_sol_aa-gpt61-sol-xhigh_gpt-6-1-sol-xhigh_frontiercode_v11",
+      "judge": null,
+      "protocol": "Artificial Analysis public model-page result",
+      "protocol_version": "v1.1-main",
+      "sampling": null,
+      "setup_fingerprint": null,
+      "tools": null
+    },
+    {
+      "benchmark_id": "terminal_science_01",
+      "budget": null,
+      "comparability": "AA identifies the benchmark and headline metric; detailed prompt, tool, sampling and serving settings are not all exposed in the captured model record.",
+      "comparability_status": "unknown",
+      "evaluator": "Artificial Analysis",
+      "id": "series_aa_gpt61_sol_aa-gpt61-sol-xhigh_gpt-6-1-sol-xhigh_terminal_science_01",
+      "judge": null,
+      "protocol": "Artificial Analysis public model-page result",
+      "protocol_version": "0.1",
       "sampling": null,
       "setup_fingerprint": null,
       "tools": null
@@ -35813,6 +36401,34 @@
       "tools": null
     },
     {
+      "benchmark_id": "frontiercode_v11",
+      "budget": null,
+      "comparability": "AA identifies the benchmark and headline metric; detailed prompt, tool, sampling and serving settings are not all exposed in the captured model record.",
+      "comparability_status": "unknown",
+      "evaluator": "Artificial Analysis",
+      "id": "series_aa_gpt61_sol_aa-gpt61-sol-high_gpt-6-1-sol-high_frontiercode_v11",
+      "judge": null,
+      "protocol": "Artificial Analysis public model-page result",
+      "protocol_version": "v1.1-main",
+      "sampling": null,
+      "setup_fingerprint": null,
+      "tools": null
+    },
+    {
+      "benchmark_id": "terminal_science_01",
+      "budget": null,
+      "comparability": "AA identifies the benchmark and headline metric; detailed prompt, tool, sampling and serving settings are not all exposed in the captured model record.",
+      "comparability_status": "unknown",
+      "evaluator": "Artificial Analysis",
+      "id": "series_aa_gpt61_sol_aa-gpt61-sol-high_gpt-6-1-sol-high_terminal_science_01",
+      "judge": null,
+      "protocol": "Artificial Analysis public model-page result",
+      "protocol_version": "0.1",
+      "sampling": null,
+      "setup_fingerprint": null,
+      "tools": null
+    },
+    {
       "benchmark_id": "aa_automationbench_657",
       "budget": null,
       "comparability": "AA identifies the benchmark and headline metric; detailed prompt, tool, sampling and serving settings are not all exposed in the captured model record.",
@@ -36634,6 +37250,20 @@
       "judge": null,
       "protocol": "Artificial Analysis public model-page result",
       "protocol_version": "v1.1-main",
+      "sampling": null,
+      "setup_fingerprint": null,
+      "tools": null
+    },
+    {
+      "benchmark_id": "terminal_science_01",
+      "budget": null,
+      "comparability": "AA identifies the benchmark and headline metric; detailed prompt, tool, sampling and serving settings are not all exposed in the captured model record.",
+      "comparability_status": "unknown",
+      "evaluator": "Artificial Analysis",
+      "id": "series_aa_kimi_k3_aa-kimi-k3-low_kimi-k3-low_terminal_science_01",
+      "judge": null,
+      "protocol": "Artificial Analysis public model-page result",
+      "protocol_version": "0.1",
       "sampling": null,
       "setup_fingerprint": null,
       "tools": null
@@ -38300,6 +38930,34 @@
       "judge": null,
       "protocol": "Artificial Analysis public model-page result",
       "protocol_version": "4.0",
+      "sampling": null,
+      "setup_fingerprint": null,
+      "tools": null
+    },
+    {
+      "benchmark_id": "frontiercode_v11",
+      "budget": null,
+      "comparability": "AA identifies the benchmark and headline metric; detailed prompt, tool, sampling and serving settings are not all exposed in the captured model record.",
+      "comparability_status": "unknown",
+      "evaluator": "Artificial Analysis",
+      "id": "series_aa_deepseek_v4_1_flash_aa-deepseek-v4-1-flash-non-reasoning_deepseek-v4-1-flash-non-reasoning_frontiercode_v11",
+      "judge": null,
+      "protocol": "Artificial Analysis public model-page result",
+      "protocol_version": "v1.1-main",
+      "sampling": null,
+      "setup_fingerprint": null,
+      "tools": null
+    },
+    {
+      "benchmark_id": "terminal_science_01",
+      "budget": null,
+      "comparability": "AA identifies the benchmark and headline metric; detailed prompt, tool, sampling and serving settings are not all exposed in the captured model record.",
+      "comparability_status": "unknown",
+      "evaluator": "Artificial Analysis",
+      "id": "series_aa_deepseek_v4_1_flash_aa-deepseek-v4-1-flash-non-reasoning_deepseek-v4-1-flash-non-reasoning_terminal_science_01",
+      "judge": null,
+      "protocol": "Artificial Analysis public model-page result",
+      "protocol_version": "0.1",
       "sampling": null,
       "setup_fingerprint": null,
       "tools": null
@@ -40134,6 +40792,34 @@
       "judge": null,
       "protocol": "Artificial Analysis public model-page result",
       "protocol_version": "4.0",
+      "sampling": null,
+      "setup_fingerprint": null,
+      "tools": null
+    },
+    {
+      "benchmark_id": "frontiercode_v11",
+      "budget": null,
+      "comparability": "AA identifies the benchmark and headline metric; detailed prompt, tool, sampling and serving settings are not all exposed in the captured model record.",
+      "comparability_status": "unknown",
+      "evaluator": "Artificial Analysis",
+      "id": "series_aa_gpt61_sol_aa-gpt61-sol-medium_gpt-6-1-sol-medium_frontiercode_v11",
+      "judge": null,
+      "protocol": "Artificial Analysis public model-page result",
+      "protocol_version": "v1.1-main",
+      "sampling": null,
+      "setup_fingerprint": null,
+      "tools": null
+    },
+    {
+      "benchmark_id": "terminal_science_01",
+      "budget": null,
+      "comparability": "AA identifies the benchmark and headline metric; detailed prompt, tool, sampling and serving settings are not all exposed in the captured model record.",
+      "comparability_status": "unknown",
+      "evaluator": "Artificial Analysis",
+      "id": "series_aa_gpt61_sol_aa-gpt61-sol-medium_gpt-6-1-sol-medium_terminal_science_01",
+      "judge": null,
+      "protocol": "Artificial Analysis public model-page result",
+      "protocol_version": "0.1",
       "sampling": null,
       "setup_fingerprint": null,
       "tools": null
@@ -42841,6 +43527,34 @@
       "tools": null
     },
     {
+      "benchmark_id": "frontiercode_v11",
+      "budget": null,
+      "comparability": "AA identifies the benchmark and headline metric; detailed prompt, tool, sampling and serving settings are not all exposed in the captured model record.",
+      "comparability_status": "unknown",
+      "evaluator": "Artificial Analysis",
+      "id": "series_aa_glm53_aa-glm53-low_glm-5-3-low_frontiercode_v11",
+      "judge": null,
+      "protocol": "Artificial Analysis public model-page result",
+      "protocol_version": "v1.1-main",
+      "sampling": null,
+      "setup_fingerprint": null,
+      "tools": null
+    },
+    {
+      "benchmark_id": "terminal_science_01",
+      "budget": null,
+      "comparability": "AA identifies the benchmark and headline metric; detailed prompt, tool, sampling and serving settings are not all exposed in the captured model record.",
+      "comparability_status": "unknown",
+      "evaluator": "Artificial Analysis",
+      "id": "series_aa_glm53_aa-glm53-low_glm-5-3-low_terminal_science_01",
+      "judge": null,
+      "protocol": "Artificial Analysis public model-page result",
+      "protocol_version": "0.1",
+      "sampling": null,
+      "setup_fingerprint": null,
+      "tools": null
+    },
+    {
       "benchmark_id": "aa_automationbench_657",
       "budget": null,
       "comparability": "AA identifies the benchmark and headline metric; detailed prompt, tool, sampling and serving settings are not all exposed in the captured model record.",
@@ -43634,6 +44348,34 @@
       "judge": null,
       "protocol": "Artificial Analysis public model-page result",
       "protocol_version": "4.0",
+      "sampling": null,
+      "setup_fingerprint": null,
+      "tools": null
+    },
+    {
+      "benchmark_id": "frontiercode_v11",
+      "budget": null,
+      "comparability": "AA identifies the benchmark and headline metric; detailed prompt, tool, sampling and serving settings are not all exposed in the captured model record.",
+      "comparability_status": "unknown",
+      "evaluator": "Artificial Analysis",
+      "id": "series_aa_muse_spark13_aa-muse-spark13-xhigh_muse-spark-1-3-xhigh_frontiercode_v11",
+      "judge": null,
+      "protocol": "Artificial Analysis public model-page result",
+      "protocol_version": "v1.1-main",
+      "sampling": null,
+      "setup_fingerprint": null,
+      "tools": null
+    },
+    {
+      "benchmark_id": "terminal_science_01",
+      "budget": null,
+      "comparability": "AA identifies the benchmark and headline metric; detailed prompt, tool, sampling and serving settings are not all exposed in the captured model record.",
+      "comparability_status": "unknown",
+      "evaluator": "Artificial Analysis",
+      "id": "series_aa_muse_spark13_aa-muse-spark13-xhigh_muse-spark-1-3-xhigh_terminal_science_01",
+      "judge": null,
+      "protocol": "Artificial Analysis public model-page result",
+      "protocol_version": "0.1",
       "sampling": null,
       "setup_fingerprint": null,
       "tools": null
@@ -45613,6 +46355,34 @@
       "tools": null
     },
     {
+      "benchmark_id": "frontiercode_v11",
+      "budget": null,
+      "comparability": "AA identifies the benchmark and headline metric; detailed prompt, tool, sampling and serving settings are not all exposed in the captured model record.",
+      "comparability_status": "unknown",
+      "evaluator": "Artificial Analysis",
+      "id": "series_aa_gpt61_sol_aa-gpt61-sol-low_gpt-6-1-sol-low_frontiercode_v11",
+      "judge": null,
+      "protocol": "Artificial Analysis public model-page result",
+      "protocol_version": "v1.1-main",
+      "sampling": null,
+      "setup_fingerprint": null,
+      "tools": null
+    },
+    {
+      "benchmark_id": "terminal_science_01",
+      "budget": null,
+      "comparability": "AA identifies the benchmark and headline metric; detailed prompt, tool, sampling and serving settings are not all exposed in the captured model record.",
+      "comparability_status": "unknown",
+      "evaluator": "Artificial Analysis",
+      "id": "series_aa_gpt61_sol_aa-gpt61-sol-low_gpt-6-1-sol-low_terminal_science_01",
+      "judge": null,
+      "protocol": "Artificial Analysis public model-page result",
+      "protocol_version": "0.1",
+      "sampling": null,
+      "setup_fingerprint": null,
+      "tools": null
+    },
+    {
       "benchmark_id": "aa_automationbench_657",
       "budget": null,
       "comparability": "AA identifies the benchmark and headline metric; detailed prompt, tool, sampling and serving settings are not all exposed in the captured model record.",
@@ -46070,6 +46840,20 @@
       "judge": null,
       "protocol": "Artificial Analysis public model-page result",
       "protocol_version": "v1.1-main",
+      "sampling": null,
+      "setup_fingerprint": null,
+      "tools": null
+    },
+    {
+      "benchmark_id": "terminal_science_01",
+      "budget": null,
+      "comparability": "AA identifies the benchmark and headline metric; detailed prompt, tool, sampling and serving settings are not all exposed in the captured model record.",
+      "comparability_status": "unknown",
+      "evaluator": "Artificial Analysis",
+      "id": "series_aa_muse_wonder_full_aa-muse-wonder-full-max_muse-wonder-full_terminal_science_01",
+      "judge": null,
+      "protocol": "Artificial Analysis public model-page result",
+      "protocol_version": "0.1",
       "sampling": null,
       "setup_fingerprint": null,
       "tools": null
@@ -46789,6 +47573,20 @@
       "tools": null
     },
     {
+      "benchmark_id": "terminal_science_01",
+      "budget": null,
+      "comparability": "AA identifies the benchmark and headline metric; detailed prompt, tool, sampling and serving settings are not all exposed in the captured model record.",
+      "comparability_status": "unknown",
+      "evaluator": "Artificial Analysis",
+      "id": "series_aa_kimi_k3_aa-kimi-k3-max_kimi-k3_terminal_science_01",
+      "judge": null,
+      "protocol": "Artificial Analysis public model-page result",
+      "protocol_version": "0.1",
+      "sampling": null,
+      "setup_fingerprint": null,
+      "tools": null
+    },
+    {
       "benchmark_id": "terminal_bench_21",
       "budget": null,
       "comparability": "AA identifies the benchmark and headline metric; detailed prompt, tool, sampling and serving settings are not all exposed in the captured model record.",
@@ -47083,6 +47881,34 @@
       "tools": null
     },
     {
+      "benchmark_id": "frontiercode_v11",
+      "budget": null,
+      "comparability": "AA identifies the benchmark and headline metric; detailed prompt, tool, sampling and serving settings are not all exposed in the captured model record.",
+      "comparability_status": "unknown",
+      "evaluator": "Artificial Analysis",
+      "id": "series_aa_muse_wonder_aa-muse-wonder-max_muse-wonder_frontiercode_v11",
+      "judge": null,
+      "protocol": "Artificial Analysis public model-page result",
+      "protocol_version": "v1.1-main",
+      "sampling": null,
+      "setup_fingerprint": null,
+      "tools": null
+    },
+    {
+      "benchmark_id": "terminal_science_01",
+      "budget": null,
+      "comparability": "AA identifies the benchmark and headline metric; detailed prompt, tool, sampling and serving settings are not all exposed in the captured model record.",
+      "comparability_status": "unknown",
+      "evaluator": "Artificial Analysis",
+      "id": "series_aa_muse_wonder_aa-muse-wonder-max_muse-wonder_terminal_science_01",
+      "judge": null,
+      "protocol": "Artificial Analysis public model-page result",
+      "protocol_version": "0.1",
+      "sampling": null,
+      "setup_fingerprint": null,
+      "tools": null
+    },
+    {
       "benchmark_id": "aa_automationbench_657",
       "budget": null,
       "comparability": "AA identifies the benchmark and headline metric; detailed prompt, tool, sampling and serving settings are not all exposed in the captured model record.",
@@ -47106,6 +47932,20 @@
       "judge": null,
       "protocol": "Artificial Analysis public model-page result",
       "protocol_version": "1.1",
+      "sampling": null,
+      "setup_fingerprint": null,
+      "tools": null
+    },
+    {
+      "benchmark_id": "aa_mlcr_hard",
+      "budget": null,
+      "comparability": "AA identifies the benchmark and headline metric; detailed prompt, tool, sampling and serving settings are not all exposed in the captured model record.",
+      "comparability_status": "unknown",
+      "evaluator": "Artificial Analysis",
+      "id": "series_aa_muse_wonder_aa-muse-wonder-max_muse-wonder_aa_mlcr_hard",
+      "judge": null,
+      "protocol": "Artificial Analysis public model-page result",
+      "protocol_version": "unversioned-as-reported",
       "sampling": null,
       "setup_fingerprint": null,
       "tools": null
@@ -47632,7 +48472,7 @@
   "sources": [
     {
       "attribution": "Artificial Analysis; source page and documented API reference linked in the AA coverage audit.",
-      "content_sha256": "0ebd908f4a2606e4dd00d5d69d3cacb6026180b52b5595ec2b38e0044e5b8fef",
+      "content_sha256": "4b165cc0eaf9d9b592d616fd32042436897f2885724de0e55ab965a68e49f272",
       "excerpt": null,
       "id": "aa_public_pages_20261018",
       "license": null,
@@ -47641,7 +48481,7 @@
       "original_evaluator": "Artificial Analysis",
       "published_at": null,
       "publisher": "Artificial Analysis",
-      "retrieved_at": "2026-10-21T12:58:50.553809+00:00",
+      "retrieved_at": "2026-10-24T12:02:51.203124+00:00",
       "title": "Artificial Analysis public model-page serialization (18 October 2026)",
       "url": "https://artificialanalysis.ai/models/mistral-large-4",
       "version": "Public model-page serialization captured 2026-10-18"

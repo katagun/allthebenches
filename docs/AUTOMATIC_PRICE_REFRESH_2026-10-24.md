@@ -29,3 +29,5 @@ uv run python -m pipeline.price_refresh --dataset /tmp/dataset.json --staging /t
 ```
 
 The output directory must initially contain the committed generated data so unrelated discovery-feed health metadata is preserved. Manual production refresh: dispatch **Deploy GitHub Pages** on `main`. Inspect `published-price-evidence` and the site's Data health panel if quotes are not advancing. New route identities and provider-specific parsers still require review; this change does not automatically fill the remaining 22 price gaps.
+
+Deployment verification compares UTC timestamps after normalizing equivalent `Z` and `+00:00` suffixes. The first production refresh succeeded but exposed an overly strict string comparison in the smoke test; the follow-up fixes that assertion without changing quote dates or the refresh pipeline.

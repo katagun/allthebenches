@@ -96,7 +96,7 @@ def _endpoint_performance(endpoint: dict[str, Any]) -> dict[str, Any] | None:
 
 
 def candidate_openrouter_ids(dataset_path: Path, staging: Path) -> list[str]:
-    """Return IDs found by exact curated-name Atlas candidates and exact catalog membership."""
+    """Return reviewed route IDs plus exact curated-name, catalog-backed discovery candidates."""
     curated = json.loads(dataset_path.read_text(encoding="utf-8"))
     feeds = _catalogs(staging)
     rows = []
@@ -106,7 +106,9 @@ def candidate_openrouter_ids(dataset_path: Path, staging: Path) -> list[str]:
             rows.extend(feed.get("data", {}).get("models", []))
     known = {r.get("id") for r in (feeds["openrouter"] or {}).get("data", {}).get("data", []) if isinstance(r, dict)}
     names = {m.get("name") for m in curated.get("models", [])}
-    return sorted({r.get("source_id") for r in rows
+    reviewed = {r["upstream_model_id"] for r in curated.get("routes", [])
+                if r.get("id", "").startswith("openrouter:") and r.get("upstream_model_id")}
+    return sorted(reviewed | {r.get("source_id") for r in rows
                    if r.get("source_id") and r.get("source_id") in known
                    and ((r.get("name") or (r.get("source_metadata") or {}).get("name")) in names)})
 

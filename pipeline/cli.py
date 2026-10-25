@@ -24,7 +24,7 @@ def main(argv: list[str] | None = None) -> int:
     collect_cmd = sub.add_parser("collect", help="stage metadata feeds; never edits curated records")
     collect_cmd.add_argument("--source", choices=[*SOURCES, "all"], required=True)
     collect_cmd.add_argument("--staging", type=Path, default=Path("data/staging"))
-    endpoints_cmd = sub.add_parser("collect-endpoints", help="collect endpoint quotes for exact catalog-matched curated IDs")
+    endpoints_cmd = sub.add_parser("collect-endpoints", help="collect endpoint quotes for reviewed routes and exact catalog-matched IDs")
     endpoints_cmd.add_argument("--input", type=Path, default=Path("data/curated/dataset.json"))
     endpoints_cmd.add_argument("--staging", type=Path, default=Path("data/staging"))
     reconcile_cmd = sub.add_parser("reconcile", help="write review-only metadata proposal from staged feeds")
@@ -59,7 +59,7 @@ def main(argv: list[str] | None = None) -> int:
         elif args.command == "collect-endpoints":
             ids = candidate_openrouter_ids(args.input, args.staging)
             if not ids:
-                print("No exact curated-name Atlas IDs exist in the staged OpenRouter catalog.")
+                print("No reviewed route IDs or exact catalog-backed candidates exist.")
                 return 1
             result = collect_openrouter_endpoints(ids, args.staging)
             print(f"{result['status']}: {len(result['endpoints'])} endpoint detail records")

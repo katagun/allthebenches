@@ -86,3 +86,7 @@ uv run python scripts/import-route-metrics.py \
 ```
 
 The direct Alibaba quote is separately preserved as reviewed source/route/price records in `alibaba-qwen38-max-reviewed-price-2026-10-24.json`; updating it requires reviewing the region-specific primary table again. Rebuilding or rerunning imports never advances observation times to the current clock.
+
+## Automatic refresh follow-up
+
+[Automatic price refresh](AUTOMATIC_PRICE_REFRESH_2026-10-24.md) supersedes the manual-update limitation above: all curated OpenRouter route IDs and the exact Alibaba Singapore quote now refresh during daily Pages publications and every deployment. Failures retain original observation dates; the 48-hour rule is unchanged.

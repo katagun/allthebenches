@@ -10,7 +10,7 @@ from .collectors import SOURCES
 
 def feed_health(staging: Path) -> list[dict[str, Any]]:
     rows = []
-    for source in [*SOURCES, "openrouter-endpoints"]:
+    for source in [*SOURCES, "openrouter-endpoints", *(["alibaba"] if (staging / "alibaba.json").exists() else [])]:
         path = staging / f"{source}.json"
         if not path.exists():
             rows.append({"source_id": source, "status": "unknown"})

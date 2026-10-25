@@ -144,6 +144,9 @@ function App() {
     return benchmarkSearchForView(data, view);
   }, [data, view]);
   const visibleBenchmarks = benchmarkSearch?.benchmarks ?? [];
+  const mobileBenchmarkCatalog = useMemo(() => data && view ? benchmarkSearchForView(data, {
+    ...view, search: '', visibleColumnIds: data.catalog.benchmarks.map(benchmark => benchmark.id),
+  }).benchmarks : [], [data, view]);
   const outsideSearch = useMemo(() => {
     if (!data || !view || !benchmarkSearch) return null;
     if (benchmarkSearch.matchesBenchmark) return null;
@@ -251,6 +254,21 @@ function App() {
   const unresolved = (context.knownPresetIds && !context.knownPresetIds.has(view.presetId)) || view.visibleColumnIds.some(id => !context.knownColumnIds?.has(id)) || view.selectedConfigurationIds.some(id => !context.knownConfigurationIds?.has(id));
   const activeSummary = summaryFor(view, data);
 
+  const chooseMobileBenchmark = (id: string) => {
+    if (visibleBenchmarks.some(benchmark => benchmark.id === id)) {
+      commitView({ ...view, portraitBenchmarkId: id });
+      return;
+    }
+    // Open the most focused preset that contains this benchmark, including its
+    // reporting models; adding a column to Frontier alone can leave no scores.
+    const target = data.catalog.presets.filter(preset => preset.benchmark_ids?.includes(id))
+      .sort((a, b) => arr(a.benchmark_ids).length - arr(b.benchmark_ids).length || a.id.localeCompare(b.id))[0];
+    const next = target ? viewForPreset(data, view, target.id) : { ...view, visibleColumnIds: [...view.visibleColumnIds, id] };
+    commitView({ ...next, search: '', portraitBenchmarkId: id,
+      visibleColumnIds: [...new Set([...next.visibleColumnIds, ...view.visibleColumnIds.filter(column => column.startsWith('market:'))])],
+    });
+  };
+
   const matrixOrientation = <Select value={view.orientation} onValueChange={orientation => { commitView({ ...view, orientation: orientation as ViewState['orientation'] }); if (mobileView) setPortraitMatrix(true); }}><SelectTrigger className="orientation-select" aria-label="Table orientation"><SelectValue/></SelectTrigger><SelectContent><SelectItem value="models-rows">Model rows</SelectItem><SelectItem value="benchmarks-rows">Benchmark rows</SelectItem></SelectContent></Select>;
   const matrixDensity = <><Button className="header-utility" variant="ghost" size="sm" aria-label={density === 'standard' ? 'Comfortable rows' : 'Compact rows'} title={density === 'standard' ? 'Switch to comfortable rows' : 'Switch to compact rows'} onClick={() => setDensity(density === 'standard' ? 'comfortable' : 'standard')}><ArrowDownUp aria-hidden="true"/><span>{density === 'standard' ? 'Comfortable rows' : 'Compact rows'}</span></Button><Button className="dense-toggle" variant="outline" aria-pressed={denseMatrix} onClick={() => { setDenseMatrix(value => !value); if (mobileView) setPortraitMatrix(true); }}>Dense matrix</Button></>;
 
@@ -281,11 +299,15 @@ function App() {
     {unresolved && <div className="notice error" role="status">This view refers to a preset, column, or model configuration that is no longer available. The unresolved condition has been kept and does not match rows.</div>}
     {saveError && <div className="save-status" role="status">Could not save this view in this browser</div>}
     {remembered && source !== 'url' && <div className="save-status">Saved in this browser · <button onClick={doForget}>Forget saved view</button></div>}
+    {mobileView && !mobileOptions && outsideSearch?.suggestedPreset && <div className="notice" role="status">
+      <span>{outsideSearch.totalCount} benchmarks match “{view.search.trim()}” in {outsideSearch.suggestedPreset.name}.</span>
+      <Button variant="outline" size="sm" onClick={() => commitView(viewForPreset(data, view, outsideSearch.suggestedPreset!.id))}>Show {outsideSearch.suggestedPreset.name}</Button>
+    </div>}
     {mobileView && view.filters.includeStalePrices && <p className="portrait-status" role="status">Historical price quotes included (48+ hours old).</p>}
-    {mobileView && !portraitMatrix && <PortraitComparison rows={sortedRows.map(row => row.original)} benchmarks={visibleBenchmarks}
+    {mobileView && !portraitMatrix && <PortraitComparison rows={sortedRows.map(row => row.original)} benchmarks={visibleBenchmarks} availableBenchmarks={mobileBenchmarkCatalog}
       selectedBenchmarkId={view.portraitBenchmarkId ?? null} hideEmpty={view.hideEmptyPageRows}
       busy={rowsBusy} error={rowsError} rowsForBenchmark={mobileRowsForBenchmark}
-      onBenchmarkChange={id => commitView({ ...view, portraitBenchmarkId: id })}
+      onBenchmarkChange={chooseMobileBenchmark}
       showPrices={view.visibleColumnIds.includes('market:price')}
       onTogglePrices={view.visibleColumnIds.length === 1 && view.visibleColumnIds[0] === 'market:price' ? undefined : () => commitView({ ...view, visibleColumnIds: view.visibleColumnIds.includes('market:price') && view.visibleColumnIds.length > 1 ? view.visibleColumnIds.filter(id => id !== 'market:price') : [...new Set([...view.visibleColumnIds, 'market:price'])] })}
       renderPrices={row => <MobilePriceSummary row={row} asOf={asOf} onOpen={() => setPanel({ kind: 'prices', modelId: row.model.id })}/>}

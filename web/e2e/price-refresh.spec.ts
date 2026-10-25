@@ -17,7 +17,9 @@ test('published market and comparison prices agree', async ({ request }) => {
   const quotes = new Map<string, { observed_at: string }>(market.prices.map((p: { route_id: string; observed_at: string }) => [p.route_id, p]));
   const alibaba = comparison.manifest.feeds.find((f: { source_id: string }) => f.source_id === 'alibaba');
   if (alibaba?.status === 'ok') {
-    expect(quotes.get('alibaba:qwen3.8-max:singapore:international')?.observed_at).toBe(alibaba.as_of);
+    // Dataset serialization uses Z; feed metadata preserves the source's +00:00.
+    expect(quotes.get('alibaba:qwen3.8-max:singapore:international')?.observed_at.replace(/\+00:00$/, 'Z'))
+      .toBe(alibaba.as_of.replace(/\+00:00$/, 'Z'));
   }
   expect(market.routes.length).toBeGreaterThan(195);
 });

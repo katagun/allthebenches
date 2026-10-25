@@ -199,6 +199,9 @@ def import_route_metrics(dataset_path: Path, staging_path: Path) -> dict[str, in
             if route.get("upstream_model_id") != model_id or route.get("provider") != endpoint.get("provider_name"):
                 unmatched += 1
                 continue
+            prior = prices.get(target_id)
+            if prior and datetime.fromisoformat(prior["observed_at"].replace("Z", "+00:00")) > datetime.fromisoformat(retrieved_at.replace("Z", "+00:00")):
+                continue
             refreshed_route_ids.add(target_id)
             source_record = next((source for source in dataset_json_sources if source.get("id") == source_id), None)
             if source_record:

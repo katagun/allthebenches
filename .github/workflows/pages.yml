@@ -4,6 +4,8 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
+  schedule:
+    - cron: '47 6 * * *'
 
 permissions:
   contents: read
@@ -15,6 +17,7 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -63,6 +66,36 @@ jobs:
           name: layout-failure-artifacts
           path: web/test-results/
           retention-days: 7
+      # Refresh after deterministic tests: source timestamps and availability vary.
+      # Every deployment refreshes, so a code push cannot roll prices back.
+      - uses: actions/cache/restore@v4
+        with:
+          path: data/cache/price-refresh/
+          key: published-prices-${{ github.run_id }}-${{ github.run_attempt }}
+          restore-keys: published-prices-
+      - name: Refresh reviewed route prices and build publication data
+        run: uv run python -m pipeline.price_refresh --output web/public/data
+        env:
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+      - uses: actions/cache/save@v4
+        with:
+          path: data/cache/price-refresh/
+          key: published-prices-${{ github.run_id }}-${{ github.run_attempt }}
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: published-price-evidence
+          path: data/cache/price-refresh/
+          retention-days: 14
+      - name: Build refreshed application
+        run: pnpm run build
+        working-directory: web
+        env:
+          VITE_BASE_PATH: /
+      - run: uv run python scripts/check-bundle.py
+      - name: Smoke test refreshed publication
+        run: pnpm exec playwright test e2e/price-refresh.spec.ts
+        working-directory: web
       - name: Verify custom domain artifact
         run: test "$(cat web/dist/CNAME)" = "allthebenches.com"
       - uses: actions/upload-pages-artifact@v3

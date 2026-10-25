@@ -13,6 +13,7 @@ const versionLabel = (value: string) => value === 'unversioned-as-reported' || v
 type Props = {
   rows: DisplayRow[];
   benchmarks: BenchmarkVariant[];
+  availableBenchmarks?: BenchmarkVariant[];
   selectedBenchmarkId: string | null;
   onBenchmarkChange: (id: string) => void;
   hideEmpty: boolean;
@@ -27,7 +28,7 @@ type Props = {
   score?: (row: DisplayRow, benchmark: BenchmarkVariant) => number | null;
 };
 
-export function PortraitComparison({ rows, benchmarks, selectedBenchmarkId, onBenchmarkChange, hideEmpty, busy, error, rowsForBenchmark, renderModel, renderScore, renderPrices, showPrices, onTogglePrices, score = (row, benchmark) => singleReportedValue(row, benchmark.id) }: Props) {
+export function PortraitComparison({ rows, benchmarks, availableBenchmarks = benchmarks, selectedBenchmarkId, onBenchmarkChange, hideEmpty, busy, error, rowsForBenchmark, renderModel, renderScore, renderPrices, showPrices, onTogglePrices, score = (row, benchmark) => singleReportedValue(row, benchmark.id) }: Props) {
   const [pickerOpen, setPickerOpen] = useState(false);
   const [query, setQuery] = useState('');
   const [page, setPage] = useState(0);
@@ -44,9 +45,9 @@ export function PortraitComparison({ rows, benchmarks, selectedBenchmarkId, onBe
   }, [benchmarks, rows, selectedBenchmarkId]);
   const matchingBenchmarks = useMemo(() => {
     const normalized = query.trim().toLocaleLowerCase();
-    if (!normalized) return benchmarks;
-    return benchmarks.filter(item => `${item.name} ${item.version} ${item.metric_name} ${item.unit} ${item.category}`.toLocaleLowerCase().includes(normalized));
-  }, [benchmarks, query]);
+    if (!normalized) return availableBenchmarks;
+    return availableBenchmarks.filter(item => `${item.name} ${item.version} ${item.metric_name} ${item.unit} ${item.category}`.toLocaleLowerCase().includes(normalized));
+  }, [availableBenchmarks, query]);
 
   const reportedRows = useMemo(() => !busy && selected && rowsForBenchmark ? rowsForBenchmark(selected.id) : null, [busy, selected, rowsForBenchmark]);
   const resultRows = useMemo(() => busy ? [] : reportedRows ?? rows, [busy, reportedRows, rows]);
@@ -95,7 +96,7 @@ export function PortraitComparison({ rows, benchmarks, selectedBenchmarkId, onBe
 
   return <section className="portrait-comparison" aria-label="Mobile benchmark comparison">
     <div className="portrait-comparison-head">
-      <Button className="portrait-benchmark-picker" variant="outline" aria-label="Choose benchmark" onClick={() => { setQuery(''); setPickerOpen(true); }} disabled={!benchmarks.length}>
+      <Button className="portrait-benchmark-picker" variant="outline" aria-label="Choose benchmark" onClick={() => { setQuery(''); setPickerOpen(true); }} disabled={!availableBenchmarks.length}>
         <span className="portrait-benchmark-picker-copy"><strong>{selected?.name ?? (showPrices ? 'API prices' : 'No benchmark available')}</strong><small>{selected ? `${versionLabel(selected.version) ? `${versionLabel(selected.version)} · ` : ''}${metricLabel(selected)}` : showPrices ? 'USD per 1 million tokens · by provider route' : 'Change filters to show benchmarks'}</small></span>
         <span aria-hidden="true">⌄</span>
       </Button>
@@ -120,11 +121,11 @@ export function PortraitComparison({ rows, benchmarks, selectedBenchmarkId, onBe
     <p className="portrait-evidence-hint">{selected ? 'Tap a score for sources and evaluation setup. Bars share one scale; colors identify models. A dash means no reviewed score.' : 'Tap a price summary for provider routes, observation times and pricing sources.'}</p>
     <Sheet open={pickerOpen} onOpenChange={setPickerOpen}>
       <SheetContent side="bottom" className="portrait-benchmark-sheet">
-        <SheetHeader><SheetTitle>Choose a benchmark</SheetTitle><SheetDescription>Search by benchmark, version, metric, unit, or category.</SheetDescription></SheetHeader>
+        <SheetHeader><SheetTitle>Choose a benchmark</SheetTitle><SheetDescription>Search all benchmarks in the selected category and filters. Benchmarks outside this view open their matching model set.</SheetDescription></SheetHeader>
         <div className="portrait-benchmark-search"><Input autoFocus type="search" aria-label="Search benchmarks" placeholder="Search benchmarks" value={query} onChange={event => setQuery(event.target.value)} /></div>
         <div className="portrait-benchmark-options" role="listbox" aria-label="Benchmarks">
           {matchingBenchmarks.map(item => <button type="button" role="option" aria-selected={selected?.id === item.id} className="portrait-benchmark-option" key={item.id} onClick={() => { onBenchmarkChange(item.id); setPickerOpen(false); }}>
-            <strong>{item.name}</strong><span>{versionLabel(item.version) ? `${versionLabel(item.version)} · ` : ''}{metricLabel(item)}</span><small>{item.category} · {item.direction === 'higher' ? 'Higher' : 'Lower'} is better</small>
+            <strong>{item.name}</strong><span>{versionLabel(item.version) ? `${versionLabel(item.version)} · ` : ''}{metricLabel(item)}</span><small>{item.category} · {item.direction === 'higher' ? 'Higher' : 'Lower'} is better{!benchmarks.some(benchmark => benchmark.id === item.id) && ' · Opens matching model set'}</small>
           </button>)}
           {!matchingBenchmarks.length && <p className="portrait-empty">No benchmarks match this search.</p>}
         </div>

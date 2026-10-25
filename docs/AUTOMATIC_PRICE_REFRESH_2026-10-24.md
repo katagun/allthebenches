@@ -31,3 +31,21 @@ uv run python -m pipeline.price_refresh --dataset /tmp/dataset.json --staging /t
 The output directory must initially contain the committed generated data so unrelated discovery-feed health metadata is preserved. Manual production refresh: dispatch **Deploy GitHub Pages** on `main`. Inspect `published-price-evidence` and the site's Data health panel if quotes are not advancing. New route identities and provider-specific parsers still require review; this change does not automatically fill the remaining 22 price gaps.
 
 Deployment verification compares UTC timestamps after normalizing equivalent `Z` and `+00:00` suffixes. The first production refresh succeeded but exposed an overly strict string comparison in the smoke test; the follow-up fixes that assertion without changing quote dates or the refresh pipeline.
+
+## Refresh-safe browser tests
+
+Price regressions use `web/e2e/fixtures/prices.ts` to replace only price routes, quotes, source evidence and feed-health inputs in the browser. The app, real worker and benchmark catalog still run normally. Its fixed clock belongs to synthetic observations generated relative to that clock; it is never applied to changing published prices. Two controlled routes provide a paid quote and an explicit zero quote, while other models exercise unknown pricing. Feed fixtures cover successful collection and retained stale evidence with separate accepted/attempt timestamps.
+
+The deterministic tests verify mobile show/hide and saved state, source links, zero versus unknown, stale-price opt-in across reload, feed counts/timestamps, and eligibility one millisecond before 48 hours, exactly at 48 hours, and for a future observation. They work against either the local preview or a deployed app because their changing inputs are isolated.
+
+`web/e2e/price-refresh.spec.ts` is the separate **unmocked** publication suite. It freezes the actual run time, reads the served comparison snapshot, independently calculates eligible price coverage and checks the rendered UI. It tests mobile evidence at 320/390/844px, feed health at 1440/390px, market/comparison agreement and equivalent UTC timestamps. Counts, dates and failed-feed expectations come from that publication; it does not require a specific provider to remain failed or a fixed number of available routes. This suite runs after automatic refresh in the Pages workflow.
+
+Run both layers together against production:
+
+```sh
+LAYOUT_BASE_URL=https://allthebenches.com/ pnpm --dir web exec playwright test \
+  e2e/mobile-prices.spec.ts e2e/feed-health.spec.ts \
+  e2e/review-regressions.spec.ts e2e/price-refresh.spec.ts
+```
+
+A deterministic fixture pass proves application behavior under controlled conditions. Only the unmocked tests exercise actual published quote availability and collection metadata. An upstream outage may legitimately render unknown prices; publication tests check that the UI agrees with the evidence rather than fabricating fresh coverage.

@@ -1,9 +1,9 @@
 {
   "https://artificialanalysis.ai/models/mistral-large-4": {
-    "bytes": 4447421,
+    "bytes": 4044648,
     "content_type": "text/html; charset=utf-8",
-    "retrieved_at": "2026-10-21T12:58:50.553809+00:00",
-    "sha256": "0ebd908f4a2606e4dd00d5d69d3cacb6026180b52b5595ec2b38e0044e5b8fef",
+    "retrieved_at": "2026-10-28T14:03:54.169058+00:00",
+    "sha256": "5ccfea381dcab2f815c196b68c74146cd4e256cb5d51b134e6d4fa59c63883e5",
     "url": "https://artificialanalysis.ai/models/mistral-large-4"
   }
 }

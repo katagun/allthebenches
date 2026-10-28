@@ -1,7 +1,7 @@
 {
-  "adapter_sha256": "68a1f94c6b2b979cd76bafe6cc8c269901309cf3f222c0028eb3c06d2cf74a9f",
-  "candidate_observations": 1141,
-  "candidate_sha256": "fd10afdbfb1432a2e252f68a727e21b1ddca21fce3b75e94361148cf8a3c80dc",
+  "adapter_sha256": "18b29a5afc04ea807f39b2f93fb3991bedee0d0e321a0ee470044de3f01a29a0",
+  "candidate_observations": 1047,
+  "candidate_sha256": "6bfba02344c252a6f639d7da7760f7e364266be3dc59c3b72462a9fe37b8e404",
   "conflicts": [
     {
       "changed_fields": [
@@ -16,7 +16,121 @@
         "setup",
         "value"
       ],
+      "id": "o_aa_claude_fable51_aa-claude-fable51-low_claude-fable-5-1-low_aa_intelligence_index_v432_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_claude_fable51_aa-claude-fable51-low_claude-fable-5-1-low_aa_omniscience_index_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_claude_fable51_aa-claude-fable51-low_claude-fable-5-1-low_aa_omniscience_accuracy_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_claude_fable51_aa-claude-fable51-low_claude-fable-5-1-low_aa_omniscience_hallucination_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_claude_fable51_aa-claude-fable51-low_claude-fable-5-1-low_aa_gdpval_v21_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "uncertainty",
+        "value"
+      ],
+      "id": "o_aa_claude_fable51_aa-claude-fable51-low_claude-fable-5-1-low_aa_briefcase_v11_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_gpt56_sol_aa-gpt56-sol-low_gpt-5-6-sol-low_aa_gdpval_v21_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
       "id": "o_aa_gpt56_sol_aa-gpt56-sol-low_gpt-5-6-sol-low_aa_mlcr_hard_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_gpt61_sol_aa-gpt61-sol-xhigh_gpt-6-1-sol-xhigh_aa_intelligence_index_v432_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_gpt61_sol_aa-gpt61-sol-xhigh_gpt-6-1-sol-xhigh_aa_omniscience_index_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_gpt61_sol_aa-gpt61-sol-xhigh_gpt-6-1-sol-xhigh_aa_omniscience_accuracy_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_gpt61_sol_aa-gpt61-sol-xhigh_gpt-6-1-sol-xhigh_aa_omniscience_hallucination_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_gpt61_sol_aa-gpt61-sol-xhigh_gpt-6-1-sol-xhigh_aa_gdpval_v21_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "uncertainty",
+        "value"
+      ],
+      "id": "o_aa_gpt61_sol_aa-gpt61-sol-xhigh_gpt-6-1-sol-xhigh_aa_briefcase_v11_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_claude_opus5_aa-claude-opus5-xhigh_claude-opus-5-xhigh_aa_gdpval_v21_20261018",
       "table": "observations"
     },
     {
@@ -32,7 +146,145 @@
         "setup",
         "value"
       ],
+      "id": "o_aa_glm53_flash_aa-glm53-flash-max_glm-5-3-flash_aa_omniscience_index_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_glm53_flash_aa-glm53-flash-max_glm-5-3-flash_aa_omniscience_accuracy_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_glm53_flash_aa-glm53-flash-max_glm-5-3-flash_aa_omniscience_hallucination_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_glm53_flash_aa-glm53-flash-max_glm-5-3-flash_aa_gdpval_v21_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
       "id": "o_aa_glm53_flash_aa-glm53-flash-max_glm-5-3-flash_aa_mlcr_hard_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_gpt6_astra_aa-gpt6-astra-xhigh_gpt-6-astra-xhigh_aa_intelligence_index_v432_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_gpt6_astra_aa-gpt6-astra-xhigh_gpt-6-astra-xhigh_aa_omniscience_index_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_gpt6_astra_aa-gpt6-astra-xhigh_gpt-6-astra-xhigh_aa_omniscience_accuracy_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_gpt6_astra_aa-gpt6-astra-xhigh_gpt-6-astra-xhigh_aa_omniscience_hallucination_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_gpt6_astra_aa-gpt6-astra-xhigh_gpt-6-astra-xhigh_aa_gdpval_v21_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "uncertainty",
+        "value"
+      ],
+      "id": "o_aa_gpt6_astra_aa-gpt6-astra-xhigh_gpt-6-astra-xhigh_aa_briefcase_v11_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_grok47_aa-grok47-low_grok-4-7-low_aa_intelligence_index_v432_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_grok47_aa-grok47-low_grok-4-7-low_aa_omniscience_index_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_grok47_aa-grok47-low_grok-4-7-low_aa_omniscience_accuracy_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_grok47_aa-grok47-low_grok-4-7-low_aa_omniscience_hallucination_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_grok47_aa-grok47-low_grok-4-7-low_aa_gdpval_v21_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "uncertainty",
+        "value"
+      ],
+      "id": "o_aa_grok47_aa-grok47-low_grok-4-7-low_aa_briefcase_v11_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_claude_opus5_aa-claude-opus5-low_claude-opus-5-low_aa_gdpval_v21_20261018",
       "table": "observations"
     },
     {
@@ -48,7 +300,145 @@
         "setup",
         "value"
       ],
+      "id": "o_aa_grok46_aa-grok46-medium_grok-4-6-medium_aa_gdpval_v21_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_grok47_aa-grok47-high_grok-4-7-high_aa_intelligence_index_v432_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_grok47_aa-grok47-high_grok-4-7-high_aa_omniscience_index_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_grok47_aa-grok47-high_grok-4-7-high_aa_omniscience_accuracy_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_grok47_aa-grok47-high_grok-4-7-high_aa_omniscience_hallucination_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_grok47_aa-grok47-high_grok-4-7-high_aa_gdpval_v21_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "uncertainty",
+        "value"
+      ],
+      "id": "o_aa_grok47_aa-grok47-high_grok-4-7-high_aa_briefcase_v11_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_gpt6_astra_aa-gpt6-astra-max_gpt-6-astra_aa_intelligence_index_v432_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_gpt6_astra_aa-gpt6-astra-max_gpt-6-astra_aa_omniscience_index_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_gpt6_astra_aa-gpt6-astra-max_gpt-6-astra_aa_omniscience_accuracy_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_gpt6_astra_aa-gpt6-astra-max_gpt-6-astra_aa_omniscience_hallucination_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_gpt6_astra_aa-gpt6-astra-max_gpt-6-astra_aa_gdpval_v21_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
       "id": "o_aa_gpt6_astra_aa-gpt6-astra-max_gpt-6-astra_aa_mlcr_hard_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "uncertainty",
+        "value"
+      ],
+      "id": "o_aa_gpt6_astra_aa-gpt6-astra-max_gpt-6-astra_aa_briefcase_v11_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_claude_opus55_aa-claude-opus55-max_claude-opus-5-5_aa_intelligence_index_v432_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_claude_opus55_aa-claude-opus55-max_claude-opus-5-5_aa_omniscience_index_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_claude_opus55_aa-claude-opus55-max_claude-opus-5-5_aa_omniscience_accuracy_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_claude_opus55_aa-claude-opus55-max_claude-opus-5-5_aa_omniscience_hallucination_20261018",
       "table": "observations"
     },
     {
@@ -62,9 +452,270 @@
     {
       "changed_fields": [
         "setup",
+        "uncertainty",
+        "value"
+      ],
+      "id": "o_aa_claude_opus55_aa-claude-opus55-max_claude-opus-5-5_aa_briefcase_v11_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_qwen38_27b_aa-qwen38-27b-non-reasoning_qwen3-8-27b-non-reasoning_aa_omniscience_index_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_qwen38_27b_aa-qwen38-27b-non-reasoning_qwen3-8-27b-non-reasoning_aa_omniscience_accuracy_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_qwen38_27b_aa-qwen38-27b-non-reasoning_qwen3-8-27b-non-reasoning_aa_omniscience_hallucination_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_qwen38_27b_aa-qwen38-27b-non-reasoning_qwen3-8-27b-non-reasoning_aa_gdpval_v21_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_claude_fable51_aa-claude-fable51-medium_claude-fable-5-1-medium_aa_intelligence_index_v432_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_claude_fable51_aa-claude-fable51-medium_claude-fable-5-1-medium_aa_omniscience_index_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_claude_fable51_aa-claude-fable51-medium_claude-fable-5-1-medium_aa_omniscience_accuracy_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_claude_fable51_aa-claude-fable51-medium_claude-fable-5-1-medium_aa_omniscience_hallucination_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_claude_fable51_aa-claude-fable51-medium_claude-fable-5-1-medium_aa_gdpval_v21_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "uncertainty",
+        "value"
+      ],
+      "id": "o_aa_claude_fable51_aa-claude-fable51-medium_claude-fable-5-1-medium_aa_briefcase_v11_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_gpt61_sol_aa-gpt61-sol-high_gpt-6-1-sol-high_aa_intelligence_index_v432_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_gpt61_sol_aa-gpt61-sol-high_gpt-6-1-sol-high_aa_omniscience_index_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_gpt61_sol_aa-gpt61-sol-high_gpt-6-1-sol-high_aa_omniscience_accuracy_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_gpt61_sol_aa-gpt61-sol-high_gpt-6-1-sol-high_aa_omniscience_hallucination_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_gpt61_sol_aa-gpt61-sol-high_gpt-6-1-sol-high_aa_gdpval_v21_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "uncertainty",
+        "value"
+      ],
+      "id": "o_aa_gpt61_sol_aa-gpt61-sol-high_gpt-6-1-sol-high_aa_briefcase_v11_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_claude_fable51_aa-claude-fable51-max_claude-fable-5-1_aa_intelligence_index_v432_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_claude_fable51_aa-claude-fable51-max_claude-fable-5-1_aa_omniscience_index_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_claude_fable51_aa-claude-fable51-max_claude-fable-5-1_aa_omniscience_accuracy_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_claude_fable51_aa-claude-fable51-max_claude-fable-5-1_aa_omniscience_hallucination_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_claude_fable51_aa-claude-fable51-max_claude-fable-5-1_aa_gdpval_v21_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
         "value"
       ],
       "id": "o_aa_claude_fable51_aa-claude-fable51-max_claude-fable-5-1_aa_mlcr_hard_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "uncertainty",
+        "value"
+      ],
+      "id": "o_aa_claude_fable51_aa-claude-fable51-max_claude-fable-5-1_aa_briefcase_v11_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_claude_opus55_aa-claude-opus55-low_claude-opus-5-5-low_aa_intelligence_index_v432_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_claude_opus55_aa-claude-opus55-low_claude-opus-5-5-low_aa_omniscience_index_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_claude_opus55_aa-claude-opus55-low_claude-opus-5-5-low_aa_omniscience_accuracy_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_claude_opus55_aa-claude-opus55-low_claude-opus-5-5-low_aa_omniscience_hallucination_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_claude_opus55_aa-claude-opus55-low_claude-opus-5-5-low_aa_gdpval_v21_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "uncertainty",
+        "value"
+      ],
+      "id": "o_aa_claude_opus55_aa-claude-opus55-low_claude-opus-5-5-low_aa_briefcase_v11_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_kimi_k3_aa-kimi-k3-low_kimi-k3-low_aa_omniscience_index_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_kimi_k3_aa-kimi-k3-low_kimi-k3-low_aa_omniscience_accuracy_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_kimi_k3_aa-kimi-k3-low_kimi-k3-low_aa_omniscience_hallucination_20261018",
       "table": "observations"
     },
     {
@@ -78,10 +729,41 @@
     {
       "changed_fields": [
         "setup",
-        "uncertainty",
         "value"
       ],
-      "id": "o_aa_kimi_k3_aa-kimi-k3-low_kimi-k3-low_aa_briefcase_v11_20261018",
+      "id": "o_aa_grok47_aa-grok47-xhigh_grok-4-7_aa_intelligence_index_v432_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_grok47_aa-grok47-xhigh_grok-4-7_aa_omniscience_index_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_grok47_aa-grok47-xhigh_grok-4-7_aa_omniscience_accuracy_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_grok47_aa-grok47-xhigh_grok-4-7_aa_omniscience_hallucination_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_grok47_aa-grok47-xhigh_grok-4-7_aa_gdpval_v21_20261018",
       "table": "observations"
     },
     {
@@ -90,6 +772,23 @@
         "value"
       ],
       "id": "o_aa_grok47_aa-grok47-xhigh_grok-4-7_aa_mlcr_hard_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "uncertainty",
+        "value"
+      ],
+      "id": "o_aa_grok47_aa-grok47-xhigh_grok-4-7_aa_briefcase_v11_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_qwen38_max_aa-qwen38-max-unknown_qwen3-8-max-0803_aa_gdpval_v21_20261018",
       "table": "observations"
     },
     {
@@ -105,7 +804,63 @@
         "setup",
         "value"
       ],
+      "id": "o_aa_qwen38_27b_aa-qwen38-27b-medium_qwen3-8-27b-medium_aa_omniscience_index_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_qwen38_27b_aa-qwen38-27b-medium_qwen3-8-27b-medium_aa_omniscience_accuracy_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_qwen38_27b_aa-qwen38-27b-medium_qwen3-8-27b-medium_aa_omniscience_hallucination_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_qwen38_27b_aa-qwen38-27b-medium_qwen3-8-27b-medium_aa_gdpval_v21_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_gpt4_aa-gpt4-unknown_gpt-4_aa_gdpval_v21_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_gpt56_sol_aa-gpt56-sol-medium_gpt-5-6-sol-medium_aa_gdpval_v21_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
       "id": "o_aa_gpt56_sol_aa-gpt56-sol-medium_gpt-5-6-sol-medium_aa_mlcr_hard_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_claude_opus5_aa-claude-opus5-high_claude-opus-5-high_aa_gdpval_v21_20261018",
       "table": "observations"
     },
     {
@@ -121,6 +876,62 @@
         "setup",
         "value"
       ],
+      "id": "o_aa_deepseek_v4_1_flash_aa-deepseek-v4-1-flash-non-reasoning_deepseek-v4-1-flash-non-reasoning_aa_gdpval_v21_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_gpt56_sol_aa-gpt56-sol-non-reasoning_gpt-5-6-sol-non-reasoning_aa_gdpval_v21_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_qwen38_27b_aa-qwen38-27b-low_qwen3-8-27b-low_aa_omniscience_index_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_qwen38_27b_aa-qwen38-27b-low_qwen3-8-27b-low_aa_omniscience_accuracy_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_qwen38_27b_aa-qwen38-27b-low_qwen3-8-27b-low_aa_omniscience_hallucination_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_qwen38_27b_aa-qwen38-27b-low_qwen3-8-27b-low_aa_gdpval_v21_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_gpt56_sol_aa-gpt56-sol-high_gpt-5-6-sol-high_aa_gdpval_v21_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
       "id": "o_aa_gpt56_sol_aa-gpt56-sol-high_gpt-5-6-sol-high_aa_mlcr_hard_20261018",
       "table": "observations"
     },
@@ -129,7 +940,267 @@
         "setup",
         "value"
       ],
+      "id": "o_aa_muse_spark13_aa-muse-spark13-max_muse-spark-1-3_aa_intelligence_index_v432_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_muse_spark13_aa-muse-spark13-max_muse-spark-1-3_aa_omniscience_index_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_muse_spark13_aa-muse-spark13-max_muse-spark-1-3_aa_omniscience_accuracy_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_muse_spark13_aa-muse-spark13-max_muse-spark-1-3_aa_omniscience_hallucination_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
       "id": "o_aa_muse_spark13_aa-muse-spark13-max_muse-spark-1-3_aa_mlcr_hard_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_claude_fable51_aa-claude-fable51-xhigh_claude-fable-5-1-xhigh_aa_intelligence_index_v432_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_claude_fable51_aa-claude-fable51-xhigh_claude-fable-5-1-xhigh_aa_omniscience_index_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_claude_fable51_aa-claude-fable51-xhigh_claude-fable-5-1-xhigh_aa_omniscience_accuracy_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_claude_fable51_aa-claude-fable51-xhigh_claude-fable-5-1-xhigh_aa_omniscience_hallucination_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_claude_fable51_aa-claude-fable51-xhigh_claude-fable-5-1-xhigh_aa_gdpval_v21_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "uncertainty",
+        "value"
+      ],
+      "id": "o_aa_claude_fable51_aa-claude-fable51-xhigh_claude-fable-5-1-xhigh_aa_briefcase_v11_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_claude_fable51_aa-claude-fable51-high_claude-fable-5-1-high_aa_intelligence_index_v432_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_claude_fable51_aa-claude-fable51-high_claude-fable-5-1-high_aa_omniscience_index_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_claude_fable51_aa-claude-fable51-high_claude-fable-5-1-high_aa_omniscience_accuracy_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_claude_fable51_aa-claude-fable51-high_claude-fable-5-1-high_aa_omniscience_hallucination_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_claude_fable51_aa-claude-fable51-high_claude-fable-5-1-high_aa_gdpval_v21_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "uncertainty",
+        "value"
+      ],
+      "id": "o_aa_claude_fable51_aa-claude-fable51-high_claude-fable-5-1-high_aa_briefcase_v11_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_gpt61_sol_aa-gpt61-sol-medium_gpt-6-1-sol-medium_aa_intelligence_index_v432_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_gpt61_sol_aa-gpt61-sol-medium_gpt-6-1-sol-medium_aa_omniscience_index_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_gpt61_sol_aa-gpt61-sol-medium_gpt-6-1-sol-medium_aa_omniscience_accuracy_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_gpt61_sol_aa-gpt61-sol-medium_gpt-6-1-sol-medium_aa_omniscience_hallucination_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_gpt61_sol_aa-gpt61-sol-medium_gpt-6-1-sol-medium_aa_gdpval_v21_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "uncertainty",
+        "value"
+      ],
+      "id": "o_aa_gpt61_sol_aa-gpt61-sol-medium_gpt-6-1-sol-medium_aa_briefcase_v11_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_gpt6_astra_aa-gpt6-astra-low_gpt-6-astra-low_aa_intelligence_index_v432_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_gpt6_astra_aa-gpt6-astra-low_gpt-6-astra-low_aa_omniscience_index_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_gpt6_astra_aa-gpt6-astra-low_gpt-6-astra-low_aa_omniscience_accuracy_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_gpt6_astra_aa-gpt6-astra-low_gpt-6-astra-low_aa_omniscience_hallucination_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_gpt6_astra_aa-gpt6-astra-low_gpt-6-astra-low_aa_gdpval_v21_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "uncertainty",
+        "value"
+      ],
+      "id": "o_aa_gpt6_astra_aa-gpt6-astra-low_gpt-6-astra-low_aa_briefcase_v11_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_qwen38_27b_aa-qwen38-27b-xhigh_qwen3-8-27b_aa_intelligence_index_v432_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_qwen38_27b_aa-qwen38-27b-xhigh_qwen3-8-27b_aa_omniscience_index_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_qwen38_27b_aa-qwen38-27b-xhigh_qwen3-8-27b_aa_omniscience_accuracy_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_qwen38_27b_aa-qwen38-27b-xhigh_qwen3-8-27b_aa_omniscience_hallucination_20261018",
       "table": "observations"
     },
     {
@@ -162,6 +1233,38 @@
         "setup",
         "value"
       ],
+      "id": "o_aa_qwen38_max_aa-qwen38-max-unknown_qwen3-8-max_aa_intelligence_index_v432_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_qwen38_max_aa-qwen38-max-unknown_qwen3-8-max_aa_omniscience_index_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_qwen38_max_aa-qwen38-max-unknown_qwen3-8-max_aa_omniscience_accuracy_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_qwen38_max_aa-qwen38-max-unknown_qwen3-8-max_aa_omniscience_hallucination_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
       "id": "o_aa_qwen38_max_aa-qwen38-max-unknown_qwen3-8-max_aa_gdpval_v21_20261018",
       "table": "observations"
     },
@@ -179,7 +1282,64 @@
         "setup",
         "value"
       ],
+      "id": "o_aa_gpt61_sol_aa-gpt61-sol-max_gpt-6-1-sol_aa_intelligence_index_v432_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_gpt61_sol_aa-gpt61-sol-max_gpt-6-1-sol_aa_omniscience_index_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_gpt61_sol_aa-gpt61-sol-max_gpt-6-1-sol_aa_omniscience_accuracy_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_gpt61_sol_aa-gpt61-sol-max_gpt-6-1-sol_aa_omniscience_hallucination_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_gpt61_sol_aa-gpt61-sol-max_gpt-6-1-sol_aa_gdpval_v21_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
       "id": "o_aa_gpt61_sol_aa-gpt61-sol-max_gpt-6-1-sol_aa_mlcr_hard_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "uncertainty",
+        "value"
+      ],
+      "id": "o_aa_gpt61_sol_aa-gpt61-sol-max_gpt-6-1-sol_aa_briefcase_v11_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_claude_opus5_aa-claude-opus5-max_claude-opus-5_aa_gdpval_v21_20261018",
       "table": "observations"
     },
     {
@@ -195,6 +1355,22 @@
         "setup",
         "value"
       ],
+      "id": "o_aa_grok46_aa-grok46-low_grok-4-6-low_aa_gdpval_v21_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_grok46_aa-grok46-high_grok-4-6_aa_gdpval_v21_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
       "id": "o_aa_grok46_aa-grok46-high_grok-4-6_aa_mlcr_hard_20261018",
       "table": "observations"
     },
@@ -203,7 +1379,137 @@
         "setup",
         "value"
       ],
+      "id": "o_aa_glm53_aa-glm53-low_glm-5-3-low_aa_intelligence_index_v432_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_glm53_aa-glm53-low_glm-5-3-low_aa_omniscience_index_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_glm53_aa-glm53-low_glm-5-3-low_aa_omniscience_accuracy_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_glm53_aa-glm53-low_glm-5-3-low_aa_omniscience_hallucination_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_glm53_aa-glm53-low_glm-5-3-low_aa_gdpval_v21_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "uncertainty",
+        "value"
+      ],
+      "id": "o_aa_glm53_aa-glm53-low_glm-5-3-low_aa_briefcase_v11_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_glm53_aa-glm53-max_glm-5-3_aa_intelligence_index_v432_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_glm53_aa-glm53-max_glm-5-3_aa_omniscience_index_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_glm53_aa-glm53-max_glm-5-3_aa_omniscience_accuracy_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_glm53_aa-glm53-max_glm-5-3_aa_omniscience_hallucination_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_glm53_aa-glm53-max_glm-5-3_aa_gdpval_v21_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
       "id": "o_aa_glm53_aa-glm53-max_glm-5-3_aa_mlcr_hard_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "uncertainty",
+        "value"
+      ],
+      "id": "o_aa_glm53_aa-glm53-max_glm-5-3_aa_briefcase_v11_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_gemini4_argon_aa-gemini4-argon-high_gemini-4-argon_aa_intelligence_index_v432_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_gemini4_argon_aa-gemini4-argon-high_gemini-4-argon_aa_omniscience_index_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_gemini4_argon_aa-gemini4-argon-high_gemini-4-argon_aa_omniscience_accuracy_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_gemini4_argon_aa-gemini4-argon-high_gemini-4-argon_aa_omniscience_hallucination_20261018",
       "table": "observations"
     },
     {
@@ -228,16 +1534,47 @@
         "setup",
         "value"
       ],
+      "id": "o_aa_muse_spark13_aa-muse-spark13-xhigh_muse-spark-1-3-xhigh_aa_omniscience_index_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_muse_spark13_aa-muse-spark13-xhigh_muse-spark-1-3-xhigh_aa_omniscience_accuracy_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_muse_spark13_aa-muse-spark13-xhigh_muse-spark-1-3-xhigh_aa_omniscience_hallucination_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
       "id": "o_aa_muse_spark13_aa-muse-spark13-xhigh_muse-spark-1-3-xhigh_aa_gdpval_v21_20261018",
       "table": "observations"
     },
     {
       "changed_fields": [
         "setup",
-        "uncertainty",
         "value"
       ],
-      "id": "o_aa_muse_spark13_aa-muse-spark13-xhigh_muse-spark-1-3-xhigh_aa_briefcase_v11_20261018",
+      "id": "o_aa_grok46_aa-grok46-xhigh_grok-4-6-xhigh_aa_gdpval_v21_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_gpt56_sol_aa-gpt56-sol-max_gpt-5-6-sol_aa_gdpval_v21_20261018",
       "table": "observations"
     },
     {
@@ -246,6 +1583,14 @@
         "value"
       ],
       "id": "o_aa_gpt56_sol_aa-gpt56-sol-max_gpt-5-6-sol_aa_mlcr_hard_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_gpt56_sol_aa-gpt56-sol-xhigh_gpt-5-6-sol-xhigh_aa_gdpval_v21_20261018",
       "table": "observations"
     },
     {
@@ -267,10 +1612,335 @@
     {
       "changed_fields": [
         "setup",
+        "value"
+      ],
+      "id": "o_aa_claude_opus55_aa-claude-opus55-xhigh_claude-opus-5-5-xhigh_aa_intelligence_index_v432_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_claude_opus55_aa-claude-opus55-xhigh_claude-opus-5-5-xhigh_aa_omniscience_index_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_claude_opus55_aa-claude-opus55-xhigh_claude-opus-5-5-xhigh_aa_omniscience_accuracy_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_claude_opus55_aa-claude-opus55-xhigh_claude-opus-5-5-xhigh_aa_omniscience_hallucination_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_claude_opus55_aa-claude-opus55-xhigh_claude-opus-5-5-xhigh_aa_gdpval_v21_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
         "uncertainty",
         "value"
       ],
-      "id": "o_aa_deepseek_v4_1_flash_aa-deepseek-v4-1-flash-max_deepseek-v4-1-flash_aa_briefcase_v11_20261018",
+      "id": "o_aa_claude_opus55_aa-claude-opus55-xhigh_claude-opus-5-5-xhigh_aa_briefcase_v11_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_gpt6_astra_aa-gpt6-astra-high_gpt-6-astra-high_aa_intelligence_index_v432_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_gpt6_astra_aa-gpt6-astra-high_gpt-6-astra-high_aa_omniscience_index_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_gpt6_astra_aa-gpt6-astra-high_gpt-6-astra-high_aa_omniscience_accuracy_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_gpt6_astra_aa-gpt6-astra-high_gpt-6-astra-high_aa_omniscience_hallucination_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_gpt6_astra_aa-gpt6-astra-high_gpt-6-astra-high_aa_gdpval_v21_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "uncertainty",
+        "value"
+      ],
+      "id": "o_aa_gpt6_astra_aa-gpt6-astra-high_gpt-6-astra-high_aa_briefcase_v11_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_gpt61_sol_aa-gpt61-sol-low_gpt-6-1-sol-low_aa_intelligence_index_v432_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_gpt61_sol_aa-gpt61-sol-low_gpt-6-1-sol-low_aa_omniscience_index_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_gpt61_sol_aa-gpt61-sol-low_gpt-6-1-sol-low_aa_omniscience_accuracy_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_gpt61_sol_aa-gpt61-sol-low_gpt-6-1-sol-low_aa_omniscience_hallucination_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_gpt61_sol_aa-gpt61-sol-low_gpt-6-1-sol-low_aa_gdpval_v21_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "uncertainty",
+        "value"
+      ],
+      "id": "o_aa_gpt61_sol_aa-gpt61-sol-low_gpt-6-1-sol-low_aa_briefcase_v11_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_gpt6_astra_aa-gpt6-astra-medium_gpt-6-astra-medium_aa_intelligence_index_v432_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_gpt6_astra_aa-gpt6-astra-medium_gpt-6-astra-medium_aa_omniscience_index_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_gpt6_astra_aa-gpt6-astra-medium_gpt-6-astra-medium_aa_omniscience_accuracy_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_gpt6_astra_aa-gpt6-astra-medium_gpt-6-astra-medium_aa_omniscience_hallucination_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_gpt6_astra_aa-gpt6-astra-medium_gpt-6-astra-medium_aa_gdpval_v21_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "uncertainty",
+        "value"
+      ],
+      "id": "o_aa_gpt6_astra_aa-gpt6-astra-medium_gpt-6-astra-medium_aa_briefcase_v11_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_muse_wonder_full_aa-muse-wonder-full-max_muse-wonder-full_aa_intelligence_index_v432_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_muse_wonder_full_aa-muse-wonder-full-max_muse-wonder-full_aa_omniscience_index_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_muse_wonder_full_aa-muse-wonder-full-max_muse-wonder-full_aa_omniscience_accuracy_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_muse_wonder_full_aa-muse-wonder-full-max_muse-wonder-full_aa_omniscience_hallucination_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_claude_opus55_aa-claude-opus55-medium_claude-opus-5-5-medium_aa_intelligence_index_v432_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_claude_opus55_aa-claude-opus55-medium_claude-opus-5-5-medium_aa_omniscience_index_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_claude_opus55_aa-claude-opus55-medium_claude-opus-5-5-medium_aa_omniscience_accuracy_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_claude_opus55_aa-claude-opus55-medium_claude-opus-5-5-medium_aa_omniscience_hallucination_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_claude_opus55_aa-claude-opus55-medium_claude-opus-5-5-medium_aa_gdpval_v21_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "uncertainty",
+        "value"
+      ],
+      "id": "o_aa_claude_opus55_aa-claude-opus55-medium_claude-opus-5-5-medium_aa_briefcase_v11_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_claude_opus55_aa-claude-opus55-high_claude-opus-5-5-high_aa_intelligence_index_v432_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_claude_opus55_aa-claude-opus55-high_claude-opus-5-5-high_aa_omniscience_index_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_claude_opus55_aa-claude-opus55-high_claude-opus-5-5-high_aa_omniscience_accuracy_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_claude_opus55_aa-claude-opus55-high_claude-opus-5-5-high_aa_omniscience_hallucination_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_claude_opus55_aa-claude-opus55-high_claude-opus-5-5-high_aa_gdpval_v21_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "uncertainty",
+        "value"
+      ],
+      "id": "o_aa_claude_opus55_aa-claude-opus55-high_claude-opus-5-5-high_aa_briefcase_v11_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_kimi_k3_aa-kimi-k3-max_kimi-k3_aa_gdpval_v21_20261018",
       "table": "observations"
     },
     {
@@ -286,7 +1956,79 @@
         "setup",
         "value"
       ],
+      "id": "o_aa_muse_wonder_aa-muse-wonder-max_muse-wonder_aa_intelligence_index_v432_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_muse_wonder_aa-muse-wonder-max_muse-wonder_aa_omniscience_index_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_muse_wonder_aa-muse-wonder-max_muse-wonder_aa_omniscience_accuracy_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_muse_wonder_aa-muse-wonder-max_muse-wonder_aa_omniscience_hallucination_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_claude_opus5_aa-claude-opus5-medium_claude-opus-5-medium_aa_gdpval_v21_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
       "id": "o_aa_claude_opus5_aa-claude-opus5-medium_claude-opus-5-medium_aa_mlcr_hard_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_mistral_large4_aa-mistral-large4-unknown_mistral-large-4_aa_intelligence_index_v432_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_mistral_large4_aa-mistral-large4-unknown_mistral-large-4_aa_omniscience_index_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_mistral_large4_aa-mistral-large4-unknown_mistral-large-4_aa_omniscience_accuracy_20261018",
+      "table": "observations"
+    },
+    {
+      "changed_fields": [
+        "setup",
+        "value"
+      ],
+      "id": "o_aa_mistral_large4_aa-mistral-large4-unknown_mistral-large-4_aa_omniscience_hallucination_20261018",
       "table": "observations"
     },
     {
@@ -314,8 +2056,8 @@
   },
   "coverage": {
     "counts": {
-      "candidate_observations": 1141,
-      "source_models": 706
+      "candidate_observations": 1047,
+      "source_models": 715
     },
     "decisions": [
       {
@@ -531,6 +2273,11 @@
       {
         "model_id": null,
         "source_model": "granite-4-2-3b",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "gpt-6-1-terra-non-reasoning",
         "status": "unresolved_identity_or_configuration"
       },
       {
@@ -1510,6 +3257,11 @@
       },
       {
         "model_id": null,
+        "source_model": "ling-3-1-flash-1019",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
         "source_model": "k2-horizon-mova-36b-a4b",
         "status": "unresolved_identity_or_configuration"
       },
@@ -1755,6 +3507,11 @@
       },
       {
         "model_id": null,
+        "source_model": "nemotron-3-5-bolt-e4b-4gb",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
         "source_model": "nova-2-0-lite-reasoning",
         "status": "unresolved_identity_or_configuration"
       },
@@ -1807,6 +3564,11 @@
         "model_id": "qwen38_27b",
         "source_model": "qwen3-8-27b-medium",
         "status": "mapped"
+      },
+      {
+        "model_id": null,
+        "source_model": "kimi-k3-1-pro",
+        "status": "unresolved_identity_or_configuration"
       },
       {
         "model_id": null,
@@ -2819,6 +4581,11 @@
         "status": "unresolved_identity_or_configuration"
       },
       {
+        "model_id": null,
+        "source_model": "gpt-6-1-terra",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
         "model_id": "qwen38_max",
         "source_model": "qwen3-8-max",
         "status": "mapped"
@@ -3085,6 +4852,11 @@
       },
       {
         "model_id": null,
+        "source_model": "gpt-6-1-terra-medium",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
         "source_model": "llama-3-3-nemotron-super-49b",
         "status": "unresolved_identity_or_configuration"
       },
@@ -3147,6 +4919,11 @@
         "model_id": "grok46",
         "source_model": "grok-4-6",
         "status": "mapped"
+      },
+      {
+        "model_id": null,
+        "source_model": "gpt-6-1-terra-low",
+        "status": "unresolved_identity_or_configuration"
       },
       {
         "model_id": null,
@@ -3560,6 +5337,11 @@
       },
       {
         "model_id": null,
+        "source_model": "gpt-6-1-terra-xhigh",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
         "source_model": "jamba-1-6-mini",
         "status": "unresolved_identity_or_configuration"
       },
@@ -3581,6 +5363,11 @@
       {
         "model_id": null,
         "source_model": "claude-opus-4-7",
+        "status": "unresolved_identity_or_configuration"
+      },
+      {
+        "model_id": null,
+        "source_model": "gpt-6-1-terra-high",
         "status": "unresolved_identity_or_configuration"
       },
       {
@@ -3852,14 +5639,14 @@
     "scope": "Reviewed FIELD_MAP metrics only; estimated intelligence indices excluded. Embedded metrics outside that contract are not imported.",
     "source": "Artificial Analysis"
   },
-  "dataset_sha256": "237578a7a7b232d977af54827042fd7d3566f018f920244cee096b8e392b9237",
-  "dependency_lock_sha256": "2c008e6d463d37c7ab73c7a0d307ebf6392f238097fd450a61077c8e1e7d4c15",
+  "dataset_sha256": "a970bacaf5aa9612f3685659a0ec4216e990e90b31fe13c4d8fa92ae519d51c1",
+  "dependency_lock_sha256": "550da0955a3970e06d43dc496cf79a12957b0e67c70cfbd80c4bb83b849a21ea",
   "entities": {
-    "conflict": 37,
-    "new": 120,
-    "unchanged": 2128
+    "conflict": 252,
+    "new": 166,
+    "unchanged": 1679
   },
-  "evidence_sha256": "fea6a53d077d98745013beedaa5fa3ee9db482bfb9f607ed22d78f4d97ed663a",
+  "evidence_sha256": "823054d6ea543e728c085e1f1eccb698503a7e15695a92a08ca2fcbd1338e74b",
   "latency_policy": "source_reported_only",
   "mapping_contract_sha256": "96170c95a488663db1eb5213bd17a76489b081979593e0d7fbaa17f41ddd1304",
   "publication": "review_required",

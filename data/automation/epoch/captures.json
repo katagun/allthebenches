@@ -1,9 +1,9 @@
 {
   "https://epoch.ai/data/benchmark_data.zip": {
-    "bytes": 2356347,
+    "bytes": 2351670,
     "content_type": "application/zip",
-    "retrieved_at": "2026-10-21T12:58:50.556567+00:00",
-    "sha256": "80df12fda32545c676ebcccc8975f498e2f65d366936cdbbaf9fcd2384b27db7",
+    "retrieved_at": "2026-10-31T13:41:43.092824+00:00",
+    "sha256": "9898ef3f32dd13850f0b12d43c09a3464ac937565f9f58d4e97119828f40d8f2",
     "url": "https://epoch.ai/data/benchmark_data.zip"
   }
 }
